@@ -773,14 +773,15 @@ ul.nostyle i {
 }
 #get-in-touch {
   padding: 100px 0 50px;
-  background-image: -moz-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
+  background: #f5f5f5;
+  /* background-image: -moz-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
   background-image: -webkit-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
-  background-image: -ms-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
-  color: #fff;
+  background-image: -ms-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%); */
+  color: rgb(7, 7, 7);
 }
 #get-in-touch h1,
 #get-in-touch h2 {
-  color: #fff;
+  color: rgb(7, 7, 7);
 }
 #blog {
   padding: 100px 0;
@@ -895,7 +896,6 @@ ul.nostyle i {
   z-index: 1;
 }
 #contact .contact-form {
-  background: rgba(255, 255, 255, 0.8);
   padding: 20px;
   margin-top: 50px;
 }

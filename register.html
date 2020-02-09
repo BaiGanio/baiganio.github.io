@@ -1,167 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Register | BaiGanio GitHub.IO</title>
-    <link rel="stylesheet" href="css/login-register.css">
-    <script src="js/jquery-3.1.0.min.js"></script>
-
+	<title>Register</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+<link rel="icon" type="image/png" href="auth/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="auth/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="auth/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="auth/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="auth/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="auth/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="auth/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="auth/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="auth/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="auth/css/util.css">
+	<link rel="stylesheet" type="text/css" href="auth/css/main.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" href="css/default.css">
+<!--===============================================================================================-->
 </head>
 <body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+				<form class="login100-form validate-form flex-sb flex-w">
+					<span class="login100-form-title p-b-53" style="font-family: ss_adec; font-size: 7em">
+						Register
+					</span>
+					
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">
+							Username
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Username is required">
+						<input class="input100" type="text" name="username" >
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="p-t-13 p-b-9">
+						<span class="txt1">
+							Password
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" >
+						<span class="focus-input100"></span>
+					</div>
 
+					<div class="container-login100-form-btn m-t-17">
+						<button class="login100-form-btn ss_adec">
+							Go
+						</button>
+					</div>
 
-    <!-- START REGISTER CONTENT -->
-    <section id="viewRegister">
-        <br>
-        <div style='text-align: center; font-family: "Curlz MT" !important;'>
-            <h1 class="" style="color: #c0a16b; font-size: 1.8em"><b>REGISTER</b></h1>
-            <!-- <h3 style="color: #c9302c; font-size: 1.6em">
-                * Please notice that if you are not a student of department "Software Technologies" in Plovdiv University "Paisii Hilendarski" you will not be allowed to register.
-            </h3> -->
-        </div>
+					<div class="w-full text-center p-t-55">
+						<!-- <span class="txt2">
+							Not a member?
+						</span> -->
 
-        <hr />
-        <br>
-        <div class="row">
-            <div class="col-md-8">
-                <div><h4 id="errorBox"></h4></div>
-                <!-- START FORM -->
-                <div class="login-form-1">
-                    <!-- START: register-form -->
-                    <div id="login-form" class="text-left">
-                        <div class="main-login-form">
-                            <form  id="registerForm">
-                                <div class="login-group">
-                                    <!--Username-->
-                                    <div class="form-group">
-                                        <input type="text" name="username" id="loginUsername" placeholder="Username">
-                                    </div>
-                                    <!--Faculty number-->
-                                    <!--<div class="form-group">-->
-                                        <!--<input type="text" name="facultyNumber" id="facultyNumber" placeholder="Faculty number">-->
-                                    <!--</div>-->
-                                    <!--Password-->
-                                    <div class="form-group">
-                                        <input type="password" name="pass" id="loginPassword" placeholder="Password">
-                                    </div>
-                                    <div id="buttons">
-                                        <!--Button GO-->
-                                        <div class="form-group" style="display: inline-block">
-                                            <input type="submit" id="loginBtn" class="login-button" value="GO" />
-                                        </div>
-                                        <div class="form-group" style="display: inline-block; float: right;">
-                                            <input type="submit" id="backBtn" class="login-button" value="Back &#8592;" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- END: register-form -->
-                </div>
-                <!-- END FORM -->
-            </div>
-        </div>
-    </section>
-    <!-- END REGISTER CONTENT -->
+						<a href="#" class="txt2 bo1">
+							Terms of use
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
 
-
-    <script>
-        $(document).ready(function () {
-
-            const kinveyBaseUrl = "https://baas.kinvey.com/";
-            const kinveyAppKey = "kid_rynqxLyXl";
-            const kinveyAppSecret =
-                "5dc09f77cbbc432eb220961609a8d489";
-            const kinveyAppAuthHeaders = {
-                'Authorization': "Basic " +
-                btoa(kinveyAppKey + ":" + kinveyAppSecret),
-            };
-
-            // Bind the form submit actions. Handle form.submit() not button.click(). Otherwise validation fill be bypassed.
-            $("#registerForm").submit(registerUser);
-
-            /* Disable default submit for all forms */
-            $("form").submit(function (e) {
-                e.preventDefault()
-            });
-
-
-
-            let userIP, city, zipCode, country, countryCode, latitude, longitude, regionName = "";
-
-            /* Take IP address */
-            $.getJSON("http://jsonip.com/?callback=?", function (data) {
-//                console.log(data);
-//                alert(data.ip);
-                userIP = data.ip;
-            });
-
-            /* Take location info */
-            let requestUrl = "http://ip-api.com/json";
-
-            $.ajax({
-                url: requestUrl,
-                type: 'GET',
-                success: function(json)
-                {
-                    city = json.city;
-                    zipCode: json.zip,
-                    country = json.country;
-                    countryCode = json.countryCode;
-                    latitude = json.lat;
-                    longitude = json.lon;
-                    regionName = json.regionName;
-//                    console.log("My city is: " + );
-//                    console.log("My country is: " + json.country);
-                },
-                error: function(err)
-                {
-                    console.log("Request failed, error= " + err);
-                }
-            });
-
-
-            function registerUser(){
-                let registerData = {
-                    username : $('#loginUsername').val(),
-                    password : $('#loginPassword').val(),
-                    userIP: userIP,
-                    city: city,
-                    region: regionName,
-                    country: country,
-                    latitude: latitude,
-                    longitude: longitude
-                };
-
-                $.ajax({
-                    method: "POST",
-                    url:kinveyBaseUrl + 'user/' + kinveyAppKey + '/',
-                    data:registerData,
-                    headers: {
-                        "Authorization": "Basic " + btoa(kinveyAppKey + ":" + kinveyAppSecret)
-                    },
-                    success: registerSuccess,
-                    error: registerError
-                });
-
-
-                function registerSuccess(data, status) {
-                    alert('Register completed successfully.' + data);
-                }
-
-                function registerError(data, status) {
-                    alert(status.message);
-                }
-
-            }
-
-
-        })
-
-
-
-    </script>
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+<script src="auth/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="auth/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="auth/vendor/bootstrap/js/popper.js"></script>
+	<script src="auth/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="auth/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="auth/vendor/daterangepicker/moment.min.js"></script>
+	<script src="auth/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="auth/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="auth/js/main.js"></script>
 
 </body>
 </html>
