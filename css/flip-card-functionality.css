@@ -1,0 +1,61 @@
+#card {
+     width: 100%;
+     height: 100%;
+     /*position: absolute;*/
+     transform-style: preserve-3d;
+     transition: transform 1s;
+     transform-origin: right center;
+ }
+#card > div {
+    margin: 0;
+    display: block;
+    /*position: absolute;*/
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+#card .back{
+    display: none;
+}
+.back {
+
+    background: #00a01e !important;
+    transform: rotateY( 180deg );
+}
+#card.flipped {
+    transform: translateX( -100% ) rotateY( -180deg );
+}
+
+
+/********************************/
+
+
+#blogs-card {
+    width: 100%;
+    height: 100%;
+    /*position: absolute;*/
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    transform-origin: right center;
+}
+#blogs-card > div {
+    margin: 0;
+    display: block;
+    /*position: absolute;*/
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+#blogs-card .blog-back{
+    display: none;
+}
+.blog-back {
+
+    background: #00a01e !important;
+    transform: rotateY( 180deg );
+}
+#blogs-card.flipped {
+    transform: translateX( -100% ) rotateY( -180deg );
+}

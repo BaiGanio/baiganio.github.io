@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+
+
+
+<hr>
+<hr>
+
+
+
+<div>
+    <img id="img"
+         height="100"
+         width="90"
+         style="border: solid" />
+</div>
+<br>
+<!--<div>-->
+    <!--<input type="file" title="search image" name="file"  onchange="show(this)" />-->
+<!--</div>-->
+
+
+<input id="inp" type='file'>
+<p id="b64"></p>
+
+<script>
+
+    function readFile() {
+        if (this.files && this.files[0]) {
+            let FR= new FileReader();
+            FR.onload = function(e) {
+                document.getElementById("img").src       = e.target.result;
+                document.getElementById("b64").innerHTML = e.target.result;
+            };
+            FR.readAsDataURL( this.files[0] );
+        }
+    }
+
+    document.getElementById("inp").addEventListener("change", readFile, false);
+
+
+
+    function show(input) {
+        alert (input.files[0]);
+        if (input.files && input.files[0]) {
+            var frm = new FormData();
+            frm.append('file', input.files[0]);
+
+            let filerdr = new FileReader();
+            filerdr.onload = function (e) {
+                $('#user_img').attr('src', e.target.result);
+            };
+            filerdr.readAsDataURL(input.files[0]);
+
+            $.ajax({
+                method: 'POST',
+                address: 'https://baiganio.github.io/images/demo-folder/',
+                data: frm,
+                contentType: false,
+                processData: false,
+                cache: false,
+                success: function(response)
+                {
+                    console.log("Inserted " + response);
+                },
+                error: function(err)
+                {
+                    console.log("Request failed, error= " + err);
+                }
+            });
+
+        }
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

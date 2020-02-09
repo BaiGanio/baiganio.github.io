@@ -1,0 +1,9 @@
+#sectionWrapper{
+    width: 100%;
+}
+#sectionWrapper a{
+    text-decoration: none;
+}
+#sectionWrapper a:hover{
+    color: #d58512;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin | BaiGanio GitHub.IO</title>
+
+
+    <link rel="stylesheet" href="css/login-register.css">
+    <style>
+        .form-group{
+            border:1px solid black;
+            margin: 2px;
+        }
+        h1{
+            font-family: "Curlz MT" !important;
+        }
+        #formHolder{
+            width: 100%;
+        }
+        #createPublicationForm{
+            width:50%;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="js/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+<a href="index.html" title="Back">&#8592;</a>
+
+<h1>Create publication</h1>
+
+
+   <div id="formHolder">
+       <form id="createPublicationForm">
+           <div class="login-group">
+               <!--TITLE-->
+               <div class="form-group">
+                   <input type="text" maxlength="100" id="title" name="title" placeholder="Title" required="true">
+               </div>
+               <!--DESCRIPTION-->
+               <div class="form-group">
+                   <input type="text" maxlength="1000" id="description" name="description" placeholder="Description" required="true">
+               </div>
+               <!--IMG URL-->
+               <div class="form-group">
+                   <input type="text"  maxlength="100" id="imgUrl" name="imgUrl" placeholder="Image url" required="true">
+               </div>
+               <!--Confirm Password-->
+               <div class="form-group">
+                   <input type="text" maxlength="100" id="articleUrl" name="articleUrl" placeholder="Article url"  required="true">
+               </div>
+
+
+               <!--Button GO-->
+               <div class="form-group">
+                   <input type="submit" id="loginBtn" class="login-button" value="GO" />
+               </div>
+           </div>
+       </form>
+   </div>
+
+
+<script>
+    $("#createPublicationForm").submit(createPublication);
+
+    const kinveyBaseUrl = "https://baas.kinvey.com/";
+    const kinveyAppKey = "kid_rynqxLyXl";
+
+    /* Disable default submit for all forms */
+    $("form").submit(function (e) {
+        e.preventDefault()
+    });
+
+    function createPublication(){
+
+        let userId = sessionStorage.getItem('userId');
+        let userName = sessionStorage.getItem('userName');
+
+        function getKinveyUserAuthHeaders() {
+            return {
+                'Authorization': "Kinvey " +
+                sessionStorage.getItem('authToken'),
+            };
+        }
+
+
+        let publicationData = {
+            title: $('#title').text(),
+            description: $('#description').val(),
+            imgUrl: $('#imgUrl').val(),
+            articleUrl: $('#articleUrl').val(),
+            creatorID: userId,
+            creatorName: userName
+        };
+        $.ajax({
+            method: "POST",
+            url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/publications",
+            headers: getKinveyUserAuthHeaders(),
+            data: publicationData,
+            success: createPublicationSuccess,
+            error: handleAjaxError
+        });
+        function createPublicationSuccess() {
+            alert("Created");
+        }
+
+        function handleAjaxError(response) {
+             alert(response);
+            let errorMsg = JSON.stringify(response);
+            if (response.readyState === 0) {
+                errorMsg = "Cannot connect due to network error.";
+            }
+            if (response.responseJSON && response.responseJSON.description) {
+                errorMsg = response.responseJSON.description;
+            }
+
+            showError(errorMsg);
+        }
+    }
+
+</script>
+</body>
+</html>

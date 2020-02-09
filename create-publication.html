@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Create publication | BaiGanio GitHub.IO</title>
+            <link rel="stylesheet" href="css/login-register.css">
+            <script src="js/jquery-3.1.0.min.js"></script>
+        </head>
+<body>
+<a href="index.html" title="Back">&#8592;</a>
+
+<h1>Create publication</h1>
+
+<div id="wrapper" style="width: 86%; margin: 0 auto;">
+    <div id="formHolder" class="login-form-1" style="text-align: center; padding-bottom: 60px;">
+        <form id="createPublicationForm">
+            <div class="login-group">
+                <!--TITLE-->
+                <div class="form-group">
+                    <input type="text" maxlength="1000" id="title" name="title" placeholder="Title" required="true">
+                </div>
+                <!--DESCRIPTION-->
+                <div class="form-group">
+                    <input type="text" maxlength="10000" id="description" name="description" placeholder="Description" required="true">
+                </div>
+                <div class="form-group">
+                    <input type="text" maxlength="100" id="articleUrl" name="articleUrl" placeholder="Original article url"  required="true">
+                </div>
+                <div class="">
+                    <div>
+                        <img id="img"
+                             height="300px"
+                             width="400px"
+                             style="border: solid" />
+                    </div>
+                    <input id="inp" type='file' required="true">
+                </div>
+
+                <br>
+                <!--Button Back-->
+                <div class="form-group" style="float: left" >
+                    <input type="submit" id="backBtn" class="login-button" value="<<" />
+                </div>
+                <!--Button GO-->
+                <div class="form-group" style="float: right">
+                    <input type="submit" id="loginBtn" class="login-button" value="GO" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="footer" style="height: 30px">
+
+
+    </div>
+</div>
+
+
+
+
+<script>
+    let imgForSave = "";
+    function readFile() {
+        if (this.files && this.files[0]) {
+            var FR= new FileReader();
+            FR.onload = function(e) {
+                imgForSave = e.target.result;
+                document.getElementById("img").src = imgForSave;
+//                document.getElementById("b64").innerHTML = e.target.result;
+            };
+            FR.readAsDataURL( this.files[0] );
+        }
+    }
+
+    document.getElementById("inp").addEventListener("change", readFile, false);
+
+
+
+    $("#createPublicationForm").submit(createPublication);
+
+    const kinveyBaseUrl = "https://baas.kinvey.com/";
+    const kinveyAppKey = "kid_rynqxLyXl";
+
+    /* Disable default submit for all forms */
+    $("form").submit(function (e) {
+        e.preventDefault()
+    });
+
+    function createPublication(){
+
+        let userId = sessionStorage.getItem('userId');
+        let userName = sessionStorage.getItem('userName');
+
+        function getKinveyUserAuthHeaders() {
+            return {
+                'Authorization': "Kinvey " + sessionStorage.getItem('authToken'),
+                "Content-Type": "application/json"
+            };
+        }
+
+
+        let publicationData = {
+            title: $('#title').val(),
+            description: $('#description').val(),
+            img: imgForSave,
+            articleUrl: $('#articleUrl').val(),
+            creatorID: userId,
+            creatorName: userName
+        };
+        $.ajax({
+            method: "POST",
+            url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/publications",
+            headers: getKinveyUserAuthHeaders(),
+            data: JSON.stringify(publicationData),
+            success: createPublicationSuccess,
+            error: handleAjaxError
+        });
+        function createPublicationSuccess() {
+            alert("Created");
+        }
+
+        function handleAjaxError(response) {
+            alert(response);
+            let errorMsg = JSON.stringify(response);
+            if (response.readyState === 0) {
+                errorMsg = "Cannot connect due to network error.";
+            }
+            if (response.responseJSON && response.responseJSON.description) {
+                errorMsg = response.responseJSON.description;
+            }
+console.log(errorMsg)
+//            showError(errorMsg);
+        }
+    }
+
+</script>
+</body>
+</html>

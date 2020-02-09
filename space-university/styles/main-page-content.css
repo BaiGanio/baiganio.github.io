@@ -1,0 +1,78 @@
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+#main-page-content{
+    text-align: center;
+}
+#viewCreatePost{
+    background: url("../images/walle.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#loadingBox, #infoBox, #errorBox{
+    display: none;
+}
+#infoBox{
+    background-color: #4cff00;
+    font-family: Alsandra;
+    font-size: 3em;
+}
+#errorBox{
+    background-color: #ac2925;
+    font-family: Alsandra;
+    font-size: 2em;
+}
+#loadingBox{
+    background-color: #3c7be7;
+    font-family: Alsandra;
+    font-size: 2em;
+}
+#main-page-content > section{
+    display: none;
+}
+#linkListPosts{
+    text-decoration: none;
+    color: #c0a16b;
+}
+#linkListPosts:hover{
+    color: #2e6da4;
+    transition: background 0.7s ease;
+}
+
+.postImg{
+    width: 100%;
+    object-fit: cover;
+}
+.postUrl{
+    text-decoration: none;
+    color: goldenrod;
+    font-family: Alsandra;
+    margin: 20px;
+    font-size: 1.5em;
+}
+#side-nav-menu>p{
+    text-align: right;
+}
+#shrink-menu{
+    display: none;
+    font-family: Alsandra;
+    font-size: 2em;
+    text-decoration: none;
+}
+#postHolder{
+    border: 2px solid yellow;
+    /*padding: 20px;*/
+    margin: 20px;
+}
+
+.read-more{
+    color: red;
+}
+.read-more:hover{
+    color: greenyellow;
+    text-decoration: none;
+    cursor: pointer;
+}

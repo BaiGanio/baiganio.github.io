@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Alsandra';
+    src: url('../fonts/alsandra.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'QTar';
+    src: url('../fonts/qtarabianregular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TheMonkiesAteMySoul';
+    src: url('../fonts/TheMonkiesAteMySoul.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Guildof';
+    src: url('../fonts/guildof.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'BuxtonSketch';
+    src: url('../fonts/BuxtonSketch.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lobster';
+    src: url('../fonts/Lobster.otf') format('truetype');
+}
+
+.alsandra{
+    /*font-family: Alsandra;*/
+    font-family: Guildof;
+}
+.qtar{
+    font-family: QTar;
+}
+.theMonkiesAteMySoul{
+    font-family: TheMonkiesAteMySoul;
+}
+.guildof{
+    font-family: Guildof;
+}
+.buxtonSketch{
+    font-family: BuxtonSketch;
+}

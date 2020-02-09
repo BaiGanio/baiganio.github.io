@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test page</title>
+    <script src="js/jquery-3.1.0.min.js"></script>
+
+</head>
+<body>
+<input id="imgInput" type="file"  name="file" />
+<img id="imagePreview" src="" alt="Item Image" width="96" height="80"/>
+<input id="Button1" type="button" value="save image"  onclick="saveimage();"/>
+
+<p id="q"></p>
+<script>
+    $(document).ready(function () {
+        $("#imgInput").change(function () {
+
+            readURL(this);
+
+        });
+
+    });
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+
+                $('#imagePreview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+
+
+        }
+    }
+
+    function saveimage() {
+        var images = $('#imagePreview').attr('src');
+        var ImageSave = images.replace("data:image/jpeg;base64,", "");
+        var submitval = JSON.stringify({
+            UserId:"5f6c5fdc-2f64-4aff-b657-245b91c6c1ae",
+            DateSubmitted:"23-Feb-2017",
+            ReadValue:"12345678",
+            PhotoUrl:"",
+            PhotoRawData: ImageSave
+
+        });
+        var images = $('#imagePreview').attr('src');
+        var ImageSave = images.replace("data:image/jpeg;base64,", "");
+        $('#q').innerText = ImageSave;
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            datatype: "json",
+            data: submitval,
+            url: "http://localhost:8281/api/meterservice/AddElectricityRead",
+            success: function (data) {
+                //code for success
+            }
+        });
+    }
+</script>
+
+<!--http://localhost:8281/api/meterservice/AddElectricityRead-->
+
+
+
+
+
+
+<!--<input type="button" id="btn" value="Get all publications">-->
+<!--<input type="button" id="btnClear" value="Clear">-->
+<!--<ul id="ulEmployees"></ul>-->
+
+
+
+<script>
+    $('document').ready(function () {
+
+        var requestUrl = "http://ip-api.com/json";
+
+        $.ajax({
+            url: requestUrl,
+            type: 'GET',
+            success: function(json)
+            {
+                console.log("My city is: " + json.city);
+                console.log("My country is: " + json.country);
+            },
+            error: function(err)
+            {
+                console.log("Request failed, error= " + err);
+            }
+        });
+
+
+
+        //alert("Тука съм, бай Любене.");
+
+        var ulEmployees = $('#ulEmployees');
+
+        $('#btn').click(function() {
+            $.ajax({
+                crossOrigin: true,
+                method: "GET",
+                //url: "http://localhost:20430/api/publications",
+                url: "http://techcopr-webapi.apphb.com/api/publications",
+                dataType: "json",
+                success: function (data) {
+                    ulEmployees.empty();
+                    $.each(data,
+                        function (index, value) {
+                            ulEmployees.append('<li>' + value.ID + '</li>');
+                            ulEmployees.append('<li>' + value.Title + '</li>');
+                        });
+                },
+                error: function (data, status) {
+                    let errorMsg = 'Error: ' + JSON.stringify(data);
+                    alert(errorMsg);
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

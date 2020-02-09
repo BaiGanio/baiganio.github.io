@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Space University</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/default-fonts.css">
+
+    <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="scripts/main-page-content.js"></script>
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="styles/side-navigation.css">
+    <link rel="stylesheet" href="styles/aside-navigation-menu.css">
+    <link rel="stylesheet" href="styles/main-page-content.css">
+    <link rel="stylesheet" href="styles/login-register.css">
+    <link rel="stylesheet" href="styles/footer-holder.css">
+    <link rel="stylesheet" href="styles/viewHome.css">
+    <link rel="stylesheet" href="styles/view-create-posts.css">
+    <link rel="stylesheet" href="styles/modal-images.css">
+    <link rel="stylesheet" href="styles/json-via-ajax.css">
+
+
+</head>
+<body>
+
+    <!--============================== ANIMATED SIDE NAVIGATION =================================-->
+    <div id="mySidenav" class="sidenav guildof">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">ABOUT</a>
+        <a href="#">SERVICES</a>
+        <a href="#">CLIENTS</a>
+        <a href="#">Contact</a>
+        <a href="#" id="linkJSONviaAJAX" class="single-menu-element-link">
+            Using jQuery to Retrieve JSON via AJAX
+        </a>
+        <a href="../index.html">Back to baiganio.github.io</a>
+        <div style="width: 80%; margin: 0 auto;">
+            <img src="images/hidden-portals.jpg" id="portalsHolder" alt="NASA Discovers Hidden Portals In Earth’s Magnetic Field.">
+        </div>
+    </div>
+    <!--============================== END ANIMATED SIDE NAVIGATION =================================-->
+
+    <!--============================== PAGE CONTENT =================================-->
+    <div id="main">
+        <div class="row">
+
+            <!-- SIDE MENU -->
+            <div class="col-md-3" id="side-nav-menu">
+                <p>
+                    <a id="shrink-menu" href="#">Expand Menu</a>
+                </p>
+                <aside class="sidebar">
+                    <div class="logo">
+                        <a href="javascript:void(0)" onclick="closeNav()">
+                            <img src="images/satellite.png" alt="logo" id="logo" >
+                        </a>
+                        <p class="theMonkiesAteMySoul" style="font-size:1.5em;"><b>SPACE UNIVERSITY</b></p>
+                        <a href="#" onclick="openNav()">
+                            <img src="images/menu-icon.png" class="sidebar-menu" alt="" style="width:25%" />
+                        </a>
+                    </div>
+                    <hr>
+                    <br>
+                    <nav class="page-navigation guildof">
+                        <a href="#" id="linkHome" class="single-menu-element-link">
+                            Home
+                        </a>
+                        <a href="#" id="linkLogin" class="single-menu-element-link">
+                            Login
+                        </a>
+                        <a href="#" id="linkRegister" class="single-menu-element-link">
+                            Register
+                        </a>
+                        <a href="#" id="linkCreatePost" class="single-menu-element-link">
+                            Create post
+                        </a>
+                        <a href="#" id="linkLogout" class="single-menu-element-link">
+                            Logout
+                            <br>
+                            <hr>
+                        </a>
+                        <div id="recent-posts" class="alsandra">
+                            <a href="#" id="linkListPosts" class="single-menu-element-link">
+                                <h1>Recent posts</h1>
+                            </a>
+                            <hr>
+                            <div id="post-title"></div>
+                        </div>
+                    </nav>
+                </aside>
+            </div>
+            <!-- END SIDE MENU -->
+
+            <!-- MAIN PAGE CONTENT -->
+            <div class="col-md-9" id="main-page-content">
+
+                <!-- MESSAGES HELPERS -->
+                <section id="loadingBox">Loading.....</section>
+                <section id="infoBox" onclick="$(this).hide()">Info.....</section>
+                <section id="errorBox" onclick="$(this).hide()">Error.....</section>
+                <!-- END MESSAGES HELPERS -->
+
+                <!-- START HOME PAGE CONTENT -->
+                <section id="viewHome">
+                    <div id="sectionWrapper">
+                        <h1 class="alsandra">Respect the diversity of the species!</h1>
+                        <img id="myImg" src="images/lil.jpg"  alt="A picture from Sony World Photography Awards 2016." />
+                        <h1 class="alsandra">We are all unique!</h1>
+                        <br>
+                        <h1 class="alsandra">Used technologies:</h1>
+                        <h3 class="alsandra">&#x2713;
+                            <b>JetBrains</b>
+                            <a href="https://www.jetbrains.com/webstorm/" target="_blank">
+                                <b>Webstorm</b>
+                            </a>
+                            <b>IDE</b>
+                        </h3>
+                        <h3 class="alsandra">&#x2713;
+                            <a href="https://www.kinvey.com/" target="_blank">
+                                <b>Kinvey</b>
+                            </a>
+                            <b> as a storage for the data flow</b>
+                        </h3>
+                        <h3 class="alsandra">&#x2713;
+                            <b>JavaScript,
+                                <a href="https://jquery.com/" target="_blank">
+                                    JQuery
+                                </a>
+                                &
+                                <a href="http://getbootstrap.com/" target="_blank">
+                                    Bootstrap
+                                </a>
+                            </b>
+                        </h3>
+                        <h3 class="alsandra">&#x2713; <b>Ajax</b></h3>
+                        <br>
+                        <h3 class="alsandra">
+                            <b>Source Code on Github here</b>
+                            <a href="https://github.com/BaiGanio/baiganio.github.io/tree/master/Space%20University"
+                               class='read-more'
+                               target="_blank"
+                               data-toggle='tooltip'
+                               title='source code :)'>
+                                <b>[...]</b>
+                            </a>
+                        </h3>
+                    </div>
+                </section>
+                <!-- END HOME PAGE CONTENT -->
+
+                <!-- START LOGIN CONTENT -->
+                <section id="viewLogin">
+                    <br>
+                    <h1 class="theMonkiesAteMySoul" style="color: #c0a16b"><b>Login</b></h1>
+                    <hr />
+                    <h3 class="qtar" style="font-size: 2.5em">
+                        Just type:
+                        <br>
+                        <span style="color: red">jo</span> for user
+                        <br>
+                        &
+                        <br>
+                        <span style="color: red">1</span> for pass
+                        <br>
+                        :)
+                    </h3>
+                    <br>
+                    <!-- START FORM -->
+                    <div class="login-form-1">
+                        <!-- START: register-form -->
+                        <div id="login-form" class="text-left">
+                            <div class="main-login-form">
+                                <form  id="loginForm">
+                                    <div class="login-group">
+                                        <!--Username-->
+                                        <div class="form-group">
+                                            <input type="text" id="loginUsername" placeholder="Username" required="true">
+                                        </div>
+                                        <!--Password-->
+                                        <div class="form-group">
+                                            <input type="password" id="loginPassword" placeholder="Password" required="true">
+                                        </div>
+                                        <!--Button GO-->
+                                        <div class="form-group">
+                                            <input type="submit" class="login-button" value="GO" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- END: register-form -->
+                    </div>
+                    <!-- END FORM -->
+
+                </section>
+                <!-- END LOGIN CONTENT -->
+
+                <!-- START REGISTRATION CONTENT -->
+                <section id="viewRegister" style="text-align: center;">
+                    <h1 class="theMonkiesAteMySoul" style="color: #c0a16b"><b>Register</b></h1>
+                    <hr />
+                    <h3 class="qtar" style="font-size: 2.5em">
+                        Just type something stupid:
+                        <br>
+                        <span style="color: red">john</span> for user
+                        <br>
+                        &
+                        <br>
+                        <span style="color: red">rambo</span> for pass
+                        <br>
+                        If error occur - the user may be preserved.
+                        <br>
+                        There is a free user in the login section.
+                        <br>
+                        :)
+                    </h3>
+                    <!-- START FORM -->
+                    <div class="login-form-1">
+                        <!-- START: register-form -->
+                        <div id="register-form" class="text-left">
+                            <div class="main-login-form">
+                                <form action="POST" id="registerForm">
+                                    <div class="login-group">
+                                        <!--Username-->
+                                        <div class="form-group">
+                                            <input type="text" id="registerUsername" placeholder="Username"  required="true">
+                                        </div>
+                                        <!--Email-->
+                                        <!--<div class="form-group">-->
+                                            <!--<input type="email" id="registerEmail" placeholder="Email">-->
+                                        <!--</div>-->
+                                        <!--Password-->
+                                        <div class="form-group">
+                                            <input type="password" id="registerPassword" placeholder="Password"  required="true">
+                                        </div>
+                                        <!--Confirm Password-->
+                                        <!--<div class="form-group">-->
+                                            <!--<input type="password" id="registerConfirmPassword" placeholder="Confirm Password">-->
+                                        <!--</div>-->
+
+                                        <!--Button GO-->
+                                        <div class="form-group">
+                                            <input type="submit" class="login-button" value="GO" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- END: register-form -->
+                    </div>
+                    <!-- END FORM -->
+                    <br>
+                    <br>
+                    <h3 class="qtar" style="color: red;">
+                        Keep in mind that <br> there is no need for serious data.
+                    </h3>
+                </section>
+                <!-- END REGISTRATION CONTENT -->
+
+                <!-- START LIST POSTS CONTENT -->
+                <section id="viewListPosts">
+                    <div class="row" id="postPreview">
+                        <div id="previevwHolder"></div>
+                    </div>
+                </section>
+                <!-- END LIST POSTS CONTENT -->
+
+                <!-- CREATE POST CONTENT -->
+                <section id="viewCreatePost">
+                    <!-- START FORM -->
+                    <div class="login-form-1">
+                        <h1 class="alsandra" style="color: snow">CREATE POST</h1>
+                        <hr />
+                        <br>
+                        <!-- START: register-form -->
+                        <div id="create-post-form" class="text-left">
+                            <div class="main-login-form">
+                                <form action="POST" id="createPostForm">
+                                    <div class="login-group">
+                                        <!--TITLE-->
+                                        <div class="form-group">
+                                            <input type="text" maxlength="100" id="title" placeholder="Title" required="true">
+                                        </div>
+                                        <!--DESCRIPTION-->
+                                        <div class="form-group">
+                                            <input type="text" maxlength="1000" id="description" placeholder="Description" required="true">
+                                        </div>
+                                        <!--IMG URL-->
+                                        <div class="form-group">
+                                            <input type="text"  maxlength="100" id="imgUrl" placeholder="Image url" required="true">
+                                        </div>
+                                        <!--Confirm Password-->
+                                        <div class="form-group">
+                                            <input type="text" maxlength="100" id="articleUrl" placeholder="Article url"  required="true">
+                                        </div>
+
+                                        <!--Button GO-->
+                                        <div class="form-group">
+                                            <input type="submit" class="login-button" value="GO" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <!--<span class="qtar" style="font-size: 2em; color: snow">Or create post from url:</span>-->
+                        <br>
+                        <br>
+                        <br>
+                        <!--<div class="main-login-form">-->
+                            <!--<form action="POST" id="createPostFormFromUrl">-->
+                                <!--<div class="login-group">-->
+                                    <!--&lt;!&ndash;TITLE&ndash;&gt;-->
+                                    <!--<div class="form-group">-->
+                                        <!--<input type="text" id="postUrl" placeholder="http://www.mysite.com/article" required="true">-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;Button GO&ndash;&gt;-->
+                                    <!--<div class="form-group">-->
+                                        <!--<input type="submit" id="createFromUrlPostButton" class="login-button" value="GO" />-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</form>-->
+                        <!--</div>-->
+                        <br>
+                        <br>
+                        <br>
+                        <!-- END: register-form -->
+                    </div>
+                    <!-- END FORM -->
+                </section>
+                <!-- END CREATE POST CONTENT -->
+
+                <!-- START JSON VIA AJAX CONTENT -->
+                <section id="json-via-ajax">
+                    <!--<p>-->
+                        <!--<a href="https://www.sanwebe.com/2013/01/40-css-buttons-from-codepen">custom buttons</a>-->
+                    <!--</p>-->
+                    <!--<button id="listUsers" class='cool_btn1 green'>-->
+                        <!--<h1 class='top'>126</h1>-->
+                        <!--<h2> <i>Total users</i></h2>-->
+                    <!--</button>-->
+                    <button id="listPosts" class='cool_btn1 teal'>
+                        <h1 class='top'>Log in first</h1>
+                        <h2> <i>Created posts</i></h2>
+                    </button>
+                    <div class="row" id="ajaxViaJsonPreview">
+                        <div id="usersHolder"></div>
+                        <div id="postsHolderRaw"></div>
+                    </div>
+
+                </section>
+                <!-- END JSON VIA AJAX CONTENT -->
+
+            </div>
+            <!-- MAIN PAGE CONTENT -->
+        </div>
+    </div>
+    <!--============================== END PAGE CONTENT =================================-->
+    <hr>
+
+    <!--============================== FOOTER =================================-->
+    <footer>
+        <div id="footer-holder"  style="font-family: Alsandra;>
+            <span">(C) Space University - DateTime.Now. All rights reserved.</span>
+            <p>Developed by Lyuben Kikov - part-time assistant at department Software Technologies.</p>
+
+            <div>
+                <a href="https://www.facebook.com/profile.php?id=100000862476257" target="_blank">
+                    <img src="../images/social-icons/facebook.jpg" alt="Facebook" title="Facebook">
+                </a>
+                <a href="https://github.com/BaiGanio" target="_blank">
+                    <img src="../images/social-icons/daftpunktocat-small.png" alt="GitHub" title="Github">
+                </a>
+                <a href="#">
+                    <img src="../images/social-icons/google.jpg" alt="Google" title="Google">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!--============================== END FOOTER =================================-->
+    <hr>
+
+    <!-- The Modal For Images -->
+    <div id="myModal" class="modal">
+
+        <!-- The Close Button -->
+        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="img01">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+
+    </div>
+    <!-- End The Modal For Images -->
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!--============================== CUSTOM SCRIPTS =================================-->
+    <script src="scripts/side-navigation.js"></script>
+    <script src="scripts/modal-images.js"></script>
+
+
+
+</body>
+</html>
