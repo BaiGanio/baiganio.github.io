@@ -17,22 +17,22 @@ body{
 
 
 #status {
-    /*width: 100%;*/
+    width: 100%;
     height: 300px;
-    /*position: absolute;*/
-    /*left: 50%;*/
+    position: absolute;
+    left: 50%;
     /* centers the loading animation horizontally one the screen */
-    /*top: 50%;*/
+    top: 50%;
     /* centers the loading animation vertically one the screen */
 
-    /*-webkit-background-size: cover;*/
-    /*-moz-background-size: cover;*/
-    /*-o-background-size: cover;*/
-    /*background-size: cover;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     /* path to your loading animation */
-    /*background-repeat: cover;*/
-    /*background-position: center;*/
-        /*margin: -100px 0 0 -100px;*/
+    background-repeat: cover;
+    background-position: center;
+    margin: -100px 0 0 -100px;
     /* is width and height divided by two */
 }
 

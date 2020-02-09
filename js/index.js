@@ -8,8 +8,8 @@ $(window).on('load', function() { // makes sure the whole site is loaded
         $('#status').fadeOut("slow");
     }, 2500); // will first fade out the loading animation
     $('#preloader').fadeOut(); // will fade out the white DIV that covers the website.
-    // $('#status').fadeOut("slow");
-    // $('body').css({'overflow':'visible'});
+    $('#status').fadeOut("slow");
+    $('body').css({'overflow':'visible'});
     setTimeout(showBody,500);
     function showBody(){
         $('body').css({'overflow':'visible'});
