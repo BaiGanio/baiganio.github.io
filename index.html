@@ -93,9 +93,9 @@
 <body id="home" class="homepage" onload="startAppLogic()">
 
     <!--Preloader-->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div id="status"></div>
-    </div>
+    </div> -->
 
     <!--============================== Header =================================-->
     <header id="header">
@@ -117,8 +117,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <!-- <li> <a class="whoIsBehind flip4o" href="#">Who's Bai Ganio? <b>&#128527;</b></a></li> -->
+                      
                         <li class="scroll"><a href="#home">Back to top</a></li>
-                        <!-- <li class="scroll"><a class="whoIsBehind" href='#'>Who's Bai Ganio?</a></li> -->
                         <!-- <li class="scroll"><a class="whoIsBehindYe" href="#features">Features</a></li>
                         <li class="scroll"><a class="whoIsBehindYe" href="#services">Services</a></li> -->
                         <li class="scroll"><a class="whoIsBehindYe" href="#portfolio">Portfolio</a></li>
@@ -129,7 +129,9 @@
                         <li class="scroll"><a href="#pricing">Pricing</a></li> -->
                         <li class="scroll"><a href="#blog">Blogs</a></li>
                         <li class="scroll"><a class="whoIsBehindYe" href="#get-in-touch">Contacts</a></li>
-                        <li class=""><a class="whoIsBehindYe" href="space-university/index.html">Space University</a></li>
+                        <!-- <li class=""><a class="whoIsBehindYe" href="space-university/index.html">Space University</a></li> -->
+                        
+                        <li class="scroll"><a class="whoIsBehind" href='#get-in-touch'>Who's Bai Ganio?</a></li>
                         <!--<li class=""><a class="whoIsBehindYe" href="admin/production/index.html">Admin</a></li>-->
 
                         <!-- <li id="linkLogin"><a href="login.html" id="loginLnk"></a></li>
@@ -145,15 +147,6 @@
                                 <li> <a style="font-size: 1.4em;" href="login.html">Login</a> </li>
 
                                 <li> <a style="font-size: 1.4em;" href="register.html">Register</a> </li>
-
-                                <li>
-                                    <div>
-                                        <h4>
-                                            If you are not Administrator of the page,
-                                            please don't go further. There is no need.
-                                        </h4>
-                                    </div>
-                                </li>
                             </ul>
                         </span> 
                         <span class="cls"></span>
@@ -462,7 +455,7 @@
         <div class="container">
 
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">About Us</h2>
+                <h2 class="section-title text-center wow fadeInDown" style="font-family: ss_adec; font-size: 7em">Few Words</h2>
                 <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
             </div>
 
@@ -909,7 +902,7 @@
     <section id="blog">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown" style="font-family: ss_adec; font-size: 7em"><span>Latest Blogs</span></h2>
+                <h2 class="section-title text-center wow fadeInDown" style="font-family: ss_adec; font-size: 7em"><span>Latest Articles</span></h2>
                 <p class="text-center wow fadeInDown ss-adec">
                     Make yourself comfortable to tell us a story, scientific discovery or just something you like
                 </p>
@@ -996,19 +989,21 @@
                         </div>
                     </div>
                 </div>
+                <button style="width: 100%; text-align: center;" type="submit" class="btn btn-primary ss-adec">See All Articles...</button>
             </div>
 
         </div>
     </section>
 
     <section id="get-in-touch">
-        <div class="container ss-adec">
+        <div class="container">
             <div class="section-header" style="text-align: center;">
-                <h2 class="section-title text-center wow fadeInDown ss-adec" style="color: black;">Get <span>in</span> Touch</h2>
-                <p class="text-center wow fadeInDown">Feel free to write us an message</p>
-                <p>To call us trough phone numbers provided below</p>
+                <h2 class="section-title text-center wow fadeInDown" style="font-family: ss_adec; font-size: 7em;"><span>Get in touch</span></h2>
+                <!-- <h2 class="section-title text-center wow fadeInDown ss-adec" style="color: black;">Get <span>in</span> Touch</h2> -->
+                <p class="text-center wow fadeInDown" style="font-family: ss_adec;">Feel free to send message</p>
+                <!-- <p>To call us trough phone numbers provided below</p>
                 <p> & </p>
-                <p>even send us a real letter to the address from the contact info</p>
+                <p>even send us a real letter to the address from the contact info</p> -->
             </div>
         </div>
     </section><!--/#get-in-touch-->
@@ -1046,30 +1041,32 @@
                 <div class="row">
                     <div class="col-sm-4 col-sm-offset-8">
                         <div class="contact-form ss-adec">
-                            <h3><span>Contact Info</span></h3>
+                            <h3><span>Contact Form</span></h3>
 
                             <address>
-                                <strong>Bai Ganio</strong><br>
-                                Plodorodie 10<br>
+                                <strong>From:</strong><br>
+                                <!-- Plodorodie 10<br>
                                 Rakovski 4150, Bulgaria<br>
-                                <abbr title="Phone">Phone:</abbr> (+359) 895-700-407
+                                <abbr title="Phone">Phone:</abbr> (+359) 895-700-407 -->
                             </address>
 
                             <form id="main-contact-form" name="contact-form" method="post" action="#" style="font-family: 'Cambria Math'">
                                 <div class="form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                    <input type="text" name="name" class="form-control" placeholder="Name:" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                    <input type="email" name="email" class="form-control" placeholder="Email:" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                                    <input type="text" name="subject" class="form-control" placeholder="Topic:" required>
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="message" class="form-control" rows="8" placeholder="Message" required></textarea>
+                                    <textarea name="message" class="form-control" rows="6" placeholder="Message:" required></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary ss-adec">Send Message</button>
+                                <button type="submit" class="btn btn-primary ss-adec disabled">Send Message</button>
                             </form>
+                            <br>
+                            <p>* Only logged users can send messages!</p>
                         </div>
                     </div>
                 </div>
@@ -1100,7 +1097,7 @@
                 <input class="BernardoModaContrast handyClock" type="text" id="clock"/>
             </span>
             <h3 class="BernardoModaContrast">
-                Bai Ganio on GitHub.IO
+                Bai Ganio on GitHub Pages
             </h3>
             <br/>
             <span class="BernardoModaContrast">All Rights Reserved <b>&#127757;</b></span>
