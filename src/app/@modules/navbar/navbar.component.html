@@ -1,0 +1,67 @@
+<mat-drawer-container>
+  <mat-drawer #sidenav id="sideNavigation" mode="over">
+    <mat-toolbar color="primary">
+      <span class="brandLogo">
+        <a routerlink="/home">
+          <img alt="(BG)" class="d-inline-block align-middle" height="50" src="./assets/images/Ganio.jpg">
+          BaiGanio
+        </a>
+      </span>
+      <span>
+        <m-link (click)="sidenav.toggle()">
+          <i class="fas fa-times"></i>
+        </m-link>
+      </span>
+    </mat-toolbar>
+    <mat-list (click)="sidenav.close()">
+      <a mat-list-item routerLink="/home"> Home </a>
+      <div *ngIf='isUserLogged()'>
+        <a mat-list-item routerLink="/dashboard"> Dashboard </a>
+        <a mat-list-item routerLink="/profile"> Profile </a>
+      </div>
+      <a mat-list-item routerLink="/subscriptions"> Subscriptions </a>
+      <a mat-list-item routerLink="/courses"> Courses </a>
+      <!-- <a mat-list-item routerLink="/teachers"> Teachers </a>
+      <a mat-list-item routerLink="/posts"> Blogs </a> -->
+    </mat-list>
+  </mat-drawer>
+
+  <div id="main">
+    <mat-toolbar color="primary">
+      <span id="openNav">
+        <a (click)="sidenav.toggle()">
+          <i class="fas fa-bars"></i>
+        </a>
+      </span>
+      <span class="actions">
+        <div *ngIf='isUserLogged(); else signBox'>
+          <!-- <a class="mr-1 align-middle">
+            <span class="badge mr-1">0 </span><i class="fa fa-bell"></i>
+          </a> -->
+          <button mat-button [matMenuTriggerFor]="userMenu">
+            Welcome, {{ storedUser?.username !== null ? storedUser?.username : storedUser?.email }}!
+          </button>
+          <mat-menu #userMenu="matMenu">
+            <button mat-menu-item (click)='logOut()'>
+              <b>Logout</b>
+            </button>
+          </mat-menu>
+        </div>
+        <ng-template #signBox>
+          <a class="mr-3" routerLink='/login'>
+            <i class="fas fa-sign-in-alt"></i> LogIn
+          </a>
+          <a routerLink='/register'>
+            <i class="fa fa-user-plus"></i> Register
+          </a>
+        </ng-template>
+      </span>
+    </mat-toolbar>
+    <br>
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+    <br>
+    <app-footer></app-footer>
+  </div>
+</mat-drawer-container>

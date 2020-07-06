@@ -1,0 +1,62 @@
+.btn-outline-info {
+  font-size: 1em;
+}
+.GotHeroin {
+  font-size: 8em;
+}
+#viewLogin {
+  width: 50%;
+  margin: 0 auto;
+
+  mat-form-field {
+    width: 100%;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 1.2em;
+  }
+
+  .login-button {
+    position: relative;
+    float: right;
+    top: -165px;
+    margin-right: -25px;
+    background: #f7f3f3;
+    color: black;
+    font-size: 2.4em;
+    padding: 10px 0;
+    width: 130px;
+    height: 130px;
+    border: 5px solid #efefef;
+    border-radius: 50%;
+    transition: all ease-in-out 500ms;
+
+    &:enabled {
+      color: whitesmoke;
+      background: rgb(52, 199, 243);
+    }
+
+    &:enabled:hover {
+      color: black;
+      cursor: pointer;
+      background: rgb(20, 238, 20);
+      transform: rotate(720deg);
+    }
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  .GotHeroin {
+    font-size: 5em;
+    margin-top: 35px;
+  }
+
+  #viewLogin {
+    width: 80%;
+    
+    .login-button{
+      top: -155px;
+      font-size: 1.4em;
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

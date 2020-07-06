@@ -1,0 +1,37 @@
+.img-fluid {
+    height: 10vw;
+    object-fit: contain;
+    border: 1px solid black;
+}
+
+.dim{
+    button{
+        width: 10%;
+    }
+}
+
+.card{
+  button{
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+    .dim{
+      button{
+        width: 30%;
+      }
+    }
+
+    .card{
+      .img-fluid{
+        height: 35vw;
+        object-fit: contain;
+        border: 1px solid black;
+      }
+
+      button{
+        font-size: 1.2em;
+      }
+    }
+  }
