@@ -1,0 +1,68 @@
+mat-drawer-container {
+  #sideNavigation {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    width: 250px;
+    .fa-times:hover{
+      cursor: pointer;
+      color: rgb(255, 0, 0);
+    }
+    .fa-bars:hover{
+      cursor: pointer;
+      color: powderblue;
+    }
+    mat-toolbar {
+      .brandLogo {
+        flex: auto;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        font-size: 1.2em !important;
+      }
+    }
+
+    mat-list {
+      a {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        font-size: 1.2em !important;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      a:hover {
+        background-color: #3f51b5;
+        color: white;
+      }
+    }
+  }
+
+  #main {
+    mat-toolbar {
+      #openNav {
+        flex: auto;
+      }
+      .actions {
+        button{
+          font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+          font-size: 1em;
+        }
+        a {          
+          color: white;
+          cursor: pointer;
+          text-decoration: none;
+        }
+
+        a:hover {
+          color: #98c9d1;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  mat-drawer-container {
+    #navigation {
+      width: 350px;
+    }
+  }
+}
+
+

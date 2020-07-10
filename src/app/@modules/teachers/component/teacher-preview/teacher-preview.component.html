@@ -1,0 +1,39 @@
+<div class="col-md-12 col-center text-center">
+    <div class="card">
+        <br/>
+        <h2> {{teacher.Name}} </h2>
+        <div class="card-body row">
+            <div class="card col-md-3">
+                <div class="card-body">
+                    <img src='{{ teacher.Image }}' class="img-thumbnail img-fluid" alt="Sample image">
+                    <div style="text-align: center;">
+                        <br/>
+                        <p id="statusHolder">Status: <span>{{teacher.Status}}</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <h4 style="text-align: center;">ID : {{teacher.Id}} </h4>
+                    <hr/>
+                    <div style="text-align: left">
+                        <h5><b>Email :</b> {{teacher.Email}} </h5>
+                        <h5><b>UserId :</b> {{teacher.UserId}} </h5>
+                        <h5><b>AccrNumber :</b> {{teacher.AccrNumber}} </h5>
+                        <h5><b>Created on :</b> {{teacher.CreatedOn | date: 'dd-MMM-yy'}} </h5>
+                    </div> 
+                </div>
+            </div>
+            <div class="card col-md-3">
+                <div class="card-body">
+                    <h4>Lead Courses</h4> 
+                    <hr/>
+                    <div class="course">
+                        <p>Course Name</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p><b>Last updated on :</b> {{teacher.ModifiedOn | date: 'dd-MMM-yy' }}</p>
+    </div>
+</div>

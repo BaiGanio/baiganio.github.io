@@ -1,0 +1,30 @@
+#title{
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: bold;
+    // padding: 2%;
+}
+#Second-Title{
+    font-size: 1.4em;
+    text-align: center;
+    // margin: 2%;
+}
+.Third-Title{
+    font-size: 1.4em;
+    text-align: left;
+    margin: 2%;
+}
+.text{
+    font-size: 1.1em;
+    text-align: justify;
+    margin: 2%;
+}
+
+@media only screen and (max-width: 736px) {
+   #title {
+        font-size: 35px;
+        text-align: center;
+        font-weight: bold;
+        padding: 2%;
+    }
+}
