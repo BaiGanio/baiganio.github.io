@@ -1,0 +1,116 @@
+<h1 class="text-center">Dashboard</h1>
+<div class="row text-center">
+  <div class="col-sm-3 mt-3">
+    <div class="card card-purple">
+      <div class="card-body">
+        <h5>{{ dashboardData?.user?.email }}</h5>
+        <hr style="border-color: black; width: 70%">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="{{image}}"  (click)='goToMyProfile()' alt="" />
+          </div>
+          <div class="col-md-8 text-center">
+            <span class="text-center">
+              Created On: 
+              <br>
+              {{dashboardData?.user.createdOn | date :'dd-MMMM-yy' }}
+              <br>  
+              {{dashboardData?.user.createdOn | date :'hh:mm:ss a' }}
+            </span>
+          </div>
+          <!-- <div class="col-md-4 text-center">
+            <span class="text-center">
+              Modified: 
+              <br>
+              {{dashboardData?.user.modified_on | date :'dd-MMM-yy' }}
+              <br>  
+              {{dashboardData?.user.modified_on | date :'hh:mm:ss a' }}
+            </span>
+          </div> -->
+        </div>
+        <hr style="border-color: black; width: 70%">
+        <div class="col-md-12 text-center">
+            <span style="font-size: 0.9em;">
+              Modified On: 
+              <br> {{dashboardData?.user.modifiedOn | date :'dd-MMM-yy' }} {{dashboardData?.user.modifiedOn | date :'hh:mm:ss a' }}
+            </span>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf='totalSubscriptions' class="col-sm-2 mt-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Subscriptions</h5>
+        <hr style="border-color: black; width: 70%">
+        <p class="card-text">Subscribed To:</p>
+        <h1>{{dashboardData?.user.subscriptions?.length || 0}}</h1>
+        <hr>
+        <button mat-raised-button
+          color="primary" (click)='goToMySubscriptions()'><i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf='totalEnrolledCourses > 0' class="col-sm-2 mt-3">
+    <div class="card card-info">
+      <div class="card-body">
+        <h5 class="card-title">Enrolled Courses</h5>
+        <hr style="border-color: black; width: 70%">
+        <p class="card-text">Enrolled To:</p>
+        <h1>{{totalEnrolledCourses}}</h1>
+        <hr>
+        <button mat-raised-button
+          color="primary" (click)='goToMyCourses()'><i class="fas fa-search"></i>
+        </button>
+        <br>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-2 mt-3">
+    <div class="card card-additional">
+      <div class="card-body">
+        <h5 class="card-title">Blogs</h5>
+        <hr style="border-color: black; width: 70%">
+        <p class="card-text">Total Created:</p>
+        <h1>{{dashboardData?.user.courses?.length || 0}}</h1>
+        <hr>
+        <button mat-raised-button
+          color="primary" routerLink='/teachers/craftsman-menu/courses'><i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-2 mt-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Received Emails</h5>
+        <hr style="border-color: black; width: 70%">
+        <p class="card-text">Total Of:</p>
+        <h1>{{totalReceivedEmails || 0}}</h1>
+        <hr>
+        <button mat-raised-button
+          color="primary" (click)='goToMyReceivedNotifications()'><i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-2 mt-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Suggestions & Reported Issues</h5>
+        <hr style="border-color: black; width: 70%">
+        <p class="card-text">Total Of:</p>
+        <h1>{{totalIssues || 0}}</h1>
+       <hr>
+        <button mat-raised-button class="mr-2"
+          color="primary" (click)='goToMyReportedIssues()'><i class="fas fa-search"></i>
+        </button>
+        <button mat-raised-button color="warn" class="mr-2" routerLink="/account/report-issue">
+            <b>Report</b>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>

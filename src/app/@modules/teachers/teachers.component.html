@@ -1,0 +1,46 @@
+<div class="text-center">
+    <h3>Teachers</h3>
+    <p>Total Of: {{totalTeachers}}</p>
+    <hr>
+</div>
+
+<div class="row">
+      <div class="dim" *ngIf='successfulUpdate'>
+    <div class="msg">
+      <h1>{{successfulUpdateMessage}}</h1>
+      <br><br>
+      <button
+        class="btn btn-outline-info"
+        (click) = dismiss()>
+        Dismiss
+      </button>
+    </div>
+
+  </div>
+    <div *ngFor='let teacher of teachers' class="col-md-3 text-center">
+        <div class="card">
+            <div class="card-body">
+                <img 
+                    src='{{teacher.Image}}' 
+                    class="img-thumbnail img-fluid" 
+                    alt="Sample image">
+                    <br><br>
+                <h5>{{ teacher.Name }}</h5>                
+                <!-- <p>Status: {{ teacher.Status }}</p> -->
+                <hr>  
+                <div style="font-size: 1.2em;">
+                    <span>&#11088;</span> {{teacher.Stars}}
+                </div>
+                <hr>
+                <button mat-raised-button color='primary' class="text-center ml-2"
+                    (click)="showTeacher(teacher.Id)" ><i class="fas fa-search"></i>
+                </button>
+                <button *ngIf='isLogged && !notVotedYet(teacher.Id)' mat-raised-button class="text-center ml-2"
+                    (click)="voteForTeacher(teacher.Id)"> Vote
+                </button>
+            </div>    
+        </div>  
+    </div>
+</div>
+
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>

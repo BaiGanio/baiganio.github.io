@@ -1,0 +1,62 @@
+h6 {
+    color: gray;
+}
+.card{
+    margin-bottom: 15px;
+    background: snow;
+}
+.btn{
+    // font-size: 1.2em;
+    // width: 30%;
+    // padding: 5px;
+    margin: 5px;
+}
+.img-fluid {
+    border: 1px solid black;
+    height: 14vw;
+    object-fit: contain;
+}
+.dim
+{
+    height:100%;
+    width:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:100 !important;
+    background-color:black; 
+    filter: alpha(opacity=75); /* internet explorer */
+    -khtml-opacity: 0.75;      /* khtml, old safari */
+    -moz-opacity: 0.75;       /* mozilla, netscape */
+    opacity: 0.75;           /* fx, safari, opera */
+    animation-delay: 2s;
+    .msg {
+        display:inline-block;
+        position: absolute;
+        font-size: 2.6em;
+        text-align: center;
+        color: whitesmoke;
+        transition: 0.3s all;
+        animation: PopUp 1s;
+        text-shadow: 0 0 100px white;
+        height: 100px;
+        top: 0; 
+        bottom: 0; 
+        left: 0; 
+        right: 0;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 736px) {
+    h1{
+        font-size: 4em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .img-fluid {
+        width: 100%;
+        height: 44vw;
+    }
+}
