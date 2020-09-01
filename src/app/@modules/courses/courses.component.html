@@ -17,7 +17,7 @@
     
 </div>
 <ng-template #infoBox>
-    <h1 class="GotHeroin" style="text-align:center">Active and featured Courses</h1>     
+    <h1  style="text-align:center">Active and featured Courses</h1>     
     <div class="row">
         <div *ngFor='let c of courses' class="col-md-3 text-center">
             <div class="card">
@@ -25,15 +25,13 @@
                     <img src='{{ c.Image }}' class="img-thumbnail img-fluid" alt="Sample image">    
                     <br><br>                   
                     <h4>{{ c.Name }}</h4>
-                    <p> Enrolled students so far: <span class="badge badge-primary">{{c.EnrolledStudents}}</span>
-                        <!-- <br>
-                        on site: <span class="badge badge-primary">{{c.EnrolledStudents}} / 60</span>
-                        <br>
-                        passing by: <span class="badge badge-primary">{{c.EnrolledStudents}} / ...</span> -->
+                    <!-- <p> Enrolled students so far: <span class="badge badge-primary">{{c.EnrolledStudents}}</span>
+                       
                     </p>                        
-                    <p>Teachers: {{c.Teachers}}</p>
+                    <p>Teachers: {{c.Teachers}}</p> -->
                     <hr style="width: 60%; color: blue;">
                     <h5>Start @ {{ c.StartDate | date :'dd-MMMM-yyyy' }}</h5>
+                    <!-- <h5>End @ {{ c.EndDate | date :'dd-MMMM-yyyy' }}</h5> -->
                     <hr style="width: 60%; color: blue;">  
                     <!-- <h5>Enrolled students: {{ c.EnrolledStudents || 0 }}</h5>
                     <hr style="width: 60%; color: blue;">      -->
