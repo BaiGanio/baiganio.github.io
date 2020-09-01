@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: |
         npm install
-        ng build --prod
+        npm build --prod
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
