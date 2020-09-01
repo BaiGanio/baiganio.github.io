@@ -34,8 +34,8 @@ jobs:
       if: success()
       uses: actions/upload-artifact@v1
       with:
-        name: deploy_dist
-        path: dist
+        name: deployables
+        path: docs
     # - name: Archive code coverage result
     #   if: success()
     #   uses: actions/upload-artifact@v1
@@ -52,11 +52,11 @@ jobs:
         - name: Download build
           uses: actions/download-artifact@v1
           with:
-            name: deploy_dist
+            name: deployables
         - name: Deploy to GitHub Pages
           uses: JamesIves/github-pages-deploy-action@releases/v3
           with:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             BRANCH: gh-pages
-            FOLDER: deploy_dist
+            FOLDER: deployables
      
