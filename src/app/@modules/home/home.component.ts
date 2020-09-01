@@ -11,7 +11,7 @@ import { TermsComponent } from 'src/app/@shared/components/terms/terms.component
       <div class="row">
         <div class="col-xs-12 col-center">
             <h1 class="GotHeroin">
-              Welcome to BaiGanio CI/CD
+              Welcome to BaiGanio
             </h1>
             <img src="./assets/images/Ganio.jpg" alt="">
             <h1 id="comingSoon">coming soon...</h1>
