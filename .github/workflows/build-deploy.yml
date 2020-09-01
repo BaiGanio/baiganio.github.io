@@ -28,13 +28,12 @@ jobs:
     - name: Build
       run: 
         npm run-script build
-    - name: Install rsync 📚
-      run: |
-        apt-get update && apt-get install -y rsync
+ 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: master
-        FOLDER: dist/
+        BASE_BRANCH: master
+        BRANCH: gh-pages
+        FOLDER: dist
      
