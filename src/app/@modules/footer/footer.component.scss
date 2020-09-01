@@ -1,0 +1,74 @@
+.card{    
+    background: rgb(19, 33, 37) url(../../../assets/images/banner/binary-globe.jpg) no-repeat 0 0;
+    background-size: auto auto;
+    background-size: cover;
+    border-radius: 0px;
+}
+.py-5{  
+    #innovations{
+        font-size: 0.6em ;
+    }
+    #clock {
+        text-align: center;
+        width: 100%;
+        border: none;
+        padding: 5px;
+        margin: 5px;
+        color: black;
+        background-color: transparent;
+    }
+    .links {
+        img {
+            width: 60px;
+            margin:0px 20px;
+            padding: 10px;
+        }
+    
+        img:hover {
+            background-color: rgba(61, 158, 238, 0.507);
+        }
+    
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .innerLinks {
+        cursor: pointer;
+        list-style-type: none;
+        margin: 0 auto;
+        width: 10%;
+        font-size: 0.8rem;
+        color: #000;
+        font-weight: bold;
+        margin-bottom: 10px;
+        padding: 5px;
+        border: 1px solid black;
+    }
+    
+    .innerLinks:hover {
+        background-color: rgba(61, 158, 238, 0.507);
+    }
+}
+
+@media only screen and (max-width: 736px) {
+    .py-5 {
+        background: rgba(255, 255, 255, 0.2);
+        margin: 20px;
+        border-radius: 5px;
+        border: 1px solid darkgray;
+
+        #innovations{
+            font-size: 0.65em ;
+        }
+
+        #clock {
+            font-size: 1.5rem;
+        }
+    
+        .innerLinks {
+            width: 75%;
+            font-size: 1rem;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<form [formGroup]='issueForm' >
+  <div class="row text-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body"> 
+          <label for="issueImage">Upload Picture Proof</label>
+          <div class="thumb-holder">
+            <img class="issueImg img-fluid img-thumbnail" [src]='issueImgSrc' alt="Issue picture">
+            <input type="file" formControlName='issuePicture' #issueImage style="display: none;" (change)="onFileSelected($event)" accept="image/*">
+            <mat-error *ngIf="issueForm.get('issuePicture').hasError('required')">This field is required!</mat-error>
+            <br>
+            <button mat-stroked-button color="primary" (click)="issueImage.click()">Upload picture</button>
+            <button mat-stroked-button color="warn" (click)='clearPicture()'>Clear Picture</button>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field>
+        <textarea
+          type="message" 
+          matInput 
+          id="message" 
+          formControlName="message"
+          placeholder="Your description goes here...">
+        </textarea>
+        <mat-error *ngIf="issueForm.get('message').hasError('required')">This field is required!</mat-error>
+      </mat-form-field>
+        <button 
+          class="btn btn-outline-info" 
+          type="submit"
+          (click) = 'sendIssue()'
+          [disabled]="!issueForm.valid">Send report</button>
+        <button 
+          class="btn btn-outline-danger" 
+          (click)="clearForm()">Clear form</button>
+    </div>
+  </div> 
+</form>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>

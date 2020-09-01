@@ -1,0 +1,68 @@
+<div class="text-center" *ngIf='flagEnrollSuccess; else infoBox'>
+    <img src="../../../../../../assets/images/Checkmark.png" class="img-fluid">
+    <h1>Congrats! <br> You are enrolled 4 the [c.Name] course  ;)</h1>
+    <button  
+        type="button"                        
+        class="btn btn-outline-info" 
+        (click) = 'goToMyCourses()'>
+        <b>Go to My Courses</b>
+    </button>
+    <button  
+        type="button"                        
+        class="btn" 
+        (click) = 'backToCourses()'>
+        <b>Back</b>
+    </button>
+    <br><br>
+    
+</div>
+<ng-template #infoBox>
+    <h1 class="GotHeroin" style="text-align:center">Active and featured Courses</h1>     
+    <div class="row">
+        <div *ngFor='let c of courses' class="col-md-3 text-center">
+            <div class="card">
+                <div class="card-body">             
+                    <img src='{{ c.Image }}' class="img-thumbnail img-fluid" alt="Sample image">    
+                    <br><br>                   
+                    <h4>{{ c.Name }}</h4>
+                    <p> Enrolled students so far: <span class="badge badge-primary">{{c.EnrolledStudents}}</span>
+                        <!-- <br>
+                        on site: <span class="badge badge-primary">{{c.EnrolledStudents}} / 60</span>
+                        <br>
+                        passing by: <span class="badge badge-primary">{{c.EnrolledStudents}} / ...</span> -->
+                    </p>                        
+                    <p>Teachers: {{c.Teachers}}</p>
+                    <hr style="width: 60%; color: blue;">
+                    <h5>Start @ {{ c.StartDate | date :'dd-MMMM-yyyy' }}</h5>
+                    <hr style="width: 60%; color: blue;">  
+                    <!-- <h5>Enrolled students: {{ c.EnrolledStudents || 0 }}</h5>
+                    <hr style="width: 60%; color: blue;">      -->
+                    <button 
+                        mat-raised-button
+                        color="primary"
+                        (click) = getCoursePreview(c.Id)>
+                        <i class="fas fa-search"></i>
+                    </button> 
+                    <span *ngIf='authService.isAuthenticated() && c.IsActive'>
+                        <button  
+                            *ngIf='isEnrolled(c.Id)'
+                            type="button"                        
+                            class="btn btn-outline-info" 
+                            (click) = 'goToCourse(c.Id)'>
+                            <b>Go to Course Progress</b>
+                        </button>
+                        <span *ngIf='!isEnrolled(c.Id) && c.IsElectable'>
+                            <button  
+                                type="button"                        
+                                class="btn btn-outline-success" 
+                                (click) = 'enroll4course(c.Id)'>
+                                <b>Enroll 4 Course</b>
+                            </button>
+                        </span>
+                    </span>
+                </div>    
+            </div>   
+        </div>
+    </div>
+</ng-template>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>

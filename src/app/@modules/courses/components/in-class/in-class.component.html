@@ -1,0 +1,45 @@
+<div class="container" style="overflow: hidden;">
+    <br>
+      <div id="errMsg" class="animated bounceIn d-none"aria-live="polite" role="alert">
+          <div class="error  text-center">
+              <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{errMsg}}
+          </div>
+      </div>
+      <div>
+        <br>
+        <button class="btn btn-blue btn-rounded btn-lg btn-block" (click)="trackIP()">Let Me In</button>
+      </div>
+      <ng-template #youAreIn>                                      
+          <div class="text-center">
+              <h2 class="h2 text-center mb-4">Congrats ;) You are in +5 points!</h2>
+              <p>Please wait. Reloading page...</p>
+          </div>
+      </ng-template>
+      <br>  
+      <div id="weekNo">{{weekNo}}</div>
+      <div class="card-deck"> 
+          <div *ngFor='let s of studentLogins'>   
+            <div *ngIf='s.IsCalculated; else notCalculated'>
+                <div class="card">
+                    <img src="../../../../../../assets/images/5points.png" class="card-img-top">
+                  <div class="card-body text-left">
+                    <p class=""><i style="color: lightgreen;" class="fas fa-check"></i>  {{s.Week}}</p>
+                    <p class="">IP: {{s.Ip}}</p>
+                    <p class="">{{s.LastLoginDate | date :'medium'}}</p>
+                  </div>
+                </div>    
+            </div>
+            <ng-template #notCalculated>
+                <div class="card">
+                    <img src="../../../../../../assets/images/sad-face2.png" class="card-img-top">
+                  <div class="card-body text-center">
+                      <p class="">{{s.Week}}</p>
+                    <p>No points!</p>
+                  </div>
+                </div>   
+            </ng-template>
+        </div>
+      </div>
+    
+      <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: false }"></ngx-loading>
+    </div>
