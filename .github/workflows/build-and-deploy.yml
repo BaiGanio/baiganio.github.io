@@ -10,29 +10,29 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout branch
+    - name: checkout
       uses: actions/checkout@v2
-    - name: Install Node 12.x & npm
+    - name: install node 12.x & npm
       uses: actions/setup-node@v1 #this installs node and npm for us
       with:
         node-version: '12.x'
-    - name: Cache node_modules for re-using
+    - name: cache node_modules
       uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
       with:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-    
-    - name: Install Dependencies
+    - name: npm install
       run:
         npm install
-    - name: Build
+    - name: npm run-script build
       run: 
         npm run-script build
     # - name: Test
     #   run: |
     #     npm test
-    - name: Archive Build
+    - name: archive build
       if: success()
       uses: actions/upload-artifact@v1
       with:
@@ -49,13 +49,13 @@ jobs:
       runs-on: ubuntu-latest
       needs: build
       steps:
-        - name: Checkout
+        - name: checkout
           uses: actions/checkout@v1
-        - name: Download Build Artifacts
+        - name: download build artifacts
           uses: actions/download-artifact@v1
           with:
             name: deployable_artifacts
-        - name: Deploy To GitHub Pages
+        - name: deploy to github pages
           uses: JamesIves/github-pages-deploy-action@releases/v3
           with:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
