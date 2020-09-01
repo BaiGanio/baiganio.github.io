@@ -3,7 +3,7 @@
     <button style="background-color: cornflowerblue; color:white; cursor:pointer;" (click)='goToMySubscriptions()'>Preview</button>
   </span>
 </h1>
-<hr>
+<hr style="width: 60%; color: blue;">  
 <div class="content text-center">
   <div class="dim" *ngIf='notificationRequest'>
     <span class="msg">
@@ -52,11 +52,7 @@
           <hr style="width: 80%; color: blue;">
           <p *ngIf='s.IsActive;' id="subscrStatus">Active : {{s.IsActive}}</p>
           <p *ngIf='!s.IsActive;' id="subscrStatus">Subscription in development!</p>
-          <div class="text-center">
-            <p>
-              Total subscribers : {{ getTotalSubscribers(s.Id) }}
-            </p>
-          </div>  
+         
           <div *ngIf='authService.isAuthenticated() && s.IsActive'>
             <p *ngIf='isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>  
               <button                                     

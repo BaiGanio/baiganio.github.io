@@ -17,20 +17,21 @@
     
 </div>
 <ng-template #infoBox>
-    <h1  style="text-align:center">Active and featured Courses</h1>     
+    <h1  style="text-align:center">Courses</h1>   
+    <hr style="width: 60%; color: blue;">  
     <div class="row">
-        <div *ngFor='let c of courses' class="col-md-3 text-center">
+        <div *ngFor='let c of courses' class="col-md-4 text-center">
             <div class="card">
                 <div class="card-body">             
                     <img src='{{ c.Image }}' class="img-thumbnail img-fluid" alt="Sample image">    
                     <br><br>                   
-                    <h4>{{ c.Name }}</h4>
+                    <h3>{{ c.Name }}</h3>
                     <!-- <p> Enrolled students so far: <span class="badge badge-primary">{{c.EnrolledStudents}}</span>
                        
                     </p>                        
                     <p>Teachers: {{c.Teachers}}</p> -->
-                    <hr style="width: 60%; color: blue;">
-                    <h5>Start @ {{ c.StartDate | date :'dd-MMMM-yyyy' }}</h5>
+                    <!-- <hr style="width: 60%; color: blue;">
+                    <h5>Start @ {{ c.StartDate | date :'dd-MMMM-yyyy' }}</h5> -->
                     <!-- <h5>End @ {{ c.EndDate | date :'dd-MMMM-yyyy' }}</h5> -->
                     <hr style="width: 60%; color: blue;">  
                     <!-- <h5>Enrolled students: {{ c.EnrolledStudents || 0 }}</h5>
