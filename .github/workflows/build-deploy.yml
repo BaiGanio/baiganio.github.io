@@ -2,7 +2,7 @@ name: Build & Deploy for Production workflow
 
 on:
    # Trigger the workflow on push or pull request,
-  # but only for the master branch
+  # but only for the master branch!
   push:
     branches:
       - master
