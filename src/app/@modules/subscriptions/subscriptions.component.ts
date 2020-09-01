@@ -77,6 +77,7 @@ export class SubscriptionsComponent implements OnInit {
             });
         }, error => {
             this.errorHandlerService.handleRequestError(error);
+            this.loading = false;
         }, () => { this.loading = false; });
     }
 

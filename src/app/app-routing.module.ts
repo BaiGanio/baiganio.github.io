@@ -24,36 +24,40 @@ const routes: Routes = [
       component: HomeComponent
   },
   {
-    path: 'courses',
-    loadChildren : () => import('./@modules/courses/courses.module').then(m => m.CoursesModule)
-  },
-  {
     path: 'subscriptions',
     loadChildren : () => import('./@modules/subscriptions/subscriptions.module').then(m => m.SubscriptionsModule)
   },
   {
+    path: 'courses',
+    loadChildren : () => import('./@modules/courses/courses.module').then(m => m.CoursesModule)
+  },
+  // {
+  //   path: 'blogs',
+  //   loadChildren : () => import('./@modules/blogs/blogs.module').then(m => m.BlogsModule)
+  // },
+  {
     path: 'profile',
-    loadChildren : () => import('./@modules/profile/profile.module').then(m => m.ProfileModule),
-    canActivate: [RoleGuard],
-    data: {
-      expectedRole: 'Member'
-    }
+    loadChildren : () => import('./@modules/profile/profile.module').then(m => m.ProfileModule)
+    // canActivate: [RoleGuard],
+    // data: {
+    //   expectedRole: 'Member'
+    // }
   },
   {
     path: 'dashboard',
-    loadChildren : () => import('./@modules/dashboard/dashboard.module').then(m => m.DashboardModule),
-    canActivate: [RoleGuard],
-    data: {
-      expectedRole: 'Member'
-    }
+    loadChildren : () => import('./@modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+    // canActivate: [RoleGuard],
+    // data: {
+    //   expectedRole: 'Member'
+    // }
   },
   {
     path: 'teachers',
-    loadChildren : () => import('./@modules/teachers/teachers.module').then(m => m.TeachersModule),
-    canActivate: [RoleGuard],
-    data: {
-      allowedRoles: ['admin', 'Teacher']
-    }
+    loadChildren : () => import('./@modules/teachers/teachers.module').then(m => m.TeachersModule)
+    // canActivate: [RoleGuard],
+    // data: {
+    //   allowedRoles: ['admin', 'Teacher']
+    // }
   },
   {
     path: 'account',

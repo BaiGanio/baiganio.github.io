@@ -44,7 +44,7 @@ export class CoursesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.loading = true;
+     this.loading = true;
     // if (this.authService.isAuthenticated()) {
     //   this.storedUser = this.userDataService.getUserData();
     //   if (this.storedUser) {
@@ -102,8 +102,10 @@ export class CoursesComponent implements OnInit {
         this.courses.push(c as CoursePreviewModel);
       });
     },
-     error => { this.errorHandlerService.handleRequestError(error); },
-    () => { this.loading = false; });
+     error => {
+       this.errorHandlerService.handleRequestError(error);
+       this.loading = false;
+    }, () => { this.loading = false; });
   }
 
   private storedUserInit() {

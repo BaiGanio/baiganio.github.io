@@ -10,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
         <!-- <h1 class="Guildof">File not found</h1> -->
         <img id="not-founded" src="../assets/images/status-codes/404.ico"  alt="Picture from my collection." />
         <h1>
-          Oops... Server says: <br>
+          Oops... 
           <span id="errorMessage">
-            'The page doesn't exist'!
+          File not found on the Server!
           </span>
         </h1>
         <button routerLink='/home' class="btn">
