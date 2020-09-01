@@ -4,10 +4,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-By default, this deployable code is generated in the /dist/<prodect-name> folder under the app folder, but we need to generate this in the “docs” folder under the app folder.
-
-So, we need to make a small change in the angular.json file and change the outputpath value to “docs/”.
-
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
@@ -15,6 +11,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build Your Code to Generate Deployables
+
+By default, this deployable code is generated in the <prodect-name>/dist folder.
+
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 

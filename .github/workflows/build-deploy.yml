@@ -1,31 +1,67 @@
-name: Build and Deploy
+name: Build & Deploy for Production workflow
 
 on:
+   # Trigger the workflow on push or pull request,
+  # but only for the master branch!
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-    - uses: actions/setup-node@v1 #this installs node and npm for us
+    - name: Checkout branch
+      uses: actions/checkout@v2
+    - name: Install Node 12.x & npm
+      uses: actions/setup-node@v1 #this installs node and npm for us
       with:
-        node-version: '10.x'
-    - uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
+        node-version: '12.x'
+    - name: Cache node_modules for re-using
+      uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
       with:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-    
-    - name: Build
-      run: |
+    - name: Install Dependencies
+      run:
         npm install
-        npm run-script deploy
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+    - name: Build
+      run: 
+        npm run-script build
+    # - name: Test
+    #   run: |
+    #     npm test
+    - name: Archive Build
+      if: success()
+      uses: actions/upload-artifact@v1
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: dist/angular-ci-cd
+        name: deployable_artifacts
+        path: dist
+    # - name: Archive code coverage result
+    #   if: success()
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: deploy_coverage
+    #     path: coverage
+
+  deploy:
+      runs-on: ubuntu-latest
+      needs: build
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v1
+        - name: Download Build Artifacts
+          uses: actions/download-artifact@v1
+          with:
+            name: deployable_artifacts
+        - name: Deploy To GitHub Pages
+          uses: JamesIves/github-pages-deploy-action@releases/v3
+          with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            BRANCH: gh-pages
+            FOLDER: deployable_artifacts
+     
