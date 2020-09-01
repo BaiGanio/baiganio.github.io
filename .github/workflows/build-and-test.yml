@@ -22,23 +22,23 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Install Node 12.x & npm
+      - name: install node 12.x & npm
         uses: actions/setup-node@v1 #this installs node and npm for us
         with:
           node-version: '12.x'
-      - name: Cache node_modules for re-using
+      - name: cache node_modules
         uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-    
-      - name: Install Dependencies
+      - name: npm install
         run:
           npm install
-      - name: Build
+      - name: npm run-script build
         run: 
           npm run-script build
-      # - name: Test
-      #   run: |
-      #     npm test
+      - name: npm test
+        run: |
+          npm test
