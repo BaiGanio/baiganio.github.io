@@ -19,10 +19,13 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-    
-    - name: Build
+    - name: Install
       run: |
         npm install
-    - name: Generate Deployables
+    - name: Test
+      run: |
+        npm test
+    - name: Build
       run: 
         npm run-script build
     - name: Deploy
@@ -30,4 +33,5 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: master
-        FOLDER: dist
+      #  FOLDER: dist
+        angular_dist_build_folder: dist/
