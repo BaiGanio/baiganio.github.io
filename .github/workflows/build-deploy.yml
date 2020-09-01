@@ -1,4 +1,4 @@
-name: Build & Deploy for Production workflow
+name: Build & Deploy
 
 on:
    # Trigger the workflow on push or pull request,
