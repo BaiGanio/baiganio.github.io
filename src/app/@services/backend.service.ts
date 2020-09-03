@@ -56,14 +56,17 @@ export class BackendService {
   }
 
   getUserAccessToken(email, password): Observable<any> {
-    const idsCredentials = environment.identityServerUserCredentials;
-    const body = new FormData();
-    body.append('client_id', idsCredentials.client_id);
-    body.append('client_secret', idsCredentials.client_secret);
-    body.append('scope', idsCredentials.scope);
-    body.append('grant_type', idsCredentials.grant_type);
-    body.append('username', email);
-    body.append('password', password);
+    const is4credentials = environment.identityServerUserCredentials;
+    // const body = new FormData();
+    // body.append('client_id', is4credentials.client_id);
+    // body.append('client_secret', is4credentials.client_secret);
+    // body.append('scope', is4credentials.scope);
+    // body.append('grant_type', is4credentials.grant_type);
+    // body.append('username', email);
+    // body.append('password', password);
+
+ // tslint:disable-next-line: max-line-length
+    const body = `grant_type=${is4credentials.grant_type}&scope=${is4credentials.scope}&client_secret=${is4credentials.client_secret}&client_id=${is4credentials.client_id}&username=${email}&password={password}`;
 
     return this.http.post(
       environment.idsUrl + 'connect/token',
