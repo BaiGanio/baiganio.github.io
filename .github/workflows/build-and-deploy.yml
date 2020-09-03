@@ -3,7 +3,7 @@ name: Prod CI/CD (Build & Deploy)
 on:
    # Trigger the workflow on push or pull request,
   # but only for the master branch!
- pull_request:
+ push:
     branches: [ master ]
 jobs:
   build:
