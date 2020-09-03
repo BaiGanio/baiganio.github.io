@@ -14,7 +14,7 @@ import { TermsComponent } from 'src/app/@shared/components/terms/terms.component
               Welcome to BaiGanio
             </h1>
             <img src="./assets/images/Ganio.jpg" alt="">
-            <h1 id="comingSoon">coming soon...</h1>
+            <h1 id="comingSoon">coming soon & very soon...</h1>
         </div>
       </div>
     </div>
