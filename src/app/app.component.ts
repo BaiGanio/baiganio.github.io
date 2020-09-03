@@ -3,7 +3,8 @@ import { BackendService } from './@services/backend.service';
 import { AuthService } from './@services/auth.service';
 import { SignalRService } from './@services/signalR.service';
 import { ErrorHandlerService } from './@services/error-handler.service';
-
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { environment } from '../environments/environment';
 @Component({
   selector: 'app-root',
   template: `
@@ -19,24 +20,27 @@ export class AppComponent implements OnInit {
     private backendService: BackendService,
     private authService: AuthService,
     private signalRService: SignalRService,
-    private errorHandlerService: ErrorHandlerService
+    private errorHandlerService: ErrorHandlerService,
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
     this.backendService.getClientAccessToken()
       .subscribe(
         response => {
-          this.authService.authToken = response.access_token;
+          this.authToken = response.json();
+          console.log(this.authToken);
         },
-        // error => { this.errorHandlerService.handleRequestError(error); },
+         error => { this.errorHandlerService.handleRequestError(error); },
         () => {
+          this.authService.authToken = this.authToken.access_token;
          // this.initializeSignalR();
         }
       );
   }
 
-  initializeSignalR() {
-    this.signalRService.initializeSignalRConnection();
-  }
+// initializeSignalR(); {
+//     this.signalRService.initializeSignalRConnection();
+//   }
 
 }

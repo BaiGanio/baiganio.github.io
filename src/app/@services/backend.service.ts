@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
 
@@ -11,22 +11,18 @@ export class BackendService {
   constructor(private http: HttpClient, private authservice: AuthService) { }
 
   backendRequest(requestType, requestTarget, requestData?, useUserToken?): Observable<any> {
-    // if (!this.authservice.authToken) {
-    //   const req = this.getClientAccessToken()
-    //     .pipe(flatMap(
-    //       (response) => {
-    //         console.log(response);
-    //         const authToken = response;
-    //         this.authservice.authToken = authToken.access_token;
-    //         return this.baseBackendRequest(requestType, requestTarget, requestData, useUserToken);
-    //       }));
-    //   return req;
-    // } else {
-    //   console.log('In else');
-    //   console.log(useUserToken);
-    //   return this.baseBackendRequest(requestType, requestTarget, requestData, useUserToken);
-    // }
-    return this.baseBackendRequest(requestType, requestTarget, requestData, useUserToken);
+    if (!this.authservice.authToken) {
+      const req = this.getClientAccessToken()
+        .pipe(flatMap(
+          (response) => {
+            const authToken = response;
+            this.authservice.authToken = authToken.access_token;
+            return this.baseBackendRequest(requestType, requestTarget, requestData, useUserToken);
+          }));
+      return req;
+    } else {
+      return this.baseBackendRequest(requestType, requestTarget, requestData, useUserToken);
+    }
   }
 
   private baseBackendRequest(requestType, requestTarget, requestData?, useUserToken?): Observable<any> {
@@ -37,8 +33,6 @@ export class BackendService {
         { headers: this.getContentHeaders(useUserToken) }
       );
     } else if (requestType === 'get') {
-      console.log(environment.apiUrl);
-      console.log(requestTarget);
       return this.http.get(
         environment.apiUrl + requestTarget,
         { headers: this.getContentHeaders(useUserToken), params: requestData, observe: 'response'}
@@ -47,21 +41,17 @@ export class BackendService {
   }
 
   getClientAccessToken(): Observable<any> {
-    const idsCredentials = environment.identityServerClientCredentials;
-    const body = new FormData();
-    body.append('client_id', idsCredentials.client_id);
-    body.append('client_secret', idsCredentials.client_secret);
-    body.append('scope', idsCredentials.scope);
-    body.append('grant_type', idsCredentials.grant_type);
-
+    const is4credentials = environment.identityServerClientCredentials;
     const headers: HttpHeaders = new HttpHeaders()
     .set('Accept', 'application/json')
     .set('Content-Type', 'application/x-www-form-urlencoded');
+    // tslint:disable-next-line: max-line-length
+    const body = `grant_type=${is4credentials.grant_type}&scope=${is4credentials.scope}&client_secret=${is4credentials.client_secret}&client_id=${is4credentials.client_id}`;
 
     return this.http.post(
       environment.idsUrl + 'connect/token',
       body,
-      { headers: new HttpHeaders() }
+      { headers }
     );
   }
 

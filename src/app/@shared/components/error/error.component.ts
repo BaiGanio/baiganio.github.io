@@ -39,7 +39,6 @@ export class ErrorComponent implements OnInit {
 
   ngOnInit() {
     this.error = this.data.model;
-    console.log(this.error);
   }
 
   dismiss() {
