@@ -65,13 +65,16 @@ export class BackendService {
     // body.append('username', email);
     // body.append('password', password);
 
+    const headers: HttpHeaders = new HttpHeaders()
+    .set('Accept', 'application/json')
+    .set('Content-Type', 'application/x-www-form-urlencoded');
  // tslint:disable-next-line: max-line-length
     const body = `grant_type=${is4credentials.grant_type}&scope=${is4credentials.scope}&client_secret=${is4credentials.client_secret}&client_id=${is4credentials.client_id}&username=${email}&password=${password}`;
 
     return this.http.post(
       environment.idsUrl + 'connect/token',
       body,
-      { headers: new HttpHeaders() }
+      { headers }
     );
   }
 
