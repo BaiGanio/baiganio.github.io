@@ -28,12 +28,10 @@ export class AppComponent implements OnInit {
     this.backendService.getClientAccessToken()
       .subscribe(
         response => {
-          this.authToken = response.json();
-          console.log(this.authToken);
+          this.authService.authToken = response.access_token;
         },
          error => { this.errorHandlerService.handleRequestError(error); },
         () => {
-          this.authService.authToken = this.authToken.access_token;
          // this.initializeSignalR();
         }
       );

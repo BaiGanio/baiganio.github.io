@@ -64,4 +64,6 @@
         </div>
     </div>
 </ng-template>
+
+<h2 *ngIf='loading' class='text-center'>Please wait! Fetching data...</h2>
 <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>

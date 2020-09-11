@@ -31,10 +31,10 @@ const routes: Routes = [
     path: 'courses',
     loadChildren : () => import('./@modules/courses/courses.module').then(m => m.CoursesModule)
   },
-  // {
-  //   path: 'blogs',
-  //   loadChildren : () => import('./@modules/blogs/blogs.module').then(m => m.BlogsModule)
-  // },
+  {
+    path: 'blogs',
+    loadChildren : () => import('./@modules/blogs/blogs.module').then(m => m.BlogsModule)
+  },
   {
     path: 'profile',
     loadChildren : () => import('./@modules/profile/profile.module').then(m => m.ProfileModule)

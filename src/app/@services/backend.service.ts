@@ -83,7 +83,6 @@ export class BackendService {
     let authToken = this.authservice.pickAuthenticationToken();
     if (useUserToken) { authToken = this.authservice.userToken; }
     contentHeaders = contentHeaders.set('Authorization', `Bearer ${authToken}`);
-    console.log(authToken);
     return contentHeaders;
   }
 

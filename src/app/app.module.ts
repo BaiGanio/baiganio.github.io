@@ -35,6 +35,7 @@ import { TeachersModule } from './@modules/teachers/teachers.module';
 import { QuestionnaireComponent } from './@shared/components/questionnaire/questionnaire.component';
 import { bindCallback } from 'rxjs';
 import { ProfileModule } from './@modules/profile/profile.module';
+import { BlogsModule } from './@modules/blogs/blogs.module';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import { ProfileModule } from './@modules/profile/profile.module';
     ProfileModule,
     DashboardModule,
     SubscriptionsModule,
+    BlogsModule,
     AccountModule,
     TeachersModule,
     CookieLawModule,

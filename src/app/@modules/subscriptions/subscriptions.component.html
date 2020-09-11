@@ -5,6 +5,8 @@
 </h1>
 <hr style="width: 60%; color: blue;">  
 <div class="content text-center">
+  <h2 *ngIf='loading'>Please wait! Fetching data...</h2>
+
   <div class="dim" *ngIf='notificationRequest'>
     <span class="msg">
       <h2>
