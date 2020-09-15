@@ -45,17 +45,17 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit() {
      this.loading = true;
-    // if (this.authService.isAuthenticated()) {
-    //   this.storedUser = this.userDataService.getUserData();
-    //   if (this.storedUser) {
-    //       this.storedUserInit();
-    //   }
-    //   this.getCoursesWithEnrolledUserId();
-    // } else {
+    if (this.authService.isAuthenticated()) {
+      this.storedUser = this.userDataService.getUserData();
+      if (this.storedUser) {
+          this.storedUserInit();
+      }
+      this.getCoursesWithEnrolledUserId();
+    } else {
 
-    // }
+      this.getInitCourses();
 
-    this.getInitCourses();
+    }
   }
 
   getCoursesWithEnrolledUserId() {
@@ -78,7 +78,7 @@ export class CoursesComponent implements OnInit {
         this.courses.push(c as CoursePreviewModel);
       });
     },
-    error => { this.errorHandlerService.handleRequestError(error); },
+    error => { this.errorHandlerService.handleRequestError(error); this.loading = false; },
     () => { this.loading = false; });
   }
 
