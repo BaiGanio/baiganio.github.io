@@ -33,7 +33,6 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { DashboardModule } from './@modules/dashboard/dashboard.module';
 import { TeachersModule } from './@modules/teachers/teachers.module';
 import { QuestionnaireComponent } from './@shared/components/questionnaire/questionnaire.component';
-import { bindCallback } from 'rxjs';
 import { ProfileModule } from './@modules/profile/profile.module';
 import { BlogsModule } from './@modules/blogs/blogs.module';
 
@@ -64,13 +63,13 @@ import { BlogsModule } from './@modules/blogs/blogs.module';
     ReactiveFormsModule,
     HttpClientModule,
     AngularMaterialModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
+    // NgxLoadingModule.forRoot({
+    //   animationType: ngxLoadingAnimationTypes.threeBounce,
+    //   primaryColour: '#88078e',
+    //   secondaryColour: '#c6ef23',
+    //   backdropBorderRadius: '14px',
+    //   fullScreenBackdrop: true
+    // }),
     NgCircleProgressModule.forRoot({
       radius: 100,
       outerStrokeWidth: 16,
@@ -93,7 +92,7 @@ import { BlogsModule } from './@modules/blogs/blogs.module';
     BlogsModule,
     AccountModule,
     TeachersModule,
-    CookieLawModule,
+    // CookieLawModule,
   ],
   entryComponents: [
     TermsComponent,
