@@ -2,7 +2,7 @@ import {SelectionModel} from '@angular/cdk/collections';
 import {FlatTreeControl} from '@angular/cdk/tree';
 import {Component, OnInit} from '@angular/core';
 import { TodoItemFlatNode, TodoItemNode, ChecklistDatabase } from '../../interfaces/checklist-database.module';
-import { MatTreeFlattener, MatTreeFlatDataSource } from '@angular/material';
+import { MatTreeFlattener, MatTreeFlatDataSource } from '@angular/material/tree';
 
 
 @Component({

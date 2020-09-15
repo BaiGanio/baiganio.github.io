@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
-import { CookieLawModule } from 'angular2-cookie-law';
 import { AppRoutingModule } from './app-routing.module';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatSnackBar } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { TeacherService } from 'src/app/@services/teacher.service';
 import { TeacherPreviewModel } from './models/teacher-preview.model';

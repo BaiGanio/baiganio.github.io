@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog, MatSnackBar } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorModel } from '../@shared/interfaces/error-model.module';
 import { UserDataService } from './user-data.service';
 import { ErrorComponent } from '../@shared/components/error/error.component';

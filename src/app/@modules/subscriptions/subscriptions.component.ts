@@ -5,7 +5,8 @@ import { SubscriptionService } from 'src/app/@services/subscription.service';
 import { UserDataService } from 'src/app/@services/user-data.service';
 import { AuthService } from 'src/app/@services/auth.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
-import { MatSnackBar, MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SubscriptionPreviewComponent } from './components/subscription-preview/subscription-preview.component';
 import { UserViewModel } from '../users/models/user-view-model.module';
 

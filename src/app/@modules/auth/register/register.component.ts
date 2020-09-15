@@ -4,7 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { AccountService } from 'src/app/@services/account.service';
-import { MatSnackBar, MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { TermsComponent } from 'src/app/@shared/components/terms/terms.component';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 
