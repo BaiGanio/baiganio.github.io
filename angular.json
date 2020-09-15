@@ -33,7 +33,6 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/hammerjs/hammer.min.js",
               "node_modules/jquery/dist/jquery.min.js",
               "src/assets/js/handy-clock.js"
             ]
