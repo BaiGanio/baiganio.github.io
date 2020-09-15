@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TeachersRoutingModule } from './teachers-routing-module.module';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { TeachersComponent } from './teachers.component';
-import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
+// import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { CraftsmanMenuComponent } from './pages/craftsman-menu.component';
 import { TeacherDetailsComponent } from './pages/teacher-details/teacher-details.component';
 import { CoursesDetailsComponent } from '../courses/pages/courses-details/courses-details.component';
@@ -37,12 +37,12 @@ import { VoteForTeacherComponent } from './component/vote-for-teacher/vote-for-t
     CommonModule,
     TeachersRoutingModule,
     AngularMaterialModule,
-    ReactiveFormsModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-    }),
+    ReactiveFormsModule
+    // NgxLoadingModule.forRoot({
+    //   animationType: ngxLoadingAnimationTypes.threeBounce,
+    //   primaryColour: '#88078e',
+    //   secondaryColour: '#c6ef23',
+    // }),
   ]
 })
 export class TeachersModule { }

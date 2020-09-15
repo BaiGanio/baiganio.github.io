@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
+// import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { SubscriptionsRoutingModule } from './subscriptions-routing.module';
 import { SubscriptionsComponent } from './subscriptions.component';
@@ -26,11 +26,11 @@ import { BloggerSubscriptionPreviewComponent } from './components/blogger-subscr
     SubscriptionsRoutingModule,
     AngularMaterialModule,
     ReactiveFormsModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-    }),
+    // NgxLoadingModule.forRoot({
+    //   animationType: ngxLoadingAnimationTypes.threeBounce,
+    //   primaryColour: '#88078e',
+    //   secondaryColour: '#c6ef23',
+    // }),
   ],
   entryComponents: [
     SubscriptionPreviewComponent

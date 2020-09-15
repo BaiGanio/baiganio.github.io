@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CoursesComponent } from './courses.component';
 import { CoursesRoutingModule } from './courses-routing.module';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
+// import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { CoursePreviewComponent } from './components/course-preview/course-preview.component';
 import { MyCoursesComponent } from './pages/my-courses/my-courses.component';
@@ -33,12 +33,12 @@ import { PolarareaComponent } from 'src/app/@shared/components/charts/polararea/
   imports: [
     CommonModule,
     CoursesRoutingModule,
-    AngularMaterialModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-    }),
+    AngularMaterialModule
+    // NgxLoadingModule.forRoot({
+    //   animationType: ngxLoadingAnimationTypes.threeBounce,
+    //   primaryColour: '#88078e',
+    //   secondaryColour: '#c6ef23',
+    // }),
   ],
   entryComponents: [
     CoursePreviewComponent
