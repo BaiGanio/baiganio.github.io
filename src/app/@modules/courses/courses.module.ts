@@ -17,19 +17,6 @@ import { PiechartComponent } from 'src/app/@shared/components/charts/piechart/pi
 import { PolarareaComponent } from 'src/app/@shared/components/charts/polararea/polararea.component';
 
 @NgModule({
-  declarations: [
-      CoursesComponent,
-      CoursePreviewComponent,
-      MyCoursesComponent,
-      CourseDetailsComponent,
-      InClassComponent,
-      ScoreComponent,
-      LinechartComponent,
-      BarchartComponent,
-      DoughnutComponent,
-      PiechartComponent,
-      PolarareaComponent
-    ],
   imports: [
     CommonModule,
     CoursesRoutingModule,
@@ -40,9 +27,23 @@ import { PolarareaComponent } from 'src/app/@shared/components/charts/polararea/
     //   secondaryColour: '#c6ef23',
     // }),
   ],
+  declarations: [
+    CoursesComponent,
+    CoursePreviewComponent,
+    MyCoursesComponent,
+    CourseDetailsComponent,
+    InClassComponent,
+    ScoreComponent,
+    LinechartComponent,
+    BarchartComponent,
+    DoughnutComponent,
+    PiechartComponent,
+    PolarareaComponent
+  ],
   entryComponents: [
     CoursePreviewComponent
   ],
+  exports: [CourseDetailsComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
-export class CoursesModule { }
+export declare class CoursesModule { }
