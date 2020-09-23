@@ -37,4 +37,4 @@ import { BloggerSubscriptionPreviewComponent } from './components/blogger-subscr
   ],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
-export declare  class SubscriptionsModule { }
+export class SubscriptionsModule { }

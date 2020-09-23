@@ -3,8 +3,8 @@ export const environment = {
     envName: 'local',
     appUrl: 'http://localhost:5003/',
     apiUrl: 'https://localhost:44364/api/',
-    // idsUrl: 'https://free-is4.azurewebsites.net/',
-    idsUrl: 'https://localhost:44375/',
+    idsUrl: 'https://free-is4.azurewebsites.net/',
+    // idsUrl: 'https://localhost:44375/',
 
     // IPCheckingServiceUrl: 'https://ipinfo.io?token=$2e07b81e6d80f2',
     IPCheckingServiceUrl: 'https://api.ipify.org?format=json',

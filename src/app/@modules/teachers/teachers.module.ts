@@ -44,4 +44,4 @@ import { VoteForTeacherComponent } from './component/vote-for-teacher/vote-for-t
     VoteForTeacherComponent
   ],
 })
-export declare class TeachersModule { }
+export class TeachersModule { }

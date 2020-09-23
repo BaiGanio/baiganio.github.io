@@ -46,4 +46,4 @@ import { PolarareaComponent } from 'src/app/@shared/components/charts/polararea/
   exports: [CourseDetailsComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
-export declare class CoursesModule { }
+export class CoursesModule { }
