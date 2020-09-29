@@ -34,6 +34,11 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
+import { Optional } from '@angular/core';
+import { SkipSelf } from '@angular/core';
+import { throwIfAlreadyLoaded } from './module-import.guard';
+import { CoreModule } from './core.module';
+
 
 @NgModule({
     exports: [
@@ -76,4 +81,7 @@ import { MatTreeModule } from '@angular/material/tree';
     ]
 })
 export class AngularMaterialModule {
+    constructor( @Optional() @SkipSelf() parentModule: CoreModule) {
+        throwIfAlreadyLoaded(parentModule, 'CoreModule');
+      }
 }

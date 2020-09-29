@@ -16,7 +16,7 @@ import { AccountService } from '../@services/account.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { RoleGuard } from './role.guard';
 import { SignalRService } from '../@services/signalR.service';
-import { LinechartComponent } from '../@shared/components/charts/linechart/linechart.component';
+// import { LinechartComponent } from '../@shared/components/charts/linechart/linechart.component';
 import { ChecklistDatabase } from '../@shared/interfaces/checklist-database.module';
 import { TeacherService } from '../@services/teacher.service';
 

@@ -1,6 +1,4 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+
 // import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { ProfileRoutingModule } from './profile-routing.modute';
@@ -10,6 +8,9 @@ import { Subscribe4NotificationsComponent } from './components/subscribe4notific
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { PassStrengthComponent } from './components/pass-strength/pass-strength.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -34,10 +35,10 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
       radius: 100,
       outerStrokeWidth: 16,
       innerStrokeWidth: 8,
-      outerStrokeColor: "#78C000",
-      innerStrokeColor: "#C7E596",
+      outerStrokeColor: '#78C000',
+      innerStrokeColor: '#C7E596',
       animationDuration: 300,
-      backgroundStroke: "#000000",
+      backgroundStroke: '#000000',
     }),
   ],
   entryComponents: [

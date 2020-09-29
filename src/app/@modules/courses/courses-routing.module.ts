@@ -4,8 +4,8 @@ import { CoursesComponent } from './courses.component';
 
 import { NgModule } from '@angular/core';
 import { MyCoursesComponent } from './pages/my-courses/my-courses.component';
-import { CourseDetailsComponent } from './pages/course-details/course-details.component';
-import { CoursePreviewComponent } from './components/course-preview/course-preview.component';
+// import { CourseDetailsComponent } from './pages/course-details/course-details.component';
+// import { CoursePreviewComponent } from './components/course-preview/course-preview.component';
 
 const routes: Routes = [
     {
@@ -18,7 +18,7 @@ const routes: Routes = [
       path: 'preview',
       children: [
         { path: '', component: MyCoursesComponent },
-        { path: ':id', component: CourseDetailsComponent }
+        // { path: ':id', component: CourseDetailsComponent }
       ]
     }
 ];

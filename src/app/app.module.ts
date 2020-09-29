@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
@@ -8,10 +7,8 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './@modules/footer/footer.component';
 import { HomeComponent } from './@modules/home/home.component';
 import { NavbarComponent } from './@modules/navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from './@core/core.module';
-import { AngularMaterialModule } from './@core/angular-material.module';
 import { ServerAlertComponent } from './@shared/components/server-alert/server-alert.component';
 import { LoginComponent } from './@modules/auth/login/login.component';
 import { RegisterComponent } from './@modules/auth/register/register.component';
@@ -23,16 +20,12 @@ import { NotFoundComponent } from './@shared/components/not-found/not-found.comp
 import { PrivacyComponent } from './@shared/components/privacy/privacy.component';
 import { TermsComponent } from './@shared/components/terms/terms.component';
 import { WelcomeComponent } from './@modules/home/welcome/welcome.component';
-import { CoursesModule } from './@modules/courses/courses.module';
-import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.module';
 import { ErrorComponent } from './@shared/components/error/error.component';
-import { AccountModule } from './@modules/account/account.module';
 import { JwtModule } from '@auth0/angular-jwt';
-import { DashboardModule } from './@modules/dashboard/dashboard.module';
-import { TeachersModule } from './@modules/teachers/teachers.module';
 import { QuestionnaireComponent } from './@shared/components/questionnaire/questionnaire.component';
-import { ProfileModule } from './@modules/profile/profile.module';
-import { BlogsModule } from './@modules/blogs/blogs.module';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { AngularMaterialModule } from './@core/angular-material.module';
 
 @NgModule({
   declarations: [
@@ -54,6 +47,7 @@ import { BlogsModule } from './@modules/blogs/blogs.module';
     QuestionnaireComponent
   ],
   imports: [
+    CoreModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -72,24 +66,23 @@ import { BlogsModule } from './@modules/blogs/blogs.module';
       radius: 100,
       outerStrokeWidth: 16,
       innerStrokeWidth: 8,
-      outerStrokeColor: "#78C000",
-      innerStrokeColor: "#C7E596",
+      outerStrokeColor: '#78C000',
+      innerStrokeColor: '#C7E596',
       animationDuration: 300,
-      backgroundStroke: "#000000",
+      backgroundStroke: '#000000',
     }),
     JwtModule.forRoot({
       config: {
         tokenGetter: jwtTokenGetter
       }
     }),
-    CoreModule,
-    CoursesModule,
-    ProfileModule,
-    DashboardModule,
-    SubscriptionsModule,
-    BlogsModule,
-    AccountModule,
-    TeachersModule,
+    // CoursesModule,
+    // ProfileModule,
+    // DashboardModule,
+    // SubscriptionsModule,
+    // BlogsModule,
+    // AccountModule,
+    // TeachersModule,
     // CookieLawModule,
   ],
   entryComponents: [
@@ -98,7 +91,7 @@ import { BlogsModule } from './@modules/blogs/blogs.module';
     ErrorComponent,
     QuestionnaireComponent
   ],
-  providers: [CoreModule],
+  providers: [],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

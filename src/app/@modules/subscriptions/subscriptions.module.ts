@@ -1,6 +1,4 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+
 // import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { SubscriptionsRoutingModule } from './subscriptions-routing.module';
@@ -11,6 +9,9 @@ import { StudentSubscriptionPreviewComponent } from './components/student-subscr
 import { ReactiveFormsModule } from '@angular/forms';
 import { TeacherSubscriptionPreviewComponent } from './components/teacher-subscription-preview/teacher-subscription-preview.component';
 import { BloggerSubscriptionPreviewComponent } from './components/blogger-subscription-preview/blogger-subscription-preview.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [

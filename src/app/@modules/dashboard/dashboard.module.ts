@@ -5,7 +5,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { InClassComponent } from './pages/in-class/in-class.component';
+// import { InClassComponent } from './pages/in-class/in-class.component';
 import { StudentInfoComponent } from '../students/components/student-info/student-info.component';
 import { ScoresComponent } from './pages/scores/scores.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
@@ -15,7 +15,7 @@ import { ReportedIssuePreviewComponent } from './components/reported-issue-previ
 @NgModule({
   declarations: [
       DashboardComponent,
-      InClassComponent,
+      // InClassComponent,
       StudentInfoComponent,
       ScoresComponent,
       NotificationsComponent,
