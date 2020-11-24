@@ -98,5 +98,6 @@ import { AngularMaterialModule } from './@core/angular-material.module';
 export class AppModule { }
 
 export function jwtTokenGetter() {
+  // test
   return localStorage.getItem('bg-bcof');
 }
