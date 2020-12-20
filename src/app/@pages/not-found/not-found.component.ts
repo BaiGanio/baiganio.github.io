@@ -8,16 +8,14 @@ import { Component, OnInit } from '@angular/core';
     <div class="row">
       <div class="col-xs col-center text-center">
         <!-- <h1 class="Guildof">File not found</h1> -->
-        <img id="not-founded" src="../assets/images/status-codes/404.ico"  alt="Picture from my collection." />
+        <img src="../assets/images/status-codes/404.ico"  alt="Picture from my collection." />
         <h1>
-          Oops... 
+          Ooops... 
           <span id="errorMessage">
-          File not found on the Server!
+          Page not found on the Server!
           </span>
         </h1>
-        <button routerLink='/home' class="btn">
-          Back To Home
-        </button>
+        <button mat-button color="primary" routerLink='/home'> Back To Home</button>
       </div>
     </div>
   </div>

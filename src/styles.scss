@@ -13,6 +13,11 @@
 $custom-typography: mat-typography-config($font-family: '"Open Sans Condensed", sans-serif;');
 @include mat-core($custom-typography);
 
+@font-face {
+  font-family: 'Alsandra';
+  src: url('./assets/fonts/alsandra.ttf') format('truetype');
+}
+
 body {
   font-family: 'Open Sans Condensed', sans-serif;
   overflow-x: hidden;
