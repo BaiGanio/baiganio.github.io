@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
     <div class="content">
       <div class="row">
         <div class="col-xs-12 col-center">
-            <h1 class="GotHeroin">
+            <h1>
               Welcome to BaiGanio
             </h1>
             <img src="./assets/images/app/Ganio.jpg" alt="">

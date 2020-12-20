@@ -1,6 +1,5 @@
 mat-drawer-container {
   #sideNavigation {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     width: 250px;
     .fa-times:hover{
       cursor: pointer;
@@ -13,14 +12,12 @@ mat-drawer-container {
     mat-toolbar {
       .brandLogo {
         flex: auto;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
         font-size: 1.2em !important;
       }
     }
 
     mat-list {
       a {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
         font-size: 1.2em !important;
         text-decoration: none;
         cursor: pointer;

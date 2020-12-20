@@ -3,6 +3,7 @@
     background-size: auto auto;
     background-size: cover;
     border-radius: 0px;
+    text-align: center;
 }
 .py-5{  
     #innovations{
@@ -16,6 +17,8 @@
         margin: 5px;
         color: black;
         background-color: transparent;
+        font-size: 1em;
+        font-family: 'Open Sans Condensed', sans-serif;
     }
     .links {
         img {
@@ -44,10 +47,11 @@
         margin-bottom: 10px;
         padding: 5px;
         border: 1px solid black;
+        background-color: rgba(10, 136, 240, 0.768);
     }
     
     .innerLinks:hover {
-        background-color: rgba(61, 158, 238, 0.507);
+        background-color: rgba(61, 238, 220, 0.507);
     }
 }
 
@@ -64,6 +68,7 @@
 
         #clock {
             font-size: 1.5rem;
+            font-family: 'Open Sans Condensed', sans-serif;
         }
     
         .innerLinks {
