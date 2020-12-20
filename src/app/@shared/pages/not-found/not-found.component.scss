@@ -1,15 +1,6 @@
 .content{
     font-family: 'Alsandra';
     text-align: center;
-
-    button{
-        color: white;
-    }
-}
-
-button {
-    font-size: 1.5em;
-    background: #3f51b5;
 }
 
 h1 {
@@ -23,7 +14,7 @@ h1 {
 }
 @media only screen and (max-width: 797px) {
     h1 {
-        font-size: 3em;
+        font-size: 5em;
     }
 }
 @media only screen and (max-width: 591px) {

@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { TermsComponent } from '../terms/terms.component';
 
 @Component({
   selector: 'app-register',

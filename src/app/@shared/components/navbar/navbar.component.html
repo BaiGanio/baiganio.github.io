@@ -50,10 +50,10 @@
           </div>
           <ng-template #signBox>
             <a class="mr-3" routerLink='/login'>
-              <i class="fas fa-sign-in-alt"></i> Sign In
+              Login
             </a>
-            <a routerLink='/register'>
-              <i class="fa fa-user-plus"></i> Sign Up
+            <a class="mr-3" routerLink='/register'>
+              Register
             </a>
           </ng-template>
         </span>
@@ -61,10 +61,9 @@
       <br>
       <div class="container-fluid">
         <router-outlet></router-outlet>
-      
-      <br>
-      <app-footer></app-footer>
-    </div>
+        <br>
+        <app-footer></app-footer>
+      </div>
     </div>
   </mat-drawer-container>
   

@@ -3,19 +3,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BlogComponent } from './@pages/blog/blog.component';
-import { HomeComponent } from './@pages/home/home.component';
-import { NotFoundComponent } from './@pages/not-found/not-found.component';
-import { ErrorComponent } from './@pages/error/error.component';
-import { NavbarComponent } from './@components/navbar/navbar.component';
-import { FooterComponent } from './@components/footer/footer.component';
 import { AngularMaterialModule } from './@core/angular-material.module';
 import { CoreModule } from './@core/core.module';
-import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
-import { PrivacyComponent } from './@pages/privacy/privacy.component';
-import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
-import { TermsComponent } from './@pages/terms/terms.component';
+import { HomeComponent } from './@pages/home/home.component';
+import { AccessDeniedComponent } from './@shared/pages/access-denied/access-denied.component';
+import { ErrorComponent } from './@shared/pages/error/error.component';
+import { NotFoundComponent } from './@shared/pages/not-found/not-found.component';
+import { PrivacyComponent } from './@shared/pages/privacy/privacy.component';
+import { ServerAlertComponent } from './@shared/pages/server-alert/server-alert.component';
+import { TermsComponent } from './@shared/pages/terms/terms.component';
+import { AppComponent } from './app.component';
+import { BlogComponent } from './@pages/blog/blog.component';
+import { FooterComponent } from './@shared/components/footer/footer.component';
+import { NavbarComponent } from './@shared/components/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TermsComponent } from './@pages/terms/terms.component';
     FooterComponent,
     HomeComponent,
     NavbarComponent,
+    BlogComponent,
     ServerAlertComponent,
     AccessDeniedComponent,
     NotFoundComponent,
