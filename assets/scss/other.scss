@@ -1,0 +1,83 @@
+
+
+a {
+    cursor: pointer;
+  }
+  
+  .col-center {
+    float: none;
+    margin: 0 auto;
+  }
+  
+  
+  
+  @keyframes PopUp {
+    0% {
+      opacity: 0;
+    }
+  
+    25% {
+      opacity: 0.3;
+      transform: scale(2, 2);
+    }
+  
+    50% {
+      opacity: 0.5;
+    }
+  
+    75% {
+      opacity: 0.8;
+      transform: scale(1, 1);
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes alertAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .bounce1,
+  .bounce2,
+  .bounce3 {
+    background-color: #ffffff;
+    width: 25px !important;
+    height: 25px !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+    animation: sk-cubemove 2s infinite ease-in-out;
+  }
+  
+  .bounce2 {
+    margin-left: 50px;
+  }
+  
+  .bounce3 {
+    margin-left: 100px;
+  }
+  
+  .spinner-three-bounce[_ngcontent-txq-c6] {
+    width: 0px !important;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 620px !important;
+    right: 0px;
+    bottom: 0;
+    height: 20px;
+    margin: auto;
+    z-index: 2000;
+  }
+  
