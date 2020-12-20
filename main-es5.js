@@ -133,6 +133,49 @@ var HomeComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/@shared/not-found/not-found.component.scss":
+/*!************************************************************!*\
+  !*** ./src/app/@shared/not-found/not-found.component.scss ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#not-founded {\n  width: 30%;\n}\n\n#errorMessage {\n  color: white;\n  -webkit-text-stroke-width: 1.5px;\n  -webkit-text-stroke-color: black;\n}\n\nbutton {\n  font-size: 1.5em;\n  background: #3f51b5;\n}\n\nh1 {\n  font-family: \"Impact\", \"Haettenschweiler\", \"Arial Narrow Bold\", sans-serif;\n  font-size: 4em;\n}\n\n@media only screen and (max-width: 797px) {\n  h1 {\n    font-size: 3em;\n  }\n}\n\n@media only screen and (max-width: 591px) {\n  h1 {\n    font-size: 2em;\n  }\n\n  #not-founded {\n    width: 50%;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3J1bm5lci93b3JrL2JhaWdhbmlvLmdpdGh1Yi5pby9iYWlnYW5pby5naXRodWIuaW8vc3JjL2FwcC9Ac2hhcmVkL25vdC1mb3VuZC9ub3QtZm91bmQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL0BzaGFyZWQvbm90LWZvdW5kL25vdC1mb3VuZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFVBQUE7QUNDSjs7QURFQTtFQUNJLFlBQUE7RUFDQSxnQ0FBQTtFQUNBLGdDQUFBO0FDQ0o7O0FERUE7RUFDSSxnQkFBQTtFQUNBLG1CQUFBO0FDQ0o7O0FERUE7RUFDSSwwRUFBQTtFQUNBLGNBQUE7QUNDSjs7QURDQTtFQUNJO0lBQ0ksY0FBQTtFQ0VOO0FBQ0Y7O0FEQUE7RUFDSTtJQUNJLGNBQUE7RUNFTjs7RURBRTtJQUNJLFVBQUE7RUNHTjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvQHNoYXJlZC9ub3QtZm91bmQvbm90LWZvdW5kLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI25vdC1mb3VuZGVkIHtcbiAgICB3aWR0aDogMzAlO1xufVxuXG4jZXJyb3JNZXNzYWdlIHtcbiAgICBjb2xvcjogd2hpdGU7XG4gICAgLXdlYmtpdC10ZXh0LXN0cm9rZS13aWR0aDogMS41cHg7XG4gICAgLXdlYmtpdC10ZXh0LXN0cm9rZS1jb2xvcjogYmxhY2s7XG59XG5cbmJ1dHRvbiB7XG4gICAgZm9udC1zaXplOiAxLjVlbTtcbiAgICBiYWNrZ3JvdW5kOiAjM2Y1MWI1O1xufVxuXG5oMSB7XG4gICAgZm9udC1mYW1pbHk6ICdJbXBhY3QnLCAnSGFldHRlbnNjaHdlaWxlcicsICdBcmlhbCBOYXJyb3cgQm9sZCcsIHNhbnMtc2VyaWY7XG4gICAgZm9udC1zaXplOiA0ZW07XG59XG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDc5N3B4KSB7XG4gICAgaDEge1xuICAgICAgICBmb250LXNpemU6IDNlbTtcbiAgICB9XG59XG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDU5MXB4KSB7XG4gICAgaDEge1xuICAgICAgICBmb250LXNpemU6IDJlbTtcbiAgICB9XG4gICAgI25vdC1mb3VuZGVkIHtcbiAgICAgICAgd2lkdGg6IDUwJTtcbiAgICB9XG59XG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDQ1MXB4KSB7XG4gICAgXG59IiwiI25vdC1mb3VuZGVkIHtcbiAgd2lkdGg6IDMwJTtcbn1cblxuI2Vycm9yTWVzc2FnZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgLXdlYmtpdC10ZXh0LXN0cm9rZS13aWR0aDogMS41cHg7XG4gIC13ZWJraXQtdGV4dC1zdHJva2UtY29sb3I6IGJsYWNrO1xufVxuXG5idXR0b24ge1xuICBmb250LXNpemU6IDEuNWVtO1xuICBiYWNrZ3JvdW5kOiAjM2Y1MWI1O1xufVxuXG5oMSB7XG4gIGZvbnQtZmFtaWx5OiBcIkltcGFjdFwiLCBcIkhhZXR0ZW5zY2h3ZWlsZXJcIiwgXCJBcmlhbCBOYXJyb3cgQm9sZFwiLCBzYW5zLXNlcmlmO1xuICBmb250LXNpemU6IDRlbTtcbn1cblxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA3OTdweCkge1xuICBoMSB7XG4gICAgZm9udC1zaXplOiAzZW07XG4gIH1cbn1cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1heC13aWR0aDogNTkxcHgpIHtcbiAgaDEge1xuICAgIGZvbnQtc2l6ZTogMmVtO1xuICB9XG5cbiAgI25vdC1mb3VuZGVkIHtcbiAgICB3aWR0aDogNTAlO1xuICB9XG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/@shared/not-found/not-found.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/@shared/not-found/not-found.component.ts ***!
+  \**********************************************************/
+/*! exports provided: NotFoundComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NotFoundComponent", function() { return NotFoundComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var NotFoundComponent = /** @class */ (function () {
+    function NotFoundComponent() {
+    }
+    NotFoundComponent.prototype.ngOnInit = function () { };
+    NotFoundComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-not-found',
+            template: "\n  <div class=\"content\">\n    <div class=\"row\">\n      <div class=\"col-xs col-center text-center\">\n        <!-- <h1 class=\"Guildof\">File not found</h1> -->\n        <img id=\"not-founded\" src=\"../assets/images/status-codes/404.ico\"  alt=\"Picture from my collection.\" />\n        <h1>\n          Oops... \n          <span id=\"errorMessage\">\n          File not found on the Server!\n          </span>\n        </h1>\n        <button routerLink='/home' class=\"btn\">\n          Back To Home\n        </button>\n      </div>\n    </div>\n  </div>\n  ",
+            styles: [__webpack_require__(/*! ./not-found.component.scss */ "./src/app/@shared/not-found/not-found.component.scss")]
+        })
+    ], NotFoundComponent);
+    return NotFoundComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -148,6 +191,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _modules_blog_blog_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./@modules/blog/blog.component */ "./src/app/@modules/blog/blog.component.ts");
 /* harmony import */ var _modules_home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./@modules/home/home.component */ "./src/app/@modules/home/home.component.ts");
+/* harmony import */ var _shared_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./@shared/not-found/not-found.component */ "./src/app/@shared/not-found/not-found.component.ts");
+
 
 
 
@@ -167,6 +212,10 @@ var routes = [
         path: 'blog',
         component: _modules_blog_blog_component__WEBPACK_IMPORTED_MODULE_3__["BlogComponent"]
     },
+    {
+        path: '**',
+        component: _shared_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_5__["NotFoundComponent"]
+    }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -232,6 +281,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _modules_blog_blog_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./@modules/blog/blog.component */ "./src/app/@modules/blog/blog.component.ts");
 /* harmony import */ var _modules_home_home_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./@modules/home/home.component */ "./src/app/@modules/home/home.component.ts");
+/* harmony import */ var _shared_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./@shared/not-found/not-found.component */ "./src/app/@shared/not-found/not-found.component.ts");
+
 
 
 
@@ -247,7 +298,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
                 _modules_blog_blog_component__WEBPACK_IMPORTED_MODULE_5__["BlogComponent"],
-                _modules_home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"]
+                _modules_home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"],
+                _shared_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_7__["NotFoundComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
