@@ -12,16 +12,23 @@ import { NavbarComponent } from './@components/navbar/navbar.component';
 import { FooterComponent } from './@components/footer/footer.component';
 import { AngularMaterialModule } from './@core/angular-material.module';
 import { CoreModule } from './@core/core.module';
+import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
+import { PrivacyComponent } from './@pages/privacy/privacy.component';
+import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
+import { TermsComponent } from './@pages/terms/terms.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     FooterComponent,
-    BlogComponent,
     HomeComponent,
+    NavbarComponent,
+    ServerAlertComponent,
+    AccessDeniedComponent,
     NotFoundComponent,
-    ErrorComponent
+    PrivacyComponent,
+    TermsComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +36,11 @@ import { CoreModule } from './@core/core.module';
     BrowserAnimationsModule,
     AngularMaterialModule,
     CoreModule,
+  ],
+  entryComponents: [
+    TermsComponent,
+    PrivacyComponent,
+    ErrorComponent,
   ],
   providers: [CoreModule],
   bootstrap: [AppComponent],
