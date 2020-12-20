@@ -1209,6 +1209,10 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 .mat-mdc-focus-indicator {
   position: relative;
 }
+@font-face {
+  font-family: "Alsandra";
+  src: url('alsandra.ttf') format("truetype");
+}
 body {
   font-family: "Open Sans Condensed", sans-serif;
   overflow-x: hidden;
