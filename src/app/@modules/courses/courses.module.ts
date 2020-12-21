@@ -10,12 +10,12 @@ import { MyCoursesComponent } from './pages/my-courses/my-courses.component';
 import { CourseDetailsComponent } from './pages/course-details/course-details.component';
 import { InClassComponent } from './components/in-class/in-class.component';
 import { ScoreComponent } from './components/score/score.component';
-import { LinechartComponent } from 'src/app/@shared/components/charts/linechart/linechart.component';
-import { BarchartComponent } from 'src/app/@shared/components/charts/barchart/barchart.component';
-import { DoughnutComponent } from 'src/app/@shared/components/charts/doughnut/doughnut.component';
-import { PiechartComponent } from 'src/app/@shared/components/charts/piechart/piechart.component';
-import { PolarareaComponent } from 'src/app/@shared/components/charts/polararea/polararea.component';
 import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
+import { PiechartComponent } from 'src/app/@components/charts/piechart/piechart.component';
+import { BarchartComponent } from 'src/app/@components/charts/barchart/barchart.component';
+import { DoughnutComponent } from 'src/app/@components/charts/doughnut/doughnut.component';
+import { LinechartComponent } from 'src/app/@components/charts/linechart/linechart.component';
+import { PolarareaComponent } from 'src/app/@components/charts/polararea/polararea.component';
 
 @NgModule({
   declarations: [

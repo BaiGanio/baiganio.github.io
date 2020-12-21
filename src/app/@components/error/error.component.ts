@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 // import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
 import { ErrorView } from 'src/app/@shared/interfaces/error-view.interface';
-import { BaseDialogData } from '../../interfaces/base-dialog.interface';
+import { BaseDialogData } from '../../@shared/interfaces/base-dialog.interface';
 
 
 

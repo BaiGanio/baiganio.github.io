@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserDataService } from './user-data.service';
-import { ErrorComponent } from '../@shared/pages/error/error.component';
+import { ErrorComponent } from '../@components/error/error.component';
 import { ErrorModel } from '../@shared/models/error-model.module';
 
 @Injectable()

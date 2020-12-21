@@ -7,7 +7,7 @@ import { AccountService } from 'src/app/@services/account.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar'; 
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
-import { TermsComponent } from 'src/app/@shared/pages/terms/terms.component';
+import { TermsComponent } from 'src/app/@pages/terms/terms.component';
 
 @Component({
   selector: 'app-register',

@@ -7,16 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './@core/angular-material.module';
 import { CoreModule } from './@core/core.module';
 import { HomeComponent } from './@pages/home/home.component';
-import { AccessDeniedComponent } from './@shared/pages/access-denied/access-denied.component';
-import { ErrorComponent } from './@shared/pages/error/error.component';
-import { NotFoundComponent } from './@shared/pages/not-found/not-found.component';
-import { PrivacyComponent } from './@shared/pages/privacy/privacy.component';
-import { ServerAlertComponent } from './@shared/pages/server-alert/server-alert.component';
-import { TermsComponent } from './@shared/pages/terms/terms.component';
+import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
+import { ErrorComponent } from './@components/error/error.component';
+import { NotFoundComponent } from './@pages/not-found/not-found.component';
+import { PrivacyComponent } from './@pages/privacy/privacy.component';
+import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
+import { TermsComponent } from './@pages/terms/terms.component';
 import { AppComponent } from './app.component';
 import { BlogComponent } from './@pages/blog/blog.component';
 import { FooterComponent } from './@pages/footer/footer.component';
-import { NavbarComponent } from './@shared/components/navbar/navbar.component';
 import { CoursesModule } from './@modules/courses/courses.module';
 import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,7 +23,8 @@ import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './@pages/login/login.component';
 import { RegisterComponent } from './@pages/register/register.component';
-import { ForgottenPasswordComponent } from './@shared/pages/fotgotten-password/forgotten-password.component';
+import { ForgottenPasswordComponent } from './@pages/fotgotten-password/forgotten-password.component';
+import { NavbarComponent } from './@components/navbar/navbar.component';
 
 
 @NgModule({
