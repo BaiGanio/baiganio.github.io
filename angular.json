@@ -64,18 +64,53 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "test": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test.ts"
+                }
+              ]
+            },
+            "local": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "baiganio:build"
+            "browserTarget": "baiganio:build",
+            "port": 5003
           },
           "configurations": {
             "production": {
               "browserTarget": "baiganio:build:production"
-            }
+            },
+            "test": {
+              "browserTarget": "baiganio:build:test"
+            },
+            "local": {
+              "browserTarget": "baiganio:build:local"
+            }		   
           }
         },
         "extract-i18n": {
@@ -93,12 +128,16 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/web.config",
+              "src/404.html"
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/handy-clock.js"
+            ]
           }
         },
         "lint": {

@@ -15,17 +15,20 @@ import { BarchartComponent } from 'src/app/@shared/components/charts/barchart/ba
 import { DoughnutComponent } from 'src/app/@shared/components/charts/doughnut/doughnut.component';
 import { PiechartComponent } from 'src/app/@shared/components/charts/piechart/piechart.component';
 import { PolarareaComponent } from 'src/app/@shared/components/charts/polararea/polararea.component';
+import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
   imports: [
     CommonModule,
     CoursesRoutingModule,
-    AngularMaterialModule
-    // NgxLoadingModule.forRoot({
-    //   animationType: ngxLoadingAnimationTypes.threeBounce,
-    //   primaryColour: '#88078e',
-    //   secondaryColour: '#c6ef23',
-    // }),
+    AngularMaterialModule,
+    NgxLoadingModule.forRoot({
+      animationType: ngxLoadingAnimationTypes.threeBounce,
+      primaryColour: '#88078e',
+      secondaryColour: '#c6ef23',
+      backdropBorderRadius: '14px',
+      fullScreenBackdrop: true
+    }),
   ],
   declarations: [
     CoursesComponent,

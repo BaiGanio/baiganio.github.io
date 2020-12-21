@@ -30,7 +30,7 @@ export class SubscriptionsComponent implements OnInit {
     haveConfirmedSubscription = false;
 
     constructor(
-        // private errorHandlerService: ErrorHandlerService,
+        private errorHandlerService: ErrorHandlerService,
         private authService: AuthService,
         private router: Router,
         private subscriptionsService: SubscriptionService,
@@ -41,7 +41,7 @@ export class SubscriptionsComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        // this.loading = true;
+        this.loading = true;
         // if (this.route.snapshot.params.token) {
         //     this.checkRouteParameters();
         // }
@@ -52,7 +52,7 @@ export class SubscriptionsComponent implements OnInit {
         //         this.storedUserInit();
         //     }
         // }
-        // this.subscriptionsInit();
+        this.subscriptionsInit();
     }
 
     private subscriptionsInit() {
@@ -75,7 +75,7 @@ export class SubscriptionsComponent implements OnInit {
                 this.subscriptions.push(s as SubscriptionPreviewModel);
             });
         }, error => {
-          //  this.errorHandlerService.handleRequestError(error);
+            this.errorHandlerService.handleRequestError(error);
             this.loading = false;
         }, () => { this.loading = false; });
     }

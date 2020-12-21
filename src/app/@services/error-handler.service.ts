@@ -16,7 +16,7 @@ export class ErrorHandlerService {
     private userService: UserDataService,
     private snackbar: MatSnackBar) { }
 
-  handleRequestError(error) {
+  handleRequestError(error: { status: any; }) {
     const status = error.status;
     // if (error.error.type === 'error' && status === 0) {
     if (status === 0) {

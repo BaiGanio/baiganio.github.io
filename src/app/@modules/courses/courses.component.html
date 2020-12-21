@@ -17,7 +17,7 @@
     
 </div>
 <ng-template #infoBox>
-    <h1  style="text-align:center">Courses</h1>   
+    <h1 class="title" style="text-align:center">Courses</h1>   
     <hr style="width: 60%; color: blue;">  
     <div class="row">
         <div *ngFor='let c of courses' class="col-md-4 text-center">
@@ -65,5 +65,5 @@
     </div>
 </ng-template>
 
-<h2 *ngIf='loading' class='text-center'>Please wait! Fetching data...</h2>
-<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>
+<h2 *ngIf='loading'>Please wait! Fetching data from the server...</h2>
+<ngx-loading [show]="loading"></ngx-loading>

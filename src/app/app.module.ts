@@ -20,6 +20,7 @@ import { NavbarComponent } from './@shared/components/navbar/navbar.component';
 import { CoursesModule } from './@modules/courses/courses.module';
 import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
 
 
 @NgModule({
@@ -49,6 +50,13 @@ import { HttpClientModule } from '@angular/common/http';
       config: {
         tokenGetter: jwtTokenGetter
       }
+    }),
+    NgxLoadingModule.forRoot({
+      animationType: ngxLoadingAnimationTypes.threeBounce,
+      primaryColour: '#88078e',
+      secondaryColour: '#c6ef23',
+      backdropBorderRadius: '14px',
+      fullScreenBackdrop: true
     }),
   ],
   entryComponents: [

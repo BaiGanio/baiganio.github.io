@@ -18,7 +18,6 @@ import { Component, OnInit } from '@angular/core';
       </div>
     </div>
   </div>
-  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>
   `,
   styleUrls: ['./home.component.scss']
 })
@@ -27,6 +26,6 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // this.loading = false;
+    this.loading = true;
   }
 }

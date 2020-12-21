@@ -4,23 +4,25 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ErrorView } from 'src/app/@shared/interfaces/error-view.interface';
 import { BaseDialogData } from '../../interfaces/base-dialog.interface';
 
+
+
+// <img src="../assets/images/bd2.gif" alt="" />
+      
 @Component({
   selector: 'app-error',
   template:
   `
-  <div class="text-center">
+  <div class="content">
     <div>
-      <h3> Ops... Error shows up!!!
-        <img src="../assets/images/bd2.gif" alt="" />
-      </h3>
+      <h3> Ooops... <span>Error shows up!!!</span></h3>
       <hr/>
       <h4>{{error.ErrorText}}</h4>
-      <div style="width:50%; margin:auto;"  class="text-center">
+      <div style="width:50%; margin:auto;">
         {{error.Message}}
       </div>
       <hr/>
       <button
-      mat-stroked-button color='warn'
+      mat-stroked-button color='info'
         (click) = dismiss()
         style="width:50%">
         Dismiss
