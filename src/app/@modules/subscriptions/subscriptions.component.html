@@ -1,0 +1,76 @@
+<h1 class="" style="text-align:center">Subscriptions
+  <span *ngIf='haveConfirmedSubscription === true'> / 
+    <button style="background-color: cornflowerblue; color:white; cursor:pointer;" (click)='goToMySubscriptions()'>Preview</button>
+  </span>
+</h1>
+<hr style="width: 60%; color: blue;">  
+<div class="content text-center">
+  <h2 *ngIf='loading'>Please wait! Fetching data...</h2>
+
+  <div class="dim" *ngIf='notificationRequest'>
+    <span class="msg">
+      <h2>
+        Your subscription request is on the fly...
+        <br>
+        Please check your email for confirmation link!
+        <br>
+      </h2>
+      <br>
+      <button
+        class="btn btn-outline-info"
+        (click) = dismiss()
+        style="width:20%">
+        <b>Dismiss</b>
+      </button>
+    </span>
+  </div>
+  <div class="dim" *ngIf="isUserConfirmingSubscription">
+    <span class="msg">
+      <h2>
+        Thank you for confirming your subscription.
+        <br>
+        You are now subscribed!
+      </h2>
+      <br>
+      <button
+        class="btn btn-outline-info"
+        (click) = dismiss()
+        style="width:20%">
+        <b>Dismiss</b>
+      </button>
+    </span>
+  </div>
+</div>
+<div class='row text-center'>
+  <div id="exception-list" class="col-md-4" *ngFor='let s of subscriptions;'>
+    <div class="card" style="margin: 10px;">
+      <div class="card-body">
+        <h2 class="text-center"> {{ s.Type }} </h2>
+        <hr style="color: black;">
+        <div class="view view-cascade overlay">
+
+          <img src='{{ s.Image }}' alt="Sample image" class="img-thumbnail img-fluid">
+          <hr style="width: 80%; color: blue;">
+          <p *ngIf='s.IsActive;' id="subscrStatus">Active : {{s.IsActive}}</p>
+          <p *ngIf='!s.IsActive;' id="subscrStatus">Subscription in development!</p>
+         
+          <div *ngIf='s.IsActive'>
+            <p *ngIf='isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>  
+              <button                                     
+              class="btn btn-outline-success" 
+              (click)='sendRequest(s.Id)'>
+              Send request 4 subscription
+            </button>
+            </p>
+            <p style="color: blue;" *ngIf='isWaitingForConfirmation(s.Id)'>Waiting for confirmation!</p>            
+          </div>
+          <button mat-raised-button color="primary" (click)=getSubscriptionPreview(s.Id)>
+            <i class="fas fa-search"></i>
+          </button>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading> -->

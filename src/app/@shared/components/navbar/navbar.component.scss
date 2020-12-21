@@ -18,10 +18,11 @@ mat-drawer-container {
 
     mat-list {
       a {
-        font-size: 1.2em !important;
+        font-size: 2em !important;
         text-decoration: none;
         cursor: pointer;    
         font-family: 'Alsandra';
+        padding: 10px;
       }
 
       a:hover {

@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 // import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
-import { ErrorModel } from 'src/app/@shared/interfaces/error-model.interface';
+import { ErrorView } from 'src/app/@shared/interfaces/error-view.interface';
+import { BaseDialogData } from '../../interfaces/base-dialog.interface';
 
 @Component({
   selector: 'app-error',
@@ -29,19 +31,19 @@ import { ErrorModel } from 'src/app/@shared/interfaces/error-model.interface';
   styleUrls: ['./error.component.scss']
 })
 export class ErrorComponent implements OnInit {
-  error: ErrorModel;
+  error: ErrorView;
 
   constructor(
-    // public dialogRef: MatDialogRef<ErrorComponent>,
-    // @Inject(MAT_DIALOG_DATA) public data: BaseDialogData
+    public dialogRef: MatDialogRef<ErrorComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: BaseDialogData
   ) { }
 
   ngOnInit() {
-    // this.error = this.data.model;
+    this.error = this.data.model;
   }
 
   dismiss() {
-    // this.dialogRef.close();
+    this.dialogRef.close();
   }
 
   // sendExceptionToAdmin() {

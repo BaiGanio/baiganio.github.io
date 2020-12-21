@@ -1,4 +1,4 @@
-export interface ErrorModel {
+export interface ErrorView {
     ErrorText: string;
     ErrorDescription: string;
     Message: string;

@@ -33,6 +33,14 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
+    path: 'subscriptions',
+    loadChildren : () => import('./@modules/subscriptions/subscriptions.module').then(m => m.SubscriptionsModule)
+  },
+  {
+    path: 'courses',
+    loadChildren : () => import('./@modules/courses/courses.module').then(m => m.CoursesModule)
+  },
+  {
     path: 'server-alert',
     component: ServerAlertComponent
   },

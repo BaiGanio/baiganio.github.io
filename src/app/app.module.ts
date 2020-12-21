@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './@core/angular-material.module';
@@ -16,6 +17,9 @@ import { AppComponent } from './app.component';
 import { BlogComponent } from './@pages/blog/blog.component';
 import { FooterComponent } from './@shared/components/footer/footer.component';
 import { NavbarComponent } from './@shared/components/navbar/navbar.component';
+import { CoursesModule } from './@modules/courses/courses.module';
+import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -36,8 +40,16 @@ import { NavbarComponent } from './@shared/components/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AngularMaterialModule,
     CoreModule,
+    CoursesModule,
+    SubscriptionsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: jwtTokenGetter
+      }
+    }),
   ],
   entryComponents: [
     TermsComponent,
@@ -49,3 +61,7 @@ import { NavbarComponent } from './@shared/components/navbar/navbar.component';
   schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
+
+export function jwtTokenGetter() {
+  return localStorage.getItem('bg-bcof');
+}

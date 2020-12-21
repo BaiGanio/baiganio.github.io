@@ -1,0 +1,12 @@
+.img-fluid {
+  // border: 1px solid black;
+  height: 16vw;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 992px) {
+  #subscrContainer {
+    flex-direction: column;
+    margin-top: 5rem;
+  }
+}
