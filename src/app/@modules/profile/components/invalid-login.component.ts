@@ -1,8 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
-import { UserDataService } from 'src/app/@services/user-data.service';
-import { ErrorModel } from 'src/app/@shared/interfaces/error-model.module';
+import { ErrorModel } from 'src/app/@shared/models/error-model.module';
 
 @Component({
   selector: 'app-invalid-login',

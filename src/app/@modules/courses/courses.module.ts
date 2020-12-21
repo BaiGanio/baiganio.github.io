@@ -16,13 +16,15 @@ import { BarchartComponent } from 'src/app/@components/charts/barchart/barchart.
 import { DoughnutComponent } from 'src/app/@components/charts/doughnut/doughnut.component';
 import { LinechartComponent } from 'src/app/@components/charts/linechart/linechart.component';
 import { PolarareaComponent } from 'src/app/@components/charts/polararea/polararea.component';
+import { CoursesDetailsComponent } from './pages/courses-details/courses-details.component';
 
 @NgModule({
   declarations: [
     CoursesComponent,
     CoursePreviewComponent,
     MyCoursesComponent,
-    CourseDetailsComponent,
+    CourseDetailsComponent,    
+    CoursesDetailsComponent,
     InClassComponent,
     ScoreComponent,
     LinechartComponent,
@@ -44,7 +46,7 @@ import { PolarareaComponent } from 'src/app/@components/charts/polararea/polarar
     }),
   ],
   entryComponents: [
-    CoursePreviewComponent
+    CoursePreviewComponent,
   ],
   exports: [CourseDetailsComponent],
   schemas: [ NO_ERRORS_SCHEMA ]

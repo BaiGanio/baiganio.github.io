@@ -42,6 +42,22 @@ const routes: Routes = [
     loadChildren : () => import('./@modules/courses/courses.module').then(m => m.CoursesModule)
   },
   {
+    path: 'blog',
+    loadChildren : () => import('./@modules/blogs/blogs.module').then(m => m.BlogsModule)
+  },
+  {
+    path: 'teachers',
+    loadChildren : () => import('./@modules/teachers/teachers.module').then(m => m.TeachersModule)
+    // canActivate: [RoleGuard],
+    // data: {
+    //   allowedRoles: ['admin', 'Teacher']
+    // }
+  },
+  {
+    path: 'account',
+    loadChildren : () => import('./@modules/account/account.module').then(m => m.AccountModule)
+  },
+  {
     path: 'dashboard',
     loadChildren : () => import('./@modules/dashboard/dashboard.module').then(m => m.DashboardModule)
     // canActivate: [RoleGuard],

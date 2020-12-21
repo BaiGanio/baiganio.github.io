@@ -41,8 +41,8 @@ export class CoursesDetailsComponent implements OnInit {
     private teacherService: TeacherService
   ) { }
 
-  @ViewChild(MatPaginator, null) paginator: MatPaginator;
-  @ViewChild(MatSort, null) sort: MatSort;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort: MatSort;
 
   ngOnInit(): void {
     this.getCourses();

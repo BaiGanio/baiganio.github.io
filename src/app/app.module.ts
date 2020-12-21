@@ -28,6 +28,8 @@ import { NavbarComponent } from './@components/navbar/navbar.component';
 import { UnauthorizedComponent } from './@components/unauthorized/unauthorized.component';
 import { DashboardModule } from './@modules/dashboard/dashboard.module';
 import { ProfileModule } from './@modules/profile/profile.module';
+import { AccountModule } from './@modules/account/account.module';
+import { QuestionnaireComponent } from './@components/questionnaire/questionnaire.component';
 
 
 @NgModule({
@@ -47,6 +49,7 @@ import { ProfileModule } from './@modules/profile/profile.module';
     ForgottenPasswordComponent,
     ErrorComponent,
     UnauthorizedComponent,
+    QuestionnaireComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { ProfileModule } from './@modules/profile/profile.module';
     HttpClientModule,
     AngularMaterialModule,
     CoreModule,
+    AccountModule,
     DashboardModule,
     ProfileModule,
     CoursesModule,
@@ -79,6 +83,7 @@ import { ProfileModule } from './@modules/profile/profile.module';
     PrivacyComponent,
     ErrorComponent,
     UnauthorizedComponent,
+    QuestionnaireComponent,
   ],
   providers: [CoreModule],
   bootstrap: [AppComponent],
