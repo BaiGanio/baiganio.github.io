@@ -18,18 +18,6 @@ import { PolarareaComponent } from 'src/app/@shared/components/charts/polararea/
 import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CoursesRoutingModule,
-    AngularMaterialModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
-  ],
   declarations: [
     CoursesComponent,
     CoursePreviewComponent,
@@ -42,6 +30,18 @@ import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
     DoughnutComponent,
     PiechartComponent,
     PolarareaComponent
+  ],
+  imports: [
+    CommonModule,
+    CoursesRoutingModule,
+    AngularMaterialModule,
+    NgxLoadingModule.forRoot({
+      animationType: ngxLoadingAnimationTypes.threeBounce,
+      primaryColour: '#88078e',
+      secondaryColour: '#c6ef23',
+      backdropBorderRadius: '14px',
+      fullScreenBackdrop: true
+    }),
   ],
   entryComponents: [
     CoursePreviewComponent
