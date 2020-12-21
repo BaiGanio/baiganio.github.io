@@ -15,13 +15,16 @@ import { ServerAlertComponent } from './@shared/pages/server-alert/server-alert.
 import { TermsComponent } from './@shared/pages/terms/terms.component';
 import { AppComponent } from './app.component';
 import { BlogComponent } from './@pages/blog/blog.component';
-import { FooterComponent } from './@shared/components/footer/footer.component';
+import { FooterComponent } from './@pages/footer/footer.component';
 import { NavbarComponent } from './@shared/components/navbar/navbar.component';
 import { CoursesModule } from './@modules/courses/courses.module';
 import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './@pages/login/login.component';
+import { RegisterComponent } from './@pages/register/register.component';
+import { ForgottenPasswordComponent } from './@shared/pages/fotgotten-password/forgotten-password.component';
 
 
 @NgModule({
@@ -31,11 +34,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     NavbarComponent,
     BlogComponent,
+    LoginComponent,
+    RegisterComponent,
     ServerAlertComponent,
     AccessDeniedComponent,
     NotFoundComponent,
     PrivacyComponent,
     TermsComponent,
+    ForgottenPasswordComponent,
     ErrorComponent,
   ],
   imports: [

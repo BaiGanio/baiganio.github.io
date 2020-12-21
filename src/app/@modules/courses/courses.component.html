@@ -47,8 +47,7 @@
                     </button> 
                     <span *ngIf='c.IsActive'>
                         <button  
-                            *ngIf='isEnrolled(c.Id)'
-                            type="button"                        
+                            *ngIf='isEnrolled(c.Id)'         
                             class="btn btn-outline-info" 
                             (click) = 'goToCourse(c.Id)'>
                             <b>Go to Course Progress</b>
@@ -57,7 +56,7 @@
                             <button                        
                                 mat-raised-button
                                 (click) = 'enroll4course(c.Id)'>
-                                <b>Enroll 4 Course</b>
+                                Enroll 4 Course
                             </button>
                         </span>
                     </span>

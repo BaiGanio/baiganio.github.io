@@ -16,15 +16,19 @@ import { BaseDialogData } from '../../interfaces/base-dialog.interface';
     <div>
       <h3> Ooops... <span>Error shows up!!!</span></h3>
       <hr/>
-      <h4>{{error.ErrorText}}</h4>
-      <div style="width:50%; margin:auto;">
+      <br/> 
+      <h3>
         {{error.Message}}
-      </div>
+      </h3> 
+      <h5>{{error.ErrorText}}</h5>
+      <br/>  
       <hr/>
+      <br/>  
       <button
-      mat-stroked-button color='info'
+        mat-raised-button 
+        color="primary"
         (click) = dismiss()
-        style="width:50%">
+        style="width:30%">
         Dismiss
       </button>
     </div>

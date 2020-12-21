@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserViewModel } from 'src/app/@modules/users/models/user-view-model.module';
+import { AuthService } from 'src/app/@services/auth.service';
+import { BackendService } from 'src/app/@services/backend.service';
+import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
+import { UserDataService } from 'src/app/@services/user-data.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +15,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   retryFunction = null;
-  // user: UserViewModel;
+  user: UserViewModel;
   loading = false;
   loginError = false;
   loginErrorMessage = '';
@@ -18,10 +23,10 @@ export class LoginComponent implements OnInit {
   constructor(
      private formBuilder: FormBuilder,
      private router: Router,
-    // private backendService: BackendService,
-    // private authservice: AuthService,
-    // private errorHandlerService: ErrorHandlerService,
-    // private userDataService: UserDataService
+    private backendService: BackendService,
+    private authservice: AuthService,
+    private errorHandlerService: ErrorHandlerService,
+    private userDataService: UserDataService
     ) { }
 
   ngOnInit() {
@@ -43,67 +48,66 @@ export class LoginComponent implements OnInit {
     //this.authservice.clearUserToken();
   }
 
-  // sendLoginRequest() {
-  //   this.loading = true;
-  //   this.backendService.getUserAccessToken(
-  //     this.loginForm.value.email,
-  //     this.loginForm.value.password
-  //   ).subscribe(
-  //       response => this.handleSuccess(response),
-  //       error => {
-  //         console.log(error);
-  //         this.loading = false;
-  //         this.loginForm.reset();
-  //         this.loginErrorMessage =
-  //         `Ops... <br/> ${error.error.error_description}! <br/>`;
-  //         this.loginError = true;
-  //       }
-  //     );
-  // }
+  sendLoginRequest() {
+    this.loading = true;
+    this.backendService.getUserAccessToken(
+      this.loginForm.value.email,
+      this.loginForm.value.password
+    ).subscribe(
+        response => this.handleSuccess(response),
+        error => {
+          this.errorHandlerService.handleRequestError(error);
+          this.loading = false;
+       }, () => { 
+         this.loading = false; 
+         this.loginError = true;
+         this.loginForm.reset();
+        });
+  }
 
-  // private handleSuccess(authToken): void {
-  //   if (this.loginForm.value.rememberMe) {
-  //     this.authservice.setUserTokenAndRemember(authToken);
-  //   } else {
-  //     this.authservice.clearUserToken();
-  //     this.authservice.userToken = authToken;
-  //   }
-  //   this.getUserByToken();
-  //   this.loading = false;
-  //   this.router.navigate(['/dashboard']);
-  // }
+  private handleSuccess(authToken): void {
+    if (this.loginForm.value.rememberMe) {
+      this.authservice.setUserTokenAndRemember(authToken);
+    } else {
+      this.authservice.clearUserToken();
+      this.authservice.userToken = authToken;
+    }
+    this.getUserByToken();
+    this.loading = false;
+    this.router.navigate(['/dashboard']);
+  }
 
-  // getUserByToken(): void {
-  //   let userData: any;
-  //   let username = '';
-  //   this.userDataService.getUserByToken()
-  //     .subscribe(response => {
-  //         userData = response.body;
-  //         this.userDataService.setUserData(userData);
-  //         username =
-  //           userData.first_name != null && userData.last_name != null
-  //           ? userData.first_name + ' ' + userData.last_name
-  //           : userData.email;
+  getUserByToken(): void {
+    let userData: any;
+    let username = '';
+    this.userDataService.getUserByToken()
+      .subscribe(response => {
+          userData = response.body;
+          this.userDataService.setUserData(userData);
+          username =
+            userData.first_name != null && userData.last_name != null
+            ? userData.first_name + ' ' + userData.last_name
+            : userData.email;
 
-  //         this.updateLastLogin();
-  //       },
-  //       error => {
-  //         this.errorHandlerService.handleRequestError(error);
-  //       }
-  //     );
-  // }
+          this.updateLastLogin();
+        },
+        error => {
+          this.errorHandlerService.handleRequestError(error);
+        }
+      );
+  }
 
-  // dismiss() {
-  //   this.loginError = false;
-  //   this.loginErrorMessage = '';
-  // }
+  dismiss() {
+    this.loginError = false;
+    this.loginErrorMessage = '';
+  }
 
-  // updateLastLogin() {
-  //   this.userDataService.updateLastLoginDate().subscribe(
-  //     () => {},
-  //     err => { console.log(err); }
-  //   );
+  updateLastLogin() {
+    this.userDataService.updateLastLoginDate().subscribe(
+      () => {},
+      err => { console.log(err); }
+    );
 
-  // }
+  }
 
 }

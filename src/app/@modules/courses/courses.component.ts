@@ -28,11 +28,11 @@ export class CoursesComponent implements OnInit {
   // student = new StudentPreviewModel();
 
   constructor(
-     private courseService: CoursesService,
+    private courseService: CoursesService,
     // private studentService: StudentService,
     // private authService: AuthService,
     // private userDataService: UserDataService,
-     private errorHandlerService: ErrorHandlerService,
+    private errorHandlerService: ErrorHandlerService,
     private dialog: MatDialog,
     private router: Router,
     private snackbar: MatSnackBar

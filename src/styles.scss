@@ -27,6 +27,20 @@ body {
   overflow: hidden !important;
 }
 
+.title{
+  font-family: 'Alsandra';
+  font-size: 3em;
+  text-align: center;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: black;
+  color: white;
+}
+hr{
+  width: 60%; 
+  margin: 0 auto;
+  color: blue;
+}
+
 /* END */
 
 .dim {

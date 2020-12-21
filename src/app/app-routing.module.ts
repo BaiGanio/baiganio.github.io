@@ -6,6 +6,7 @@ import { LoginComponent } from './@pages/login/login.component';
 import { RegisterComponent } from './@pages/register/register.component';
 import { AccessDeniedComponent } from './@shared/pages/access-denied/access-denied.component';
 import { ErrorComponent } from './@shared/pages/error/error.component';
+import { ForgottenPasswordComponent } from './@shared/pages/fotgotten-password/forgotten-password.component';
 import { NotFoundComponent } from './@shared/pages/not-found/not-found.component';
 import { ServerAlertComponent } from './@shared/pages/server-alert/server-alert.component';
 
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'server-alert',
     component: ServerAlertComponent
+  },
+  {
+    path: 'forgotten-password',
+    component: ForgottenPasswordComponent
   },
   {
     path: 'error',

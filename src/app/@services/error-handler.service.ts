@@ -21,6 +21,12 @@ export class ErrorHandlerService {
     // if (error.error.type === 'error' && status === 0) {
     if (status === 0) {
       return this.router.navigate(['/server-alert']);
+    } else if (status === 404) {
+      // const $dialogRef =
+      // this.dialog.open(
+      //     ErrorComponent,
+      //     { data: { model: new ErrorModel(status) } }
+      // );
     } else if (status) {
       const $dialogRef =
         this.dialog.open(
