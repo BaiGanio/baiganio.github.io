@@ -20,7 +20,7 @@ import { BaseDialogData } from '../../interfaces/base-dialog.interface';
       <h3>
         {{error.Message}}
       </h3> 
-      <h5>{{error.ErrorText}}</h5>
+      <h5>{{error.ErrorDescription}}</h5>
       <br/>  
       <hr/>
       <br/>  
@@ -46,6 +46,7 @@ export class ErrorComponent implements OnInit {
 
   ngOnInit() {
     this.error = this.data.model;
+    console.log(this.error);
   }
 
   dismiss() {

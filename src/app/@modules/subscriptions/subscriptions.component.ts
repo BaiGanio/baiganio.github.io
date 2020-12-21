@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/@services/auth.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { SubscriptionPreviewComponent } from './components/subscription-preview/subscription-preview.component';
 
 @Component({
     selector: 'app-subscriptions',
@@ -113,7 +114,7 @@ export class SubscriptionsComponent implements OnInit {
                 },
                 error => {
                     this.loading = false;
-                    //this.errorHandlerService.handleRequestError(error);
+                    this.errorHandlerService.handleRequestError(error);
                 },
                 () => {
                     this.subscriptions = new Array<any>();
@@ -165,12 +166,12 @@ export class SubscriptionsComponent implements OnInit {
                     );
             }
         });
-        // const $dialogRef =
-        //     this.dialog.open(
-        //         SubscriptionPreviewComponent,
-        //         { data: { model: subscription } }
-        //     );
-        // $dialogRef.afterClosed().subscribe();
+        const $dialogRef =
+            this.dialog.open(
+                SubscriptionPreviewComponent,
+                { data: { model: subscription } }
+            );
+        $dialogRef.afterClosed().subscribe();
     }
 
     isConfirmed(sId: string): boolean {

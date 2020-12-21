@@ -10,3 +10,20 @@ h3 {
         color: white;
     }   
 }
+
+@media only screen and (max-width: 797px) {
+    h1 {
+        font-size: 5em;
+    }
+}
+@media only screen and (max-width: 591px) {
+   
+}
+@media only screen and (max-width: 451px) {
+    h3 {
+        font-size: 1.2em;
+    }
+    h5 {
+        font-size: 0.8em;
+    }
+}

@@ -47,26 +47,38 @@
       <div class="card-body">
         <h2 class="text-center"> {{ s.Type }} </h2>
         <hr style="color: black;">
+        <br>
         <div class="view view-cascade overlay">
 
           <img src='{{ s.Image }}' alt="Sample image" class="img-thumbnail img-fluid">
-          <hr style="width: 80%; color: blue;">
+          <br>
+          <br>
+          <hr>
           <p *ngIf='s.IsActive;' id="subscrStatus">Active : {{s.IsActive}}</p>
           <p *ngIf='!s.IsActive;' id="subscrStatus">Subscription in development!</p>
          
-          <div *ngIf='s.IsActive'>
-            <p *ngIf='isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>  
+          <!-- <span *ngIf='s.IsActive'>
+            <span *ngIf='s.IsActive && isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>  
               <button                                     
               class="btn btn-outline-success" 
               (click)='sendRequest(s.Id)'>
               Send request 4 subscription
             </button>
-            </p>
-            <p style="color: blue;" *ngIf='isWaitingForConfirmation(s.Id)'>Waiting for confirmation!</p>            
-          </div>
+          </span>
+            <div style="color: blue;" *ngIf='isWaitingForConfirmation(s.Id)'>Waiting for confirmation!</div>            
+        </span> -->
+        <span>
           <button mat-raised-button color="primary" (click)=getSubscriptionPreview(s.Id)>
             <i class="fas fa-search"></i>
           </button>
+        </span>
+          <span *ngIf='s.IsActive && isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>  
+              <button                                     
+              mat-raised-button 
+              (click)='sendRequest(s.Id)'>
+              Send request 4 subscription
+            </button>
+          </span>
         
         </div>
       </div>

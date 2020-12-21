@@ -27,6 +27,12 @@ export class ErrorHandlerService {
       //     ErrorComponent,
       //     { data: { model: new ErrorModel(status) } }
       // );
+    } else if (status === 40) {
+      const $dialogRef =
+      this.dialog.open(
+          ErrorComponent,
+          { data: { model: new ErrorModel(error) } }
+      );
     } else if (status) {
       const $dialogRef =
         this.dialog.open(
