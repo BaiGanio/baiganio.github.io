@@ -1,15 +1,10 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-// import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
+import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
 import { ErrorView } from 'src/app/@shared/interfaces/error-view.interface';
-import { BaseDialogData } from '../../@shared/interfaces/base-dialog.interface';
 
-
-
-// <img src="../assets/images/bd2.gif" alt="" />
-      
 @Component({
-  selector: 'app-error',
+  selector: 'app-unauthorized',
   template:
   `
   <div class="content">
@@ -18,9 +13,9 @@ import { BaseDialogData } from '../../@shared/interfaces/base-dialog.interface';
       <hr/>
       <br/> 
       <h3>
-        {{error.ErrorText}}
+        {{error.status}} Unauthorized
       </h3> 
-      <h5>{{error.ErrorDescription}}</h5>
+      <h5>Lacks valid authentication credentials for the target resource!</h5>
       <br/>  
       <hr/>
       <br/>  
@@ -34,25 +29,22 @@ import { BaseDialogData } from '../../@shared/interfaces/base-dialog.interface';
     </div>
   </div>
   `,
-  styleUrls: ['./error.component.scss']
+  styleUrls: ['./unauthorized.component.scss']
 })
-export class ErrorComponent implements OnInit {
-  error: ErrorView;
+export class UnauthorizedComponent implements OnInit {
+  error: any;
 
   constructor(
-    public dialogRef: MatDialogRef<ErrorComponent>,
+    public dialogRef: MatDialogRef<UnauthorizedComponent>,
     @Inject(MAT_DIALOG_DATA) public data: BaseDialogData
   ) { }
 
   ngOnInit() {
     this.error = this.data.model;
+
   }
 
   dismiss() {
     this.dialogRef.close();
   }
-
-  // sendExceptionToAdmin() {
-  //   this.dialogRef.close(this.error.Error);
-  // }
 }

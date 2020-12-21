@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserDataService } from './user-data.service';
 import { ErrorComponent } from '../@components/error/error.component';
 import { ErrorModel } from '../@shared/models/error-model.module';
+import { UnauthorizedComponent } from '../@components/unauthorized/unauthorized.component';
 
 @Injectable()
 export class ErrorHandlerService {
@@ -21,20 +22,22 @@ export class ErrorHandlerService {
     // if (error.error.type === 'error' && status === 0) {
     if (status === 0) {
       return this.router.navigate(['/server-alert']);
-    } else if (status === 404) {
-      // const $dialogRef =
-      // this.dialog.open(
-      //     ErrorComponent,
-      //     { data: { model: new ErrorModel(status) } }
-      // );
-    } else if (status === 40) {
-      const $dialogRef =
+    } else if (status === 400) {
       this.dialog.open(
           ErrorComponent,
           { data: { model: new ErrorModel(error) } }
       );
-    } else if (status) {
-      const $dialogRef =
+    }  else if (status === 401) {
+      this.dialog.open(
+          UnauthorizedComponent,
+          { data: { model: error } }
+      );
+    } else if (status === 404) {
+      this.dialog.open(
+          ErrorComponent,
+          { data: { model: new ErrorModel(error) } }
+      );
+    }else if (status) {    console.log(error);
         this.dialog.open(
             ErrorComponent,
             { data: { model: new ErrorModel(error) } }

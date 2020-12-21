@@ -42,6 +42,22 @@ const routes: Routes = [
     loadChildren : () => import('./@modules/courses/courses.module').then(m => m.CoursesModule)
   },
   {
+    path: 'dashboard',
+    loadChildren : () => import('./@modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+    // canActivate: [RoleGuard],
+    // data: {
+    //   expectedRole: 'Member'
+    // }
+  },  
+  {
+    path: 'profile',
+    loadChildren : () => import('./@modules/profile/profile.module').then(m => m.ProfileModule)
+    // canActivate: [RoleGuard],
+    // data: {
+    //   expectedRole: 'Member'
+    // }
+  },
+  {
     path: 'server-alert',
     component: ServerAlertComponent
   },

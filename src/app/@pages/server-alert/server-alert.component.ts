@@ -5,15 +5,18 @@ import { Component, OnInit } from '@angular/core';
   template:
   `
   <div class="content">
-  <div class="row">
-    <div class="col-xs-12 col-center text-center">
-      <h1>
-        Ooops... ERROR 503!
+    <div class="row">
+      <div class="col-xs-12 col-center text-center">    
         <br>
-        <span id="errorMessage">Our Servers are temporary unavailable!</span> 
+        <h1>
+          Ooops... ERROR 503!
+          <hr>
+          <br>
+          <span id="errorMessage">Our Servers are temporary unavailable!</span> 
         </h1>
         <br>
-        <button mat-button color="primary" routerLink='/home'> Back To Home</button>
+        <button  mat-raised-button
+          color="primary" routerLink='/home'> Back To Home</button>
       </div>
     </div>
   </div>

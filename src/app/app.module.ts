@@ -25,6 +25,9 @@ import { LoginComponent } from './@pages/login/login.component';
 import { RegisterComponent } from './@pages/register/register.component';
 import { ForgottenPasswordComponent } from './@pages/fotgotten-password/forgotten-password.component';
 import { NavbarComponent } from './@components/navbar/navbar.component';
+import { UnauthorizedComponent } from './@components/unauthorized/unauthorized.component';
+import { DashboardModule } from './@modules/dashboard/dashboard.module';
+import { ProfileModule } from './@modules/profile/profile.module';
 
 
 @NgModule({
@@ -43,6 +46,7 @@ import { NavbarComponent } from './@components/navbar/navbar.component';
     TermsComponent,
     ForgottenPasswordComponent,
     ErrorComponent,
+    UnauthorizedComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,8 @@ import { NavbarComponent } from './@components/navbar/navbar.component';
     HttpClientModule,
     AngularMaterialModule,
     CoreModule,
+    DashboardModule,
+    ProfileModule,
     CoursesModule,
     SubscriptionsModule,
     JwtModule.forRoot({
@@ -72,6 +78,7 @@ import { NavbarComponent } from './@components/navbar/navbar.component';
     TermsComponent,
     PrivacyComponent,
     ErrorComponent,
+    UnauthorizedComponent,
   ],
   providers: [CoreModule],
   bootstrap: [AppComponent],

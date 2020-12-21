@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/@services/auth.service';
+import { UserDataService } from 'src/app/@services/user-data.service';
 // import { UserDataService } from 'src/app/@services/user-data.service';
 // import { AuthService } from 'src/app/@services/auth.service';
 
@@ -14,33 +16,32 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    // private authService: AuthService,
-    // private userDataService: UserDataService,
+    private authService: AuthService,
+    private userDataService: UserDataService,
   ) {}
 
   ngOnInit() {
-    // if (this.authService.isAuthenticated()) {
-    //   if (this.storedUser) {
-    //     console.log('here');
-    //     return;
-    //   } else {
-    //     this.userDataService.getUserByToken().subscribe(
-    //       response => {
-    //         this.storedUser = response.body;
-    //         this.userDataService.setUserData(this.storedUser);
-    //       }
-    //     );
-    //   }
-    // }
+    if (this.authService.isAuthenticated()) {
+      if (this.storedUser) {
+        console.log('here');
+        return;
+      } else {
+        this.userDataService.getUserByToken().subscribe(
+          response => {
+            this.storedUser = response.body;
+            this.userDataService.setUserData(this.storedUser);
+          }
+        );
+      }
+    }
   }
 
   isUserLogged(): boolean {
-    return false;
-    //return this.authService.isAuthenticated();
+    return this.authService.isAuthenticated();
   }
 
   logOut() {
-    //this.userDataService.logout();
+    this.userDataService.logout();
     this.router.navigate(['/login']);
   }
 }
