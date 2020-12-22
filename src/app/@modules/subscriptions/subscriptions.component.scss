@@ -1,5 +1,21 @@
+.title {
+  font-family: 'Alsandra';
+  font-size: 3em;
+
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: black;
+  color: white;
+}
+.content {
+  text-align: center;
+}
+button{
+  font-size: 1em;
+   padding: 5px;
+   margin: 5px;
+}
 .img-fluid {
-  // border: 1px solid black;
+  border: 1px solid black;
   height: 16vw;
   object-fit: contain;
 }
@@ -8,5 +24,18 @@
   #subscrContainer {
     flex-direction: column;
     margin-top: 5rem;
+  }
+}
+@media only screen and (max-width: 451px) {
+  h3 {
+      font-size: 1.2em;
+  }
+  h5 {
+      font-size: 0.8em;
+  }
+  .img-fluid {
+    // border: 1px solid black;
+    height: 46vw;
+    object-fit: contain;
   }
 }

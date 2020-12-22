@@ -1,0 +1,67 @@
+mat-drawer-container {
+  #sideNavigation {
+    width: 250px;
+    .fa-times:hover{
+      cursor: pointer;
+      color: rgb(255, 0, 0);
+    }
+    .fa-bars:hover{
+      cursor: pointer;
+      color: powderblue;
+    }
+    mat-toolbar {
+      .brandLogo {
+        flex: auto;
+        font-size: 1.2em !important;
+      }
+    }
+
+    mat-list {
+      a {
+        font-size: 2em !important;
+        text-decoration: none;
+        cursor: pointer;    
+        font-family: 'Alsandra';
+        padding: 10px;
+      }
+
+      a:hover {
+        background-color: #3f51b5;
+        color: white;
+      }
+    }
+  }
+
+  #main {
+    mat-toolbar {
+      #openNav {
+        flex: auto;
+      }
+      .actions {
+        button{
+        
+          font-size: 1em;
+        }
+        a {          
+          color: white;
+          cursor: pointer;
+          text-decoration: none;
+        }
+
+        a:hover {
+          color: #98c9d1;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  mat-drawer-container {
+    #navigation {
+      width: 350px;
+    }
+  }
+}
+
+

@@ -1,0 +1,35 @@
+.content{
+    font-family: 'Alsandra';
+    text-align: center;
+
+    button{
+        color: white;
+    }
+}
+
+#denied {
+    width: 40%;
+}
+h1 {
+    font-size: 5em;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: black;
+    span{
+        color: white;
+    }
+}
+@media only screen and (max-width: 797px) {
+    h1 {
+        font-size: 4em;
+    }
+}
+@media only screen and (max-width: 591px) {
+    h1 {
+        font-size: 3em;
+    }
+}
+@media only screen and (max-width: 451px) {
+    h1 {
+        font-size: 2.4em;
+    }
+}

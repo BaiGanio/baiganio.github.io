@@ -1,0 +1,30 @@
+.content{
+    font-family: 'Alsandra';
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: black;
+    #errorMessage {
+        color: white;
+    }
+}
+@media only screen and (max-width: 797px) {
+    h1 {
+        font-size: 5em;
+    }
+}
+@media only screen and (max-width: 591px) {
+    h1 {
+        font-size: 2em;
+    }
+    #not-founded {
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 451px) {
+    
+}

@@ -1,40 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
-import { CookieLawModule } from 'angular2-cookie-law';
+import { JwtModule } from '@auth0/angular-jwt';
+
 import { AppRoutingModule } from './app-routing.module';
-import { NgCircleProgressModule } from 'ng-circle-progress';
-
-import { AppComponent } from './app.component';
-import { FooterComponent } from './@modules/footer/footer.component';
-import { HomeComponent } from './@modules/home/home.component';
-import { NavbarComponent } from './@modules/navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CoreModule } from './@core/core.module';
 import { AngularMaterialModule } from './@core/angular-material.module';
-import { ServerAlertComponent } from './@shared/components/server-alert/server-alert.component';
-import { LoginComponent } from './@modules/auth/login/login.component';
-import { RegisterComponent } from './@modules/auth/register/register.component';
-import { ForgottenPasswordComponent } from './@modules/account/pages/fotgotten-password/forgotten-password.component';
-
-import { AccessDeniedComponent } from './@shared/components/access-denied/access-denied.component';
-import { ConfirmationComponent } from './@modules/account/pages/confirmation/confirmation.component';
-import { NotFoundComponent } from './@shared/components/not-found/not-found.component';
-import { PrivacyComponent } from './@shared/components/privacy/privacy.component';
-import { TermsComponent } from './@shared/components/terms/terms.component';
-import { WelcomeComponent } from './@modules/home/welcome/welcome.component';
+import { CoreModule } from './@core/core.module';
+import { HomeComponent } from './@pages/home/home.component';
+import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
+import { ErrorComponent } from './@components/errors/error/error.component';
+import { NotFoundComponent } from './@pages/not-found/not-found.component';
+import { PrivacyComponent } from './@pages/privacy/privacy.component';
+import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
+import { TermsComponent } from './@pages/terms/terms.component';
+import { AppComponent } from './app.component';
+import { BlogComponent } from './@pages/blog/blog.component';
+import { FooterComponent } from './@pages/footer/footer.component';
 import { CoursesModule } from './@modules/courses/courses.module';
 import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.module';
-import { ErrorComponent } from './@shared/components/error/error.component';
-import { AccountModule } from './@modules/account/account.module';
-import { JwtModule } from '@auth0/angular-jwt';
+import { HttpClientModule } from '@angular/common/http';
+import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './@pages/login/login.component';
+import { RegisterComponent } from './@pages/register/register.component';
+import { ForgottenPasswordComponent } from './@pages/fotgotten-password/forgotten-password.component';
+import { NavbarComponent } from './@components/navbar/navbar.component';
+import { UnauthorizedComponent } from './@components/errors/unauthorized/unauthorized.component';
 import { DashboardModule } from './@modules/dashboard/dashboard.module';
-import { TeachersModule } from './@modules/teachers/teachers.module';
-import { QuestionnaireComponent } from './@shared/components/questionnaire/questionnaire.component';
-import { bindCallback } from 'rxjs';
 import { ProfileModule } from './@modules/profile/profile.module';
+import { AccountModule } from './@modules/account/account.module';
+import { QuestionnaireComponent } from './@components/questionnaire/questionnaire.component';
+import { ServerErrorComponent } from './@components/errors/server-error/server-error.component';
+import { BadRequestComponent } from './@components/errors/bad-request/bad-request.component';
+
 
 @NgModule({
   declarations: [
@@ -42,18 +40,20 @@ import { ProfileModule } from './@modules/profile/profile.module';
     FooterComponent,
     HomeComponent,
     NavbarComponent,
-    ServerAlertComponent,
+    BlogComponent,
     LoginComponent,
     RegisterComponent,
+    ServerAlertComponent,
     AccessDeniedComponent,
-    ForgottenPasswordComponent,
-    ConfirmationComponent,
     NotFoundComponent,
     PrivacyComponent,
     TermsComponent,
-    WelcomeComponent,
+    ForgottenPasswordComponent,
     ErrorComponent,
-    QuestionnaireComponent
+    UnauthorizedComponent,
+    QuestionnaireComponent,
+    ServerErrorComponent,
+    BadRequestComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +63,17 @@ import { ProfileModule } from './@modules/profile/profile.module';
     ReactiveFormsModule,
     HttpClientModule,
     AngularMaterialModule,
+    CoreModule,
+    AccountModule,
+    DashboardModule,
+    ProfileModule,
+    CoursesModule,
+    SubscriptionsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: jwtTokenGetter
+      }
+    }),
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.threeBounce,
       primaryColour: '#88078e',
@@ -70,34 +81,14 @@ import { ProfileModule } from './@modules/profile/profile.module';
       backdropBorderRadius: '14px',
       fullScreenBackdrop: true
     }),
-    NgCircleProgressModule.forRoot({
-      radius: 100,
-      outerStrokeWidth: 16,
-      innerStrokeWidth: 8,
-      outerStrokeColor: "#78C000",
-      innerStrokeColor: "#C7E596",
-      animationDuration: 300,
-      backgroundStroke: "#000000",
-    }),
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: jwtTokenGetter
-      }
-    }),
-    CoreModule,
-    CoursesModule,
-    ProfileModule,
-    DashboardModule,
-    SubscriptionsModule,
-    AccountModule,
-    TeachersModule,
-    CookieLawModule,
   ],
   entryComponents: [
     TermsComponent,
     PrivacyComponent,
     ErrorComponent,
-    QuestionnaireComponent
+    UnauthorizedComponent,
+    BadRequestComponent,
+    QuestionnaireComponent,
   ],
   providers: [CoreModule],
   bootstrap: [AppComponent],

@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator, MatSort, MatDialog, MatSnackBar } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { CoursePreviewModel } from 'src/app/@modules/courses/models/course-preview-model.module';
 import { CoursesService } from 'src/app/@services/courses.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
@@ -37,8 +41,8 @@ export class CoursesDetailsComponent implements OnInit {
     private teacherService: TeacherService
   ) { }
 
-  @ViewChild(MatPaginator, null) paginator: MatPaginator;
-  @ViewChild(MatSort, null) sort: MatSort;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort: MatSort;
 
   ngOnInit(): void {
     this.getCourses();

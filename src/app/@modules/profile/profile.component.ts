@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserDataService } from 'src/app/@services/user-data.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MatSnackBar } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { Subscribe4NotificationsComponent } from './components/subscribe4notifications/subscribe4notifications.component';
 import { PassStrengthComponent } from './components/pass-strength/pass-strength.component';
@@ -72,7 +73,7 @@ export class ProfileComponent implements OnInit {
         this.userService.setUserData(this.user);
         this.profileImgSrc = this.user.image == null ? './assets/images/no-profile-img.png' : this.user.image;
         this.oldProfilePic = this.profileImgSrc;
-        for (let i = 0; i < this.user.roles.length; i++) {
+        for (let i = 0; i < this.user.roles?.length; i++) {
             this.roles += this.user.roles[i].roleName;
             if (i + 1 < this.user.roles.length) {
                 this.roles += ', ';

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatSnackBar } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { QuestionnaireComponent } from 'src/app/@components/questionnaire/questionnaire.component';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
-import { ErrorComponent } from 'src/app/@shared/components/error/error.component';
-import { QuestionnaireComponent } from 'src/app/@shared/components/questionnaire/questionnaire.component';
-
 @Component({
   selector: 'app-craftsman-menu',
   templateUrl: './craftsman-menu.component.html',

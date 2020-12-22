@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from 'src/app/@services/account.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { ReportedIssueViewModel } from '../../models/reported_issue-view-model.module';
 import { ReportedIssuePreviewComponent } from '../../components/reported-issue-preview.component';
 

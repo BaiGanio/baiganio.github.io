@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { UserDataService } from '../@services/user-data.service';
-import { BackendService } from '../@services/backend.service';
 import { AuthService } from '../@services/auth.service';
 
 @Injectable()
@@ -11,8 +10,7 @@ export class AuthGuard implements CanActivate {
   constructor(
     private router: Router,
     private authservice: AuthService,
-    private userService: UserDataService,
-    private backendService: BackendService
+    private userService: UserDataService
   ) { }
 
   canActivate() {
@@ -25,7 +23,6 @@ export class AuthGuard implements CanActivate {
         this.userService.getUserByToken().subscribe(
           response => { this.storedUser = response.body; },
           error => {
-            console.log('auth guard error!');
             this.router.navigate(['/login']);
             return false;
           },

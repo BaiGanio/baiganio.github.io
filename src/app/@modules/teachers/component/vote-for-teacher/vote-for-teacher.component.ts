@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
 import { TeacherPreviewModel } from '../../models/teacher-preview.model';
 import { TeacherService } from 'src/app/@services/teacher.service';

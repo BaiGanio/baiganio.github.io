@@ -1,0 +1,40 @@
+   <div class="card">
+                <div class="card-body">             
+                    <img src='{{ c.Image }}' class="img-thumbnail img-fluid" alt="Sample image">    
+                    <br><br>                   
+                    <h3>{{ c.Name }}</h3>
+                    <!-- <p> Enrolled students so far: <span class="badge badge-primary">{{c.EnrolledStudents}}</span>
+                       
+                    </p>                        
+                    <p>Teachers: {{c.Teachers}}</p> -->
+                    <!-- <hr style="width: 60%; color: blue;">
+                    <h5>Start @ {{ c.StartDate | date :'dd-MMMM-yyyy' }}</h5> -->
+                    <!-- <h5>End @ {{ c.EndDate | date :'dd-MMMM-yyyy' }}</h5> -->
+                    <hr style="width: 60%; color: blue;">  
+                    <!-- <h5>Enrolled students: {{ c.EnrolledStudents || 0 }}</h5>
+                    <hr style="width: 60%; color: blue;">      -->
+                    <button 
+                        mat-raised-button
+                        color="primary"
+                        (click) = getCoursePreview(c.Id)>
+                        <i class="fas fa-search"></i>
+                    </button> 
+                    <span *ngIf='c.IsActive'>
+                        <button  
+                            *ngIf='isEnrolled(c.Id)'
+                            type="button"                        
+                            class="btn btn-outline-info" 
+                            (click) = 'goToCourse(c.Id)'>
+                            <b>Go to Course Progress</b>
+                        </button>
+                        <span *ngIf='!isEnrolled(c.Id) && c.IsElectable'>
+                            <button  
+                                type="button"                        
+                                class="btn btn-outline-success" 
+                                (click) = 'enroll4course(c.Id)'>
+                                <b>Enroll 4 Course</b>
+                            </button>
+                        </span>
+                    </span>
+                </div>    
+            </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as $ from 'jquery';
 import { StudentPreviewModel } from 'src/app/@modules/students/models/student-preview-model.module';
 import { StudentService } from 'src/app/@services/student.service';
 import { environment } from '../../../../../environments/environment';
@@ -109,11 +108,11 @@ export class InClassComponent implements OnInit {
     }
 
     processError() {
-        $('#errMsg').toggleClass('d-none');
-        setTimeout(() => {
-                this.errMsg = '';
-                $('#errMsg').toggleClass('d-none');
-            }, 3500);
+        // $('#errMsg').toggleClass('d-none');
+        // setTimeout(() => {
+        //         this.errMsg = '';
+        //         $('#errMsg').toggleClass('d-none');
+        //     }, 3500);
     }
 }
 

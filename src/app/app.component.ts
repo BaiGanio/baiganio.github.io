@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { BackendService } from './@services/backend.service';
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 import { AuthService } from './@services/auth.service';
-import { SignalRService } from './@services/signalR.service';
+import { BackendService } from './@services/backend.service';
 import { ErrorHandlerService } from './@services/error-handler.service';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { environment } from '../environments/environment';
+import { SignalRService } from './@services/signalR.service';
+
 @Component({
   selector: 'app-root',
-  template: `
+  template: ` 
     <app-navbar></app-navbar>
-    <cookie-law></cookie-law>
   `
 })
-export class AppComponent implements OnInit {
-  title = 'app';
+export class AppComponent {
+  title = 'BaiGanio';
   authToken: any;
 
   constructor(
@@ -28,12 +27,10 @@ export class AppComponent implements OnInit {
     this.backendService.getClientAccessToken()
       .subscribe(
         response => {
-          this.authToken = response.json();
-          console.log(this.authToken);
+          this.authService.authToken = response.access_token;
         },
          error => { this.errorHandlerService.handleRequestError(error); },
         () => {
-          this.authService.authToken = this.authToken.access_token;
          // this.initializeSignalR();
         }
       );
@@ -42,5 +39,4 @@ export class AppComponent implements OnInit {
 // initializeSignalR(); {
 //     this.signalRService.initializeSignalRConnection();
 //   }
-
 }

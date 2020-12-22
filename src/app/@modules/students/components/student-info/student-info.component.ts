@@ -92,10 +92,10 @@ export class StudentInfoComponent implements OnInit {
 
   processError(err) {
     this.errMsg = err.error;
-    $('#errMsg').toggleClass('d-none');
-    setTimeout(() => {
-        this.errMsg = '';
-        $('#errMsg').toggleClass('d-none');
-    }, 4000);
+    // $('#errMsg').toggleClass('d-none');
+    // setTimeout(() => {
+    //     this.errMsg = '';
+    //     $('#errMsg').toggleClass('d-none');
+    // }, 4000);
   }
 }

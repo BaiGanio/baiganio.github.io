@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { CoursesService } from 'src/app/@services/courses.service';

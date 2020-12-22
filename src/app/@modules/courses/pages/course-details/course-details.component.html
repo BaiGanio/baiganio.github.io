@@ -19,22 +19,22 @@
     Go 2 Profile
 </button> 
 <p class="h2 text-center mb-4">Course Progress</p>
-<mat-tab-group [selectedIndex]="activeTab">   
+<mat-tab-group >   
     <mat-tab label="Overall Score">
         <ng-template matTabContent>
             <!-- <app-linechart></app-linechart> -->
             <!-- <app-barchart></app-barchart> -->
             <!-- <app-piechart></app-piechart> -->
             <!-- <app-doughnut></app-doughnut> -->
-            <app-polararea></app-polararea>
+            <!-- <app-polararea></app-polararea> -->
         </ng-template>
     </mat-tab>
     <mat-tab label="In Class">
         <ng-template matTabContent>
-            <app-in-class></app-in-class>
+            <!-- <app-in-class></app-in-class> -->
         </ng-template>
     </mat-tab>
-    <mat-tab label="Homeworks">
+    <!-- <mat-tab label="Homeworks">
         <ng-template matTabContent>
         <app-homeworks></app-homeworks>
         </ng-template>
@@ -68,6 +68,6 @@
         <ng-template matTabContent>
         <app-homeworks></app-homeworks>
         </ng-template>
-    </mat-tab>
+    </mat-tab> -->
 </mat-tab-group>
 <br><br>

@@ -1,10 +1,12 @@
-<h1 class="" style="text-align:center">Subscriptions
+<h1 class="title" style="text-align:center">Subscriptions
   <span *ngIf='haveConfirmedSubscription === true'> / 
-    <button style="background-color: cornflowerblue; color:white; cursor:pointer;" (click)='goToMySubscriptions()'>Preview</button>
+    <span style="background-color: cornflowerblue; color:white; cursor:pointer;" (click)='goToMySubscriptions()'>Preview</span>
   </span>
 </h1>
 <hr style="width: 60%; color: blue;">  
-<div class="content text-center">
+<div class="content">
+  <h2 *ngIf='loading'>Please wait! Fetching data from the server...</h2>
+
   <div class="dim" *ngIf='notificationRequest'>
     <span class="msg">
       <h2>
@@ -39,33 +41,44 @@
     </span>
   </div>
 </div>
-
 <div class='row text-center'>
   <div id="exception-list" class="col-md-4" *ngFor='let s of subscriptions;'>
     <div class="card" style="margin: 10px;">
       <div class="card-body">
         <h2 class="text-center"> {{ s.Type }} </h2>
         <hr style="color: black;">
+        <br>
         <div class="view view-cascade overlay">
 
           <img src='{{ s.Image }}' alt="Sample image" class="img-thumbnail img-fluid">
-          <hr style="width: 80%; color: blue;">
+          <br>
+          <br>
+          <hr>
           <p *ngIf='s.IsActive;' id="subscrStatus">Active : {{s.IsActive}}</p>
           <p *ngIf='!s.IsActive;' id="subscrStatus">Subscription in development!</p>
          
-          <div *ngIf='authService.isAuthenticated() && s.IsActive'>
-            <p *ngIf='isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>  
+          <!-- <span *ngIf='s.IsActive'>
+            <span *ngIf='s.IsActive && isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>  
               <button                                     
               class="btn btn-outline-success" 
               (click)='sendRequest(s.Id)'>
               Send request 4 subscription
             </button>
-            </p>
-            <p style="color: blue;" *ngIf='isWaitingForConfirmation(s.Id)'>Waiting for confirmation!</p>            
-          </div>
+          </span>
+            <div style="color: blue;" *ngIf='isWaitingForConfirmation(s.Id)'>Waiting for confirmation!</div>            
+        </span> -->
+        <span>
           <button mat-raised-button color="primary" (click)=getSubscriptionPreview(s.Id)>
             <i class="fas fa-search"></i>
           </button>
+        </span>
+          <span *ngIf='s.IsActive && isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>  
+              <button                                     
+              mat-raised-button 
+              (click)='sendRequest(s.Id)'>
+              Send request 4 subscription
+            </button>
+          </span>
         
         </div>
       </div>
@@ -73,4 +86,4 @@
   </div>
 </div>
 
-<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>
+<ngx-loading [show]="loading"></ngx-loading>

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserViewModel } from 'src/app/@modules/users/models/user-view-model.module';
-import { StudentPreviewModel } from 'src/app/@modules/students/models/student-preview-model.module';
 import { CoursePreviewModel } from 'src/app/@modules/courses/models/course-preview-model.module';
 import { StudentService } from 'src/app/@services/student.service';
 import { CoursesService } from 'src/app/@services/courses.service';
+import { StudentPreviewModel } from 'src/app/@modules/students/models/student-preview-model.module';
 
 @Component({
   selector: 'app-scores',

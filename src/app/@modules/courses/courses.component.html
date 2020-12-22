@@ -1,3 +1,6 @@
+<h1 class="title">Courses</h1>   
+<hr>  
+<br>
 <div class="text-center" *ngIf='flagEnrollSuccess; else infoBox'>
     <img src="../../../../../../assets/images/Checkmark.png" class="img-fluid">
     <h1>Congrats! <br> You are enrolled 4 the [c.Name] course  ;)</h1>
@@ -17,8 +20,6 @@
     
 </div>
 <ng-template #infoBox>
-    <h1  style="text-align:center">Courses</h1>   
-    <hr style="width: 60%; color: blue;">  
     <div class="row">
         <div *ngFor='let c of courses' class="col-md-4 text-center">
             <div class="card">
@@ -31,31 +32,31 @@
                     </p>                        
                     <p>Teachers: {{c.Teachers}}</p> -->
                     <!-- <hr style="width: 60%; color: blue;">
-                    <h5>Start @ {{ c.StartDate | date :'dd-MMMM-yyyy' }}</h5> -->
+                   -->
                     <!-- <h5>End @ {{ c.EndDate | date :'dd-MMMM-yyyy' }}</h5> -->
-                    <hr style="width: 60%; color: blue;">  
+                    <hr> 
+                    <h5>Start @ {{ c.StartDate | date :'dd-MMMM-yyyy' }}</h5>
                     <!-- <h5>Enrolled students: {{ c.EnrolledStudents || 0 }}</h5>
                     <hr style="width: 60%; color: blue;">      -->
+                    <br>
                     <button 
                         mat-raised-button
                         color="primary"
                         (click) = getCoursePreview(c.Id)>
                         <i class="fas fa-search"></i>
                     </button> 
-                    <span *ngIf='authService.isAuthenticated() && c.IsActive'>
+                    <span *ngIf='c.IsActive'>
                         <button  
-                            *ngIf='isEnrolled(c.Id)'
-                            type="button"                        
+                            *ngIf='isEnrolled(c.Id)'         
                             class="btn btn-outline-info" 
                             (click) = 'goToCourse(c.Id)'>
                             <b>Go to Course Progress</b>
                         </button>
                         <span *ngIf='!isEnrolled(c.Id) && c.IsElectable'>
-                            <button  
-                                type="button"                        
-                                class="btn btn-outline-success" 
+                            <button                        
+                                mat-raised-button
                                 (click) = 'enroll4course(c.Id)'>
-                                <b>Enroll 4 Course</b>
+                                Enroll 4 Course
                             </button>
                         </span>
                     </span>
@@ -63,5 +64,8 @@
             </div>   
         </div>
     </div>
+
 </ng-template>
-<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>
+
+<h2 *ngIf='loading'>Please wait! Fetching data from the server...</h2>
+<ngx-loading [show]="loading"></ngx-loading>

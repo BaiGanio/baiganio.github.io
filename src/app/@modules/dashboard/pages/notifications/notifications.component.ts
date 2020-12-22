@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { AccountService } from 'src/app/@services/account.service';
-import { MatSnackBar, MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotificationViewModel } from '../../models/notification-view-model.module';
 import { NotificationPreviewComponent } from '../../components/notification-preview.component';
 @Component({

@@ -11,15 +11,14 @@
   
   <div class="row">
     <div class="col-12 col-center text-center">
-      <h2>Profile Settings</h2>
+      <h1 class="title">Profile</h1>
       <hr>
       <div class="row">
         <div class="col-md-3">
-          <h3>Change picture</h3>
+          <h3>Profile picture</h3>
           <form [formGroup]="profileImageFG" class="text-center">
             <div class="card">
               <div class="card-body">
-                <label for="profileImage">Profile Picture</label>
                 <div class="thumb-holder">
                   <img class="profileImg img-fluid img-thumbnail" [src]='profileImgSrc' alt="Profile picture">
                   <input type="file" formControlName='profilePicture' #profileImage style="display: none;"
@@ -38,7 +37,7 @@
           </form>
         </div>
         <div class="col-md-3">
-          <h3>Update personal info</h3>
+          <h3>Personal info</h3>
           <form [formGroup]="profileDataFG" class="text-center">
             <mat-vertical-stepper [linear]="false" #profileUpdateStepper>
               <mat-step [stepControl]="profileDataFG.get('firstName')">
@@ -122,7 +121,7 @@
                       </p>
                     </div>
                     <div class="col-md-12 text-center">
-                      Role/s: <b>({{user?.roles.length}}) - {{roles}}</b>
+                      Role/s: <b>({{user?.roles?.length}}) - {{roles}}</b>
                       <br>
                       Email : <b>{{profileDataFG.value?.email || 'n/a'}}</b>
                       <!-- <br>

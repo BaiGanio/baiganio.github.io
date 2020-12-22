@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './@modules/home/home.component';
-import { ServerAlertComponent } from './@shared/components/server-alert/server-alert.component';
-import { LoginComponent } from './@modules/auth/login/login.component';
-import { RegisterComponent } from './@modules/auth/register/register.component';
-import { ForgottenPasswordComponent } from './@modules/account/pages/fotgotten-password/forgotten-password.component';
-import { AccessDeniedComponent } from './@shared/components/access-denied/access-denied.component';
-import { ConfirmationComponent } from './@modules/account/pages/confirmation/confirmation.component';
-import { NotFoundComponent } from './@shared/components/not-found/not-found.component';
-import { WelcomeComponent } from './@modules/home/welcome/welcome.component';
-import { RoleGuard } from './@core/role.guard';
-import { LinechartComponent } from './@shared/components/charts/linechart/linechart.component';
-import { QuestionnaireComponent } from './@shared/components/questionnaire/questionnaire.component';
+import { BlogComponent } from './@pages/blog/blog.component';
+import { HomeComponent } from './@pages/home/home.component';
+import { LoginComponent } from './@pages/login/login.component';
+import { RegisterComponent } from './@pages/register/register.component';
+import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
+import { ErrorComponent } from './@components/errors/error/error.component';
+import { ForgottenPasswordComponent } from './@pages/fotgotten-password/forgotten-password.component';
+import { NotFoundComponent } from './@pages/not-found/not-found.component';
+import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
+
 
 const routes: Routes = [
   {
@@ -20,8 +18,20 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-      path: 'home',
-      component: HomeComponent
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+      path: 'blog',
+      component: BlogComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: 'subscriptions',
@@ -31,25 +41,9 @@ const routes: Routes = [
     path: 'courses',
     loadChildren : () => import('./@modules/courses/courses.module').then(m => m.CoursesModule)
   },
-  // {
-  //   path: 'blogs',
-  //   loadChildren : () => import('./@modules/blogs/blogs.module').then(m => m.BlogsModule)
-  // },
   {
-    path: 'profile',
-    loadChildren : () => import('./@modules/profile/profile.module').then(m => m.ProfileModule)
-    // canActivate: [RoleGuard],
-    // data: {
-    //   expectedRole: 'Member'
-    // }
-  },
-  {
-    path: 'dashboard',
-    loadChildren : () => import('./@modules/dashboard/dashboard.module').then(m => m.DashboardModule)
-    // canActivate: [RoleGuard],
-    // data: {
-    //   expectedRole: 'Member'
-    // }
+    path: 'blog',
+    loadChildren : () => import('./@modules/blogs/blogs.module').then(m => m.BlogsModule)
   },
   {
     path: 'teachers',
@@ -64,48 +58,40 @@ const routes: Routes = [
     loadChildren : () => import('./@modules/account/account.module').then(m => m.AccountModule)
   },
   {
-      path: 'server-alert',
-      component: ServerAlertComponent
+    path: 'dashboard',
+    loadChildren : () => import('./@modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+    // canActivate: [RoleGuard],
+    // data: {
+    //   expectedRole: 'Member'
+    // }
+  },  
+  {
+    path: 'profile',
+    loadChildren : () => import('./@modules/profile/profile.module').then(m => m.ProfileModule)
+    // canActivate: [RoleGuard],
+    // data: {
+    //   expectedRole: 'Member'
+    // }
   },
   {
-    path: 'quest',
-    component: QuestionnaireComponent
-},
-  {
-    path: 'access-denied',
-    component: AccessDeniedComponent
-  },
-  {
-      path: 'login',
-      component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-      path: '403',
-      component: AccessDeniedComponent
+    path: 'server-alert',
+    component: ServerAlertComponent
   },
   {
     path: 'forgotten-password',
     component: ForgottenPasswordComponent
   },
   {
-    path: 'confirmation/:token',
-    component: ConfirmationComponent
+    path: 'error',
+    component: ErrorComponent
   },
   {
-    path: 'welcome',
-    component: WelcomeComponent
-  },
+    path: '403',
+    component: AccessDeniedComponent
+  } ,
   {
-    path: 'linechart', component: LinechartComponent
-
-  },
-  {
-      path: '**',
-      component: NotFoundComponent
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 

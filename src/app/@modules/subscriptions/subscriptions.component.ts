@@ -5,9 +5,9 @@ import { SubscriptionService } from 'src/app/@services/subscription.service';
 import { UserDataService } from 'src/app/@services/user-data.service';
 import { AuthService } from 'src/app/@services/auth.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
-import { MatSnackBar, MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SubscriptionPreviewComponent } from './components/subscription-preview/subscription-preview.component';
-import { UserViewModel } from '../users/models/user-view-model.module';
 
 @Component({
     selector: 'app-subscriptions',
@@ -43,22 +43,22 @@ export class SubscriptionsComponent implements OnInit {
 
     ngOnInit() {
         this.loading = true;
-        if (this.route.snapshot.params.token) {
-            this.checkRouteParameters();
-        }
-        if (this.authService.isAuthenticated()) {
-            this.loading = true;
-            this.storedUser = this.userDataService.getUserData();
-            if (this.storedUser.id === undefined) {
-                this.storedUserInit();
-            }
-        }
+        // if (this.route.snapshot.params.token) {
+        //     this.checkRouteParameters();
+        // }
+        // if (this.authService.isAuthenticated()) {
+        //     this.loading = true;
+        //     this.storedUser = this.userDataService.getUserData();
+        //     if (this.storedUser.id === undefined) {
+        //         this.storedUserInit();
+        //     }
+        // }
         this.subscriptionsInit();
     }
 
     private subscriptionsInit() {
         this.subscriptionsService.getAllSubscriptions().subscribe(response => {
-            console.log(response.body);
+            // console.log(response.body);
             response.body.forEach(element => {
                 const s = {
                     Id: element.id,
@@ -90,11 +90,11 @@ export class SubscriptionsComponent implements OnInit {
                     Subscriptions: response.body.subscriptions,
                     Roles: response.body.roles
                 };
-                this.storedUser = u as UserViewModel;
+                // this.storedUser = u as UserViewModel;
                 this.userDataService.setUserData(this.storedUser);
             },
             error => {
-                this.errorHandlerService.handleRequestError('myahah' + error);
+             //   this.errorHandlerService.handleRequestError('myahah' + error);
             }, () => { this.loading = false; }
         );
     }
@@ -141,7 +141,7 @@ export class SubscriptionsComponent implements OnInit {
             err => {
                 this.loading = false;
                 this.failedConfirmation = true;
-                this.errorHandlerService.handleRequestError(err);
+              //  this.errorHandlerService.handleRequestError(err);
             }
         );
     }

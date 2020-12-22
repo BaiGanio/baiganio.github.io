@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatSnackBar } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subscribe4NotificationsComponent } from '../profile/components/subscribe4notifications/subscribe4notifications.component';
 import { ChangePasswordComponent } from '../profile/components/change-password/change-password.component';
 

@@ -60,7 +60,7 @@
       <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="Start Date">
+    <!-- <ng-container matColumnDef="Start Date">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Start Date </th>
       <td mat-cell *matCellDef="let element" class="mr-3"> {{element.StartDate | date : 'dd-MMM-yyyy'}} </td>
     </ng-container>
@@ -68,13 +68,13 @@
     <ng-container matColumnDef="End Date">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> End Date </th>
       <td mat-cell *matCellDef="let element"> {{element.EndDate | date : 'dd-MMM-yyyy'}} </td>
-    </ng-container>
+    </ng-container> -->
 
     <!-- <ng-container matColumnDef="Created On">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Created On </th>
       <td mat-cell *matCellDef="let element"> {{element.CreatedOn | date : 'dd/MM/yyyy'}} </td>
     </ng-container> -->
-
+<!-- 
     <ng-container matColumnDef="Active">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Active </th>
       <td mat-cell *matCellDef="let element"> {{element?.IsActive.toString() | titlecase}} </td>
@@ -83,7 +83,7 @@
     <ng-container matColumnDef="Electable">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Electable </th>
       <td mat-cell *matCellDef="let element"> {{element?.IsElectable.toString() | titlecase}} </td>
-    </ng-container>
+    </ng-container> -->
 
     <ng-container matColumnDef="Enrolled Students">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Enrolled Students </th>
@@ -149,4 +149,5 @@
 
   <mat-paginator [pageSizeOptions]="[10, 20, 30, 100]"></mat-paginator>
 </div>
-<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>
+<h2 *ngIf='loading'>Please wait! Fetching data from the server...</h2>
+<ngx-loading [show]="loading"></ngx-loading>

@@ -1,0 +1,14 @@
+img {
+    width: 22%;
+}
+@media only screen and (max-width: 736px) {
+    #comingSoon {
+        display: none;
+    }
+    h1.GotHeroin {
+        font-size: 5em !important;
+    }
+    img {
+        width: 60%;
+    }
+}

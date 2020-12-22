@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import * as $ from 'jquery';
-import { environment } from 'src/environments/environment';
-import { StudentService } from 'src/app/@services/student.service';
 import { StudentLoginViewModel } from '../../models/student-login-view-model.module';
 @Component({
   selector: 'app-in-class',
@@ -24,55 +20,55 @@ export class InClassComponent implements OnInit {
 
     constructor(
         private http: HttpClient,
-        private studentService: StudentService
+        // private studentService: StudentService
     ) { }
 
     ngOnInit() {
         this.loading = true;
-        this.getStudentLogins();
-        this.studentService.getStudent().subscribe(
-            response => {
-                this.student = response.body; // as StudentViewModel;
-                this.loading = false;
-            },
-            error => {
-                // this.loading = false;
-                this.message = error.error;
-                console.log(this.message);
-            },
-            () => {
-                // this.getStudentLogins();
-            }
-        );
+        // this.getStudentLogins();
+        // this.studentService.getStudent().subscribe(
+        //     response => {
+        //         this.student = response.body; // as StudentViewModel;
+        //         this.loading = false;
+        //     },
+        //     error => {
+        //         // this.loading = false;
+        //         this.message = error.error;
+        //         console.log(this.message);
+        //     },
+        //     () => {
+        //         // this.getStudentLogins();
+        //     }
+        // );
     }
 
 
     getStudentLogins() {
-        this.studentService.getStudentLogins().subscribe(
-            response => {
-                response.body.forEach(element => {
-                    const c = {
-                    Id: element.id,
-                    StudentId: element.sudentId,
-                    Ip: element.ip,
-                    Week: element.week,
-                    IsCalculated: element.isCalculated,
-                    LastLoginDate: element.lastLoginDate,
-                    IPStack: element.ipStack
-                    };
-                    this.studentLogins.push(c as StudentLoginViewModel);
-                });
-            },
-            error => {
-                this.loading = false;
-                this.message = error.error;
-                console.log(this.message);
-            },
-            () => {
-                this.loading = false;
-                this.proccessLoginsResponse();
-            }
-        );
+        // this.studentService.getStudentLogins().subscribe(
+        //     response => {
+        //         response.body.forEach(element => {
+        //             const c = {
+        //             Id: element.id,
+        //             StudentId: element.sudentId,
+        //             Ip: element.ip,
+        //             Week: element.week,
+        //             IsCalculated: element.isCalculated,
+        //             LastLoginDate: element.lastLoginDate,
+        //             IPStack: element.ipStack
+        //             };
+        //             this.studentLogins.push(c as StudentLoginViewModel);
+        //         });
+        //     },
+        //     error => {
+        //         this.loading = false;
+        //         this.message = error.error;
+        //         console.log(this.message);
+        //     },
+        //     () => {
+        //         this.loading = false;
+        //         this.proccessLoginsResponse();
+        //     }
+        // );
     }
 
     proccessLoginsResponse() {
@@ -83,37 +79,37 @@ export class InClassComponent implements OnInit {
 
     trackIP() {
         this.loading = true;
-        this.http.get(environment.IPCheckingServiceUrl).subscribe(
-            data => {
-                console.log(data);
-                this.ipInfo = data;
-                console.log(this.ipInfo);
-            },
-            error => {
-                this.errMsg = error.error;
-                console.log(this.errMsg);
-                this.loading = false;
-            },
-            () => { this.loading = false; this.proccessIP(); }
-        );
+        // this.http.get(environment.IPCheckingServiceUrl).subscribe(
+        //     data => {
+        //         console.log(data);
+        //         this.ipInfo = data;
+        //         console.log(this.ipInfo);
+        //     },
+        //     error => {
+        //         this.errMsg = error.error;
+        //         console.log(this.errMsg);
+        //         this.loading = false;
+        //     },
+        //     () => { this.loading = false; this.proccessIP(); }
+        // );
     }
 
     proccessIP() {
-        this.studentService.letMeIn({CourseId: "", IP: this.ipInfo.ip}).subscribe(
-            response => { },
-            error => {
-                this.errMsg = error.error;         
-                this.processError();
-                this.loading = false;
-            },
-            () => {
-                this.isLetMeInActive = false;
-                this.loading = false;
-                setTimeout(() => {
-                    location.reload();
-                }, 2000);
-            }
-        );
+        // this.studentService.letMeIn({CourseId: "", IP: this.ipInfo.ip}).subscribe(
+        //     response => { },
+        //     error => {
+        //         this.errMsg = error.error;         
+        //         this.processError();
+        //         this.loading = false;
+        //     },
+        //     () => {
+        //         this.isLetMeInActive = false;
+        //         this.loading = false;
+        //         setTimeout(() => {
+        //             location.reload();
+        //         }, 2000);
+        //     }
+        // );
     }
 
     processError() {

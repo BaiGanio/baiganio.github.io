@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from 'src/app/@services/student.service';
-import { UserDataService } from 'src/app/@services/user-data.service';
-import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
-import { CoursesService } from 'src/app/@services/courses.service';
 import { CoursePreviewModel } from './models/course-preview-model.module';
-import { StudentPreviewModel } from '../students/models/student-preview-model.module';
-import { AuthService } from 'src/app/@services/auth.service';
 import { CoursePreviewComponent } from './components/course-preview/course-preview.component';
-import { MatDialog, MatSnackBar } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { CourseWithEnrolledUserIds } from './models/course-with-enrolled-user-ids.module';
-import { UserViewModel } from '../users/models/user-view-model.module';
+import { CoursesService } from 'src/app/@services/courses.service';
+import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
+import { StudentService } from 'src/app/@services/student.service';
 
 @Component({
   selector: 'app-courses',
@@ -30,13 +26,13 @@ export class CoursesComponent implements OnInit {
   courses = new Array<any>();
   // coursesWithUserIds = new Array<CourseWithEnrolledUserIds>();
   storedUser: any;
-  student = new StudentPreviewModel();
+  // student = new StudentPreviewModel();
 
   constructor(
     private courseService: CoursesService,
     private studentService: StudentService,
-    private authService: AuthService,
-    private userDataService: UserDataService,
+    // private authService: AuthService,
+    // private userDataService: UserDataService,
     private errorHandlerService: ErrorHandlerService,
     private dialog: MatDialog,
     private router: Router,
@@ -53,33 +49,34 @@ export class CoursesComponent implements OnInit {
     //   this.getCoursesWithEnrolledUserId();
     // } else {
 
+    //   
     // }
-
     this.getInitCourses();
+
   }
 
   getCoursesWithEnrolledUserId() {
-    this.courseService.getCoursesWithEnrolledUserId().subscribe(response => {
-      response.body.forEach(element => {
-        const c = {
-          Id: element.id,
-          Name: element.name,
-          Teachers: element.teachers,
-          Description: element.description,
-          StartDate: element.startDate,
-          EndDate: element.endDate,
-          ModifiedOn: element.modifiedOn,
-          Image: element.image,
-          IsActive: element.isActive,
-          IsElectable: element.isElectable,
-          EnrolledStudents: element.totalEnrolledStudents,
-          EnrolledUserId: element.enrolledUserId
-        };
-        this.courses.push(c as CoursePreviewModel);
-      });
-    },
-    error => { this.errorHandlerService.handleRequestError(error); },
-    () => { this.loading = false; });
+    // this.courseService.getCoursesWithEnrolledUserId().subscribe(response => {
+    //   response.body.forEach(element => {
+    //     const c = {
+    //       Id: element.id,
+    //       Name: element.name,
+    //       Teachers: element.teachers,
+    //       Description: element.description,
+    //       StartDate: element.startDate,
+    //       EndDate: element.endDate,
+    //       ModifiedOn: element.modifiedOn,
+    //       Image: element.image,
+    //       IsActive: element.isActive,
+    //       IsElectable: element.isElectable,
+    //       EnrolledStudents: element.totalEnrolledStudents,
+    //       EnrolledUserId: element.enrolledUserId
+    //     };
+    //     this.courses.push(c as CoursePreviewModel);
+    //   });
+    // },
+    // error => { this.errorHandlerService.handleRequestError(error); this.loading = false; },
+    // () => { this.loading = false; });
   }
 
   getInitCourses() {
@@ -109,33 +106,33 @@ export class CoursesComponent implements OnInit {
   }
 
   private storedUserInit() {
-    this.userDataService.getUserByToken().subscribe(
-        response => {
-            const u = {
-                Id: response.body.id,
-                Username: response.body.username,
-                Subscriptions: response.body.subscriptions,
-                Roles: response.body.roles
-            };
-            this.storedUser = u as UserViewModel;
-            this.userDataService.setUserData(this.storedUser);
-        },
-        error => {
-            this.errorHandlerService.handleRequestError('myahah' + error);
-        }, () => { this.loading = false; }
-    );
+    // this.userDataService.getUserByToken().subscribe(
+    //     response => {
+    //         const u = {
+    //             Id: response.body.id,
+    //             Username: response.body.username,
+    //             Subscriptions: response.body.subscriptions,
+    //             Roles: response.body.roles
+    //         };
+    //         this.storedUser = u as UserViewModel;
+    //         this.userDataService.setUserData(this.storedUser);
+    //     },
+    //     error => {
+    //         this.errorHandlerService.handleRequestError('myahah' + error);
+    //     }, () => { this.loading = false; }
+    // );
 }
 
   isEnrolled(cId: string): boolean {
     let result = false;
-    this.courses.forEach(element => {
-      if (cId === element.Id && element.EnrolledUserId === this.storedUser.Id) {
-        console.log('found');
-        console.log(this.storedUser.Id);
-        result = true;
-        return true;
-      }
-    });
+    // this.courses.forEach(element => {
+    //   if (cId === element.Id && element.EnrolledUserId === this.storedUser.Id) {
+    //     console.log('found');
+    //     console.log(this.storedUser.Id);
+    //     result = true;
+    //     return true;
+    //   }
+    // });
     return result;
   }
 
@@ -146,7 +143,7 @@ export class CoursesComponent implements OnInit {
       if (element.Id === courseId) {
         course = element;
       }
-  });
+    });
     this.studentService.enroll4Course({
         CourseId: course.Id,
         CourseName: course.Name,
