@@ -6,6 +6,8 @@
 export const environment = {
   production: false,
   envName: 'local',
+  name:'',
+  version:'',
   appUrl: '',
   apiUrl: '',
   idsUrl: '',
