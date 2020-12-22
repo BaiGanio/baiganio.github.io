@@ -9,6 +9,7 @@ import { ErrorComponent } from './@components/errors/error/error.component';
 import { ForgottenPasswordComponent } from './@pages/fotgotten-password/forgotten-password.component';
 import { NotFoundComponent } from './@pages/not-found/not-found.component';
 import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
+import { RoleGuard } from './@core/role.guard';
 
 
 const routes: Routes = [
@@ -59,11 +60,11 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren : () => import('./@modules/dashboard/dashboard.module').then(m => m.DashboardModule)
-    // canActivate: [RoleGuard],
-    // data: {
-    //   expectedRole: 'Member'
-    // }
+    loadChildren : () => import('./@modules/dashboard/dashboard.module').then(m => m.DashboardModule),
+    canActivate: [RoleGuard],
+    data: {
+      expectedRole: 'Member'
+    }
   },  
   {
     path: 'profile',
