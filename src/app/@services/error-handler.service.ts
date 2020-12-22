@@ -1,46 +1,43 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { UserDataService } from './user-data.service';
-import { ErrorComponent } from '../@components/error/error.component';
+import { ErrorComponent } from '../@components/errors/error/error.component';
 import { ErrorModel } from '../@shared/models/error-model.module';
-import { UnauthorizedComponent } from '../@components/unauthorized/unauthorized.component';
+import { UnauthorizedComponent } from '../@components/errors/unauthorized/unauthorized.component';
+import { ServerErrorModel } from '../@shared/models/server-error-model.module';
+import { ServerErrorComponent } from '../@components/errors/server-error/server-error.component';
+import { BadRequestModel } from '../@shared/models/bad-request-model.module';
+import { BadRequestComponent } from '../@components/errors/bad-request/bad-request.component';
 
 @Injectable()
 export class ErrorHandlerService {
-  loading = true;
-  user: any;
   constructor(
     private router: Router,
-    private dialog: MatDialog,
-    private userService: UserDataService,
-    private snackbar: MatSnackBar) { }
+    private dialog: MatDialog
+  ) { }
 
   handleRequestError(error: { status: any; }) {
     const status = error.status;
-    // if (error.error.type === 'error' && status === 0) {
     if (status === 0) {
       return this.router.navigate(['/server-alert']);
     } else if (status === 400) {
+      let model = new BadRequestModel(error);
       this.dialog.open(
-          ErrorComponent,
-          { data: { model: new ErrorModel(error) } }
+          BadRequestComponent,
+          { data: { model: model } }
       );
-    }  else if (status === 401) {
+    } else if (status === 401) {      
       this.dialog.open(
           UnauthorizedComponent,
           { data: { model: error } }
       );
     } else if (status === 404) {
-      this.dialog.open(
-          ErrorComponent,
-          { data: { model: new ErrorModel(error) } }
-      );
-    }else if (status) {    console.log(error);
+      return this.router.navigate(['/not-found']);
+    } else if (status == 500) {
+        let model = new ServerErrorModel(error);
         this.dialog.open(
-            ErrorComponent,
-            { data: { model: new ErrorModel(error) } }
+            ServerErrorComponent,
+            { data: { model: model } }
         );
       // $dialogRef.afterClosed().subscribe(
       //   response => {
@@ -75,6 +72,11 @@ export class ErrorHandlerService {
       //     }
       //   }
       // );
+    } else if (status) {
+      this.dialog.open(
+          ErrorComponent,
+          { data: { model: new ErrorModel(error) } }
+      );
     }
   }
 }

@@ -8,7 +8,7 @@ import { AngularMaterialModule } from './@core/angular-material.module';
 import { CoreModule } from './@core/core.module';
 import { HomeComponent } from './@pages/home/home.component';
 import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
-import { ErrorComponent } from './@components/error/error.component';
+import { ErrorComponent } from './@components/errors/error/error.component';
 import { NotFoundComponent } from './@pages/not-found/not-found.component';
 import { PrivacyComponent } from './@pages/privacy/privacy.component';
 import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
@@ -25,11 +25,13 @@ import { LoginComponent } from './@pages/login/login.component';
 import { RegisterComponent } from './@pages/register/register.component';
 import { ForgottenPasswordComponent } from './@pages/fotgotten-password/forgotten-password.component';
 import { NavbarComponent } from './@components/navbar/navbar.component';
-import { UnauthorizedComponent } from './@components/unauthorized/unauthorized.component';
+import { UnauthorizedComponent } from './@components/errors/unauthorized/unauthorized.component';
 import { DashboardModule } from './@modules/dashboard/dashboard.module';
 import { ProfileModule } from './@modules/profile/profile.module';
 import { AccountModule } from './@modules/account/account.module';
 import { QuestionnaireComponent } from './@components/questionnaire/questionnaire.component';
+import { ServerErrorComponent } from './@components/errors/server-error/server-error.component';
+import { BadRequestComponent } from './@components/errors/bad-request/bad-request.component';
 
 
 @NgModule({
@@ -50,6 +52,8 @@ import { QuestionnaireComponent } from './@components/questionnaire/questionnair
     ErrorComponent,
     UnauthorizedComponent,
     QuestionnaireComponent,
+    ServerErrorComponent,
+    BadRequestComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,6 +87,7 @@ import { QuestionnaireComponent } from './@components/questionnaire/questionnair
     PrivacyComponent,
     ErrorComponent,
     UnauthorizedComponent,
+    BadRequestComponent,
     QuestionnaireComponent,
   ],
   providers: [CoreModule],

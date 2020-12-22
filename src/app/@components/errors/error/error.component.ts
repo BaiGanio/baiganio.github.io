@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 // import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
 import { ErrorView } from 'src/app/@shared/interfaces/error-view.interface';
-import { BaseDialogData } from '../../@shared/interfaces/base-dialog.interface';
+import { BaseDialogData } from '../../../@shared/interfaces/base-dialog.interface';
 
 
 
@@ -14,13 +14,13 @@ import { BaseDialogData } from '../../@shared/interfaces/base-dialog.interface';
   `
   <div class="content">
     <div>
-      <h3> Ooops... <span>Error shows up!!!</span></h3>
+      <h3> Ooops... <span>Error!!!</span></h3>
       <hr/>
       <br/> 
       <h3>
         {{error.ErrorText}}
       </h3> 
-      <h5>{{error.ErrorDescription}}</h5>
+      <h5>{{error.ErrorDescription || error.Status}}</h5>
       <br/>  
       <hr/>
       <br/>  

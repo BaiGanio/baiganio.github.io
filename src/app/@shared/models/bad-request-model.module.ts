@@ -1,6 +1,7 @@
-export class ErrorModel {
-    ErrorText: string;
-    ErrorDescription: string;
+export class BadRequestModel {
+    ErrorText: any;
+    ErrorDescription: any;
+    StackTrace: string;
     Message: string;
     Name: string;
     OK: boolean;
@@ -9,9 +10,8 @@ export class ErrorModel {
     Url: string;
 
     constructor(error?: any) {
-        let err = error.error;
-        this.ErrorText = err?.error;
-        this.ErrorDescription = err?.error_description || err;
+        this.ErrorText = error.error.error || error.error;
+        this.ErrorDescription = error.error.error_description;
         this.Message = error.message;
         this.Name = error.name;
         this.OK = error.ok;

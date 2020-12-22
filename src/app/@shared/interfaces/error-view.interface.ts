@@ -1,5 +1,4 @@
 export interface ErrorView {
-    Error: any;
     ErrorText: string;
     ErrorDescription: string;
     Message: string;

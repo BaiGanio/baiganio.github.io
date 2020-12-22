@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CoursesService } from 'src/app/@services/courses.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
+import { StudentService } from 'src/app/@services/student.service';
 
 @Component({
   selector: 'app-courses',
@@ -29,7 +30,7 @@ export class CoursesComponent implements OnInit {
 
   constructor(
     private courseService: CoursesService,
-    // private studentService: StudentService,
+    private studentService: StudentService,
     // private authService: AuthService,
     // private userDataService: UserDataService,
     private errorHandlerService: ErrorHandlerService,
@@ -136,35 +137,35 @@ export class CoursesComponent implements OnInit {
   }
 
   enroll4course(courseId: string) {
-   // this.loading = true;
+    this.loading = true;
     let course: any;
     this.courses.forEach( (element) => {
       if (element.Id === courseId) {
         course = element;
       }
     });
-    // this.studentService.enroll4Course({
-    //     CourseId: course.Id,
-    //     CourseName: course.Name,
-    //     Image: course.Image
-    //   })
-    //   .subscribe(
-    //     () => {},
-    //     error => {
-    //       this.errorHandlerService.handleRequestError(error);
-    //       this.loading = false;
-    //     },
-    //     () => {
-    //       this.loading = false;
-    //       this.snackbar.open('Enrollment successful !', 'X', {
-    //         duration: 3000,
-    //         horizontalPosition: 'right',
-    //         verticalPosition: 'top',
-    //         panelClass: 'successSnackbar'
-    //       });
-    //       this.flagEnrollSuccess = true;
-    //     }
-    // );
+    this.studentService.enroll4Course({
+        CourseId: course.Id,
+        CourseName: course.Name,
+        Image: course.Image
+      })
+      .subscribe(
+        () => {},
+        error => {
+          this.errorHandlerService.handleRequestError(error);
+          this.loading = false;
+        },
+        () => {
+          this.loading = false;
+          this.snackbar.open('Enrollment successful !', 'X', {
+            duration: 3000,
+            horizontalPosition: 'right',
+            verticalPosition: 'top',
+            panelClass: 'successSnackbar'
+          });
+          this.flagEnrollSuccess = true;
+        }
+    );
   }
 
   getCoursePreview(courseId: string) {

@@ -1,6 +1,6 @@
-export class ErrorModel {
+export class ServerErrorModel {
     ErrorText: string;
-    ErrorDescription: string;
+    StackTrace: string;
     Message: string;
     Name: string;
     OK: boolean;
@@ -11,7 +11,7 @@ export class ErrorModel {
     constructor(error?: any) {
         let err = error.error;
         this.ErrorText = err?.error;
-        this.ErrorDescription = err?.error_description || err;
+        this.StackTrace = err?.stackTrace;
         this.Message = error.message;
         this.Name = error.name;
         this.OK = error.ok;

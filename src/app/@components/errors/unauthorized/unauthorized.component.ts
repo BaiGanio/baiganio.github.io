@@ -9,13 +9,13 @@ import { ErrorView } from 'src/app/@shared/interfaces/error-view.interface';
   `
   <div class="content">
     <div>
-      <h3> Ooops... <span>Error shows up!!!</span></h3>
+      <h1> Ooops... <span>{{error.status}} Unauthorized</span></h1>
       <hr/>
       <br/> 
       <h3>
-        {{error.status}} Unauthorized
+        {{error.message}}
       </h3> 
-      <h5>Lacks valid authentication credentials for the target resource!</h5>
+      <h3>Lacks valid authentication credentials for the target resource!</h3>
       <br/>  
       <hr/>
       <br/>  

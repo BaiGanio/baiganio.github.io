@@ -1,29 +1,22 @@
 .content{
     text-align: center;
 }
-h3 {
-    font-size: 3em;
+h1, h3{
     font-family: 'Alsandra';
+}
+h1 {
+    font-size: 3em;
     -webkit-text-stroke-width: 0.8px;
     -webkit-text-stroke-color: black;
     span{
         color: white;
     }   
 }
-
-@media only screen and (max-width: 797px) {
-    h1 {
-        font-size: 5em;
-    }
-}
-@media only screen and (max-width: 591px) {
-   
-}
 @media only screen and (max-width: 451px) {
     h3 {
-        font-size: 1.2em;
+        font-size: 1.6em;
     }
     h5 {
-        font-size: 0.8em;
+        font-size: 1.4em;
     }
 }
