@@ -1,7 +1,7 @@
 ---
-name: Bug
-about: Give us a hint if what you saw wrong in the system behaviour & create a report to help us improve
-title: 'Bug: Not_Working_Bug'
+name: Bug report
+about: Give us a hint if you saw anythyng wrong in the system behaviour & create a report to help us improve.
+title: 'Bug: <your-title-here>'
 labels: 'Bug'
 assignees: ''
 
@@ -9,6 +9,9 @@ assignees: ''
 
 **Describe the bug**
 A clear and concise description of what the bug is.
+- _Clicking on button X..._
+- _Navigating from page X to page Y_
+- _Else..._
 
 **To Reproduce**
 Example steps to reproduce the behavior:
@@ -19,13 +22,26 @@ Example steps to reproduce the behavior:
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
+- _Clicking on button X should show confirm dialog..._
+- _Clicking on button Y should redirect me to..._
+- _Adding Z in '...' should show success..._
 
-**(If applicable)Screenshots**
-Add screenshots to help explain your problem.
+**(If applicable) Screenshots**
+_Add screenshots to help explain your problem._
 
 **Desktop (please complete the following information):**
  - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
+   - [ ] Windows
+   - [ ] Linux
+   - [ ] Mac
+   - [ ] iOS
+ - Browser:
+   - [ ] Chrome
+   - [ ] Mozilla Firefox
+   - [ ] Microsoft Edge
+   - [ ] Brave
+   - [ ] Opera
+   - [ ] Safari
  - Version [e.g. 22] - (optional)
 
 **Smartphone (please complete the following information):**
@@ -35,4 +51,4 @@ Add screenshots to help explain your problem.
  - Version [e.g. 22] - (optional)
 
 **Additional context**
-Add any other context about the problem here.
+_Feel free to add any other context about the problem here._
