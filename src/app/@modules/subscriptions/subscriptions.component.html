@@ -1,10 +1,13 @@
+<ngx-loading [show]="loading"></ngx-loading>
+
 <h1 class="title" style="text-align:center">Subscriptions
-  <span *ngIf='haveConfirmedSubscription === true'> / 
+  <span *ngIf='haveConfirmedSubscription === false'> / 
     <span style="background-color: cornflowerblue; color:white; cursor:pointer;" (click)='goToMySubscriptions()'>Preview</span>
   </span>
 </h1>
-<hr style="width: 60%; color: blue;">  
-<div class="content">
+<hr> 
+<br> 
+<div class="content  text-center">
   <h2 *ngIf='loading'>Please wait! Fetching data from the server...</h2>
 
   <div class="dim" *ngIf='notificationRequest'>
@@ -41,12 +44,13 @@
     </span>
   </div>
 </div>
+<!-- Subscriptions -->
 <div class='row text-center'>
-  <div id="exception-list" class="col-md-4" *ngFor='let s of subscriptions;'>
-    <div class="card" style="margin: 10px;">
+  <div id="subscriptions-list" class="col-md-4" *ngFor='let s of subscriptions;'>
+    <div class="card">
       <div class="card-body">
         <h2 class="text-center"> {{ s.Type }} </h2>
-        <hr style="color: black;">
+        <hr>
         <br>
         <div class="view view-cascade overlay">
 
@@ -85,5 +89,3 @@
     </div>
   </div>
 </div>
-
-<ngx-loading [show]="loading"></ngx-loading>

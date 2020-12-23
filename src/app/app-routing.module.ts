@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BlogComponent } from './@pages/blog/blog.component';
 import { HomeComponent } from './@pages/home/home.component';
 import { LoginComponent } from './@pages/login/login.component';
 import { RegisterComponent } from './@pages/register/register.component';
@@ -10,6 +9,7 @@ import { ForgottenPasswordComponent } from './@pages/fotgotten-password/forgotte
 import { NotFoundComponent } from './@pages/not-found/not-found.component';
 import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
 import { RoleGuard } from './@core/role.guard';
+import { ConfirmationComponent } from './@pages/confirmation/confirmation.component';
 
 
 const routes: Routes = [
@@ -21,10 +21,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
-  {
-      path: 'blog',
-      component: BlogComponent
   },
   {
     path: 'login',
@@ -43,8 +39,9 @@ const routes: Routes = [
     loadChildren : () => import('./@modules/courses/courses.module').then(m => m.CoursesModule)
   },
   {
-    path: 'blog',
-    loadChildren : () => import('./@modules/blogs/blogs.module').then(m => m.BlogsModule)
+    path: 'blogs',
+    loadChildren : () => import('./@modules/blogs/blogs.module').then(m => m.BlogsModule),
+      // canActivate: [RoleGuard],
   },
   {
     path: 'teachers',
@@ -78,6 +75,8 @@ const routes: Routes = [
     path: 'server-alert',
     component: ServerAlertComponent
   },
+  
+  { path: 'confirmation/:token', component: ConfirmationComponent },
   {
     path: 'forgotten-password',
     component: ForgottenPasswordComponent

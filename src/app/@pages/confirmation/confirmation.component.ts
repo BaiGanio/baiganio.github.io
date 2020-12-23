@@ -35,20 +35,25 @@ export class ConfirmationComponent implements OnInit {
     }
 
     checkRouteParameters(): void {
+        this.errorMessage
         const token = this.route.snapshot.params.token;
         const change = this.route.snapshot.params.changeid;
         // this.state = this.route.snapshot.queryParams.state;
         // this.redirectURI = this.route.snapshot.queryParams.redirect_uri;
         if (token) {
-            this.isEmailConfirmed = true;
-            this.enableLogin = true;
             this.accountService.confirm(token)
                 .subscribe(
                     response => {
                         this.userId = response;
                         this.successMessage = 'Welcome to BaiGanio community!';
+                        this.isEmailConfirmed = true;
+                        this.enableLogin = true;
                     },
-                    error => this.errorHandlerService.handleRequestError(error)
+                    error => {
+                        console.log(error);
+                        this.errorHandlerService.handleRequestError(error);
+                        this.errorMessage = 'Looks like there is a problem with the link?!?!?'
+                    }
                 );
         } else if (change) {
             // this.backendService.revertUserChange(change)
@@ -67,7 +72,7 @@ export class ConfirmationComponent implements OnInit {
             console.log(this.redirectURI + '----' + this.state);
             this.router.navigate(['/login'], { queryParams: { redirect_uri: this.redirectURI, state: this.state } });
         } else {
-            console.log('nothing');
+            console.log('nothing... navigating to login from confirm');
             this.router.navigate(['/login']);
         }
     }

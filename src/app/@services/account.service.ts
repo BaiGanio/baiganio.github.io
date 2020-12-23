@@ -13,7 +13,7 @@ export class AccountService {
   }
   confirm(token: string): Observable<any> {
     const data = { code: token };
-    return this.backendService.backendRequest('get', 'account/confirmation', data);
+    return this.backendService.backendRequest('get', 'account/confirmation', data, false);
   }
   resetPassword(data: any): Observable<any> {
     return this.backendService.backendRequest('post', 'account/ResetPassword', data);

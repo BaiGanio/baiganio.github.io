@@ -13,13 +13,15 @@ import { ErrorView } from 'src/app/@shared/interfaces/error-view.interface';
       <hr/>
       <br/> 
       <h3>{{error.ErrorText}}</h3>
+      <div *ngIf=error.ErrorDescription>
       <br/>  
-      <h5>{{error.ErrorDescription}}</h5>      
+      <h5>{{error.ErrorDescription || error.Message}}</h5> 
+      </div>     
       <br/>  
       <hr/>
       <br/>  
       <button mat-raised-button color="primary"
-        (click) = dismiss() style="width:30%">
+        (click) = dismiss()>
         Dismiss
       </button>
     </div>
