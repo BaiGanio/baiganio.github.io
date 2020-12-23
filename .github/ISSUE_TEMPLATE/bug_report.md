@@ -1,8 +1,8 @@
 ---
 name: Bug
-about: Create a report to help us improve
-title: 'Bug report'
-labels: ''
+about: Give us a hint if what you saw wrong in the system behaviour & create a report to help us improve
+title: 'Bug: Not_Working_Bug'
+labels: 'Bug'
 assignees: ''
 
 ---
