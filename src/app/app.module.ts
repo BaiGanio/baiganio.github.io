@@ -33,6 +33,7 @@ import { ServerErrorComponent } from './@components/errors/server-error/server-e
 import { BadRequestComponent } from './@components/errors/bad-request/bad-request.component';
 import { ConfirmationComponent } from './@pages/confirmation/confirmation.component';
 import { BlogsModule } from './@modules/blogs/blogs.module';
+import { WelcomeComponent } from './@pages/welcome/welcome.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { BlogsModule } from './@modules/blogs/blogs.module';
     QuestionnaireComponent,
     ServerErrorComponent,
     BadRequestComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,

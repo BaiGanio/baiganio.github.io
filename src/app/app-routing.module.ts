@@ -10,26 +10,14 @@ import { NotFoundComponent } from './@pages/not-found/not-found.component';
 import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
 import { RoleGuard } from './@core/role.guard';
 import { ConfirmationComponent } from './@pages/confirmation/confirmation.component';
+import { WelcomeComponent } from './@pages/welcome/welcome.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   {
     path: 'subscriptions',
     loadChildren : () => import('./@modules/subscriptions/subscriptions.module').then(m => m.SubscriptionsModule)
@@ -71,28 +59,13 @@ const routes: Routes = [
     //   expectedRole: 'Member'
     // }
   },
-  {
-    path: 'server-alert',
-    component: ServerAlertComponent
-  },
-  
+  { path: 'server-alert', component: ServerAlertComponent },
+  { path: 'welcome', component: WelcomeComponent },
   { path: 'confirmation/:token', component: ConfirmationComponent },
-  {
-    path: 'forgotten-password',
-    component: ForgottenPasswordComponent
-  },
-  {
-    path: 'error',
-    component: ErrorComponent
-  },
-  {
-    path: '403',
-    component: AccessDeniedComponent
-  } ,
-  {
-    path: '**',
-    component: NotFoundComponent
-  }
+  { path: 'forgotten-password', component: ForgottenPasswordComponent },
+  { path: 'error', component: ErrorComponent},
+  { path: '403', component: AccessDeniedComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

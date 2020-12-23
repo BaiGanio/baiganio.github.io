@@ -1,4 +1,6 @@
 
+<ngx-loading [show]="loading"></ngx-loading>
+
 <h1 class="title">Register</h1>
 <hr>
 <br>
@@ -40,10 +42,9 @@
         </form>
       </section>
     </div>
+</div>
+<div class="row">
+  <div class="col-12 mb-4 text-center">
+    <button class="btn btn-outline-info waves-effect" routerLink="/login">Already have an account? Click me!</button>
   </div>
-  <div class="row">
-    <div class="col-12 mb-4 text-center">
-      <button class="btn btn-outline-info waves-effect" routerLink="/login">Already have an account? Click me!</button>
-    </div>
-  </div>
-  <ngx-loading [show]="loading"></ngx-loading>
+</div>
