@@ -25,7 +25,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 - Use build artifacts from the `dist/` directory. 
 - Configuration for `gh-pages` could be done via `build-deploy.yml` file. 
-- Use GitHub Actions for `CI/CD` pipeline.
+- Use GitHub Actions for `CI/CD` pipeline.w
 
 ## Running unit tests
 
