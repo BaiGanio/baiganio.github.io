@@ -1,12 +1,12 @@
 # _BaiGanio_
 _Use this quick explanation to setup yourself faster._
 ## _Development environment setup_
-- Once cloned run `npm install` in project directory
-- Run `ng serve -c=local -o` for a dev server. 
-- Application will open in your default browser at `http://localhost:5300/` automatically. 
-- You can change configurations from `environment.local.ts` file.
-- You can change dependencies from `packge.json` file.
-- The app will automatically reload if you change any of the source files.
+- Open your favorite terminal and type `node -v` to ensure you have installed [_Node.js_](https://nodejs.org)
+- Clone the repository and run `npm install` in the project directory
+- Run `ng serve -c=local -o` for a dev server. Application will open in your default browser at `http://localhost:5300/` automatically. 
+- Project setup could be made in `angular.json` file.
+- You can change the local environment variables from `environment.local.ts` file.
+- Dpendencies are presented in `packge.json` file.
 ## _Code scaffolding_
 - Run `ng generate component component-name` to generate a new component. 
 - You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
