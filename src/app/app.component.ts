@@ -4,7 +4,6 @@ import { AuthService } from './@services/auth.service';
 import { BackendService } from './@services/backend.service';
 import { ErrorHandlerService } from './@services/error-handler.service';
 import { SignalRService } from './@services/signalR.service';
-
 @Component({
   selector: 'app-root',
   template: ` 
@@ -14,7 +13,6 @@ import { SignalRService } from './@services/signalR.service';
 export class AppComponent {
   title = 'BaiGanio';
   authToken: any;
-
   constructor(
     private backendService: BackendService,
     private authService: AuthService,

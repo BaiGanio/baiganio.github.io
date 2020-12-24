@@ -39,8 +39,11 @@ const targetPath = isProduction
 // Actual content to be compiled dynamically and pasted into respective environment files
 const environmentFileContent = 
   `
+    import { name, version } from '../../package.json';
     export const environment = {
-      production: true,
+      production: ${isProduction},
+      name: name,
+      version: version,
       appUrl: 'https://baiganio.github.io/',
       apiUrl: 'https://bgapi.azurewebsites.net/api/',
       idsUrl: 'https://free-is4.azurewebsites.net/',

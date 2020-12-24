@@ -1,11 +1,12 @@
 {
   "name": "baiganio",
-  "version": "2.0.1",
+  "version": "2.0.4",
   "scripts": {
     "ng": "ng",
     "config": "ts-node ./src/assets/scripts/setEnv.ts",
-    "start": "npm run config -- --environment=local && ng serve",
-    "build": "npm run config -- --environment=prod && ng build --prod",
+    "start": "ng serve",
+    "prebuild": "npm --no-git-tag-version version patch",
+    "build": "npm run config -- --environment=prod && ng build --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -31,7 +32,6 @@
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
-  
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1100.5",
     "@angular/cli": "~11.0.5",

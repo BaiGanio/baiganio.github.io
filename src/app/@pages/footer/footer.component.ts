@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {environment} from '../../../environments/environment';
 import { MatDialog } from '@angular/material/dialog';
 // import { TermsComponent } from 'src/app/@shared/components/terms/terms.component';
 // import { PrivacyComponent } from 'src/app/@shared/components/privacy/privacy.component';
@@ -8,8 +9,9 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit {
- constructor(private dialog: MatDialog) { }
+export class FooterComponent implements OnInit {  
+  currentApplicationVersion = environment.version;
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
