@@ -46,15 +46,11 @@ const environmentFileContent = `
     production: ${isProduction},
     identityServerClientCredentials: {
         client_id: '${process.env.IS4_BaiGanio_Client}',
-        client_secret: '${process.env.IS4_BaiGanio_Client_Secret}',
-        scope: 'scope.bgapi',
-        grant_type: 'client_credentials'
+        client_secret: '${process.env.IS4_BaiGanio_Client_Secret}'
     },
     identityServerUserCredentials: {
         client_id: '${process.env.IS4_BaiGanio_User}',
-        client_secret: ''${process.env.IS4_BaiGanio_User_Secret}',,
-        scope: 'scope.bgapi',
-        grant_type: 'password'
+        client_secret: ''${process.env.IS4_BaiGanio_User_Secret}'
     },
   };
 `;
