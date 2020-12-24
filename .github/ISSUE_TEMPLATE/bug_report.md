@@ -9,8 +9,8 @@ assignees: ''
 
 **Describe the bug**
 A clear and concise description of what the bug is.
-- _Clicking on button X..._
-- _Navigating from page X to page Y_
+- _Clicking on button X doesn't allow me to update my profile picture..._
+- _Missing name in the navbar when navigating from page X to page Y_
 - _Else..._
 
 **To Reproduce**
@@ -30,18 +30,8 @@ A clear and concise description of what you expected to happen.
 _Add screenshots to help explain your problem._
 
 **Desktop (please complete the following information):**
- - OS: [e.g. iOS]
-   - [ ] Windows
-   - [ ] Linux
-   - [ ] Mac
-   - [ ] iOS
- - Browser:
-   - [ ] Chrome
-   - [ ] Mozilla Firefox
-   - [ ] Microsoft Edge
-   - [ ] Brave
-   - [ ] Opera
-   - [ ] Safari
+ - OS: [e.g. Windows, Linux]
+ - Browser: [e.g. Chrome, Microsoft Edge]
  - Version [e.g. 22] - (optional)
 
 **Smartphone (please complete the following information):**
