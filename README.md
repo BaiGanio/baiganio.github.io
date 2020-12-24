@@ -27,5 +27,5 @@ _This is `not` used for `production` deployment_
 - Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## _Further help_
-- To get more help for `how to..` and `where from...` on the project use our `[_Wiki_]()`.
+- To get more help for `how to..` and `where from...` on the project use our `[Wiki]()`.
 - Check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
