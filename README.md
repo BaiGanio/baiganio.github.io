@@ -10,21 +10,23 @@ _Use this quick explanation to setup yourself faster._
 - You can change dependencies from `packge.json` file.
 - The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# _Code scaffolding_
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Run `ng generate component component-name` to generate a new component. 
+- You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 # _Build_
-
-- Run `ng build` to build the project. 
-- The build artifacts will be stored in the `dist/` directory. 
-- Use the `ng build -c=prod` flag for a production build.
+_This is `not` used for `production` deployment_
+- Run `ng build -c=prod` for a production build.
+- Build artifacts will be stored in the `dist/` directory. 
 
 # _Deploy_
-
-- Use build artifacts from the `dist/` directory. 
-- Configuration for `gh-pages` could be done via `build-deploy.yml` file. 
-- Use GitHub Actions for `CI/CD` pipeline.w
+- _Prod:_
+  - Automtic deploy on `push` or `pull-request` with GitHub Actions `CI/CD` pipeline.
+  - Custom configuration could be extended from `build-deploy.yml` file. 
+- _Test:_
+  - Use build artifacts from the `dist/` directory. 
+  - Upload files to the server via any favorite FTP client.
 
 ## Running unit tests
 
