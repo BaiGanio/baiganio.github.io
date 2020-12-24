@@ -9,14 +9,14 @@ export const environment = {
     IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
     bgapiSignalRNotyfyHub: 'https://bgapi.azurewebsites.net/notify',
     identityServerClientCredentials: {
-        client_id: '',
-        client_secret: '',
+        client_id: 'a',
+        client_secret: 'b',
         scope: 'scope.bgapi',
         grant_type: 'client_credentials'
     },
     identityServerUserCredentials: {
-        client_id: '',
-        client_secret: '',
+        client_id: 'a',
+        client_secret: 'b',
         scope: 'scope.bgapi',
         grant_type: 'password'
     },
