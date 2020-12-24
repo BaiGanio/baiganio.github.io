@@ -19,7 +19,8 @@ _This is `not` used for `production` deployment_
   - Automtic deploy on `push` or `pull-request` with [_GitHub Actions_](https://docs.github.com/en/free-pro-team@latest/actions) `CI/CD` pipeline.
   - Custom configuration could be extended from `build-deploy.yml` file.
   - Versioning:
-   - Running npm run build will automatically run the prebuild script as first step. is done by runing locally `ng build` and then pushing updated `package.json` back to the repo.
+   - Running `npm run build` locally will automatically run the prebuild script as first step.
+   - Push updated `package.json` back to the repo.
 - _Test:_
   - Use build artifacts from the `dist/` directory. 
   - Upload files to the server via any favorite FTP client.
