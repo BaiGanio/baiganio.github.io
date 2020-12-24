@@ -16,16 +16,16 @@ _This is `not` used for `production` deployment_
 - Build artifacts will be stored in the `dist/` directory. 
 ## _Deploy_
 - _Prod:_
-  - Automtic deploy on `push` or `pull-request` with GitHub Actions `CI/CD` pipeline.
+  - Automtic deploy on `push` or `pull-request` with [_GitHub Actions_](https://docs.github.com/en/free-pro-team@latest/actions) `CI/CD` pipeline.
   - Custom configuration could be extended from `build-deploy.yml` file. 
 - _Test:_
   - Use build artifacts from the `dist/` directory. 
   - Upload files to the server via any favorite FTP client.
 ## _Running unit tests_
-- Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Run `ng test` to execute the unit tests via [_Karma_](https://karma-runner.github.io).
 ## _Running end-to-end tests_
-- Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Run `ng e2e` to execute the end-to-end tests via [_Protractor_](http://www.protractortest.org/).
 
 ## _Further help_
-- To get more help for `how to..` and `where from...` on the project use our `[Wiki]()`.
-- Check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- To get more help for `how to..` and `where from...` on the project use our [_Wiki_]().
+- Check out the [_Angular CLI README_](https://github.com/angular/angular-cli/blob/master/README.md).
