@@ -1,7 +1,7 @@
 # _BaiGanio_
 _Use this quick explanation to setup yourself faster._
 ## _Development environment setup_
-- Open your favorite terminal and type `node -v` to ensure you have installed [_Node.js_](https://nodejs.org)
+- Open your favorite terminal and type `node -v` to ensure you have installed latest [_Node.js_](https://nodejs.org) version available
 - Clone the repository and run `npm install` in the project directory
 - Run `ng serve -c=local -o` for a dev server. Application will open in your default browser at `http://localhost:5300/` automatically. 
 - Project setup could be made in `angular.json` file.
