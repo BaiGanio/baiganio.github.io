@@ -1,5 +1,8 @@
+import { environmentCongig } from './environments/environment.prod';
+
 const { writeFile, existsSync, mkdirSync } = require('fs');
 const { argv } = require('yargs');
+
 
 require('dotenv').config();
 const environment = argv.environment;
