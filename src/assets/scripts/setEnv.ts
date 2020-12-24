@@ -27,6 +27,7 @@ if (!existsSync(envDirectory)) {
 
 //creates the `environment.prod.ts` and `environment.ts` file if it does not exist
 writeFileUsingFS('./src/environments/environment.prod.ts', '');
+writeFileUsingFS('./src/environments/environment.local.ts', '');
 
 // Checks whether command line argument of `prod` was provided signifying production mode
 const isProduction = environment === 'prod';
