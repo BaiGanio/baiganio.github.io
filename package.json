@@ -1,12 +1,12 @@
 {
   "name": "baiganio",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "scripts": {
     "ng": "ng",
     "config": "ts-node ./src/assets/scripts/setEnv.ts",
     "start": "ng serve",
     "prebuild": "npm --no-git-tag-version version patch",
-    "build": "ng build --prod --aot",
+    "build": "npm run build --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -39,7 +39,7 @@
     "@angular/language-service": "~11.0.5",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "^12.11.1",
+    "@types/node": "^12.19.11",
     "codelyzer": "^6.0.0",
     "dotenv": "^8.2.0",
     "jasmine-core": "~3.6.0",
