@@ -5,8 +5,8 @@ require('dotenv').config();
 const environment = argv.environment;
 
 
-function writeFileUsingFS(targetPath, environmentFileContent) {
-  writeFile(targetPath, environmentFileContent, function (err) {
+function writeFileUsingFS(targetPath: string, environmentFileContent: string) {
+  writeFile(targetPath, environmentFileContent, function (err: any) {
     if (err) {
       console.log(err);
     }
@@ -50,7 +50,7 @@ const environmentFileContent =
       bgapiSignalRNotyfyHub: 'https://bgapi.azurewebsites.net/notify',
       identityServerClientCredentials: {
         client_id: '${process.env.IS4_BaiGanio_Client}',
-        client_secret: '${process.env.IS4_BaiGanio_Client_Secret}'
+        client_secret: '${process.env.IS4_BaiGanio_Client_Secret}',
         scope: 'scope.bgapi',
         grant_type: 'client_credentials',
       },
