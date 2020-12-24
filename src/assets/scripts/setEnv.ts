@@ -47,7 +47,7 @@ const environmentFileContent = `
     },
     identityServerUserCredentials: {
         client_id: '${process.env.IS4_BaiGanio_User}',
-        client_secret: ''${process.env.IS4_BaiGanio_User_Secret}',
+        client_secret: '${process.env.IS4_BaiGanio_User_Secret}',
     }
   };
 `;
