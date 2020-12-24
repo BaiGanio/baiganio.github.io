@@ -1,17 +1,11 @@
 h1{
-    font-size: 5em;
+    font-size: 6em;
     padding: 15px;
 }
 img {
     width: 22%;
 }
 @media only screen and (max-width: 736px) {
-    #comingSoon {
-        display: none;
-    }
-    h1.GotHeroin {
-        font-size: 5em !important;
-    }
     img {
         width: 60%;
     }

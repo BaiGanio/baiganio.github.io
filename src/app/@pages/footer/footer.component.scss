@@ -2,12 +2,16 @@
     background: rgb(19, 33, 37) url(../../../assets/images/banner/binary-globe.jpg) no-repeat 0 0;
     background-size: auto auto;
     background-size: cover;
-    border-radius: 0px;
-    text-align: center;
+}
+h1{
+    font-size: 6em;
 }
 h3{
+    font-size: 4em;
+}
+h1, h3{
     font-family: 'Alsandra';
-    font-size: 3em;
+    padding: 15px;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
     color: white;
@@ -42,15 +46,13 @@ h3{
 
 .innerLinks {
     cursor: pointer;
-    list-style-type: none;
-    margin: 0 auto;
     width: 10%;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     color: white;
     font-weight: bold;
     margin:15px;
     padding: 5px;
-    border: 1px solid black;
+    border: 3px solid black;
     background-color: rgba(27, 142, 236, 0.493);
 }
 
