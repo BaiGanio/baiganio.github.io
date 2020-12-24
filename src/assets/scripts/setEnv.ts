@@ -1,5 +1,3 @@
-import { environmentCongig } from './environments/environment.prod';
-
 const { writeFile, existsSync, mkdirSync } = require('fs');
 const { argv } = require('yargs');
 
