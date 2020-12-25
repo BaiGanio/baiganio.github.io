@@ -3,7 +3,7 @@
   "version": "2.0.5",
   "scripts": {
     "ng": "ng",
-    "config": "ts-node ./src/assets/scripts/setEnv.ts",
+    "config": "ts-node setEnv.ts",
     "start": "ng serve",
     "prebuild": "npm --no-git-tag-version version patch",
     "build": "npm run config -- --environment=prod && ng build --prod --aot",
@@ -30,7 +30,8 @@
     "ngx-loading": "^8.0.0",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1100.5",
