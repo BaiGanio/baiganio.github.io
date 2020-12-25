@@ -4,8 +4,14 @@ about: Give us a hint if you saw anythyng wrong in the system behaviour & create
 title: 'Bug: <your-title-here>'
 labels: 'Bug'
 assignees: ''
-
 ---
+ 
+**Priority + Rationale**
+(To be filled out after bug submission by a product owner)
+- Add stats if available on % of customers impacted
+- Is this visible by all customers, or in a high traffic area?
+- Is this tech debt?
+- If applicable, what % of revenue is possibly impacted by this? 
 
 **Describe the bug**
 A clear and concise description of what the bug is.
