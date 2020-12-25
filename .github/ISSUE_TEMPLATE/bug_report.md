@@ -1,9 +1,9 @@
 ---
-name: _Bug Report_
-About: _Use this template to capture relevant information to track bug reports consistently and add priority and business value to better organize Sprints and work. Give us a hint if you saw anythyng wrong in the system behaviour & create a report to help us improve._
-_Title_: 'Your-Bug-Title-Here'
-_Labels_: 'Bug'
-_Assignees_: ''
+Name: Bug Report
+About: Use this template to capture relevant information to track bug reports consistently and add priority and business value to better organize Sprints and work. Give us a hint if you saw anythyng wrong in the system behaviour & create a report to help us improve.
+Title: 'Your-Bug-Title-Here'
+Labels: 'Bug'
+Assignees: ''
 ---
  
 **Priority + Rationale**
