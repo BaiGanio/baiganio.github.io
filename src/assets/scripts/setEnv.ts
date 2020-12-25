@@ -1,7 +1,7 @@
 import { writeFile, existsSync, mkdirSync } from 'fs';
 const { argv } = require('yargs');
 
-require('dotenv').load();
+require('dotenv').config();
 const environment = argv.environment;
 
 
