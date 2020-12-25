@@ -1,4 +1,4 @@
-import { writeFile, existsSync, mkdirSync } from 'fs';
+const { writeFile, existsSync, mkdirSync } = require('fs');
 const { argv } = require('yargs');
 
 require('dotenv').config();
