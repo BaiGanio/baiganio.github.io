@@ -35,6 +35,7 @@ import { ConfirmationComponent } from './@pages/confirmation/confirmation.compon
 import { BlogsModule } from './@modules/blogs/blogs.module';
 import { WelcomeComponent } from './@pages/welcome/welcome.component';
 import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
+import { RateComponent } from './@components/errors/rate/rate.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
     BadRequestComponent,
     WelcomeComponent,
     BgTeamComponent,
+    RateComponent,
   ],
   imports: [
     BrowserModule,

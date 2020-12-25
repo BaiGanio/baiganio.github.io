@@ -4,6 +4,7 @@ import { BlogsComponent } from './blogs.component';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { BlogsRoutingModule } from './blogs-routing.module';
+import { RateComponent } from 'src/app/@components/errors/rate/rate.component';
 
 
 @NgModule({
@@ -23,7 +24,6 @@ import { BlogsRoutingModule } from './blogs-routing.module';
     }),
   ],
   entryComponents: [
-    // 
   ],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
