@@ -1,16 +1,23 @@
 ---
-name: Bug report
-about: Give us a hint if you saw anythyng wrong in the system behaviour & create a report to help us improve.
-title: 'Bug: <your-title-here>'
+name: Bug Report
+about: Use this template to capture relevant information & to track bug reports consistently. To add priority and business value to better organize Sprints and work.
+title: 'Your-Bug-Title-Here'
 labels: 'Bug'
 assignees: ''
 
 ---
+ 
+**Priority + Rationale**
+(To be filled out after bug submission by a product owner)
+- _Add stats if available on % of customers impacted._
+- _Is this visible by all customers, or in a high traffic area?_
+- _Is this tech debt?_
+- _If applicable, what % of revenue is possibly impacted by this? _
 
 **Describe the bug**
 A clear and concise description of what the bug is.
-- _Clicking on button X..._
-- _Navigating from page X to page Y_
+- _Clicking on button X doesn't allow me to update my profile picture..._
+- _Missing name in the navbar when navigating from page X to page Y_
 - _Else..._
 
 **To Reproduce**
@@ -30,18 +37,8 @@ A clear and concise description of what you expected to happen.
 _Add screenshots to help explain your problem._
 
 **Desktop (please complete the following information):**
- - OS: [e.g. iOS]
-   - [ ] Windows
-   - [ ] Linux
-   - [ ] Mac
-   - [ ] iOS
- - Browser:
-   - [ ] Chrome
-   - [ ] Mozilla Firefox
-   - [ ] Microsoft Edge
-   - [ ] Brave
-   - [ ] Opera
-   - [ ] Safari
+ - OS: [e.g. Windows, Linux]
+ - Browser: [e.g. Chrome, Microsoft Edge]
  - Version [e.g. 22] - (optional)
 
 **Smartphone (please complete the following information):**
