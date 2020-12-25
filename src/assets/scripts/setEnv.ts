@@ -32,9 +32,7 @@ writeFileUsingFS('./src/environments/environment.local.ts', '');
 const isProduction = environment === 'prod';
 
 // Choose the correct targetPath based on the environment chosen
-const targetPath = isProduction
-  ? './src/environments/environment.prod.ts'
-  : './src/environments/environment.local.ts';
+const targetPath = './src/environments/environment.prod.ts';
 
 // Actual content to be compiled dynamically and pasted into respective environment files
 const environmentFileContent = 
