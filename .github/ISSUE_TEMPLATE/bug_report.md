@@ -4,6 +4,7 @@ about: Use this template to capture relevant information & to track bug reports 
 title: 'Your-Bug-Title-Here'
 labels: 'Bug'
 assignees: ''
+
 ---
  
 **Priority + Rationale**
