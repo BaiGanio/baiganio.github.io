@@ -1,0 +1,23 @@
+<ngx-loading [show]="loading"></ngx-loading>
+<h1 class="title">(BG) Team</h1>
+<hr>
+<div class='row text-center'>
+  <div id="subscriptions-list" class="col-md-4" *ngFor='let s of bloggers;'>
+    <div class="card">
+      <div class="card-body">
+        <hr>
+        <br>
+        <div class="view view-cascade overlay">
+          <img src='{{ s.avatar_url }}' alt="Sample image" class="img-thumbnail img-fluid">
+          <br>
+          <br>
+          <h2 class="text-center"> {{ s.name }} </h2>
+          <hr>
+          <button mat-raised-button color="primary">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

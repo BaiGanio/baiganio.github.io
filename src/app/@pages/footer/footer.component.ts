@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {environment} from '../../../environments/environment';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 // import { TermsComponent } from 'src/app/@shared/components/terms/terms.component';
 // import { PrivacyComponent } from 'src/app/@shared/components/privacy/privacy.component';
 
@@ -11,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class FooterComponent implements OnInit {  
   currentApplicationVersion = environment.version;
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog,  private router: Router,) { }
 
   ngOnInit() {
   }
@@ -31,5 +32,8 @@ export class FooterComponent implements OnInit {
     //   {  width: '80vw', maxHeight: '100vh'}
     // );
     // $dialogRef.afterClosed().subscribe();
+  }
+  goToBGTeam(){
+    this.router.navigate(['/bg-team']);
   }
 }

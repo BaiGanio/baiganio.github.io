@@ -11,11 +11,13 @@ import { ServerAlertComponent } from './@pages/server-alert/server-alert.compone
 import { RoleGuard } from './@core/role.guard';
 import { ConfirmationComponent } from './@pages/confirmation/confirmation.component';
 import { WelcomeComponent } from './@pages/welcome/welcome.component';
+import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'bg-team', component: BgTeamComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {

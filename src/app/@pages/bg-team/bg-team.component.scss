@@ -1,0 +1,39 @@
+button{
+    font-size: 1em;
+     padding: 5px;
+     margin: 5px;
+  }
+  .img-fluid {
+    border: 1px solid black;
+    height: 16vw;
+    object-fit: contain;
+  }
+  h1{
+    font-size: 6em;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    color: white;
+    margin-top: 25px;
+  }
+  h2{
+      font-family: 'Alsandra';
+      font-size:3em;
+  }
+  .card{
+      margin: 20px;
+  }
+
+  @media only screen and (max-width: 451px) {
+    h2 {
+        font-size:2em;
+    }
+    h5 {
+        font-size: 0.8em;
+    }
+    .img-fluid {
+      // border: 1px solid black;
+      height: 56vw;
+      object-fit: contain;
+    }
+  }
+  

@@ -17,6 +17,7 @@ import { UserDataService } from '../@services/user-data.service';
 import { UtilityService } from '../@services/utility.service';
 import { AuthGuard } from './auth.guard';
 import { RoleGuard } from './role.guard';
+import { BloggerService } from '../@services/blogger.service';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { RoleGuard } from './role.guard';
     SignalRService,
     AccountService,
     TeacherService,
+    BloggerService,
     ChecklistDatabase
   ]
 })

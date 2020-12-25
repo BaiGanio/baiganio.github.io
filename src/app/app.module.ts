@@ -34,6 +34,7 @@ import { BadRequestComponent } from './@components/errors/bad-request/bad-reques
 import { ConfirmationComponent } from './@pages/confirmation/confirmation.component';
 import { BlogsModule } from './@modules/blogs/blogs.module';
 import { WelcomeComponent } from './@pages/welcome/welcome.component';
+import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { WelcomeComponent } from './@pages/welcome/welcome.component';
     ServerErrorComponent,
     BadRequestComponent,
     WelcomeComponent,
+    BgTeamComponent,
   ],
   imports: [
     BrowserModule,
