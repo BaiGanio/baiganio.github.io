@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BlogComponent } from './@pages/blog/blog.component';
 import { HomeComponent } from './@pages/home/home.component';
 import { LoginComponent } from './@pages/login/login.component';
 import { RegisterComponent } from './@pages/register/register.component';
@@ -10,30 +9,17 @@ import { ForgottenPasswordComponent } from './@pages/fotgotten-password/forgotte
 import { NotFoundComponent } from './@pages/not-found/not-found.component';
 import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
 import { RoleGuard } from './@core/role.guard';
+import { ConfirmationComponent } from './@pages/confirmation/confirmation.component';
+import { WelcomeComponent } from './@pages/welcome/welcome.component';
+import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-      path: 'blog',
-      component: BlogComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'bg-team', component: BgTeamComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   {
     path: 'subscriptions',
     loadChildren : () => import('./@modules/subscriptions/subscriptions.module').then(m => m.SubscriptionsModule)
@@ -43,8 +29,9 @@ const routes: Routes = [
     loadChildren : () => import('./@modules/courses/courses.module').then(m => m.CoursesModule)
   },
   {
-    path: 'blog',
-    loadChildren : () => import('./@modules/blogs/blogs.module').then(m => m.BlogsModule)
+    path: 'blogs',
+    loadChildren : () => import('./@modules/blogs/blogs.module').then(m => m.BlogsModule),
+      // canActivate: [RoleGuard],
   },
   {
     path: 'teachers',
@@ -74,26 +61,13 @@ const routes: Routes = [
     //   expectedRole: 'Member'
     // }
   },
-  {
-    path: 'server-alert',
-    component: ServerAlertComponent
-  },
-  {
-    path: 'forgotten-password',
-    component: ForgottenPasswordComponent
-  },
-  {
-    path: 'error',
-    component: ErrorComponent
-  },
-  {
-    path: '403',
-    component: AccessDeniedComponent
-  } ,
-  {
-    path: '**',
-    component: NotFoundComponent
-  }
+  { path: 'server-alert', component: ServerAlertComponent },
+  { path: 'welcome', component: WelcomeComponent },
+  { path: 'confirmation/:token', component: ConfirmationComponent },
+  { path: 'forgotten-password', component: ForgottenPasswordComponent },
+  { path: 'error', component: ErrorComponent},
+  { path: '403', component: AccessDeniedComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

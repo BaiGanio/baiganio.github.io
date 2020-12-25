@@ -6,7 +6,7 @@ import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { AccountComponent } from './account.component';
 import { AccountRoutingModule } from './account-routing.module';
 import { InvalidLoginComponent } from '../profile/components/invalid-login.component';
-import { ReportIssueComponent } from './pages/report-issue/report-issue.component';
+import { ReportIssueComponent } from '../../@pages/report-issue/report-issue.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 

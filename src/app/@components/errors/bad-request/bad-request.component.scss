@@ -1,7 +1,7 @@
 .content{
     text-align: center;
 }
-h1, h3{
+h1{
     font-family: 'Alsandra';
 }
 h1 {
@@ -11,6 +11,10 @@ h1 {
     span{
         color: white;
     }   
+}
+button{
+    margin: 5px;
+    font-size: 1.2em;
 }
 @media only screen and (max-width: 451px) {
     h3 {

@@ -14,7 +14,6 @@ import { PrivacyComponent } from './@pages/privacy/privacy.component';
 import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
 import { TermsComponent } from './@pages/terms/terms.component';
 import { AppComponent } from './app.component';
-import { BlogComponent } from './@pages/blog/blog.component';
 import { FooterComponent } from './@pages/footer/footer.component';
 import { CoursesModule } from './@modules/courses/courses.module';
 import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.module';
@@ -32,6 +31,10 @@ import { AccountModule } from './@modules/account/account.module';
 import { QuestionnaireComponent } from './@components/questionnaire/questionnaire.component';
 import { ServerErrorComponent } from './@components/errors/server-error/server-error.component';
 import { BadRequestComponent } from './@components/errors/bad-request/bad-request.component';
+import { ConfirmationComponent } from './@pages/confirmation/confirmation.component';
+import { BlogsModule } from './@modules/blogs/blogs.module';
+import { WelcomeComponent } from './@pages/welcome/welcome.component';
+import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 
 
 @NgModule({
@@ -40,7 +43,6 @@ import { BadRequestComponent } from './@components/errors/bad-request/bad-reques
     FooterComponent,
     HomeComponent,
     NavbarComponent,
-    BlogComponent,
     LoginComponent,
     RegisterComponent,
     ServerAlertComponent,
@@ -49,11 +51,14 @@ import { BadRequestComponent } from './@components/errors/bad-request/bad-reques
     PrivacyComponent,
     TermsComponent,
     ForgottenPasswordComponent,
+    ConfirmationComponent,
     ErrorComponent,
     UnauthorizedComponent,
     QuestionnaireComponent,
     ServerErrorComponent,
     BadRequestComponent,
+    WelcomeComponent,
+    BgTeamComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,6 +74,7 @@ import { BadRequestComponent } from './@components/errors/bad-request/bad-reques
     ProfileModule,
     CoursesModule,
     SubscriptionsModule,
+    BlogsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: jwtTokenGetter

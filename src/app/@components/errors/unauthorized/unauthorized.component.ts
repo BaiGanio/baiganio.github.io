@@ -11,11 +11,11 @@ import { ErrorView } from 'src/app/@shared/interfaces/error-view.interface';
     <div>
       <h1> Ooops... <span>{{error.status}} Unauthorized</span></h1>
       <hr/>
-      <br/> 
-      <h3>
+      <br/>
+      <h4>
         {{error.message}}
-      </h3> 
-      <h3>Lacks valid authentication credentials for the target resource!</h3>
+      </h4> 
+      <h2>Lacks valid authentication credentials for the target resource!</h2> 
       <br/>  
       <hr/>
       <br/>  
@@ -41,7 +41,7 @@ export class UnauthorizedComponent implements OnInit {
 
   ngOnInit() {
     this.error = this.data.model;
-
+console.log(this.error);
   }
 
   dismiss() {

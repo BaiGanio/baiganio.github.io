@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         ]
       });
 
-    //this.authservice.clearUserToken();
+    this.authservice.clearUserToken();
   }
 
   sendLoginRequest() {
