@@ -1,17 +1,17 @@
 ---
-Name: Bug Report
-About: Use this template to capture relevant information to track bug reports consistently and add priority and business value to better organize Sprints and work. Give us a hint if you saw anythyng wrong in the system behaviour & create a report to help us improve.
-Title: 'Your-Bug-Title-Here'
-Labels: 'Bug'
-Assignees: ''
+name: Bug Report
+about: Use this template to capture relevant information to track bug reports consistently and add priority and business value to better organize Sprints and work. Give us a hint if you saw anythyng wrong in the system behaviour & create a report to help us improve.
+title: 'Your-Bug-Title-Here'
+labels: 'Bug'
+assignees: ''
 ---
  
 **Priority + Rationale**
 (To be filled out after bug submission by a product owner)
-- Add stats if available on % of customers impacted
-- Is this visible by all customers, or in a high traffic area?
-- Is this tech debt?
-- If applicable, what % of revenue is possibly impacted by this? 
+- _Add stats if available on % of customers impacted._
+- _Is this visible by all customers, or in a high traffic area?_
+- _Is this tech debt?_
+- _If applicable, what % of revenue is possibly impacted by this? _
 
 **Describe the bug**
 A clear and concise description of what the bug is.
