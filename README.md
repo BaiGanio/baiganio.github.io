@@ -31,4 +31,5 @@ _This is `not` used for `production` deployment_
 
 ## _Further help_
 - To get more help for `how to..` and `where from...` on the project use our [_Wiki_]().
+- To help us better organizing our work you can use our issue templates to provide us information faster from - [here!](https://github.com/BaiGanio/baiganio.github.io/issues/new/choose)
 - Check out the [_Angular CLI README_](https://github.com/angular/angular-cli/blob/master/README.md).
