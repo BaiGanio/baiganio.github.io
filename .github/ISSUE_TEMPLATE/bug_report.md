@@ -51,3 +51,12 @@ _Add screenshots to help explain your problem._
 
 **Additional context**
 _Feel free to add any other context about the problem here._
+
+---
+
+**Priority + Rationale**
+(To be filled out after bug submission by a product owner)
+- _Add stats if available on % of customers impacted._
+- _Is this visible by all customers, or in a high traffic area?_
+- _Is this tech debt?_
+- _If applicable, what % of revenue is possibly impacted by this? _
