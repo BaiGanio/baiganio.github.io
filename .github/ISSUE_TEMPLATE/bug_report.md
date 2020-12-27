@@ -1,11 +1,13 @@
 ---
 name: Bug Report
-about: Use this template to provide relevant information about system malfunction. We track bug reports consistently.This will help us on prioritazing tasks for better organization of Sprints and work.
+about: Use this template to provide relevant information about system malfunction. We track bug reports consistently.
 title: 'Your-Bug-Title-Here'
 labels: 'Bug'
 assignees: ''
 
 ---
+
+_Thank you for your information.This will help us on prioritazing tasks & better organization of our Sprints and work._
  
 **Priority + Rationale**
 (To be filled out after bug submission by a product owner)
