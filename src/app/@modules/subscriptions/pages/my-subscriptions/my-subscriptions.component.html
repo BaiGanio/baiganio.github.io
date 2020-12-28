@@ -1,8 +1,9 @@
-<h3 class="text-center">My Subscription/s</h3>
+<ngx-loading [show]="loading"></ngx-loading>
+<h1 class="title">My Subscription<span *ngIf="subscriptions">s</span></h1>
 <hr>
 <mat-tab-group [selectedIndex]="activeTab">   
     <div *ngFor='let s of subscriptions'>
-        <mat-tab label="{{s?.type}} Id : {{s?.id}}">
+        <mat-tab class="mt" label="{{s?.type}} Id : {{s?.id}}">
             <ng-template matTabContent>
                 <div *ngIf='s.type === "Student"'>
                     <app-student-subscription-preview></app-student-subscription-preview>
@@ -17,4 +18,4 @@
         </mat-tab>
     </div>
 </mat-tab-group>
-<ngx-loading [show]="loading"></ngx-loading>
+

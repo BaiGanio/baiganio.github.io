@@ -1,5 +1,8 @@
-.card-body, button{
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif !important;
+.card{
+    width: 98%;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
 }
 mat-form-field {
     width: 80%;

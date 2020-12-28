@@ -1,14 +1,7 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-/*  */
-// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-/*  */
-// @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
-/*  */
-// @import "~@angular/material/prebuilt-themes/purple-green.css";
-
+@import '~@angular/material/theming';
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Open+Sans+Condensed:wght@300&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Quicksand&display=swap");
-@import '~@angular/material/theming';
 
 $custom-typography: mat-typography-config($font-family: '"Open Sans Condensed", sans-serif;');
 @include mat-core($custom-typography);
@@ -27,6 +20,9 @@ body {
   overflow: hidden !important;
 }
 
+.mat-tab-label{
+  font-size: 1.6em !important;
+} 
 .title{
   font-family: 'Alsandra';
   font-size: 3em;
