@@ -22,7 +22,6 @@ import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './@pages/login/login.component';
 import { RegisterComponent } from './@pages/register/register.component';
-import { ForgottenPasswordComponent } from './@pages/fotgotten-password/forgotten-password.component';
 import { NavbarComponent } from './@components/navbar/navbar.component';
 import { UnauthorizedComponent } from './@components/errors/unauthorized/unauthorized.component';
 import { DashboardModule } from './@modules/dashboard/dashboard.module';
@@ -31,7 +30,6 @@ import { AccountModule } from './@modules/account/account.module';
 import { QuestionnaireComponent } from './@components/questionnaire/questionnaire.component';
 import { ServerErrorComponent } from './@components/errors/server-error/server-error.component';
 import { BadRequestComponent } from './@components/errors/bad-request/bad-request.component';
-import { ConfirmationComponent } from './@pages/confirmation/confirmation.component';
 import { BlogsModule } from './@modules/blogs/blogs.module';
 import { WelcomeComponent } from './@pages/welcome/welcome.component';
 import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
@@ -51,8 +49,6 @@ import { RateComponent } from './@components/errors/rate/rate.component';
     NotFoundComponent,
     PrivacyComponent,
     TermsComponent,
-    ForgottenPasswordComponent,
-    ConfirmationComponent,
     ErrorComponent,
     UnauthorizedComponent,
     QuestionnaireComponent,

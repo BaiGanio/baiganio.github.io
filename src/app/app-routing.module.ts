@@ -5,11 +5,11 @@ import { LoginComponent } from './@pages/login/login.component';
 import { RegisterComponent } from './@pages/register/register.component';
 import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
 import { ErrorComponent } from './@components/errors/error/error.component';
-import { ForgottenPasswordComponent } from './@pages/fotgotten-password/forgotten-password.component';
+import { ForgottenPasswordComponent } from './@modules/account/pages/fotgotten-password/forgotten-password.component';
 import { NotFoundComponent } from './@pages/not-found/not-found.component';
 import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
 import { RoleGuard } from './@core/role.guard';
-import { ConfirmationComponent } from './@pages/confirmation/confirmation.component';
+import { ConfirmationComponent } from './@modules/account/pages/confirmation/confirmation.component';
 import { WelcomeComponent } from './@pages/welcome/welcome.component';
 import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 
@@ -63,8 +63,6 @@ const routes: Routes = [
   },
   { path: 'server-alert', component: ServerAlertComponent },
   { path: 'welcome', component: WelcomeComponent },
-  { path: 'confirmation/:token', component: ConfirmationComponent },
-  { path: 'forgotten-password', component: ForgottenPasswordComponent },
   { path: 'error', component: ErrorComponent},
   { path: '403', component: AccessDeniedComponent },
   { path: '**', component: NotFoundComponent }

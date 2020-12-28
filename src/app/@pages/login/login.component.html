@@ -1,3 +1,4 @@
+<ngx-loading [show]="loading"></ngx-loading>
 <h1 class="title">
     Local Account
   </h1>
@@ -49,10 +50,6 @@
 </div>
 <div class="row">
   <div class="col-12 mb-4 text-center">
-    <button class="btn btn-outline-info" routerLink="/forgotten-password">Forgot your password?</button>
+    <button mat-raised-button routerLink="/account/forgotten-password">Forgot your password?</button>
   </div>
-  <!-- <div class="col-md-12 mb-4 text-center">
-      <button class="btn btn-outline-info waves-effect" routerLink="/another-service">Use another service to log in</button>
-    </div> -->
 </div>
-<ngx-loading [show]="loading"></ngx-loading>
