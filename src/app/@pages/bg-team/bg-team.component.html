@@ -2,7 +2,7 @@
 <h1 class="title">(BG) Team</h1>
 <hr>
 <div class='row text-center'>
-  <div id="subscriptions-list" class="col-md-4" *ngFor='let s of bloggers;'>
+  <div class="col-md-4" *ngFor='let s of bloggers;'>
     <div class="card">
       <div class="card-body">
         <hr>
@@ -12,10 +12,9 @@
           <br>
           <br>
           <h2 class="text-center"> {{ s.name }} </h2>
-          <hr>
-          <button mat-raised-button color="primary">
-            <i class="fas fa-search"></i>
-          </button>
+          <hr> 
+          <img class="social" (click)="goToLink(s.login)" src="../assets//images/social-icons/git.png" alt="GitHub" title="GitHub">
+       
         </div>
       </div>
     </div>

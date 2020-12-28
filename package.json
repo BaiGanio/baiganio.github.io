@@ -1,6 +1,6 @@
 {
   "name": "baiganio",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "scripts": {
     "ng": "ng",
     "config": "ts-node ./src/assets/scripts/setEnv.ts",

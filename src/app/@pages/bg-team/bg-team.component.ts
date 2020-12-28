@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BloggerService } from 'src/app/@services/blogger.service';
+import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 
 @Component({
   selector: 'app-bg-team',
@@ -18,10 +19,14 @@ export class BgTeamComponent implements OnInit {
     'cvetina97',
     'Sunkatta',
     'SelinSeid',
-    'baiganio'
+    'baiganio',
+    'HaiveroV',
+    'monyou',
+    'nemss'
   ];
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private errorService: ErrorHandlerService
   ) { }
 
   ngOnInit(): void {
@@ -35,16 +40,20 @@ export class BgTeamComponent implements OnInit {
     this.sendGetRequest(name).subscribe(response => {
       this.bloggers.push(response);
     }, 
-    error => { console.log(error); },
-    () => {this.loading = false}
+    error => { this.errorService.handleRequestError(error); },
+    () => {this.loading = false;}
     )
   }
   sendGetRequest(name: string): Observable<any>{
     return this.httpClient.get(`https://api.github.com/users/${name}`);
   }
+  goToLink(login: string){
+    window.open(`https://github.com/${login}`, "_blank");
+  }
 }
 
 export class GH{
+  login:'';
   name:'';
   avatar_url:'';
 }

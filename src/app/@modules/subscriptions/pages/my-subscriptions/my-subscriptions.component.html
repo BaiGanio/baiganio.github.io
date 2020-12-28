@@ -10,8 +10,11 @@
                 <div *ngIf='s.type === "Teacher"'>
                     <app-teacher-subscription-preview></app-teacher-subscription-preview>
                 </div>
+                <div *ngIf='s.type === "Blogger"'>
+                    <app-blogger-subscription-preview></app-blogger-subscription-preview>
+                </div>
             </ng-template> 
         </mat-tab>
     </div>
 </mat-tab-group>
-<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>
+<ngx-loading [show]="loading"></ngx-loading>

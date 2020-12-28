@@ -22,7 +22,7 @@ export class BlogsComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
     this.bloggerService.getBloggers().subscribe(response => {
-        // console.log(response.body);
+         console.log(response.body);
         response.body.forEach(element => {
             this.bloggers.push(element);
         });

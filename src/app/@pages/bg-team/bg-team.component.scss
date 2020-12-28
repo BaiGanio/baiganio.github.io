@@ -17,12 +17,18 @@ button{
   }
   h2{
       font-family: 'Alsandra';
-      font-size:3em;
+      font-size:2.6em;
   }
   .card{
       margin: 20px;
   }
-
+  .social {
+    width: 3.2vw;
+    margin-top:20px;
+  }
+  .social:hover {
+   cursor: pointer;
+  }
   @media only screen and (max-width: 451px) {
     h2 {
         font-size:2em;
@@ -34,6 +40,9 @@ button{
       // border: 1px solid black;
       height: 56vw;
       object-fit: contain;
+    }
+    button img {
+      width: 50px;
     }
   }
   
