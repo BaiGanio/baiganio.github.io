@@ -1,44 +1,35 @@
 <ngx-loading [show]="loading"></ngx-loading>
-<div *ngFor='let b of bloggers'>
-  <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{b.firstName}} {{b.lastName}}</mat-card-title>
-        <mat-card-subtitle>Favorite topics: Astronomy</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src="{{b.imageUrl}}" alt="Photo of Blogger 1">
-      <mat-card-content>
-        <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button (click)='onRateClicked(b.Id)'><i class="fas fa-star"></i></button>
-        <button mat-raised-button>SHARE</button>
-        <button mat-raised-button>ARTICLES</button>
-      </mat-card-actions>
-    </mat-card>
-  
-
+<h1 class="title">Bloggers</h1>
+<hr>
+<br>
+<div class="row text-center">
+  <div class="col-md-4" *ngFor='let b of bloggers'>
+      <div class="card">
+        <div class="card-body">
+          <h1>{{b.firstName}} {{b.lastName}}</h1>
+          <hr>
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <img src='{{ b.imageUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
+            </div>
+            <div class="col-md-6">
+              <h4>Nickname:<br>{{b.nickname}}</h4>
+              <br>
+              <hr>
+              <br>
+            <p>
+              <img class="rating-star" src="./assets/images/app/rating-star-3d.png" alt=""> : 98
+            </p>
+            </div>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <button mat-raised-button color="primary">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+  </div>
 </div>
-  <mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Blogger 2</mat-card-title>
-      <mat-card-subtitle>Topics: Medicine</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="../../../assets/images/no-profile-img.png" alt="Photo of Blogger 2">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>

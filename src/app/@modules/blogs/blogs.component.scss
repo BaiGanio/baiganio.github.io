@@ -1,3 +1,20 @@
-.mat-card-image{
-    width: 10%;
+button{
+    font-size: 1em;
+    padding: 5px;
+    margin: 5px;
 }
+.img-fluid {
+    border: 1px solid black;
+    height: 12vw;
+    object-fit: contain;
+}
+.rating-star {
+    height: 3vw;
+}
+p{
+    font-size: 2em;
+}
+h1, h4, p{
+    font-family: 'Alsandra';
+}
+  
