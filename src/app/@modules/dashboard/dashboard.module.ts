@@ -12,6 +12,7 @@ import { NotificationsComponent } from './pages/notifications/notifications.comp
 import { NotificationPreviewComponent } from './components/notification-preview.component';
 import { ReportedIssuesComponent } from './pages/reported-issues/reported-issues.component';
 import { ReportedIssuePreviewComponent } from './components/reported-issue-preview.component';
+import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 @NgModule({
   declarations: [
       DashboardComponent,
@@ -27,11 +28,13 @@ import { ReportedIssuePreviewComponent } from './components/reported-issue-previ
     CommonModule,
     DashboardRoutingModule,
     AngularMaterialModule,
-    // NgxLoadingModule.forRoot({
-    //   animationType: ngxLoadingAnimationTypes.threeBounce,
-    //   primaryColour: '#88078e',
-    //   secondaryColour: '#c6ef23',
-    // }),
+    NgxLoadingModule.forRoot({
+      animationType: ngxLoadingAnimationTypes.threeBounce,
+      primaryColour: '#88078e',
+      secondaryColour: '#c6ef23',
+      backdropBorderRadius: '14px',
+      fullScreenBackdrop: true
+    }),
   ],
   entryComponents: [
     NotificationPreviewComponent,

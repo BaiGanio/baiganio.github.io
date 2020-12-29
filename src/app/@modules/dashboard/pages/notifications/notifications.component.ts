@@ -24,7 +24,7 @@ export class NotificationsComponent implements OnInit {
     this.loading = true;
     this.accountService.getNotificationsData()
       .subscribe(response => {
-        // console.log(response.body);
+        console.log(response);
         response.body.forEach(element => {
           const e = {
             Id: element.id || '',

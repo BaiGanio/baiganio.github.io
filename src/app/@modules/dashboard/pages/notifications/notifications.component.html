@@ -1,9 +1,8 @@
-<div class="text-center">
-  <h3>Received Notifications</h3>
-  <p>Total Of: {{notificationsCount}}</p>
-  <hr>
-</div>
-<div class='row'>
+<h1 class="title">Received Notifications</h1>
+<p class="text-center">Total Of: {{notificationsCount}}</p>
+<hr>
+<br>
+<div class="row">
   <div id="exception-list" class="col-md-3" *ngFor='let element of notificationsArray'>
       <div [className]='getCssClass(element.type)'>
         <div class="card-body">
@@ -44,14 +43,14 @@
             <div>
               <!-- <b>confirmation_link :</b> {{element.model.confirmation_link}}
               <br> -->
-              <b>subject :</b> {{element.model.email_subject}}
+              <b>subject :</b> {{element.model.subject}}
               <br>
-              <b>subject_hidden :</b> {{element.model.email_subject_hidden}}
-              <br>
+              <!-- <b>subject_hidden :</b> {{element.model.subject_hidden}}
+              <br> -->
               <b>email_to :</b> {{element.model.email_to}}
               <br>
-              <b>message :</b> {{element.model.welcome_message}}
-              <br>
+              <!-- <b>message :</b> {{element.model.message}}
+              <br> -->
               <b>raw_html :</b>
               <span class="raw" (click)='goToHtml(element.model.raw_html)'>
                 click me!
