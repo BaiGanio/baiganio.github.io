@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { RateComponent } from 'src/app/@components/errors/rate/rate.component';
-import { BloggerService } from 'src/app/@services/blogger.service';
+import { BloggerService } from 'src/app/@services/bloggers.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 
 @Component({

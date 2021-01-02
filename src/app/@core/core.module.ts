@@ -17,7 +17,7 @@ import { UserDataService } from '../@services/user-data.service';
 import { UtilityService } from '../@services/utility.service';
 import { AuthGuard } from './auth.guard';
 import { RoleGuard } from './role.guard';
-import { BloggerService } from '../@services/blogger.service';
+import { BloggerService } from '../@services/bloggers.service';
 
 @NgModule({
   imports: [
