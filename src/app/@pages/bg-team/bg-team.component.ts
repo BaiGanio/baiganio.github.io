@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BloggerService } from 'src/app/@services/bloggers.service';
+import { BloggersService } from 'src/app/@services/bloggers.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 
 @Component({

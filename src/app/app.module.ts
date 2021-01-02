@@ -30,10 +30,10 @@ import { AccountModule } from './@modules/account/account.module';
 import { QuestionnaireComponent } from './@components/questionnaire/questionnaire.component';
 import { ServerErrorComponent } from './@components/errors/server-error/server-error.component';
 import { BadRequestComponent } from './@components/errors/bad-request/bad-request.component';
-import { BlogsModule } from './@modules/blogs/blogs.module';
 import { WelcomeComponent } from './@pages/welcome/welcome.component';
 import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 import { RateComponent } from './@components/errors/rate/rate.component';
+import { BloggersModule } from './@modules/bloggers/bloggers.module';
 
 
 @NgModule({
@@ -72,7 +72,7 @@ import { RateComponent } from './@components/errors/rate/rate.component';
     ProfileModule,
     CoursesModule,
     SubscriptionsModule,
-    BlogsModule,
+    BloggersModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: jwtTokenGetter

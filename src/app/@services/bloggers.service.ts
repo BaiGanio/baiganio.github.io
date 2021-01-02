@@ -3,7 +3,7 @@ import { BackendService } from './backend.service';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class BloggerService {
+export class BloggersService {
 
   constructor(private backendService: BackendService) { }
 

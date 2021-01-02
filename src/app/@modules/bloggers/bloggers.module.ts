@@ -1,19 +1,18 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BlogsComponent } from './blogs.component';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
-import { BlogsRoutingModule } from './blogs-routing.module';
-import { RateComponent } from 'src/app/@components/errors/rate/rate.component';
+import { BloggersComponent } from './bloggers.component';
+import { BloggersRoutingModule } from './bloggers-routing.module';
 
 
 @NgModule({
   declarations: [
-    BlogsComponent
+    BloggersComponent
   ],
   imports: [
     CommonModule,
-    BlogsRoutingModule,
+    BloggersRoutingModule,
     AngularMaterialModule,
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.threeBounce,
@@ -27,4 +26,4 @@ import { RateComponent } from 'src/app/@components/errors/rate/rate.component';
   ],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
-export class BlogsModule { }
+export class BloggersModule { }

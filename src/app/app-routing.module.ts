@@ -5,11 +5,9 @@ import { LoginComponent } from './@pages/login/login.component';
 import { RegisterComponent } from './@pages/register/register.component';
 import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
 import { ErrorComponent } from './@components/errors/error/error.component';
-import { ForgottenPasswordComponent } from './@modules/account/pages/fotgotten-password/forgotten-password.component';
 import { NotFoundComponent } from './@pages/not-found/not-found.component';
 import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
 import { RoleGuard } from './@core/role.guard';
-import { ConfirmationComponent } from './@modules/account/pages/confirmation/confirmation.component';
 import { WelcomeComponent } from './@pages/welcome/welcome.component';
 import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 
@@ -30,16 +28,16 @@ const routes: Routes = [
   },
   {
     path: 'blogs',
-    loadChildren : () => import('./@modules/blogs/blogs.module').then(m => m.BlogsModule),
+    loadChildren : () => import('./@modules/bloggers/bloggers.module').then(m => m.BloggersModule),
       // canActivate: [RoleGuard],
   },
   {
     path: 'teachers',
-    loadChildren : () => import('./@modules/teachers/teachers.module').then(m => m.TeachersModule)
-    // canActivate: [RoleGuard],
-    // data: {
-    //   allowedRoles: ['admin', 'Teacher']
-    // }
+    loadChildren : () => import('./@modules/teachers/teachers.module').then(m => m.TeachersModule),
+    canActivate: [RoleGuard],
+    data: {
+      allowedRoles: ['Teacher']
+    }
   },
   {
     path: 'account',
@@ -50,16 +48,16 @@ const routes: Routes = [
     loadChildren : () => import('./@modules/dashboard/dashboard.module').then(m => m.DashboardModule),
     canActivate: [RoleGuard],
     data: {
-      expectedRole: 'Member'
+      allowedRoles: ['Member']
     }
   },  
   {
     path: 'profile',
-    loadChildren : () => import('./@modules/profile/profile.module').then(m => m.ProfileModule)
-    // canActivate: [RoleGuard],
-    // data: {
-    //   expectedRole: 'Member'
-    // }
+    loadChildren : () => import('./@modules/profile/profile.module').then(m => m.ProfileModule),
+    canActivate: [RoleGuard],
+    data: {
+      allowedRoles: ['Member']
+    }
   },
   { path: 'server-alert', component: ServerAlertComponent },
   { path: 'welcome', component: WelcomeComponent },

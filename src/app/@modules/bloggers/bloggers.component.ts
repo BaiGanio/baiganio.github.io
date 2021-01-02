@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { RateComponent } from 'src/app/@components/errors/rate/rate.component';
-import { BloggerService } from 'src/app/@services/bloggers.service';
+import { BloggersService } from 'src/app/@services/bloggers.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 
 @Component({
-  selector: 'app-blogs',
-  templateUrl: './blogs.component.html',
-  styleUrls: ['./blogs.component.scss']
+  selector: 'app-bloggers',
+  templateUrl: './bloggers.component.html',
+  styleUrls: ['./bloggers.component.scss']
 })
-export class BlogsComponent implements OnInit {
+export class BloggersComponent implements OnInit {
   bloggers = new Array<any>();
   blogger: any;
   loading = false;
   constructor(
-    private bloggerService: BloggerService,
+    private bloggerService: BloggersService,
     private errorHandlerService: ErrorHandlerService,
     private dialog: MatDialog
   ) { }
