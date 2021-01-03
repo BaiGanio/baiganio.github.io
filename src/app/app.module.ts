@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './@core/angular-material.module';
 import { CoreModule } from './@core/core.module';
 import { HomeComponent } from './@pages/home/home.component';
-import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
 import { ErrorComponent } from './@components/errors/error/error.component';
 import { NotFoundComponent } from './@pages/not-found/not-found.component';
 import { PrivacyComponent } from './@pages/privacy/privacy.component';
@@ -34,6 +33,7 @@ import { WelcomeComponent } from './@pages/welcome/welcome.component';
 import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 import { RateComponent } from './@components/errors/rate/rate.component';
 import { BloggersModule } from './@modules/bloggers/bloggers.module';
+import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
 
 
 @NgModule({

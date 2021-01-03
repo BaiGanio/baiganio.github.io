@@ -38,7 +38,7 @@ export class DashboardComponent implements OnInit {
     this.userService.getDasboardData().subscribe(
       response => {
         this.dashboardData = response.body;
-        //console.log(this.dashboardData);
+        console.log(response.body);
         this.totalIssues = this.dashboardData.reportedIssuesFromUserCount || 0;
         this.totalReceivedEmails = this.dashboardData.sentEmailsToUserCount || 0;
         this.totalEnrolledCourses = this.dashboardData.enrolledCoursesCount || 0;

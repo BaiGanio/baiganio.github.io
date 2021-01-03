@@ -1,10 +1,10 @@
-.content{
+.content, button{
     font-family: 'Alsandra';
-    text-align: center;
+    padding: 20px;
+}
 
-    button{
-        color: white;
-    }
+button{
+    font-size: 1.2em;
 }
 
 #denied {

@@ -3,13 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './@pages/home/home.component';
 import { LoginComponent } from './@pages/login/login.component';
 import { RegisterComponent } from './@pages/register/register.component';
-import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
 import { ErrorComponent } from './@components/errors/error/error.component';
 import { NotFoundComponent } from './@pages/not-found/not-found.component';
 import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
 import { RoleGuard } from './@core/role.guard';
 import { WelcomeComponent } from './@pages/welcome/welcome.component';
 import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
+import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
 
 
 const routes: Routes = [
@@ -48,7 +48,7 @@ const routes: Routes = [
     loadChildren : () => import('./@modules/dashboard/dashboard.module').then(m => m.DashboardModule),
     canActivate: [RoleGuard],
     data: {
-      allowedRoles: ['Member']
+      allowedRoles: ['admin', 'Member']
     }
   },  
   {
