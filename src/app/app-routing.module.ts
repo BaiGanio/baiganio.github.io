@@ -10,6 +10,7 @@ import { RoleGuard } from './@core/role.guard';
 import { WelcomeComponent } from './@pages/welcome/welcome.component';
 import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
+import { VideosComponent } from './@pages/videos/videos.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'bg-team', component: BgTeamComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'videos', component: VideosComponent },
   {
     path: 'subscriptions',
     loadChildren : () => import('./@modules/subscriptions/subscriptions.module').then(m => m.SubscriptionsModule)

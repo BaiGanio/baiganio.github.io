@@ -1,0 +1,33 @@
+<ngx-loading [show]="loading"></ngx-loading>
+<h1 class="title">Videos</h1>   
+<hr>  
+<br>
+<h2 *ngIf='loading'>Please wait! Fetching data from the server...</h2>
+<div class="row text-center">
+    <div *ngFor='let v of videos' class="col-md-6">
+        <div class="card">
+            <div class="card-body">             
+                <img src='{{ v.imgUrl }}' class="img-thumbnail img-fluid" alt="Sample image">    
+                <br><br>                   
+                <h3>{{ v.title }}</h3>
+                <!-- <p> Enrolled students so far: <span class="badge badge-primary">{{c.EnrolledStudents}}</span>
+                   
+                </p>                        
+                <p>Teachers: {{c.Teachers}}</p> -->
+                <!-- <hr style="width: 60%; color: blue;">
+               -->
+                <!-- <h5>End @ {{ c.EndDate | date :'dd-MMMM-yyyy' }}</h5> -->
+                <hr> 
+                <h5>Published @ {{ v.publishedAt | date :'dd-MMMM-yyyy' }}</h5>
+                <!-- <h5>Enrolled students: {{ c.EnrolledStudents || 0 }}</h5>
+                <hr style="width: 60%; color: blue;">      -->
+                <br>
+                <button 
+                    mat-raised-button
+                    color="primary">
+                    <i class="fas fa-search"></i>
+                </button> 
+            </div>    
+        </div>   
+    </div>
+</div>

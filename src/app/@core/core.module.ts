@@ -18,6 +18,7 @@ import { UtilityService } from '../@services/utility.service';
 import { AuthGuard } from './auth.guard';
 import { RoleGuard } from './role.guard';
 import { BloggersService } from '../@services/bloggers.service';
+import { YouTubeService } from '../@services/youtube.service';
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import { BloggersService } from '../@services/bloggers.service';
     AccountService,
     TeacherService,
     BloggersService,
+    YouTubeService,
     ChecklistDatabase
   ]
 })

@@ -34,6 +34,7 @@ import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 import { RateComponent } from './@components/errors/rate/rate.component';
 import { BloggersModule } from './@modules/bloggers/bloggers.module';
 import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
+import { VideosComponent } from './@pages/videos/videos.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { AccessDeniedComponent } from './@pages/access-denied/access-denied.comp
     WelcomeComponent,
     BgTeamComponent,
     RateComponent,
+    VideosComponent,
   ],
   imports: [
     BrowserModule,
