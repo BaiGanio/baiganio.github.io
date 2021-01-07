@@ -39,18 +39,17 @@ const environmentFileContent =
   `
     import { name, version } from '../../package.json';
     export const environment = {
-      production: ${isProduction},
+      production: true,
       name: name,
       version: version,
       appUrl: 'https://baiganio.github.io/',
       apiUrl: 'https://bgapi.azurewebsites.net/api/',
       idsUrl: 'https://free-is4.azurewebsites.net/',
 
-      // IPCheckingServiceUrl: 'https://ipinfo.io?token=${process.env.IPINFO_TOKEN}',
       IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
       bgapiSignalRNotyfyHub: 'https://bgapi.azurewebsites.net/notify',
       identityServerClientCredentials: {
-        client_id: ${process.env.IS4_BaiGanio_Client},
+        client_id: '${process.env.IS4_BaiGanio_Client}',
         client_secret: '${process.env.IS4_BaiGanio_Client_Secret}',
         scope: 'scope.bgapi',
         grant_type: 'client_credentials',
