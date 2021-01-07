@@ -1,4 +1,4 @@
-# _BaiGanio_
+# _BaiGanio1_
 _Use this quick explanation to setup yourself faster._
 ## _Development environment setup_
 - Open your favorite terminal and type `node -v` to ensure you have installed latest [_Node.js_](https://nodejs.org) version available
