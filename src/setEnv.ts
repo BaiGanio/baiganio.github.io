@@ -1,5 +1,5 @@
 require('dotenv').config();
-import { writeFile } from 'fs';
+const { writeFile, existsSync, mkdirSync } = require('fs');
 const targetPath = './src/environments/environment.prod.ts';
 
 function writeFileUsingFS(targetPath: string, environmentFileContent: string) {
