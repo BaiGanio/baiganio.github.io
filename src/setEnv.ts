@@ -1,9 +1,6 @@
-const { writeFile, existsSync, mkdirSync } = require('fs');
-const { argv } = require('yargs');
-
 require('dotenv').config();
-const environment = argv.environment;
-
+import { writeFile } from 'fs';
+const targetPath = './src/environments/environment.prod.ts';
 
 function writeFileUsingFS(targetPath: string, environmentFileContent: string) {
   writeFile(targetPath, environmentFileContent, function (err: any) {
@@ -15,25 +12,6 @@ function writeFileUsingFS(targetPath: string, environmentFileContent: string) {
     }
   });
 }
-
-// Providing path to the `environments` directory
-const envDirectory = './src/environments';
-
-// Creates the `environments` directory if it does not exist
-if (!existsSync(envDirectory)) {
-  mkdirSync(envDirectory);
-}
-
-// Creates the `environment.prod.ts` and `environment.ts` file if it does not exist
-writeFileUsingFS('./src/environments/environment.prod.ts', '');
-writeFileUsingFS('./src/environments/environment.local.ts', '');
-
-// Checks whether command line argument of `prod` was provided signifying production mode
-const isProduction = environment === 'prod';
-
-// Choose the correct targetPath based on the environment chosen
-const targetPath = './src/environments/environment.prod.ts';
-
 // Actual content to be compiled dynamically and pasted into respective environment files
 const environmentFileContent = 
   `
