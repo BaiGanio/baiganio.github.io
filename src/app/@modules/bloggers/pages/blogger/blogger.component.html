@@ -1,0 +1,33 @@
+<ngx-loading [show]="loading"></ngx-loading>
+<div class="row text-center">
+    <div class="col-md-3 col-xs-12">
+        Blogger info here!
+        <br>
+        <img src='{{ blogger.imageUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
+    </div>
+    <div class="col-md-9 col-xs-12">
+        Posts info here!
+        <br>
+        <div class="row">
+            <div class="col-md-6" *ngFor='let p of blogger.posts'>
+                <div class="card">
+                  <div class="card-body">
+                    <h1>{{p.title}}</h1>
+                    <hr>
+                    <br>
+                    <img src='{{ p.imgUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
+                    <h4>{{p.content}}</h4>
+                    <br>
+                    <hr>
+                    <br>
+                    <button 
+                      mat-raised-button 
+                      color="primary">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

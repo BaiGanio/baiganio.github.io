@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BloggersComponent } from './bloggers.component';
+import { BloggerComponent } from './pages/blogger/blogger.component';
 
 const routes: Routes = [
     {
@@ -8,7 +9,8 @@ const routes: Routes = [
       children: [
         { path: '', component: BloggersComponent }
       ]
-    },
+    },    
+    { path: ':id', component: BloggerComponent }
     // {
     //   path: 'preview',
     //   children: [

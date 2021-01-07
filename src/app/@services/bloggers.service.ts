@@ -7,11 +7,11 @@ export class BloggersService {
 
   constructor(private backendService: BackendService) { }
 
-  deleteAllCourses(): Observable<any> {
-    return this.backendService.backendRequest('get', 'Admin/DeleteAllCourses', null, true);
-  }
   getBloggers(): Observable<any> {
     return this.backendService.backendRequest('get', 'Bloggers', null);
+  }
+  getById(id): Observable<any> {
+    return this.backendService.backendRequest('get', 'Bloggers/' + id, null);
   }
 //   getCourseProgress(courseId: string): Observable<any> {
 //     return this.backendService.backendRequest('get', 'Courses/Progress/' + courseId, null, true);

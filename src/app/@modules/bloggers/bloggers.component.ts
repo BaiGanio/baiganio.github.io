@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { RateComponent } from 'src/app/@components/errors/rate/rate.component';
 import { BloggersService } from 'src/app/@services/bloggers.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
@@ -16,7 +17,8 @@ export class BloggersComponent implements OnInit {
   constructor(
     private bloggerService: BloggersService,
     private errorHandlerService: ErrorHandlerService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router,    
   ) { }
 
   ngOnInit() {
@@ -47,5 +49,8 @@ export class BloggersComponent implements OnInit {
       RateComponent,
       { data: { model: this.blogger } }
     );
+  }
+  showBlogger(id: any){
+    this.router.navigate(['/', id]);
   }
 }
