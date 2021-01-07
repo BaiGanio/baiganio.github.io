@@ -26,6 +26,8 @@ jobs:
       run:
         npm install
     - name: npm run-script build
+      env:
+          IS4_BaiGanio_User_Secret: ${{ secrets.SCRT }}
       run: 
         npm run-script build
     # - name: Test
@@ -60,4 +62,5 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             BRANCH: gh-pages
             FOLDER: deployable_artifacts
-     
+          env:
+            IS4_BaiGanio_User_Secret: ${{ secrets.SCRT }}
