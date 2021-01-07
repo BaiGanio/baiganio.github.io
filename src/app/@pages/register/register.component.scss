@@ -1,8 +1,10 @@
-.btn-outline-info {
-  font-size: 1em;
+button{
+  font-family: 'Alsandra';
+  font-size: 1.4em;
+  padding: 10px;
 }
-.GotHeroin {
-  font-size: 8em;
+button:hover{
+  background: rgb(52, 199, 243);
 }
 #viewRegister {
   width: 50%;

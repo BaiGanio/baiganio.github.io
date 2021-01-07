@@ -15,8 +15,12 @@ import { Component, OnInit } from '@angular/core';
           Page not found on the Server!
           </span>
         </h1>
-        <button mat-raised-button
-        color="primary" routerLink='/home'> Back To Home</button>
+        <button  
+          mat-raised-button
+          color="primary" 
+          routerLink="/home"> 
+          Back To Home
+        </button>
       </div>
     </div>
   </div>

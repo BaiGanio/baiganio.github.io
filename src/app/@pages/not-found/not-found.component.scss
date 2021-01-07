@@ -2,7 +2,14 @@
     font-family: 'Alsandra';
     text-align: center;
 }
-
+button{
+    font-family: 'Alsandra';
+    font-size: 1.4em;
+    padding: 10px;
+  }
+  button:hover{
+    background: rgb(52, 199, 243);
+  }
 h1 {
     font-size: 3em;
 

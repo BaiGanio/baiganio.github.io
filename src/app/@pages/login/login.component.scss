@@ -1,5 +1,11 @@
-.btn-outline-info {
-  font-size: 1em;
+button{
+  font-family: 'Alsandra';
+  font-size: 1.4em;
+  padding: 10px;
+}
+
+button:hover{
+  background: rgb(52, 199, 243);
 }
 #viewLogin {
   width: 50%;

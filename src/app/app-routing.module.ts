@@ -29,7 +29,7 @@ const routes: Routes = [
     loadChildren : () => import('./@modules/courses/courses.module').then(m => m.CoursesModule)
   },
   {
-    path: 'blogs',
+    path: 'bloggers',
     loadChildren : () => import('./@modules/bloggers/bloggers.module').then(m => m.BloggersModule),
       // canActivate: [RoleGuard],
   },
