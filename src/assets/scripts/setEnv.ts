@@ -1,11 +1,11 @@
 require('dotenv').config();
-const result = require('dotenv').config();
+// const result = require('dotenv').config();
  
-if (result.error) {
-  throw result.error
-}
+// if (result.error) {
+//   throw result.error
+// }
  
-console.log(result.parsed)
+// console.log(result.parsed)
 const { writeFile, existsSync, mkdirSync } = require('fs');
 const targetPath = './src/environments/environment.prod.ts';
 
