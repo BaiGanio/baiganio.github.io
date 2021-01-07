@@ -5,8 +5,7 @@
     "ng": "ng",
     "config": "ts-node ./src/setEnv.ts",
     "start": "ng serve",
-    "prebuild": "npm --no-git-tag-version version patch",
-    "build": "npm run config -- --environment=prod && ng build --prod --aot",
+    "build": "npm run config -- --environment=prod && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
