@@ -23,7 +23,6 @@ export class AppComponent {
   ) { }
 
   ngOnInit() {
-    console.log(process.env);
     this.backendService.getClientAccessToken()
       .subscribe(
         response => {
