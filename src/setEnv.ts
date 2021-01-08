@@ -16,14 +16,14 @@ const environmentFileContent = `
       IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
       bgapiSignalRNotyfyHub: 'https://bgapi.azurewebsites.net/notify',
       identityServerClientCredentials: {
-        client_id: "${process.env.IS4_BAIGANIO_CLIENT}",
-        client_secret: "${process.env.IS4_BAIGANIO_CLIENT_SECRET}",
+        client_id: 'baiganio-client',
+        client_secret: '${process.env.IS4_BAIGANIO_CLIENT_SECRET}',
         scope: 'scope.bgapi',
         grant_type: 'client_credentials',
       },
       identityServerUserCredentials: {
-        client_id: "${process.env.IS4_BaiGanio_User}",
-        client_secret: "${process.env.IS4_BaiGanio_User_Secret}",
+        client_id: 'baiganio-user}',
+        client_secret: '${process.env.IS4_BAIGANIO_USER_SECRET}',
         scope: 'scope.bgapi',
         grant_type: 'password',
       },

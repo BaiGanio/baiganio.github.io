@@ -9,14 +9,12 @@ import { SignalRService } from "./@services/signalR.service";
 @Component({
   selector: "app-root",
   template: `
-    <h1>{{ ops }}</h1>
     <app-navbar></app-navbar>
   `,
 })
 export class AppComponent {
   title = "BaiGanio";
   authToken: any;
-  ops = environment.identityServerClientCredentials.client_id || "no no no";
   constructor(
     private backendService: BackendService,
     private authService: AuthService,

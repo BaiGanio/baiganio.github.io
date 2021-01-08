@@ -19,7 +19,7 @@
       },
       identityServerUserCredentials: {
         client_id: 'baiganio-user',
-        client_secret: '123',
+        client_secret: 'undefined',
         scope: 'scope.bgapi',
         grant_type: 'password',
       },
