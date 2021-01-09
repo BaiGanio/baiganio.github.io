@@ -19,6 +19,7 @@ import { AuthGuard } from './auth.guard';
 import { RoleGuard } from './role.guard';
 import { BloggersService } from '../@services/bloggers.service';
 import { YouTubeService } from '../@services/youtube.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @NgModule({
   imports: [
@@ -27,7 +28,7 @@ import { YouTubeService } from '../@services/youtube.service';
   providers: [
     AuthGuard,
     RoleGuard,
-    // JwtHelperService,
+    JwtHelperService,
     BackendService,
     AuthService,
     UserDataService,

@@ -4,6 +4,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 @Injectable()
 export class AuthService {
 
+  roles: string[] = [];
   authToken: string;
   private readonly tokenKeyName = 'bgut';
   private uToken: any;
@@ -62,6 +63,18 @@ export class AuthService {
       console.log('Invalid token');
       return false;
     }
-    return allowedRoles.includes(decodedToken.role);
+    this.roles = decodedToken.role;
+    //console.log(this.roles);
+    // here wi might have several roles per user
+    if(this.roles.length > 1){
+      let result = false;
+      for(let role of this.roles) {
+        result =  allowedRoles.includes(role);
+        if(result) break;
+      }
+      return result;
+    } else{
+      return allowedRoles.includes(decodedToken.role);
+    }
   }
 }

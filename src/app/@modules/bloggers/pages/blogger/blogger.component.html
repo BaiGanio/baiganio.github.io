@@ -3,13 +3,13 @@
     <div class="col-md-3 col-xs-12">
         Blogger info here!
         <br>
-        <img src='{{ blogger.imageUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
+        <img src='{{ blogger?.avatarUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
     </div>
     <div class="col-md-9 col-xs-12">
         Posts info here!
         <br>
         <div class="row">
-            <div class="col-md-6" *ngFor='let p of blogger.posts'>
+            <div class="col-md-6" *ngFor='let p of blogger?.posts'>
                 <div class="card">
                   <div class="card-body">
                     <h1>{{p.title}}</h1>

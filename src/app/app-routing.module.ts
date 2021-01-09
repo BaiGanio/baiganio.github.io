@@ -50,7 +50,7 @@ const routes: Routes = [
     loadChildren : () => import('./@modules/dashboard/dashboard.module').then(m => m.DashboardModule),
     canActivate: [RoleGuard],
     data: {
-      allowedRoles: ['admin', 'Member']
+      allowedRoles: ['Member']
     }
   },  
   {

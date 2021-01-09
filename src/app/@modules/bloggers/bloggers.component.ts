@@ -24,9 +24,9 @@ export class BloggersComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
     this.bloggerService.getBloggers().subscribe(response => {
-         console.log(response.body);
         response.body.forEach(element => {
-            this.bloggers.push(element);
+          this.bloggers.push(element);
+          // console.log(response.body);
         });
     }, error => {
         this.errorHandlerService.handleRequestError(error);
