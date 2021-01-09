@@ -22,7 +22,7 @@ const environmentFileContent = `
         grant_type: 'client_credentials',
       },
       identityServerUserCredentials: {
-        client_id: 'baiganio-user}',
+        client_id: 'baiganio-user',
         client_secret: '${process.env.IS4_BAIGANIO_USER_SECRET}',
         scope: 'scope.bgapi',
         grant_type: 'password',
