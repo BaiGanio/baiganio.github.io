@@ -1,3 +1,4 @@
+<ngx-loading [show]="loading"></ngx-loading>
 <h1 class="title">Dashboard</h1>
 <hr>
 <div class="row text-center">
@@ -30,10 +31,11 @@
       </div>
     </div>
   </div>
+  <!-- Posts -->
   <div class="col-sm-2 mt-3">
     <div class="card card-additional">
       <div class="card-body">
-        <h5 class="card-title">Blogs</h5>
+        <h5 class="card-title">Posts</h5>
         <hr style="border-color: black; width: 70%">
         <p class="card-text">Total Created:</p>
         <h1>{{dashboardData?.user.courses?.length || 0}}</h1>
@@ -50,14 +52,14 @@
         <h5 class="card-title">Received Emails</h5>
         <hr style="border-color: black; width: 70%">
         <div class="row">
-<div class="col-md-6">
-  <p class="card-text">Total Of:</p>
-        <h1>{{totalReceivedEmails || 0}}</h1>
-</div>
-<div class="col-md-6">
-  <p class="card-text">Unreaded:</p>
-        <h1>{{totalReceivedEmails || 3}}</h1>
-</div>
+        <div class="col-md-6">
+          <p class="card-text">Total Of:</p>
+                <h1>{{totalReceivedEmails || 0}}</h1>
+        </div>
+        <div class="col-md-6">
+          <p class="card-text">Unreaded:</p>
+                <h1>{{totalReceivedEmails}}</h1>
+        </div>
         </div>
         <!-- <p class="card-text">Total Of:</p>
         <h1>{{totalReceivedEmails || 0}}</h1> -->
@@ -75,15 +77,30 @@
         <hr style="border-color: black; width: 70%">
         <p class="card-text">Total Of:</p>
         <h1>{{totalIssues || 0}}</h1>
-       <hr>
-        <button mat-raised-button class="mr-2"
-          color="primary" (click)='goToMyReportedIssues()'><i class="fas fa-search"></i>
+        <hr>
+        <button mat-raised-button
+          color="primary" (click)='goToMyReportedIssues()'>
+          <i class="fas fa-search"></i>
         </button>
-        <button mat-raised-button color="warn" class="mr-2" routerLink="/account/report-issue">
-            <b>Report</b>
+        <button mat-raised-button color="warn" routerLink="/account/report-issue">
+          Report
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Craftsman Menu -->
+  <div class="col-sm-2 mt-3">
+    <div class="card card-additional">
+      <div class="card-body">
+        <h5 class="card-title">Craftsman Menu</h5>
+        <hr style="border-color: black; width: 70%">
+        <p class="card-text">Total Items:</p>
+        <h1>0</h1>
+        <hr>
+        <button mat-raised-button
+          color="primary" routerLink='/teachers/craftsman-menu/courses'><i class="fas fa-search"></i>
         </button>
       </div>
     </div>
   </div>
 </div>
-<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>

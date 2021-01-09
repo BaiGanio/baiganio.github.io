@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class UserDataService {
-  userData = new UserViewModel();
+  userData: any;
 
   constructor(
     private eventBusService: EventBusService,
@@ -16,12 +16,12 @@ export class UserDataService {
     private authService: AuthService
   ) { }
 
-  setUserData(data: UserViewModel): void {
-    this.userData = data;
-    this.eventBusService.emitUpdateUserData(data);
+  setUserData(data: any): void {
+    this.userData = data as UserViewModel;
+    this.eventBusService.emitUpdateUserData(this.userData);
   }
   getUserData() {
-    return this.userData as UserViewModel;
+    return this.userData;
   }
 
   updatePassword(data: any): Observable<any> {

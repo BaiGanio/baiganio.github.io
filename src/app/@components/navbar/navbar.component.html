@@ -17,16 +17,14 @@
       <a mat-list-item routerLink="/home"> Home </a>
       <hr>
       <div *ngIf='isUserLogged()'>
-        <hr>
         <a mat-list-item routerLink="/dashboard"> Dashboard </a>
-        <a mat-list-item routerLink="/profile"> Profile </a>
         <hr>
       </div>
       <a mat-list-item routerLink="/subscriptions"> Subscriptions </a>
       <a mat-list-item routerLink="/courses"> Courses </a>
       <a mat-list-item routerLink="/bloggers"> Bloggers </a>
       <a mat-list-item routerLink="/videos"> Videos </a>
-      <a mat-list-item routerLink="/teachers"> Teachers </a>
+      <!-- <a mat-list-item routerLink="/teachers"> Teachers </a> -->
       <hr>
     </mat-list>
   </mat-drawer>
@@ -40,13 +38,16 @@
       </span>
       <span class="actions">
         <div *ngIf='isUserLogged(); else signBox'>
-          <!-- <a class="mr-1 align-middle">
-            <span class="badge mr-1">0 </span><i class="fa fa-bell"></i>
-          </a> -->
+          <!-- <button mat-button>
+            <span class="badge">99 </span><i class="fa fa-bell"></i>
+          </button> -->
           <button mat-button [matMenuTriggerFor]="userMenu">
-            Welcome, {{ storedUser?.username !== null ? storedUser?.username : storedUser?.email }}!
+            Welcome, {{ storedUser?.firstName !== null ? storedUser?.firstName + ' ' + storedUser?.lastName : storedUser?.Email }}
           </button>
           <mat-menu #userMenu="matMenu">
+            
+            <button mat-menu-item routerLink="/profile"> Profile </button>
+            <hr>
             <button mat-menu-item (click)='logOut()'>
               <b>Logout</b>
             </button>

@@ -1,8 +1,21 @@
-
-button{
-  font-size: 1em;
-   padding: 5px;
-   margin: 5px;
+.preview{
+  padding: 30px;
+  font-size: .9em;
+  margin: 0 auto;
+}
+.details{
+  font-size: 1.2em;
+  padding: 5px;
+  margin: 5px;
+}
+.details:hover{
+  background: rgb(52, 199, 243);
+}
+.btn-outline-success{
+  font-size: 1.3em; 
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5%;
 }
 .img-fluid {
   border: 1px solid black;

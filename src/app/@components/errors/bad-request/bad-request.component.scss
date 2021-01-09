@@ -13,9 +13,15 @@ h1 {
     }   
 }
 button{
-    margin: 5px;
-    font-size: 1.2em;
+    font-family: 'Alsandra';
+    font-size: 1.4em;
+    padding: 10px;
 }
+
+button:hover{
+    background: rgb(52, 199, 243);
+}
+
 @media only screen and (max-width: 451px) {
     h3 {
         font-size: 1.6em;

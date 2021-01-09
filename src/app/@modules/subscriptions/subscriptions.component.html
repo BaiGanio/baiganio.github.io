@@ -1,51 +1,10 @@
 <ngx-loading [show]="loading"></ngx-loading>
-
-<h1 class="title" style="text-align:center">Subscriptions
-  <span *ngIf='haveConfirmedSubscription === false'> / 
-    <span style="background-color: cornflowerblue; color:white; cursor:pointer;" (click)='goToMySubscriptions()'>Preview</span>
-  </span>
-</h1>
+<h1 class="title" style="text-align:center">Subscriptions</h1>
 <hr> 
-<br> 
-<div class="content  text-center">
-  <h2 *ngIf='loading'>Please wait! Fetching data from the server...</h2>
-
-  <div class="dim" *ngIf='notificationRequest'>
-    <span class="msg">
-      <h2>
-        Your subscription request is on the fly...
-        <br>
-        Please check your email for confirmation link!
-        <br>
-      </h2>
-      <br>
-      <button
-        class="btn btn-outline-info"
-        (click) = dismiss()
-        style="width:20%">
-        <b>Dismiss</b>
-      </button>
-    </span>
-  </div>
-  <div class="dim" *ngIf="isUserConfirmingSubscription">
-    <span class="msg">
-      <h2>
-        Thank you for confirming your subscription.
-        <br>
-        You are now subscribed!
-      </h2>
-      <br>
-      <button
-        class="btn btn-outline-info"
-        (click) = dismiss()
-        style="width:20%">
-        <b>Dismiss</b>
-      </button>
-    </span>
-  </div>
-</div>
+<br>
 <!-- Subscriptions -->
 <div class='row text-center'>
+  <h1 *ngIf='loading'>Please wait! Fetching data from the server...</h1>
   <div id="subscriptions-list" class="col-md-4" *ngFor='let s of subscriptions;'>
     <div class="card">
       <div class="card-body">
@@ -72,20 +31,79 @@
             <div style="color: blue;" *ngIf='isWaitingForConfirmation(s.Id)'>Waiting for confirmation!</div>            
         </span> -->
         <span>
-          <button mat-raised-button color="primary" (click)=getSubscriptionPreview(s.Id)>
+          <button class="details" mat-raised-button color="primary" (click)=getSubscriptionPreview(s.Id)>
             <i class="fas fa-search"></i>
           </button>
         </span>
-          <span *ngIf='s.IsActive && isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>  
-              <button                                     
-              mat-raised-button 
-              (click)='sendRequest(s.Id)'>
-              Send request 4 subscription
+          <span *ngIf='s.IsActive && isConfirmed(s.Id) === false'>              
+            <button                       
+              class="btn-outline-success" (click)='sendRequest(s.Id)'>
+              <b>Request 4 Subscription</b>
             </button>
           </span>
-        
+          <span *ngIf='s.IsActive && isConfirmed(s.Id)'>              
+            <button                       
+              class="btn-outline-success" (click)='goToMySubscriptions()'>
+              <b>Preview</b>
+            </button>
+          </span>
         </div>
       </div>
     </div>
+  </div>
+</div>
+<br> 
+
+<!-- .dim -->
+<div class="content  text-center">
+  <div class="dim" *ngIf='shouldLog'>
+    <span class="msg">
+      <h1>
+        You need to be logged user if you want to send a request.
+        <br>
+        Please, login first & then try to request for subscription!
+        <br>
+      </h1>
+      <br>
+      <button
+        class="btn btn-outline-info"
+        (click) = dismiss()
+        style="width:20%">
+        <b>Dismiss</b>
+      </button>
+    </span>
+  </div>
+  <div class="dim" *ngIf='notificationRequest'>
+    <span class="msg">
+      <h1>
+        Your subscription request is on the fly...
+        <br>
+        Please check your email for confirmation link!
+        <br>
+      </h1>
+      <br>
+      <button
+        class="btn btn-outline-info"
+        (click) = dismiss()
+        style="width:20%">
+        <b>Dismiss</b>
+      </button>
+    </span>
+  </div>
+  <div class="dim" *ngIf="isUserConfirmingSubscription">
+    <span class="msg">
+      <h2>
+        Thank you for confirming your subscription.
+        <br>
+        You are now subscribed!
+      </h2>
+      <br>
+      <button
+        class="btn btn-outline-info"
+        (click) = dismiss()
+        style="width:20%">
+        <b>Dismiss</b>
+      </button>
+    </span>
   </div>
 </div>

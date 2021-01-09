@@ -90,7 +90,7 @@ export class CoursesComponent implements OnInit {
           StartDate: element.startDate,
           EndDate: element.endDate,
           ModifiedOn: element.modifiedOn,
-          Image: element.image,
+          Image: element.imgUrl,
           IsActive: element.isActive,
           IsElectable: element.isElectable,
           EnrolledStudents: element.enrolledStudents,

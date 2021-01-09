@@ -54,45 +54,52 @@ export class LoginComponent implements OnInit {
       this.loginForm.value.email,
       this.loginForm.value.password
     ).subscribe(
-        response => this.handleSuccess(response),
-        error => {
-          this.errorHandlerService.handleRequestError(error);
-          this.loading = false;
-       }, () => { 
-         this.loading = false; 
-         this.loginError = true;
-         this.loginForm.reset();
-        });
+      response => {
+        if (this.loginForm.value.rememberMe) {
+          this.authservice.setUserTokenAndRemember(response);
+        } else {
+          this.authservice.clearUserToken();
+          this.authservice.userToken = response;
+        }
+        this.router.navigate(['/dashboard']);
+      },
+      error => {
+        this.errorHandlerService.handleRequestError(error);
+        this.loading = false;
+      }, () => { 
+        this.getUserByToken();
+        this.loading = false; 
+        this.loginError = true;
+        this.loginForm.reset();
+    });
+
   }
 
   private handleSuccess(authToken): void {
-    if (this.loginForm.value.rememberMe) {
-      this.authservice.setUserTokenAndRemember(authToken);
-    } else {
-      this.authservice.clearUserToken();
-      this.authservice.userToken = authToken;
-    }
+   
     this.getUserByToken();
-    this.loading = false;
-    this.router.navigate(['/dashboard']);
   }
 
   getUserByToken(): void {
-    let userData: any;
+    let userData= new UserViewModel();
     let username = '';
     this.userDataService.getUserByToken()
       .subscribe(response => {
-          userData = response.body;
+          console.log('st ' + response.body);
           this.userDataService.setUserData(userData);
           username =
-            userData.first_name != null && userData.last_name != null
-            ? userData.first_name + ' ' + userData.last_name
-            : userData.email;
+            userData.FirstName != null && userData.LastName != null
+            ? userData.FirstName + ' ' + userData.LastName
+            : userData.Email;
 
           this.updateLastLogin();
         },
         error => {
           this.errorHandlerService.handleRequestError(error);
+        },
+        () => {
+          this.loading = false;
+          this.router.navigate(['/dashboard']);
         }
       );
   }

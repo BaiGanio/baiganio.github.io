@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursePreviewModel } from '../../models/course-preview-model.module';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CoursesService } from 'src/app/@services/courses.service';
+import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 
 @Component({
   selector: 'app-my-courses',
@@ -14,10 +16,11 @@ export class MyCoursesComponent implements OnInit {
   courses = new Array<CoursePreviewModel>();
 
   constructor(
-    // private courseService: CoursesService,
-    //           private errorHandlerService: ErrorHandlerService,
-              private route: ActivatedRoute,
-              private router: Router ) { }
+    private courseService: CoursesService,
+    private errorHandlerService: ErrorHandlerService,
+    private route: ActivatedRoute,
+    private router: Router 
+  ) { }
 
   ngOnInit() {
     if (this.route.snapshot.params.id) {
@@ -32,28 +35,28 @@ export class MyCoursesComponent implements OnInit {
 
   getCoursesPriview() {
     this.loading = true;
-    // this.courseService.getCoursesByUserId().subscribe(response => {
-    //   response.body.forEach(element => {
-    //     const c = {
-    //       Id: element.courseId,
-    //       Name: element.courseName,
-    //       Teachers: element.teachers,
-    //       Description: element.description,
-    //       StartDate: element.start_date,
-    //       EndDate: element.end_date,
-    //       ModifiedOn: element.modified_on,
-    //       Image: element.image,
-    //       IsActive: element.active,
-    //       EnrolledStudents: element.enrolled_students
-    //     };
-    //     this.courses.push(c as CoursePreviewModel);
-    //   });
-    // },
-    // error => {
-    //   this.errorHandlerService.handleRequestError(error);
-    //   this.loading = false;
-    // },
-    // () => { this.loading = false; });
+    this.courseService.getCoursesByUserId().subscribe(response => {
+      response.body.forEach(element => {
+        const c = {
+          Id: element.courseId,
+          Name: element.courseName,
+          Teachers: element.teachers,
+          Description: element.description,
+          StartDate: element.start_date,
+          EndDate: element.end_date,
+          ModifiedOn: element.modified_on,
+          Image: element.imgUrl,
+          IsActive: element.active,
+          EnrolledStudents: element.enrolled_students
+        };
+        this.courses.push(c as CoursePreviewModel);
+      });
+    },
+    error => {
+      this.errorHandlerService.handleRequestError(error);
+      this.loading = false;
+    },
+    () => { this.loading = false; });
   }
 
   showCourseDetails(courseId: string): void {

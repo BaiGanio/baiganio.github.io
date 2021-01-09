@@ -32,8 +32,9 @@ body {
   color: white;
 }
 hr{
-  width: 60%; 
-  margin: 0 auto;
+  width: 64%;
+  text-align: center; 
+  margin: 10px auto 10px auto;
   color: blue;
 }
 
@@ -70,8 +71,20 @@ hr{
     left: 0;
     right: 0;
     margin: auto;
-  }
 
+    h1{
+      font-size: 3.4em;
+    }
+  }
+  button{
+    font-family: 'Alsandra';
+    font-size: 2em;
+    padding: 10px;
+  }
+  
+  button:hover{
+    background: rgb(52, 199, 243);
+  }
   width: 100%;
   margin: 0 auto;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserViewModel } from 'src/app/@modules/users/models/user-view-model.module';
 import { AuthService } from 'src/app/@services/auth.service';
 import { UserDataService } from 'src/app/@services/user-data.service';
 // import { UserDataService } from 'src/app/@services/user-data.service';
@@ -22,14 +23,18 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.isAuthenticated()) {
+      this.storedUser = this.userDataService.getUserData();
       if (this.storedUser) {
-        console.log('here');
         return;
       } else {
         this.userDataService.getUserByToken().subscribe(
           response => {
             this.storedUser = response.body;
             this.userDataService.setUserData(this.storedUser);
+          },
+          err => { console.log(err); },
+          () => {
+            this.storedUser = this.userDataService.getUserData();
           }
         );
       }

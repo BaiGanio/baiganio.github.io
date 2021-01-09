@@ -69,7 +69,7 @@ export class ProfileComponent implements OnInit {
     handleSuccess(response): void {
         this.loading = false;
         this.user = response.body;
-        console.log(this.user);
+        // console.log(this.user);
         this.userService.setUserData(this.user);
         this.profileImgSrc = this.user.image == null ? './assets/images/no-profile-img.png' : this.user.image;
         this.oldProfilePic = this.profileImgSrc;

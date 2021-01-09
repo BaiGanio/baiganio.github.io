@@ -36,8 +36,15 @@ mat-drawer-container {
       #openNav {
         flex: auto;
       }
+      button{
+        font-family: 'Alsandra';
+        font-size: 1.2em;
+      }
       .actions {
-        
+        button{
+          font-family: 'Alsandra';
+          font-size: 1.2em;
+        }
         a {     
           font-family: 'Alsandra';     
           font-size: 1.6em;

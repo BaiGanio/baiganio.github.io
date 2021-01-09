@@ -8,6 +8,7 @@ import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SubscriptionPreviewComponent } from './components/subscription-preview/subscription-preview.component';
+import { UserViewModel } from '../users/models/user-view-model.module';
 
 @Component({
     selector: 'app-subscriptions',
@@ -16,14 +17,16 @@ import { SubscriptionPreviewComponent } from './components/subscription-preview/
 })
 
 export class SubscriptionsComponent implements OnInit {
+    
+    loading = false;
     subscriptions = new Array<SubscriptionPreviewModel>();
     userId = '';
     errorMsg = '';
     subscriptionId = '';
+    shouldLog = false;
     successfulConfirmation = false;
     failedConfirmation = false;
     notificationRequest = false;
-    loading = false;
     panelOpenState = false;
     isUserConfirmingSubscription = false;
     totalUsersInSubscr = 0;
@@ -43,16 +46,15 @@ export class SubscriptionsComponent implements OnInit {
 
     ngOnInit() {
         this.loading = true;
-        // if (this.route.snapshot.params.token) {
-        //     this.checkRouteParameters();
-        // }
-        // if (this.authService.isAuthenticated()) {
-        //     this.loading = true;
-        //     this.storedUser = this.userDataService.getUserData();
-        //     if (this.storedUser.id === undefined) {
-        //         this.storedUserInit();
-        //     }
-        // }
+        if (this.route.snapshot.params.token) {
+            this.checkRouteParameters();
+        }
+        if (this.authService.isAuthenticated()) {
+            this.storedUser = this.userDataService.getUserData();
+            if (this.storedUser === undefined) {
+                this.storedUserInit();
+            }
+        }
         this.subscriptionsInit();
     }
 
@@ -65,7 +67,7 @@ export class SubscriptionsComponent implements OnInit {
                     Type: element.type,
                     Description: element.description,
                     IsActive: element.isActive,
-                    Image: element.image,
+                    Image: element.imgUrl,
                     TotalSubscribers: element.totalSubscribers,
                     ConfirmedSubscribers: element.confirmedSubscribers,
                     PendingSubscribers: element.pendingSubscribers,
@@ -86,16 +88,26 @@ export class SubscriptionsComponent implements OnInit {
             response => {
                 const u = {
                     Id: response.body.id,
-                    Username: response.body.username,
                     Subscriptions: response.body.subscriptions,
                     Roles: response.body.roles
                 };
-                // this.storedUser = u as UserViewModel;
+                this.storedUser = u as UserViewModel;
                 this.userDataService.setUserData(this.storedUser);
             },
             error => {
-             //   this.errorHandlerService.handleRequestError('myahah' + error);
-            }, () => { this.loading = false; }
+             this.errorHandlerService.handleRequestError(error);
+            }, 
+            () => { 
+                let subs = this.storedUser?.Subscriptions;
+                if(subs){
+                    subs.forEach(element => {
+                        if(element.status === "Confirmed"){
+                            this.haveConfirmedSubscription = true;
+                        }
+                    });
+                }
+                this.loading = false; 
+            }
         );
     }
 
@@ -105,23 +117,27 @@ export class SubscriptionsComponent implements OnInit {
 
     sendRequest(id: string) {
         this.loading = true;
-        console.log(id);
-        this.subscriptionsService.sendRequestForSub({ Id: id })
-            .subscribe(
-                response => {
-                    this.loading = false;
-                    this.notificationRequest = true;
-                },
-                error => {
-                    this.loading = false;
-                    this.errorHandlerService.handleRequestError(error);
-                },
-                () => {
-                    this.subscriptions = new Array<any>();
-                    this.storedUserInit();
-                    this.subscriptionsInit();
-                }
-            );
+        if (!this.authService.isAuthenticated()) {
+            this.shouldLog = true;
+        } else {
+            this.subscriptionsService.sendRequestForSub({ Id: id })
+                .subscribe(
+                    response => {
+                        this.loading = false;
+                        this.notificationRequest = true;
+                    },
+                    error => {
+                        this.loading = false;
+                        this.errorHandlerService.handleRequestError(error);
+                    },
+                    () => {
+                        this.subscriptions = new Array<any>();
+                        this.storedUserInit();
+                        this.subscriptionsInit();
+                    }
+                );
+        }
+        this.loading = false;
     }
 
     private checkRouteParameters(): void {
@@ -141,7 +157,7 @@ export class SubscriptionsComponent implements OnInit {
             err => {
                 this.loading = false;
                 this.failedConfirmation = true;
-              //  this.errorHandlerService.handleRequestError(err);
+                this.errorHandlerService.handleRequestError(err);
             }
         );
     }
@@ -176,13 +192,22 @@ export class SubscriptionsComponent implements OnInit {
 
     isConfirmed(sId: string): boolean {
         let result = false;
-        this.storedUser = this.userDataService.getUserData();
-        if (this.storedUser.Id) {
-            this.storedUser.Subscriptions.forEach(element => {
-                if (sId === element.subscription_id && element.status === 'Confirmed') {
-                    this.haveConfirmedSubscription = true;
+        // this.storedUser = this.userDataService.getUserData();
+        // if (this.storedUser.Id) {
+        //     this.storedUser.Subscriptions.forEach(element => {
+        //         if (sId === element.subscription_id && element.status === 'Confirmed') {
+        //             this.haveConfirmedSubscription = true;
+        //             result = true;
+        //             return true;
+        //         }
+        //     });
+        // }
+        let subs = this.storedUser?.Subscriptions;
+        if(subs){
+            subs.forEach(element => {
+                console.log(element);
+                if(element.subscriptionId === sId && element.status === "Confirmed"){
                     result = true;
-                    return true;
                 }
             });
         }
@@ -191,15 +216,15 @@ export class SubscriptionsComponent implements OnInit {
 
     isWaitingForConfirmation(sId: string): boolean {
         let result = false;
-        this.storedUser = this.userDataService.getUserData();
-        if (this.storedUser.Id) {
-            this.storedUser.Subscriptions.forEach(element => {
-                if (sId === element.subscription_id && element.status === 'WaitingForConfirmation') {
-                    result = true;
-                    return true;
-                }
-            });
-        }
+        // this.storedUser = this.userDataService.getUserData();
+        // if (this.storedUser.Id) {
+        //     this.storedUser.Subscriptions.forEach(element => {
+        //         if (sId === element.subscription_id && element.status === 'WaitingForConfirmation') {
+        //             result = true;
+        //             return true;
+        //         }
+        //     });
+        // }
         return result;
     }
 
@@ -214,8 +239,10 @@ export class SubscriptionsComponent implements OnInit {
         return result;
     }
 
+
     dismiss() {
         this.isUserConfirmingSubscription = false;
         this.notificationRequest = false;
+        this.shouldLog = false;
     }
 }
