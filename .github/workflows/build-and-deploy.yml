@@ -28,6 +28,7 @@ jobs:
     - name: npm run-script build
       run: npm run-script build
       env: 
+        API_URL: ${{ secrets.API_URL }}
         IS4_BAIGANIO_CLIENT: ${{ secrets.IS4_BAIGANIO_CLIENT }}
         IS4_BAIGANIO_CLIENT_SECRET: ${{ secrets.IS4_BAIGANIO_CLIENT_SECRET }}
         IS4_BAIGANIO_USER: ${{ secrets.IS4_BAIGANIO_USER }}

@@ -11,17 +11,19 @@ function writeFileUsingFS(targetPath, environmentFileContent) {
   writeFile(targetPath, environmentFileContent, function (err) {});
 }
 
-// Providing path to the `environments` directory
-const envDirectory = './src/environments';
 
-// creates the `environments` directory if it does not exist
-if (!existsSync(envDirectory)) {
-  mkdirSync(envDirectory);
-}
+// TODO: Rethink wiser!
+// // Providing path to the `environments` directory
+// const envDirectory = './src/environments';
 
-//creates the `environment.prod.ts` and `environment.ts` file if it does not exist
-writeFileUsingFS('./src/environments/environment.prod.ts', '');
-writeFileUsingFS('./src/environments/environment.ts', '');
+// // creates the `environments` directory if it does not exist
+// if (!existsSync(envDirectory)) {
+//   mkdirSync(envDirectory);
+// }
+
+// //creates the `environment.prod.ts` and `environment.ts` file if it does not exist
+// writeFileUsingFS('./src/environments/environment.prod.ts', '');
+// writeFileUsingFS('./src/environments/environment.ts', '');
 
 
 // Checks whether command line argument of `prod` was provided signifying production mode
@@ -40,7 +42,7 @@ const environmentFileContent = `
     name: name,
     version: version,
     appUrl: 'https://baiganio.github.io/',
-    apiUrl: 'https://bgapi.azurewebsites.net/api/',
+    apiUrl: '${process.env.API_URL}',
     idsUrl: 'https://free-is4.azurewebsites.net/',
 
     IPCheckingServiceUrl: 'https://api.ipify.org?format=json',

@@ -5,7 +5,7 @@
     name: name,
     version: version,
     appUrl: 'https://baiganio.github.io/',
-    apiUrl: 'https://bgapi.azurewebsites.net/api/',
+    apiUrl: 'https://localhost:44364/api/',
     idsUrl: 'https://free-is4.azurewebsites.net/',
 
     IPCheckingServiceUrl: 'https://api.ipify.org?format=json',

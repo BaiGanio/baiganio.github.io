@@ -51,10 +51,7 @@ export class SubscriptionsComponent implements OnInit {
             this.checkRouteParameters();
         }
         if (this.authService.isAuthenticated()) {
-            this.storedUser = this.userDataService.getUserData();
-            if (this.storedUser === undefined) {
-                this.storedUserInit();
-            }
+            this.storedUserInit();
         }
         this.subscriptionsInit();
     }
