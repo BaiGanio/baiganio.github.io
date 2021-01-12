@@ -8,14 +8,7 @@ We will create a helper function that allows us to copy the dynamically generate
 into their respective files. In case the file does not exist, it will create a new file in the given path
 */
 function writeFileUsingFS(targetPath, environmentFileContent) {
-  writeFile(targetPath, environmentFileContent, function (err) {
-    if (err) {
-      console.log(err);
-    }
-    if (environmentFileContent !== '') {
-      console.log(`wrote ${environment} variables to ${targetPath}`);
-    }
-  });
+  writeFile(targetPath, environmentFileContent, function (err) {});
 }
 
 // Providing path to the `environments` directory
@@ -43,7 +36,7 @@ const targetPath = isProduction
 const environmentFileContent = `
   import { name, version } from '../../package.json';
   export const environment = {
-    production: true,
+    production: ${isProduction},
     name: name,
     version: version,
     appUrl: 'https://baiganio.github.io/',
@@ -53,15 +46,15 @@ const environmentFileContent = `
     IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
     bgapiSignalRNotyfyHub: 'https://bgapi.azurewebsites.net/notify',
     identityServerClientCredentials: {
-      client_id: 'baiganio-client',
+      client_id: '${process.env.IS4_BAIGANIO_CLIENT}',
       client_secret: '${process.env.IS4_BAIGANIO_CLIENT_SECRET}',
-      scope: 'scope.bgapi',
+      scope: '${process.env.IS4_BAIGANIO_SCOPE}',
       grant_type: 'client_credentials',
     },
     identityServerUserCredentials: {
-      client_id: 'baiganio-user',
+      client_id: '${process.env.IS4_BAIGANIO_USER}',
       client_secret: '${process.env.IS4_BAIGANIO_USER_SECRET}',
-      scope: 'scope.bgapi',
+      scope: '${process.env.IS4_BAIGANIO_SCOPE}',
       grant_type: 'password',
     },
     apiKeys:{
@@ -82,6 +75,6 @@ writeFile(targetPath, environmentFileContent, function (err: any) {
     console.log(err);
   }
   if (environmentFileContent !== "") {
-    console.log(`wrote variables to ${targetPath}`);
+    console.log(`wrote ${environment} variables to ${targetPath}`);
   }
 });
