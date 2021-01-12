@@ -80,11 +80,12 @@ export class RegisterComponent implements OnInit {
           this.registrationSuccess = true;
           this.registrationSuccessMessage = 'Your registration request is on the fly...<br/>Please check your email for confirmation link!';
           this.loading = false;
+          this.registerForm.reset();
         }, error => {
           this.registrationError = true;
           this.registrationErrorMessage = `Ooops... Try once more?!?!<br/>${error.error}`;
-          this.registerForm.reset();
           this.loading = false;
+          this.registerForm.reset();
         }
       );
   }

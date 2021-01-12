@@ -108,6 +108,7 @@ export class SubscriptionsComponent implements OnInit {
         this.loading = true;
         if (!this.authService.isAuthenticated()) {
             this.shouldLog = true;
+            this.loading = false;
         } else {
             this.subscriptionsService.sendRequestForSub({ Id: id })
                 .subscribe(

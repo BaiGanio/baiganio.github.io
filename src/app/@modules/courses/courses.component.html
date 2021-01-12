@@ -1,6 +1,8 @@
+<ngx-loading [show]="loading"></ngx-loading>
 <h1 class="title">Courses</h1>   
 <hr>  
 <br>
+<h1 class="ss text-center" *ngIf='loading'>Please wait!<br>Fetching data from the server...</h1>
 <div class="text-center" *ngIf='flagEnrollSuccess; else infoBox'>
     <img src="../../../../../../assets/images/Checkmark.png" class="img-fluid">
     <h1>Congrats! <br> You are enrolled 4 the [c.Name] course  ;)</h1>
@@ -52,7 +54,7 @@
                             (click) = 'goToCourse(c.Id)'>
                             <b>Go to Course Progress</b>
                         </button>
-                        <span *ngIf='!isEnrolled(c.Id) && c.IsElectable'>
+                        <span *ngIf='isEnrolled(c.Id) && !c.IsElectable'>
                             <button                        
                                 mat-raised-button
                                 (click) = 'enroll4course(c.Id)'>
@@ -66,4 +68,3 @@
     </div>
 
 </ng-template>
-<ngx-loading [show]="loading"></ngx-loading>

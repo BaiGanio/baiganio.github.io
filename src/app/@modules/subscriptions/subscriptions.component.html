@@ -4,11 +4,11 @@
 <br>
 <!-- Subscriptions -->
 <div class='row text-center'>
-  <h1 *ngIf='loading'>Please wait! Fetching data from the server...</h1>
+  <h1 class="ss" *ngIf='loading'>Please wait!<br>Fetching data from the server...</h1>
   <div id="subscriptions-list" class="col-md-4" *ngFor='let s of subscriptions;'>
     <div class="card">
       <div class="card-body">
-        <h2 class="text-center"> {{ s.Type }} </h2>
+        <h1 class="text-center"> {{ s.Type }} </h1>
         <hr>
         <br>
         <div class="view view-cascade overlay">
@@ -30,22 +30,17 @@
           </span>
             <div style="color: blue;" *ngIf='isWaitingForConfirmation(s.Id)'>Waiting for confirmation!</div>            
         </span> -->
-        <span>
-          <button class="details" mat-raised-button color="primary" (click)=getSubscriptionPreview(s.Id)>
-            <i class="fas fa-search"></i>
-          </button>
+        <button mat-raised-button color="primary" class="search" (click)=getSubscriptionPreview(s.Id)>
+          <i class="fas fa-search"></i>
+        </button>
+        <span *ngIf='s.IsActive && !isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'
+          class="request">
+          Request from -> (<span class="request-sm" (click)=sendRequest(s.Id)>here!</span>)
         </span>
-          <span *ngIf='s.IsActive && isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>              
-            <button                       
-              class="btn-outline-success" (click)='sendRequest(s.Id)'>
-              <b>Request 4 Subscription</b>
-            </button>
-          </span>
-          <span *ngIf='s.IsActive && isConfirmed(s.Id) || isWaitingForConfirmation(s.Id)'>              
-            <button                       
-              class="btn-outline-success" (click)='goToMySubscriptions()'>
-              <b>Preview</b>
-            </button>
+        
+        
+          <span class="prev" *ngIf='s.IsActive && isConfirmed(s.Id) || isWaitingForConfirmation(s.Id)'>              
+            Preview from -> (<span class="request-sm" (click)=goToMySubscriptions()>here!</span>)
           </span>
         </div>
       </div>
@@ -55,7 +50,7 @@
 <br> 
 
 <!-- .dim -->
-<div class="content  text-center">
+<div class="row justify-content-center">
   <div class="dim" *ngIf='shouldLog'>
     <span class="msg">
       <h1>
@@ -68,8 +63,8 @@
       <button
         class="btn btn-outline-info"
         (click) = dismiss()
-        style="width:20%">
-        <b>Dismiss</b>
+        style="width: 10%;">
+        Dismiss
       </button>
     </span>
   </div>

@@ -1,25 +1,29 @@
-.preview{
-  padding: 30px;
-  font-size: .9em;
-  margin: 0 auto;
+.ss {
+  font-family: "Alsandra";font-size: 4em;
 }
-.details{
-  font-size: 1.2em;
+.request, .prev{
+  font-family: "Alsandra";
+  font-size: 1.6em;
+}
+.request-sm:hover{
+  cursor: pointer;
+  color:rgb(52, 199, 243);
+}
+.search{
+  font-size: 1em;
   padding: 5px;
   margin: 5px;
 }
-.details:hover{
+.search:hover{
   background: rgb(52, 199, 243);
 }
-.btn-outline-success{
-  font-size: 1.3em; 
-  padding: 5px;
-  margin: 5px;
-  border-radius: 5%;
+#subscrStatus{
+  font-family: "Alsandra";
+  font-size: 1.4em;
 }
 .img-fluid {
   border: 1px solid black;
-  height: 16vw;
+  height: 15vw;
   object-fit: contain;
 }
 

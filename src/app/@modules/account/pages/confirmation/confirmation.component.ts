@@ -3,10 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { AccountService } from 'src/app/@services/account.service';
 
-const visibleButtons = {
-    logo: true
-};
-
 @Component({
     selector: 'app-confirmation',
     templateUrl: './confirmation.component.html',
@@ -35,6 +31,7 @@ export class ConfirmationComponent implements OnInit {
     }
 
     checkRouteParameters(): void {
+        this.loading = true;
         this.errorMessage
         const token = this.route.snapshot.params.token;
         const change = this.route.snapshot.params.changeid;
@@ -48,11 +45,13 @@ export class ConfirmationComponent implements OnInit {
                         this.successMessage = 'Welcome to BaiGanio community!';
                         this.isEmailConfirmed = true;
                         this.enableLogin = true;
+                        this.loading = true;
                     },
                     error => {
                         console.log(error);
                         this.errorHandlerService.handleRequestError(error);
-                        this.errorMessage = 'Looks like there is a problem with the link?!?!?'
+                        this.errorMessage = 'Looks like there is a problem with the link?!?!?';
+                        this.loading = true;
                     }
                 );
         } else if (change) {

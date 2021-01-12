@@ -8,12 +8,19 @@
                     <img src='{{ subscription.Image }}' class="img-thumbnail img-fluid" alt="Sample image">
                     <br>
                     <br>
-<hr>
-                      <p>
-                        Total subscribers :
-                        <span class="badge badge-primary"> 0</span>
-                      </p> 
-                      <hr>
+                    <hr>
+                    <br>
+                    <h5>
+                        Total subscribers : {{ subscription.ConfirmedSubscribers }}
+                    </h5>
+                    <br> 
+                    <hr>
+                    <br>
+                    <h5>
+                        Total posts : 831
+                    </h5>
+                    <br> 
+                    <hr>
                     <!-- <br>
                     <br>
                     <h5 style="text-align:center;">Created on: {{subscription.CreatedOn | date :'dd-MMM-yy'}}</h5>
@@ -22,10 +29,11 @@
                 </div>
             </div>
             <div class="card col-md-8">
-                <div class="card-body">
+                <div class="card-body text-lg-start">
                     <!-- <h4 style="text-align:left;">Quick info :</h4>
                     <br> -->
-                    <h5 style="text-align:left;">{{subscription.Description}}</h5>
+                    <span [innerHTML]='subscription.Description'></span>
+                    
                     <!-- <hr/>
                     <h5 style="text-align:left;">Active : {{subscription.IsActive}}</h5>
                     <hr/>

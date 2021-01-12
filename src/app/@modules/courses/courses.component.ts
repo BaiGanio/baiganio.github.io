@@ -157,13 +157,13 @@ export class CoursesComponent implements OnInit {
         },
         () => {
           this.loading = false;
-          this.snackbar.open('Enrollment successful !', 'X', {
-            duration: 3000,
-            horizontalPosition: 'right',
-            verticalPosition: 'top',
-            panelClass: 'successSnackbar'
-          });
-          this.flagEnrollSuccess = true;
+          // this.snackbar.open('Enrollment successful !', 'X', {
+          //   duration: 3000,
+          //   horizontalPosition: 'right',
+          //   verticalPosition: 'top',
+          //   panelClass: 'successSnackbar'
+          // });
+          // this.flagEnrollSuccess = true;
         }
     );
   }

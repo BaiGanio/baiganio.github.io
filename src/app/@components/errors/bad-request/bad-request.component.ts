@@ -20,7 +20,7 @@ import { ErrorView } from 'src/app/@shared/interfaces/error-view.interface';
       <br/>  
       <hr/>
       <br/>  
-      <button mat-raised-button color="primary"
+      <button class="btn btn-outline-info"
         (click) = dismiss()>
         Dismiss
       </button>

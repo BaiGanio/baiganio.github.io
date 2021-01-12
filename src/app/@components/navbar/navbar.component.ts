@@ -23,7 +23,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.isAuthenticated()) {
-      this.storedUser = this.userDataService.getUserData();
       if (this.storedUser) {
         return;
       } else {

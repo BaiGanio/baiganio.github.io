@@ -24,9 +24,7 @@ import { BaseDialogData } from '../../../@shared/interfaces/base-dialog.interfac
       <br/>  
       <hr/>
       <br/>  
-      <button
-        mat-raised-button 
-        color="primary"
+      <button class="btn btn-outline-info"
         (click) = dismiss()
         style="width:30%">
         Dismiss

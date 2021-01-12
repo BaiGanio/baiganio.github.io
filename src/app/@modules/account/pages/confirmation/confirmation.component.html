@@ -1,7 +1,11 @@
+<ngx-loading [show]="loading"></ngx-loading>
+<h1 class="title">Account Confirmation</h1>
+<hr>
+<br>
 <div class="content">
   <div class="row">
     <div class="col-xs-12 col-center text-center">
-      <h1 style="font-size: 6em;" *ngIf="!successMessage && !errorMessage">Please wait... Confirming your link...</h1>
+    <h1 class="ss" *ngIf="!successMessage && !errorMessage">Please wait... <br>Verifying your link!</h1>
       <h1 style="font-size: 6em;" *ngIf="successMessage">{{successMessage}}</h1>
       <h1 *ngIf="errorMessage">{{errorMessage}}</h1>
       <div *ngIf="successMessage && enableLogin">
