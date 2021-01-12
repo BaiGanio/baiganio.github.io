@@ -1,34 +1,35 @@
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `.angular-cli.json`.
 
-export const environment = {
-  production: false,
-  envName: 'local',
-  name:'',
-  version:'',
-  appUrl: '',
-  apiUrl: '',
-  idsUrl: '',
-  IPCheckingServiceUrl: '',
-  bgapiSignalRNotyfyHub: '',
-  identityServerClientCredentials: {
-      client_id: '',
-      client_secret: '',
-      scope: '',
-      grant_type: ''
-  },
-  identityServerUserCredentials: {
-      client_id: '',
-      client_secret: '',
-      scope: '',
-      grant_type: ''
-  },
-  apiKey: '',
-  routesRequiringUserToken: [
-      '',
-      '',
-      ''
-  ]
-};
+  import { name, version } from '../../package.json';
+  export const environment = {
+    production: true,
+    name: name,
+    version: version,
+    appUrl: 'https://baiganio.github.io/',
+    apiUrl: 'https://bgapi.azurewebsites.net/api/',
+    idsUrl: 'https://free-is4.azurewebsites.net/',
+
+    IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
+    bgapiSignalRNotyfyHub: 'https://bgapi.azurewebsites.net/notify',
+    identityServerClientCredentials: {
+      client_id: 'baiganio-client',
+      client_secret: '123',
+      scope: 'scope.bgapi',
+      grant_type: 'client_credentials',
+    },
+    identityServerUserCredentials: {
+      client_id: 'baiganio-user',
+      client_secret: '123',
+      scope: 'scope.bgapi',
+      grant_type: 'password',
+    },
+    apiKeys:{
+      youtube: 'AIzaSyAYU8OKYCoPKdzhFid83EIdehZVITHO5Ag'
+    },
+    routesRequiringUserToken: [
+      '/manage',
+      '/account',
+      '/dashboard',
+      '/profile',
+      '/admin'
+    ]
+  };

@@ -7,8 +7,7 @@ export const environment = {
     apiUrl: 'https://localhost:44364/api/',
     idsUrl: 'https://free-is4.azurewebsites.net/',
     // idsUrl: 'https://localhost:44375/',
-
-    // IPCheckingServiceUrl: 'https://ipinfo.io?token=$2e07b81e6d80f2',
+    
     IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
     bgapiSignalRNotyfyHub: 'https://localhost:44344/notify',
     identityServerClientCredentials: {
@@ -23,7 +22,9 @@ export const environment = {
         scope: 'scope.bgapi-free',
         grant_type: 'password'
     },
-    apiKey: 'still-waiting',
+    apiKeys:{
+      youtube: 'undefined'
+    },
     routesRequiringUserToken: [
         '/manage',
         '/account',
