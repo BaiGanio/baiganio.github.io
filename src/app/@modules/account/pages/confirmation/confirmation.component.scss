@@ -1,6 +1,14 @@
-.ss {
+button, .ss {
     font-family: "Alsandra";font-size: 4em;
 }
+button{
+    font-size: 1.6em;
+    padding: 20px;
+    margin: 5px;
+}
+.mat-raised-button:hover{
+    background: rgb(52, 199, 243);
+  }
 @media only screen and (max-width: 797px) {
     h1 {
         font-size: 3em;

@@ -6,14 +6,24 @@
   <div class="row">
     <div class="col-xs-12 col-center text-center">
     <h1 class="ss" *ngIf="!successMessage && !errorMessage">Please wait... <br>Verifying your link!</h1>
-      <h1 style="font-size: 6em;" *ngIf="successMessage">{{successMessage}}</h1>
+      <h1 class="title" *ngIf="successMessage">{{successMessage}}</h1>
       <h1 *ngIf="errorMessage">{{errorMessage}}</h1>
       <div *ngIf="successMessage && enableLogin">
         <br>
-        <h1 style="font-size: 4em;">Thank you for confirming your account.</h1>
+        <h1>Thank you for confirming your account. We are happy to see you onboard!</h1>
+        <br>
+        <h1 class="title">Enjoy your stay ;)</h1>
         <br>
         <br>
-        <button mat-stroked-button (click)="goToLogin()" style="font-size: 2em;">
+        <button  
+          mat-stroked-button 
+          routerLink='/home'> 
+            Back To Home
+        </button>
+        <button 
+          mat-raised-button
+          color="primary" 
+          (click)="goToLogin()">
           Go to Login
         </button>
         <br>

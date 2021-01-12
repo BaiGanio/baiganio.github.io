@@ -7,7 +7,6 @@ import { ErrorComponent } from './@components/errors/error/error.component';
 import { NotFoundComponent } from './@pages/not-found/not-found.component';
 import { ServerAlertComponent } from './@pages/server-alert/server-alert.component';
 import { RoleGuard } from './@core/role.guard';
-import { WelcomeComponent } from './@pages/welcome/welcome.component';
 import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
 import { VideosComponent } from './@pages/videos/videos.component';
@@ -62,7 +61,6 @@ const routes: Routes = [
     }
   },
   { path: 'server-alert', component: ServerAlertComponent },
-  { path: 'welcome', component: WelcomeComponent },
   { path: 'error', component: ErrorComponent},
   { path: '403', component: AccessDeniedComponent },
   { path: '**', component: NotFoundComponent }

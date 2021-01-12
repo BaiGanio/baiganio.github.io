@@ -45,13 +45,13 @@ export class ConfirmationComponent implements OnInit {
                         this.successMessage = 'Welcome to BaiGanio community!';
                         this.isEmailConfirmed = true;
                         this.enableLogin = true;
-                        this.loading = true;
+                        this.loading = false;
                     },
                     error => {
                         console.log(error);
                         this.errorHandlerService.handleRequestError(error);
                         this.errorMessage = 'Looks like there is a problem with the link?!?!?';
-                        this.loading = true;
+                        this.loading = false;
                     }
                 );
         } else if (change) {

@@ -29,7 +29,6 @@ import { AccountModule } from './@modules/account/account.module';
 import { QuestionnaireComponent } from './@components/questionnaire/questionnaire.component';
 import { ServerErrorComponent } from './@components/errors/server-error/server-error.component';
 import { BadRequestComponent } from './@components/errors/bad-request/bad-request.component';
-import { WelcomeComponent } from './@pages/welcome/welcome.component';
 import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 import { RateComponent } from './@components/errors/rate/rate.component';
 import { BloggersModule } from './@modules/bloggers/bloggers.module';
@@ -57,7 +56,6 @@ import { NgbdCarouselBasicComponent } from './@components/ngbd-carousel-basic/ng
     QuestionnaireComponent,
     ServerErrorComponent,
     BadRequestComponent,
-    WelcomeComponent,
     BgTeamComponent,
     RateComponent,
     VideosComponent,
