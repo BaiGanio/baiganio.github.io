@@ -133,7 +133,7 @@
               "src/404.html"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss"              
             ],
             "scripts": [
               "src/assets/js/handy-clock.js"

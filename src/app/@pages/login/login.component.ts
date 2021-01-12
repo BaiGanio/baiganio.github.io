@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SubscriptionsModule } from 'src/app/@modules/subscriptions/subscriptions.module';
 import { UserViewModel } from 'src/app/@modules/users/models/user-view-model.module';
 import { AuthService } from 'src/app/@services/auth.service';
 import { BackendService } from 'src/app/@services/backend.service';
@@ -21,13 +22,13 @@ export class LoginComponent implements OnInit {
   loginErrorMessage = '';
 
   constructor(
-     private formBuilder: FormBuilder,
-     private router: Router,
+    private formBuilder: FormBuilder,
+    private router: Router,
     private backendService: BackendService,
     private authservice: AuthService,
     private errorHandlerService: ErrorHandlerService,
     private userDataService: UserDataService
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.loginForm =
@@ -61,47 +62,15 @@ export class LoginComponent implements OnInit {
           this.authservice.clearUserToken();
           this.authservice.userToken = response;
         }
+        this.updateLastLogin();
         this.router.navigate(['/dashboard']);
       },
       error => {
-        this.errorHandlerService.handleRequestError(error);
-        this.loading = false;
-      }, () => { 
-        this.getUserByToken();
-        this.loading = false; 
         this.loginError = true;
         this.loginForm.reset();
-    });
-
-  }
-
-  private handleSuccess(authToken): void {
-   
-    this.getUserByToken();
-  }
-
-  getUserByToken(): void {
-    let userData= new UserViewModel();
-    let username = '';
-    this.userDataService.getUserByToken()
-      .subscribe(response => {
-          console.log('st ' + response.body);
-          this.userDataService.setUserData(userData);
-          username =
-            userData.FirstName != null && userData.LastName != null
-            ? userData.FirstName + ' ' + userData.LastName
-            : userData.Email;
-
-          this.updateLastLogin();
-        },
-        error => {
-          this.errorHandlerService.handleRequestError(error);
-        },
-        () => {
-          this.loading = false;
-          this.router.navigate(['/dashboard']);
-        }
-      );
+        this.loginErrorMessage = error.error.error_description;
+        this.loading = false;
+      });
   }
 
   dismiss() {
@@ -114,7 +83,5 @@ export class LoginComponent implements OnInit {
       () => {},
       err => { console.log(err); }
     );
-
   }
-
 }

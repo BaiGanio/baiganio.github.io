@@ -20,6 +20,8 @@ export class RegisterComponent implements OnInit {
   loading = false;
   registrationError = false;
   registrationErrorMessage = '';
+  registrationSuccess = false;
+  registrationSuccessMessage = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -57,7 +59,7 @@ export class RegisterComponent implements OnInit {
           this.ipinfo = response;
         },
         error => {
-          this.errorHandlerService.handleRequestError(error);
+          console.log(error);          
         },
         () => {
           this.doRegistration();
@@ -69,18 +71,20 @@ export class RegisterComponent implements OnInit {
     this.accountService.registerUser({
       Email: this.registerForm.value.email,
       Password: this.registerForm.value.password,
-      LeadSource: 'WebApp',
-      IP: this.ipinfo.ip
+      LeadSource: 'BaiGanio',
+      IP: this.ipinfo?.ip
     }).subscribe(
         () => {
-          this.router.navigate(['/welcome']);
-          this.getSuccessfulSnackBar(this.registerForm.value.email);
+          // this.router.navigate(['/welcome']);
+          // this.getSuccessfulSnackBar(this.registerForm.value.email);
+          this.registrationSuccess = true;
+          this.registrationSuccessMessage = 'Your registration request is on the fly...<br/>Please check your email for confirmation link!';
           this.loading = false;
         }, error => {
           this.registrationError = true;
-          this.loading = false;
+          this.registrationErrorMessage = `Ooops... Try once more?!?!<br/>${error.error}`;
           this.registerForm.reset();
-          this.errorHandlerService.handleRequestError(error);
+          this.loading = false;
         }
       );
   }
@@ -114,5 +118,7 @@ export class RegisterComponent implements OnInit {
   dismiss() {
     this.registrationError = false;
     this.registrationErrorMessage = '';
+    this.registrationSuccess = false;
+    this.registrationSuccessMessage = '';
   }
 }

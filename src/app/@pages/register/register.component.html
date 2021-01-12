@@ -14,6 +14,16 @@
         </button>
       </div>
     </div>
+
+    <div class="dim" *ngIf='registrationSuccess'>
+      <div class="msg">
+        <h1 innerHtml={{registrationSuccessMessage}}></h1>
+        <br><br>
+        <button class="btn btn-outline-info" (click)=dismiss() style="width:10%">
+          Dismiss
+        </button>
+      </div>
+    </div>
   
     <div class="col-xl-8">
       <section id="viewRegister">

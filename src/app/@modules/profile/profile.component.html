@@ -16,6 +16,21 @@
       <div class="row">
         <div class="col-md-3">
           <h3>Profile picture</h3>
+
+          <!-- <br>
+          <div class="avatar-upload">
+            <div class="avatar-edit">
+              <input type="file" formControlName='profilePicture' #profileImage style="display: none;"
+                (change)="onFileSelected($event)" accept="image/*">
+                  <label for="imageUpload"> <i class="fas fa-pencil-alt"></i></label>
+              </div>
+              <div class="avatar-preview">
+                  <div id="imagePreview" style="background-image: url({{profileImgSrc}});">
+                  </div>
+              </div>
+          </div>
+          <br> -->
+
           <form [formGroup]="profileImageFG" class="text-center">
             <div class="card">
               <div class="card-body">
@@ -189,3 +204,21 @@
 </div>
 
 <ngx-loading [show]="loading"></ngx-loading>
+
+
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+            $('#imagePreview').hide();
+            $('#imagePreview').fadeIn(650);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#imageUpload").change(function() {
+    readURL(this);
+});
+</script>

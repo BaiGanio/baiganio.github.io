@@ -35,6 +35,8 @@ import { RateComponent } from './@components/errors/rate/rate.component';
 import { BloggersModule } from './@modules/bloggers/bloggers.module';
 import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
 import { VideosComponent } from './@pages/videos/videos.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdCarouselBasicComponent } from './@components/ngbd-carousel-basic/ngbd-carousel-basic.component';
 
 
 @NgModule({
@@ -59,6 +61,7 @@ import { VideosComponent } from './@pages/videos/videos.component';
     BgTeamComponent,
     RateComponent,
     VideosComponent,
+    NgbdCarouselBasicComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,7 @@ import { VideosComponent } from './@pages/videos/videos.component';
     ReactiveFormsModule,
     HttpClientModule,
     AngularMaterialModule,
+    NgbModule,
     CoreModule,
     AccountModule,
     DashboardModule,

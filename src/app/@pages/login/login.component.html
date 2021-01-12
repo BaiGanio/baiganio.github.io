@@ -4,18 +4,18 @@
 </h1>
 <hr>
 <div class="row justify-content-center">
-    <div class="dim" *ngIf='loginError'>
-      <div class="msg">
-        <h1 innerHtml={{loginErrorMessage}}></h1>
-        <br><br>
-        <button
-          class="btn btn-outline-info"
-          (click) = dismiss()
-          style="width:10%">
-          Dismiss
-        </button>
-      </div>    
-    </div>
+  <div class="dim" *ngIf='loginError'>
+    <div class="msg">
+      <h1 innerHtml={{loginErrorMessage}}></h1>
+      <br><br>
+      <button 
+        class="btn btn-outline-info" 
+        (click) = dismiss()
+        style="width:10%">
+        Dismiss
+      </button>
+    </div>    
+  </div>
   <div class="col-xl-8">
    
     <!-- START LOGIN CONTENT -->

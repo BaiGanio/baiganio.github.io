@@ -205,7 +205,6 @@ export class SubscriptionsComponent implements OnInit {
         let subs = this.storedUser?.Subscriptions;
         if(subs){
             subs.forEach(element => {
-                console.log(element);
                 if(element.subscriptionId === sId && element.status === "Confirmed"){
                     result = true;
                 }
