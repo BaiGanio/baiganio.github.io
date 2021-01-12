@@ -96,17 +96,6 @@ export class SubscriptionsComponent implements OnInit {
             },
             error => {
              this.errorHandlerService.handleRequestError(error);
-            }, 
-            () => { 
-                let subs = this.storedUser?.Subscriptions;
-                if(subs){
-                    subs.forEach(element => {
-                        if(element.status === "Confirmed"){
-                            this.haveConfirmedSubscription = true;
-                        }
-                    });
-                }
-                this.loading = false; 
             }
         );
     }
@@ -123,7 +112,6 @@ export class SubscriptionsComponent implements OnInit {
             this.subscriptionsService.sendRequestForSub({ Id: id })
                 .subscribe(
                     response => {
-                        this.loading = false;
                         this.notificationRequest = true;
                     },
                     error => {
@@ -131,13 +119,13 @@ export class SubscriptionsComponent implements OnInit {
                         this.errorHandlerService.handleRequestError(error);
                     },
                     () => {
+                        this.loading = false;
                         this.subscriptions = new Array<any>();
                         this.storedUserInit();
                         this.subscriptionsInit();
                     }
                 );
         }
-        this.loading = false;
     }
 
     private checkRouteParameters(): void {
@@ -192,16 +180,6 @@ export class SubscriptionsComponent implements OnInit {
 
     isConfirmed(sId: string): boolean {
         let result = false;
-        // this.storedUser = this.userDataService.getUserData();
-        // if (this.storedUser.Id) {
-        //     this.storedUser.Subscriptions.forEach(element => {
-        //         if (sId === element.subscription_id && element.status === 'Confirmed') {
-        //             this.haveConfirmedSubscription = true;
-        //             result = true;
-        //             return true;
-        //         }
-        //     });
-        // }
         let subs = this.storedUser?.Subscriptions;
         if(subs){
             subs.forEach(element => {
@@ -215,15 +193,14 @@ export class SubscriptionsComponent implements OnInit {
 
     isWaitingForConfirmation(sId: string): boolean {
         let result = false;
-        // this.storedUser = this.userDataService.getUserData();
-        // if (this.storedUser.Id) {
-        //     this.storedUser.Subscriptions.forEach(element => {
-        //         if (sId === element.subscription_id && element.status === 'WaitingForConfirmation') {
-        //             result = true;
-        //             return true;
-        //         }
-        //     });
-        // }
+        let subs = this.storedUser?.Subscriptions;
+        if(subs){
+            subs.forEach(element => {
+                if(element.subscriptionId === sId && element.status === "WaitingForConfirmation"){
+                    result = true;
+                }
+            });
+        }
         return result;
     }
 

@@ -35,13 +35,13 @@
             <i class="fas fa-search"></i>
           </button>
         </span>
-          <span *ngIf='s.IsActive && isConfirmed(s.Id) === false'>              
+          <span *ngIf='s.IsActive && isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>              
             <button                       
               class="btn-outline-success" (click)='sendRequest(s.Id)'>
               <b>Request 4 Subscription</b>
             </button>
           </span>
-          <span *ngIf='s.IsActive && isConfirmed(s.Id)'>              
+          <span *ngIf='s.IsActive && isConfirmed(s.Id) || isWaitingForConfirmation(s.Id)'>              
             <button                       
               class="btn-outline-success" (click)='goToMySubscriptions()'>
               <b>Preview</b>
