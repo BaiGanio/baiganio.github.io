@@ -4,7 +4,7 @@
 <br>
 <!-- Subscriptions -->
 <div class='row text-center'>
-  <h1 class="ss" *ngIf='loading'>Please wait!<br>Fetching data...</h1>
+  <h1 class="ss" *ngIf='loading && isInitMsg'>Please wait!<br>Fetching data...</h1>
   <div id="subscriptions-list" class="col-md-4" *ngFor='let s of subscriptions;'>
     <div class="card">
       <div class="card-body">
@@ -33,7 +33,7 @@
         <button mat-raised-button color="primary" class="search" (click)=getSubscriptionPreview(s.Id)>
           <i class="fas fa-search"></i>
         </button>
-        <span *ngIf='s.IsActive && !isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'
+        <span *ngIf='s.IsActive && isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'
           class="request">
           Request from -> (<span class="request-sm" (click)=sendRequest(s.Id)>here!</span>)
         </span>
@@ -54,11 +54,11 @@
   <div class="dim" *ngIf='shouldLog'>
     <span class="msg">
       <h1>
-        You need to be logged user if you want to send a request.
-        <br>
-        Please, login first & then try to request for subscription!
-        <br>
+        You need to be logged user if you want to send a request!
       </h1>
+      <br>
+      <br>
+      <h1 class="title"> Please, login first & then request for subscription.</h1>
       <br>
       <button
         class="btn btn-outline-info"

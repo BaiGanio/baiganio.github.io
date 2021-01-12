@@ -23,20 +23,16 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.isAuthenticated()) {
-      if (this.storedUser) {
-        return;
-      } else {
-        this.userDataService.getUserByToken().subscribe(
-          response => {
-            this.storedUser = response.body;
-            this.userDataService.setUserData(this.storedUser);
-          },
-          err => { console.log(err); },
-          () => {
-            this.storedUser = this.userDataService.getUserData();
-          }
-        );
-      }
+      this.userDataService.getUserByToken().subscribe(
+        response => {
+          this.storedUser = response.body;
+          this.userDataService.setUserData(this.storedUser);
+        },
+        err => { console.log(err); },
+        () => {
+          this.storedUser = this.userDataService.getUserData();
+        }
+      );
     }
   }
 

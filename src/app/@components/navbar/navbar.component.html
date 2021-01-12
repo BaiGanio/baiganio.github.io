@@ -42,7 +42,7 @@
             <span class="badge">99 </span><i class="fa fa-bell"></i>
           </button> -->
           <button mat-button [matMenuTriggerFor]="userMenu">
-            Welcome, {{ storedUser?.firstName !== null ? storedUser?.firstName + ' ' + storedUser?.lastName : storedUser?.Email }}
+            Welcome, {{ storedUser?.firstName !== null ? storedUser?.firstName + ' ' + storedUser?.lastName : storedUser?.email }}
           </button>
           <mat-menu #userMenu="matMenu">
             

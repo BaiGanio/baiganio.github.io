@@ -32,6 +32,7 @@ export class SubscriptionsComponent implements OnInit {
     totalUsersInSubscr = 0;
     storedUser: any;
     haveConfirmedSubscription = false;
+    isInitMsg = true;
 
     constructor(
         private errorHandlerService: ErrorHandlerService,
@@ -80,7 +81,7 @@ export class SubscriptionsComponent implements OnInit {
         }, error => {
             this.errorHandlerService.handleRequestError(error);
             this.loading = false;
-        }, () => { this.loading = false; });
+        }, () => { this.loading = false; this.isInitMsg = false;});
     }
 
     private storedUserInit() {
