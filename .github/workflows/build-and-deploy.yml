@@ -28,7 +28,9 @@ jobs:
     - name: npm run-script build
       run: npm run-script build
       env: 
+        IS4_BAIGANIO_CLIENT: ${{ secrets.IS4_BAIGANIO_CLIENT }}
         IS4_BAIGANIO_CLIENT_SECRET: ${{ secrets.IS4_BAIGANIO_CLIENT_SECRET }}
+        IS4_BAIGANIO_USER: ${{ secrets.IS4_BAIGANIO_USER }}
         IS4_BAIGANIO_USER_SECRET: ${{ secrets.IS4_BAIGANIO_USER_SECRET }}
         YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
     # - name: Test
@@ -64,6 +66,8 @@ jobs:
             BRANCH: gh-pages
             FOLDER: deployable_artifacts
           env: 
+            IS4_BAIGANIO_CLIENT: ${{ secrets.IS4_BAIGANIO_CLIENT }}
             IS4_BAIGANIO_CLIENT_SECRET: ${{ secrets.IS4_BAIGANIO_CLIENT_SECRET }}
+            IS4_BAIGANIO_USER: ${{ secrets.IS4_BAIGANIO_USER }}
             IS4_BAIGANIO_USER_SECRET: ${{ secrets.IS4_BAIGANIO_USER_SECRET }}
             YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
