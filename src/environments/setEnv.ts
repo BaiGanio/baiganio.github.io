@@ -9,7 +9,7 @@ const environmentFileContent = `
     name: name,
     version: version,
     appUrl: 'https://baiganio.github.io/',
-    apiUrl: 'https://bgapi.azurewebsites.net/',
+    apiUrl: 'https://bgapi.azurewebsites.net/api/',
     idsUrl: 'https://free-is4.azurewebsites.net/',
 
     IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
