@@ -2,34 +2,32 @@
   import { name, version } from '../../package.json';
   export const environment = {
     production: false,
-    name: name,
-    version: version,
-    appUrl: 'https://baiganio.github.io/',
-    apiUrl: 'https://localhost:44364/api/',
-    idsUrl: 'https://free-is4.azurewebsites.net/',
-
-    IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
-    bgapiSignalRNotyfyHub: 'https://bgapi.azurewebsites.net/notify',
+    env: 'default',
+    name:'',
+    version:'',
+    appUrl: '',
+    apiUrl: '',
+    idsUrl: '',
+    IPCheckingServiceUrl: '',
+    bgapiSignalRNotyfyHub: '',
     identityServerClientCredentials: {
-      client_id: 'baiganio-local-client',
-      client_secret: '123',
-      scope: 'scope.bgapi-free',
-      grant_type: 'client_credentials',
+      client_id: '',
+      client_secret: '',
+      scope: '',
+      grant_type: ''
     },
     identityServerUserCredentials: {
-      client_id: 'baiganio-local-user',
-      client_secret: '123',
-      scope: 'scope.bgapi-free',
-      grant_type: 'password',
+      client_id: '',
+      client_secret: '',
+      scope: '',
+      grant_type: ''
     },
     apiKeys:{
-      youtube: 'AIzaSyAYU8OKYCoPKdzhFid83EIdehZVITHO5Ag'
+      youtube: ''
     },
     routesRequiringUserToken: [
-      '/manage',
-      '/account',
-      '/dashboard',
-      '/profile',
-      '/admin'
+      '',
+      '',
+      ''
     ]
   };

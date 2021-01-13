@@ -2,6 +2,7 @@
     import { name, version } from '../../package.json';
     export const environment = {
       production: true,
+      env: 'production',
       name: name,
       version: version,
       appUrl: 'https://baiganio.github.io/',
@@ -23,7 +24,9 @@
         scope: 'scope.bgapi',
         grant_type: 'password',
       },
-      apiKey: 'still waiting...',
+      apiKeys:{
+        youtube: 'undefined'
+      },
       routesRequiringUserToken: [
         '/manage',
         '/account',
