@@ -1,10 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { DashboardComponent } from './dashboard.component';
-import { NotificationsComponent } from './pages/notifications/notifications.component';
-import { ReportedIssuesComponent } from './pages/reported-issues/reported-issues.component';
-import { InClassComponent } from './pages/in-class/in-class.component';
-import { ScoresComponent } from './pages/scores/scores.component';
+import { NotificationsComponent } from './views/notifications/notifications.component';
+import { ReportedIssuesComponent } from './views/reported-issues/reported-issues.component';
+import { InClassComponent } from './views/in-class/in-class.component';
+import { ScoresComponent } from './views/scores/scores.component';
 
 const routes: Routes = [
   {

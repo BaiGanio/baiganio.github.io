@@ -4,7 +4,7 @@ import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { BloggersComponent } from './bloggers.component';
 import { BloggersRoutingModule } from './bloggers-routing.module';
-import { BloggerComponent } from './pages/blogger/blogger.component';
+import { BloggerComponent } from './views/blogger/blogger.component';
 
 
 @NgModule({

@@ -7,7 +7,7 @@ import { BloggerSubscriptionPreviewComponent } from './components/blogger-subscr
 import { StudentSubscriptionPreviewComponent } from './components/student-subscription-preview/student-subscription-preview.component';
 import { SubscriptionPreviewComponent } from './components/subscription-preview/subscription-preview.component';
 import { TeacherSubscriptionPreviewComponent } from './components/teacher-subscription-preview/teacher-subscription-preview.component';
-import { MySubscriptionsComponent } from './pages/my-subscriptions/my-subscriptions.component';
+import { MySubscriptionsComponent } from './views/my-subscriptions/my-subscriptions.component';
 import { SubscriptionsRoutingModule } from './subscriptions-routing.module';
 import { SubscriptionsComponent } from './subscriptions.component';
 @NgModule({

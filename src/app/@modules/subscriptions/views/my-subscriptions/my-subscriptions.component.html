@@ -1,6 +1,17 @@
 <ngx-loading [show]="loading"></ngx-loading>
-<h1 class="title">My Subscription<span *ngIf="subscriptions">s</span></h1>
+<h1 class="title">My Subscription<span *ngIf="subscriptions?.length > 0">s</span></h1>
 <hr>
+
+<div class="text-center" *ngIf="subscriptions?.length == 0">
+    <br>
+    <h1 class="ss">
+        Ooops... No Subscriptions yet.
+    </h1>
+    <h1 class="ss">
+        Request for one from -> (<span class="request-sm" (click)=getSubscription()>here!</span>)
+    </h1>
+    <br>
+</div>
 <mat-tab-group [selectedIndex]="activeTab">   
     <div *ngFor='let s of subscriptions'>
         <mat-tab class="mt" label="{{s?.type}} Id : {{s?.id}}">

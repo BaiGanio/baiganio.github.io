@@ -6,8 +6,8 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 // import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { CoursePreviewComponent } from './components/course-preview/course-preview.component';
-import { MyCoursesComponent } from './pages/my-courses/my-courses.component';
-import { CourseDetailsComponent } from './pages/course-details/course-details.component';
+import { MyCoursesComponent } from './views/my-courses/my-courses.component';
+import { CourseDetailsComponent } from './views/course-details/course-details.component';
 import { InClassComponent } from './components/in-class/in-class.component';
 import { ScoreComponent } from './components/score/score.component';
 import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
@@ -16,7 +16,7 @@ import { BarchartComponent } from 'src/app/@components/charts/barchart/barchart.
 import { DoughnutComponent } from 'src/app/@components/charts/doughnut/doughnut.component';
 import { LinechartComponent } from 'src/app/@components/charts/linechart/linechart.component';
 import { PolarareaComponent } from 'src/app/@components/charts/polararea/polararea.component';
-import { CoursesDetailsComponent } from './pages/courses-details/courses-details.component';
+import { CoursesDetailsComponent } from './views/courses-details/courses-details.component';
 
 @NgModule({
   declarations: [

@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { CoursesComponent } from './courses.component';
 
 import { NgModule } from '@angular/core';
-import { MyCoursesComponent } from './pages/my-courses/my-courses.component';
-import { CourseDetailsComponent } from './pages/course-details/course-details.component';
+import { MyCoursesComponent } from './views/my-courses/my-courses.component';
+import { CourseDetailsComponent } from './views/course-details/course-details.component';
 import { CoursePreviewComponent } from './components/course-preview/course-preview.component';
 
 const routes: Routes = [

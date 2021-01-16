@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BloggersComponent } from './bloggers.component';
-import { BloggerComponent } from './pages/blogger/blogger.component';
+import { BloggerComponent } from './views/blogger/blogger.component';
 
 const routes: Routes = [
     {

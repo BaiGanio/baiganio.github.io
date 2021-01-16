@@ -17,6 +17,7 @@
       <a mat-list-item routerLink="/home"> Home </a>
       <hr>
       <div *ngIf='isUserLogged()'>
+        <a mat-list-item routerLink="/profile"> Profile </a>
         <a mat-list-item routerLink="/dashboard"> Dashboard </a>
         <hr>
       </div>
@@ -45,12 +46,11 @@
             Welcome, {{ storedUser?.firstName !== null ? storedUser?.firstName + ' ' + storedUser?.lastName : storedUser?.email }}
           </button>
           <mat-menu #userMenu="matMenu">
-            
-            <button mat-menu-item routerLink="/profile"> Profile </button>
             <hr>
             <button mat-menu-item (click)='logOut()'>
               <b>Logout</b>
             </button>
+            <hr>
           </mat-menu>
         </div>
         <ng-template #signBox>

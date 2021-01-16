@@ -45,7 +45,7 @@ export class MySubscriptionsComponent implements OnInit {
           .subscribe(
               response => {
                   this.subscriptions = response.body;
-                  console.log(this.subscriptions);
+                  console.log(this.subscriptions.length);
               },
               error => {
                   this.errorHandlerService.handleRequestError(error);
