@@ -1,33 +1,39 @@
 <ngx-loading [show]="loading"></ngx-loading>
 <div class="row text-center">
-    <div class="col-md-3 col-xs-12">
-        Blogger info here!
+  <div class="col-md-6 col-xs-12">
+     <img src='{{ blogger?.avatarUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
+     <h1>Posts info here!</h1>
+     <h1>Posts info here!</h1>
+     <h1>Posts info here!</h1>
+     <h1>Posts info here!</h1>
+  </div>
+  <div class="col-md-3 col-xs-12" style="margin-bottom: 15px;" *ngFor='let p of blogger?.posts'>
+    <div class="card">
+      <div class="card-body">
+        <h1>{{p.title}}</h1>
+        <hr>
         <br>
-        <img src='{{ blogger?.avatarUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
-    </div>
-    <div class="col-md-9 col-xs-12">
-        Posts info here!
+        <img src='{{ p.imgUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
+        <h4>{{p.content}}</h4>
+        <br>
+        <hr>
         <br>
         <div class="row">
-            <div class="col-md-6" *ngFor='let p of blogger?.posts'>
-                <div class="card">
-                  <div class="card-body">
-                    <h1>{{p.title}}</h1>
-                    <hr>
-                    <br>
-                    <img src='{{ p.imgUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
-                    <h4>{{p.content}}</h4>
-                    <br>
-                    <hr>
-                    <br>
-                    <button 
-                      mat-raised-button 
-                      color="primary">
-                      <i class="fas fa-search"></i>
-                    </button>
-                  </div>
-                </div>
-            </div>
+          <div class="col-md-4">
+            <h5>{{ p.createdOn | date :'dd-MMM-yy' }}</h5>
+          </div>
+          <div class="col-md-4">
+            <button 
+              mat-raised-button 
+              color="primary">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <div class="col-md-4">
+            <h5>Else</h5>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>

@@ -37,7 +37,9 @@ hr{
   margin: 10px auto 10px auto;
   color: blue;
 }
-
+.card:hover{
+  box-shadow: -1px 5px 15px 0px rgba(0,0,0,0.8);
+}
 
 
 
@@ -189,7 +191,7 @@ hr{
       }
   }
   .avatar-preview {
-        height: 14vw;
+      height: 14vw;
       position: relative;
       // border-radius: 100%;
       border: 6px solid #F8F8F8;

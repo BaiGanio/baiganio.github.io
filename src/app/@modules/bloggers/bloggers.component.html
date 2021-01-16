@@ -6,26 +6,34 @@
   <div class="col-md-4" *ngFor='let b of bloggers'>
       <div class="card">
         <div class="card-body">
-          <h1>{{b.firstName}} {{b.lastName}}</h1>
+          <h1>{{b.nickname}}</h1>
           <hr>
-          <br>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
               <img src='{{ b.avatarUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
             </div>
-            <div class="col-md-6">
-              <h4>Nickname:<br>{{b.nickname}}</h4>
-              <br>
-              <hr>
-              <br>
-            <p>
-              <img class="rating-star" src="./assets/images/app/rating-star-3d.png" alt=""> : 98
-            </p>
+            <div class="col-md-7">
+              <p>
+                Posts: {{getTotalPosts(b?.posts)}} 
+              </p>
+              <p>
+                <img class="rating-star" src="./assets/images/app/rating-star-3d.png" alt=""> : 98
+              </p> 
+              <div class="links">
+                <a href="" target="_blank">
+                  <img src="../assets/images/app/web-mail.png" alt="Email Us" title="Email Us">
+                </a>
+                <a href="https://www.facebook.com/baiganio.github.io/" target="_blank">
+                    <img src="../assets/images/social-icons/facebook.jpg" alt="Facebook" title="Facebook">
+                </a>
+              </div>
             </div>
           </div>
-          <br>
+          <hr>      
+          <br> 
+          <h5>For people who want to be informed, suprised & inspired... & few more letters could be written to describe blogger personality shortly...</h5>
           <hr>
-          <br>
+          <br>     
           <button 
             mat-raised-button 
             color="primary"

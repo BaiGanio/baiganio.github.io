@@ -26,7 +26,7 @@ export class BloggersComponent implements OnInit {
     this.bloggerService.getBloggers().subscribe(response => {
         response.body.forEach(element => {
           this.bloggers.push(element);
-          // console.log(response.body);
+          console.log(response.body);
         });
     }, error => {
         this.errorHandlerService.handleRequestError(error);
@@ -52,5 +52,14 @@ export class BloggersComponent implements OnInit {
   }
   showBlogger(id: any){
     this.router.navigate(['/', id]);
+  }
+
+  getTotalPosts(posts){
+    let counter = 0;
+    posts.forEach(element => {
+      counter++;
+    
+    });
+    return counter;
   }
 }

@@ -14,10 +14,23 @@ button{
 .rating-star {
     height: 3vw;
 }
-p{
-    font-size: 2em;
-}
-h1, h4, p{
+h1, p{
     font-family: 'Alsandra';
+}
+p{
+    
+    font-size: 1.8em;
+}
+
+.links {
+    img {
+        width: 3.4vw;
+        margin:0px 10px;
+        padding: 10px;
+    }
+
+    img:hover {
+        background-color: rgba(61, 238, 220, 0.507);
+    }
 }
   
