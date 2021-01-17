@@ -71,7 +71,7 @@ export class ProfileComponent implements OnInit {
         this.user = response.body;
         // console.log(this.user);
         this.userService.setUserData(this.user);
-        this.profileImgSrc = this.user.image == null ? './assets/images/no-profile-img.png' : this.user.image;
+        this.profileImgSrc = this.user.imgUrl == null ? './assets/images/no-profile-img.png' : this.user.imgUrl;
         this.oldProfilePic = this.profileImgSrc;
         for (let i = 0; i < this.user.roles?.length; i++) {
             this.roles += this.user.roles[i].roleName;

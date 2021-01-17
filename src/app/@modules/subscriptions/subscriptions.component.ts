@@ -182,8 +182,8 @@ export class SubscriptionsComponent implements OnInit {
         let subs = this.storedUser?.Subscriptions;
         if(subs){
             subs.forEach(element => {
-                if(element.subscriptionId === sId && element.status === "Confirmed"){
-                    result = true;
+                if(element.id === sId && element.status === "Confirmed"){
+                    result =  true;
                 }
             });
         }
@@ -195,7 +195,7 @@ export class SubscriptionsComponent implements OnInit {
         let subs = this.storedUser?.Subscriptions;
         if(subs){
             subs.forEach(element => {
-                if(element.subscriptionId === sId && element.status === "WaitingForConfirmation"){
+                if(element.id === sId && element.status === "WaitingForConfirmation"){
                     result = true;
                 }
             });
@@ -214,6 +214,35 @@ export class SubscriptionsComponent implements OnInit {
         return result;
     }
 
+    showRequest(sId: string) : boolean{
+        let result = true;
+        let subs = this.storedUser?.Subscriptions;
+        if(subs){
+            subs.forEach(element => {
+                if(element.id === sId && element.status === "WaitingForConfirmation"){
+                    result = false;
+                }else if(element.id === sId && element.status === "Confirmed"){
+                    result = false;
+                }
+            });
+        }
+        return result;
+    }
+
+    showPreview(sId: string) : boolean{
+        let result = false;
+        let subs = this.storedUser?.Subscriptions;
+        if(subs){
+            subs.forEach(element => {
+                if(element.id === sId && element.status === "WaitingForConfirmation"){
+                    result = true;
+                } else if(element.id === sId && element.status === "Confirmed"){
+                    result = true;
+                }
+            });
+        }
+        return result;
+    }
 
     dismiss() {
         this.isUserConfirmingSubscription = false;
