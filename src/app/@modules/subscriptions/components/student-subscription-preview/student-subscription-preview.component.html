@@ -1,23 +1,27 @@
 <br>
-<div class="card">
-    <div class="card-body row">
-        <div class="col-md-4">
-            <img src="{{ subscription?.image}}" class="img-thumbnail img-fluid">
+<div class="text-center">
+    <div class="row"  style="width:100%; margin: 0 auto; overflow: hidden;">
+        <div class="col-md-3">
+            <img src="{{ subscription?.imgUrl}}" class="img-thumbnail img-fluid">
             <br>
             <br>
-            <h2 class="card-title text-center">Name: {{student?.name}}
-            </h2>
-            <hr style="width:80%;border-top: 2px solid rgba(0,0,0,.1);">
+            <h2 class="card-title text-center"  style="font-family: 'Alsandra';">Type: {{subscription?.type}}</h2>
+            <hr>
            <div style="text-align: center">
-            <p> University: {{studentForm.value?.university || 'n/a'}}</p>
+            <!-- <p> University: {{studentForm.value?.university || 'n/a'}}</p>
             <hr>
             <p> F№: {{studentForm.value?.facultyNumber || 'n/a'}}</p>
             <hr>
             <p> Speciality: {{studentForm.value?.speciality || 'n/a'}}</p>
             <hr>
-            <p> Enrolled Courses: 100K</p>
+            <p> Enrolled Courses: 100K</p> -->
+            <h5>Is Active: {{ subscription?.isActive }}</h5>
             <hr>
-            <p> Modified On : {{student?.modified_on  | date : 'dd-MMM-yyyy HH:MM:ss'}}</p>
+            <h5>Status: {{ subscription?.status }}</h5>
+            <hr>
+            <h5> Created On : {{subscription?.createdOn | date : 'dd-MMM-yyyy HH:MM:ss'}}</h5>
+            <hr>
+            <h5> Modified On : {{subscription?.modifiedOn | date : 'dd-MMM-yyyy HH:MM:ss'}}</h5>
             <hr>
            </div>
         </div>

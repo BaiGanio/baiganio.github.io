@@ -1,3 +1,32 @@
-<p>
-  blogger-subscription-preview works!
-</p>
+<br>
+<div class="row content" style="width:100%; margin: 0 auto; overflow: hidden;">
+  <div class="col-md-4" style="font-family: 'Alsandra';">
+      <img src="{{ subscription?.imgUrl}}" class="img-thumbnail img-fluid">
+      <br>
+      <h2 class="card-title text-center">Type: {{subscription?.type}}</h2>
+      <hr style="width:80%;border-top: 2px solid rgba(0,0,0,.1);">
+     <div style="text-align: center">
+      <!-- <p> University: {{studentForm.value?.university || 'n/a'}}</p>
+      <hr>
+      <p> F№: {{studentForm.value?.facultyNumber || 'n/a'}}</p>
+      <hr>
+      <p> Speciality: {{studentForm.value?.speciality || 'n/a'}}</p>
+      <hr>
+      <p> Enrolled Courses: 100K</p> -->
+      <p>Is Active: {{ subscription?.isActive }}</p>
+      <hr>
+      <p>Status: {{ subscription?.status }}</p>
+      <hr>
+      <p> Created On : {{subscription?.createdOn | date : 'dd-MMM-yyyy HH:MM:ss'}}</p>
+      <hr>
+      <p> Modified On : {{subscription?.modifiedOn | date : 'dd-MMM-yyyy HH:MM:ss'}}</p>
+      <hr>
+     </div>
+  </div>
+  <div class="col-md-3">
+      <p> Enrolled Courses: 100K</p>
+      <hr>
+      <p> Modified On : {{subscription?.modified_on}}</p>
+      <hr>
+  </div>
+</div>
