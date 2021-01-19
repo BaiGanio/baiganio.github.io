@@ -21,9 +21,11 @@ _`Production` build for your own use is better to be done after configuring `env
 _We use GitHub Actions CI/CD automatic pipeline configured in `build-and-deploy.yml` file._
   - On `push` or `pull-request` with [_GitHub Actions_](https://docs.github.com/en/free-pro-team@latest/actions) `CI/CD` pipeline.
   - ...
+  
 _Versioning:_
-   - Running `npm run build` locally will automatically run the prebuild script as first step.
-   - Push updated `package.json` back to the repo.
+   - Version is updated from `package.json` file.
+   - 6.0.1 -> 6 is 2021 - 2015 = 6; January = 0.1 (December = 1.2)
+   
 _`Production` deploy for your own use:_
   - Take the build artifacts from the `dist/` directory. 
   - Upload files to the server via any favorite FTP client.
