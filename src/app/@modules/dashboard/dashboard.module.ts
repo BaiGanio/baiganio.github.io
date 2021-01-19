@@ -13,6 +13,8 @@ import { NotificationPreviewComponent } from './components/notification-preview.
 import { ReportedIssuesComponent } from './views/reported-issues/reported-issues.component';
 import { ReportedIssuePreviewComponent } from './components/reported-issue-preview.component';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
+import { CraftsmanMenuComponent } from './views/craftsman-menu/craftsman-menu.component';
+import { EditCourseComponent } from '../courses/components/edit-course/edit-course.component';
 @NgModule({
   declarations: [
       DashboardComponent,
@@ -22,7 +24,8 @@ import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
       NotificationsComponent,
       NotificationPreviewComponent,
       ReportedIssuePreviewComponent,
-      ReportedIssuesComponent
+      ReportedIssuesComponent,
+      CraftsmanMenuComponent
     ],
   imports: [
     CommonModule,
@@ -38,7 +41,8 @@ import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
   ],
   entryComponents: [
     NotificationPreviewComponent,
-    ReportedIssuePreviewComponent
+    ReportedIssuePreviewComponent, 
+    EditCourseComponent
   ],
   schemas: [ NO_ERRORS_SCHEMA ]
 })

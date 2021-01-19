@@ -30,8 +30,9 @@ export class EditCourseComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getTeachers();
+    // this.getTeachers();
     this.model = this.data.model;
+    console.log(this.model);
     this.editCourseForm =
         this.formBuilder.group({
         CourseId: [this.data.model.Id],

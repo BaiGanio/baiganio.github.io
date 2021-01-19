@@ -5,7 +5,6 @@ import { TeachersRoutingModule } from './teachers-routing-module.module';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { TeachersComponent } from './teachers.component';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
-import { CraftsmanMenuComponent } from './views/craftsman-menu.component';
 import { TeacherDetailsComponent } from './views/teacher-details/teacher-details.component';
 import { EditCourseComponent } from '../courses/components/edit-course/edit-course.component';
 import { DeleteCourseComponent } from '../courses/components/delete-course/delete-course.component';
@@ -14,22 +13,8 @@ import { TeacherPreviewComponent } from './component/teacher-preview/teacher-pre
 import { VoteForTeacherComponent } from './component/vote-for-teacher/vote-for-teacher.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TeachersRoutingModule,
-    AngularMaterialModule,
-    ReactiveFormsModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
-  ],
   declarations: [
     TeachersComponent,
-    CraftsmanMenuComponent,
     TeacherDetailsComponent,
     CreateCourseComponent,
     EditCourseComponent,
@@ -43,6 +28,19 @@ import { VoteForTeacherComponent } from './component/vote-for-teacher/vote-for-t
     DeleteCourseComponent,
     TeacherPreviewComponent,
     VoteForTeacherComponent
+  ],
+  imports: [
+    CommonModule,
+    TeachersRoutingModule,
+    AngularMaterialModule,
+    ReactiveFormsModule,
+    NgxLoadingModule.forRoot({
+      animationType: ngxLoadingAnimationTypes.threeBounce,
+      primaryColour: '#88078e',
+      secondaryColour: '#c6ef23',
+      backdropBorderRadius: '14px',
+      fullScreenBackdrop: true
+    }),
   ],
 })
 export class TeachersModule { }

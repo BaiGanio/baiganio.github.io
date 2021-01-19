@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { TeacherService } from 'src/app/@services/teacher.service';
 import { TeacherPreviewModel } from './models/teacher-preview.model';
 import { Router } from '@angular/router';
-import { CourseDetailsModel } from '../courses/models/course-details-model.module';
 import { CoursePreviewModel } from '../courses/models/course-preview-model.module';
-import { CoursePreviewComponent } from '../courses/components/course-preview/course-preview.component';
 import { TeacherPreviewComponent } from './component/teacher-preview/teacher-preview.component';
 import { VoteForTeacherComponent } from './component/vote-for-teacher/vote-for-teacher.component';
 import { AuthService } from 'src/app/@services/auth.service';
@@ -30,7 +27,6 @@ export class TeachersComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private errorHandlerService: ErrorHandlerService,
-    private snackbar: MatSnackBar,
     private router: Router,
     private teacherService: TeacherService,
     private authService: AuthService,
@@ -126,7 +122,7 @@ export class TeachersComponent implements OnInit {
               {TeacherId : teacherId}
             )
             .subscribe(
-              response => {
+              () => {
                 let teacherName = "";
                   this.teachers.forEach(element => {
                     if(element.Id === teacherId){

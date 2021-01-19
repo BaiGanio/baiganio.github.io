@@ -1,11 +1,14 @@
-<h1 class="text-center">Courses Settings</h1>
+<ngx-loading [show]="loading"></ngx-loading>
+<h1 class="title">Courses Settings</h1>
+<hr>
+<br>
 <h5 class="text-center">Total of: {{totalCourses}}</h5>
+<h2 *ngIf='loading'>Please wait! Fetching data from the server...</h2>
 
 <div id="filters">
   <mat-expansion-panel [expanded]='false'>
     <mat-expansion-panel-header>
-      <mat-panel-title> <i class="material-icons">search</i>  ...
-      </mat-panel-title>
+      <mat-panel-title> <i class="fas fa-search"></i></mat-panel-title>
     </mat-expansion-panel-header>
     <div class="row justify-content-left">
       <mat-form-field class="col-sm-2">
@@ -17,7 +20,7 @@
     </div>
   </mat-expansion-panel>
 </div>
-<h4 style="float: left;">
+<!-- <h4 style="float: left;">
   <button
     mat-raised-button color="primary"
     class="m-2"
@@ -30,8 +33,8 @@
     [routerLink]="['/teachers/craftsman-menu']">
     Craftsman Menu
   </button>
-</h4>
-<h4 style="float: right;">
+</h4> -->
+<!-- <h4 style="float: right;">
   <button 
     mat-raised-button 
     color="primary"
@@ -42,7 +45,7 @@
     </i>
     Add Course
   </button>
-</h4>
+</h4> -->
 <div id="listCourses" class="mat-elevation-z8 table-responsive">
   <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort>
     <ng-container matColumnDef="#">
@@ -51,7 +54,7 @@
     </ng-container>
 
     <ng-container matColumnDef="Id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
       <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
     </ng-container>
 
@@ -60,7 +63,7 @@
       <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
     </ng-container>
 
-    <!-- <ng-container matColumnDef="Start Date">
+    <ng-container matColumnDef="Start Date">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Start Date </th>
       <td mat-cell *matCellDef="let element" class="mr-3"> {{element.StartDate | date : 'dd-MMM-yyyy'}} </td>
     </ng-container>
@@ -68,13 +71,13 @@
     <ng-container matColumnDef="End Date">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> End Date </th>
       <td mat-cell *matCellDef="let element"> {{element.EndDate | date : 'dd-MMM-yyyy'}} </td>
-    </ng-container> -->
+    </ng-container>
 
-    <!-- <ng-container matColumnDef="Created On">
+    <ng-container matColumnDef="Created On">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Created On </th>
       <td mat-cell *matCellDef="let element"> {{element.CreatedOn | date : 'dd/MM/yyyy'}} </td>
-    </ng-container> -->
-<!-- 
+    </ng-container>
+
     <ng-container matColumnDef="Active">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Active </th>
       <td mat-cell *matCellDef="let element"> {{element?.IsActive.toString() | titlecase}} </td>
@@ -83,14 +86,14 @@
     <ng-container matColumnDef="Electable">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Electable </th>
       <td mat-cell *matCellDef="let element"> {{element?.IsElectable.toString() | titlecase}} </td>
-    </ng-container> -->
+    </ng-container>
 
-    <ng-container matColumnDef="Enrolled Students">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Enrolled Students </th>
+    <ng-container matColumnDef="Students">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Students </th>
       <td mat-cell *matCellDef="let element"> {{element.EnrolledStudents}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="Pending Enroll Requests">
+    <!-- <ng-container matColumnDef="Pending Enroll Requests">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Pending Enroll Requests </th>
       <td mat-cell *matCellDef="let element"> n/a </td>
     </ng-container>
@@ -98,21 +101,19 @@
     <ng-container matColumnDef="Teachers">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Teachers </th>
       <td mat-cell *matCellDef="let element"> n/a </td>
-    </ng-container>
+    </ng-container> -->
 
-    <ng-container matColumnDef="Properties">
-      <th mat-header-cell *matHeaderCellDef > Properties </th>
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell *matHeaderCellDef > Actions </th>
       <td style="cursor: pointer;" mat-cell *matCellDef="let element">
-        <button mat-raised-button color='primary' class="mr-2" (click)="editCourse(element.Id)">
-          <i class="material-icons">
-            zoom_in
-          </i>
+        <button mat-raised-button color='primary' (click)="editCourse(element.Id)">
+          <i class="fas fa-search"></i>
         </button>
         <button
           mat-raised-button
           color='warn'
           (click)="deleteCourse(element.Id)">
-          <i class="far fa-trash-alt" style="font-size: 1.2em"></i>
+          <i class="far fa-trash-alt"></i>
         </button>
       </td>
     </ng-container>
@@ -149,5 +150,3 @@
 
   <mat-paginator [pageSizeOptions]="[10, 20, 30, 100]"></mat-paginator>
 </div>
-<h2 *ngIf='loading'>Please wait! Fetching data from the server...</h2>
-<ngx-loading [show]="loading"></ngx-loading>

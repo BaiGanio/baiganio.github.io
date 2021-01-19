@@ -24,8 +24,10 @@ export class CoursesDetailsComponent implements OnInit {
       '#', 'Id', 'Name',
       'Start Date', 'End Date',
       'Active', 'Electable',
-      'Enrolled Students', 'Pending Enroll Requests',
-      'Teachers', 'Properties'
+      'Students', 
+      'Actions'
+      // 'Pending Enroll Requests',
+      // 'Teachers', 
     ];
   public dataSource: MatTableDataSource<CoursePreviewModel>;
   courses = new Array<CoursePreviewModel>();
@@ -116,19 +118,20 @@ export class CoursesDetailsComponent implements OnInit {
     this.loading = true;
     this.coursesService.getCoursesPreview().subscribe(response => {
       response.body.forEach(element => {
+        console.log(element);
         const c = {
           Id: element.id,
           Name: element.name,
           Teachers: element.teachers,
           Description: element.description,
-          StartDate: element.start_date,
-          EndDate: element.end_date,
-          ModifiedOn: element.modified_on,
-          Image: element.image,
-          IsActive: element.is_active,
-          IsElectable: element.is_electable,
-          EnrolledStudents: element.enrolled_students,
-          EnrolledUserId: element.enrolled_user_id
+          StartDate: element.startDate,
+          EndDate: element.endEate,
+          ModifiedOn: element.modifiedOn,
+          Image: element.imgUrl,
+          IsActive: element.isActive,
+          IsElectable: element.isElectable,
+          EnrolledStudents: element.students,
+          // EnrolledUserId: element.enrolled_user_id
         };
         this.courses.push(c as CoursePreviewModel);
       });
