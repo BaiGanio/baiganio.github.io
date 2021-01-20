@@ -1,28 +1,4 @@
-<br>
-<div class="card">
-    <div class="card-body row">
-        <div class="col-md-4">
-            <img src="{{ subscription?.image}}" class="img-thumbnail img-fluid">
-            <br>
-            <br>
-            <h2 class="card-title text-center">Name: {{student?.name}}
-            </h2>
-            <hr style="width:80%;border-top: 2px solid rgba(0,0,0,.1);">
-           <div style="text-align: center">
-            <p> University: {{studentForm.value?.university || 'n/a'}}</p>
-            <hr>
-            <p> F№: {{studentForm.value?.facultyNumber || 'n/a'}}</p>
-            <hr>
-            <p> Speciality: {{studentForm.value?.speciality || 'n/a'}}</p>
-            <hr>
-            <p> Enrolled Courses: 100K</p>
-            <hr>
-            <p> Modified On : {{student?.modified_on  | date : 'dd-MMM-yyyy HH:MM:ss'}}</p>
-            <hr>
-           </div>
-        </div>
-        <div class="col-md-5">
-            <form [formGroup]='studentForm'>
+<form [formGroup]='studentForm'>
                 <mat-vertical-stepper [linear]="false">
                     <mat-step [stepControl]="studentForm.get('university')">
                         <ng-template matStepLabel>University</ng-template>
@@ -111,12 +87,3 @@
                     </mat-step>
                 </mat-vertical-stepper>
             </form>
-        </div>
-        <div class="col-md-3">
-            <p> Enrolled Courses: 100K</p>
-            <hr>
-            <p> Modified On : {{subscription?.modified_on}}</p>
-            <hr>
-        </div>
-    </div>
-</div>

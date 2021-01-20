@@ -10,3 +10,19 @@
     object-fit: contain;
     
 }
+
+.links {
+    img {
+        width: 3.4vw;
+        margin:0px 10px;
+        padding: 10px;
+    }
+
+    img:hover {
+        background-color: rgba(61, 238, 220, 0.507);
+    }
+}
+
+.col-md-6{
+    border: 1px solid black;
+}

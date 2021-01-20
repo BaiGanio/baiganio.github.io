@@ -1,12 +1,30 @@
 <ngx-loading [show]="loading"></ngx-loading>
+<h1 class="title">Blogger: {{blogger?.firstName}} {{blogger?.lastName}}</h1>
+<hr>
+<br>
 <div class="row text-center">
-  <div class="col-md-6 col-xs-12">
+  <div class="col-md-3 col-xs-12">
      <img src='{{ blogger?.avatarUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
-     <h1>Posts info here!</h1>
-     <h1>Posts info here!</h1>
-     <h1>Posts info here!</h1>
-     <h1>Posts info here!</h1>
+     
+     <div class="links">
+      <a href="https://www.facebook.com/baiganio.github.io/" target="_blank">
+          <img src="../assets/images/social-icons/facebook.jpg" alt="Facebook" title="Facebook">
+      </a>  <a href="https://github.com/BaiGanio" target="_blank">
+        <img src="../assets//images/social-icons/octo.png" alt="GitHub" title="GitHub">
+      </a>
+      <a href="" target="_blank">
+        <img src="../assets/images/app/web-mail.png" alt="Email Us" title="Email Us">
+      </a>
+    </div>
   </div>
+  <div class="col-md-9 col-xs-12">
+    TODO: Other Blogger resume info here...
+  </div>
+</div>
+<hr>
+<br>
+<div class="row text-center">
+  <h1>latets pubs</h1>
   <div class="col-md-3 col-xs-12" style="margin-bottom: 15px;" *ngFor='let p of blogger?.posts'>
     <div class="card">
       <div class="card-body">

@@ -16,14 +16,14 @@
     <div *ngFor='let s of subscriptions'>
         <mat-tab class="mt" label="{{s?.type}} Id : {{s?.id}}">
             <ng-template matTabContent>
-                <div *ngIf='s.type === "Student"'>
-                    <app-student-subscription-preview></app-student-subscription-preview>
-                </div>
-                <div *ngIf='s.type === "Teacher"'>
-                    <app-teacher-subscription-preview></app-teacher-subscription-preview>
-                </div>
-                <div *ngIf='s.type === "Blogger"'>
-                    <app-blogger-subscription-preview></app-blogger-subscription-preview>
+                <br>
+                <div class="row text-center" style="width:100%; margin: 0 auto; overflow: hidden;">
+                    <div class="col-md-3">
+                        <app-user-subscription-preview [subscription]='getUserSubscription(s?.id)'></app-user-subscription-preview>
+                    </div>
+                    <div class="col-md-5">
+                        <app-user-subscription-edit></app-user-subscription-edit>
+                    </div>
                 </div>
             </ng-template> 
         </mat-tab>
