@@ -8,11 +8,11 @@ import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { UserDataService } from 'src/app/@services/user-data.service';
 
 @Component({
-  selector: 'app-student-subscription-preview',
-  templateUrl: './student-subscription-preview.component.html',
-  styleUrls: ['./student-subscription-preview.component.scss']
+  selector: 'app-user-subscription-edit',
+  templateUrl: './user-subscription-edit.component.html',
+  styleUrls: ['./user-subscription-edit.component.scss']
 })
-export class StudentSubscriptionPreviewComponent implements OnInit {
+export class UserSubscriptionEditComponent implements OnInit {
   subscriptions: any;
   subscription: any;
   title: 'Edit Student Info';

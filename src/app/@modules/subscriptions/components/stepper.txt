@@ -1,32 +1,4 @@
-<br>
-<div class="text-center">
-    <div class="row"  style="width:100%; margin: 0 auto; overflow: hidden;">
-        <div class="col-md-3">
-            <img src="{{ subscription?.imgUrl}}" class="img-thumbnail img-fluid">
-            <br>
-            <br>
-            <h2 class="card-title text-center"  style="font-family: 'Alsandra';">Type: {{subscription?.type}}</h2>
-            <hr>
-           <div style="text-align: center">
-            <!-- <p> University: {{studentForm.value?.university || 'n/a'}}</p>
-            <hr>
-            <p> F№: {{studentForm.value?.facultyNumber || 'n/a'}}</p>
-            <hr>
-            <p> Speciality: {{studentForm.value?.speciality || 'n/a'}}</p>
-            <hr>
-            <p> Enrolled Courses: 100K</p> -->
-            <h5>Is Active: {{ subscription?.isActive }}</h5>
-            <hr>
-            <h5>Status: {{ subscription?.status }}</h5>
-            <hr>
-            <h5> Created On : {{subscription?.createdOn | date : 'dd-MMM-yyyy HH:MM:ss'}}</h5>
-            <hr>
-            <h5> Modified On : {{subscription?.modifiedOn | date : 'dd-MMM-yyyy HH:MM:ss'}}</h5>
-            <hr>
-           </div>
-        </div>
-        <div class="col-md-5">
-            <form [formGroup]='studentForm'>
+<form [formGroup]='studentForm'>
                 <mat-vertical-stepper [linear]="false">
                     <mat-step [stepControl]="studentForm.get('university')">
                         <ng-template matStepLabel>University</ng-template>
@@ -115,12 +87,3 @@
                     </mat-step>
                 </mat-vertical-stepper>
             </form>
-        </div>
-        <div class="col-md-3">
-            <p> Enrolled Courses: 100K</p>
-            <hr>
-            <p> Modified On : {{subscription?.modified_on}}</p>
-            <hr>
-        </div>
-    </div>
-</div>

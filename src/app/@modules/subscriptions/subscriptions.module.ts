@@ -3,21 +3,19 @@ import { NgModule } from '@angular/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
-import { BloggerSubscriptionPreviewComponent } from './components/blogger-subscription-preview/blogger-subscription-preview.component';
-import { StudentSubscriptionPreviewComponent } from './components/student-subscription-preview/student-subscription-preview.component';
 import { SubscriptionPreviewComponent } from './components/subscription-preview/subscription-preview.component';
-import { TeacherSubscriptionPreviewComponent } from './components/teacher-subscription-preview/teacher-subscription-preview.component';
 import { MySubscriptionsComponent } from './views/my-subscriptions/my-subscriptions.component';
 import { SubscriptionsRoutingModule } from './subscriptions-routing.module';
 import { SubscriptionsComponent } from './subscriptions.component';
+import { UserSubscriptionPreviewComponent } from './components/user-subscription-preview/user-subscription-preview.component';
+import { UserSubscriptionEditComponent } from './components/user-subscription-edit/user-subscription-edit.component';
 @NgModule({
   declarations: [
       SubscriptionsComponent,
       SubscriptionPreviewComponent,
       MySubscriptionsComponent,
-      StudentSubscriptionPreviewComponent,
-      TeacherSubscriptionPreviewComponent,
-      BloggerSubscriptionPreviewComponent
+      UserSubscriptionPreviewComponent,
+      UserSubscriptionEditComponent
     ],
   imports: [
     CommonModule,
