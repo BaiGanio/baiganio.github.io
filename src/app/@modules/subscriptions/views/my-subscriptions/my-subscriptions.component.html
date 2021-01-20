@@ -17,12 +17,54 @@
         <mat-tab class="mt" label="{{s?.type}} Id : {{s?.id}}">
             <ng-template matTabContent>
                 <br>
-                <div class="row text-center" style="width:100%; margin: 0 auto; overflow: hidden;">
+                <div class="row text-center" style="margin: 0 auto; overflow: hidden;">
                     <div class="col-md-3">
                         <app-user-subscription-preview [subscription]='getUserSubscription(s?.id)'></app-user-subscription-preview>
                     </div>
                     <div class="col-md-5">
                         <app-user-subscription-edit></app-user-subscription-edit>
+                    </div>
+                    <div class="col-md-4">
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width">
+                              <mat-label>Company (disabled)</mat-label>
+                              <input matInput disabled value="Google">
+                            </mat-form-field>
+                          
+                            <table class="example-full-width" cellspacing="0"><tr>
+                              <td><mat-form-field class="example-full-width">
+                                <mat-label>Nickname</mat-label>
+                                <input matInput placeholder="Ex. Shiny Soul">
+                              </mat-form-field></td>
+                              <td><mat-form-field class="example-full-width">
+                                <mat-label>Long Last Name That Will Be Truncated</mat-label>
+                                <input matInput>
+                              </mat-form-field></td>
+                            </tr></table>
+                          
+                            <p>
+                              <mat-form-field class="example-full-width">
+                                <mat-label>Address</mat-label>
+                                <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+                              </mat-form-field>
+                              <mat-form-field class="example-full-width">
+                                <mat-label>GitHub Profile Url</mat-label>
+                                <input matInput placeholder="Ex. https://github.com/baiganio">
+                              </mat-form-field>
+                            </p>
+                          
+                            <table class="example-full-width" cellspacing="0"><tr>
+                              <td><mat-form-field class="example-full-width">
+                                <mat-label>City</mat-label>
+                                <input matInput placeholder="Ex. San Francisco">
+                              </mat-form-field></td>
+                              <td><mat-form-field class="example-full-width">
+                                <mat-label>Postal Code</mat-label>
+                                <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
+                                <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                              </mat-form-field></td>
+                            </tr></table>
+                          </form>
                     </div>
                 </div>
             </ng-template> 

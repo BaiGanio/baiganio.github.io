@@ -185,13 +185,30 @@
                   </button>
                 </div>
               </div>
-              <div class="card col-md-12" style="background-color: rgba(253, 253, 0, 0.144)">
+              <div class="card col-md-6 mt-3" style="background-color: rgba(253, 253, 0, 0.144)">
                 <div class="card-body">
                   <h5 class="card-title">Modified on:</h5>
                   <hr>
                   <p>{{user?.modifiedOn | date :'hh:mm:ss a'}}</p>
                   <h3>{{user?.modifiedOn | date :'dd/MMM/yy'}}</h3>
                   <hr>
+                </div>
+              </div>
+              <div class=" col-md-6 col-sm-12 mt-3">
+                <div class="card card-additional">
+                  <div class="card-body">
+                    <h5 class="card-title">Craftsman Menu</h5>
+                    <hr style="border-color: black; width: 70%">
+                    <p class="card-text">Total Items:</p>
+                    <h1>0</h1>
+                    <hr>
+                    <button mat-raised-button
+                      color="primary" routerLink='/dashboard/craftsman-menu'><i class="fas fa-search"></i>
+                    </button>
+                    <button mat-raised-button
+                      color="primary" routerLink='/dashboard/craftsman-menu/courses'><i class="fas fa-search"> C</i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
