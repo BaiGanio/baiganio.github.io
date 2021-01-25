@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SubscriptionsModule } from 'src/app/@modules/subscriptions/subscriptions.module';
-import { UserViewModel } from 'src/app/@modules/users/models/user-view-model.module';
+import { UserView } from 'src/app/@modules/users/models/user-view';
 import { AuthService } from 'src/app/@services/auth.service';
 import { BackendService } from 'src/app/@services/backend.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
@@ -16,7 +16,7 @@ import { UserDataService } from 'src/app/@services/user-data.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   retryFunction = null;
-  user: UserViewModel;
+  user: UserView;
   loading = false;
   loginError = false;
   loginErrorMessage = '';

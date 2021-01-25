@@ -9,78 +9,64 @@ import 'rxjs/add/operator/catch';
 import * as moment from 'moment';
 
 import {
-    EditUserPropertiesInformationRequestAction,
-    EditUserContactInformationRequestAction,
-    EditUserPersonalInformationRequestAction,
-    EditUserSuccessAction,
-    EditUserFailureAction,
-    EditUserPropertiesMeterInformationRequestAction,
-    EditUserPropertiesQuoteInformationRequestAction,
-    EditUserPropertiesSubscriptionInformationRequestAction,
+    // EditUserPropertiesInformationRequestAction,
+    // EditUserContactInformationRequestAction,
+    // EditUserPersonalInformationRequestAction,
+    // EditUserSuccessAction,
+    // EditUserFailureAction,
+    // EditUserPropertiesMeterInformationRequestAction,
+    // EditUserPropertiesQuoteInformationRequestAction,
+    // EditUserPropertiesSubscriptionInformationRequestAction,
     UserActionTypes,
-    EditUserJourneyInformationRequestAction,
+    //EditUserJourneyInformationRequestAction,
 } from '../actions/user.actions';
 import { AppState } from '../app.state';
-import { UserService } from '../../services/user.service';
 
-import { LanguageType } from '../../model/enums/language-type.model';
-import { FhAlertService, AlertContext, AlertType } from '../../shared/fh-alert/fh-alert.service';
-import { Meter } from '../../model/meter.model';
-import { Quote } from '../../model/quote.model';
-import { CustomId } from '../../model/custom-id.model';
-import { Address } from '../../model/address.model';
-import { UserFull } from '../../model/user-full.model';
 import { map, catchError } from 'rxjs/operators';
 import { HttpErrorResponse } from '@angular/common/http';
-import { GenderType } from '../../model/enums/gender-type.model';
-import { TitleType } from '../../model/enums/title-type.model';
-import { MeterType } from '../../model/enums/meter-type.model';
-import { JourneyStatus } from '../../model/enums/journey-status.model';
-import { UserType } from '../../model/enums/user-type.model';
-import { JourneyStep } from '../../model/enums/journey-step.model';
 import { of } from 'rxjs';
+import { UserDataService } from 'src/app/@services/user-data.service';
 
 @Injectable()
 export class UserEffects {
     constructor(
         private _actions: Actions,
         private _store: Store<AppState>,
-        private _userService: UserService,
-        private _alertService: FhAlertService
+        private _userService: UserDataService,
     ) { }
 
-    @Effect()
-    EditUserPropertyInformation: Observable<Action> = this._actions
-        .ofType<EditUserPropertiesInformationRequestAction>(UserActionTypes.EDIT_USER_PROPERTY_INFORMATION_REQUEST)
-        .withLatestFrom(this._store.select(x => x.user.selectedUser))
-        .map(([action, selectedUser]) => this.editUserPropertyInformation(
-            action.payload.id,
-            action.payload.address,
-            action.payload.journey,
-            selectedUser))
-        .switchMap(selectedUser => this._userService.updateUser(selectedUser)
-            .pipe(
-                map(responce => new EditUserSuccessAction(responce)),
-                catchError((responce: HttpErrorResponse) => of(
-                    new EditUserFailureAction(responce.error.Message)))
-            ));
+    // @Effect()
+    // EditUserPropertyInformation: Observable<Action> = this._actions
+    //     .ofType<EditUserPropertiesInformationRequestAction>(UserActionTypes.EDIT_USER_PROPERTY_INFORMATION_REQUEST)
+    //     .withLatestFrom(this._store.select(x => x.user.selectedUser))
+    //     .map(([action, selectedUser]) => this.editUserPropertyInformation(
+    //         action.payload.id,
+    //         action.payload.address,
+    //         action.payload.journey,
+    //         selectedUser))
+    //     .switchMap(selectedUser => this._userService.updateUser(selectedUser)
+    //         .pipe(
+    //             map(responce => new EditUserSuccessAction(responce)),
+    //             catchError((responce: HttpErrorResponse) => of(
+    //                 new EditUserFailureAction(responce.error.Message)))
+    //         ));
 
-    @Effect()
-    EditUserContactInformation: Observable<Action> = this._actions
-        .ofType<EditUserContactInformationRequestAction>(UserActionTypes.EDIT_USER_CONTACT_INFORMATION_REQUEST)
-        .withLatestFrom(this._store.select(x => x.user.selectedUser))
-        .map(([action, selectedUser]) => this.editUserContactInformation(
-            action.payload.address,
-            action.payload.email,
-            action.payload.mobilePhoneNumber,
-            action.payload.preferedLanguage,
-            selectedUser))
-        .switchMap(selectedUser => this._userService.updateUser(selectedUser)
-            .pipe(
-                map(responce => new EditUserSuccessAction(responce)),
-                catchError((responce: HttpErrorResponse) => of(
-                    new EditUserFailureAction(responce.error.Message)))
-            ));
+    // @Effect()
+    // EditUserContactInformation: Observable<Action> = this._actions
+    //     .ofType<EditUserContactInformationRequestAction>(UserActionTypes.EDIT_USER_CONTACT_INFORMATION_REQUEST)
+    //     .withLatestFrom(this._store.select(x => x.user.selectedUser))
+    //     .map(([action, selectedUser]) => this.editUserContactInformation(
+    //         action.payload.address,
+    //         action.payload.email,
+    //         action.payload.mobilePhoneNumber,
+    //         action.payload.preferedLanguage,
+    //         selectedUser))
+    //     .switchMap(selectedUser => this._userService.updateUser(selectedUser)
+    //         .pipe(
+    //             map(responce => new EditUserSuccessAction(responce)),
+    //             catchError((responce: HttpErrorResponse) => of(
+    //                 new EditUserFailureAction(responce.error.Message)))
+    //         ));
 
     @Effect()
     EditUserPersonalInformation: Observable<Action> = this._actions
@@ -100,82 +86,82 @@ export class UserEffects {
                     new EditUserFailureAction(responce.error.Message)))
             ));
 
-    @Effect()
-    EditUserJourneyInformation: Observable<Action> = this._actions
-        .ofType<EditUserJourneyInformationRequestAction>(UserActionTypes.EDIT_JOURNEY_INFORMATION_REQUEST)
-        .withLatestFrom(this._store.select(x => x.user.selectedUser))
-        .map(([action, selectedUser]) => this.editJourneyInformation(
-            action.payload.journeyStatus,
-            action.payload.userType,
-            selectedUser
-        ))
-        .switchMap(selectedUser => this._userService.updateUser(selectedUser)
-            .pipe(
-                map(responce => new EditUserSuccessAction(responce)),
-                catchError((responce: HttpErrorResponse) => of(
-                    new EditUserFailureAction(responce.error.Message)))
-            ));
+    // @Effect()
+    // EditUserJourneyInformation: Observable<Action> = this._actions
+    //     .ofType<EditUserJourneyInformationRequestAction>(UserActionTypes.EDIT_JOURNEY_INFORMATION_REQUEST)
+    //     .withLatestFrom(this._store.select(x => x.user.selectedUser))
+    //     .map(([action, selectedUser]) => this.editJourneyInformation(
+    //         action.payload.journeyStatus,
+    //         action.payload.userType,
+    //         selectedUser
+    //     ))
+    //     .switchMap(selectedUser => this._userService.updateUser(selectedUser)
+    //         .pipe(
+    //             map(responce => new EditUserSuccessAction(responce)),
+    //             catchError((responce: HttpErrorResponse) => of(
+    //                 new EditUserFailureAction(responce.error.Message)))
+    //         ));
 
-    @Effect()
-    EditUserPropertyMeterInformation: Observable<Action> = this._actions
-        .ofType<EditUserPropertiesMeterInformationRequestAction>(UserActionTypes.EDIT_USER_PROPERTY_METER_INFORMATION_REQUEST)
-        .withLatestFrom(this._store.select(x => x.user.selectedUser))
-        .map(([action, selectedUser]) => this.editUserPropertyMeterInformation(
-            action.payload.meterId,
-            action.payload.meterType,
-            action.payload.pointNumber,
-            action.payload.serialNumber,
-            selectedUser
-        ))
-        .switchMap(selectedUser => this._userService.updateUser(selectedUser)
-            .pipe(
-                map(responce => new EditUserSuccessAction(responce)),
-                catchError((responce: HttpErrorResponse) => of(
-                    new EditUserFailureAction(responce.error.Message)))
-            ));
+    // @Effect()
+    // EditUserPropertyMeterInformation: Observable<Action> = this._actions
+    //     .ofType<EditUserPropertiesMeterInformationRequestAction>(UserActionTypes.EDIT_USER_PROPERTY_METER_INFORMATION_REQUEST)
+    //     .withLatestFrom(this._store.select(x => x.user.selectedUser))
+    //     .map(([action, selectedUser]) => this.editUserPropertyMeterInformation(
+    //         action.payload.meterId,
+    //         action.payload.meterType,
+    //         action.payload.pointNumber,
+    //         action.payload.serialNumber,
+    //         selectedUser
+    //     ))
+    //     .switchMap(selectedUser => this._userService.updateUser(selectedUser)
+    //         .pipe(
+    //             map(responce => new EditUserSuccessAction(responce)),
+    //             catchError((responce: HttpErrorResponse) => of(
+    //                 new EditUserFailureAction(responce.error.Message)))
+    //         ));
 
-    @Effect()
-    EditUserPropertyQuoteInformation = this._actions
-        .ofType<EditUserPropertiesQuoteInformationRequestAction>(UserActionTypes.EDIT_USER_PROPERTY_QUOTE_INFORMATION_REQUEST)
-        .withLatestFrom(this._store.select(x => x.user.selectedUser))
-        .map(([action, selectedUser]) => this.editUserPropertyQuoteInformation(
-            action.payload.quoteHashCode,
-            action.payload.networkOperatorNumber,
-            action.payload.nighttimeUnitRatePerKWh,
-            action.payload.nighttimeUsageAnnual,
-            action.payload.standingChargeMonthly,
-            action.payload.totalBillEstimateAnnual,
-            action.payload.totalSavingAnnual,
-            action.payload.unitRatePerKWh,
-            action.payload.validForYear,
-            action.payload.validFrom,
-            action.payload.validTo,
-            selectedUser
-        ))
-        .switchMap(selectedUser => this._userService.updateUser(selectedUser)
-            .pipe(
-                map(responce => new EditUserSuccessAction(responce)),
-                catchError((responce: HttpErrorResponse) => of(
-                    new EditUserFailureAction(responce.error.Message)))
-            ));
+    // @Effect()
+    // EditUserPropertyQuoteInformation = this._actions
+    //     .ofType<EditUserPropertiesQuoteInformationRequestAction>(UserActionTypes.EDIT_USER_PROPERTY_QUOTE_INFORMATION_REQUEST)
+    //     .withLatestFrom(this._store.select(x => x.user.selectedUser))
+    //     .map(([action, selectedUser]) => this.editUserPropertyQuoteInformation(
+    //         action.payload.quoteHashCode,
+    //         action.payload.networkOperatorNumber,
+    //         action.payload.nighttimeUnitRatePerKWh,
+    //         action.payload.nighttimeUsageAnnual,
+    //         action.payload.standingChargeMonthly,
+    //         action.payload.totalBillEstimateAnnual,
+    //         action.payload.totalSavingAnnual,
+    //         action.payload.unitRatePerKWh,
+    //         action.payload.validForYear,
+    //         action.payload.validFrom,
+    //         action.payload.validTo,
+    //         selectedUser
+    //     ))
+    //     .switchMap(selectedUser => this._userService.updateUser(selectedUser)
+    //         .pipe(
+    //             map(responce => new EditUserSuccessAction(responce)),
+    //             catchError((responce: HttpErrorResponse) => of(
+    //                 new EditUserFailureAction(responce.error.Message)))
+    //         ));
 
-    @Effect()
-    EditUserPropertySubscriptionInformation = this._actions
-        .ofType<EditUserPropertiesSubscriptionInformationRequestAction>(UserActionTypes.EDIT_USER_PROPERTY_SUBSCRIPTION_INFORMATION_REQUEST)
-        .withLatestFrom(this._store.select(x => x.user.selectedUser))
-        .map(([action, selectedUser]) => this.editUserPropertySubscriptionInformation(
-            action.payload.annualConsumption,
-            action.payload.nighttimeAnnualConsumption,
-            action.payload.subscriptionId,
-            action.payload.supplyEndDate,
-            action.payload.supplyStartDate,
-            selectedUser
-        ))
-        .switchMap(selectedUser => this._userService.updateUser(selectedUser).pipe(
-            map(responce => new EditUserSuccessAction(responce)),
-            catchError((responce: HttpErrorResponse) => of(
-                new EditUserFailureAction(responce.error.Message)))
-        ));
+    // @Effect()
+    // EditUserPropertySubscriptionInformation = this._actions
+    //     .ofType<EditUserPropertiesSubscriptionInformationRequestAction>(UserActionTypes.EDIT_USER_PROPERTY_SUBSCRIPTION_INFORMATION_REQUEST)
+    //     .withLatestFrom(this._store.select(x => x.user.selectedUser))
+    //     .map(([action, selectedUser]) => this.editUserPropertySubscriptionInformation(
+    //         action.payload.annualConsumption,
+    //         action.payload.nighttimeAnnualConsumption,
+    //         action.payload.subscriptionId,
+    //         action.payload.supplyEndDate,
+    //         action.payload.supplyStartDate,
+    //         selectedUser
+    //     ))
+    //     .switchMap(selectedUser => this._userService.updateUser(selectedUser).pipe(
+    //         map(responce => new EditUserSuccessAction(responce)),
+    //         catchError((responce: HttpErrorResponse) => of(
+    //             new EditUserFailureAction(responce.error.Message)))
+    //     ));
 
     @Effect({ dispatch: false })
     editUserFailure = this._actions

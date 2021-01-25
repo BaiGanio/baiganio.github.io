@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { EventBusService } from './event-bus.service';
-import { UserViewModel } from '../@modules/users/models/user-view-model.module';
+import { UserView } from '../@modules/users/models/user-view';
 import { BackendService } from './backend.service';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
@@ -17,7 +17,7 @@ export class UserDataService {
   ) { }
 
   setUserData(data: any): void {
-    this.userData = data as UserViewModel;
+    this.userData = data as UserView;
     this.eventBusService.emitUpdateUserData(this.userData);
   }
   getUserData() {

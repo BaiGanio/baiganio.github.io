@@ -1,4 +1,6 @@
-export class UserViewModel {
+import { UserSubscriptionPreview } from "./user-subscription-preview";
+
+export class UserView {
 
     Id: string;
     Username: string;
@@ -11,13 +13,13 @@ export class UserViewModel {
     ModifiedOn: Date;
     LeadSource: any;
     Image: string;
-    Subscriptions: Object[];
+    Subscriptions: UserSubscriptionPreview[];
     Roles: Object[];
   
     constructor(id?: string, username?: string, email?: string, password?: string,
         firstname?: string, lastname?: string, isEmailConfirmed?: boolean,
         typeOfUser?: any, createdOn?: Date, modifiedOn?: Date, leadSource?: any,
-        image?: string, roles?: Object[], subscriptions?: Object[]) {
+        image?: string, roles?: Object[], subscriptions?: UserSubscriptionPreview[]) {
         this.Id = id;
         this.Username = username;
         this.Email = email;
