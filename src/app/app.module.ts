@@ -36,7 +36,12 @@ import { AccessDeniedComponent } from './@pages/access-denied/access-denied.comp
 import { VideosComponent } from './@pages/videos/videos.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdCarouselBasicComponent } from './@components/ngbd-carousel-basic/ngbd-carousel-basic.component';
-
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffects } from './@store/effects/user.effects';
+import { userReducer } from './@store/reducers/user.reducer';
+import { LoadingEffects } from './@store/effects/loading.effects';
+import { loadingReducer } from './@store/reducers/loading.reducer';
 
 @NgModule({
   declarations: [
@@ -59,7 +64,7 @@ import { NgbdCarouselBasicComponent } from './@components/ngbd-carousel-basic/ng
     BgTeamComponent,
     RateComponent,
     VideosComponent,
-    NgbdCarouselBasicComponent,
+    NgbdCarouselBasicComponent
   ],
   imports: [
     BrowserModule,
@@ -89,6 +94,16 @@ import { NgbdCarouselBasicComponent } from './@components/ngbd-carousel-basic/ng
       backdropBorderRadius: '14px',
       fullScreenBackdrop: true
     }),
+    StoreModule.forRoot({
+      user: userReducer,
+      loading: loadingReducer,
+      // history: historyReducer
+    }),
+    EffectsModule.forRoot([
+      LoadingEffects,
+      UserEffects,
+      // HistoryEffects
+    ]),
   ],
   entryComponents: [
     TermsComponent,

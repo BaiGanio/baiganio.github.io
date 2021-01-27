@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/@services/auth.service';
 import { Router } from '@angular/router';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { UserDataService } from 'src/app/@services/user-data.service';
+import { Store } from '@ngrx/store';
+import { AppState, UserState } from 'src/app/@store/app.state';
+import { UserView } from '../users/models/user-view';
+import { SelectUserAction } from 'src/app/@store/actions/user.actions';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +14,7 @@ import { UserDataService } from 'src/app/@services/user-data.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  @Input() user: UserView;
   dashboardData: any;
   totalIssues: any;
   totalReceivedEmails = 0;
@@ -24,8 +29,12 @@ export class DashboardComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private userService: UserDataService,
-    private errorHandlerService: ErrorHandlerService
-  ) { }
+    private errorHandlerService: ErrorHandlerService,
+    // private store: Store<UserState>
+  ) {
+    // this.store.select(x => x.selectedUser)
+    // .subscribe((user: UserView) => this.user = user);
+   }
 
   ngOnInit() {
     this.loading = true;
@@ -33,7 +42,22 @@ export class DashboardComponent implements OnInit {
     const token = this.authService.decode();
     this.userId = token.sub;
    // console.log(this.userId);
+  //  this.store.subscribe(x => {
+  //   console.log(x.user.selectedUser)
+  //   this.storedUser = x.user.selectedUser;
+  //  });
+
+  //  this.userService.getUserById(this.userId)
+  //       // .finally(() => this.isLoading = false)
+  //       .subscribe((response: UserView) => this.store
+  //         .dispatch(new SelectUserAction(response)));
+
     this.getInitDashboardData();
+
+    // this.store.subscribe(x => {
+    //   console.log(x.user.selectedUser)
+    //   //this.storedUser = x.user.selectedUser;
+    //  });
   }
 
   getInitDashboardData() {

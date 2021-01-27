@@ -20,6 +20,7 @@ import { RoleGuard } from './role.guard';
 import { BloggersService } from '../@services/bloggers.service';
 import { YouTubeService } from '../@services/youtube.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { FhAlertService } from '../@shared/fh-alert/fh-alert-service';
 
 @NgModule({
   imports: [
@@ -44,7 +45,10 @@ import { JwtHelperService } from '@auth0/angular-jwt';
     TeacherService,
     BloggersService,
     YouTubeService,
-    ChecklistDatabase
+    ChecklistDatabase,
+
+// TODO: Should be in shared module
+    FhAlertService
   ]
 })
 export class CoreModule {

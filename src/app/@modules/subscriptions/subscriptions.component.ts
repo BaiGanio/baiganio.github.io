@@ -85,9 +85,9 @@ export class SubscriptionsComponent implements OnInit {
         this.userDataService.getUserByToken().subscribe(
             response => {
                 const u = {
-                    Id: response.body.id,
-                    Subscriptions: response.body.subscriptions,
-                    Roles: response.body.roles
+                    Id: response.Id,
+                    Subscriptions: response.Subscriptions,
+                    Roles: response.Roles
                 };
                 this.storedUser = u as UserView;
                 this.userDataService.setUserData(this.storedUser);

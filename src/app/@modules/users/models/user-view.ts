@@ -3,7 +3,6 @@ import { UserSubscriptionPreview } from "./user-subscription-preview";
 export class UserView {
 
     Id: string;
-    Username: string;
     Email: string;
     FirstName: string;
     LastName: string;
@@ -12,16 +11,15 @@ export class UserView {
     CreatedOn: Date;
     ModifiedOn: Date;
     LeadSource: any;
-    Image: string;
+    ImgUrl: string;
     Subscriptions: UserSubscriptionPreview[];
     Roles: Object[];
   
-    constructor(id?: string, username?: string, email?: string, password?: string,
+    constructor(id?: string, email?: string,
         firstname?: string, lastname?: string, isEmailConfirmed?: boolean,
         typeOfUser?: any, createdOn?: Date, modifiedOn?: Date, leadSource?: any,
         image?: string, roles?: Object[], subscriptions?: UserSubscriptionPreview[]) {
         this.Id = id;
-        this.Username = username;
         this.Email = email;
         this.FirstName = firstname;
         this.LastName = lastname;
@@ -30,7 +28,7 @@ export class UserView {
         this.CreatedOn = createdOn;
         this.ModifiedOn = modifiedOn;
         this.LeadSource = leadSource;
-        this.Image = image;
+        this.ImgUrl = image;
         this.Roles = roles;
         this.Subscriptions = subscriptions;
     }

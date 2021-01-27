@@ -5,11 +5,13 @@ import { BackendService } from './backend.service';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { environment } from 'src/environments/environment';
+import { Store } from '@ngrx/store';
+import { UserState } from '../@store/app.state';
 
 @Injectable()
 export class UserDataService {
   userData: any;
-
+  userData$: Observable<UserView>;
   constructor(
     private eventBusService: EventBusService,
     private backendService: BackendService,
@@ -48,7 +50,7 @@ export class UserDataService {
     return this.backendService.backendRequest('post', 'Users/ReportException', data, true);
   }
 
-  getUserByToken(): Observable<any> {
+  getUserByToken(): Observable<UserView> {
     return this.backendService.backendRequest('get', 'Identity', null, true);
   }
 

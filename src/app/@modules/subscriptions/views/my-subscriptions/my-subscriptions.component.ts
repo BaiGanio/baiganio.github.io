@@ -64,4 +64,12 @@ export class MySubscriptionsComponent implements OnInit {
     }
   }
 
+  getUserSubscriptionByType(type): any {
+    for (let subscription of this.subscriptions) {
+        if(subscription.type === type){
+            return subscription;
+        }
+    }
+  }
+
 }

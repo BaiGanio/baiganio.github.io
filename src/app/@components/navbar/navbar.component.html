@@ -42,16 +42,18 @@
           <!-- <button mat-button>
             <span class="badge">99 </span><i class="fa fa-bell"></i>
           </button> -->
-          <button mat-button [matMenuTriggerFor]="userMenu">
-            Welcome, {{ storedUser?.firstName !== null ? storedUser?.firstName + ' ' + storedUser?.lastName : storedUser?.email }}
-          </button>
-          <mat-menu #userMenu="matMenu">
-            <hr>
-            <button mat-menu-item (click)='logOut()'>
-              <b>Logout</b>
+          <div> 
+            <button mat-button [matMenuTriggerFor]="userMenu">
+              Welcome, {{ storedUser?.FirstName !== null ? storedUser?.FirstName + ' ' + storedUser?.LastName : storedUser?.Email }}
             </button>
-            <hr>
-          </mat-menu>
+            <mat-menu #userMenu="matMenu">
+              <hr>
+              <button mat-menu-item (click)='logOut()'>
+                <b>Logout</b>
+              </button>
+              <hr>
+            </mat-menu>
+          </div>
         </div>
         <ng-template #signBox>
           <a class="mr-3" routerLink='/login'>

@@ -21,7 +21,7 @@ export class AuthGuard implements CanActivate {
       this.storedUser = this.userService.getUserData();
       if (this.storedUser.id  === undefined) {
         this.userService.getUserByToken().subscribe(
-          response => { this.storedUser = response.body; },
+          response => { this.storedUser = response; },
           error => {
             this.router.navigate(['/login']);
             return false;

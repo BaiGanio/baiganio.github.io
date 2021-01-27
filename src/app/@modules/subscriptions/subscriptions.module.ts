@@ -9,13 +9,16 @@ import { SubscriptionsRoutingModule } from './subscriptions-routing.module';
 import { SubscriptionsComponent } from './subscriptions.component';
 import { UserSubscriptionPreviewComponent } from './components/user-subscription-preview/user-subscription-preview.component';
 import { UserSubscriptionEditComponent } from './components/user-subscription-edit/user-subscription-edit.component';
+
+import { BloggerSubscriptionPreviewComponent } from './components/blogger-subscription-preview/blogger-subscription-preview.component';
 @NgModule({
   declarations: [
       SubscriptionsComponent,
       SubscriptionPreviewComponent,
       MySubscriptionsComponent,
       UserSubscriptionPreviewComponent,
-      UserSubscriptionEditComponent
+      UserSubscriptionEditComponent,
+      BloggerSubscriptionPreviewComponent
     ],
   imports: [
     CommonModule,
