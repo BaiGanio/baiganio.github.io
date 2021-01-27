@@ -43,7 +43,7 @@ export class TeachersComponent implements OnInit {
     this.userService.getUserByToken()
       .subscribe(
           response => {
-              this.user = response.body;
+              this.user = response;
               console.log(this.user);
           },
           error => {

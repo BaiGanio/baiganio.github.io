@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable()
@@ -17,9 +17,10 @@ export class AuthService {
     }
   }
 
-  constructor(
-    public jwtHelper: JwtHelperService
-  ) {
+  // used for showing/hiding app content, used in app.component.ts
+  public authEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  constructor(public jwtHelper: JwtHelperService) {
     this.jwtHelper = new JwtHelperService();
     this.userToken = sessionStorage.getItem(this.tokenKeyName);
   }

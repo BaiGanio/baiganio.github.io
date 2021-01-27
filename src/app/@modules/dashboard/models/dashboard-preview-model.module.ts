@@ -1,4 +1,4 @@
-import { UserViewModel } from '../../users/models/user-view-model.module';
+import { UserView } from '../../users/models/user-view';
 
 export class DashboardPreviewModel {
 

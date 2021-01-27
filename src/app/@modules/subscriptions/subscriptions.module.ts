@@ -9,18 +9,26 @@ import { SubscriptionsRoutingModule } from './subscriptions-routing.module';
 import { SubscriptionsComponent } from './subscriptions.component';
 import { UserSubscriptionPreviewComponent } from './components/user-subscription-preview/user-subscription-preview.component';
 import { UserSubscriptionEditComponent } from './components/user-subscription-edit/user-subscription-edit.component';
+
+import { BloggerSubscriptionPreviewComponent } from './components/blogger-subscription-preview/blogger-subscription-preview.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BloggerSubscriptionDetailsComponent } from './components/blogger-subscription-details/blogger-subscription-details.component';
 @NgModule({
   declarations: [
       SubscriptionsComponent,
       SubscriptionPreviewComponent,
       MySubscriptionsComponent,
       UserSubscriptionPreviewComponent,
-      UserSubscriptionEditComponent
+      UserSubscriptionEditComponent,
+      BloggerSubscriptionPreviewComponent,
+      BloggerSubscriptionDetailsComponent
     ],
   imports: [
     CommonModule,
     SubscriptionsRoutingModule,
     AngularMaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.threeBounce,
       primaryColour: '#88078e',

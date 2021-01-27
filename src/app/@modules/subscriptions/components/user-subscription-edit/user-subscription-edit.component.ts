@@ -70,7 +70,7 @@ export class UserSubscriptionEditComponent implements OnInit {
   handleSuccess(response): void {
     this.loading = false;
     this.student = response.body;
-    console.log(this.student);
+    //console.log(this.student);
     this.userService.setUserData(this.student);
     this.clearForm();
   }
@@ -94,7 +94,7 @@ export class UserSubscriptionEditComponent implements OnInit {
       .subscribe(
         response => {
           this.subscriptions = response.body;
-          console.log(this.subscriptions);
+          //console.log(this.subscriptions);
           this.subscriptions.forEach(element => {
             if (element.type === 'Student') {
               this.subscription = element;

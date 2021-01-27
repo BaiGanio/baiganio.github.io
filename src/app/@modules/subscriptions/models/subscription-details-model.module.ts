@@ -1,4 +1,4 @@
-import { UserViewModel } from '../../users/models/user-view-model.module';
+import { UserViewModel } from '../../users/models/user-view';
 
 export class SubscriptionDetailsModel {
     Id: string;

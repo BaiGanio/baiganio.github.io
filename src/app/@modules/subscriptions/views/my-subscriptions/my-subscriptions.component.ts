@@ -40,12 +40,11 @@ export class MySubscriptionsComponent implements OnInit {
   }
 
   private getUserSubscriptions() {
-    this.isUserSubscribed = true;
     this.subscriptionService.getUserActiveSubscriptions()
         .subscribe(
             response => {
                 this.subscriptions = response.body;
-                // console.log(this.subscriptions.length);
+                //console.log(this.subscriptions);
             },
             error => {
                 this.errorHandlerService.handleRequestError(error);
@@ -59,6 +58,14 @@ export class MySubscriptionsComponent implements OnInit {
   getUserSubscription(sId: string): any {
     for (let subscription of this.subscriptions) {
         if(subscription.id === sId){
+            return subscription;
+        }
+    }
+  }
+
+  getUserSubscriptionByType(type): any {
+    for (let subscription of this.subscriptions) {
+        if(subscription.type === type){
             return subscription;
         }
     }

@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { EventBusService } from './event-bus.service';
-import { UserViewModel } from '../@modules/users/models/user-view-model.module';
+import { UserView } from '../@modules/users/models/user-view';
 import { BackendService } from './backend.service';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { environment } from 'src/environments/environment';
+import { Store } from '@ngrx/store';
+import { UserState } from '../@store/app.state';
 
 @Injectable()
 export class UserDataService {
   userData: any;
-
+  userData$: Observable<UserView>;
   constructor(
     private eventBusService: EventBusService,
     private backendService: BackendService,
@@ -17,7 +19,7 @@ export class UserDataService {
   ) { }
 
   setUserData(data: any): void {
-    this.userData = data as UserViewModel;
+    this.userData = data as UserView;
     this.eventBusService.emitUpdateUserData(this.userData);
   }
   getUserData() {

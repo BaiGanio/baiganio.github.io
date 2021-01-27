@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserViewModel } from 'src/app/@modules/users/models/user-view-model.module';
+import { UserView } from 'src/app/@modules/users/models/user-view';
 import { CoursePreviewModel } from 'src/app/@modules/courses/models/course-preview-model.module';
 import { StudentService } from 'src/app/@services/student.service';
 import { CoursesService } from 'src/app/@services/courses.service';
@@ -11,7 +11,7 @@ import { StudentPreviewModel } from 'src/app/@modules/students/models/student-pr
   styleUrls: ['./scores.component.scss']
 })
 export class ScoresComponent implements OnInit {
-  storedUser = new UserViewModel();
+  storedUser = new UserView();
   student = new StudentPreviewModel();
   courses = new Array<CoursePreviewModel>();
   studentCourses = new Array<CoursePreviewModel>();

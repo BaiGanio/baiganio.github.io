@@ -17,12 +17,20 @@
         <mat-tab class="mt" label="{{s?.type}} Id : {{s?.id}}">
             <ng-template matTabContent>
                 <br>
-                <div class="row text-center" style="width:100%; margin: 0 auto; overflow: hidden;">
-                    <div class="col-md-3">
+                <div class="row" style="margin: 0 auto; overflow: hidden;">
+                    <div class="col-md-3 text-center">
                         <app-user-subscription-preview [subscription]='getUserSubscription(s?.id)'></app-user-subscription-preview>
                     </div>
+                    <div class="col-md-4">
+                        <div *ngIf='s?.type === "Blogger"'>
+                            <app-blogger-subscription-preview></app-blogger-subscription-preview>
+
+                        </div>
+                    </div>
                     <div class="col-md-5">
-                        <app-user-subscription-edit></app-user-subscription-edit>
+                        <div *ngIf='s?.type === "Blogger"'>
+                            <app-blogger-subscription-details></app-blogger-subscription-details>
+                        </div> 
                     </div>
                 </div>
             </ng-template> 

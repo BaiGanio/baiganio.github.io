@@ -1,4 +1,4 @@
-export class UserViewModel {
+export class SubscriptionViewModel {
 
     Id: string;
     Username: string;

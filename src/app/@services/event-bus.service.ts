@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { UserViewModel } from '../@modules/users/models/user-view-model.module';
+import { UserView } from '../@modules/users/models/user-view';
 /**
  * @EventBusService used for connections between modules
  */
@@ -8,7 +8,7 @@ export class EventBusService {
   public changeRoute: EventEmitter<any>;
   public retryRequest: EventEmitter<any>;
   public unknownError: EventEmitter<any>;
-  public updateUserData: EventEmitter<UserViewModel>;
+  public updateUserData: EventEmitter<UserView>;
   public fetchedDashboardData: EventEmitter<any>;
 
   constructor() {

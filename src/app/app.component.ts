@@ -15,6 +15,7 @@ import { SignalRService } from "./@services/signalR.service";
 export class AppComponent {
   title = "BaiGanio";
   authToken: any;
+  public isAuthenticated: boolean = false;
   constructor(
     private backendService: BackendService,
     private authService: AuthService,
@@ -24,6 +25,12 @@ export class AppComponent {
   ) {}
 
   ngOnInit() {
+     //used in app.component.html to show/hide app content
+     this.isAuthenticated = this.authService.isAuthenticated();
+     this.authService.authEmitter.subscribe((isAuthenticated: boolean) => {
+       this.isAuthenticated = isAuthenticated;
+     });
+     
     this.backendService.getClientAccessToken().subscribe(
       (response) => {
         this.authService.authToken = response.access_token;
