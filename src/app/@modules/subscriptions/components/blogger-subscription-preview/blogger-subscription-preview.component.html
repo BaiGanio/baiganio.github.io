@@ -1,3 +1,4 @@
+<ngx-loading [show]="loading"></ngx-loading>
 <div class="text-left">
     <form [formGroup]="formData" (ngSubmit)="onSubmit(formData.value)" class="example-form">
         <table class="example-full-width" cellspacing="0">
@@ -27,7 +28,7 @@
             <mat-error *ngIf="checkError('nickname', 'maxlength')">Max 4 digits after decimal point!</mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <mat-label>Email</mat-label>
+            <mat-label>Email for contacts</mat-label>
             <input matInput name="email" formControlName="email">
             <!-- <mat-error *ngIf="checkError('email', 'required')">This field is required!</mat-error> -->
         </mat-form-field>

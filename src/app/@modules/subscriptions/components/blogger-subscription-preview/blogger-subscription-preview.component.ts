@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Blogger } from 'src/app/@modules/bloggers/models/blogger.model';
+import { AuthService } from 'src/app/@services/auth.service';
 import { BloggersService } from 'src/app/@services/bloggers.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 
@@ -12,9 +13,11 @@ import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 export class BloggerSubscriptionPreviewComponent implements OnInit {
   formData: FormGroup;
   blogger: any;
+  loading = false;
   constructor(
     private bloggerService: BloggersService,
-    private errorHandlerService: ErrorHandlerService
+    private errorHandlerService: ErrorHandlerService,
+    private authService: AuthService,
   ) { 
     this.formData = new FormGroup({
       nickname: new FormControl(''),
@@ -25,7 +28,8 @@ export class BloggerSubscriptionPreviewComponent implements OnInit {
   }
 
   ngOnInit(): void { 
-
+    if (this.authService.isAuthenticated() && this.blogger === undefined) {
+    
     this.bloggerService.getByToken()
       .subscribe(
           response => {
@@ -36,13 +40,12 @@ export class BloggerSubscriptionPreviewComponent implements OnInit {
           },
           () => {
               this.prepForm();
-          }
+          }  
       );
-   
+    }
   }
 
   private prepForm(){
-
     this.formData = new FormGroup({
       nickname: new FormControl(this.blogger?.nickname, Validators.maxLength(20)),
       email: new FormControl(this.blogger?.email, Validators.email),
@@ -57,8 +60,41 @@ export class BloggerSubscriptionPreviewComponent implements OnInit {
   }
 
   onSubmit(data){
-    console.log(data);
+    this.loading = true;
+
+    this.bloggerService.update({ Nickname: data.nickname, Email: data.email, FacebookUrl: data.facebookUrl, GitHubUrl: data.githubUrl })
+    .subscribe(
+        () => {
+          this.getByToken();
+        },
+        error => {
+            this.errorHandlerService.handleRequestError(error);
+        },
+        () => {
+            this.formData.reset();
+            this.prepForm();
+            this.loading = false;
+        }
+    );
+    
   }
+
+
+  private getByToken() {
+    this.bloggerService.getByToken()
+    .subscribe(
+        response => {
+          this.blogger = response.body;
+        },
+        error => {
+            this.errorHandlerService.handleRequestError(error);
+        },
+        () => {
+            this.prepForm();
+        }  
+    );
+  }
+
   public checkError = (controlName: string, errorName: string) => {
     return this.formData.controls[controlName].hasError(errorName);
   }

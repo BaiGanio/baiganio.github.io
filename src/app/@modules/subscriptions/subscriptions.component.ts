@@ -50,7 +50,7 @@ export class SubscriptionsComponent implements OnInit {
         if (this.route.snapshot.params.token) {
             this.checkRouteParameters();
         }
-        if (this.authService.isAuthenticated()) {
+        if (this.authService.isAuthenticated() && this.storedUser === undefined) {
             this.storedUserInit();
         }
         this.subscriptionsInit();

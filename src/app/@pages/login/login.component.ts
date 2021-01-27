@@ -72,22 +72,22 @@ export class LoginComponent implements OnInit {
         
 
 
-        this.userDataService.getUserByToken()
-          .subscribe(
-              response => {
-                this.user = response;
-                console.log(this.user);
-                 let jj: UserView;
-                this.store.dispatch(new InitializeUserAction(this.user));
+        // this.userDataService.getUserByToken()
+        //   .subscribe(
+        //       response => {
+        //         this.user = response;
+        //         console.log(this.user);
+        //          let jj: UserView;
+        //         this.store.dispatch(new InitializeUserAction(this.user));
               
-              },
-              error => {
-                  console.log(error);
-              },
-              () => {
+        //       },
+        //       error => {
+        //           console.log(error);
+        //       },
+        //       () => {
                
-              }
-          );
+        //       }
+        //   );
         this.router.navigate(['/dashboard']);
       },
       error => {

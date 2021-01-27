@@ -12,6 +12,7 @@ import { UserSubscriptionEditComponent } from './components/user-subscription-ed
 
 import { BloggerSubscriptionPreviewComponent } from './components/blogger-subscription-preview/blogger-subscription-preview.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BloggerSubscriptionDetailsComponent } from './components/blogger-subscription-details/blogger-subscription-details.component';
 @NgModule({
   declarations: [
       SubscriptionsComponent,
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       MySubscriptionsComponent,
       UserSubscriptionPreviewComponent,
       UserSubscriptionEditComponent,
-      BloggerSubscriptionPreviewComponent
+      BloggerSubscriptionPreviewComponent,
+      BloggerSubscriptionDetailsComponent
     ],
   imports: [
     CommonModule,

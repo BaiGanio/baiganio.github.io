@@ -30,10 +30,9 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() { 
-    if(this.authService.isAuthenticated()) {
+    if(this.authService.isAuthenticated() && this.storedUser === undefined) {
       this.userDataService.getUserByToken().subscribe(
         response => {
-            console.log(response.body);
             const u = {
                 Id: response.body.id,
                 FirstName: response.body.firstName,
@@ -58,7 +57,7 @@ export class NavbarComponent implements OnInit {
       //      this.store.subscribe(x => {
       //       this.storedUser = x.user.selectedUser;
       //           });
-      // console.log(this.storedUser);
+       console.log(this.storedUser);
     }
   }
 
