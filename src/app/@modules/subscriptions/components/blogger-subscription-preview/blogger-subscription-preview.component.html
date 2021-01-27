@@ -1,47 +1,57 @@
 <div class="text-left">
-    <form class="example-form">
+    <form [formGroup]="formData" (ngSubmit)="onSubmit(formData.value)" class="example-form">
         <table class="example-full-width" cellspacing="0">
             <tr>
                 <td>
                     <mat-form-field class="example-full-width">
                         <mat-label>Full Name:</mat-label>
-                        <input matInput disabled value="Me, Myself & I">
+                        <input matInput disabled value="{{blogger?.firstName}} {{blogger?.lastName}}">
                     </mat-form-field>
                 </td>
+               
+            </tr>
+            <!-- <tr>
                 <td>
                     <mat-form-field class="example-full-width">
                         <mat-label>User ID:</mat-label>
-                        <input matInput disabled value="hash-mash-here">
+                        <input matInput disabled value="{{blogger?.userId}}">
                     </mat-form-field>
                 </td>
-            </tr>
+            </tr> -->
         </table>
 
         <mat-form-field class="example-full-width">
             <mat-label>Nickname</mat-label>
-            <input matInput placeholder="Ex: Shiny Me">
+            <input matInput name="nickname" formControlName="nickname">
+            <!-- <mat-error *ngIf="checkError('nickname', 'required')">This field is required!</mat-error> -->
+            <mat-error *ngIf="checkError('nickname', 'maxlength')">Max 4 digits after decimal point!</mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="Ex: my-cool-me@domain.com">
+            <input matInput name="email" formControlName="email">
+            <!-- <mat-error *ngIf="checkError('email', 'required')">This field is required!</mat-error> -->
         </mat-form-field>
         <mat-form-field class="example-full-width">
             <mat-label>Facebook Profile Url</mat-label>
-            <input matInput placeholder="Ex: https://www.facebook.com/profile.php?id=100000862476257">
+            <input matInput  name="facebookUrl" formControlName="facebookUrl">
         </mat-form-field>
         <mat-form-field class="example-full-width">
             <mat-label>GitHub Profile Url</mat-label>
-            <input matInput placeholder="Ex: https://github.com/baiganio">
-        </mat-form-field>
-        <button  
+            <input matInput  name="githubUrl" formControlName="githubUrl">
+        </mat-form-field>  
+        <button 
+            type="submit" 
             mat-raised-button
-            color="primary"> 
+            color="primary"
+            [disabled]="!formData.valid || !formData.dirty"> 
             Update
         </button>
-        <button  
+        <button type="button" *ngIf='formData.dirty'  
             mat-raised-button
-            color="informational"> 
+            color="informational"
+            (click)='onDismiss()'> 
             Dismiss
         </button>
+     
     </form>
 </div>

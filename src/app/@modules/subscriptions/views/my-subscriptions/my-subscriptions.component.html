@@ -22,11 +22,16 @@
                         <app-user-subscription-preview [subscription]='getUserSubscription(s?.id)'></app-user-subscription-preview>
                     </div>
                     <div class="col-md-4">
-                      <app-blogger-subscription-preview></app-blogger-subscription-preview>
+                        <div *ngIf='s?.type === "Blogger"'>
+                            <app-blogger-subscription-preview></app-blogger-subscription-preview>
+
+                        </div>
                     </div>
                     <div class="col-md-5">
-                        Some info about posts, comments...
-                        <!-- <app-user-subscription-edit></app-user-subscription-edit> -->
+                        <div *ngIf='s?.type === "Blogger"'>
+                            <app-blogger-subscription-preview></app-blogger-subscription-preview>
+
+                        </div> 
                     </div>
                 </div>
             </ng-template> 

@@ -40,12 +40,11 @@ export class MySubscriptionsComponent implements OnInit {
   }
 
   private getUserSubscriptions() {
-    this.isUserSubscribed = true;
     this.subscriptionService.getUserActiveSubscriptions()
         .subscribe(
             response => {
                 this.subscriptions = response.body;
-                // console.log(this.subscriptions.length);
+                console.log(this.subscriptions);
             },
             error => {
                 this.errorHandlerService.handleRequestError(error);

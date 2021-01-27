@@ -84,10 +84,11 @@ export class SubscriptionsComponent implements OnInit {
     private storedUserInit() {
         this.userDataService.getUserByToken().subscribe(
             response => {
+                console.log(response.body.Id);
                 const u = {
-                    Id: response.Id,
-                    Subscriptions: response.Subscriptions,
-                    Roles: response.Roles
+                    Id: response.body.id,
+                    Subscriptions: response.body.subscriptions,
+                    Roles: response.body.roles
                 };
                 this.storedUser = u as UserView;
                 this.userDataService.setUserData(this.storedUser);
@@ -232,6 +233,7 @@ export class SubscriptionsComponent implements OnInit {
     showPreview(sId: string) : boolean{
         let result = false;
         let subs = this.storedUser?.Subscriptions;
+        console.log(this.storedUser);
         if(subs){
             subs.forEach(element => {
                 if(element.id === sId && element.status === "WaitingForConfirmation"){

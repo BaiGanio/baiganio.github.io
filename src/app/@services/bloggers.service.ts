@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BackendService } from './backend.service';
 import { Observable } from 'rxjs';
+import { Blogger } from '../@modules/bloggers/models/blogger.model';
 
 @Injectable()
 export class BloggersService {
@@ -13,9 +14,9 @@ export class BloggersService {
   getById(id): Observable<any> {
     return this.backendService.backendRequest('get', 'Bloggers/' + id, null);
   }
-//   getCourseProgress(courseId: string): Observable<any> {
-//     return this.backendService.backendRequest('get', 'Courses/Progress/' + courseId, null, true);
-//   }
+  getByToken(): Observable<any> {
+    return this.backendService.backendRequest('get', 'Bloggers/GetByUserId', null, true);
+  }
 //   createCourse(data: any): Observable<any> {
 //     return this.backendService.backendRequest('post', 'Courses/Create', data, true);
 //   }
