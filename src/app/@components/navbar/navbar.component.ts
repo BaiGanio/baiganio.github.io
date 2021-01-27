@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/@services/auth.service';
 import { UserDataService } from 'src/app/@services/user-data.service';
 import { AppState, UserState } from 'src/app/@store/app.state';
 import { selectUser } from 'src/app/@store/selectors/user.selector';
+import { InitializeUserAction } from 'src/app/@store/actions/user.actions';
 // import { UserDataService } from 'src/app/@services/user-data.service';
 // import { AuthService } from 'src/app/@services/auth.service';
 
@@ -26,20 +27,38 @@ export class NavbarComponent implements OnInit {
     private userDataService: UserDataService,
     private store: Store<AppState>
   ) {
-    this.store.pipe(select(selectUser))
-      .subscribe((state => this.storedUser = state));
-        // // // this.store.pipe(select(selectUser))
-        //         // //   .subscribe((state => jj = state));
-      
-        //           console.log(jj);
   }
 
   ngOnInit() { 
     if(this.authService.isAuthenticated()) {
-           this.store.subscribe(x => {
-            this.storedUser = x.user.selectedUser;
-                });
-      console.log(this.storedUser);
+      this.userDataService.getUserByToken().subscribe(
+        response => {
+            console.log(response.body);
+            const u = {
+                Id: response.body.id,
+                FirstName: response.body.firstName,
+                LastName: response.body.lastName,
+                Email: response.body.email,
+                Roles: response.body.roles
+            };
+             this.storedUser = u as UserView;
+            // this.store.dispatch(new InitializeUserAction(response.body));
+            // this.userDataService.setUserData(this.storedUser);
+        },
+        error => {
+         // this.errorHandlerService.handleRequestError(error);
+        },
+        () => {
+          // this.store.pipe(select(selectUser))
+          //   .subscribe((state => this.storedUser = state));
+          //   alert(this.storedUser);
+          
+        }
+    );
+      //      this.store.subscribe(x => {
+      //       this.storedUser = x.user.selectedUser;
+      //           });
+      // console.log(this.storedUser);
     }
   }
 

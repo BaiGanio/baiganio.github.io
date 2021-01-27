@@ -84,7 +84,6 @@ export class SubscriptionsComponent implements OnInit {
     private storedUserInit() {
         this.userDataService.getUserByToken().subscribe(
             response => {
-                console.log(response.body.Id);
                 const u = {
                     Id: response.body.id,
                     Subscriptions: response.body.subscriptions,
@@ -233,7 +232,6 @@ export class SubscriptionsComponent implements OnInit {
     showPreview(sId: string) : boolean{
         let result = false;
         let subs = this.storedUser?.Subscriptions;
-        console.log(this.storedUser);
         if(subs){
             subs.forEach(element => {
                 if(element.id === sId && element.status === "WaitingForConfirmation"){
