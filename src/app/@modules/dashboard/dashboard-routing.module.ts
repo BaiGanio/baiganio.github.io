@@ -1,11 +1,9 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { DashboardComponent } from './dashboard.component';
-import { NotificationsComponent } from './views/notifications/notifications.component';
-import { ReportedIssuesComponent } from './views/reported-issues/reported-issues.component';
-import { InClassComponent } from './views/in-class/in-class.component';
-import { ScoresComponent } from './views/scores/scores.component';
-import { CraftsmanMenuComponent } from './views/craftsman-menu/craftsman-menu.component';
+import { NotificationsComponent } from './pages/notifications/notifications.component';
+import { ReportedIssuesComponent } from './pages/reported-issues/reported-issues.component';
+import { CraftsmanMenuComponent } from './pages/craftsman-menu/craftsman-menu.component';
 import { CoursesDetailsComponent } from '../courses/views/courses-details/courses-details.component';
 
 const routes: Routes = [
@@ -20,12 +18,6 @@ const routes: Routes = [
   },
   {
     path: 'reported-issues', component: ReportedIssuesComponent
-  },
-  {
-    path: 'in-class', component: InClassComponent
-  },
-  {
-    path: 'scores', component: ScoresComponent
   },
   { path: 'craftsman-menu', component: CraftsmanMenuComponent },
   { path: 'craftsman-menu/courses', component: CoursesDetailsComponent },

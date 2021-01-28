@@ -14,11 +14,13 @@ export class UserView {
     ImgUrl: string;
     Subscriptions: UserSubscriptionPreview[];
     Roles: Object[];
+    Data: Object;
   
     constructor(id?: string, email?: string,
         firstname?: string, lastname?: string, isEmailConfirmed?: boolean,
         typeOfUser?: any, createdOn?: Date, modifiedOn?: Date, leadSource?: any,
-        image?: string, roles?: Object[], subscriptions?: UserSubscriptionPreview[]) {
+        image?: string, roles?: Object[], subscriptions?: UserSubscriptionPreview[],
+        data?: Object) {
         this.Id = id;
         this.Email = email;
         this.FirstName = firstname;
@@ -31,5 +33,6 @@ export class UserView {
         this.ImgUrl = image;
         this.Roles = roles;
         this.Subscriptions = subscriptions;
+        this.Data = data;
     }
   }

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './polararea.component.html'
 })
 export class PolarareaComponent implements OnInit {
-  url = 'https://localhost:44344/api/fake/Chart/';
+  url = 'https://localhost:44364/api/fake/Chart/';
   data: any;
   Player = [];
   Run = [];

@@ -9,7 +9,7 @@ import * as Chart from 'chart.js';
 })
 export class LinechartComponent implements OnInit {
 
-  url = 'https://localhost:44344/api/fake/Chart/';
+  url = 'https://localhost:44364/api/fake/Chart/';
   data: any;
   Player = [];
   Run = [];
