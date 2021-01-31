@@ -1,6 +1,9 @@
+import { name, version } from '../../package.json';
 export const environment = {
   production: false,
   env: 'test',
+  name: name,
+  version: version,
   appUrl: 'https://test-baiganio.azurewebsites.net/',
   apiUrl: 'https://test-bgapi.azurewebsites.net/api/',
   idsUrl: 'https://ids4core20.azurewebsites.net/',
@@ -9,18 +12,18 @@ export const environment = {
   IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
   bgapiSignalRNotyfyHub: 'https://test-bgapi.azurewebsites.net/notify',
   identityServerClientCredentials: {
-      client_id: 'baiganio-test-client',
-      client_secret: 'test',
-      scope: 'scope.bgapi-test',
-      grant_type: 'client_credentials'
+    client_id: 'baiganio-test-client',
+    client_secret: 'test',
+    scope: 'scope.bgapi-test',
+    grant_type: 'client_credentials'
   },
   identityServerUserCredentials: {
-      client_id: 'baiganio-test-user',
-      client_secret: 'test',
-      scope: 'scope.bgapi-test',
-      grant_type: 'password'
+    client_id: 'baiganio-test-user',
+    client_secret: 'test',
+    scope: 'scope.bgapi-test',
+    grant_type: 'password'
   },
-  apiKeys:{
+  apiKeys: {
     youtube: 'undefined'
   },
   routesRequiringUserToken: [
