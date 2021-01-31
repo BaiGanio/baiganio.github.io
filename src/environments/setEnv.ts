@@ -6,6 +6,7 @@ const environmentFileContent = `
   import { name, version } from '../../package.json';
   export const environment = {
     production: true,
+    env: 'production',
     name: name,
     version: version,
     appUrl: 'https://baiganio.github.io/',

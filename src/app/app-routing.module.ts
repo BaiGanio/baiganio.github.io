@@ -9,7 +9,8 @@ import { ServerAlertComponent } from './@pages/server-alert/server-alert.compone
 import { RoleGuard } from './@core/role.guard';
 import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
-import { VideosComponent } from './@pages/videos/videos.component';
+import { PlaylistItemsComponent } from './@pages/playlist-items/playlist-items.component';
+import { PlaylistsComponent } from './@pages/playlists/playlists.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'bg-team', component: BgTeamComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'videos', component: VideosComponent },
+  { path: 'videos', component: PlaylistsComponent },
+  { path: 'playlist-items', component: PlaylistItemsComponent },
   {
     path: 'subscriptions',
     loadChildren : () => import('./@modules/subscriptions/subscriptions.module').then(m => m.SubscriptionsModule)

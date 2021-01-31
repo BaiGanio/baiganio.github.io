@@ -33,7 +33,6 @@ import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 import { RateComponent } from './@components/errors/rate/rate.component';
 import { BloggersModule } from './@modules/bloggers/bloggers.module';
 import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
-import { VideosComponent } from './@pages/videos/videos.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdCarouselBasicComponent } from './@components/ngbd-carousel-basic/ngbd-carousel-basic.component';
 import { StoreModule } from '@ngrx/store';
@@ -42,6 +41,9 @@ import { UserEffects } from './@store/effects/user.effects';
 import { userReducer } from './@store/reducers/user.reducer';
 import { LoadingEffects } from './@store/effects/loading.effects';
 import { loadingReducer } from './@store/reducers/loading.reducer';
+import { PlaylistItemsComponent } from './@pages/playlist-items/playlist-items.component';
+import {YouTubePlayerModule} from '@angular/youtube-player';
+import { PlaylistsComponent } from './@pages/playlists/playlists.component';
 
 @NgModule({
   declarations: [
@@ -63,10 +65,12 @@ import { loadingReducer } from './@store/reducers/loading.reducer';
     BadRequestComponent,
     BgTeamComponent,
     RateComponent,
-    VideosComponent,
-    NgbdCarouselBasicComponent
+    PlaylistsComponent,
+    NgbdCarouselBasicComponent,
+    PlaylistItemsComponent
   ],
   imports: [
+    YouTubePlayerModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
