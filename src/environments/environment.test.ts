@@ -1,6 +1,6 @@
-
 export const environment = {
   production: false,
+  env: 'test',
   appUrl: 'https://test-baiganio.azurewebsites.net/',
   apiUrl: 'https://test-bgapi.azurewebsites.net/api/',
   idsUrl: 'https://ids4core20.azurewebsites.net/',
