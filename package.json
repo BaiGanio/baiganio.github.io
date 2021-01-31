@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~11.0.5",
     "@angular/platform-browser-dynamic": "~11.0.5",
     "@angular/router": "~11.0.5",
+    "@angular/youtube-player": "^11.1.1",
     "@auth0/angular-jwt": "^2.1.2",
     "@ng-bootstrap/ng-bootstrap": "^8.0.1",
     "@ngrx/effects": "^10.1.2",
