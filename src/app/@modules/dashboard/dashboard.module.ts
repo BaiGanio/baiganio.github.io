@@ -15,7 +15,6 @@ import { CraftsmanMenuComponent } from './pages/craftsman-menu/craftsman-menu.co
 import { EditCourseComponent } from '../courses/components/edit-course/edit-course.component';
 import { TeacherCraftsmanViewComponent } from './views/teacher-craftsman-view/teacher-craftsman-view.component';
 import { StudentCraftsmanViewComponent } from './views/student-craftsman-view/student-craftsman-view.component';
-import { BloggerComponent } from '../bloggers/views/blogger/blogger.component';
 import { BloggerCraftsmanViewComponent } from './views/blogger-craftsman-view/blogger-craftsman-view.component';
 @NgModule({
   declarations: [
