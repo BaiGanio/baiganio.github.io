@@ -8,14 +8,12 @@ export interface AppState {
 }
 
 export const userFeatureKey = 'user';
-
-export interface UserState {
-    selectedUser: UserView | null;
-}
+export interface UserState { selectedUser: UserView | null }
 
 export const historyFeatureKey = 'history';
 export interface HistoryState {
     users: Audit[];
     subscriptions: Audit[];
     courses: Audit[];
+    bloggers: Audit[];
 }

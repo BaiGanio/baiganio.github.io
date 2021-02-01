@@ -3,11 +3,36 @@ import { ActivatedRoute } from '@angular/router';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { YouTubeService } from 'src/app/@services/youtube.service';
 import { environment } from 'src/environments/environment';
-import { PlaylistItem } from './models/playlist-item.model';
+import { PlaylistItem } from '../models/playlist-item.model';
 
 @Component({
   selector: 'app-playlist-items',
-  templateUrl: './playlist-items.component.html',
+  template:
+  `
+    <ngx-loading [show]="loading"></ngx-loading>
+    <h1 class="title">Videos</h1>
+    <hr>
+    <br>
+    <h2 *ngIf='loading'>Please wait! Fetching data from the server...</h2>
+
+    <div class="row text-center">
+        <div *ngFor='let item of playListItems' class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <youtube-player videoId="{{item.id}}"></youtube-player>
+                    <br><br>
+                    <h3>{{ item.title }}</h3>
+                    <hr>
+                    <h5>Published @ {{ item.publishedAt | date :'dd-MMMM-yyyy' }}</h5>
+                    <br>
+                    <button mat-raised-button color="primary" (click)="openPlaylistItem(item.id)">
+                        Watch the video on YouTube
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+  `,
   styleUrls: ['./playlist-items.component.scss']
 })
 export class PlaylistItemsComponent implements OnInit {

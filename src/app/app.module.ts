@@ -41,8 +41,7 @@ import { UserEffects } from './@store/effects/user.effects';
 import { userReducer } from './@store/reducers/user.reducer';
 import { LoadingEffects } from './@store/effects/loading.effects';
 import { loadingReducer } from './@store/reducers/loading.reducer';
-import { PlaylistItemsComponent } from './@pages/playlist-items/playlist-items.component';
-import {YouTubePlayerModule} from '@angular/youtube-player';
+import { PlaylistItemsComponent } from './@pages/playlists/playlist-items/playlist-items.component';
 import { PlaylistsComponent } from './@pages/playlists/playlists.component';
 
 @NgModule({
@@ -70,7 +69,6 @@ import { PlaylistsComponent } from './@pages/playlists/playlists.component';
     PlaylistItemsComponent
   ],
   imports: [
-    YouTubePlayerModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

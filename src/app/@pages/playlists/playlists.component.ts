@@ -7,7 +7,33 @@ import { ChannelPlaylist } from './models/channel-playlist.model';
 
 @Component({
   selector: 'app-playlists',
-  templateUrl: './playlists.component.html',
+  template:
+  `
+    <ngx-loading [show]="loading"></ngx-loading>
+    <h1 class="title">Playlists</h1>   
+    <hr>  
+    <br>
+    <h1 class="wait-fetching" *ngIf='loading'>Please wait!<br>Fetching data from the server...</h1>
+    <div class="row text-center">
+        <div *ngFor='let playList of playLists' class="col-md-6">
+            <div class="card">
+                <div class="card-body">             
+                    <img src='{{ playList.imgUrl }}' class="img-thumbnail img-fluid" alt="Sample image">    
+                    <br><br>                   
+                    <h3>{{ playList.title }}</h3>
+                    <hr> 
+                    <h5>Published @ {{ playList.publishedAt | date :'dd-MMMM-yyyy' }}</h5>
+                    <br>
+                    <button 
+                        mat-raised-button
+                        color="primary" (click)="openPlayList(playList.id)">
+                        <i class="fas fa-search"></i>
+                    </button> 
+                </div>    
+            </div>   
+        </div>
+    </div>  
+  `,
   styleUrls: ['./playlists.component.scss']
 })
 export class PlaylistsComponent implements OnInit {

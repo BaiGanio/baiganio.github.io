@@ -9,7 +9,7 @@ import { ServerAlertComponent } from './@pages/server-alert/server-alert.compone
 import { RoleGuard } from './@core/role.guard';
 import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
-import { PlaylistItemsComponent } from './@pages/playlist-items/playlist-items.component';
+import { PlaylistItemsComponent } from './@pages/playlists/playlist-items/playlist-items.component';
 import { PlaylistsComponent } from './@pages/playlists/playlists.component';
 
 

@@ -2,7 +2,7 @@ import { UserActionTypes, UserActions } from '../actions/user.actions';
 import { UserState } from '../app.state';
 
 export const initialState: UserState = {
-    selectedUser: null,// new UserView('ID1', 'example@mail.com', 'wild', 'one')
+    selectedUser: null // new UserView('ID1', 'example@mail.com', 'wild', 'one')
 };
 
 export function userReducer(state = initialState, action: UserActions) {
