@@ -6,8 +6,7 @@ import { fetchUser } from "../selectors/user.selector";
 
 @Injectable()
 export class UserStoreFacadeService {
-    constructor(private store: Store<{}>) {
-    }
+    constructor(private store: Store<{}>) { }
 
     public get userByToken() {
         return {
