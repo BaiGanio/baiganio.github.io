@@ -5,9 +5,6 @@ import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { BloggersComponent } from './bloggers.component';
 import { BloggersRoutingModule } from './bloggers-routing.module';
 import { BloggerComponent } from './views/blogger/blogger.component';
-import { StoreModule } from '@ngrx/store';
-import { bloggersReducer } from '../../@store/reducers/bloggers.reducer';
-import { collectionReducer } from './store/collection.reducer';
 
 @NgModule({
   declarations: [
@@ -18,7 +15,7 @@ import { collectionReducer } from './store/collection.reducer';
     CommonModule,
     BloggersRoutingModule,
     AngularMaterialModule,
-    StoreModule.forRoot({ bloggers: bloggersReducer, collection: collectionReducer }),
+    // StoreModule.forRoot({ bloggers: bloggersReducer }),
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.threeBounce,
       primaryColour: '#88078e',

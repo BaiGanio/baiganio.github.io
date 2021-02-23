@@ -88,7 +88,6 @@ export class DashboardComponent implements OnInit {
   }
 
   goToMySubscriptions() {
-    // tslint:disable-next-line: no-unused-expression
     this.router.navigate(['/subscriptions/preview']), { queryParams: { id: this.userId } };
   }
 

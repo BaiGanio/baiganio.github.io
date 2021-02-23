@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RateComponent } from 'src/app/@components/errors/rate/rate.component';
 import { BloggersService } from 'src/app/@services/bloggers.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
+import { Blogger } from './models/blogger.model';
 
 @Component({
   selector: 'app-bloggers',
@@ -11,7 +12,7 @@ import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
   styleUrls: ['./bloggers.component.scss']
 })
 export class BloggersComponent implements OnInit {
-  bloggers = new Array<any>();
+  bloggers = new Array<Blogger>();
   blogger: any;
   loading = false;
   constructor(
@@ -26,7 +27,6 @@ export class BloggersComponent implements OnInit {
     this.bloggerService.getBloggers().subscribe(response => {
         response.body.forEach(element => {
           this.bloggers.push(element);
-          // console.log(response.body);
         });
     }, error => {
         this.errorHandlerService.handleRequestError(error);
@@ -37,10 +37,8 @@ export class BloggersComponent implements OnInit {
   onRateClicked(id: any){
 
     this.bloggers.forEach(element => {
-      console.log(element);
-      if(element.id === id){
+      if(element.Id === id){
         this.blogger = element;
-        console.log(this.blogger);
       }
       
   });

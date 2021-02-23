@@ -1,8 +1,8 @@
-button{
-    font-size: 1em;
-    padding: 5px;
-    margin: 5px;
-}
+// button{
+//     font-size: 1em;
+//     padding: 5px;
+//     margin: 5px;
+// }
 .img-fluid {
     border: 1px solid black;
     height: 12vw;
@@ -11,14 +11,27 @@ button{
 .card{
     margin-bottom: 15px;
 }
-.rating-star {
-    height: 3vw;
-}
 h1, p{
     font-family: 'Alsandra';
 }
 p{
-    
     font-size: 1.8em;
+}
+.rating-star {
+    width: 2vw;
+}
+.links {
+    img {
+        width: 2vw;
+        margin:0px 5px;
+    }
+
+    img:hover {
+        background-color: rgba(61, 238, 220, 0.507);
+    }
+}
+button{
+    width: 10%;
+    margin: 0 auto;
 }
   

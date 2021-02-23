@@ -1,30 +1,69 @@
 <h3 class="text-center">Create new posts from scratch & tailor existing ones. Track of your rate & comments.</h3>
 <br>
+
+
+
 <br>
 <div class="row text-center">
    
     <div class="col-md-3">
       <div class="card">
         <div class="card-body">
-          <h3 class="card-title"><b>Q</b></h3>
-          <p class="card-text">Manage course Questionnaries and stuffs</p>
-          <hr>
-          <button 
-            mat-raised-button
-            class="mr-2"
-            color='primary'
-            >
-            Questionnaire
-            <i class="material-icons">
-                playlist_add
-            </i>
-          </button>
-          <button color='primary' mat-raised-button class="mr-2">
-            Preview
-            <i class="material-icons">
-             list_alt
-            </i>
-          </button>
+          <form [formGroup]="formData" (ngSubmit)="onSubmit(formData.value)" class="example-form">
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Full Name:</mat-label>
+                            <input matInput disabled value="{{blogger?.firstName}} {{blogger?.lastName}}">
+                        </mat-form-field>
+                    </td>
+                   
+                </tr>
+                <!-- <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>User ID:</mat-label>
+                            <input matInput disabled value="{{blogger?.userId}}">
+                        </mat-form-field>
+                    </td>
+                </tr> -->
+            </table>
+          
+            <mat-form-field class="example-full-width">
+                <mat-label>Nickname</mat-label>
+                <input matInput name="nickname" formControlName="nickname">
+                <!-- <mat-error *ngIf="checkError('nickname', 'required')">This field is required!</mat-error> -->
+                <mat-error *ngIf="checkError('nickname', 'maxlength')">Max 4 digits after decimal point!</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email for contacts</mat-label>
+                <input matInput name="email" formControlName="email">
+                <!-- <mat-error *ngIf="checkError('email', 'required')">This field is required!</mat-error> -->
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Facebook Profile Url</mat-label>
+                <input matInput  name="facebookUrl" formControlName="facebookUrl">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>GitHub Profile Url</mat-label>
+                <input matInput  name="githubUrl" formControlName="githubUrl">
+            </mat-form-field>  
+            <button 
+                type="submit" 
+                mat-raised-button
+                color="primary"
+                [disabled]="!formData.valid || !formData.dirty"> 
+                Update
+            </button>
+            <button type="button" *ngIf='formData.dirty'  
+                mat-raised-button
+                color="informational"
+                (click)='onDismiss()'> 
+                Dismiss
+            </button>
+          
+          </form>
         </div>
       </div>
     </div>

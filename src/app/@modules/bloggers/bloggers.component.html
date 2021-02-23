@@ -13,26 +13,45 @@
               <img src='{{ b.avatarUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
             </div>
             <div class="col-md-7">
-              <p>
-                Posts: {{getTotalPosts(b?.posts)}} 
-              </p>
+              <h5>
+                For people who want to be informed, suprised & inspired... & few more letters could be written to describe blogger personality shortly...
+                For people who want to be informed, suprised & inspired... & few more letters could be written to describe blogger personality shortly...
+              </h5>
+            </div>
+            <hr>  
+            <br>  
+            <div class="col-md-4">
               <p>
                 <img class="rating-star" src="./assets/images/app/rating-star-3d.png" alt=""> : 98
               </p> 
-            
+            </div> 
+            <div class="col-md-4">
+              <p>
+                Posts: {{getTotalPosts(b?.posts)}} 
+              </p>
+            </div>
+            <div class="col-md-4">
+              <div class="links">
+                <a href="https://www.facebook.com/baiganio.github.io/" target="_blank">
+                    <img src="../assets/images/social-icons/facebook.jpg" alt="Facebook" title="Facebook">
+                </a>  <a href="https://github.com/BaiGanio" target="_blank">
+                  <img src="../assets//images/social-icons/octo.png" alt="GitHub" title="GitHub">
+                </a>
+                <a href="" target="_blank">
+                  <img src="../assets/images/app/web-mail.png" alt="Email Us" title="Email Us">
+                </a>
+              </div>
             </div>
           </div>
-          <hr>      
-          <br> 
-          <h5>For people who want to be informed, suprised & inspired... & few more letters could be written to describe blogger personality shortly...</h5>
-          <hr>
-          <br>     
-          <button 
-            mat-raised-button 
-            color="primary"
-            [routerLink]="['/bloggers', b.id]">
-            <i class="fas fa-search"></i>
-          </button>
+          <div class="row">
+            <button 
+              mat-raised-button 
+              color="primary"
+              [routerLink]="['/bloggers', b.id]">
+              <i class="fas fa-search"></i>
+            </button>
+        
+          </div>
         </div>
       </div>
   </div>
