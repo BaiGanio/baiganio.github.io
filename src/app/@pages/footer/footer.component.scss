@@ -2,20 +2,24 @@
     background: rgb(19, 33, 37) url(../../../assets/images/banner/binary-globe.jpg) no-repeat 0 0;
     background-size: auto auto;
     background-size: cover;
-    font-family: 'Alsandra';
 }
 h1{
     font-size: 6em;
 }
-h3{
-    font-size: 4em;
-}
-h1, h3{
+ h3{
     padding: 15px;
+    font-size: 4em;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
     color: white;
     margin-top: 25px;
+}
+h3 {
+    font-family: 'Alsandra';
+}
+h5{
+    color: black;
+    font-size: 2em
 }
 #clock {
     text-align: center;
@@ -23,7 +27,6 @@ h1, h3{
     border: none;
     height:100px;
     background-color: transparent;
-    font-family: 'Alsandra';
     font-size: 1em;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;

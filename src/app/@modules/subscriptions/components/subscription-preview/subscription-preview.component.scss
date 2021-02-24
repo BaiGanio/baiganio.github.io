@@ -1,3 +1,8 @@
-h2, h3, h5{
+h2, .alsandra{
     font-family: "Alsandra";
 }
+.img-fluid {
+    border: 1px solid black;
+    height: 10vw;
+    object-fit: contain;
+  }
