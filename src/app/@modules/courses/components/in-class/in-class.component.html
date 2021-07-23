@@ -7,18 +7,18 @@
       </div>
       <div>
         <br>
-        <button class="btn btn-blue btn-rounded btn-lg btn-block" (click)="trackIP()">Let Me In</button>
+        <button mat-raised-button (click)="trackIP()">Let Me In</button>
       </div>
-      <ng-template #youAreIn>                                      
+      <ng-template #youAreIn>
           <div class="text-center">
               <h2 class="h2 text-center mb-4">Congrats ;) You are in +5 points!</h2>
               <p>Please wait. Reloading page...</p>
           </div>
       </ng-template>
-      <br>  
+      <br>
       <div id="weekNo">{{weekNo}}</div>
-      <div class="card-deck"> 
-          <div *ngFor='let s of studentLogins'>   
+      <div class="row card-deck">
+          <div *ngFor='let s of studentLogins' class="col-md-4">
             <div *ngIf='s.IsCalculated; else notCalculated'>
                 <div class="card">
                     <img src="../../../../../../assets/images/5points.png" class="card-img-top">
@@ -27,19 +27,20 @@
                     <p class="">IP: {{s.Ip}}</p>
                     <p class="">{{s.LastLoginDate | date :'medium'}}</p>
                   </div>
-                </div>    
+                </div>
             </div>
             <ng-template #notCalculated>
                 <div class="card">
                     <img src="../../../../../../assets/images/sad-face2.png" class="card-img-top">
                   <div class="card-body text-center">
                       <p class="">{{s.Week}}</p>
+                      <p class="">IP: {{s.Ip}}</p>
                     <p>No points!</p>
                   </div>
-                </div>   
+                </div>
             </ng-template>
         </div>
       </div>
-    
+
       <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: false }"></ngx-loading>
     </div>

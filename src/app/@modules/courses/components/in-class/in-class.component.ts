@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { StudentLoginViewModel } from '../../models/student-login-view-model.module';
 import { StudentService } from 'src/app/@services/student.service';
 import { environment } from 'src/environments/environment';
+import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 @Component({
   selector: 'app-in-class',
   templateUrl: './in-class.component.html',
@@ -22,7 +23,8 @@ export class InClassComponent implements OnInit {
 
     constructor(
         private http: HttpClient,
-        private studentService: StudentService
+        private studentService: StudentService,
+        private errorHandlerService: ErrorHandlerService
     ) { }
 
     ngOnInit() {
@@ -100,8 +102,8 @@ export class InClassComponent implements OnInit {
         this.studentService.letMeIn({CourseId: "", IP: this.ipInfo.ip}).subscribe(
             response => { },
             error => {
-                this.errMsg = error.error;         
-                this.processError();
+                this.errMsg = error.error;
+                this.errorHandlerService.handleRequestError(error);
                 this.loading = false;
             },
             () => {

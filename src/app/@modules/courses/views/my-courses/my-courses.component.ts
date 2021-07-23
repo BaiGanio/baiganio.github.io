@@ -19,16 +19,17 @@ export class MyCoursesComponent implements OnInit {
     private courseService: CoursesService,
     private errorHandlerService: ErrorHandlerService,
     private route: ActivatedRoute,
-    private router: Router 
+    private router: Router
   ) { }
 
   ngOnInit() {
+    this.getCoursesPriview();
     if (this.route.snapshot.params.id) {
       this.courseId = this.route.snapshot.params.id;
       this.showCourseDetails(this.courseId);
     } else {
       if (this.courses.length === 0) {
-        this.getCoursesPriview();
+
       }
     }
   }
@@ -38,18 +39,19 @@ export class MyCoursesComponent implements OnInit {
     this.courseService.getCoursesByUserId().subscribe(response => {
       response.body.forEach(element => {
         const c = {
-          Id: element.courseId,
-          Name: element.courseName,
+          Id: element.id,
+          Name: element.name,
           Teachers: element.teachers,
           Description: element.description,
           StartDate: element.start_date,
           EndDate: element.end_date,
-          ModifiedOn: element.modified_on,
+          ModifiedOn: element.modifiedOn,
           Image: element.imgUrl,
           IsActive: element.active,
           EnrolledStudents: element.enrolled_students
         };
         this.courses.push(c as CoursePreviewModel);
+        //console.log(element);
       });
     },
     error => {
@@ -60,7 +62,7 @@ export class MyCoursesComponent implements OnInit {
   }
 
   showCourseDetails(courseId: string): void {
-    console.log(courseId);
-    this.router.navigate(['/courses/preview', courseId]);  
+    //console.log(courseId);
+    this.router.navigate(['/courses/preview/', courseId]);
   }
 }
