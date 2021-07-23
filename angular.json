@@ -30,7 +30,8 @@
               "src/404.html"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/scss/snackbar.scss"
             ],
             "scripts": [
               "node_modules/hammerjs/hammer.min.js",
@@ -110,7 +111,7 @@
             },
             "local": {
               "browserTarget": "baiganio:build:local"
-            }		   
+            }
           }
         },
         "extract-i18n": {
@@ -133,7 +134,8 @@
               "src/404.html"
             ],
             "styles": [
-              "src/styles.scss"              
+              "src/styles.scss",
+              "src/assets/scss/snackbar.scss"
             ],
             "scripts": [
               "src/assets/js/handy-clock.js"

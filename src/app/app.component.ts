@@ -30,7 +30,7 @@ export class AppComponent {
      this.authService.authEmitter.subscribe((isAuthenticated: boolean) => {
        this.isAuthenticated = isAuthenticated;
      });
-     
+
     this.backendService.getClientAccessToken().subscribe(
       (response) => {
         this.authService.authToken = response.access_token;
@@ -39,12 +39,12 @@ export class AppComponent {
         this.errorHandlerService.handleRequestError(error);
       },
       () => {
-        // this.initializeSignalR();
+        this.initializeSignalR();
       }
     );
   }
 
-  // initializeSignalR(); {
-  //     this.signalRService.initializeSignalRConnection();
-  //   }
+  initializeSignalR() {
+    this.signalRService.initializeSignalRConnection();
+  }
 }

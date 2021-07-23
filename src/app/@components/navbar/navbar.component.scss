@@ -20,7 +20,7 @@ mat-drawer-container {
       a {
         font-size: 2em !important;
         text-decoration: none;
-        cursor: pointer;   
+        cursor: pointer;
         margin: 5px;
       }
 
@@ -37,15 +37,15 @@ mat-drawer-container {
         flex: auto;
       }
       button{
-        font-family: 'Alsandra';
+        // font-family: 'Alsandra';
         font-size: 1.2em;
       }
       .actions {
         button{
-          font-family: 'Alsandra';
+          // font-family: 'Alsandra';
           font-size: 1.2em;
         }
-        a {      
+        a {
           color: white;
           cursor: pointer;
           text-decoration: none;

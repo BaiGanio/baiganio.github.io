@@ -8,9 +8,9 @@ export const environment = {
     apiUrl: 'https://localhost:44364/api/',
     idsUrl: 'https://free-is4.azurewebsites.net/',
     // idsUrl: 'https://localhost:44375/',
-    
+
     IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
-    bgapiSignalRNotyfyHub: 'https://localhost:44344/notify',
+    bgapiSignalRNotyfyHub: 'https://localhost:44364/notify',
     identityServerClientCredentials: {
         client_id: 'baiganio-local-client',
         client_secret: '123',
