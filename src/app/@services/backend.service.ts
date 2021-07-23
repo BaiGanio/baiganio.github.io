@@ -25,7 +25,7 @@ export class BackendService {
     }
   }
 
-  private baseBackendRequest(requestType, requestTarget, requestData?, useUserToken?): Observable<any> {
+  private baseBackendRequest(requestType: string, requestTarget: string, requestData?: any, useUserToken?: any): Observable<any> {
     if (requestType === 'post') {
       return this.http.post(
         environment.apiUrl + requestTarget,

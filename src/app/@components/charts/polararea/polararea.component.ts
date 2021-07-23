@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import { HttpClient } from '@angular/common/http';
+import { environment } from "src/environments/environment";
 @Component({
   selector: 'app-polararea',
   templateUrl: './polararea.component.html'
 })
 export class PolarareaComponent implements OnInit {
-  url = 'https://localhost:44364/api/fake/Chart/';
+  url = environment.apiUrl + 'fake/Chart/';
   data: any;
   Player = [];
   Run = [];
