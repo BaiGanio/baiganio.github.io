@@ -29,16 +29,14 @@ export class InClassComponent implements OnInit {
 
     ngOnInit() {
         this.loading = true;
-        this.getStudentLogins();
         this.studentService.getStudent().subscribe(
             response => {
                 this.student = response.body; // as StudentViewModel;
                 this.loading = false;
             },
             error => {
-                // this.loading = false;
                 this.message = error.error;
-                console.log(this.message);
+                this.errorHandlerService.handleRequestError(error);
             },
             () => {
                  this.getStudentLogins();
@@ -66,10 +64,11 @@ export class InClassComponent implements OnInit {
             error => {
                 this.loading = false;
                 this.message = error.error;
-                console.log(this.message);
+                this.errorHandlerService.handleRequestError(error);
             },
             () => {
                 this.loading = false;
+                console.log(this.studentLogins);
                 this.proccessLoginsResponse();
             }
         );
@@ -91,7 +90,7 @@ export class InClassComponent implements OnInit {
             },
             error => {
                 this.errMsg = error.error;
-                console.log(this.errMsg);
+                this.errorHandlerService.handleRequestError(error);
                 this.loading = false;
             },
             () => { this.loading = false; this.proccessIP(); }
