@@ -9,12 +9,12 @@ import 'rxjs/add/operator/catch';
 
 import {
     EditUserPersonalInformationRequestAction,
-    UpdateUserProfilePictureRequestAction,
     EditUserFailureAction,
     EditUserSuccessAction,
     UserActionTypes,
     SelectUserAction,
     InitializeUserAction,
+    SelectUserSuccessAction,
 } from '../actions/user.actions';
 import { AppState } from '../app.state';
 
@@ -58,7 +58,7 @@ export class UserEffects {
             )),
             mergeMap(selectedUser => this._userService.getUserById(selectedUser.Id)
             .pipe(
-                map(responce => new SelectUserAction(responce)),
+                map(responce => new SelectUserSuccessAction(responce)),
                 catchError((responce: HttpErrorResponse) => of(
                     new EditUserFailureAction(responce.error.Message)))
             ))
@@ -99,23 +99,23 @@ export class UserEffects {
             ))
     )
 
-    @Effect()
-    UpdateUserProfilePictur1e: Observable<Action> = this._actions.pipe(
-        ofType<UpdateUserProfilePictureRequestAction>(UserActionTypes.UPDATE_USER_PROFILE_PICTURE_REQUEST),
-        withLatestFrom(this._store.select(x => x.user.selectedUser)),
-        map(([action, selectedUser]) => this.updateUserProfilePicture(
-            action.payload.imgUrl,
-            selectedUser
-        )),
-        mergeMap(selectedUser => this._userService.updateProfilePicture(selectedUser)
-            .pipe(
-                map(responce => new EditUserSuccessAction(responce)),
-                catchError((responce: HttpErrorResponse) => of(
-                    new EditUserFailureAction(responce.error.Message)))
-            )
-        )
-    )
-    
+    // @Effect()
+    // UpdateUserProfilePictur1e: Observable<Action> = this._actions.pipe(
+    //     ofType<UpdateUserProfilePictureRequestAction>(UserActionTypes.UPDATE_USER_PROFILE_PICTURE_REQUEST),
+    //     withLatestFrom(this._store.select(x => x.user.selectedUser)),
+    //     map(([action, selectedUser]) => this.updateUserProfilePicture(
+    //         action.payload.imgUrl,
+    //         selectedUser
+    //     )),
+    //     mergeMap(selectedUser => this._userService.updateProfilePicture(selectedUser)
+    //         .pipe(
+    //             map(responce => new EditUserSuccessAction(responce)),
+    //             catchError((responce: HttpErrorResponse) => of(
+    //                 new EditUserFailureAction(responce.error.Message)))
+    //         )
+    //     )
+    // )
+
     private editUserPersonalInformation(
         firstName: string,
         lastName: string,

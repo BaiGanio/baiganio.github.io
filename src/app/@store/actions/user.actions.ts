@@ -5,22 +5,26 @@ export enum UserActionTypes {
 
     INITIALIZE_USER = 'INITIALIZE_USER',
     SELECT_USER = 'SELECT_USER',
+    SELECT_USER_SUCCESS = 'SELECT_USER_SUCCESS',
+    SELECT_USER_FAILURE = 'SELECT_USER_FAILURE',
 
-    FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS',
     EDIT_USER_SUCCESS = 'EDIT_USER_SUCCESS',
     EDIT_USER_FAILURE = 'EDIT_USER_FAILURE',
-    UPDATE_USER_PROFILE_PICTURE_REQUEST = 'UPDATE_USER_PROFILE_PICTURE_REQUEST',
+
+    // UPDATE_USER_PROFILE_PICTURE_REQUEST = 'UPDATE_USER_PROFILE_PICTURE_REQUEST',
     EDIT_USER_PERSONAL_INFORMATION_REQUEST = 'EDIT_USER_PERSONAL_INFORMATION_REQUEST',
 }
 
 export type UserActions =
-    SelectUserAction |
-    EditUserSuccessAction |
-    EditUserFailureAction |
-    EditUserPersonalInformationRequestAction |
-    UpdateUserProfilePictureRequestAction |
-    InitializeUserAction |
-    FetchUserSuccessAction;
+  InitializeUserAction |
+  SelectUserAction |
+  SelectUserSuccessAction |
+  SelectUserFailureAction |
+  EditUserSuccessAction |
+  EditUserFailureAction |
+  EditUserPersonalInformationRequestAction;
+  // | UpdateUserProfilePictureRequestAction;
+  // | FetchUserSuccessAction;
 
 export class InitializeUserAction implements Action {
     public readonly type = UserActionTypes.INITIALIZE_USER;
@@ -29,14 +33,20 @@ export class InitializeUserAction implements Action {
 
 export class SelectUserAction implements Action {
     public readonly type = UserActionTypes.SELECT_USER;
-
-    constructor(public payload: { userId: string }) { }
+    constructor() { }
 }
 
-export class FetchUserSuccessAction implements Action {
-    readonly type = UserActionTypes.FETCH_USER_SUCCESS;
+export class SelectUserSuccessAction implements Action {
+  readonly type = UserActionTypes.SELECT_USER_SUCCESS;
 
-    constructor(public payload: UserView) { }
+  constructor(public payload: UserView) {
+    console.log(payload);
+   }
+}
+export class SelectUserFailureAction implements Action {
+  readonly type = UserActionTypes.SELECT_USER_FAILURE;
+
+  constructor(public payload: any) { }
 }
 
 export class EditUserSuccessAction implements Action {
@@ -61,11 +71,11 @@ export class EditUserPersonalInformationRequestAction implements Action {
     }) { }
 }
 
-export class UpdateUserProfilePictureRequestAction implements Action {
-    readonly type = UserActionTypes.UPDATE_USER_PROFILE_PICTURE_REQUEST;
+// export class UpdateUserProfilePictureRequestAction implements Action {
+//     readonly type = UserActionTypes.UPDATE_USER_PROFILE_PICTURE_REQUEST;
 
-    constructor(public payload: { imgUrl: string }) { }
-}
+//     constructor(public payload: { imgUrl: string }) { }
+// }
 
 
 

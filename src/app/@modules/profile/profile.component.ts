@@ -7,6 +7,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { Subscribe4NotificationsComponent } from './components/subscribe4notifications/subscribe4notifications.component';
 import { PassStrengthComponent } from './components/pass-strength/pass-strength.component';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/@store/app.state';
 
 @Component({
     selector: 'app-profile',
@@ -32,7 +34,8 @@ export class ProfileComponent implements OnInit {
         private errorHandlerService: ErrorHandlerService,
         private formBuilder: FormBuilder,
         private dialog: MatDialog,
-        private snackbar: MatSnackBar
+        private snackbar: MatSnackBar,
+        private store: Store<AppState>
     ) {
         this.profileDataFG =
             this.formBuilder.group({

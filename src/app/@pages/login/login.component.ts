@@ -68,8 +68,9 @@ export class LoginComponent implements OnInit {
           this.authservice.clearUserToken();
           this.authservice.userToken = response;
         }
+       // this.store.dispatch(new SelectUserAction());
         this.updateLastLogin();
-        
+
 
 
         // this.userDataService.getUserByToken()
@@ -79,13 +80,13 @@ export class LoginComponent implements OnInit {
         //         console.log(this.user);
         //          let jj: UserView;
         //         this.store.dispatch(new InitializeUserAction(this.user));
-              
+
         //       },
         //       error => {
         //           console.log(error);
         //       },
         //       () => {
-               
+
         //       }
         //   );
         this.router.navigate(['/dashboard']);
