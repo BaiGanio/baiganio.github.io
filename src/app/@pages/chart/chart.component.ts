@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { SignalRService } from 'src/app/@services/signalR.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-chart',
@@ -35,7 +36,7 @@ export class ChartComponent implements OnInit {
     this.startHttpRequest();
   }
   private startHttpRequest = () => {
-    this.http.get('https://localhost:44364/api/chart')
+    this.http.get(environment.apiUrl + 'chart')
       .subscribe(res => {
         console.log(res);
       })
