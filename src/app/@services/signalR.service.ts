@@ -3,15 +3,32 @@ import * as signalR from '@microsoft/signalr';
 import { ErrorHandlerService } from './error-handler.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from 'src/environments/environment';
+import { ChartModel } from '../@shared/models/chartmodel.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignalRService {
+  private chartHubConnection: signalR.HubConnection
+  public data: ChartModel[];
+  public bradcastedData: ChartModel[];
 
   constructor(
     private errorHandlerService: ErrorHandlerService,
     private snackbar: MatSnackBar) { }
+
+
+    public startChartHubConnection = () => {
+      this.chartHubConnection = new signalR.HubConnectionBuilder()
+        .configureLogging(signalR.LogLevel.Information)
+        .withUrl(environment.bgapiSignalRChartHub)
+        .build();
+
+      this.chartHubConnection
+        .start()
+        .then(() => console.log('chartHubConnection started'))
+        .catch(err => console.log('Error while starting chartHubConnection: ' + err))
+    }
 
   initializeSignalRConnection() {
     const connection = new signalR.HubConnectionBuilder()
@@ -51,5 +68,26 @@ export class SignalRService {
       );
       console.log({ severity: type, summary: payload, detail: 'Via SignalR service' });
     });
+
+
+
+  }
+
+  public addTransferChartDataListener = () => {
+    this.chartHubConnection.on('transferchartdata', (data) => {
+      this.data = data;
+      console.log(data);
+    });
+  }
+
+  public broadcastChartData = () => {
+    this.chartHubConnection.invoke('broadcastchartdata', this.data)
+    .catch(err => console.error(err));
+  }
+
+  public addBroadcastChartDataListener = () => {
+    this.chartHubConnection.on('broadcastchartdata', (data) => {
+      this.bradcastedData = data;
+    })
   }
 }

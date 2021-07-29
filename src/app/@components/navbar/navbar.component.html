@@ -25,6 +25,7 @@
       <a mat-list-item routerLink="/courses"> Courses </a>
       <a mat-list-item routerLink="/bloggers"> Bloggers </a>
       <a mat-list-item routerLink="/videos"> Videos </a>
+      <a mat-list-item routerLink="/chart"> Chart </a>
       <!-- <a mat-list-item routerLink="/teachers"> Teachers </a> -->
       <hr>
     </mat-list>
@@ -42,7 +43,7 @@
           <!-- <button mat-button>
             <span class="badge">99 </span><i class="fa fa-bell"></i>
           </button> -->
-          <div> 
+          <div>
             <button mat-button [matMenuTriggerFor]="userMenu">
               Welcome, {{ storedUser?.FirstName !== null ? storedUser?.FirstName + ' ' + storedUser?.LastName : storedUser?.Email }}
             </button>
@@ -73,4 +74,3 @@
     </div>
   </div>
 </mat-drawer-container>
-  

@@ -8,7 +8,6 @@ import { AuthService } from 'src/app/@services/auth.service';
 import { UserDataService } from 'src/app/@services/user-data.service';
 import { AppState, UserState } from 'src/app/@store/app.state';
 import { selectUser } from 'src/app/@store/selectors/user.selector';
-import { InitializeUserAction } from 'src/app/@store/actions/user.actions';
 // import { UserDataService } from 'src/app/@services/user-data.service';
 // import { AuthService } from 'src/app/@services/auth.service';
 
@@ -29,7 +28,7 @@ export class NavbarComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() { 
+  ngOnInit() {
     if(this.authService.isAuthenticated() && this.storedUser === undefined) {
       this.userDataService.getUserByToken().subscribe(
         response => {
@@ -51,7 +50,7 @@ export class NavbarComponent implements OnInit {
           // this.store.pipe(select(selectUser))
           //   .subscribe((state => this.storedUser = state));
           //   alert(this.storedUser);
-          
+
         }
     );
       //      this.store.subscribe(x => {

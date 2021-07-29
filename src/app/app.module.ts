@@ -43,6 +43,8 @@ import { LoadingEffects } from './@store/effects/loading.effects';
 import { loadingReducer } from './@store/reducers/loading.reducer';
 import { PlaylistItemsComponent } from './@pages/playlists/playlist-items/playlist-items.component';
 import { PlaylistsComponent } from './@pages/playlists/playlists.component';
+import { ChartComponent } from './@pages/chart/chart.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,8 @@ import { PlaylistsComponent } from './@pages/playlists/playlists.component';
     RateComponent,
     PlaylistsComponent,
     NgbdCarouselBasicComponent,
-    PlaylistItemsComponent
+    PlaylistItemsComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -106,6 +109,7 @@ import { PlaylistsComponent } from './@pages/playlists/playlists.component';
       UserEffects,
       // HistoryEffects
     ]),
+    ChartsModule
   ],
   entryComponents: [
     TermsComponent,

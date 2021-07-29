@@ -11,6 +11,7 @@ export const environment = {
   // IPCheckingServiceUrl: 'https://ipinfo.io?token=$2e07b81e6d80f2',
   IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
   bgapiSignalRNotyfyHub: 'https://test-bgapi.azurewebsites.net/notify',
+  bgapiSignalRChartHub: 'https://test-bgapi.azurewebsites.net/chart',
   identityServerClientCredentials: {
     client_id: 'baiganio-test-client',
     client_secret: 'test',

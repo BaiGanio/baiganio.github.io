@@ -39,7 +39,9 @@ export class AppComponent {
         this.errorHandlerService.handleRequestError(error);
       },
       () => {
-        this.initializeSignalR();
+       // this.signalRService.initializeSignalRConnection();
+        // this.signalRService.startChartHubConnection();
+        // this.signalRService.addTransferChartDataListener();
       }
     );
   }

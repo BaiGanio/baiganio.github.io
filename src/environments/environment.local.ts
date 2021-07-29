@@ -11,6 +11,7 @@ export const environment = {
 
     IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
     bgapiSignalRNotyfyHub: 'https://localhost:44364/notify',
+    bgapiSignalRChartHub: 'https://localhost:44364/chart',
     identityServerClientCredentials: {
         client_id: 'baiganio-local-client',
         client_secret: '123',

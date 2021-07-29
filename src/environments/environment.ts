@@ -10,6 +10,7 @@
     idsUrl: '',
     IPCheckingServiceUrl: '',
     bgapiSignalRNotyfyHub: '',
+    bgapiSignalRChartHub: '',
     identityServerClientCredentials: {
       client_id: '',
       client_secret: '',

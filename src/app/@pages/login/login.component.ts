@@ -8,7 +8,6 @@ import { AuthService } from 'src/app/@services/auth.service';
 import { BackendService } from 'src/app/@services/backend.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { UserDataService } from 'src/app/@services/user-data.service';
-import { InitializeUserAction, SelectUserAction } from 'src/app/@store/actions/user.actions';
 import { AppState, UserState } from 'src/app/@store/app.state';
 import { selectUser } from 'src/app/@store/selectors/user.selector';
 

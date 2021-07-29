@@ -11,6 +11,7 @@ import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
 import { PlaylistItemsComponent } from './@pages/playlists/playlist-items/playlist-items.component';
 import { PlaylistsComponent } from './@pages/playlists/playlists.component';
+import { ChartComponent } from './@pages/chart/chart.component';
 
 
 const routes: Routes = [
@@ -53,7 +54,7 @@ const routes: Routes = [
     data: {
       allowedRoles: ['Member']
     }
-  },  
+  },
   {
     path: 'profile',
     loadChildren : () => import('./@modules/profile/profile.module').then(m => m.ProfileModule),
@@ -62,6 +63,7 @@ const routes: Routes = [
       allowedRoles: ['Member']
     }
   },
+  { path: 'chart', component: ChartComponent },
   { path: 'server-alert', component: ServerAlertComponent },
   { path: 'error', component: ErrorComponent},
   { path: '403', component: AccessDeniedComponent },
