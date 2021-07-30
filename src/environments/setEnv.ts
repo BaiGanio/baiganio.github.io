@@ -15,6 +15,7 @@ const environmentFileContent = `
 
     IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
     bgapiSignalRNotyfyHub: 'https://bgapi.azurewebsites.net/notify',
+    bgapiSignalRNotyfyHub: 'https://bgapi.azurewebsites.net/chat',
     identityServerClientCredentials: {
       client_id: 'baiganio-client',
       client_secret: '${process.env.IS4_BAIGANIO_CLIENT_SECRET}',
