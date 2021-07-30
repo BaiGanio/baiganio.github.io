@@ -38,7 +38,7 @@ export class EditCourseComponent implements OnInit {
         CourseId: [this.data.model.Id],
         Name: [this.data.model.Name],
         Description: [this.data.model.Description],
-        IsActive: [this.data.model.IsActive.toString()],
+        IsActive: [this.data.model.IsActive],
         StartDate: [this.data.model.StartDate],
         EndDate: [this.data.model.EndDate],
       });
@@ -50,12 +50,12 @@ export class EditCourseComponent implements OnInit {
       this.formBuilder.group({
         CourseImg: ['', Validators.required]
       });
-
+console.log();
     this.defaultCourseImg =
-      this.model.Image ?
-      this.model.Image :
+      this.model.ImgUrl ?
+      this.model.ImgUrl :
       '../../../../assets/images/no-profile-img.png';
-    this.model.Image = this.defaultCourseImg;
+    this.model.ImgUrl = this.defaultCourseImg;
   }
 
   onRejectClick() {
@@ -90,7 +90,7 @@ export class EditCourseComponent implements OnInit {
   editCourseImage() {
     const updatedCoursePicture = {
       label: 'updateCoursePicture',
-      img2base64: this.model.Image
+      img2base64: this.model.ImgUrl
     };
 
     this.dialogRef.close(updatedCoursePicture);
@@ -110,7 +110,7 @@ export class EditCourseComponent implements OnInit {
   }
 
   clearPicture() {
-    this.model.Image = this.defaultCourseImg;
+    this.model.ImgUrl = this.defaultCourseImg;
     this.editCourseImageForm.controls.CourseImg.setValue('');
   }
 
@@ -120,13 +120,13 @@ export class EditCourseComponent implements OnInit {
       this.resizeImage(file, 800, 600).then(blob => {
         const reader = new FileReader();
         reader.onload = (e) => {
-          this.model.Image = reader.result.toString();
+          this.model.ImgUrl = reader.result.toString();
         };
         reader.readAsDataURL(blob);
       },
       error => {
         console.error('Photo error!', error);
-        this.model.Image = this.defaultCourseImg;
+        this.model.ImgUrl = this.defaultCourseImg;
       });
     }
   }
