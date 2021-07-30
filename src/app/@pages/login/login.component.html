@@ -8,16 +8,15 @@
     <div class="msg">
       <h1 innerHtml={{loginErrorMessage}}></h1>
       <br><br>
-      <button 
-        class="btn btn-outline-info" 
-        (click) = dismiss()
-        style="width:10%">
+      <button
+        class="btn btn-outline-info"
+        (click) = dismiss()>
         Dismiss
       </button>
-    </div>    
+    </div>
   </div>
   <div class="col-xl-8">
-   
+
     <!-- START LOGIN CONTENT -->
     <section id="viewLogin">
       <br>
@@ -50,10 +49,11 @@
 </div>
 <div class="row">
   <div class="col-12 mb-4 text-center">
-    <button  
+    <button
+      class='forgot-password'
       mat-raised-button
-      color="primary" 
-      routerLink="/account/forgotten-password"> 
+      color="primary"
+      routerLink="/account/forgotten-password">
       Forgot Password?
     </button>
   </div>

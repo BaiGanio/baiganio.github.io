@@ -2,7 +2,7 @@
     <h3>{{editCourseForm?.value?.Name || 'N/A'}}</h3>
     <h5>ID : {{model.Id}}</h5>
     <hr>
-    <mat-tab-group [selectedIndex]="activeTab" style="overflow:hidden;">   
+    <mat-tab-group [selectedIndex]="activeTab" style="overflow:hidden;">
         <mat-tab label="Overall Info">
             <ng-template matTabContent>
                 <div class="row">
@@ -12,9 +12,9 @@
                             <div class="thumb-holder">
                                 <img
                                     class="courseImg img-fluid img-thumbnail"
-                                    [src]='model.Image'
+                                    [src]='model?.ImgUrl'
                                     alt="Course picture">
-                                <input 
+                                <input
                                     type="file"
                                     formControlName='CourseImg'
                                     #courseImage
@@ -26,8 +26,8 @@
                                 <button mat-stroked-button color="warn" class="m-2" (click)='clearPicture()'>Clear Picture</button>
                             </div>
                         </form>
-                        <button 
-                            mat-raised-button 
+                        <button
+                            mat-raised-button
                             (click)="editCourseImage()"
                             color="primary"
                             [disabled]="!editCourseImageForm.valid || !editCourseImageForm.dirty">
@@ -42,7 +42,7 @@
                                     <mat-form-field class="w-100">
                                         <textarea matInput formControlName="Name" placeholder="Name" cols="30" rows="2"></textarea>
                                     </mat-form-field>
-                                    <br />              
+                                    <br />
                                     <mat-form-field class="w-100">
                                         <textarea matInput formControlName="Description" placeholder="Description (raw html is accepted)" rows="10"></textarea>
                                     </mat-form-field>
@@ -77,45 +77,45 @@
                             </div>
                         </form>
                         <div class="text-center">
-                            <button 
-                                mat-raised-button 
+                            <button
+                                mat-raised-button
                                 (click)="editCourse()"
                                 color="primary"
                                 [disabled]="!editCourseForm.valid || !editCourseForm.dirty">
                                 Update Course Info
                             </button>
-                            <button 
+                            <button
                                 style="width: 15%"
-                                mat-stroked-button 
+                                mat-stroked-button
                                 (click)="onRejectClick()"
                                 color="warn">
                                 Dismiss
                             </button>
                         </div>
                     </div>
-                </div> 
+                </div>
             </ng-template>
         </mat-tab>
         <mat-tab label="Leading Teachers">
             <ng-template matTabContent>
                 <br>
-                <span *ngFor="let t of model.Teachers" 
-                    class="text-left" 
-                    style="float: left; 
-                    padding: 10px;"> 
+                <span *ngFor="let t of model.Teachers"
+                    class="text-left"
+                    style="float: left;
+                    padding: 10px;">
                     {{t}}
                     <button
-                        mat-stroked-button 
+                        mat-stroked-button
                         color='warn'
                  >
                         <i class="material-icons">
                             delete
                         </i>
                     </button>
-                </span>    
+                </span>
                 <br><br>
                 <div class="text-left">
-                    <br>             
+                    <br>
                     <form [formGroup]="selectTeacherForm">
                         <mat-form-field class="w-25">
                             <mat-label class="text-left">Add teacher to course</mat-label>
@@ -125,17 +125,17 @@
                                 <mat-option value="Teacher">--</mat-option>
                                 <mat-option *ngFor="let t of teachers" value="{{ t.Id }}">{{ t.Name }}</mat-option>
                             </mat-select>
-                        </mat-form-field> 
+                        </mat-form-field>
                         <button
                             style="width: 10%"
-                            mat-raised-button 
+                            mat-raised-button
                             (click)="addTeacher2Course()"
                             color="primary"
                             [disabled]="!selectTeacherForm.valid
                                         || !selectTeacherForm.dirty
                                         || selectTeacherForm.controls.Teacher.value === 'Teacher'">
                             Add
-                        </button>                   
+                        </button>
                     </form>
                 </div>
             </ng-template>

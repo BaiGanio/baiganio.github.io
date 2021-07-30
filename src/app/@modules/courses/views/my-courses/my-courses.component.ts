@@ -46,7 +46,7 @@ export class MyCoursesComponent implements OnInit {
           StartDate: element.start_date,
           EndDate: element.end_date,
           ModifiedOn: element.modifiedOn,
-          Image: element.imgUrl,
+          ImgUrl: element.imgUrl,
           IsActive: element.active,
           EnrolledStudents: element.enrolled_students
         };

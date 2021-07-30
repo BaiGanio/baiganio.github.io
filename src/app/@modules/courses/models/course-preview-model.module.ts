@@ -1,4 +1,4 @@
-export class CoursePreviewModel {
+export class  CoursePreviewModel {
 
     Id: string;
     Name: string;
@@ -9,7 +9,7 @@ export class CoursePreviewModel {
     ModifiedOn: Date;
     IsActive: boolean;
     IsElectable: boolean;
-    Image: string;
+    ImgUrl: string;
     EnrolledStudents: number;
     EnrolledUserId: string;
 
@@ -23,7 +23,7 @@ export class CoursePreviewModel {
         modifiedOn?: Date,
         isActive?: boolean,
         isElectable?: boolean,
-        image?: string,
+        imgUrl?: string,
         enrolledStudents?: number,
         enrolledUserId?: string
     ) {
@@ -36,7 +36,7 @@ export class CoursePreviewModel {
         this.ModifiedOn = modifiedOn;
         this.IsActive = isActive;
         this.IsElectable = isElectable;
-        this.Image = image;
+        this.ImgUrl = imgUrl;
         this.EnrolledStudents = enrolledStudents;
         this.EnrolledUserId = enrolledUserId;
     }

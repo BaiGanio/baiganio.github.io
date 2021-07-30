@@ -24,10 +24,10 @@ export class CoursesDetailsComponent implements OnInit {
       '#', 'Id', 'Name',
       'Start Date', 'End Date',
       'Active', 'Electable',
-      'Students', 
+      'Students',
       'Actions'
       // 'Pending Enroll Requests',
-      // 'Teachers', 
+      // 'Teachers',
     ];
   public dataSource: MatTableDataSource<CoursePreviewModel>;
   courses = new Array<CoursePreviewModel>();
@@ -118,7 +118,6 @@ export class CoursesDetailsComponent implements OnInit {
     this.loading = true;
     this.coursesService.getCoursesPreview().subscribe(response => {
       response.body.forEach(element => {
-        console.log(element);
         const c = {
           Id: element.id,
           Name: element.name,
@@ -127,7 +126,7 @@ export class CoursesDetailsComponent implements OnInit {
           StartDate: element.startDate,
           EndDate: element.endEate,
           ModifiedOn: element.modifiedOn,
-          Image: element.imgUrl,
+          ImgUrl: element.imgUrl,
           IsActive: element.isActive,
           IsElectable: element.isElectable,
           EnrolledStudents: element.students,
@@ -148,6 +147,7 @@ export class CoursesDetailsComponent implements OnInit {
   }
 
   private openEditCourseModal(course: any) {
+    console.log(course);
     return this.dialog.open(EditCourseComponent, {
       width: '80vw',
       maxHeight: '100vh',
@@ -158,13 +158,13 @@ export class CoursesDetailsComponent implements OnInit {
             course.body.name,
             course.body.description,
             course.body.teachers,
-            course.body.start_date,
-            course.body.end_date,
-            course.body.modified_on,
-            course.body.is_electable,
-            course.body.is_active,
-            course.body.image,
-            course.body.enrolled_students,
+            course.body.startDate,
+            course.body.endDate,
+            course.body.modifiedOn,
+            course.body.isElectable,
+            course.body.isActive,
+            course.body.imgUrl,
+            course.body.students,
           )
       },
       autoFocus: false
