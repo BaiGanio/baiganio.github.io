@@ -30,10 +30,10 @@ export class ChartComponent implements OnInit, OnDestroy {
   constructor(public signalRService: SignalRService, private http: HttpClient) { }
 
   ngOnInit() {
-    this.signalRService.startChartHubConnection();
-    this.signalRService.addTransferChartDataListener();
-    this.signalRService.addBroadcastChartDataListener();
-    this.startHttpRequest();
+    // this.signalRService.startChartHubConnection();
+    // this.signalRService.addTransferChartDataListener();
+    // this.signalRService.addBroadcastChartDataListener();
+    // this.startHttpRequest();
   }
 
   ngOnDestroy() {
