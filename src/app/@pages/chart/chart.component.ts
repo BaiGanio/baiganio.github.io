@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SignalRService } from 'src/app/@services/signalR.service';
 import { environment } from 'src/environments/environment';
 
@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
-export class ChartComponent implements OnInit {
+export class ChartComponent implements OnInit, OnDestroy {
 
   public chartOptions: any = {
     scaleShowVerticalLines: true,
@@ -32,9 +32,14 @@ export class ChartComponent implements OnInit {
   ngOnInit() {
     this.signalRService.startChartHubConnection();
     this.signalRService.addTransferChartDataListener();
-    // this.signalRService.addBroadcastChartDataListener();
+    this.signalRService.addBroadcastChartDataListener();
     this.startHttpRequest();
   }
+
+  ngOnDestroy() {
+    this.signalRService.stopChartHubConnection();
+  }
+
   private startHttpRequest = () => {
     this.http.get(environment.apiUrl + 'chart')
       .subscribe(res => {

@@ -12,6 +12,7 @@ export class SignalRService {
   private chartHubConnection: signalR.HubConnection
   public data: ChartModel[];
   public bradcastedData: ChartModel[];
+  private chartHubConnectionId: any;
 
   constructor(
     private errorHandlerService: ErrorHandlerService,
@@ -26,15 +27,29 @@ export class SignalRService {
 
       this.chartHubConnection
         .start()
-        .then(() => console.log('chartHubConnection started'))
+        .then(() => {
+          this.chartHubConnectionId = this.chartHubConnection.connectionId;
+          console.log('Started chartHubConnection with connection id: ' + this.chartHubConnectionId)
+        })
         .catch(err => console.log('Error while starting chartHubConnection: ' + err))
+    }
+
+    public stopChartHubConnection = () => {
+
+      this.chartHubConnection
+
+        .stop()
+        .then(() => console.log('Stopped chartHubConnection with connection id: ' + this.chartHubConnectionId))
+        .catch(err => console.log('Error while stopping chartHubConnection: ' + err));
+
+        this.chartHubConnection = null;
     }
 
   initializeSignalRConnection() {
     const connection = new signalR.HubConnectionBuilder()
       .configureLogging(signalR.LogLevel.Information)
       .withUrl(environment.bgapiSignalRNotyfyHub)
-      .build() ;
+      .build();
 
     connection.start()
       .then(
@@ -76,12 +91,12 @@ export class SignalRService {
   public addTransferChartDataListener = () => {
     this.chartHubConnection.on('transferchartdata', (data) => {
       this.data = data;
-      console.log(data);
+      console.log('Called broadcastChartData with data: ' + data);
     });
   }
 
   public broadcastChartData = () => {
-    this.chartHubConnection.invoke('broadcastchartdata', this.data)
+    this.chartHubConnection.invoke('broadcastchartdata', this.data).then(() => 'Invoked broadcastChartData with data: ' + this.data)
     .catch(err => console.error(err));
   }
 
