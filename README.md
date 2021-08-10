@@ -1,4 +1,12 @@
 # _BaiGanio_
+This project aims self-creativity & is nothing but a playground where development skills are challenged for fun! 
+
+This app turns out to be somehow a portfolio for the collaborators & indeed looks like very successful approach ;)
+
+Trying to:
+  - follow best practices of software development, architecture & patterns
+  - be ...
+***
 _Use this quick explanation to setup yourself faster._
 ## _Development environment setup_
 - Open your favorite terminal and type `node -v` to ensure you have installed latest [_Node.js_](https://nodejs.org) version available
