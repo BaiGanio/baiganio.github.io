@@ -9,7 +9,7 @@ const routes: Routes = [
       children: [
         { path: '', component: BloggersComponent }
       ]
-    },    
+    },
     { path: ':id', component: BloggerComponent }
     // {
     //   path: 'preview',
@@ -24,4 +24,9 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class BloggersRoutingModule { }
+export class BloggersRoutingModule {
+  static components = [
+    BloggerComponent,
+    BloggersComponent
+  ];
+}

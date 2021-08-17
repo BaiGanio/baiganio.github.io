@@ -45,10 +45,10 @@ import { FhAlertService } from '../@shared/fh-alert/fh-alert-service';
     TeacherService,
     BloggersService,
     YouTubeService,
-    ChecklistDatabase,
 
 // TODO: Should be in shared module
-    FhAlertService
+    FhAlertService,
+    ChecklistDatabase,
   ]
 })
 export class CoreModule {
