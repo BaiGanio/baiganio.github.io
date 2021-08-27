@@ -2,7 +2,6 @@ import { name, version } from '../../package.json';
 export const environment = {
     production: false,
     env: 'local',
-    name: name,
     version: version,
     appUrl: 'http://localhost:5003/',
     apiUrl: 'https://localhost:44364/api/',

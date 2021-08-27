@@ -3,7 +3,6 @@
   export const environment = {
     production: false,
     env: 'default',
-    name:'',
     version:'',
     appUrl: '',
     apiUrl: '',
