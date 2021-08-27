@@ -5,7 +5,7 @@ This app turns out to be somehow a portfolio for the collaborators & indeed look
 
 Trying to:
   - follow best practices of software development, architecture & patterns
-  - be ....
+  - be ...
 ***
 _Use this quick explanation to setup yourself faster._
 ## _Development environment setup_
