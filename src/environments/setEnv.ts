@@ -3,11 +3,10 @@ const { writeFile } = require('fs');
 const targetPath = "./src/environments/environment.prod.ts";
 
 const environmentFileContent = `
-  import { name, version } from '../../package.json';
+  import { version } from '../../package.json';
   export const environment = {
     production: true,
     env: 'production',
-    name: name,
     version: version,
     appUrl: 'https://baiganio.github.io/',
     apiUrl: 'https://bgapi.azurewebsites.net/api/',

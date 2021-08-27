@@ -1,6 +1,5 @@
 
-  import { name, version } from '../../package.json';
-  export const environment = {
+export const environment = {
     production: false,
     env: 'default',
     version:'',
