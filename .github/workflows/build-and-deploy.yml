@@ -15,19 +15,19 @@ jobs:
       uses: actions/setup-node@v1 #this installs node and npm for us
       with:
         node-version: '14.x'
-    - name: Cache node_modules
-      uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-    
+    # - name: Cache node_modules
+    #   uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
+    #   with:
+    #     path: ~/.npm
+    #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    #     restore-keys: |
+    #       ${{ runner.os }}-node-
     - name: npm install
       run:
         npm install
     - name: npm run-script build
       run: npm run-script build
-      env: 
+      env:
         IS4_BAIGANIO_CLIENT_SECRET: ${{ secrets.IS4_BAIGANIO_CLIENT_SECRET }}
         IS4_BAIGANIO_USER_SECRET: ${{ secrets.IS4_BAIGANIO_USER_SECRET }}
         YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
@@ -63,7 +63,7 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             BRANCH: gh-pages
             FOLDER: deployable_artifacts
-          env: 
+          env:
             IS4_BAIGANIO_CLIENT_SECRET: ${{ secrets.IS4_BAIGANIO_CLIENT_SECRET }}
             IS4_BAIGANIO_USER_SECRET: ${{ secrets.IS4_BAIGANIO_USER_SECRET }}
             YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
