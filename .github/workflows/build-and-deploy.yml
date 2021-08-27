@@ -9,23 +9,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
     - name: Checkout master branch
       uses: actions/checkout@v2
+
     - name: Install Node.js 14.x & NPM
       uses: actions/setup-node@v1 #this installs node and npm for us
       with:
         node-version: '14.x'
-    # - name: Cache node_modules
-    #   uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
-    #   with:
-    #     path: ~/.npm
-    #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-    #     restore-keys: |
-    #       ${{ runner.os }}-node-
-    - name: npm install
-      run:
-        npm install
-    - name: npm run-script build
+
+    - name: Cache node_modules
+      uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: NPM install
+      run: npm install
+
+    - name: NPM run-script build
       run: npm run-script build
       env:
         IS4_BAIGANIO_CLIENT_SECRET: ${{ secrets.IS4_BAIGANIO_CLIENT_SECRET }}
@@ -34,6 +38,7 @@ jobs:
     # - name: Test
     #   run: |
     #     npm test
+
     - name: archive build
       if: success()
       uses: actions/upload-artifact@v1
@@ -53,10 +58,12 @@ jobs:
       steps:
         - name: Checkout
           uses: actions/checkout@v1
+
         - name: Download build artifacts
           uses: actions/download-artifact@v1
           with:
             name: deployable_artifacts
+
         - name: Deploy to GitHub Pages
           uses: JamesIves/github-pages-deploy-action@releases/v3
           with:
