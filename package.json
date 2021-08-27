@@ -34,6 +34,7 @@
     "jwt-decode": "^2.2.0",
     "ng2-charts": "^2.4.3",
     "ngx-loading": "^8.0.0",
+    "npm": "^2.15.12",
     "rxjs": "~6.6.3",
     "rxjs-compat": "^6.6.3",
     "tslib": "^2.0.0",
