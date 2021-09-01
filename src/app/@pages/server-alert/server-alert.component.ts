@@ -4,8 +4,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-server-alert',
   template:
   `
-  <app-read></app-read>
-  <app-create></app-create>
   <div class="content text-center">
     <div class="row">
       <div class="col-xs-12 col-center">
