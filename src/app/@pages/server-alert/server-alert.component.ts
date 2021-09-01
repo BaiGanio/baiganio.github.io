@@ -4,21 +4,23 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-server-alert',
   template:
   `
+  <app-read></app-read>
+  <app-create></app-create>
   <div class="content text-center">
     <div class="row">
-      <div class="col-xs-12 col-center">    
+      <div class="col-xs-12 col-center">
         <br>
         <h1>
           Ooops... ERROR 503!
           <hr>
           <br>
-          <span id="errorMessage">Our Servers are temporary unavailable!</span> 
+          <span id="errorMessage">Our Servers are temporary unavailable!</span>
         </h1>
         <br>
-        <button  
+        <button
           mat-raised-button
-          color="primary" 
-          routerLink='/home'> 
+          color="primary"
+          routerLink='/home'>
             Back To Home
         </button>
       </div>

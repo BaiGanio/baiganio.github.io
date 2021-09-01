@@ -5,8 +5,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-home',
   template:
   `
-  <app-read></app-read>
-  <app-create></app-create>
   <div style="text-align:center">
     <div class="content">
       <div class="row">
