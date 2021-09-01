@@ -1,6 +1,7 @@
 import { UserView } from "../@modules/users/models/user-view";
 import { Audit } from "../@shared/models/audit/audit.model";
 import { Blogger } from '../@modules/bloggers/models/blogger.model';
+import { Tutorial } from "../@shared/models/tutorial.model";
 
 
 export interface AppState {
@@ -8,6 +9,7 @@ export interface AppState {
     readonly blogger: BloggerState;
     readonly history: HistoryState;
     readonly loading: boolean;
+    readonly tutorial: Tutorial[];
 }
 
 export const userFeatureKey = 'user';

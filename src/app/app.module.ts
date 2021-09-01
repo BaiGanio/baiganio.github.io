@@ -45,6 +45,9 @@ import { PlaylistItemsComponent } from './@pages/playlists/playlist-items/playli
 import { PlaylistsComponent } from './@pages/playlists/playlists.component';
 import { ChartComponent } from './@pages/chart/chart.component';
 import { ChartsModule } from 'ng2-charts';
+import { tutorialReducer } from './@store/reducers/tutorial.reducer';
+import { ReadComponent } from './@pages/read/read.component';
+import { CreateComponent } from './@pages/create/create.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,9 @@ import { ChartsModule } from 'ng2-charts';
     PlaylistsComponent,
     NgbdCarouselBasicComponent,
     PlaylistItemsComponent,
-    ChartComponent
+    ChartComponent,
+    ReadComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
@@ -103,6 +108,7 @@ import { ChartsModule } from 'ng2-charts';
       user: userReducer,
       loading: loadingReducer,
       // history: historyReducer
+      tutorial: tutorialReducer
     }),
     EffectsModule.forRoot([
       LoadingEffects,

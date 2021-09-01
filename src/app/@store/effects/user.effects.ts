@@ -35,18 +35,18 @@ export class UserEffects {
 
     @Effect()
     public selectedUser$: Observable<Action> = this._actions
-        .pipe(
-            ofType<SelectUserAction>(UserActionTypes.SELECT_USER),
-            withLatestFrom(this._store.select(x => x.user.selectedUser)),
-            map(([action, selectedUser]) => this.getUser(
-                selectedUser
-            )),
-            mergeMap(selectedUser => this._userService.getUserById(selectedUser.Id)
-            .pipe(
-                map(responce => new SelectUserSuccessAction(responce)),
-                catchError((responce: HttpErrorResponse) => of(
-                    new EditUserFailureAction(responce.error.Message)))
-            ))
+      .pipe(
+        ofType<SelectUserAction>(UserActionTypes.SELECT_USER),
+        withLatestFrom(this._store.select(x => x.user.selectedUser)),
+        map(([action, selectedUser]) => this.getUser(
+            selectedUser
+        )),
+      mergeMap(selectedUser => this._userService.getUserById(selectedUser.Id)
+      .pipe(
+            map(responce => new SelectUserSuccessAction(responce)),
+            catchError((responce: HttpErrorResponse) => of(
+                new EditUserFailureAction(responce.error.Message)))
+      ))
     )
 
     @Effect({ dispatch: false })
