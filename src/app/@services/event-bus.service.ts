@@ -8,7 +8,7 @@ export class EventBusService {
   public changeRoute: EventEmitter<any>;
   public retryRequest: EventEmitter<any>;
   public unknownError: EventEmitter<any>;
-  public updateUserData: EventEmitter<UserView>;
+  public updateUserData: EventEmitter<any>;
   public fetchedDashboardData: EventEmitter<any>;
 
   constructor() {
@@ -19,7 +19,7 @@ export class EventBusService {
     this.fetchedDashboardData = new EventEmitter();
   }
 
-  public emitChangeRoute(data) {
+  public emitChangeRoute(data: any) {
     this.changeRoute.emit(data);
   }
 
@@ -38,5 +38,4 @@ export class EventBusService {
   public emitFetchedDashboardData(data) {
     this.fetchedDashboardData.emit(data);
   }
-
 }
