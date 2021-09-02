@@ -35,7 +35,7 @@ jobs:
           ${{ runner.os }}-node-
     # Install latest npm due issue with one of the packages
     - name: Install latest npm
-      run: npm i npm@latest
+      run: npm i -g npm@latest
     # Install all packages
     - name: npm install
       run: npm install
