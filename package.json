@@ -29,6 +29,7 @@
     "@ngrx/effects": "^10.1.2",
     "@ngrx/store": "^10.1.2",
     "@types/signalr": "^2.2.37",
+    "angular-cli-ghpages": "^1.0.0-rc.2",
     "chart.js": "^2.9.3",
     "hammerjs": "^2.0.8",
     "jwt-decode": "^2.2.0",
@@ -37,6 +38,7 @@
     "npm": "^6.14.6",
     "rxjs": "~6.6.3",
     "rxjs-compat": "^6.6.3",
+    "save-dev": "^0.0.1-security",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

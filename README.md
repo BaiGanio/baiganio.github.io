@@ -28,7 +28,7 @@ _`Production` build for your own use is better to be done after configuring `env
 ## _Deploy_
 _We use GitHub Actions CI/CD automatic pipeline configured in `build-and-deploy.yml` file._
   - On `push` or `pull-request` with [_GitHub Actions_](https://docs.github.com/en/free-pro-team@latest/actions) `CI/CD` pipeline.
-  - ...
+  - It could be done manually with `ng build --base-href="https://baiganio.github.io"`
   
 _Versioning:_
    - Version is updated from `package.json` file.
