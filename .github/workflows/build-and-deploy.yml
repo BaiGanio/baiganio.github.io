@@ -26,6 +26,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
 
+    - name: Install latest NPM
+      run: npm i -g npm@latest
+
+
     - name: NPM install
       run: npm install
 
