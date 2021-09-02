@@ -54,14 +54,15 @@ export class SignalRService {
     connection.start()
       .then(
         () => {
+          console.log(connection.connectionId);
           this.snackbar.open(
-            `Connected to ${environment.bgapiSignalRNotyfyHub} SignalR hub!`,
+            `Connected to SignalR hub ${environment.bgapiSignalRNotyfyHub} ConnectionId: ${connection.connectionId} `,
             '',
             {
               duration: 5000,
               horizontalPosition: 'center',
               verticalPosition: 'top',
-              panelClass: 'successSnackbar'
+              panelClass: 'successSnackbar',
             }
           );
         },
@@ -72,7 +73,7 @@ export class SignalRService {
 
     connection.on('BroadcastPostmanMessage', (type: string, payload: string) => {
       this.snackbar.open(
-        `Demo SignalR service via Postman!!! Type of message: ${type} with payload: ${payload}`,
+        `SignalR push notifications triggered by Postman!!! Type of message: ${type} with payload: ${payload}`,
         'X',
         {
           duration: 6000,
@@ -88,21 +89,21 @@ export class SignalRService {
 
   }
 
-  public addTransferChartDataListener = () => {
-    this.chartHubConnection.on('transferchartdata', (data) => {
-      this.data = data;
-      console.log('Called broadcastChartData with data: ' + data);
-    });
-  }
+  // public addTransferChartDataListener = () => {
+  //   this.chartHubConnection.on('transferchartdata', (data) => {
+  //     this.data = data;
+  //     console.log('Called broadcastChartData with data: ' + data);
+  //   });
+  // }
 
-  public broadcastChartData = () => {
-    this.chartHubConnection.invoke('broadcastchartdata', this.data).then(() => 'Invoked broadcastChartData with data: ' + this.data)
-    .catch(err => console.error(err));
-  }
+  // public broadcastChartData = () => {
+  //   this.chartHubConnection.invoke('broadcastchartdata', this.data).then(() => 'Invoked broadcastChartData with data: ' + this.data)
+  //   .catch(err => console.error(err));
+  // }
 
-  public addBroadcastChartDataListener = () => {
-    this.chartHubConnection.on('broadcastchartdata', (data) => {
-      this.bradcastedData = data;
-    })
-  }
+  // public addBroadcastChartDataListener = () => {
+  //   this.chartHubConnection.on('broadcastchartdata', (data) => {
+  //     this.bradcastedData = data;
+  //   })
+  // }
 }

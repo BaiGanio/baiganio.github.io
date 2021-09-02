@@ -41,7 +41,7 @@ export class AppComponent {
       () => {
        this.signalRService.initializeSignalRConnection();
         // this.signalRService.startChartHubConnection();
-        this.signalRService.addTransferChartDataListener();
+        //this.signalRService.addTransferChartDataListener();
       }
     );
   }

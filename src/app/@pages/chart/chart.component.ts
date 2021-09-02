@@ -49,6 +49,6 @@ export class ChartComponent implements OnInit, OnDestroy {
 
   public chartClicked = (event) => {
     console.log(event);
-    this.signalRService.broadcastChartData();
+    //this.signalRService.broadcastChartData();
   }
 }
