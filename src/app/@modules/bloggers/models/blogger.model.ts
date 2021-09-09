@@ -7,16 +7,16 @@ export class Blogger {
     LastName: string;
     Nickname: string;
     IsActive: boolean;
-    ImgUrl: string;
+    ImageUrl: string;
     AvatarUrl: string;
     Posts: Object[];
     CreatedOn: Date;
     ModifiedOn: Date;
-  
+
     constructor(id?: string, userId?: string, email?: string,
         firstname?: string, lastname?: string, nickname?: string,
         isActive?: boolean,  posts?: Object[],
-        imgUrl?: string, avatarUrl?: string,
+        imageUrl?: string, avatarUrl?: string,
         createdOn?: Date, modifiedOn?: Date) {
         this.Id = id;
         this.UserId = userId;
@@ -25,7 +25,7 @@ export class Blogger {
         this.LastName = lastname;
         this.Nickname = nickname;
         this.IsActive = isActive;
-        this.ImgUrl = imgUrl;
+        this.ImageUrl = imageUrl;
         this.AvatarUrl = avatarUrl;
         this.Posts = posts;
         this.CreatedOn = createdOn;

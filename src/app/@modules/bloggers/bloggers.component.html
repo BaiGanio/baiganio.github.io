@@ -10,7 +10,7 @@
           <hr>
           <div class="row">
             <div class="col-md-5">
-              <img src='{{ b.avatarUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
+              <img src='{{ b.imageUrl }}' alt="Sample image" class="img-thumbnail img-fluid">
             </div>
             <div class="col-md-7">
               <h5>
@@ -18,16 +18,16 @@
                 For people who want to be informed, suprised & inspired... & few more letters could be written to describe blogger personality shortly...
               </h5>
             </div>
-            <hr>  
-            <br>  
+            <hr>
+            <br>
             <div class="col-md-4">
               <p>
                 <img class="rating-star" src="./assets/images/app/rating-star-3d.png" alt=""> : 98
-              </p> 
-            </div> 
+              </p>
+            </div>
             <div class="col-md-4">
               <p>
-                Posts: {{getTotalPosts(b?.posts)}} 
+                Posts: {{getTotalPosts(b?.posts)}}
               </p>
             </div>
             <div class="col-md-4">
@@ -44,13 +44,13 @@
             </div>
           </div>
           <div class="row">
-            <button 
-              mat-raised-button 
+            <button
+              mat-raised-button
               color="primary"
               [routerLink]="['/bloggers', b.id]">
               <i class="fas fa-search"></i>
             </button>
-        
+
           </div>
         </div>
       </div>

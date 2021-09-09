@@ -8,7 +8,7 @@ export class TeacherService {
     constructor(private backendService: BackendService) { }
 
     getTeachers(): Observable<any> {
-        return this.backendService.backendRequest('get', 'Teachers', null, true);
+        return this.backendService.backendRequest('get', 'Statistics/Teachers', null);
     }
 
     getTeacherById(teacherId: any): Observable<any> {

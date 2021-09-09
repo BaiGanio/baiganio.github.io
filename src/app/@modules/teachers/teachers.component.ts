@@ -36,7 +36,7 @@ export class TeachersComponent implements OnInit {
     this.isLogged = this.authService.isAuthenticated();
     this.loading = true;
     this.getTeachers();
-    this.getUserByToken();
+    //this.getUserByToken();
   }
 
   getUserByToken() {
@@ -72,7 +72,7 @@ export class TeachersComponent implements OnInit {
     this.teachers.forEach( (element) => {
         if (element.Id === teacherId) {
           teacher = element;
-          return;  
+          return;
         }
     });
     const $dialogRef =
@@ -98,7 +98,7 @@ export class TeachersComponent implements OnInit {
     });
     const $dialogRef =
       this.dialog.open(
-        VoteForTeacherComponent, 
+        VoteForTeacherComponent,
           {
            data:{
               width: '80vw',
@@ -129,12 +129,12 @@ export class TeachersComponent implements OnInit {
                       teacherName = element.Name;
                       return;
                     }
-                    
+
                   });
                 this.loading = false;
                 this.successfulUpdate = true;
                 this.successfulUpdateMessage = `You have successfully starred ⭐ for ${teacherName}!`;
-              }, 
+              },
               err => {
                 this.loading = false;
                 this.errorHandlerService.handleRequestError(err);

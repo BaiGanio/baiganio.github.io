@@ -38,10 +38,10 @@ const routes: Routes = [
   {
     path: 'teachers',
     loadChildren : () => import('./@modules/teachers/teachers.module').then(m => m.TeachersModule),
-    canActivate: [RoleGuard],
-    data: {
-      allowedRoles: ['Teacher']
-    }
+    // canActivate: [RoleGuard],
+    // data: {
+    //   allowedRoles: ['Teacher']
+    // }
   },
   {
     path: 'account',
