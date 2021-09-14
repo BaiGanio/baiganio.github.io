@@ -33,7 +33,6 @@ import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 import { RateComponent } from './@components/errors/rate/rate.component';
 import { BloggersModule } from './@modules/bloggers/bloggers.module';
 import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdCarouselBasicComponent } from './@components/ngbd-carousel-basic/ngbd-carousel-basic.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -85,7 +84,6 @@ import { TeachersModule } from './@modules/teachers/teachers.module';
     ReactiveFormsModule,
     HttpClientModule,
     AngularMaterialModule,
-    NgbModule,
     CoreModule,
     AccountModule,
     DashboardModule,
