@@ -1,17 +1,15 @@
-.request, .prev{
+.prev{
   font-size: 1.6em;
 }
-.request-sm:hover{
-  cursor: pointer;
-  color:rgb(52, 199, 243);
-}
-.search{
+.search, .request{
   font-size: 1em;
-  padding: 5px;
   margin: 5px;
 }
 .search:hover{
-  background: rgb(52, 199, 243);
+  background: rgb(160, 220, 238);
+}
+.request:hover{
+  color:rgb(52, 199, 243);
 }
 #subscrStatus{
   font-size: 1.4em;

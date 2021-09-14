@@ -1,6 +1,6 @@
 <ngx-loading [show]="loading"></ngx-loading>
 <h1 class="title" style="text-align:center">Subscriptions</h1>
-<hr> 
+<hr>
 <br>
 <!-- Subscriptions -->
 <div class='row text-center'>
@@ -19,27 +19,27 @@
           <hr>
           <p *ngIf='s.IsActive' id="subscrStatus">Active : {{s.IsActive}}</p>
           <p *ngIf='!s.IsActive' id="subscrStatus">Subscription in development!</p>
-         
+
           <!-- <span *ngIf='s.IsActive'>
-            <span *ngIf='s.IsActive && isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>  
-              <button                                     
-              class="btn btn-outline-success" 
+            <span *ngIf='s.IsActive && isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>
+              <button
+              class="btn btn-outline-success"
               (click)='sendRequest(s.Id)'>
               Send request 4 subscription
             </button>
           </span>
-            <div style="color: blue;" *ngIf='isWaitingForConfirmation(s.Id)'>Waiting for confirmation!</div>            
+            <div style="color: blue;" *ngIf='isWaitingForConfirmation(s.Id)'>Waiting for confirmation!</div>
         </span> -->
-        <button mat-raised-button color="primary" class="search" (click)=getSubscriptionPreview(s.Id)>
+        <button mat-raised-button class="search" (click)=getSubscriptionPreview(s.Id)>
           <i class="fas fa-search"></i>
         </button>
-        <span *ngIf='s.IsActive && showRequest(s.Id)'
-          class="request">
-          Request from -> (<span class="request-sm" (click)=sendRequest(s.Id)>here!</span>)
-        </span>
-        
-        
-          <span class="prev" *ngIf='s.IsActive && showPreview(s.Id)'>              
+        <button *ngIf='s.IsActive && showRequest(s.Id)' mat-raised-button (click)=sendRequest(s.Id) class="search">
+          Request
+          <!-- <i class="fas fa-puzzle-piece"></i> -->
+        </button>
+
+
+          <span class="prev" *ngIf='s.IsActive && showPreview(s.Id)'>
             Preview from -> (<span class="request-sm" (click)=goToMySubscriptions()>here!</span>)
           </span>
         </div>
@@ -47,7 +47,7 @@
     </div>
   </div>
 </div>
-<br> 
+<br>
 
 <!-- .dim -->
 <div class="row justify-content-center">
