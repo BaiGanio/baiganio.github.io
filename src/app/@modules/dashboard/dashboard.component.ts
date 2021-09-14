@@ -76,8 +76,9 @@ export class DashboardComponent implements OnInit {
           : this.image;
         this.loading = false;
       },
-      error => { 
+      error => {
         this.errorHandlerService.handleRequestError(error);
+        console.log(error);
         this.loading = false;
       }
     );
