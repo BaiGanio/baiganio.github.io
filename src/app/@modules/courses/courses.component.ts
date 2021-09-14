@@ -27,6 +27,7 @@ export class CoursesComponent implements OnInit {
   // coursesWithUserIds = new Array<CourseWithEnrolledUserIds>();
   storedUser: any;
   // student = new StudentPreviewModel();
+  isInitMsg = true;
 
   constructor(
     private courseService: CoursesService,
@@ -102,7 +103,7 @@ export class CoursesComponent implements OnInit {
      error => {
        this.errorHandlerService.handleRequestError(error);
        this.loading = false;
-    }, () => { this.loading = false; });
+    }, () => { this.loading = false; this.isInitMsg = false});
   }
 
   private storedUserInit() {

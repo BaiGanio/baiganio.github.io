@@ -2,7 +2,7 @@
 <h1 class="title">Courses</h1>
 <hr>
 <br>
-<h1 class="ss text-center" *ngIf='loading'>Please wait!<br>Fetching data from the server...</h1>
+<h3 class="wait-fetching" *ngIf='loading && isInitMsg'>Please wait! Fetching data...</h3>
 <div class="text-center" *ngIf='flagEnrollSuccess; else infoBox'>
     <img src="../../../../../../assets/images/Checkmark.png" class="img-fluid">
     <h1>Congrats! <br> You are enrolled 4 the [c.Name] course  ;)</h1>

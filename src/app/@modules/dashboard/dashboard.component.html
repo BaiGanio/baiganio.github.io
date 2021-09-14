@@ -46,20 +46,21 @@
       </div>
     </div>
   </div>
+  <!-- Received Emails -->
   <div class="col-sm-2 mt-3">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Received Emails</h5>
         <hr style="border-color: black; width: 70%">
         <div class="row">
-        <div class="col-md-6">
-          <p class="card-text">Total Of:</p>
-                <h1>{{totalReceivedEmails || 0}}</h1>
-        </div>
-        <div class="col-md-6">
-          <p class="card-text">Unreaded:</p>
-                <h1>{{totalReceivedEmails}}</h1>
-        </div>
+          <div class="col-md-6">
+            <p class="card-text">Total Of:</p>
+                  <h1>{{totalReceivedEmails || 0}}</h1>
+          </div>
+          <div class="col-md-6">
+            <p class="card-text">Unreaded:</p>
+                  <h1>{{totalReceivedEmails}}</h1>
+          </div>
         </div>
         <!-- <p class="card-text">Total Of:</p>
         <h1>{{totalReceivedEmails || 0}}</h1> -->
@@ -70,6 +71,7 @@
       </div>
     </div>
   </div>
+    <!-- Suggestions & Reported Issues -->
   <div class="col-sm-2 mt-3">
     <div class="card">
       <div class="card-body">
@@ -118,4 +120,27 @@
       </div>
     </div>
   </div>
+    <!-- Notifications Hub -->
+    <div class="col-sm-2 mt-3">
+      <div class="card card-additional">
+        <div class="card-body">
+          <h5 class="card-title">Notifications Hub</h5>
+          <hr style="border-color: black; width: 70%">
+          <div class="row">
+            <div class="col-md-6">
+              <p class="card-text">Email:</p>
+                    <p>Enabled</p>
+            </div>
+            <div class="col-md-6">
+              <p class="card-text">SMS:</p>
+                  <p>Disabled</p>
+            </div>
+          </div>
+          <hr>
+          <button mat-raised-button
+            color="primary" routerLink='/dashboard/craftsman-menu/courses'><i class="fas fa-search"> C</i>
+          </button>
+        </div>
+      </div>
+    </div>
 </div>

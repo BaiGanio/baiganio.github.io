@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { AccountService } from 'src/app/@services/account.service';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar'; 
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { TermsComponent } from 'src/app/@pages/terms/terms.component';
 
@@ -59,7 +59,7 @@ export class RegisterComponent implements OnInit {
           this.ipinfo = response;
         },
         error => {
-          console.log(error);          
+          console.log(error);
         },
         () => {
           this.doRegistration();
@@ -75,8 +75,6 @@ export class RegisterComponent implements OnInit {
       IP: this.ipinfo?.ip
     }).subscribe(
         () => {
-          // this.router.navigate(['/welcome']);
-          // this.getSuccessfulSnackBar(this.registerForm.value.email);
           this.registrationSuccess = true;
           this.registrationSuccessMessage = 'Your registration request is on the fly...<br/>Please check your email for confirmation link!';
           this.loading = false;
