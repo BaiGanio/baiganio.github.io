@@ -12,6 +12,7 @@ import { AccessDeniedComponent } from './@pages/access-denied/access-denied.comp
 import { PlaylistItemsComponent } from './@pages/playlists/playlist-items/playlist-items.component';
 import { PlaylistsComponent } from './@pages/playlists/playlists.component';
 import { ChartComponent } from './@pages/chart/chart.component';
+import { TodosComponent } from './@pages/todos/todos.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'videos', component: PlaylistsComponent },
   { path: 'playlist-items', component: PlaylistItemsComponent },
+  { path: 'todos', component: TodosComponent },
   {
     path: 'subscriptions',
     loadChildren : () => import('./@modules/subscriptions/subscriptions.module').then(m => m.SubscriptionsModule)

@@ -48,6 +48,7 @@ import { tutorialReducer } from './@store/reducers/tutorial.reducer';
 import { ReadComponent } from './@pages/read/read.component';
 import { CreateComponent } from './@pages/create/create.component';
 import { TeachersModule } from './@modules/teachers/teachers.module';
+import { TodosComponent } from './@pages/todos/todos.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { TeachersModule } from './@modules/teachers/teachers.module';
     PlaylistItemsComponent,
     ChartComponent,
     ReadComponent,
-    CreateComponent
+    CreateComponent,
+    TodosComponent
   ],
   imports: [
     BrowserModule,
