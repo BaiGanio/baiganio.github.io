@@ -11,7 +11,7 @@ const environmentFileContent = `
     appUrl: 'https://baiganio.github.io/',
     apiUrl: 'https://bgapi.azurewebsites.net/api/',
     idsUrl: 'https://free-is4.azurewebsites.net/',
-    todoApiUrl: 'https://vsg-todo-api.azurewebsites.net/api/',
+    todoApiUrl: 'https://vsg-todo-api.azurewebsites.net/api/todo/',
 
     IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
     bgapiSignalRNotyfyHub: 'https://bgapi.azurewebsites.net/notify',
