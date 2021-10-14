@@ -1,0 +1,49 @@
+#filters mat-form-field,
+#filters mat-panel-title,
+#filters mat-panel-description {
+  font-size: 1.3em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#filters mat-form-field {
+  margin-right: 100px;
+}
+
+#todos table {
+  width: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+button {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.img-thumbnail {
+  width: 100%;
+  height: 15vw;
+  object-fit: contain;
+}
+
+.mat-cell {
+  padding-right: 10px;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: rgba(13, 212, 247, 0.171);
+}
