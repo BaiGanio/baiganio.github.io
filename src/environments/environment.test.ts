@@ -6,6 +6,7 @@ export const environment = {
   appUrl: 'https://test-baiganio.azurewebsites.net/',
   apiUrl: 'https://test-bgapi.azurewebsites.net/api/',
   idsUrl: 'https://ids4core20.azurewebsites.net/',
+  todoApiUrl: 'https://localhost:44338/api/',
 
   // IPCheckingServiceUrl: 'https://ipinfo.io?token=$2e07b81e6d80f2',
   IPCheckingServiceUrl: 'https://api.ipify.org?format=json',

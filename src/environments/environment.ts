@@ -6,6 +6,7 @@ export const environment = {
     appUrl: '',
     apiUrl: '',
     idsUrl: '',
+    todoApiUrl:'',
     IPCheckingServiceUrl: '',
     bgapiSignalRNotyfyHub: '',
     bgapiSignalRChartHub: '',

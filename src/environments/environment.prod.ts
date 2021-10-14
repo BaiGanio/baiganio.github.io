@@ -7,6 +7,7 @@ export const environment = {
   appUrl: 'https://baiganio.github.io/',
   apiUrl: 'https://bgapi.azurewebsites.net/api/',
   idsUrl: 'https://free-is4.azurewebsites.net/',
+  todoApiUrl: 'https://vsg-todo-api.azurewebsites.net/api/',
 
   // IPCheckingServiceUrl: 'https://ipinfo.io?token=$2e07b81e6d80f2',
   IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
