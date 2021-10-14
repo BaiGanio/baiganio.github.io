@@ -57,17 +57,17 @@ export class TodosComponent implements OnInit {
 
   // Search in data table based on the input fields that're used from filters group
   applyFilter() {
-    const teacherNameFilterValue = ( document.querySelector('#tiFilter') as HTMLInputElement).value;
-    const courseNameFilterValue = ( document.querySelector('#nameFilter') as HTMLInputElement).value;
+    const idFilterValue = ( document.querySelector('#idFilter') as HTMLInputElement).value;
+    const nameFilterValue = ( document.querySelector('#nameFilter') as HTMLInputElement).value;
 
     this.dataSource.filterPredicate = (data, filter) =>
       (
-        // data.TeacherName.trim().toLowerCase().indexOf(filter.split('┼')[0]) !== -1 &&
+        data.Id.toString().toLowerCase().indexOf(filter.split('┼')[0]) !== -1 &&
         data.Name.trim().toLowerCase().indexOf(filter.split('┼')[1]) !== -1
       );
 
     this.dataSource.filter =
-    `${teacherNameFilterValue.trim().toLowerCase()}┼${courseNameFilterValue.trim()}`;
+    `${idFilterValue.trim().toLowerCase()}┼${nameFilterValue.trim()}`;
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
