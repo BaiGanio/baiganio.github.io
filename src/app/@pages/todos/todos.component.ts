@@ -8,6 +8,7 @@ import { ToDoService } from 'src/app/@services/todo.service';
 import { ToDo } from 'src/app/@shared/models/todo.model';
 import { CreateToDoComponent } from './create-todo/create-todo.component';
 import { DeleteToDoComponent } from './delete-todo/delete-todo.component';
+import { UpdateToDoComponent } from './update-todo/update-todo.component';
 
 @Component({
   selector: 'app-todos',
@@ -136,7 +137,27 @@ export class TodosComponent implements OnInit {
   }
 
   editToDo(item){
+    const $dialogRef = this.dialog.open(
+      UpdateToDoComponent, { data: { model: item} });
 
+      $dialogRef.afterClosed().subscribe(
+        response => {
+          if (response) {
+            this.loading = true;
+            this.todoService.update(response).subscribe(
+              res => {
+                let index = this.todos.indexOf(item);
+                this.todos[index] = response;
+                this.dataSource = new MatTableDataSource(this.todos);
+                this.showSuccessSnackbar(`Successfully updated ToDo with id ${item.Id}`);
+                this.loading = false;
+              }, error => {
+                this.showErrorSnackbar(error.message);
+                this.loading = false;
+              });
+          }
+        }
+      );
   }
 
   private showSuccessSnackbar(message: string) {

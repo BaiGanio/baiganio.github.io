@@ -62,7 +62,7 @@ New Task
     <ng-container matColumnDef="Actions">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
       <td mat-cell *matCellDef="let element">
-        <button mat-button mat-raised-button class="m-2" (click)="editToDo(element.Id)">
+        <button mat-button mat-raised-button class="m-2" (click)="editToDo(element)">
           Edit
         </button>
         <button

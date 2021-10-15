@@ -51,6 +51,7 @@ import { TeachersModule } from './@modules/teachers/teachers.module';
 import { TodosComponent } from './@pages/todos/todos.component';
 import { CreateToDoComponent } from './@pages/todos/create-todo/create-todo.component';
 import { DeleteToDoComponent } from './@pages/todos/delete-todo/delete-todo.component';
+import { UpdateToDoComponent } from './@pages/todos/update-todo/update-todo.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { DeleteToDoComponent } from './@pages/todos/delete-todo/delete-todo.comp
     CreateComponent,
     TodosComponent,
     CreateToDoComponent,
-    DeleteToDoComponent
+    DeleteToDoComponent,
+    UpdateToDoComponent
   ],
   imports: [
     BrowserModule,
@@ -131,7 +133,8 @@ import { DeleteToDoComponent } from './@pages/todos/delete-todo/delete-todo.comp
     BadRequestComponent,
     QuestionnaireComponent,
     CreateToDoComponent,
-    DeleteToDoComponent
+    DeleteToDoComponent,
+    UpdateToDoComponent
   ],
   providers: [CoreModule],
   bootstrap: [AppComponent],

@@ -18,6 +18,10 @@ export class ToDoService {
       return this.http.post(environment.todoApiUrl + 'create', data);
     }
 
+    update(data: ToDo): Observable<any> {
+      return this.http.put(environment.todoApiUrl + 'update', data);
+    }
+
     delete(id: number): Observable<any> {
       return this.http.delete(environment.todoApiUrl + id);
     }
