@@ -11,7 +11,10 @@ h1 {
     font-size: 4em;
 }
 button{
-    font-size: 1.2em;
+    font-size: 1.6em;
+}
+.mat-raised-button.mat-blue{
+  color: white !important;
 }
 button:hover{
   background: rgb(52, 199, 243);

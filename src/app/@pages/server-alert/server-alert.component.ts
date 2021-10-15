@@ -17,7 +17,6 @@ import { Component, OnInit } from '@angular/core';
         <br>
         <button
           mat-raised-button
-          color="primary"
           routerLink='/home'>
             Back To Home
         </button>
