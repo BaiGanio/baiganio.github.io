@@ -53,7 +53,7 @@ export class TodosComponent implements OnInit {
         this.dataSource.sort = this.sort;
         this.loading = false;
       }, error => {
-        console.error('There was an error!', error.message);
+        this.showErrorSnackbar(error.message);
       });
   }
 
@@ -77,43 +77,36 @@ export class TodosComponent implements OnInit {
   }
 
   createToDo() {
-    const $dialogRef =
-      this.dialog.open(
-        CreateToDoComponent,
-        { width: '20vw' }
-      );
+    const $dialogRef = this.dialog.open(CreateToDoComponent, { width: '20vw' });
 
-      $dialogRef.afterClosed().subscribe(
-        response => {
-          if (response) {
-            this.loading = true;
-            this.todoService.create(response).subscribe(
-              res => {
-                this.snackbar.open(
-                  'Successfully created ToDo item.',
-                  'X',
-                  {
-                    duration: 5000,
-                    verticalPosition: 'bottom',
-                    panelClass: 'successSnackbar'
-                  });
-                this.loading = false;
-              }, error => {
-                this.snackbar.open(error.message, 'X', {
-                  duration: 5000,
-                  verticalPosition: 'bottom',
-                  panelClass: 'dangerSnackbar'
-                });
-                this.loading = false;
-              });
-          }
+    $dialogRef.afterClosed().subscribe(
+      response => {
+        if (response) {
+          this.loading = true;
+          this.todoService.create(response).subscribe(
+            res => {
+              const c = {
+                Id: res.id,
+                Name: res.name,
+                Description: res.description,
+                Date: res.date,
+                IsDone: res.isDone,
+              };
+              this.todos.push(c as ToDo);
+              this.dataSource = new MatTableDataSource(this.todos);
+              this.showSuccessSnackbar('Successfully created ToDo item.');
+              this.loading = false;
+            }, error => {
+              this.showErrorSnackbar(error.message);
+              this.loading = false;
+            });
         }
-      );
+      }
+    );
   }
 
   deleteToDo(item){
-    const $dialogRef =
-    this.dialog.open(
+    const $dialogRef = this.dialog.open(
       DeleteToDoComponent, {
         data: {
           title: `This will delete ToDo with Id ${item.Id}`,
@@ -126,24 +119,14 @@ export class TodosComponent implements OnInit {
         response => {
           if (response) {
             this.loading = true;
-
             this.todoService.delete(item.Id).subscribe(
               res => {
-                this.snackbar.open(
-                  `Successfully deleted ToDo with id ${item.Id}`,
-                  'X',
-                  {
-                    duration: 5000,
-                    verticalPosition: 'bottom',
-                    panelClass: 'successSnackbar'
-                  });
+                this.todos = this.todos.filter(t => t.Id !== item.Id);
+                this.dataSource = new MatTableDataSource(this.todos);
+                this.showSuccessSnackbar(`Successfully deleted ToDo with id ${item.Id}`);
                 this.loading = false;
               }, error => {
-                this.snackbar.open(error.message, 'X', {
-                  duration: 5000,
-                  verticalPosition: 'bottom',
-                  panelClass: 'dangerSnackbar'
-                });
+                this.showErrorSnackbar(error.message);
                 this.loading = false;
               });
           }
@@ -154,6 +137,24 @@ export class TodosComponent implements OnInit {
 
   editToDo(item){
 
+  }
+
+  private showSuccessSnackbar(message: string) {
+    this.snackbar.open(
+      message,
+      'X',
+      {
+        duration: 5000,
+        verticalPosition: 'bottom',
+        panelClass: 'successSnackbar'
+      });
+  }
+  private showErrorSnackbar(message: string) {
+    this.snackbar.open(message, 'X', {
+      duration: 5000,
+      verticalPosition: 'bottom',
+      panelClass: 'dangerSnackbar'
+    });
   }
 
 }
