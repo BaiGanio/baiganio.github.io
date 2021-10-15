@@ -1,16 +1,18 @@
 <ngx-loading [show]="loading"></ngx-loading>
 <h1 class="title">ToDo</h1>
 <hr>
-<h2 *ngIf='loading'>Please wait! Fetching data from the server...</h2>
+<div class="content justify-content-center">
+  <h5 *ngIf='loading'>Please wait! Fetching data from the server...</h5>
 
 <button
-mat-button
-mat-raised-button
-class="m-2"
-(click)="createToDo()">
-<i class="fas fa-plus"></i>
-New Task
+  mat-button
+  mat-raised-button
+  class="m-2"
+  (click)="createToDo()">
+  <i class="fas fa-plus"></i>
+  New Task
 </button>
+</div>
 
 <div id="todos" class="mat-elevation-z8 table-responsive">
   <div id="filters">
