@@ -21,6 +21,7 @@ import { BloggersService } from '../@services/bloggers.service';
 import { YouTubeService } from '../@services/youtube.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { FhAlertService } from '../@shared/fh-alert/fh-alert-service';
+import { ToDoService } from '../@services/todo.service';
 
 @NgModule({
   imports: [
@@ -45,6 +46,7 @@ import { FhAlertService } from '../@shared/fh-alert/fh-alert-service';
     TeacherService,
     BloggersService,
     YouTubeService,
+    ToDoService,
 
 // TODO: Should be in shared module
     FhAlertService,

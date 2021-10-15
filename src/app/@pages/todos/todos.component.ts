@@ -1,10 +1,13 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { ToDoService } from 'src/app/@services/todo.service';
 import { ToDo } from 'src/app/@shared/models/todo.model';
-import { environment } from 'src/environments/environment';
+import { CreateToDoComponent } from './create-todo/create-todo.component';
+import { DeleteToDoComponent } from './delete-todo/delete-todo.component';
 
 @Component({
   selector: 'app-todos',
@@ -22,18 +25,20 @@ export class TodosComponent implements OnInit {
     '#', 'Id', 'Name', 'Description', 'Date', 'Is Done', 'Actions'
   ];
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private todoService: ToDoService,
+    private dialog: MatDialog,
+    private snackbar: MatSnackBar
+  ) { }
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort: MatSort;
 
   ngOnInit(): void {
     this.loading = true;
-    this.http.get<any>(environment.todoApiUrl).subscribe({
-      next: data => {
-
-        console.log(data);
-        data.forEach(element => {
+    this.todoService.getAll().subscribe(
+      res => {
+        res.forEach(element => {
           const c = {
             Id: element.id,
             Name: element.name,
@@ -47,12 +52,9 @@ export class TodosComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         this.loading = false;
-        console.log(this.todos);
-      },
-      error: error => {
-          console.error('There was an error!', error.message);
-      }
-    })
+      }, error => {
+        console.error('There was an error!', error.message);
+      });
   }
 
   // Search in data table based on the input fields that're used from filters group
@@ -72,6 +74,86 @@ export class TodosComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  createToDo() {
+    const $dialogRef =
+      this.dialog.open(
+        CreateToDoComponent,
+        { width: '20vw' }
+      );
+
+      $dialogRef.afterClosed().subscribe(
+        response => {
+          if (response) {
+            this.loading = true;
+            this.todoService.create(response).subscribe(
+              res => {
+                this.snackbar.open(
+                  'Successfully created ToDo item.',
+                  'X',
+                  {
+                    duration: 5000,
+                    verticalPosition: 'bottom',
+                    panelClass: 'successSnackbar'
+                  });
+                this.loading = false;
+              }, error => {
+                this.snackbar.open(error.message, 'X', {
+                  duration: 5000,
+                  verticalPosition: 'bottom',
+                  panelClass: 'dangerSnackbar'
+                });
+                this.loading = false;
+              });
+          }
+        }
+      );
+  }
+
+  deleteToDo(item){
+    const $dialogRef =
+    this.dialog.open(
+      DeleteToDoComponent, {
+        data: {
+          title: `This will delete ToDo with Id ${item.Id}`,
+          confirmText: 'Delete',
+          model: item
+        }
+      });
+
+      $dialogRef.afterClosed().subscribe(
+        response => {
+          if (response) {
+            this.loading = true;
+
+            this.todoService.delete(item.Id).subscribe(
+              res => {
+                this.snackbar.open(
+                  `Successfully deleted ToDo with id ${item.Id}`,
+                  'X',
+                  {
+                    duration: 5000,
+                    verticalPosition: 'bottom',
+                    panelClass: 'successSnackbar'
+                  });
+                this.loading = false;
+              }, error => {
+                this.snackbar.open(error.message, 'X', {
+                  duration: 5000,
+                  verticalPosition: 'bottom',
+                  panelClass: 'dangerSnackbar'
+                });
+                this.loading = false;
+              });
+          }
+        }
+      );
+
+  }
+
+  editToDo(item){
+
   }
 
 }

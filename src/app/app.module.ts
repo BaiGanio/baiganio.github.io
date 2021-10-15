@@ -49,6 +49,8 @@ import { ReadComponent } from './@pages/read/read.component';
 import { CreateComponent } from './@pages/create/create.component';
 import { TeachersModule } from './@modules/teachers/teachers.module';
 import { TodosComponent } from './@pages/todos/todos.component';
+import { CreateToDoComponent } from './@pages/todos/create-todo/create-todo.component';
+import { DeleteToDoComponent } from './@pages/todos/delete-todo/delete-todo.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import { TodosComponent } from './@pages/todos/todos.component';
     ChartComponent,
     ReadComponent,
     CreateComponent,
-    TodosComponent
+    TodosComponent,
+    CreateToDoComponent,
+    DeleteToDoComponent
   ],
   imports: [
     BrowserModule,
@@ -126,6 +130,8 @@ import { TodosComponent } from './@pages/todos/todos.component';
     UnauthorizedComponent,
     BadRequestComponent,
     QuestionnaireComponent,
+    CreateToDoComponent,
+    DeleteToDoComponent
   ],
   providers: [CoreModule],
   bootstrap: [AppComponent],

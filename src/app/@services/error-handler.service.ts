@@ -26,7 +26,7 @@ export class ErrorHandlerService {
           BadRequestComponent,
           { data: { model: model } }
       );
-    } else if (status === 401) {      
+    } else if (status === 401) {
       this.dialog.open(
           UnauthorizedComponent,
           { data: { model: error } }
