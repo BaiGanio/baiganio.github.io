@@ -3,22 +3,20 @@
     text-align: center;
 }
 button{
-    font-family: 'Alsandra';
-    font-size: 1.4em;
-    padding: 10px;
+  font-family: 'Alsandra';
+    font-size: 1.6em;
+    padding: 20px;
   }
   button:hover{
     background: rgb(52, 199, 243);
   }
-h1 {
-    font-size: 3em;
 
-    -webkit-text-stroke-width: 0.8px;
+  #errorMessage {
+    -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: black;
-    #errorMessage {
-        color: white;
-    }
+    color: white;
 }
+
 @media only screen and (max-width: 797px) {
     h1 {
         font-size: 5em;
@@ -33,5 +31,5 @@ h1 {
     }
 }
 @media only screen and (max-width: 451px) {
-    
+
 }

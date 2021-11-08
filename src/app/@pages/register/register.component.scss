@@ -1,10 +1,19 @@
 button{
-  font-size: 1.4em;
+  font-size: 1.4rem;
   padding: 10px;
 }
-button:hover{
-  background: rgb(52, 199, 243);
+.have-account{
+  font-family: 'Alsandra';
+  padding: 10px;
 }
+.mat-raised-button.mat-blue{
+  color: white !important;
+}
+.have-account:hover{
+  background: rgb(52, 199, 243);
+  color: white !important;
+}
+
 #viewRegister {
   width: 50%;
   margin: 0 auto;

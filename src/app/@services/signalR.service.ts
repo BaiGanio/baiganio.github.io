@@ -54,7 +54,6 @@ export class SignalRService {
     connection.start()
       .then(
         () => {
-          console.log(connection.connectionId);
           this.snackbar.open(
             `Connected to SignalR hub ${environment.bgapiSignalRNotyfyHub} ConnectionId: ${connection.connectionId} `,
             '',

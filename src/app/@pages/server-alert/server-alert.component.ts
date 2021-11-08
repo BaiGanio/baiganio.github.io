@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
     <div class="row">
       <div class="col-xs-12 col-center">
         <br>
-        <h1>
+        <h1 class="title">
           Ooops... ERROR 503!
           <hr>
           <br>

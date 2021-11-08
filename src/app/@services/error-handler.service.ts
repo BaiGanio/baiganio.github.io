@@ -16,11 +16,11 @@ export class ErrorHandlerService {
     if (status === 0) {
       return this.router.navigate(['/server-alert']);
     } else{
+      console.log(error);
       const message = error.message;
-      this.snackbar.open(`Message: ${message} Error: ${error.error}`, 'X', {
-          duration: 5000,
+      this.snackbar.open(`${error.error}`, 'X', {
           horizontalPosition: 'center',
-          verticalPosition: 'top',
+          verticalPosition: 'bottom',
           panelClass: 'dangerSnackbar'
         });
     }

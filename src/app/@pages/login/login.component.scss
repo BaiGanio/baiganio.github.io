@@ -1,5 +1,5 @@
 button{
-  font-size: 1.4em;
+  font-size: 1.4rem;
   padding: 10px;
 }
 
@@ -8,6 +8,16 @@ button:hover{
 }
 .btn-outline-info{
   width:10%;
+}
+
+.forgot-password{
+  font-family: 'Alsandra';
+}
+.mat-raised-button.mat-blue{
+  color: white !important;
+}
+.forgot-password:hover{
+  background: rgb(52, 199, 243);
 }
 
 #viewLogin {
