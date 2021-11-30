@@ -9,10 +9,12 @@ import 'rxjs/add/operator/catch';
 
 import {
   UserActionTypes,
+  EditUserAction,
   EditUserFailureAction,
   EditUserSuccessAction,
   SelectUserAction,
   SelectUserSuccessAction,
+  SelectUserFailureAction
 } from '../actions/user.actions';
 import { AppState } from '../app.state';
 
@@ -37,17 +39,23 @@ export class UserEffects {
     public selectedUser$: Observable<Action> = this._actions
       .pipe(
         ofType<SelectUserAction>(UserActionTypes.SELECT_USER),
-        withLatestFrom(this._store.select(x => x.user.selectedUser)),
-        map(([action, selectedUser]) => this.getUser(
-            selectedUser
-        )),
-      mergeMap(selectedUser => this._userService.getUserById(selectedUser.Id)
-      .pipe(
-            map(responce => new SelectUserSuccessAction(responce)),
-            catchError((responce: HttpErrorResponse) => of(
-                new EditUserFailureAction(responce.error.Message)))
-      ))
-    )
+        mergeMap(
+          () => this._userService.getUserByToken()
+            .pipe(
+              map(data => new SelectUserSuccessAction(data)),
+              catchError((error: HttpErrorResponse) => of(new EditUserFailureAction(error)))
+            )
+        )
+      )
+
+      @Effect({ dispatch: false })
+      selectUserSuccess = this._actions.pipe(
+          ofType<SelectUserSuccessAction>(UserActionTypes.SELECT_USER_SUCCESS),
+          map((action) => {
+            this._alertService.show(new AlertContext(AlertType.Success, `Successfuly selected User with Id: ${action.payload.Id}!`))
+            console.log(action.payload);
+            })
+      )
 
     @Effect({ dispatch: false })
     editUserFailure = this._actions.pipe(

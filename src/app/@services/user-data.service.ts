@@ -50,7 +50,7 @@ export class UserDataService {
     return this.backendService.backendRequest('post', 'Users/ReportException', data, true);
   }
 
-  getUserByToken(): Observable<any> {
+  getUserByToken(): Observable<UserView> {
     return this.backendService.backendRequest('get', 'Identity', null, true);
   }
 

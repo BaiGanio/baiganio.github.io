@@ -6,9 +6,9 @@ import { Tutorial } from "../@shared/models/tutorial.model";
 
 export interface AppState {
     readonly user: UserState;
+    readonly loading: boolean;
     readonly blogger: BloggerState;
     readonly history: HistoryState;
-    readonly loading: boolean;
     readonly tutorial: Tutorial[];
 }
 

@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/@services/auth.service';
 import { BackendService } from 'src/app/@services/backend.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { UserDataService } from 'src/app/@services/user-data.service';
+import { SelectUserAction } from 'src/app/@store/actions/user.actions';
 import { AppState, UserState } from 'src/app/@store/app.state';
 import { selectUser } from 'src/app/@store/selectors/user.selector';
 
@@ -67,27 +68,8 @@ export class LoginComponent implements OnInit {
           this.authservice.clearUserToken();
           this.authservice.userToken = response;
         }
-       // this.store.dispatch(new SelectUserAction());
+        this.store.dispatch(new SelectUserAction());
         this.updateLastLogin();
-
-
-
-        // this.userDataService.getUserByToken()
-        //   .subscribe(
-        //       response => {
-        //         this.user = response;
-        //         console.log(this.user);
-        //          let jj: UserView;
-        //         this.store.dispatch(new InitializeUserAction(this.user));
-
-        //       },
-        //       error => {
-        //           console.log(error);
-        //       },
-        //       () => {
-
-        //       }
-        //   );
         this.router.navigate(['/dashboard']);
       },
       error => {
