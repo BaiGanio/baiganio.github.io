@@ -55,7 +55,7 @@
                             (click) = 'goToCourse(c.Id)'>
                             <b>Go to Course Progress</b>
                         </button>
-                        <span *ngIf='isEnrolled(c.Id) && !c.IsElectable'>
+                        <span *ngIf='!isEnrolled(c.Id) && c.IsElectable'>
                             <button
                                 mat-raised-button
                                 (click) = 'enroll4course(c.Id)'>
