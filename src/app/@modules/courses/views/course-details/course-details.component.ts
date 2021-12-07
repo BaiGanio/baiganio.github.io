@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./course-details.component.scss']
 })
 export class CourseDetailsComponent implements OnInit {
-  activeTab = 0;
+  activeTab = 1;
   constructor(private router: Router) { }
 
   ngOnInit() {

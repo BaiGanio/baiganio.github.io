@@ -46,15 +46,18 @@ export class InClassComponent implements OnInit {
 
 
     getStudentLogins() {
+        let rnd = 2;
         this.studentService.getStudentLogins().subscribe(
             response => {
                 response.body.forEach(element => {
+                  rnd++;
+                  let vl = rnd > 3 || rnd >= 5;
                     const c = {
                     Id: element.id,
                     StudentId: element.sudentId,
                     Ip: element.ip,
                     Week: element.week,
-                    IsCalculated: element.isCalculated,
+                    IsCalculated: vl,
                     LastLoginDate: element.lastLoginDate,
                     IPStack: element.ipStack
                     };
@@ -84,7 +87,6 @@ export class InClassComponent implements OnInit {
         this.loading = true;
         this.http.get(environment.IPCheckingServiceUrl).subscribe(
             data => {
-                console.log(data);
                 this.ipInfo = data;
                 console.log(this.ipInfo);
             },
@@ -98,7 +100,7 @@ export class InClassComponent implements OnInit {
     }
 
     proccessIP() {
-        this.studentService.letMeIn({CourseId: "", IP: this.ipInfo.ip}).subscribe(
+        this.studentService.letMeIn({CourseId: "1af2e4ef-4c22-4303-b558-9501341caf82", IP: this.ipInfo.ip}).subscribe(
             response => { },
             error => {
                 this.errMsg = error.error;

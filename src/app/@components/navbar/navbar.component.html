@@ -14,20 +14,26 @@
       </span>
     </mat-toolbar>
     <mat-list (click)="sidenav.close()">
-      <a mat-list-item routerLink="/home">Home</a>
+      <a mat-list-item routerLink="/home"><i class="fas fa-home"></i>Home</a>
       <hr>
       <div *ngIf='isUserLogged()'>
-        <a mat-list-item routerLink="/profile">Profile</a>
-        <a mat-list-item routerLink="/dashboard">Dashboard</a>
+        <a mat-list-item routerLink="/profile">
+          <i class="fas fa-user"></i> Profile</a>
+        <a mat-list-item routerLink="/dashboard">
+          <i class="fas fa-chart-line"></i> Dashboard </a>
         <hr>
       </div>
-      <a mat-list-item routerLink="/subscriptions">Subscriptions</a>
-      <a mat-list-item routerLink="/courses">Courses</a>
-      <a mat-list-item routerLink="/bloggers">Bloggers</a>
-      <a mat-list-item routerLink="/videos">Videos</a>
-      <a mat-list-item routerLink="/teachers">Teachers</a>
-      <a mat-list-item routerLink="/todos">ToDos</a>
+      <a mat-list-item routerLink="/subscriptions"><i class="fas fa-subscript"></i>Subscriptions</a>
+      <a mat-list-item routerLink="/courses"><i class="fas fa-graduation-cap"></i>Courses</a>
+      <a mat-list-item routerLink="/teachers"><i class="fas fa-user-friends"></i>Teachers</a>
+      <a mat-list-item routerLink="/videos"><i class="fas fa-video"></i>Videos</a>
+      <a mat-list-item routerLink="/bloggers"><i class="fas fa-users"></i>Bloggers</a>
+      <a mat-list-item routerLink="/bloggers"><i class="fas fa-book-reader"></i>Publications</a>
+      <a mat-list-item routerLink="/todos"><i class="fas fa-check"></i>ToDos</a>
       <hr>
+      <a mat-list-item routerLink="/"><i class="fas fa-cog"></i>Settings</a>
+      <hr>
+      <a mat-list-item routerLink="/">Projects:</a>
       <a mat-list-item target="_blank" href="https://baiganio.github.io/js4b/">JS4B</a>
       <a mat-list-item target="_blank" href="https://baiganio.github.io/backoffice/">BackOffice</a>
       <a mat-list-item target="_blank" href="https://baiganio.github.io/space-university/">Space University</a>
@@ -50,21 +56,17 @@
       </span>
       <span class="actions">
         <div *ngIf='isUserLogged(); else signBox'>
-          <!-- <button mat-button>
-            <span class="badge">99 </span><i class="fa fa-bell"></i>
-          </button> -->
-          <div>
-            <button mat-button [matMenuTriggerFor]="userMenu">
-              Welcome, {{ storedUser?.firstName !== null ? storedUser?.firstName + ' ' + storedUser?.lastName : storedUser?.email }}
+          <i class="fas fa-bell">1</i>
+          <button mat-button [matMenuTriggerFor]="userMenu">
+            Welcome, {{ storedUser?.firstName !== null ? storedUser?.firstName + ' ' + storedUser?.lastName : storedUser?.email }}
+          </button>
+          <mat-menu #userMenu="matMenu">
+            <hr>
+            <button mat-menu-item (click)='logOut()'>
+              <b>Logout</b>
             </button>
-            <mat-menu #userMenu="matMenu">
-              <hr>
-              <button mat-menu-item (click)='logOut()'>
-                <b>Logout</b>
-              </button>
-              <hr>
-            </mat-menu>
-          </div>
+            <hr>
+          </mat-menu>
         </div>
         <ng-template #signBox>
           <a class="mr-3" routerLink='/login'>
