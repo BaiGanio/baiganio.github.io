@@ -18,7 +18,7 @@ export class ErrorHandlerService {
     } else{
       console.log(error);
       const message = error.message;
-      this.snackbar.open(`${error.error}`, 'X', {
+      this.snackbar.open(`${message}`, 'X', {
           horizontalPosition: 'center',
           verticalPosition: 'bottom',
           panelClass: 'dangerSnackbar'

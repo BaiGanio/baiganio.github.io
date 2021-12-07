@@ -9,7 +9,7 @@ import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
     styleUrls: ['forgotten-password.component.scss']
 })
 export class ForgottenPasswordComponent implements OnInit {
-    forgotPassForm: FormGroup;
+    forgotPassForm: FormGroup = new FormGroup({});
     loading = false;
     successFlag = false;
     resetPasswordErrorFlag = false;
@@ -19,10 +19,8 @@ export class ForgottenPasswordComponent implements OnInit {
         private accountService: AccountService,
         private errorHandlerService: ErrorHandlerService,
         private formBuilder: FormBuilder
-    ) { }
-
-    ngOnInit() {
-        this.forgotPassForm = 
+    ) {
+      this.forgotPassForm =
             this.formBuilder.group({
                 email: [
                     null,
@@ -31,7 +29,19 @@ export class ForgottenPasswordComponent implements OnInit {
             });
     }
 
-    sendResetLink() {
+    ngOnInit() {
+        this.forgotPassForm =
+            this.formBuilder.group({
+                email: [
+                    null,
+                    [Validators.required, Validators.email]
+                ]
+            });
+    }
+    public checkError = (controlName: string, errorName: string) => {
+      return this.forgotPassForm.controls[controlName].hasError(errorName);
+    }
+    sendResetLink(data: any) {
         this.loading = true;
         this.accountService.forgotPassword({email: this.forgotPassForm.value.email.trim()})
             .subscribe(

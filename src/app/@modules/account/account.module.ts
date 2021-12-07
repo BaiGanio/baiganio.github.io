@@ -9,6 +9,7 @@ import { ReportIssueComponent } from './pages/report-issue/report-issue.componen
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 import { ForgottenPasswordComponent } from './pages/fotgotten-password/forgotten-password.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ForgottenPasswordComponent } from './pages/fotgotten-password/forgotten
     CommonModule,
     AccountRoutingModule,
     AngularMaterialModule,
+    ReactiveFormsModule,
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.threeBounce,
       primaryColour: '#88078e',

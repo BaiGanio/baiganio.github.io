@@ -2,19 +2,19 @@
 <h1 class="title">
     Local Account
 </h1>
-<hr>
-<div class="row justify-content-center">
-  <div class="dim" *ngIf='loginError'>
-    <div class="msg">
-      <h1 innerHtml={{loginErrorMessage}}></h1>
-      <br><br>
-      <button
-        class="btn btn-outline-info"
-        (click) = dismiss()>
-        Dismiss
-      </button>
-    </div>
+<hr>  <div class="dim" *ngIf='loginError'>
+  <div class="msg">
+    <h1 innerHtml={{loginErrorMessage}}></h1>
+    <br><br>
+    <button
+    btn btn-outline-info
+      (click) = dismiss()>
+      Dismiss
+    </button>
   </div>
+</div>
+<div class="row justify-content-center">
+
   <div class="col-xl-8">
 
     <!-- START LOGIN CONTENT -->

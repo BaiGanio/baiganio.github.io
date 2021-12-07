@@ -2,19 +2,15 @@ button{
   font-size: 1.4rem;
   padding: 10px;
 }
-
-button:hover{
-  background: rgb(52, 199, 243);
-}
-.btn-outline-info{
-  width:10%;
-}
-
-.forgot-password{
-  font-family: 'Alsandra';
-}
 .mat-raised-button.mat-blue{
   color: white !important;
+}
+button:hover{
+  background: rgb(52, 199, 243);
+  color: white !important;
+}
+.forgot-password{
+  font-family: 'Alsandra';
 }
 .forgot-password:hover{
   background: rgb(52, 199, 243);
