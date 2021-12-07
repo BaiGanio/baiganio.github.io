@@ -55,7 +55,7 @@
           </button> -->
           <div>
             <button mat-button [matMenuTriggerFor]="userMenu">
-              Welcome, {{ storedUser?.FirstName !== null ? storedUser?.FirstName + ' ' + storedUser?.LastName : storedUser?.Email }}
+              Welcome, {{ storedUser?.firstName !== null ? storedUser?.firstName + ' ' + storedUser?.lastName : storedUser?.email }}
             </button>
             <mat-menu #userMenu="matMenu">
               <hr>

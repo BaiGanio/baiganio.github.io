@@ -17,7 +17,7 @@ export class ErrorHandlerService {
       return this.router.navigate(['/server-alert']);
     } else{
       console.log(error);
-      const message = error.message;
+      const message = error.error;
       this.snackbar.open(`${message}`, 'X', {
           horizontalPosition: 'center',
           verticalPosition: 'bottom',

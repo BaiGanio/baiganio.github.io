@@ -28,10 +28,11 @@ export class AppComponent {
     this.backendService.getClientAccessToken().subscribe(
       (response) => {
         this.authService.authToken = response.access_token;
-        this.signalRService.initializeSignalRConnection();
+        //this.signalRService.initializeSignalRConnection();
       },
       (error) => {
-        this.errorHandlerService.handleRequestError(error);
+        console.log(error);
+        //this.errorHandlerService.handleRequestError(error);
       },
     );
   }

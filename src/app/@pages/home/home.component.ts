@@ -7,13 +7,15 @@ import { Component, OnInit } from '@angular/core';
   `
   <div style="text-align:center">
     <div class="content">
+    <h1 class="title">Welcome to Bai Ganio</h1>
       <div class="row">
-        <div class="col-xs-12 col-center">
-          <h1 class="">
-
-          </h1>
+        <div class="col-md-5 col-center">
           <img src="./assets/images/app/Ganio.jpg" alt="">
-          <h1 class="" id="comingSoon">   Welcome to BaiGanio. Open doors soon...</h1>
+        </div>
+        <div class="col-md-7 col-center">
+          <h1 class="comingSoon">Bai Ganio is a fictional character & protagonist in a series of satirical
+          feuilletons from Bulgarian writer, lawyer and public man Aleko Konstantinov.
+          </h1>
         </div>
       </div>
     </div>

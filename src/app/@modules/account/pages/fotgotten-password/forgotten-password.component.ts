@@ -52,7 +52,7 @@ export class ForgottenPasswordComponent implements OnInit {
                 },
                 error => {
                     this.forgotPassForm.reset();
-                    this.resetPasswordErrorFlag = true;
+                    //this.resetPasswordErrorFlag = true;
                     this.loading = false;
                     this.errorHandlerService.handleRequestError(error);
                 }

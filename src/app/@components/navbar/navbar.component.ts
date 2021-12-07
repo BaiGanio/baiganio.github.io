@@ -18,7 +18,7 @@ import { SelectUserAction } from 'src/app/@store/actions/user.actions';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  storedUser: UserView;
+  storedUser: any;
   reportIssueModalVisibility = false;
 
   constructor(
@@ -30,17 +30,14 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     if(this.authService.isAuthenticated()) {
-           let jj = this.store.select(store => store.user.selectedUser);
-           console.log(jj);
-            // .subscribe(x => {
-            //   console.log(x.body);
-            //   const u = {
-            //     Id: x.Id
-            // };
-            // this.storedUser = u as UserView;
-            // });
-      //           this.storedUser = this.store.select(store => store.user.selectedUser);
-      //  console.log(this.storedUser);
+      this.userDataService.getUserByToken()
+      .subscribe(
+      response => {
+        this.storedUser =  response.body;
+      },
+      error => {
+          console.log(error);
+      });
     }
   }
 

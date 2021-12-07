@@ -12,9 +12,9 @@
     </h1>
     <br>
 </div>
-<mat-tab-group [selectedIndex]="activeTab">   
+<mat-tab-group [selectedIndex]="activeTab">
     <div *ngFor='let s of subscriptions'>
-        <mat-tab class="mt" label="{{s?.type}} Id : {{s?.id}}">
+        <mat-tab class="mt" label="{{s?.type}}">
             <ng-template matTabContent>
                 <br>
                 <div class="row" style="margin: 0 auto; overflow: hidden;">
@@ -30,10 +30,10 @@
                     <div class="col-md-5">
                         <div *ngIf='s?.type === "Blogger"'>
                             <app-blogger-subscription-details></app-blogger-subscription-details>
-                        </div> 
+                        </div>
                     </div>
                 </div>
-            </ng-template> 
+            </ng-template>
         </mat-tab>
     </div>
 </mat-tab-group>
