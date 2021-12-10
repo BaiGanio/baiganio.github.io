@@ -42,17 +42,13 @@ import { LoadingEffects } from './@store/effects/loading.effects';
 import { loadingReducer } from './@store/reducers/loading.reducer';
 import { PlaylistItemsComponent } from './@pages/playlists/playlist-items/playlist-items.component';
 import { PlaylistsComponent } from './@pages/playlists/playlists.component';
-import { ChartComponent } from './@pages/chart/chart.component';
-import { ChartsModule } from 'ng2-charts';
 import { tutorialReducer } from './@store/reducers/tutorial.reducer';
-import { ReadComponent } from './@pages/read/read.component';
-import { CreateComponent } from './@pages/create/create.component';
 import { TeachersModule } from './@modules/teachers/teachers.module';
 import { TodosComponent } from './@pages/todos/todos.component';
 import { CreateToDoComponent } from './@pages/todos/create-todo/create-todo.component';
 import { DeleteToDoComponent } from './@pages/todos/delete-todo/delete-todo.component';
 import { UpdateToDoComponent } from './@pages/todos/update-todo/update-todo.component';
-import { CustomerViewComponent } from './@pages/customer/customer-view/customer-view.component';
+import { WorkbenchModule } from './@modules/workbench/workbench.module';
 
 @NgModule({
   declarations: [
@@ -77,14 +73,10 @@ import { CustomerViewComponent } from './@pages/customer/customer-view/customer-
     PlaylistsComponent,
     NgbdCarouselBasicComponent,
     PlaylistItemsComponent,
-    ChartComponent,
-    ReadComponent,
-    CreateComponent,
     TodosComponent,
     CreateToDoComponent,
     DeleteToDoComponent,
     UpdateToDoComponent,
-    CustomerViewComponent
   ],
   imports: [
     BrowserModule,
@@ -102,6 +94,7 @@ import { CustomerViewComponent } from './@pages/customer/customer-view/customer-
     SubscriptionsModule,
     BloggersModule,
     TeachersModule,
+    WorkbenchModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: jwtTokenGetter
@@ -125,7 +118,6 @@ import { CustomerViewComponent } from './@pages/customer/customer-view/customer-
       UserEffects,
       // HistoryEffects
     ]),
-    ChartsModule
   ],
   entryComponents: [
     TermsComponent,

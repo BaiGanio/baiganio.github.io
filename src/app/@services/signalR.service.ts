@@ -88,21 +88,21 @@ export class SignalRService {
 
   }
 
-  // public addTransferChartDataListener = () => {
-  //   this.chartHubConnection.on('transferchartdata', (data) => {
-  //     this.data = data;
-  //     console.log('Called broadcastChartData with data: ' + data);
-  //   });
-  // }
+  public addTransferChartDataListener = () => {
+    this.chartHubConnection.on('transferchartdata', (data) => {
+      this.data = data;
+      console.log('Called broadcastChartData with data: ' + data);
+    });
+  }
 
-  // public broadcastChartData = () => {
-  //   this.chartHubConnection.invoke('broadcastchartdata', this.data).then(() => 'Invoked broadcastChartData with data: ' + this.data)
-  //   .catch(err => console.error(err));
-  // }
+  public broadcastChartData = () => {
+    this.chartHubConnection.invoke('broadcastchartdata', this.data).then(() => 'Invoked broadcastChartData with data: ' + this.data)
+    .catch(err => console.error(err));
+  }
 
-  // public addBroadcastChartDataListener = () => {
-  //   this.chartHubConnection.on('broadcastchartdata', (data) => {
-  //     this.bradcastedData = data;
-  //   })
-  // }
+  public addBroadcastChartDataListener = () => {
+    this.chartHubConnection.on('broadcastchartdata', (data) => {
+      this.bradcastedData = data;
+    })
+  }
 }

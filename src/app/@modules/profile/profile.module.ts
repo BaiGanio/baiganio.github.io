@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 // import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
-import { ProfileRoutingModule } from './profile-routing.modute';
+import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Subscribe4NotificationsComponent } from './components/subscribe4notifications/subscribe4notifications.component';

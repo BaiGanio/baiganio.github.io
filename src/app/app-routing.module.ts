@@ -11,10 +11,8 @@ import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
 import { AccessDeniedComponent } from './@pages/access-denied/access-denied.component';
 import { PlaylistItemsComponent } from './@pages/playlists/playlist-items/playlist-items.component';
 import { PlaylistsComponent } from './@pages/playlists/playlists.component';
-import { ChartComponent } from './@pages/chart/chart.component';
+import { ChartComponent } from './@modules/workbench/chart/chart.component';
 import { TodosComponent } from './@pages/todos/todos.component';
-import { CustomerViewComponent } from './@pages/customer/customer-view/customer-view.component';
-
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -25,7 +23,10 @@ const routes: Routes = [
   { path: 'videos', component: PlaylistsComponent },
   { path: 'playlist-items', component: PlaylistItemsComponent },
   { path: 'todos', component: TodosComponent },
-  { path: 'customers', component: CustomerViewComponent },
+  {
+    path: 'workbench',
+    loadChildren : () => import('./@modules/workbench/workbench.module').then(m => m.WorkbenchModule)
+  },
   {
     path: 'subscriptions',
     loadChildren : () => import('./@modules/subscriptions/subscriptions.module').then(m => m.SubscriptionsModule)

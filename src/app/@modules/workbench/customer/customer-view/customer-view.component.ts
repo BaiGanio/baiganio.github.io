@@ -13,6 +13,7 @@ import { CustomerState } from 'src/app/@store/reducers/customer.reducer';
 })
 export class CustomerViewComponent implements OnInit {
   customers$: Observable<Customer[]>;
+
   constructor(private store: Store<CustomerState>) {
     this.customers$ = this.store.pipe(select(selectCustomers));
    }
