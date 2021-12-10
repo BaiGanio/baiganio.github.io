@@ -52,6 +52,7 @@ import { TodosComponent } from './@pages/todos/todos.component';
 import { CreateToDoComponent } from './@pages/todos/create-todo/create-todo.component';
 import { DeleteToDoComponent } from './@pages/todos/delete-todo/delete-todo.component';
 import { UpdateToDoComponent } from './@pages/todos/update-todo/update-todo.component';
+import { CustomerViewComponent } from './@pages/customer/customer-view/customer-view.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { UpdateToDoComponent } from './@pages/todos/update-todo/update-todo.comp
     TodosComponent,
     CreateToDoComponent,
     DeleteToDoComponent,
-    UpdateToDoComponent
+    UpdateToDoComponent,
+    CustomerViewComponent
   ],
   imports: [
     BrowserModule,

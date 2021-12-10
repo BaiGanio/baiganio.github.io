@@ -168,6 +168,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "baiganio"
+    }
+  },
+  "defaultProject": "baiganio",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

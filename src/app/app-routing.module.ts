@@ -13,6 +13,7 @@ import { PlaylistItemsComponent } from './@pages/playlists/playlist-items/playli
 import { PlaylistsComponent } from './@pages/playlists/playlists.component';
 import { ChartComponent } from './@pages/chart/chart.component';
 import { TodosComponent } from './@pages/todos/todos.component';
+import { CustomerViewComponent } from './@pages/customer/customer-view/customer-view.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'videos', component: PlaylistsComponent },
   { path: 'playlist-items', component: PlaylistItemsComponent },
   { path: 'todos', component: TodosComponent },
+  { path: 'customers', component: CustomerViewComponent },
   {
     path: 'subscriptions',
     loadChildren : () => import('./@modules/subscriptions/subscriptions.module').then(m => m.SubscriptionsModule)

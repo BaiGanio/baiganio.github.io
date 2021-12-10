@@ -3,11 +3,11 @@ import { UserView } from "src/app/@modules/users/models/user-view";
 
 export enum UserActionTypes {
     SELECT_USER = '[User] SELECT_USER',
-    SELECT_USER_SUCCESS = '[User]  SELECT_USER_SUCCESS',
-    SELECT_USER_FAILURE = '[User]  SELECT_USER_FAILURE',
-    EDIT_USER = '[User]  EDIT_USER',
-    EDIT_USER_SUCCESS = '[User]  EDIT_USER_SUCCESS',
-    EDIT_USER_FAILURE = '[User]  EDIT_USER_FAILURE',
+    SELECT_USER_SUCCESS = '[User] SELECT_USER_SUCCESS',
+    SELECT_USER_FAILURE = '[User] SELECT_USER_FAILURE',
+    EDIT_USER = '[User] EDIT_USER',
+    EDIT_USER_SUCCESS = '[User] EDIT_USER_SUCCESS',
+    EDIT_USER_FAILURE = '[User] EDIT_USER_FAILURE',
 }
 
 export type UserActions =
