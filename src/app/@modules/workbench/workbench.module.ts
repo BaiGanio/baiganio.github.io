@@ -13,6 +13,8 @@ import { StoreModule } from '@ngrx/store';
 
 import {customerFeatureKey, reducer} from 'src/app//@store/reducers/customer.reducer';
 import { ChartsModule } from 'ng2-charts';
+import { selectedTabFeatureKey, selectedTabReducer } from 'src/app/@store/reducers/selected-tab.reducer';
+import { TabsComponent } from './tabs/tabs.component';
 
 
 @NgModule({
@@ -22,12 +24,14 @@ import { ChartsModule } from 'ng2-charts';
     CustomerAddComponent,
     ChartComponent,
     ReadComponent,
-    CreateComponent
+    CreateComponent,
+    TabsComponent
   ],
   imports: [
     CommonModule,
     WorkbenchRoutingModule,
     StoreModule.forFeature(customerFeatureKey, reducer),
+    StoreModule.forFeature(selectedTabFeatureKey, selectedTabReducer),
     AngularMaterialModule,
     ReactiveFormsModule,
     ChartsModule

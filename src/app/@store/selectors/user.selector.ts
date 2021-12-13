@@ -7,10 +7,10 @@ export const userState = createFeatureSelector<userView.UserState>(
 
 export const selectUser = createSelector(
     userState,
-    (state: userView.UserState) => state.selectedUser
+    (state: userView.UserState) => state.user
 );
 
 export const fetchUser = createSelector(
     userState,
-    (state: userView.UserState) => state.selectedUser
+    (state: userView.UserState) => state.user
 );

@@ -2,7 +2,7 @@ import { UserView } from 'src/app/@modules/users/models/user-view';
 import { UserActionTypes, UserActions } from '../actions/user.actions';
 import { UserState } from '../app.state';
 
-export const initialState: UserState = { selectedUser: new UserView() };
+export const initialState: UserState = { user: new UserView() };
 
 export function userReducer(state = {}, action: UserActions) {
     switch (action.type) {
