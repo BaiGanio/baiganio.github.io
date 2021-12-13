@@ -1,5 +1,5 @@
 <ngx-loading [show]="loading"></ngx-loading>
-<h1 class="title">Blogger: {{blogger?.firstName}} {{blogger?.lastName}}</h1>
+<h1 class="title">Blogger: {{blogger?.firstName}} {{blogger?.email}}</h1>
 <hr>
 <br>
 <div class="row text-center">
@@ -19,8 +19,8 @@
             <h5>{{ p.createdOn | date :'dd-MMM-yy' }}</h5>
           </div>
           <div class="col-md-4">
-            <button 
-              mat-raised-button 
+            <button
+              mat-raised-button
               color="primary">
               <i class="fas fa-search"></i>
             </button>

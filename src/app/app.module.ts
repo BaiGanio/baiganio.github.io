@@ -19,8 +19,8 @@ import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.modu
 import { HttpClientModule } from '@angular/common/http';
 import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './@pages/login/login.component';
-import { RegisterComponent } from './@pages/register/register.component';
+import { LoginComponent } from './@modules/account/pages/login/login.component';
+import { RegisterComponent } from './@modules/account/pages/register/register.component';
 import { NavbarComponent } from './@components/navbar/navbar.component';
 import { UnauthorizedComponent } from './@components/errors/unauthorized/unauthorized.component';
 import { DashboardModule } from './@modules/dashboard/dashboard.module';
