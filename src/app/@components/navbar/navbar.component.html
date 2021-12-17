@@ -17,10 +17,10 @@
       <a mat-list-item routerLink="/home"><i class="fas fa-home"></i>Home</a>
       <hr>
       <div *ngIf='isUserLogged()'>
-        <a mat-list-item routerLink="/profile">
-          <i class="fas fa-user"></i> Profile</a>
         <a mat-list-item routerLink="/dashboard">
           <i class="fas fa-chart-line"></i> Dashboard </a>
+        <a mat-list-item routerLink="/profile">
+          <i class="fas fa-user"></i> Profile</a>
         <hr>
       </div>
       <a mat-list-item routerLink="/subscriptions"><i class="fas fa-subscript"></i>Subscriptions</a>
@@ -33,7 +33,7 @@
       <hr>
       <a mat-list-item routerLink="/workbench"><i class="fas fa-cog"></i>Workbench</a>
       <hr>
-      <a mat-list-item routerLink="/">Projects:</a>
+      <a mat-list-item routerLink="/"><i class="fas fa-globe-americas"></i>Projects:</a>
       <a mat-list-item target="_blank" href="https://baiganio.github.io/js4b/">JS4B</a>
       <a mat-list-item target="_blank" href="https://baiganio.github.io/backoffice/">BackOffice</a>
       <a mat-list-item target="_blank" href="https://baiganio.github.io/space-university/">Space University</a>

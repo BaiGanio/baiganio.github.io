@@ -8,28 +8,12 @@ import { BloggerCraftsmanViewComponent } from './components/blogger-craftsman-vi
 import { WtfComponent } from './components/wtf/wtf.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    children: [
-      { path: '', component: BloggersComponent },
-      { path: ':id', component: BloggerComponent },
-
-    ]
-  },
-    // { path: '', component: BloggersComponent },
-    // { path: ':id', component: BloggerComponent },
-    { path: 'blogger-craftsman', component: BloggerCraftsmanViewComponent },
-    { path: 'create-post', component: CreatePostComponent },
-    { path: 'edit-post', component: EditPostComponent },
-    { path: 'wtf', component: WtfComponent }
-
-    // {
-    //   path: 'preview',
-    //   children: [
-    //     { path: '', component: MyCoursesComponent },
-    //     { path: ':id', component: CourseDetailsComponent }
-    //   ]
-    // }
+  { path: '', component: BloggersComponent },
+  { path: ':id', component: BloggersComponent },
+  { path: 'create-post', component: CreatePostComponent },
+  { path: 'blogger-craftsman', component: BloggerCraftsmanViewComponent },
+  { path: 'edit-post', component: EditPostComponent },
+  { path: 'wtf', component: WtfComponent }
 ];
 
 @NgModule({

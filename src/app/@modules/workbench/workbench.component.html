@@ -1,13 +1,24 @@
-<app-customer-view></app-customer-view>
-<app-customer-add></app-customer-add>
 
-<hr>
+  <br>
+  <br>
+<mat-tab-group>
 
-<app-create></app-create>
-<app-read></app-read>
-
-<hr>
-
-<!-- <a class="nav-item nav-link" [class.active]="(selectedTab | async) === 'nav-tab1-tab'" id="nav-tab1-tab" data-toggle="tab" href="#nav-tab1" role="tab" aria-controls="nav-tab1" aria-selected="true" (click)="onChangeTab('nav-tab1-tab')">Tab 1</a> -->
-<app-tabs></app-tabs>
-<hr>
+  <mat-tab label="Own Projects" [class.active]="router.url === '/tabs'" data-toggle="tab" [routerLink]="['/tabs']"> Content 1 </mat-tab>
+  <mat-tab label="Work For Projects"> Content 6 </mat-tab>
+  <mat-tab label="CV "> CV </mat-tab>
+  <mat-tab label="Chart" [class.active]="router.url === '/chart'" data-toggle="tab" [routerLink]="['/chart']">
+    <app-chart></app-chart>
+  </mat-tab>
+  <mat-tab label="App Customer">
+    <app-customer-view></app-customer-view>
+    <app-customer-add></app-customer-add>
+  </mat-tab>
+  <mat-tab label="App Create">
+    <app-create></app-create>
+    <app-read></app-read>
+  </mat-tab>
+  <mat-tab label="App Tabs">
+    <app-tabs></app-tabs>
+  </mat-tab>
+  <mat-tab label="Six"> Content 6 </mat-tab>
+</mat-tab-group>

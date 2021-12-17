@@ -27,6 +27,7 @@
     "@microsoft/signalr": "^5.0.8",
     "@ngrx/effects": "^10.1.2",
     "@ngrx/store": "^10.1.2",
+    "@tinymce/tinymce-angular": "^4.2.4",
     "@types/signalr": "^2.2.37",
     "angular-cli-ghpages": "^1.0.0-rc.2",
     "chart.js": "^2.9.3",

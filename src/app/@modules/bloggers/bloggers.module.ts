@@ -9,11 +9,13 @@ import { BloggerComponent } from './components/blogger/blogger.component';
 import { BloggersComponent } from './bloggers.component';
 import { BloggerCraftsmanViewComponent } from './components/blogger-craftsman-view/blogger-craftsman-view.component';
 import { WtfComponent } from './components/wtf/wtf.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditorModule } from "@tinymce/tinymce-angular";
 
 @NgModule({
   declarations: [
-    BloggerComponent,
     BloggersComponent,
+    BloggerComponent,
     CreatePostComponent,
     EditPostComponent,
     BloggerCraftsmanViewComponent,
@@ -23,7 +25,10 @@ import { WtfComponent } from './components/wtf/wtf.component';
     CommonModule,
     BloggersRoutingModule,
     AngularMaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
     // StoreModule.forRoot({ bloggers: bloggersReducer }),
+    EditorModule,
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.threeBounce,
       primaryColour: '#88078e',
