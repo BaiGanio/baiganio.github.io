@@ -66,7 +66,7 @@ export class SignalRService {
           );
         },
         err => {
-          this.errorHandlerService.handleRequestError(err);
+          //this.errorHandlerService.handleRequestError(err.error);
         }
       );
 
