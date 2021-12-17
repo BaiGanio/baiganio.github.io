@@ -15,7 +15,7 @@ import { CraftsmanMenuComponent } from './pages/craftsman-menu/craftsman-menu.co
 import { EditCourseComponent } from '../courses/components/edit-course/edit-course.component';
 import { TeacherCraftsmanViewComponent } from './views/teacher-craftsman-view/teacher-craftsman-view.component';
 import { StudentCraftsmanViewComponent } from './views/student-craftsman-view/student-craftsman-view.component';
-import { BloggerCraftsmanViewComponent } from './views/blogger-craftsman-view/blogger-craftsman-view.component';
+
 @NgModule({
   declarations: [
       DashboardComponent,
@@ -27,7 +27,6 @@ import { BloggerCraftsmanViewComponent } from './views/blogger-craftsman-view/bl
       CraftsmanMenuComponent,
       TeacherCraftsmanViewComponent,
       StudentCraftsmanViewComponent,
-      BloggerCraftsmanViewComponent
     ],
   imports: [
     CommonModule,
@@ -43,9 +42,8 @@ import { BloggerCraftsmanViewComponent } from './views/blogger-craftsman-view/bl
   ],
   entryComponents: [
     NotificationPreviewComponent,
-    ReportedIssuePreviewComponent, 
+    ReportedIssuePreviewComponent,
     EditCourseComponent,
-    BloggerCraftsmanViewComponent
   ],
   schemas: [ NO_ERRORS_SCHEMA ]
 })

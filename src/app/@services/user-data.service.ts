@@ -27,45 +27,45 @@ export class UserDataService {
   }
 
   updatePassword(data: any): Observable<any> {
-    return this.backendService.backendRequest('post', 'Users/UpdatePassword', data, true);
+    return this.backendService.backendRequest('post', 'Account/UpdatePassword', data, true);
   }
 
   updateEmail(data: any): Observable<any> {
-    return this.backendService.backendRequest('post', 'Users/UpdateEmail', data, true);
+    return this.backendService.backendRequest('post', 'Account/UpdateEmail', data, true);
   }
 
   updateProfile(data: any): Observable<any> {
-    return this.backendService.backendRequest('post', 'Users/UpdateProfile', data, true);
+    return this.backendService.backendRequest('post', 'Account/UpdateProfile', data, true);
   }
 
   updateProfilePicture(data: any): Observable<any> {
-    return this.backendService.backendRequest('post', 'Users/UpdateProfilePicture', data, true);
+    return this.backendService.backendRequest('post', 'Account/UpdateProfilePicture', data, true);
   }
 
   sendIssueToAdmin(data: { Text: any; Img2Base64: string; }): Observable<any> {
-    return this.backendService.backendRequest('post', 'Users/ReportIssue', data, true);
+    return this.backendService.backendRequest('post', 'Account/ReportIssue', data, true);
   }
 
   sendExceptionToAdmin(data: { SenderEmail: string; ErrorReport: string; MessageReport: string; }): Observable<any> {
-    return this.backendService.backendRequest('post', 'Users/ReportException', data, true);
+    return this.backendService.backendRequest('post', 'Account/ReportException', data, true);
   }
 
   getUserByToken(): Observable<any> {
-    return this.backendService.backendRequest('get', 'Identity', null, true);
+    return this.backendService.backendRequest('get', 'Account', null, true);
   }
 
   getUserById(userId: string): Observable<any> {
-    return this.backendService.backendRequest('get', 'Users/' + userId, null, true);
+    return this.backendService.backendRequest('get', 'Account/' + userId, null, true);
   }
 
   getUserIP(): Observable<any> {
     return this.backendService.backendRequest('get', environment.IPCheckingServiceUrl, null, true);
   }
   updateLastLoginDate(): Observable<any> {
-    return this.backendService.backendRequest('get', 'Users/UpdateLastLogin', null, true);
+    return this.backendService.backendRequest('get', 'Account/UpdateLastLogin', null, true);
   }
   getDasboardData(): Observable<any> {
-    return this.backendService.backendRequest('get', 'users/Dashboard', null, true);
+    return this.backendService.backendRequest('get', 'Account/Dashboard', null, true);
   }
   logout(): void {
     this.userData = null;

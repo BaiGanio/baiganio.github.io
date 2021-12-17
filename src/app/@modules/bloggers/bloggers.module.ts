@@ -3,10 +3,21 @@ import { CommonModule } from '@angular/common';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { BloggersRoutingModule } from './bloggers-routing.module';
+import { CreatePostComponent } from './components/create-post/create-post.component';
+import { EditPostComponent } from './components/edit-post/edit-post.component';
+import { BloggerComponent } from './components/blogger/blogger.component';
+import { BloggersComponent } from './bloggers.component';
+import { BloggerCraftsmanViewComponent } from './components/blogger-craftsman-view/blogger-craftsman-view.component';
+import { WtfComponent } from './components/wtf/wtf.component';
 
 @NgModule({
   declarations: [
-    BloggersRoutingModule.components
+    BloggerComponent,
+    BloggersComponent,
+    CreatePostComponent,
+    EditPostComponent,
+    BloggerCraftsmanViewComponent,
+    WtfComponent
   ],
   imports: [
     CommonModule,

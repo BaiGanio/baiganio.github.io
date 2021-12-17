@@ -9,7 +9,8 @@ import { ReportIssueComponent } from './pages/report-issue/report-issue.componen
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 import { ForgottenPasswordComponent } from './pages/fotgotten-password/forgotten-password.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -21,6 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ConfirmationComponent,
   ],
   imports: [
+    BrowserModule,
+    FormsModule,,
     CommonModule,
     AccountRoutingModule,
     AngularMaterialModule,
