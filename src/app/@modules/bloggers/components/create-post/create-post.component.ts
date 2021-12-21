@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AsyncSubject, Subject } from 'rxjs';
+import { BloggersService } from 'src/app/@services/bloggers.service';
+import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 import { maxLength } from '../../../../@shared/validators/maxlength.validator';
 
 @Component({
@@ -11,8 +14,11 @@ import { maxLength } from '../../../../@shared/validators/maxlength.validator';
 export class CreatePostComponent implements OnInit {
   private editorSubject: Subject<any> = new AsyncSubject();
   myForm: FormGroup = new FormGroup({});
+  loading = false;
 
-  constructor() { }
+  constructor(private bloggerService: BloggersService,
+    private errorHandlerService: ErrorHandlerService,
+    private snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.myForm = new FormGroup({
@@ -23,6 +29,17 @@ export class CreatePostComponent implements OnInit {
 
   onSubmit(data: any): void{
     console.log(data);
+
+    this.bloggerService.createPost({Title: this.myForm.value.title, RawHtml: this.myForm.value.body }).subscribe(response => {
+      this.snackbar.open(`${response}`, 'X', {
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+        panelClass: 'successSnackbar'
+      });
+    }, error => {
+        this.errorHandlerService.handleRequestError(error);
+        this.loading = false;
+    }, () => { this.loading = false; });
   }
 
   handleEditorInit(e) {

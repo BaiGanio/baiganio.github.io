@@ -3,7 +3,7 @@
 <div class="editor-wrapper">
 
   <mat-card class="blog mat-elevation-z3">
-    <mat-card-title>TinyMCE on baiganio.github.io</mat-card-title>
+    <mat-card-title>TinyMCE</mat-card-title>
 
     <mat-card-content>
       <form (ngSubmit)="onSubmit(myForm.value)" [formGroup]="myForm">
@@ -11,7 +11,7 @@
           <input
             matInput
             [formControl]="myForm.controls.title"
-            placeholder="Title"
+            placeholder="Title of your article"
             type="text"/>
 
           <mat-error *ngIf="myForm.controls.title.hasError('required')">

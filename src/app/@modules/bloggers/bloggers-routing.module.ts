@@ -9,7 +9,7 @@ import { WtfComponent } from './components/wtf/wtf.component';
 
 const routes: Routes = [
   { path: '', component: BloggersComponent },
-  { path: ':id', component: BloggersComponent },
+  // { path: ':id', component: BloggersComponent },
   { path: 'create-post', component: CreatePostComponent },
   { path: 'blogger-craftsman', component: BloggerCraftsmanViewComponent },
   { path: 'edit-post', component: EditPostComponent },

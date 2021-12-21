@@ -20,6 +20,9 @@ export class BloggersService {
   update(data: any): Observable<any> {
     return this.backendService.backendRequest('post', 'Bloggers/Update', data, true);
   }
+  createPost(data: any): Observable<any> {
+    return this.backendService.backendRequest('post', 'Bloggers/CreatePost', data, true);
+  }
 //   updateCoursePicture(data: any): Observable<any> {
 //     return this.backendService.backendRequest('post', 'Courses/UpdateCoursePicture', data, true);
 //   }
