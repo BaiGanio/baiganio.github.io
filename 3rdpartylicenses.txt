@@ -127,6 +127,9 @@ MIT
 @ngrx/store
 MIT
 
+@tinymce/tinymce-angular
+Apache-2.0
+
 chart.js
 MIT
 The MIT License (MIT)
