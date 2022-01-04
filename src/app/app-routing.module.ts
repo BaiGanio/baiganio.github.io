@@ -11,6 +11,7 @@ import { PlaylistItemsComponent } from './@pages/playlists/playlist-items/playli
 import { PlaylistsComponent } from './@pages/playlists/playlists.component';
 import { ChartComponent } from './@modules/workbench/chart/chart.component';
 import { TodosComponent } from './@pages/todos/todos.component';
+import { ProjectsComponent } from './@pages/projects/projects.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'videos', component: PlaylistsComponent },
   { path: 'playlist-items', component: PlaylistItemsComponent },
   { path: 'todos', component: TodosComponent },
+  { path: 'projects', component: ProjectsComponent },
   {
     path: 'workbench',
     loadChildren : () => import('./@modules/workbench/workbench.module').then(m => m.WorkbenchModule)

@@ -11,6 +11,7 @@ import { BloggerCraftsmanViewComponent } from './components/blogger-craftsman-vi
 import { WtfComponent } from './components/wtf/wtf.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditorModule } from "@tinymce/tinymce-angular";
+import { BloggerPostsComponent } from './components/blogger-posts/blogger-posts.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EditorModule } from "@tinymce/tinymce-angular";
     CreatePostComponent,
     EditPostComponent,
     BloggerCraftsmanViewComponent,
-    WtfComponent
+    WtfComponent,
+    BloggerPostsComponent
   ],
   imports: [
     CommonModule,

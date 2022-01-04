@@ -16,6 +16,7 @@
     <mat-list (click)="sidenav.close()">
       <a mat-list-item routerLink="/home"><i class="fas fa-home"></i>Home</a>
       <hr>
+      <hr>
       <div *ngIf='isUserLogged()'>
         <a mat-list-item routerLink="/dashboard">
           <i class="fas fa-chart-line"></i> Dashboard </a>
@@ -24,25 +25,22 @@
         <hr>
       </div>
       <a mat-list-item routerLink="/subscriptions"><i class="fas fa-subscript"></i>Subscriptions</a>
-      <a mat-list-item routerLink="/courses"><i class="fas fa-graduation-cap"></i>Courses</a>
-      <a mat-list-item routerLink="/teachers"><i class="fas fa-user-friends"></i>Teachers</a>
-      <a mat-list-item routerLink="/videos"><i class="fas fa-video"></i>Videos</a>
+      <a mat-list-item routerLink="/courses"><i class="fas fa-book"></i>Courses</a>
+      <a mat-list-item routerLink="/teachers"><i class="fas fa-graduation-cap"></i>Teachers</a>
       <a mat-list-item routerLink="/bloggers"><i class="fas fa-users"></i>Bloggers</a>
-      <a mat-list-item routerLink="/bloggers"><i class="fas fa-book-reader"></i>Publications</a>
-      <a mat-list-item routerLink="/todos"><i class="fas fa-check"></i>ToDos</a>
+      <a mat-list-item routerLink="/publications"><i class="fas fa-book-reader"></i>Articles</a>
+      <a mat-list-item routerLink="/videos"><i class="fas fa-video"></i>Videos</a>
       <hr>
-      <a mat-list-item routerLink="/workbench"><i class="fas fa-cog"></i>Workbench</a>
       <hr>
-      <a mat-list-item routerLink="/"><i class="fas fa-globe-americas"></i>Projects:</a>
-      <a mat-list-item target="_blank" href="https://baiganio.github.io/js4b/">JS4B</a>
-      <a mat-list-item target="_blank" href="https://baiganio.github.io/backoffice/">BackOffice</a>
-      <a mat-list-item target="_blank" href="https://baiganio.github.io/space-university/">Space University</a>
-      <a mat-list-item target="_blank" href="https://baiganio.github.io/company-house/">Company House</a>
-      <a mat-list-item target="_blank" href="https://baiganio.github.io/Scrooge-Rental/">Scrooge Rental</a>
-      <a mat-list-item target="_blank" href="https://team-kepler.github.io/looney-tooney/CanvasGame.html">Looney Tooney</a>
-      <a mat-list-item target="_blank" href="https://weather-finder.azurewebsites.net/">Weather Finder</a>
-      <a mat-list-item target="_blank" href="https://bgapi.azurewebsites.net/">BGAPI</a>
-      <a mat-list-item target="_blank" href="https://free-is4.azurewebsites.net/">Free IS4</a>
+      <a mat-list-item routerLink="/projects"><i class="fas fa-globe-americas"></i>Portfolio</a>
+      <hr>
+      <div *ngIf='isUserLogged()'>
+        <a mat-list-item routerLink="/todos"><i class="fas fa-check"></i>ToDos</a>
+        <hr>
+        <a mat-list-item routerLink="/workbench"><i class="fas fa-cog"></i>Workbench</a>
+        <hr>
+      </div>
+
       <hr>
     </mat-list>
   </mat-drawer>

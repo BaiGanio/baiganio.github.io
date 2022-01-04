@@ -1,7 +1,13 @@
-
-.comingSoon{
-  margin-top: 50px;
-  text-align:center;
+button{
+  font-family: 'Alsandra';
+  font-size: 2rem;
+  padding: 20px;
+}
+.mat-raised-button.mat-blue{
+  color: white !important;
+}
+button:hover{
+  background: rgb(52, 199, 243);
 }
 @media only screen and (max-width: 451px) {
     img {

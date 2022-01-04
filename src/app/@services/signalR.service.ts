@@ -19,20 +19,20 @@ export class SignalRService {
     private snackbar: MatSnackBar) { }
 
 
-    // public startChartHubConnection = () => {
-    //   this.chartHubConnection = new signalR.HubConnectionBuilder()
-    //     .configureLogging(signalR.LogLevel.Information)
-    //     .withUrl(environment.bgapiSignalRChartHub)
-    //     .build();
+    public startChartHubConnection = () => {
+      // this.chartHubConnection = new signalR.HubConnectionBuilder()
+      //   .configureLogging(signalR.LogLevel.Information)
+      //   .withUrl(environment.bgapiSignalRChartHub)
+      //   .build();
 
-    //   this.chartHubConnection
-    //     .start()
-    //     .then(() => {
-    //       this.chartHubConnectionId = this.chartHubConnection.connectionId;
-    //       console.log('Started chartHubConnection with connection id: ' + this.chartHubConnectionId)
-    //     })
-    //     .catch(err => console.log('Error while starting chartHubConnection: ' + err))
-    // }
+      // this.chartHubConnection
+      //   .start()
+      //   .then(() => {
+      //     this.chartHubConnectionId = this.chartHubConnection.connectionId;
+      //     console.log('Started chartHubConnection with connection id: ' + this.chartHubConnectionId)
+      //   })
+      //   .catch(err => console.log('Error while starting chartHubConnection: ' + err))
+    }
 
     public stopChartHubConnection = () => {
 

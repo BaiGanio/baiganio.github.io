@@ -49,6 +49,7 @@ import { CreateToDoComponent } from './@pages/todos/create-todo/create-todo.comp
 import { DeleteToDoComponent } from './@pages/todos/delete-todo/delete-todo.component';
 import { UpdateToDoComponent } from './@pages/todos/update-todo/update-todo.component';
 import { WorkbenchModule } from './@modules/workbench/workbench.module';
+import { ProjectsComponent } from './@pages/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { WorkbenchModule } from './@modules/workbench/workbench.module';
     CreateToDoComponent,
     DeleteToDoComponent,
     UpdateToDoComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
