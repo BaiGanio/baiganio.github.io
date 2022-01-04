@@ -13,14 +13,10 @@ h2 {
     font-size: 3em;
 }
 .thumb-holder{
-    button{
-        width: 80%;
-        margin: 10px;
-    }
     .img-fluid {
-        height: 14vw;
+        height:  14rem;
         object-fit: contain;
-        
+
     }
 }
 mat-form-field{

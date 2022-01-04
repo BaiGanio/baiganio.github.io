@@ -1,0 +1,25 @@
+<mat-progress-bar mode="indeterminate" *ngIf='loading'></mat-progress-bar>
+<h1 class="title">Latest Articles</h1>
+<hr>
+<br>
+<h3 class="wait-fetching" *ngIf='loading'>Please wait! Fetching data from the server...</h3>
+<div class="row">
+  <div *ngFor='let a of articles' class="col-md-4 text-center">
+    <div class="card">
+        <div class="card-body">
+          <img src='{{ a.imgUrl }}' class="img-thumbnail img-fluid" alt="Sample image">
+          <br><br>
+          <h4>{{ a.title }}</h4>
+          <hr>
+          <p>Created @ {{ a.createdOn | date :'dd-MM-yyyy' }}</p>
+          <p>Author {{ a.blogger.nickname }}</p>
+          <br>
+          <button
+              mat-raised-button
+              color="primary"  [routerLink]="['/articles', tweakTitle(a.title)]">
+              <i class="fas fa-search"></i>
+          </button>
+        </div>
+    </div>
+  </div>
+</div>

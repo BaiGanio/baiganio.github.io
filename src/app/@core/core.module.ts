@@ -22,6 +22,7 @@ import { YouTubeService } from '../@services/youtube.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { FhAlertService } from '../@shared/fh-alert/fh-alert-service';
 import { ToDoService } from '../@services/todo.service';
+import { ArticlesService } from '../@services/articles.service';
 
 @NgModule({
   imports: [
@@ -47,7 +48,7 @@ import { ToDoService } from '../@services/todo.service';
     BloggersService,
     YouTubeService,
     ToDoService,
-
+    ArticlesService,
 // TODO: Should be in shared module
     FhAlertService,
     ChecklistDatabase,

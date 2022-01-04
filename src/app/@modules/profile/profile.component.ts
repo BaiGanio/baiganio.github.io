@@ -25,6 +25,7 @@ export class ProfileComponent implements OnInit {
     user: any;
     profileDataFG: FormGroup;
     profileImageFG: FormGroup;
+    formData: FormGroup;
     roles = '';
     subscriptions = 0;
     courses = 0;
@@ -49,6 +50,14 @@ export class ProfileComponent implements OnInit {
             this.formBuilder.group({
                 profilePicture: ['', Validators.required]
             });
+
+        this.formData =
+          this.formBuilder.group({
+              firstName: [''],
+              lastName: [''],
+              username: [''],
+              email: ['']
+          });
     }
 
     ngOnInit() {
@@ -72,6 +81,8 @@ export class ProfileComponent implements OnInit {
     handleSuccess(response): void {
         this.loading = false;
         this.user = response.body;
+
+
         // console.log(this.user);
         this.userService.setUserData(this.user);
         this.profileImgSrc = this.user.imgUrl == null ? './assets/images/no-profile-img.png' : this.user.imgUrl;
@@ -90,6 +101,15 @@ export class ProfileComponent implements OnInit {
             this.user.courses != null
                 ? this.user.courses.length
                 : 0;
+
+        this.formData =
+          this.formBuilder.group({
+              firstName: [this.user.firstName, Validators.required],
+              lastName: [this.user.lastName, Validators.required],
+              imgUrl: [this.profileImgSrc],
+              email: [this.user.email]
+          });
+
         this.clearForm();
     }
 
@@ -97,7 +117,9 @@ export class ProfileComponent implements OnInit {
         this.loading = false;
         this.errorHandlerService.handleRequestError(error);
     }
-
+    public checkError = (controlName: string, errorName: string) => {
+      return this.formData.controls[controlName].hasError(errorName);
+    }
     updateProfile() {
         this.loading = true;
         this.userService.updateProfile({
@@ -267,4 +289,9 @@ export class ProfileComponent implements OnInit {
                 }
             })
     }
+
+    onSubmit(data: any): void {
+
+    }
+
 }

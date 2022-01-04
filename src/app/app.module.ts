@@ -50,6 +50,8 @@ import { DeleteToDoComponent } from './@pages/todos/delete-todo/delete-todo.comp
 import { UpdateToDoComponent } from './@pages/todos/update-todo/update-todo.component';
 import { WorkbenchModule } from './@modules/workbench/workbench.module';
 import { ProjectsComponent } from './@pages/projects/projects.component';
+import { ArticlesComponent } from './@pages/articles/articles.component';
+import { ArticlePreviewComponent } from './@pages/articles/article-preview/article-preview.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +81,8 @@ import { ProjectsComponent } from './@pages/projects/projects.component';
     DeleteToDoComponent,
     UpdateToDoComponent,
     ProjectsComponent,
+    ArticlesComponent,
+    ArticlePreviewComponent,
   ],
   imports: [
     BrowserModule,
