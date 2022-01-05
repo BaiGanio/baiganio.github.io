@@ -35,10 +35,10 @@
   <div class="col-sm-2 mt-3">
     <div class="card card-additional">
       <div class="card-body">
-        <h5 class="card-title">Posts</h5>
+        <h5 class="card-title">Articles</h5>
         <hr style="border-color: black; width: 70%">
         <p class="card-text">Total Created:</p>
-        <h1>{{dashboardData?.user.courses?.length || 0}}</h1>
+        <h1>{{totalArticles}}</h1>
         <hr>
         <button mat-raised-button
           color="primary"  [routerLink]='getRouterLink()'><i class="fas fa-search"></i>

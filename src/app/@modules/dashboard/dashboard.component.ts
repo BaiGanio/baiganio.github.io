@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   totalReceivedEmails = 0;
   totalEnrolledCourses = 0;
   totalSubscriptions = 0;
-  totalPosts = 0;
+  totalArticles = 0;
   image = '';
   loading = false;
   userId = '';
@@ -73,7 +73,7 @@ export class DashboardComponent implements OnInit {
         this.totalReceivedEmails = this.dashboardData.sentEmailsToUserCount || 0;
         this.totalEnrolledCourses = this.dashboardData.enrolledCoursesCount || 0;
         this.totalSubscriptions = this.dashboardData.user.subscriptions.length || 0;
-        this.totalPosts = this.dashboardData.user.subscriptions.length || 0;
+        this.totalArticles = this.dashboardData.articlesCount || 0;
         this.image =
           response.body.user.image != null
           ? response.body.user.image

@@ -13,11 +13,11 @@ const routes: Routes = [
     children: [
       {path: '', component: BloggerComponent},
       { path: 'articles', component: ArticlesComponent },
-      { path: 'create-article', component: CreateArticleComponent },
-      { path: 'edit-article', component: EditArticleComponent },
     ]
   },
 
+  { path: 'create-article', component: CreateArticleComponent },
+  { path: 'edit-article', component: EditArticleComponent },
   { path: 'blogger-craftsman', component: BloggerCraftsmanViewComponent }
 ];
 
