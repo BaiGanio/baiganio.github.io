@@ -9,6 +9,9 @@ export class ArticlesService {
   getArticles(): Observable<any> {
     return this.backendService.backendRequest('get', 'Articles', null);
   }
+  getBloggerArticles(): Observable<any> {
+    return this.backendService.backendRequest('get', 'Articles/GetByToken', null, true);
+  }
   getArticleById(id: string): Observable<any> {
     return this.backendService.backendRequest('get', 'Articles/' + id, null, false);
   }

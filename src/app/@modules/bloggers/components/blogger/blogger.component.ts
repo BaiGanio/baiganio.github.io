@@ -13,13 +13,14 @@ export class BloggerComponent implements OnInit {
   loading = false;
   blogger: any;
   constructor(
-    private router: Router,    
+    private router: Router,
     private route: ActivatedRoute,
     private bloggerService: BloggersService,
     private errorHandlerService: ErrorHandlerService
   ) { }
 
   ngOnInit(): void {
+    alert("in blogger");
     this.checkRouteParameters();
   }
 
@@ -39,10 +40,10 @@ export class BloggerComponent implements OnInit {
     } else{
       this.router.navigate(['/not-found']);
     }
-    
+
   }
 
-  private isGuid(value: string): boolean {    
+  private isGuid(value: string): boolean {
     var regex = /[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}/i;
     var match = regex.exec(value);
     return match != null;

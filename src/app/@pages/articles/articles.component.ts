@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ArticlesService } from 'src/app/@services/articles.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 
@@ -16,16 +16,14 @@ export class ArticlesComponent implements OnInit {
     //waits(7000);
     this.articlesService.getArticles().subscribe(response => {
       this.articles = response.body;
-      console.log(this.articles);
     },
     error => {
       this.errorHandlerService.handleRequestError(error);
     }, () => { this.loading = false; });
   }
+
   tweakTitle(title: string): string{
     let res = title.toLowerCase().replace(/ /g, '-');
-    console.log(res);
     return res;
   }
-
 }

@@ -11,6 +11,8 @@ import { BloggerCraftsmanViewComponent } from './components/blogger-craftsman-vi
 import { WtfComponent } from './components/wtf/wtf.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditorModule } from "@tinymce/tinymce-angular";
+import { BloggerArticlesComponent } from './components/blogger-articles/blogger-articles.component';
+import { ArticlesComponent } from 'src/app/@pages/articles/articles.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { EditorModule } from "@tinymce/tinymce-angular";
     EditPostComponent,
     BloggerCraftsmanViewComponent,
     WtfComponent,
+    BloggerArticlesComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +41,7 @@ import { EditorModule } from "@tinymce/tinymce-angular";
     }),
   ],
   entryComponents: [
+    ArticlesComponent
   ],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
