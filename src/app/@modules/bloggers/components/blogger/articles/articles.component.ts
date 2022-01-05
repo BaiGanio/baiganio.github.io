@@ -3,22 +3,25 @@ import { ArticlesService } from 'src/app/@services/articles.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 
 @Component({
-  selector: 'app-blogger-articles',
-  templateUrl: './blogger-articles.component.html',
-  styleUrls: ['./blogger-articles.component.scss']
+  selector: 'app-articles',
+  templateUrl: './articles.component.html',
+  styleUrls: ['./articles.component.scss']
 })
-export class BloggerArticlesComponent implements OnInit {
+export class ArticlesComponent implements OnInit {
+  loading = true;
   articles: any;
   constructor(private articlesService: ArticlesService, private errorHandlerService: ErrorHandlerService) { }
 
   ngOnInit(): void {
-    alert("in blogger articles");
     this.articlesService.getBloggerArticles().subscribe(response => {
       this.articles = response.body;
     },
     error => {
       this.errorHandlerService.handleRequestError(error);
-    });
+    }, () => this.loading = false);
   }
-
+  tweakTitle(title: string): string{
+    let res = title.toLowerCase().replace(/ /g, '-');
+    return res;
+  }
 }

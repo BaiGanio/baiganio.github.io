@@ -4,14 +4,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { AsyncSubject, Subject } from 'rxjs';
 import { BloggersService } from 'src/app/@services/bloggers.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
-import { maxLength } from '../../../../@shared/validators/maxlength.validator';
+import { maxLength } from 'src/app/@shared/validators/maxlength.validator';
 
 @Component({
-  selector: 'app-create-post',
-  templateUrl: './create-post.component.html',
-  styleUrls: ['./create-post.component.scss']
+  selector: 'app-create-article',
+  templateUrl: './create-article.component.html',
+  styleUrls: ['./create-article.component.scss']
 })
-export class CreatePostComponent implements OnInit {
+export class CreateArticleComponent implements OnInit {
   private editorSubject: Subject<any> = new AsyncSubject();
   myForm: FormGroup = new FormGroup({});
   loading = false;
