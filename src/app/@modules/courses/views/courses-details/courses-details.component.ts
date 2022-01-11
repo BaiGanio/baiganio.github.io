@@ -87,16 +87,16 @@ export class CoursesDetailsComponent implements OnInit {
   }
 
   deleteCourse(courseId: string) {
-    const $dialogRef =
-      this.dialog.open(
-        DeleteCourseComponent, {
-          data: {
-            title: `This will delete course with Id ${courseId}!`,
-            confirmText: 'Delete',
-            rejectText: 'Dismiss',
-            model: courseId
+      const $dialogRef =
+        this.dialog.open(
+          DeleteCourseComponent, {
+            data: {
+              title: `This will delete course with Id ${courseId}!`,
+              confirmText: 'Delete',
+              rejectText: 'Dismiss',
+              model: courseId
+            }
           }
-        }
       );
 
     this.tryDeleteCourse($dialogRef, courseId);

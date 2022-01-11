@@ -83,8 +83,8 @@
           <b>{{courses}}</b> - <a routerLink='/courses/preview'>Go2</a>
           <br>
           Role/s:  <b>({{user?.roles?.length}})</b>
-          <span *ngFor='let r of user.roles' class="col-md-4 text-center">
-            ({{r.roleType}})
+          <span *ngFor='let r of user?.roles' class="col-md-4 text-center">
+            ({{r?.roleType}})
           </span>
           <br>
           <hr>
@@ -99,7 +99,7 @@
             <button mat-raised-button color='primary' class="ml-3">
               Download as PDF
             </button>
-            <button mat-stroked-button color="warn">! Delete Account</button>
+            <button mat-stroked-button color="warn" (click)='deleteAccount()'>! Delete Account</button>
           </div>
           <br>
           <div>

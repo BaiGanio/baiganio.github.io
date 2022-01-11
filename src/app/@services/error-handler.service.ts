@@ -11,18 +11,26 @@ export class ErrorHandlerService {
     private snackbar: MatSnackBar
   ) { }
 
-  handleRequestError(error: { status: any; message: string, error: string}) {
+  handleRequestError(error: any) {
     const status = error.status;
     if (status === 0) {
       return this.router.navigate(['/server-alert']);
+    } else if(status === 415) {
+      let message: string = `${error.message} - ${error.error.title}`;
+      this.callErrorSnackBar(message);
     } else{
       console.log(error);
-      const message = error.error;
-      this.snackbar.open(`${message}`, 'X', {
-          horizontalPosition: 'center',
-          verticalPosition: 'bottom',
-          panelClass: 'dangerSnackbar'
-        });
+      let message: string = error.error || error.message;
+      console.log(message);
+      this.callErrorSnackBar(message);
     }
+  }
+
+  private callErrorSnackBar(message: string){
+    this.snackbar.open(message, 'X', {
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      panelClass: 'errorSnackbar'
+    });
   }
 }

@@ -10,13 +10,15 @@ import { Subscribe4NotificationsComponent } from './components/subscribe4notific
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { PassStrengthComponent } from './components/pass-strength/pass-strength.component';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
+import { DeleteProfileComponent } from './components/delete-profile/delete-profile.component';
 
 @NgModule({
   declarations: [
     ProfileComponent,
     Subscribe4NotificationsComponent,
     ChangePasswordComponent,
-    PassStrengthComponent
+    PassStrengthComponent,
+    DeleteProfileComponent
   ],
   imports: [
     CommonModule,

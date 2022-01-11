@@ -9,6 +9,7 @@ import { Subscribe4NotificationsComponent } from './components/subscribe4notific
 import { PassStrengthComponent } from './components/pass-strength/pass-strength.component';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/@store/app.state';
+import { DeleteProfileComponent } from './components/delete-profile/delete-profile.component';
 
 @Component({
     selector: 'app-profile',
@@ -300,6 +301,38 @@ export class ProfileComponent implements OnInit {
     }
 
     onSubmit(data: any): void {
+
+    }
+
+    deleteAccount(){
+
+      const $dialogRef =
+        this.dialog.open(
+          DeleteProfileComponent, {
+            data: {
+              title: `This action will delete your account and can't be undone!`,
+              confirmText: 'Delete',
+              rejectText: 'Dismiss',
+              model: this.user.id
+            }
+          });
+
+        $dialogRef.afterClosed()
+          .subscribe(response => {
+            if (response) {
+              this.userService.deleteAccount()
+              .subscribe(
+                  response => {
+                      alert(response);
+                  },
+                  error => {
+                      this.handleError(error);
+                  },
+                  () => { this.loading = false; }
+              );
+            }
+          });
+
 
     }
 

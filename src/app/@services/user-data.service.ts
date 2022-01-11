@@ -67,6 +67,9 @@ export class UserDataService {
   getDasboardData(): Observable<any> {
     return this.backendService.backendRequest('get', 'Account/Dashboard', null, true);
   }
+  deleteAccount(): Observable<any> {
+    return this.backendService.backendRequest('delete', 'Account/DeleteAccount', null, true);
+  }
   logout(): void {
     this.userData = null;
     this.authService.clearUserToken();

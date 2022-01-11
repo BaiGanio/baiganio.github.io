@@ -1,0 +1,11 @@
+<div class="text-center">
+  <h3>Warning!!!</h3>
+    <mat-card-content>
+    <hr/>
+    <h5>{{model.title}}</h5>
+    <h5>Delete anyway?</h5>
+    <hr/>
+    <button mat-raised-button class="ml-3" (click)="dismiss()">{{model.rejectText}}</button>
+    <button mat-raised-button color='warn' class="ml-3" (click)="delete()">{{model.confirmText}}</button>
+  </mat-card-content>
+</div>
