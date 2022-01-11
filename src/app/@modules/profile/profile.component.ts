@@ -320,10 +320,10 @@ export class ProfileComponent implements OnInit {
         $dialogRef.afterClosed()
           .subscribe(response => {
             if (response) {
-              this.userService.deleteAccount()
+              this.userService.deleteAccount({ IsSoftDelete: true })
               .subscribe(
                   response => {
-                      alert(response);
+                      this.showSuccessSnackBar(response + '. You will be logged out after 20 seconds');
                   },
                   error => {
                       this.handleError(error);
@@ -334,6 +334,14 @@ export class ProfileComponent implements OnInit {
           });
 
 
+    }
+
+    private showSuccessSnackBar(message){
+      this.snackbar.open(message, 'X', {
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+        panelClass: 'successSnackbar'
+      });
     }
 
 }

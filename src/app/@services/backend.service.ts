@@ -46,10 +46,11 @@ export class BackendService {
             { headers: this.getContentHeaders(useUserToken) }
           );
         case 'delete':
-          return this.http.delete(
-            environment.apiUrl + requestTarget,
-            { headers: this.getContentHeaders(useUserToken), params: requestData, observe: 'response' }
-          );
+          const options = {
+            headers: this.getContentHeaders(useUserToken),
+            body: requestData,
+          };
+          return this.http.delete(environment.apiUrl + requestTarget, options);
       }
     }
   }
@@ -88,6 +89,7 @@ export class BackendService {
     let authToken = this.authservice.pickAuthenticationToken();
     if (useUserToken) { authToken = this.authservice.userToken; }
     contentHeaders = contentHeaders.set('Authorization', `Bearer ${authToken}`);
+    contentHeaders.set('Accept', 'application/json')
     return contentHeaders;
   }
 
