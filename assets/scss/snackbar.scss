@@ -5,10 +5,18 @@
 .successSnackbar {
   color: #155724;
   background-color: #d4edda;
-  border-color: #c3e6cb;
+  max-width: 100% !important;
+  margin-left: auto !important; // center align from left
+  margin-right: auto !important; // center align from right
+  .mat-button-wrapper{
+    color: black;
+  }
+  .mat-button:hover{
+    background-color: lightskyblue;
+  }
 }
 
-.dangerSnackbar {
+.errorSnackbar {
   background-color: red;
   color: white;
   max-width: 100% !important;
