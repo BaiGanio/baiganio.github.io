@@ -26,17 +26,31 @@ export class BackendService {
   }
 
   private baseBackendRequest(requestType: string, requestTarget: string, requestData?: any, useUserToken?: any): Observable<any> {
-    if (requestType === 'post') {
-      return this.http.post(
-        environment.apiUrl + requestTarget,
-        requestData,
-        { headers: this.getContentHeaders(useUserToken) }
-      );
-    } else if (requestType === 'get') {
+    if (requestType === 'get') {
       return this.http.get(
         environment.apiUrl + requestTarget,
         { headers: this.getContentHeaders(useUserToken), params: requestData, observe: 'response'}
       );
+    } else {
+      switch(requestType){
+        case 'post':
+          return this.http.post(
+            environment.apiUrl + requestTarget,
+            requestData,
+            { headers: this.getContentHeaders(useUserToken) }
+          );
+        case 'put':
+          return this.http.put(
+            environment.apiUrl + requestTarget,
+            requestData,
+            { headers: this.getContentHeaders(useUserToken) }
+          );
+        case 'delete':
+          return this.http.delete(
+            environment.apiUrl + requestTarget,
+            { headers: this.getContentHeaders(useUserToken), params: requestData, observe: 'response' }
+          );
+      }
     }
   }
 

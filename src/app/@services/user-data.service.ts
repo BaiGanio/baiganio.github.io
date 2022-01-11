@@ -39,7 +39,7 @@ export class UserDataService {
   }
 
   updateProfilePicture(data: any): Observable<any> {
-    return this.backendService.backendRequest('post', 'Account/UpdateProfilePicture', data, true);
+    return this.backendService.backendRequest('put', 'Account/UpdateProfilePicture', data, true);
   }
 
   sendIssueToAdmin(data: { Text: any; Img2Base64: string; }): Observable<any> {

@@ -22,6 +22,12 @@ h2 {
 mat-form-field{
     width:80%;
 }
+button{
+  margin: 5px;
+}
+hr{
+  text-align: left !important;
+}
 @media only screen and (max-width: 576px) {
     .thumb-holder {
         .img-fluid {

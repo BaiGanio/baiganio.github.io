@@ -38,33 +38,42 @@ export class ProfileComponent implements OnInit {
         private snackbar: MatSnackBar,
         private store: Store<AppState>
     ) {
-        this.profileDataFG =
-            this.formBuilder.group({
-                firstName: [''],
-                lastName: [''],
-                username: [''],
-                email: ['']
-            });
+        // this.profileDataFG =
+        //     this.formBuilder.group({
+        //         firstName: [''],
+        //         lastName: [''],
+        //         username: [''],
+        //         email: ['']
+        //     });
 
-        this.profileImageFG =
-            this.formBuilder.group({
-                profilePicture: ['', Validators.required]
-            });
+        // this.profileImageFG =
+        //     this.formBuilder.group({
+        //         profilePicture: ['', Validators.required]
+        //     });
 
-        this.formData =
-          this.formBuilder.group({
-              firstName: [''],
-              lastName: [''],
-              username: [''],
-              email: ['']
-          });
+
     }
 
     ngOnInit() {
         this.loading = true;
         this.getUserByToken();
+        this.formData =
+          this.formBuilder.group({
+              firstName: ['', Validators.required],
+              lastName: ['', Validators.required],
+              phone: ['', [ Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(14)]],
+              email: ['', [Validators.required, Validators.email]]
+          });
     }
+    keyPress(event: any) {
+      //https://www.tutsmake.com/angular-12-phone-number-validation-example/
+      const pattern = /[0-9\+\-\ ]/;
 
+      let inputChar = String.fromCharCode(event.charCode);
+      if (event.keyCode != 8 && !pattern.test(inputChar)) {
+        event.preventDefault();
+      }
+    }
     getUserByToken() {
         this.userService.getUserByToken()
             .subscribe(
@@ -102,15 +111,7 @@ export class ProfileComponent implements OnInit {
                 ? this.user.courses.length
                 : 0;
 
-        this.formData =
-          this.formBuilder.group({
-              firstName: [this.user.firstName, Validators.required],
-              lastName: [this.user.lastName, Validators.required],
-              imgUrl: [this.profileImgSrc],
-              email: [this.user.email]
-          });
-
-        this.clearForm();
+        this.patchFormData();
     }
 
     handleError(error): void {
@@ -177,6 +178,14 @@ export class ProfileComponent implements OnInit {
             username: this.user.username,
             email: this.user.email
         });
+    }
+    patchFormData(){
+      this.formData.patchValue({
+        firstName: this.user.firstName,
+        lastName: this.user.lastName,
+        phone: this.user.phone,
+        email: this.user.email
+    });
     }
 
     onFileSelected(event) {
