@@ -62,7 +62,7 @@ export class UserDataService {
     return this.backendService.backendRequest('get', environment.IPCheckingServiceUrl, null, true);
   }
   updateLastLoginDate(): Observable<any> {
-    return this.backendService.backendRequest('get', 'Account/UpdateLastLogin', null, true);
+    return this.backendService.backendRequest('put', 'Account/UpdateLastLogin', null, true);
   }
   getDasboardData(): Observable<any> {
     return this.backendService.backendRequest('get', 'Account/Dashboard', null, true);

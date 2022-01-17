@@ -32,18 +32,18 @@ export class LoginComponent implements OnInit {
     private authservice: AuthService,
     private errorHandlerService: ErrorHandlerService,
     private userDataService: UserDataService,
-    private store: Store<AppState>
+    //private store: Store<AppState>
   ) { }
 
   ngOnInit() {
     this.loginForm =
       this.formBuilder.group({
         email: [
-          null,
+          '',
           [Validators.required, Validators.email]
         ],
         password: [
-          null,
+          '',
           [Validators.required, Validators.minLength(3)]
         ],
         rememberMe: [
@@ -61,14 +61,13 @@ export class LoginComponent implements OnInit {
       this.loginForm.value.password
     ).subscribe(
       response => {
-        let token = response;
         if (this.loginForm.value.rememberMe) {
           this.authservice.setUserTokenAndRemember(response);
         } else {
           this.authservice.clearUserToken();
           this.authservice.userToken = response;
         }
-        this.store.dispatch(new SelectUserAction());
+        // this.store.dispatch(new SelectUserAction());
         this.updateLastLogin();
         this.router.navigate(['/dashboard']);
       },
@@ -88,7 +87,7 @@ export class LoginComponent implements OnInit {
   updateLastLogin() {
     this.userDataService.updateLastLoginDate().subscribe(
       () => {},
-      err => { console.log(err); }
+      err => { this.errorHandlerService.handleRequestError(err); }
     );
   }
 }
