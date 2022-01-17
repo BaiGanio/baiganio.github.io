@@ -18,7 +18,8 @@ export class CreateArticleComponent implements OnInit {
 
   constructor(private bloggerService: BloggersService,
     private errorHandlerService: ErrorHandlerService,
-    private snackbar: MatSnackBar) { }
+    private snackbar: MatSnackBar
+  ) { }
 
   ngOnInit(): void {
     this.myForm = new FormGroup({

@@ -12,6 +12,7 @@ import { ArticlesComponent } from './components/blogger/articles/articles.compon
 import { CreateArticleComponent } from './components/blogger/articles/create-article/create-article.component';
 import { RemoveArticleComponent } from './components/blogger/articles/remove-article/remove-article.component';
 import { EditArticleComponent } from './components/blogger/articles/edit-article/edit-article.component';
+import { ArticlePreviewComponent } from 'src/app/@pages/articles/article-preview/article-preview.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { EditArticleComponent } from './components/blogger/articles/edit-article
     }),
   ],
   entryComponents: [
+    ArticlePreviewComponent
   ],
   schemas: [ NO_ERRORS_SCHEMA ]
 })

@@ -24,4 +24,7 @@ export class ArticlesComponent implements OnInit {
     let res = title.toLowerCase().replace(/ /g, '-');
     return res;
   }
+  getRouterLink(){
+    return '/bloggers/' + this.userId + '/articles';
+  }
 }

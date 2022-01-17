@@ -28,7 +28,7 @@ export class BloggerComponent implements OnInit {
     const bloggerId = this.route.snapshot.params.id;
     // console.log(bloggerId);
     if (bloggerId && this.isGuid(bloggerId)) {
-      this.bloggerService.getById(bloggerId).subscribe(response => {
+      this.bloggerService.getByToken().subscribe(response => {
         this.blogger = response.body;
         console.log(this.blogger);
       },

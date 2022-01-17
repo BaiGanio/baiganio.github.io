@@ -1,7 +1,10 @@
 <mat-progress-bar mode="indeterminate" *ngIf='loading'></mat-progress-bar>
-<h1 class="title">My Articles</h1>
+<h1 class="title">My Articles    <button mat-raised-button routerLink='/bloggers/edit-article'>
+  <i class="fas fa-plus"></i> Create One
+</button></h1>
 <hr>
 <br>
+<p class="text-left">e</p>
 <h3 class="wait-fetching" *ngIf='loading'>Please wait! Fetching data from the server...</h3>
 <div class="row">
   <div *ngFor='let a of articles' class="col-md-3 text-center">

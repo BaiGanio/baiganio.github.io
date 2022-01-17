@@ -15,7 +15,7 @@ export class BloggersService {
     return this.backendService.backendRequest('get', 'Bloggers/' + id, null);
   }
   getByToken(): Observable<any> {
-    return this.backendService.backendRequest('get', 'Bloggers/GetByUserId', null, true);
+    return this.backendService.backendRequest('get', 'Bloggers/GetByToken', null, true);
   }
   update(data: any): Observable<any> {
     return this.backendService.backendRequest('post', 'Bloggers/Update', data, true);
