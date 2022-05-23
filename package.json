@@ -31,7 +31,6 @@
     "@types/signalr": "^2.2.37",
     "angular-cli-ghpages": "^1.0.0-rc.2",
     "chart.js": "^2.9.3",
-    "hammerjs": "^2.0.8",
     "jwt-decode": "^2.2.0",
     "ng2-charts": "^2.4.3",
     "ngx-loading": "^8.0.0",
