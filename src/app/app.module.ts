@@ -36,7 +36,6 @@ import { AccessDeniedComponent } from './@pages/access-denied/access-denied.comp
 import { NgbdCarouselBasicComponent } from './@components/ngbd-carousel-basic/ngbd-carousel-basic.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { UserEffects } from './@store/effects/user.effects';
 import { userReducer } from './@store/reducers/user.reducer';
 import { LoadingEffects } from './@store/effects/loading.effects';
 import { loadingReducer } from './@store/reducers/loading.reducer';
@@ -123,7 +122,7 @@ import { SearchFilterPipe } from './@shared/pipes/search-filter.pipe';
         }),
         EffectsModule.forRoot([
             LoadingEffects,
-            UserEffects,
+           // UserEffects,
             // HistoryEffects
         ]),
     ],

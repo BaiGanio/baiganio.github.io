@@ -3,7 +3,6 @@ import { version } from '../../package.json';
 export const environment = {
   production: true,
   env: 'production',
-  version: version,
   appUrl: 'https://baiganio.github.io/',
   apiUrl: 'https://bgapi.azurewebsites.net/api/',
   idsUrl: 'https://free-is4.azurewebsites.net/',

@@ -2,7 +2,6 @@ import { version } from '../../package.json';
 export const environment = {
   production: false,
   env: 'test',
-  version: version,
   appUrl: 'https://test-baiganio.azurewebsites.net/',
   apiUrl: 'https://test-bgapi.azurewebsites.net/api/',
   idsUrl: 'https://ids4core20.azurewebsites.net/',
