@@ -55,92 +55,81 @@ import { ArticlePreviewComponent } from './@pages/articles/article-preview/artic
 import { SearchFilterPipe } from './@shared/pipes/search-filter.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FooterComponent,
-    HomeComponent,
-    NavbarComponent,
-    LoginComponent,
-    RegisterComponent,
-    ServerAlertComponent,
-    AccessDeniedComponent,
-    NotFoundComponent,
-    PrivacyComponent,
-    TermsComponent,
-    ErrorComponent,
-    UnauthorizedComponent,
-    QuestionnaireComponent,
-    ServerErrorComponent,
-    BadRequestComponent,
-    BgTeamComponent,
-    RateComponent,
-    PlaylistsComponent,
-    NgbdCarouselBasicComponent,
-    PlaylistItemsComponent,
-    TodosComponent,
-    CreateToDoComponent,
-    DeleteToDoComponent,
-    UpdateToDoComponent,
-    ProjectsComponent,
-    ArticlesComponent,
-    ArticlePreviewComponent,
-    SearchFilterPipe,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AngularMaterialModule,
-    CoreModule,
-    AccountModule,
-    DashboardModule,
-    ProfileModule,
-    CoursesModule,
-    SubscriptionsModule,
-    BloggersModule,
-    TeachersModule,
-    WorkbenchModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: jwtTokenGetter
-      }
-    }),
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
-    StoreModule.forRoot({
-      user: userReducer,
-      loading: loadingReducer,
-      // history: historyReducer
-      tutorial: tutorialReducer
-    }),
-    EffectsModule.forRoot([
-      LoadingEffects,
-      UserEffects,
-      // HistoryEffects
-    ]),
-  ],
-  entryComponents: [
-    TermsComponent,
-    PrivacyComponent,
-    ErrorComponent,
-    UnauthorizedComponent,
-    BadRequestComponent,
-    QuestionnaireComponent,
-    CreateToDoComponent,
-    DeleteToDoComponent,
-    UpdateToDoComponent
-  ],
-  providers: [CoreModule],
-  bootstrap: [AppComponent],
-  schemas: [NO_ERRORS_SCHEMA]
+    declarations: [
+        AppComponent,
+        FooterComponent,
+        HomeComponent,
+        NavbarComponent,
+        LoginComponent,
+        RegisterComponent,
+        ServerAlertComponent,
+        AccessDeniedComponent,
+        NotFoundComponent,
+        PrivacyComponent,
+        TermsComponent,
+        ErrorComponent,
+        UnauthorizedComponent,
+        QuestionnaireComponent,
+        ServerErrorComponent,
+        BadRequestComponent,
+        BgTeamComponent,
+        RateComponent,
+        PlaylistsComponent,
+        NgbdCarouselBasicComponent,
+        PlaylistItemsComponent,
+        TodosComponent,
+        CreateToDoComponent,
+        DeleteToDoComponent,
+        UpdateToDoComponent,
+        ProjectsComponent,
+        ArticlesComponent,
+        ArticlePreviewComponent,
+        SearchFilterPipe,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        AngularMaterialModule,
+        CoreModule,
+        AccountModule,
+        DashboardModule,
+        ProfileModule,
+        CoursesModule,
+        SubscriptionsModule,
+        BloggersModule,
+        TeachersModule,
+        WorkbenchModule,
+        JwtModule.forRoot({
+            config: {
+                tokenGetter: jwtTokenGetter
+            }
+        }),
+        NgxLoadingModule.forRoot({
+            animationType: ngxLoadingAnimationTypes.threeBounce,
+            primaryColour: '#88078e',
+            secondaryColour: '#c6ef23',
+            backdropBorderRadius: '14px',
+            fullScreenBackdrop: true
+        }),
+        StoreModule.forRoot({
+            user: userReducer,
+            loading: loadingReducer,
+            // history: historyReducer
+            tutorial: tutorialReducer
+        }),
+        EffectsModule.forRoot([
+            LoadingEffects,
+            UserEffects,
+            // HistoryEffects
+        ]),
+    ],
+    providers: [CoreModule],
+    bootstrap: [AppComponent],
+    schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
 

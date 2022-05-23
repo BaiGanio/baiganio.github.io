@@ -15,34 +15,31 @@ import { EditArticleComponent } from './components/blogger/articles/edit-article
 import { ArticlePreviewComponent } from 'src/app/@pages/articles/article-preview/article-preview.component';
 
 @NgModule({
-  declarations: [
-    BloggersComponent,
-    BloggerComponent,
-    BloggerCraftsmanViewComponent,
-    ArticlesComponent,
-    CreateArticleComponent,
-    RemoveArticleComponent,
-    EditArticleComponent,
-  ],
-  imports: [
-    CommonModule,
-    BloggersRoutingModule,
-    AngularMaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
-    // StoreModule.forRoot({ bloggers: bloggersReducer }),
-    EditorModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
-  ],
-  entryComponents: [
-    ArticlePreviewComponent
-  ],
-  schemas: [ NO_ERRORS_SCHEMA ]
+    declarations: [
+        BloggersComponent,
+        BloggerComponent,
+        BloggerCraftsmanViewComponent,
+        ArticlesComponent,
+        CreateArticleComponent,
+        RemoveArticleComponent,
+        EditArticleComponent,
+    ],
+    imports: [
+        CommonModule,
+        BloggersRoutingModule,
+        AngularMaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
+        // StoreModule.forRoot({ bloggers: bloggersReducer }),
+        EditorModule,
+        NgxLoadingModule.forRoot({
+            animationType: ngxLoadingAnimationTypes.threeBounce,
+            primaryColour: '#88078e',
+            secondaryColour: '#c6ef23',
+            backdropBorderRadius: '14px',
+            fullScreenBackdrop: true
+        }),
+    ],
+    schemas: [NO_ERRORS_SCHEMA]
 })
 export class BloggersModule { }

@@ -14,32 +14,29 @@ import { BloggerSubscriptionPreviewComponent } from './components/blogger-subscr
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BloggerSubscriptionDetailsComponent } from './components/blogger-subscription-details/blogger-subscription-details.component';
 @NgModule({
-  declarations: [
-      SubscriptionsComponent,
-      SubscriptionPreviewComponent,
-      MySubscriptionsComponent,
-      UserSubscriptionPreviewComponent,
-      UserSubscriptionEditComponent,
-      BloggerSubscriptionPreviewComponent,
-      BloggerSubscriptionDetailsComponent
+    declarations: [
+        SubscriptionsComponent,
+        SubscriptionPreviewComponent,
+        MySubscriptionsComponent,
+        UserSubscriptionPreviewComponent,
+        UserSubscriptionEditComponent,
+        BloggerSubscriptionPreviewComponent,
+        BloggerSubscriptionDetailsComponent
     ],
-  imports: [
-    CommonModule,
-    SubscriptionsRoutingModule,
-    AngularMaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
-  ],
-  entryComponents: [
-     SubscriptionPreviewComponent
-  ],
-  schemas: [ NO_ERRORS_SCHEMA ]
+    imports: [
+        CommonModule,
+        SubscriptionsRoutingModule,
+        AngularMaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgxLoadingModule.forRoot({
+            animationType: ngxLoadingAnimationTypes.threeBounce,
+            primaryColour: '#88078e',
+            secondaryColour: '#c6ef23',
+            backdropBorderRadius: '14px',
+            fullScreenBackdrop: true
+        }),
+    ],
+    schemas: [NO_ERRORS_SCHEMA]
 })
 export class SubscriptionsModule { }

@@ -17,34 +17,29 @@ import { TeacherCraftsmanViewComponent } from './views/teacher-craftsman-view/te
 import { StudentCraftsmanViewComponent } from './views/student-craftsman-view/student-craftsman-view.component';
 
 @NgModule({
-  declarations: [
-      DashboardComponent,
-      StudentInfoComponent,
-      NotificationsComponent,
-      NotificationPreviewComponent,
-      ReportedIssuePreviewComponent,
-      ReportedIssuesComponent,
-      CraftsmanMenuComponent,
-      TeacherCraftsmanViewComponent,
-      StudentCraftsmanViewComponent,
+    declarations: [
+        DashboardComponent,
+        StudentInfoComponent,
+        NotificationsComponent,
+        NotificationPreviewComponent,
+        ReportedIssuePreviewComponent,
+        ReportedIssuesComponent,
+        CraftsmanMenuComponent,
+        TeacherCraftsmanViewComponent,
+        StudentCraftsmanViewComponent,
     ],
-  imports: [
-    CommonModule,
-    DashboardRoutingModule,
-    AngularMaterialModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
-  ],
-  entryComponents: [
-    NotificationPreviewComponent,
-    ReportedIssuePreviewComponent,
-    EditCourseComponent,
-  ],
-  schemas: [ NO_ERRORS_SCHEMA ]
+    imports: [
+        CommonModule,
+        DashboardRoutingModule,
+        AngularMaterialModule,
+        NgxLoadingModule.forRoot({
+            animationType: ngxLoadingAnimationTypes.threeBounce,
+            primaryColour: '#88078e',
+            secondaryColour: '#c6ef23',
+            backdropBorderRadius: '14px',
+            fullScreenBackdrop: true
+        }),
+    ],
+    schemas: [NO_ERRORS_SCHEMA]
 })
 export class DashboardModule { }

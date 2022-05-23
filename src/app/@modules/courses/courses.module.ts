@@ -19,36 +19,33 @@ import { PolarareaComponent } from 'src/app/@components/charts/polararea/polarar
 import { CoursesDetailsComponent } from './views/courses-details/courses-details.component';
 
 @NgModule({
-  declarations: [
-    CoursesComponent,
-    CoursePreviewComponent,
-    MyCoursesComponent,
-    CourseDetailsComponent,    
-    CoursesDetailsComponent,
-    InClassComponent,
-    ScoreComponent,
-    LinechartComponent,
-    BarchartComponent,
-    DoughnutComponent,
-    PiechartComponent,
-    PolarareaComponent
-  ],
-  imports: [
-    CommonModule,
-    CoursesRoutingModule,
-    AngularMaterialModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
-  ],
-  entryComponents: [
-    CoursePreviewComponent,
-  ],
-  exports: [CourseDetailsComponent],
-  schemas: [ NO_ERRORS_SCHEMA ]
+    declarations: [
+        CoursesComponent,
+        CoursePreviewComponent,
+        MyCoursesComponent,
+        CourseDetailsComponent,
+        CoursesDetailsComponent,
+        InClassComponent,
+        ScoreComponent,
+        LinechartComponent,
+        BarchartComponent,
+        DoughnutComponent,
+        PiechartComponent,
+        PolarareaComponent
+    ],
+    imports: [
+        CommonModule,
+        CoursesRoutingModule,
+        AngularMaterialModule,
+        NgxLoadingModule.forRoot({
+            animationType: ngxLoadingAnimationTypes.threeBounce,
+            primaryColour: '#88078e',
+            secondaryColour: '#c6ef23',
+            backdropBorderRadius: '14px',
+            fullScreenBackdrop: true
+        }),
+    ],
+    exports: [CourseDetailsComponent],
+    schemas: [NO_ERRORS_SCHEMA]
 })
 export class CoursesModule { }

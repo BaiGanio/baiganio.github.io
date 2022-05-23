@@ -15,31 +15,28 @@ import { InvalidLoginComponent } from './pages/invalid-login.component';
 
 
 @NgModule({
-  declarations: [
-    AccountComponent,
-    InvalidLoginComponent,
-    ReportIssueComponent,
-    ForgottenPasswordComponent,
-    ConfirmationComponent,
-  ],
-  imports: [
-    CommonModule,
-    AccountRoutingModule,
-    AngularMaterialModule,
-    // BrowserAnimationsModule,
-    // FormsModule,
-    ReactiveFormsModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
-  ],
-  entryComponents: [
-    InvalidLoginComponent
-  ],
-  schemas: [NO_ERRORS_SCHEMA]
+    declarations: [
+        AccountComponent,
+        InvalidLoginComponent,
+        ReportIssueComponent,
+        ForgottenPasswordComponent,
+        ConfirmationComponent,
+    ],
+    imports: [
+        CommonModule,
+        AccountRoutingModule,
+        AngularMaterialModule,
+        // BrowserAnimationsModule,
+        // FormsModule,
+        ReactiveFormsModule,
+        NgxLoadingModule.forRoot({
+            animationType: ngxLoadingAnimationTypes.threeBounce,
+            primaryColour: '#88078e',
+            secondaryColour: '#c6ef23',
+            backdropBorderRadius: '14px',
+            fullScreenBackdrop: true
+        }),
+    ],
+    schemas: [NO_ERRORS_SCHEMA]
 })
 export class AccountModule { }

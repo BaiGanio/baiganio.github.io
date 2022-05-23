@@ -13,31 +13,26 @@ import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { DeleteProfileComponent } from './components/delete-profile/delete-profile.component';
 
 @NgModule({
-  declarations: [
-    ProfileComponent,
-    Subscribe4NotificationsComponent,
-    ChangePasswordComponent,
-    PassStrengthComponent,
-    DeleteProfileComponent
-  ],
-  imports: [
-    CommonModule,
-    ProfileRoutingModule,
-    AngularMaterialModule,
-    ReactiveFormsModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
-  ],
-  entryComponents: [
-    Subscribe4NotificationsComponent,
-    ChangePasswordComponent,
-    PassStrengthComponent
-  ],
-  schemas: [NO_ERRORS_SCHEMA]
+    declarations: [
+        ProfileComponent,
+        Subscribe4NotificationsComponent,
+        ChangePasswordComponent,
+        PassStrengthComponent,
+        DeleteProfileComponent
+    ],
+    imports: [
+        CommonModule,
+        ProfileRoutingModule,
+        AngularMaterialModule,
+        ReactiveFormsModule,
+        NgxLoadingModule.forRoot({
+            animationType: ngxLoadingAnimationTypes.threeBounce,
+            primaryColour: '#88078e',
+            secondaryColour: '#c6ef23',
+            backdropBorderRadius: '14px',
+            fullScreenBackdrop: true
+        }),
+    ],
+    schemas: [NO_ERRORS_SCHEMA]
 })
 export class ProfileModule { }

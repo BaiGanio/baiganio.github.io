@@ -13,34 +13,27 @@ import { TeacherPreviewComponent } from './component/teacher-preview/teacher-pre
 import { VoteForTeacherComponent } from './component/vote-for-teacher/vote-for-teacher.component';
 
 @NgModule({
-  declarations: [
-    TeachersComponent,
-    TeacherDetailsComponent,
-    CreateCourseComponent,
-    EditCourseComponent,
-    DeleteCourseComponent,
-    TeacherPreviewComponent,
-    VoteForTeacherComponent
-  ],
-  entryComponents: [
-    CreateCourseComponent,
-    EditCourseComponent,
-    DeleteCourseComponent,
-    TeacherPreviewComponent,
-    VoteForTeacherComponent
-  ],
-  imports: [
-    CommonModule,
-    TeachersRoutingModule,
-    AngularMaterialModule,
-    ReactiveFormsModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
-  ],
+    declarations: [
+        TeachersComponent,
+        TeacherDetailsComponent,
+        CreateCourseComponent,
+        EditCourseComponent,
+        DeleteCourseComponent,
+        TeacherPreviewComponent,
+        VoteForTeacherComponent
+    ],
+    imports: [
+        CommonModule,
+        TeachersRoutingModule,
+        AngularMaterialModule,
+        ReactiveFormsModule,
+        NgxLoadingModule.forRoot({
+            animationType: ngxLoadingAnimationTypes.threeBounce,
+            primaryColour: '#88078e',
+            secondaryColour: '#c6ef23',
+            backdropBorderRadius: '14px',
+            fullScreenBackdrop: true
+        }),
+    ]
 })
 export class TeachersModule { }
