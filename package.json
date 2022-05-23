@@ -22,7 +22,6 @@
     "@angular/platform-browser": "~13.3.9",
     "@angular/platform-browser-dynamic": "~13.3.9",
     "@angular/router": "~13.3.9",
-    "@angular/youtube-player": "^11.2.13",
     "@auth0/angular-jwt": "^2.1.2",
     "@microsoft/signalr": "^5.0.8",
     "@ngrx/effects": "^10.1.2",
