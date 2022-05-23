@@ -52,6 +52,7 @@ import { WorkbenchModule } from './@modules/workbench/workbench.module';
 import { ProjectsComponent } from './@pages/projects/projects.component';
 import { ArticlesComponent } from './@pages/articles/articles.component';
 import { ArticlePreviewComponent } from './@pages/articles/article-preview/article-preview.component';
+import { SearchFilterPipe } from './@shared/pipes/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { ArticlePreviewComponent } from './@pages/articles/article-preview/artic
     ProjectsComponent,
     ArticlesComponent,
     ArticlePreviewComponent,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,
