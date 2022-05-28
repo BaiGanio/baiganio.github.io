@@ -19,16 +19,17 @@ export class BloggersComponent implements OnInit {
     private bloggerService: BloggersService,
     private errorHandlerService: ErrorHandlerService,
     private dialog: MatDialog,
-    private router: Router,    
+    private router: Router,
   ) { }
 
   ngOnInit() {
     this.loading = true;
     this.bloggerService.getBloggers().subscribe(response => {
         response.body.forEach(element => {
+          console.log(element);
           this.bloggers.push(element);
         });
-    }, error => {
+    }, (error: any) => {
         this.errorHandlerService.handleRequestError(error);
         this.loading = false;
     }, () => { this.loading = false; });
@@ -40,7 +41,7 @@ export class BloggersComponent implements OnInit {
       if(element.Id === id){
         this.blogger = element;
       }
-      
+
   });
 
     this.dialog.open(
@@ -56,7 +57,7 @@ export class BloggersComponent implements OnInit {
     let counter = 0;
     posts.forEach(element => {
       counter++;
-    
+
     });
     return counter;
   }

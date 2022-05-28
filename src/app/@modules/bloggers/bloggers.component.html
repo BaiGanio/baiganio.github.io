@@ -1,6 +1,6 @@
-<ngx-loading [show]="loading"></ngx-loading>
 <h1 class="title">Bloggers</h1>
 <hr>
+  <mat-progress-bar mode="indeterminate" *ngIf='loading'></mat-progress-bar>
 <br>
 <div class="row text-center">
   <div class="col-md-4" *ngFor='let b of bloggers'>

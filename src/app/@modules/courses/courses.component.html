@@ -1,6 +1,7 @@
-<ngx-loading [show]="loading"></ngx-loading>
+
 <h1 class="title">Courses</h1>
 <hr>
+<mat-progress-bar mode="indeterminate" *ngIf='loading'></mat-progress-bar>
 <br>
 <h3 class="wait-fetching" *ngIf='loading && isInitMsg'>Please wait! Fetching data...</h3>
 <div class="text-center" *ngIf='flagEnrollSuccess; else infoBox'>

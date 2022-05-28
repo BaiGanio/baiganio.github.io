@@ -19,9 +19,7 @@ export class ErrorHandlerService {
       let message: string = `${error.message} - ${error.error.title}`;
       this.callErrorSnackBar(message);
     } else{
-      console.log(error);
       let message: string = error.error || error.message;
-      console.log(message);
       this.callErrorSnackBar(message);
     }
   }

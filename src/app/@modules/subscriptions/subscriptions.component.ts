@@ -58,7 +58,6 @@ export class SubscriptionsComponent implements OnInit {
 
     private subscriptionsInit() {
         this.subscriptionsService.getAllSubscriptions().subscribe(response => {
-            // console.log(response.body);
             response.body.forEach(element => {
                 const s = {
                     Id: element.id,
