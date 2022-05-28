@@ -17,7 +17,6 @@ import { FooterComponent } from './@pages/footer/footer.component';
 import { CoursesModule } from './@modules/courses/courses.module';
 import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './@modules/account/pages/login/login.component';
 import { RegisterComponent } from './@modules/account/pages/register/register.component';
@@ -106,13 +105,6 @@ import { SearchFilterPipe } from './@shared/pipes/search-filter.pipe';
             config: {
                 tokenGetter: jwtTokenGetter
             }
-        }),
-        NgxLoadingModule.forRoot({
-            animationType: ngxLoadingAnimationTypes.threeBounce,
-            primaryColour: '#88078e',
-            secondaryColour: '#c6ef23',
-            backdropBorderRadius: '14px',
-            fullScreenBackdrop: true
         }),
         StoreModule.forRoot({
             user: userReducer,

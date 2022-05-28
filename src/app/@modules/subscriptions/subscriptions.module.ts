@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { SubscriptionPreviewComponent } from './components/subscription-preview/subscription-preview.component';
 import { MySubscriptionsComponent } from './views/my-subscriptions/my-subscriptions.component';
@@ -29,13 +28,6 @@ import { BloggerSubscriptionDetailsComponent } from './components/blogger-subscr
         AngularMaterialModule,
         FormsModule,
         ReactiveFormsModule,
-        NgxLoadingModule.forRoot({
-            animationType: ngxLoadingAnimationTypes.threeBounce,
-            primaryColour: '#88078e',
-            secondaryColour: '#c6ef23',
-            backdropBorderRadius: '14px',
-            fullScreenBackdrop: true
-        }),
     ],
     schemas: [NO_ERRORS_SCHEMA]
 })

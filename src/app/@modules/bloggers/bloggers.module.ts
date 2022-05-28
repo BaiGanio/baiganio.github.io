@@ -1,7 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
-import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { BloggersRoutingModule } from './bloggers-routing.module';
 import { BloggerComponent } from './components/blogger/blogger.component';
 import { BloggersComponent } from './bloggers.component';
@@ -32,13 +31,6 @@ import { ArticlePreviewComponent } from 'src/app/@pages/articles/article-preview
         ReactiveFormsModule,
         // StoreModule.forRoot({ bloggers: bloggersReducer }),
         EditorModule,
-        NgxLoadingModule.forRoot({
-            animationType: ngxLoadingAnimationTypes.threeBounce,
-            primaryColour: '#88078e',
-            secondaryColour: '#c6ef23',
-            backdropBorderRadius: '14px',
-            fullScreenBackdrop: true
-        }),
     ],
     schemas: [NO_ERRORS_SCHEMA]
 })
