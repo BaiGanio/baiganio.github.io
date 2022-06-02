@@ -1,4 +1,3 @@
-[![Board Status](https://dev.azure.com/teamkepler/9e3527cc-ff66-4007-a6c9-11ee691d3090/9d426dfb-39c9-453c-a491-a212b44fbedc/_apis/work/boardbadge/f6274551-f8b6-4fa7-bf60-fd4eb0696c7f)](https://dev.azure.com/teamkepler/9e3527cc-ff66-4007-a6c9-11ee691d3090/_boards/board/t/9d426dfb-39c9-453c-a491-a212b44fbedc/Microsoft.RequirementCategory)
 # _BaiGanio_
 This project aims self-creativity & is nothing but a playground where development skills are challenged for fun!!
 
