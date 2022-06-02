@@ -132,6 +132,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
+            "codeCoverage": true,
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -142,9 +143,9 @@
               "src/styles.scss",
               "src/assets/scss/snackbar.scss"
             ],
-            "scripts": [
-              "src/assets/js/handy-clock.js"
-            ]
+            // "scripts": [
+            //   "src/assets/js/handy-clock.js"
+            // ]
           }
         },
         "e2e": {

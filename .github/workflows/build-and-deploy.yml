@@ -4,8 +4,10 @@ name: CI/CD (Build & Deploy)
 # Controls when the action will run.
 on:
   # Trigger the workflow on push or pull request, but only for the selected branch below!
- push:
-    branches: [ master ]
+  push:
+    branches: [master, dev/*]
+  pull_request:
+    branches: [master, dev/*]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -46,9 +48,9 @@ jobs:
         IS4_BAIGANIO_CLIENT_SECRET: ${{ secrets.IS4_BAIGANIO_CLIENT_SECRET }}
         IS4_BAIGANIO_USER_SECRET: ${{ secrets.IS4_BAIGANIO_USER_SECRET }}
         YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-    # - name: Test
-    #   run: |
-    #     npm test
+    - name: Test
+      run: |
+        npm test
 
     - name: archive build
       if: success()
@@ -56,12 +58,12 @@ jobs:
       with:
         name: deployable_artifacts
         path: dist
-    # - name: Archive code coverage result
-    #   if: success()
-    #   uses: actions/upload-artifact@v1
-    #   with:
-    #     name: deploy_coverage
-    #     path: coverage
+    - name: Archive code coverage result
+      if: success()
+      uses: actions/upload-artifact@v1
+      with:
+        name: deploy_coverage
+        path: coverage
 
     # This workflow contains a second job called "deploy"
   deploy:

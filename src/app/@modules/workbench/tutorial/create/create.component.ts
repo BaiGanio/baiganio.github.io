@@ -10,12 +10,16 @@ import { AppState } from 'src/app/@store/app.state';
 })
 export class CreateComponent implements OnInit {
 
-  constructor(private store: Store<AppState>) { }
+  // constructor(private store: Store<AppState>) { }
+  /**
+   *
+   */
+  constructor() {}
 
   ngOnInit(): void {
   }
 
   addTutorial(name, url) {
-    this.store.dispatch(new AddTutorial({name: name, url: url}) )
+    //this.store.dispatch(new AddTutorial({name: name, url: url}) )
   }
 }
