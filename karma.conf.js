@@ -4,6 +4,7 @@
 module.exports = function (config) {
     config.set({
       basePath: '',
+      browserNoActivityTimeout: 600000,
       frameworks: ['jasmine', '@angular-devkit/build-angular'],
       plugins: [
         require('karma-jasmine'),
@@ -12,6 +13,9 @@ module.exports = function (config) {
         require('karma-coverage'),
         require('@angular-devkit/build-angular/plugins/karma')
       ],
+      angularCli: {
+        environment: 'dev'
+      },
       client: {
         jasmine: {
           // you can add configuration options for Jasmine here
@@ -46,7 +50,8 @@ module.exports = function (config) {
       autoWatch: true,
       browsers: ['ChromeHeadless'],
       singleRun: false,
-      restartOnFileChange: true
+      restartOnFileChange: true,
+      exclude: ["node_modules"]
     });
   };
   
