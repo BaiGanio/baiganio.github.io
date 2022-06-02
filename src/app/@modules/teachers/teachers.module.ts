@@ -4,7 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TeachersRoutingModule } from './teachers-routing-module.module';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { TeachersComponent } from './teachers.component';
-import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { TeacherDetailsComponent } from './views/teacher-details/teacher-details.component';
 import { EditCourseComponent } from '../courses/components/edit-course/edit-course.component';
 import { DeleteCourseComponent } from '../courses/components/delete-course/delete-course.component';
@@ -13,34 +12,20 @@ import { TeacherPreviewComponent } from './component/teacher-preview/teacher-pre
 import { VoteForTeacherComponent } from './component/vote-for-teacher/vote-for-teacher.component';
 
 @NgModule({
-  declarations: [
-    TeachersComponent,
-    TeacherDetailsComponent,
-    CreateCourseComponent,
-    EditCourseComponent,
-    DeleteCourseComponent,
-    TeacherPreviewComponent,
-    VoteForTeacherComponent
-  ],
-  entryComponents: [
-    CreateCourseComponent,
-    EditCourseComponent,
-    DeleteCourseComponent,
-    TeacherPreviewComponent,
-    VoteForTeacherComponent
-  ],
-  imports: [
-    CommonModule,
-    TeachersRoutingModule,
-    AngularMaterialModule,
-    ReactiveFormsModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
-  ],
+    declarations: [
+        TeachersComponent,
+        TeacherDetailsComponent,
+        CreateCourseComponent,
+        EditCourseComponent,
+        DeleteCourseComponent,
+        TeacherPreviewComponent,
+        VoteForTeacherComponent
+    ],
+    imports: [
+        CommonModule,
+        TeachersRoutingModule,
+        AngularMaterialModule,
+        ReactiveFormsModule
+    ]
 })
 export class TeachersModule { }

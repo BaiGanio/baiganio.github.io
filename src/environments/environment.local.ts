@@ -2,7 +2,6 @@ import { version } from '../../package.json';
 export const environment = {
     production: false,
     env: 'local',
-    version: version,
     appUrl: 'http://localhost:5003/',
     apiUrl: 'https://localhost:44364/api/',
     idsUrl: 'https://free-is4.azurewebsites.net/',

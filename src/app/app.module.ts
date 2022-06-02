@@ -17,7 +17,6 @@ import { FooterComponent } from './@pages/footer/footer.component';
 import { CoursesModule } from './@modules/courses/courses.module';
 import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './@modules/account/pages/login/login.component';
 import { RegisterComponent } from './@modules/account/pages/register/register.component';
@@ -36,7 +35,6 @@ import { AccessDeniedComponent } from './@pages/access-denied/access-denied.comp
 import { NgbdCarouselBasicComponent } from './@components/ngbd-carousel-basic/ngbd-carousel-basic.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { UserEffects } from './@store/effects/user.effects';
 import { userReducer } from './@store/reducers/user.reducer';
 import { LoadingEffects } from './@store/effects/loading.effects';
 import { loadingReducer } from './@store/reducers/loading.reducer';
@@ -52,93 +50,77 @@ import { WorkbenchModule } from './@modules/workbench/workbench.module';
 import { ProjectsComponent } from './@pages/projects/projects.component';
 import { ArticlesComponent } from './@pages/articles/articles.component';
 import { ArticlePreviewComponent } from './@pages/articles/article-preview/article-preview.component';
+import { SearchFilterPipe } from './@shared/pipes/search-filter.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FooterComponent,
-    HomeComponent,
-    NavbarComponent,
-    LoginComponent,
-    RegisterComponent,
-    ServerAlertComponent,
-    AccessDeniedComponent,
-    NotFoundComponent,
-    PrivacyComponent,
-    TermsComponent,
-    ErrorComponent,
-    UnauthorizedComponent,
-    QuestionnaireComponent,
-    ServerErrorComponent,
-    BadRequestComponent,
-    BgTeamComponent,
-    RateComponent,
-    PlaylistsComponent,
-    NgbdCarouselBasicComponent,
-    PlaylistItemsComponent,
-    TodosComponent,
-    CreateToDoComponent,
-    DeleteToDoComponent,
-    UpdateToDoComponent,
-    ProjectsComponent,
-    ArticlesComponent,
-    ArticlePreviewComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AngularMaterialModule,
-    CoreModule,
-    AccountModule,
-    DashboardModule,
-    ProfileModule,
-    CoursesModule,
-    SubscriptionsModule,
-    BloggersModule,
-    TeachersModule,
-    WorkbenchModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: jwtTokenGetter
-      }
-    }),
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
-    StoreModule.forRoot({
-      user: userReducer,
-      loading: loadingReducer,
-      // history: historyReducer
-      tutorial: tutorialReducer
-    }),
-    EffectsModule.forRoot([
-      LoadingEffects,
-      UserEffects,
-      // HistoryEffects
-    ]),
-  ],
-  entryComponents: [
-    TermsComponent,
-    PrivacyComponent,
-    ErrorComponent,
-    UnauthorizedComponent,
-    BadRequestComponent,
-    QuestionnaireComponent,
-    CreateToDoComponent,
-    DeleteToDoComponent,
-    UpdateToDoComponent
-  ],
-  providers: [CoreModule],
-  bootstrap: [AppComponent],
-  schemas: [NO_ERRORS_SCHEMA]
+    declarations: [
+        AppComponent,
+        FooterComponent,
+        HomeComponent,
+        NavbarComponent,
+        LoginComponent,
+        RegisterComponent,
+        ServerAlertComponent,
+        AccessDeniedComponent,
+        NotFoundComponent,
+        PrivacyComponent,
+        TermsComponent,
+        ErrorComponent,
+        UnauthorizedComponent,
+        QuestionnaireComponent,
+        ServerErrorComponent,
+        BadRequestComponent,
+        BgTeamComponent,
+        RateComponent,
+        PlaylistsComponent,
+        NgbdCarouselBasicComponent,
+        PlaylistItemsComponent,
+        TodosComponent,
+        CreateToDoComponent,
+        DeleteToDoComponent,
+        UpdateToDoComponent,
+        ProjectsComponent,
+        ArticlesComponent,
+        ArticlePreviewComponent,
+        SearchFilterPipe,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        AngularMaterialModule,
+        CoreModule,
+        AccountModule,
+        DashboardModule,
+        ProfileModule,
+        CoursesModule,
+        SubscriptionsModule,
+        BloggersModule,
+        TeachersModule,
+        WorkbenchModule,
+        JwtModule.forRoot({
+            config: {
+                tokenGetter: jwtTokenGetter
+            }
+        }),
+        StoreModule.forRoot({
+            user: userReducer,
+            loading: loadingReducer,
+            // history: historyReducer
+            tutorial: tutorialReducer
+        }),
+        EffectsModule.forRoot([
+            LoadingEffects,
+           // UserEffects,
+            // HistoryEffects
+        ]),
+    ],
+    providers: [CoreModule],
+    bootstrap: [AppComponent],
+    schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
 

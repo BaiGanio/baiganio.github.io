@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { SubscriptionPreviewComponent } from './components/subscription-preview/subscription-preview.component';
 import { MySubscriptionsComponent } from './views/my-subscriptions/my-subscriptions.component';
@@ -14,32 +13,22 @@ import { BloggerSubscriptionPreviewComponent } from './components/blogger-subscr
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BloggerSubscriptionDetailsComponent } from './components/blogger-subscription-details/blogger-subscription-details.component';
 @NgModule({
-  declarations: [
-      SubscriptionsComponent,
-      SubscriptionPreviewComponent,
-      MySubscriptionsComponent,
-      UserSubscriptionPreviewComponent,
-      UserSubscriptionEditComponent,
-      BloggerSubscriptionPreviewComponent,
-      BloggerSubscriptionDetailsComponent
+    declarations: [
+        SubscriptionsComponent,
+        SubscriptionPreviewComponent,
+        MySubscriptionsComponent,
+        UserSubscriptionPreviewComponent,
+        UserSubscriptionEditComponent,
+        BloggerSubscriptionPreviewComponent,
+        BloggerSubscriptionDetailsComponent
     ],
-  imports: [
-    CommonModule,
-    SubscriptionsRoutingModule,
-    AngularMaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgxLoadingModule.forRoot({
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      primaryColour: '#88078e',
-      secondaryColour: '#c6ef23',
-      backdropBorderRadius: '14px',
-      fullScreenBackdrop: true
-    }),
-  ],
-  entryComponents: [
-     SubscriptionPreviewComponent
-  ],
-  schemas: [ NO_ERRORS_SCHEMA ]
+    imports: [
+        CommonModule,
+        SubscriptionsRoutingModule,
+        AngularMaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
+    ],
+    schemas: [NO_ERRORS_SCHEMA]
 })
 export class SubscriptionsModule { }

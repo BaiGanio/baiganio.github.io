@@ -20,14 +20,14 @@
     <div *ngFor='let teacher of teachers' class="col-md-3 text-center">
         <div class="card">
             <div class="card-body">
-                <img 
-                    src='{{teacher.Image}}' 
-                    class="img-thumbnail img-fluid" 
+                <img
+                    src='{{teacher.Image}}'
+                    class="img-thumbnail img-fluid"
                     alt="Sample image">
                     <br><br>
-                <h5>{{ teacher.Name }}</h5>                
+                <h5>{{ teacher.Name }}</h5>
                 <!-- <p>Status: {{ teacher.Status }}</p> -->
-                <hr>  
+                <hr>
                 <div style="font-size: 1.2em;">
                     <span>&#11088;</span> {{teacher.Stars}}
                 </div>
@@ -38,9 +38,7 @@
                 <button *ngIf='isLogged && !notVotedYet(teacher.Id)' mat-raised-button class="text-center ml-2"
                     (click)="voteForTeacher(teacher.Id)"> Vote
                 </button>
-            </div>    
-        </div>  
+            </div>
+        </div>
     </div>
 </div>
-
-<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>

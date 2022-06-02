@@ -2,7 +2,6 @@
 export const environment = {
     production: false,
     env: 'default',
-    version:'',
     appUrl: '',
     apiUrl: '',
     idsUrl: '',

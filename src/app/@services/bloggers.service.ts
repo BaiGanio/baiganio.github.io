@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BackendService } from './backend.service';
 import { Observable } from 'rxjs';
-import { Blogger } from '../@modules/bloggers/models/blogger.model';
 
 @Injectable()
 export class BloggersService {

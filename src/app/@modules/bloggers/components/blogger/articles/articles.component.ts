@@ -10,6 +10,7 @@ import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 export class ArticlesComponent implements OnInit {
   loading = true;
   articles: any;
+  userId: string;
   constructor(private articlesService: ArticlesService, private errorHandlerService: ErrorHandlerService) { }
 
   ngOnInit(): void {
