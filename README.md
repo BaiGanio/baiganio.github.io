@@ -31,7 +31,7 @@ _We encourage you to run build command each time before pushing to a remote repo
 - [x] Run `ng build` for a local build.
 - build artifacts are stored in the `dist/` folder
 
-_==Production== build for your own use is better to be done after configuring [environment.prod.ts](https://github.com/BaiGanio/baiganio.github.io/blob/master/src/environments/environment.prod.ts) file._
+_`Production` build for your own use is better to be done after configuring [environment.prod.ts](https://github.com/BaiGanio/baiganio.github.io/blob/master/src/environments/environment.prod.ts) file._
 - [x] Replace all `key-value pairs` with yours as preference.
 - [x] Run `ng build -c=prod` for a production build.
 - build artifacts are stored in the `dist/` folder
