@@ -26,8 +26,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/web.config",
-              "src/404.html",
-              "./.documentation"
+              "src/404.html"
             ],
             "styles": [
               "src/styles.scss",
@@ -142,9 +141,6 @@
             "styles": [
               "src/styles.scss",
               "src/assets/scss/snackbar.scss"
-            ],
-            "scripts": [
-              "src/assets/js/handy-clock.js"
             ]
           }
         },
