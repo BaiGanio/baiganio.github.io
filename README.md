@@ -26,7 +26,7 @@ _`Production` build for your own use is better to be done after configuring `env
 - Run `ng build -c=prod` for a production build.
 - Build artifacts are stored in the `dist/` directory. 
 ## _Deploy_
-_We use GitHub Actions CI/CD automatic pipeline configured in `build-and-deploy.yml` file._
+_We use GitHub Actions CI/CD automatic pipeline configured in `.github` folder, then `workflows` > `build-and-deploy.yml` file._
   - On `push` or `pull-request` with [_GitHub Actions_](https://docs.github.com/en/free-pro-team@latest/actions) `CI/CD` pipeline.
   - It could be done manually with `ng build --base-href="https://baiganio.github.io"`
   
@@ -37,8 +37,17 @@ _Versioning:_
 _`Production` deploy for your own use:_
   - Take the build artifacts from the `dist/` directory. 
   - Upload files to the server via any favorite FTP client.
-## _Running unit tests_
-- Run `ng test` to execute the unit tests via [_Karma_](https://karma-runner.github.io).
+
+
+## _Running unit tests & measure code coverage_
+ [_Karma_](https://karma-runner.github.io) is out of the box test runner, as well as Jasmine like a testing framework.
+We use several ways to work with the tests in the project:
+- run `npm run test` to execute the unit tests & explore them in the browser
+- run `npm run test:headless` to execute the unit tests and see the results in the terminal without opening them in the browser
+- for local code coverage report navigate to `coverage` folder once you've run the tests, then `chrome` folder & open `index.html` in the browser
+- for production code coverage report - TBA
+- check this [[wiki](https://github.com/BaiGanio/baiganio.github.io/wiki/Unit-Testing-In-Angular-How-To)] page for more detailed examples on 'how to'
+
 ## _Running end-to-end tests_
 - Run `ng e2e` to execute the end-to-end tests via [_Protractor_](http://www.protractortest.org/).
 
