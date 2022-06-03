@@ -29,7 +29,7 @@ module.exports = function (config) {
         suppressAll: true // removes the duplicated traces
       },
       coverageReporter: {
-        dir: require('path').join(__dirname, './coverage'),        
+        dir: require('path').join(__dirname, './coverage'),
         reporters: [
             { type: 'html' },
             { type: 'text-summary' },
@@ -49,10 +49,9 @@ module.exports = function (config) {
       colors: true,
       logLevel: config.LOG_INFO,
       autoWatch: true,
-      browsers: ['ChromeHeadless'],
+      browsers: ['Chrome'],
       singleRun: false,
       restartOnFileChange: true,
       exclude: ["node_modules"]
     });
   };
-  
