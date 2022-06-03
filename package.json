@@ -1,11 +1,11 @@
 {
   "name": "baiganio",
-  "version": "7.0.2",
+  "version": "7.6.4",
   "scripts": {
     "ng": "ng",
-    "config": "ts-node ./src/environments/setEnv.ts",
+    "env-config": "ts-node ./src/environments/setEnv.ts",
     "start": "ng serve -c=local -o",
-    "build": "npm run config -- --environment=prod && ng build --configuration production",
+    "build": "npm run env-config -- --environment=prod && ng build --configuration production",
     "test": "ng test",
     "test:coverage": "ng test --code-coverage",
     "test:headless":"ng test --watch=false --browsers=ChromeHeadless --code-coverage",
