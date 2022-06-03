@@ -10,6 +10,8 @@ Trying to:
 _Use this quick explanation to setup yourself faster._
 ## _Development environment setup_
 - Open your favorite terminal and type `node -v` to ensure you have installed latest [_Node.js_](https://nodejs.org) version available
+- Optionally, you can type `ng --version` to see more detailed output
+- The current project versions of the `Angular CLI` is `13.3.7` & for `Node.js` is `14.15.3`
 - Clone the repository and run `npm install` in the project directory (`baiganio.github.io`) folder.
 - Run `ng serve -c=local -o` for a local development server. Application will open in your default browser at `http://localhost:5300/` automatically. 
 - Project setup could be made in `angular.json` file.
