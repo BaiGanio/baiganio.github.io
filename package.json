@@ -6,7 +6,8 @@
     "config": "ts-node ./src/environments/setEnv.ts",
     "start": "ng serve -c=local -o",
     "build": "npm run config -- --environment=prod && ng build --configuration production",
-    "test": "ng test --code-coverage",
+    "test": "ng test",
+    "test:coverage": "ng test --code-coverage",
     "test:headless":"ng test --watch=false --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e"
