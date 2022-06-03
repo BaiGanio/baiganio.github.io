@@ -46,9 +46,9 @@ _`Production` deploy for your own use:_
 We use several ways to work with the tests in the project:
 - run `npm run test` to execute the unit tests & explore them in the browser
 - run `npm run test:headless` to execute the unit tests and see the results in the terminal without opening them in the browser
-- for local code coverage report navigate to `coverage` folder once you've run the tests, then `chrome` folder & open `index.html` in the browser
-- for production code coverage report - TBA
 - check this [[wiki](https://github.com/BaiGanio/baiganio.github.io/wiki/Unit-Testing-In-Angular-How-To)] page for more detailed examples on 'how to'
+  - configure `karma.conf.js` & `package.json` files
+  - investigate code coverage report
 
 ## _Running end-to-end tests_
 - Run `ng e2e` to execute the end-to-end tests via [_Protractor_](http://www.protractortest.org/).
