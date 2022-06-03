@@ -26,7 +26,18 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
+      # This allows for re-using node_modules caching, making builds a bit faster.
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
+      # Install latest NPM due issue with one of the packages
+      - name: Install latest NPM
+        run: npm i -g npm@latest
       - name: npm install, make test-coverage
         run: |
           npm install
