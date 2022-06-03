@@ -1,5 +1,5 @@
 # _BaiGanio_
-This project aims self-creativity & is nothing but a playground where development skills are challenged for fun!!
+This project aims self-creativity & is nothing but a playground where development skills are challenged for fun!
 
 This app turns out to be somehow a portfolio for the collaborators & indeed looks like very successful approach ;)
 
