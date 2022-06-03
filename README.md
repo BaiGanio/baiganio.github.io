@@ -49,6 +49,7 @@ We use several ways to work with the tests in the project:
 - check this [[wiki](https://github.com/BaiGanio/baiganio.github.io/wiki/Unit-Testing-In-Angular-How-To)] page for more detailed examples on 'how to'
   - configure `karma.conf.js` & `package.json` files
   - investigate code coverage report
+- check this [Unit-Testing-Setup.md](/documentation/Unit-Testing-Setup.md) explanations
 
 ## _Running end-to-end tests_
 - Run `ng e2e` to execute the end-to-end tests via [_Protractor_](http://www.protractortest.org/).
