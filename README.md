@@ -22,6 +22,15 @@ You can change the local environment variables per your need from [environment.l
 - dependencies are presented in [package.json](https://github.com/BaiGanio/baiganio.github.io/blob/master/package.json) file
 - project setup could be made in [angular.json](https://github.com/BaiGanio/baiganio.github.io/blob/master/angular.json) file
 ---
+## _Code scaffolding_
+- [x] To generate a new component: 
+- run `ng generate component component-name` or `ng g c component-name` for short 
+- [x] Generate component without `spec.ts` file:
+- `ng generate component --skip-tests=true component-name`
+- [x] To generate module with routing:
+- run `ng g m feature --route feature --module app.module` 
+- [x] You can also use `ng generate directive|pipe|service|class|guard|interface|enum`.
+---
 ## _Build_
 _We encourage you to run build command each time before pushing to a remote repo._
 - [x] Run `ng build` for a local build.
