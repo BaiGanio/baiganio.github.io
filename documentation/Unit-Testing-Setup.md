@@ -39,4 +39,5 @@ We use them to run the tests and measure code coverage.
 To speed up local testing, you can target a specific test file:
 
 `ng test --include='**/my-service.service.spec.ts' --code-coverage`
+
 `ng test --include='**/my-component.component.spec.ts' --code-coverage`
