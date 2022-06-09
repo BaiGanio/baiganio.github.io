@@ -8,6 +8,7 @@ We encourage you to examine our [karma.config.js](https://github.com/BaiGanio/ba
 Pay attention to these two lines from `scripts` sections in [package.json](https://github.com/BaiGanio/baiganio.github.io/blob/master/package.json)
 
 `"test:coverage": "ng test --code-coverage"`
+
 `"test:headless":"ng test --watch=false --browsers=ChromeHeadless --code-coverage"` 
 
 We use them to run the tests and measure code coverage.
