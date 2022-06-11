@@ -12,8 +12,6 @@ import { PlaylistsComponent } from './@pages/playlists/playlists.component';
 import { ChartComponent } from './@modules/workbench/chart/chart.component';
 import { TodosComponent } from './@pages/todos/todos.component';
 import { ProjectsComponent } from './@pages/projects/projects.component';
-import { ArticlesComponent } from './@pages/articles/articles.component';
-import { ArticlePreviewComponent } from './@pages/articles/article-preview/article-preview.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -25,10 +23,7 @@ const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
   {
     path: 'articles',
-    children: [
-      { path: '', component: ArticlesComponent },
-      { path: ':title', component: ArticlePreviewComponent }
-    ]
+    loadChildren : () => import('./@modules/articles/articles.module').then(m => m.ArticlesModule)
   },
   {
     path: 'workbench',
@@ -79,6 +74,7 @@ const routes: Routes = [
   { path: 'server-alert', component: ServerAlertComponent },
   { path: 'error', component: ErrorComponent},
   { path: '403', component: AccessDeniedComponent },
+  { path: 'articles', loadChildren: () => import('./@modules/articles/articles.module').then(m => m.ArticlesModule) },
   { path: '**', component: NotFoundComponent }
 ];
 

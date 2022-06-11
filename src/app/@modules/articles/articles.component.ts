@@ -13,7 +13,6 @@ export class ArticlesComponent implements OnInit {
   constructor(private articlesService: ArticlesService, private errorHandlerService: ErrorHandlerService) { }
 
   ngOnInit(): void {
-    //waits(7000);
     this.articlesService.getArticles().subscribe(response => {
       this.articles = response.body;
     },

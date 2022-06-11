@@ -6,7 +6,6 @@ import { BloggerComponent } from './components/blogger/blogger.component';
 import { ArticlesComponent } from './components/blogger/articles/articles.component';
 import { CreateArticleComponent } from './components/blogger/articles/create-article/create-article.component';
 import { EditArticleComponent } from './components/blogger/articles/edit-article/edit-article.component';
-import { ArticlePreviewComponent } from 'src/app/@pages/articles/article-preview/article-preview.component';
 
 const routes: Routes = [
   { path: '', component: BloggersComponent },

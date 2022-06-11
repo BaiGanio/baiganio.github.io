@@ -1,19 +1,19 @@
+<h1 class="title">Local Account</h1>
+<hr>
 <mat-progress-bar mode="indeterminate" *ngIf='loading'></mat-progress-bar>
-<h1 class="title">
-    Local Account
-</h1>
-<hr>  <div class="dim" *ngIf='loginError'>
-  <div class="msg">
-    <h1 innerHtml={{loginErrorMessage}}></h1>
-    <br><br>
-    <button
-    btn btn-outline-info
-      (click) = dismiss()>
-      Dismiss
-    </button>
-  </div>
-</div>
+<br>
 <div class="row justify-content-center">
+  <div class="dim" *ngIf='loginError'>
+   <div class="msg">
+     <h1 innerHtml={{loginErrorMessage}}></h1>
+     <br><br>
+     <button
+     btn btn-outline-info
+       (click) = dismiss()>
+       Dismiss
+     </button>
+   </div>
+ </div>
 
   <div class="col-xl-8">
 

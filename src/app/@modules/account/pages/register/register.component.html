@@ -1,8 +1,7 @@
 
-<ngx-loading [show]="loading"></ngx-loading>
-
 <h1 class="title">Register</h1>
 <hr>
+<mat-progress-bar mode="indeterminate" *ngIf='loading'></mat-progress-bar>
 <br>
 <div class="row justify-content-center">
     <div class="dim" *ngIf='registrationError'>

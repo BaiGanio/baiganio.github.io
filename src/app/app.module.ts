@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -48,8 +48,6 @@ import { DeleteToDoComponent } from './@pages/todos/delete-todo/delete-todo.comp
 import { UpdateToDoComponent } from './@pages/todos/update-todo/update-todo.component';
 import { WorkbenchModule } from './@modules/workbench/workbench.module';
 import { ProjectsComponent } from './@pages/projects/projects.component';
-import { ArticlesComponent } from './@pages/articles/articles.component';
-import { ArticlePreviewComponent } from './@pages/articles/article-preview/article-preview.component';
 import { SearchFilterPipe } from './@shared/pipes/search-filter.pipe';
 
 @NgModule({
@@ -80,8 +78,6 @@ import { SearchFilterPipe } from './@shared/pipes/search-filter.pipe';
         DeleteToDoComponent,
         UpdateToDoComponent,
         ProjectsComponent,
-        ArticlesComponent,
-        ArticlePreviewComponent,
         SearchFilterPipe,
     ],
     imports: [
@@ -120,7 +116,7 @@ import { SearchFilterPipe } from './@shared/pipes/search-filter.pipe';
     ],
     providers: [CoreModule],
     bootstrap: [AppComponent],
-    schemas: [NO_ERRORS_SCHEMA]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
 

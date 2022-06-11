@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { select } from '@ngrx/store';
-import { UserView } from 'src/app/@modules/users/models/user-view';
 import { AuthService } from 'src/app/@services/auth.service';
 import { UserDataService } from 'src/app/@services/user-data.service';
-import { AppState, UserState } from 'src/app/@store/app.state';
-import { selectUser } from 'src/app/@store/selectors/user.selector';
-import { SelectUserAction } from 'src/app/@store/actions/user.actions';
-// import { UserDataService } from 'src/app/@services/user-data.service';
-// import { AuthService } from 'src/app/@services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -24,8 +15,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
-    private userDataService: UserDataService,
-    private store: Store<AppState>
+    private userDataService: UserDataService
   ) { }
 
   ngOnInit() {
