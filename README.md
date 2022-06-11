@@ -5,10 +5,10 @@ This app turns out to be somehow a portfolio for the collaborators & indeed look
 ***
 _Use this quick explanation to setup yourself faster._
 ## _Local development environment_
-In the project directory (baiganio.github.io folder)
+In the project directory (baiganio.github.io folder):
 - [x] Run `ng --version` to see more detailed information
-  - Angular CLI is `13.3.7`
-  - [Node.js](https://nodejs.org) is `14.15.3`
+  - current project Angular CLI is `13.3.7`
+  - current project [Node.js](https://nodejs.org) is `14.15.3`
 
   <a target="_blank" href="https://raw.githubusercontent.com/BaiGanio/baiganio.github.io/master/.wiki/check-project-version.png" title="">
   <img src="/.wiki/check-project-version.png" width="100%" alt="">
@@ -16,7 +16,7 @@ In the project directory (baiganio.github.io folder)
 
 - [x] Run `npm install`
 - [x] Run `npm run start` or alternatively `ng serve -c=local -o`  
-  - application will open in your default browser at `http://localhost:5300/` automatically.
+  - application will open in your default browser at `http://localhost:5300/` automatically
 
 You can change the local environment variables per your need from [environment.local.ts](https://github.com/BaiGanio/baiganio.github.io/blob/master/src/environments/environment.local.ts) file
 - dependencies are presented in [package.json](https://github.com/BaiGanio/baiganio.github.io/blob/master/package.json) file
