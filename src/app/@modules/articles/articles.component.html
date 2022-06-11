@@ -1,9 +1,6 @@
 <!-- <mat-progress-bar mode="indeterminate" *ngIf='loading'></mat-progress-bar> -->
-<h1 class="title">
-  Latest Articles
-
-</h1>
-<button mat-raised-button routerLink='/articles/create'>
+<h1 class="title">Latest Articles</h1>
+<button *ngIf='isUserLogged()' mat-raised-button routerLink='/articles/create'>
   <i class="fas fa-plus"></i> Create One
 </button>
 <hr>
@@ -24,6 +21,10 @@
               mat-raised-button
               color="primary"  [routerLink]="['/articles', tweakTitle(a.title)]">
               <i class="fas fa-search"></i>
+          </button>
+
+          <button *ngIf='isUserLogged()' mat-raised-button (click)="edit(a.id)">
+              <i class="fas fa-edit"></i>
           </button>
         </div>
     </div>

@@ -15,7 +15,7 @@ export class ArticlesService {
   getArticleById(id: string): Observable<any> {
     return this.backendService.backendRequest('get', 'Articles/' + id, null, false);
   }
-  getArticleByTitle(id: string): Observable<any> {
-    return this.backendService.backendRequest('get', 'Articles/GetByTitle?title=' + id, null, false);
+  getArticleByTitle(title: string): Observable<any> {
+    return this.backendService.backendRequest('get', 'Articles/GetByTitle?title=' + title, null, false);
   }
 }

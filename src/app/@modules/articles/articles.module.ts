@@ -8,6 +8,7 @@ import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { CreateArticleComponent } from './create-article/create-article.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
 import { DeleteArticleComponent } from './delete-article/delete-article.component';
+import { ArticlePreviewComponent } from './article-preview/article-preview.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { DeleteArticleComponent } from './delete-article/delete-article.componen
     BloggerCraftsmanViewComponent,
     CreateArticleComponent,
     EditArticleComponent,
-    DeleteArticleComponent
+    DeleteArticleComponent,
+    ArticlePreviewComponent
   ],
   imports: [
     CommonModule,
