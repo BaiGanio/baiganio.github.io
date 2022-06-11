@@ -31,9 +31,10 @@
             <div style="color: blue;" *ngIf='isWaitingForConfirmation(s.Id)'>Waiting for confirmation!</div>
         </span> -->
         <button mat-raised-button class="search" (click)=getSubscriptionPreview(s.Id)>
-          <i class="fas fa-search"></i>
+          <!-- <i class="fas fa-search"></i> -->
+          read more...
         </button>
-        <button *ngIf='s.IsActive && showRequest(s.Id)' mat-raised-button (click)=sendRequest(s.Id) class="search">
+        <button *ngIf='s.IsActive && showRequest(s.Id)' mat-stroked-button (click)=sendRequest(s.Id) class="search">
           Subscribe
         </button>
 

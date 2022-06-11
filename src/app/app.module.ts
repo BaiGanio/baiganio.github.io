@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA, SecurityContext } from '@angular/core';
 import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './@pages/footer/footer.component';
 import { CoursesModule } from './@modules/courses/courses.module';
 import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './@modules/account/pages/login/login.component';
 import { RegisterComponent } from './@modules/account/pages/register/register.component';
@@ -49,6 +49,8 @@ import { UpdateToDoComponent } from './@pages/todos/update-todo/update-todo.comp
 import { WorkbenchModule } from './@modules/workbench/workbench.module';
 import { ProjectsComponent } from './@pages/projects/projects.component';
 import { SearchFilterPipe } from './@shared/pipes/search-filter.pipe';
+import { ArticlesModule } from './@modules/articles/articles.module';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
     declarations: [
@@ -97,6 +99,8 @@ import { SearchFilterPipe } from './@shared/pipes/search-filter.pipe';
         BloggersModule,
         TeachersModule,
         WorkbenchModule,
+        ArticlesModule,
+        MarkdownModule.forRoot({ loader: HttpClient, sanitize: SecurityContext.NONE }) ,
         JwtModule.forRoot({
             config: {
                 tokenGetter: jwtTokenGetter
