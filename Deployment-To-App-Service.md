@@ -26,3 +26,6 @@ There are a few options that you can use to manually push your code to Azure:
 Use deployment slots
 
 Whenever possible, use deployment slots when deploying a new production build. When using a Standard App Service Plan tier or better, you can deploy your app to a staging environment and then swap your staging and production slots. The swap operation warms up the necessary worker instances to match your production scale, thus eliminating downtime.
+
+
+https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-app-service/5-authentication-authorization-app-service
