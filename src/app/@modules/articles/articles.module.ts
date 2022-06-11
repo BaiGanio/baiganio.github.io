@@ -7,7 +7,7 @@ import { BloggerCraftsmanViewComponent } from './blogger-craftsman-view/blogger-
 import { AngularMaterialModule } from 'src/app/@core/angular-material.module';
 import { CreateArticleComponent } from './create-article/create-article.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
-import { RemoveArticleComponent } from './remove-article/remove-article.component';
+import { DeleteArticleComponent } from './delete-article/delete-article.component';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { RemoveArticleComponent } from './remove-article/remove-article.componen
     BloggerCraftsmanViewComponent,
     CreateArticleComponent,
     EditArticleComponent,
-    RemoveArticleComponent
+    DeleteArticleComponent
   ],
   imports: [
     CommonModule,
