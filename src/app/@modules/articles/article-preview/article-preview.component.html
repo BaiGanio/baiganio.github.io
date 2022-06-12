@@ -1,9 +1,13 @@
 
-<button mat-stroked-button routerLink='..'><< Back</button>
 
-<div class="container">
+<mat-progress-bar mode="indeterminate" *ngIf='loading'></mat-progress-bar>
+<button mat-stroked-button routerLink='..'><< Back</button>
+<div *ngIf="isMarkdownUrl">
+  <div style="padding:20px" markdown [src]="article.markdownUrl"></div>
+</div>
+<div *ngIf="!isMarkdownUrl" class="container">
   <h1>{{ article?.title }}</h1>
-  <p>Created @ {{ article?.createdOn | date :'dd-MM-yyyy' }} by author {{ article?.blogger.nickname }}</p>
+  <p>Created @ {{ article?.createdOn | date :'dd-MM-yyyy' }} by author {{ article?.bloggerMickname }}</p>
   <hr>
   <br>
   <img src='{{ article?.imgUrl }}' class="img-thumbnail img-fluid" alt="Sample image">

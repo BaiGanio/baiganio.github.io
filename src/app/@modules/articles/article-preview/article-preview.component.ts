@@ -12,6 +12,7 @@ export class ArticlePreviewComponent implements OnInit {
   loading = true;
   article:any;
   name:string;
+  isMarkdownUrl:boolean;
   constructor(
     private articlesService: ArticlesService,
     private errorHandlerService: ErrorHandlerService,
@@ -23,7 +24,7 @@ export class ArticlePreviewComponent implements OnInit {
   ngOnInit(): void {
     this.articlesService.getByTitle(this.name).subscribe(response => {
       this.article = response.body;
-      console.log(this.article);
+      this.isMarkdownUrl = !!this.article.markdownUrl;
     },
     error => {
       this.errorHandlerService.handleRequestError(error);
