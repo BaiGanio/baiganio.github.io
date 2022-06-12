@@ -24,12 +24,12 @@ You can change the local environment variables per your need from [environment.l
 ---
 ## _Code scaffolding_
 - [x] To generate a new component: 
+- [x] You can use `ng generate component|module|directive|pipe|service|class|guard|interface|enum`.
 - run `ng generate component component-name` or `ng g c component-name` for short 
 - [x] Generate component without `spec.ts` file:
-- `ng generate component --skip-tests=true component-name`
-- [x] To generate module with routing:
-- run `ng g m feature --route feature --module app.module` 
-- [x] You can also use `ng generate directive|pipe|service|class|guard|interface|enum`.
+- `ng g c component-name --skip-tests=true`
+- [x] To generate module with routing imported directly in `app.module.ts`:
+- run `ng g m featureModule --route featureModule --module app.module` 
 ---
 ## _Build_
 _We encourage you to run build command each time before pushing to a remote repo._
