@@ -8,19 +8,19 @@
 <br>
 <h3 class="wait-fetching" *ngIf='loading'>Please wait! Fetching data from the server...</h3>
 <div class="row">
-  <div *ngFor='let a of articles' class="col-md-4 text-center">
+  <div *ngFor='let a of articles' class="col-md-3 text-center">
     <div class="card">
         <div class="card-body">
           <img src='{{ a.imgUrl }}' class="img-thumbnail img-fluid" alt="Sample image">
           <br><br>
-          <h4>{{ a.title }}</h4>
+          <h5>{{ a.title }}</h5>
           <hr>
           <p>Created @ {{ a.createdOn | date :'dd-MM-yyyy' }}</p>
-          <p>Author {{ a.bloggerNickname }}</p>
+          <p>Updated @ {{ a.modifiedOn | date :'dd-MM-yyyy' }}</p>
+          <p>Author: {{ a.bloggerNickname }}</p>
           <br>
           <button
-              mat-raised-button
-              color="primary"  [routerLink]="['/articles', tweakTitle(a.title)]">
+              mat-raised-button color="primary"  [routerLink]="['/articles', tweakTitle(a.title)]">
               <i class="fas fa-search"></i>
           </button>
           <button *ngIf='isUserLogged()' mat-raised-button (click)="edit(a.id)">

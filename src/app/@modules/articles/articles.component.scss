@@ -1,11 +1,4 @@
 
-.ss {
-  font-size: 4em;
-  // font-family: "Alsandra";
-}
-h2{
-  text-align: center;
-}
 .card{
   margin-bottom: 15px;
 }
@@ -17,19 +10,6 @@ button{
 }
 .img-fluid {
   border: 1px solid black;
-  height: 14vw;
+  height: 10vw;
   object-fit: contain;
-}
-
-@media only screen and (max-width: 736px) {
-  h1{
-      font-size: 4em;
-  }
-  h2 {
-      font-size: 1.8em;
-  }
-  .img-fluid {
-      width: 100%;
-      height: 44vw;
-  }
 }
