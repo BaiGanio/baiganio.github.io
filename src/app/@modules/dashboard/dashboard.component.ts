@@ -61,7 +61,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getRouterLink(){
-    return '/bloggers/' + this.userId + '/articles';
+    return '/articles';
   }
 
   getInitDashboardData() {

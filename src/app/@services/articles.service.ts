@@ -21,6 +21,9 @@ export class ArticlesService {
   create(title: string): Observable<any> {
     return this.backendService.backendRequest('post', 'articles/create', {title:title}, true);
   }
+  update(article: any): Observable<any> {
+    return this.backendService.backendRequest('put', 'articles', article, true);
+  }
   delete(id: string): Observable<any> {
     return this.backendService.backendRequest('delete', 'articles/' + id, null, true);
   }

@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Blogger } from 'src/app/@modules/bloggers/models/blogger.model';
 import { AuthService } from 'src/app/@services/auth.service';
 import { BloggersService } from 'src/app/@services/bloggers.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
@@ -18,7 +17,7 @@ export class BloggerSubscriptionPreviewComponent implements OnInit {
     private bloggerService: BloggersService,
     private errorHandlerService: ErrorHandlerService,
     private authService: AuthService,
-  ) { 
+  ) {
     this.formData = new FormGroup({
       nickname: new FormControl(''),
       email: new FormControl(''),
@@ -27,9 +26,9 @@ export class BloggerSubscriptionPreviewComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     if (this.authService.isAuthenticated() && this.blogger === undefined) {
-    
+
     this.bloggerService.getByToken()
       .subscribe(
           response => {
@@ -40,7 +39,7 @@ export class BloggerSubscriptionPreviewComponent implements OnInit {
           },
           () => {
               this.prepForm();
-          }  
+          }
       );
     }
   }
@@ -76,7 +75,7 @@ export class BloggerSubscriptionPreviewComponent implements OnInit {
             this.loading = false;
         }
     );
-    
+
   }
 
 
@@ -91,7 +90,7 @@ export class BloggerSubscriptionPreviewComponent implements OnInit {
         },
         () => {
             this.prepForm();
-        }  
+        }
     );
   }
 

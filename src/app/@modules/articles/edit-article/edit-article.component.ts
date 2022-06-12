@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, } from '@angular/router';
+import { ArticlesService } from 'src/app/@services/articles.service';
+import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 
 @Component({
   selector: 'app-edit-article',
@@ -7,17 +11,92 @@ import { ActivatedRoute, } from '@angular/router';
   styleUrls: ['./edit-article.component.scss']
 })
 export class EditArticleComponent implements OnInit {
- post:string;
- post1:string;
-  constructor(private route: ActivatedRoute) {
-    this.route.snapshot.params.token;
+ formData: FormGroup;
+ loading = true;
+ id:any;
+ article:any;
+
+
+  constructor(
+    private route: ActivatedRoute,
+    private errorHandlerService: ErrorHandlerService,
+    private articlesService: ArticlesService,
+    private snackbar: MatSnackBar
+  ) {
+    this.id = this.route.snapshot.params.id;
+    this.formData = new FormGroup({
+      title: new FormControl(''),
+      imgUrl: new FormControl(''),
+      rawHtml: new FormControl(''),
+      markdownUrl: new FormControl('')
+    });
    }
 
   ngOnInit(): void {
-   // this.post = '/assets/articles/sample.md';
-    this.post = 'https://github.com/BaiGanio/baiganio.github.io/blob/master/src/assets/articles/Unit-Testing-Setup-in-Angular.md';
-    //this.post = '/assets/articles/Deployment-To-App-Service.md';
-    console.log(this.post);
+    this.getArticle();
+  }
+
+  public checkError = (controlName: string, errorName: string) => {
+    return this.formData.controls[controlName].hasError(errorName);
+  }
+
+  onDismiss(){
+    this.formData.reset();
+    this.prepForm()
+  }
+
+  onSubmit(data){
+    this.loading = true;
+    let article = {
+      Id: this.id,
+      Title: data.title,
+      ImgUrl: data.imgUrl,
+      RawHtml: data.rawHtml,
+      Markdown: this.article.markdown,
+      MarkdownUrl: data.markdownUrl,
+      CreatedOn: this.article.createdOn,
+      BloggerId: this.article.bloggerId,
+      UserId: this.article.UserId,
+      BloggerNickname: this.article.bloggerNickname
+    };
+    this.articlesService.update(article)
+    .subscribe(
+        (response) => {
+          this.snackbar.open(`Successfuly updated article '${article.Title}'`, 'X', {
+            horizontalPosition: 'center',
+            verticalPosition: 'bottom',
+            panelClass: 'successSnackbar'
+          });
+          this.getArticle();
+        },
+        error => {
+            this.errorHandlerService.handleRequestError(error);
+        },
+        () => {
+            this.formData.reset();
+            this.prepForm();
+            this.loading = false;
+        }
+    );
+
+  }
+
+  private getArticle(){
+    this.articlesService.getById(this.id).subscribe(response => {
+      this.article = response.body;
+    },
+    error => {
+      this.errorHandlerService.handleRequestError(error);
+    }, () => { this.loading = false; this.prepForm(); });
+  }
+
+  private prepForm(){
+    this.formData = new FormGroup({
+      title: new FormControl(this.article.title),
+      imgUrl: new FormControl(this.article.imgUrl),
+      rawHtml: new FormControl(this.article.rawHtml),
+      markdownUrl: new FormControl(this.article.markdownUrl)
+    });
   }
 
 }

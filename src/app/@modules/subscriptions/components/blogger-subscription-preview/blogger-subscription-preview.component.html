@@ -1,4 +1,3 @@
-<ngx-loading [show]="loading"></ngx-loading>
 <div class="text-left">
     <form [formGroup]="formData" (ngSubmit)="onSubmit(formData.value)" class="example-form">
         <table class="example-full-width" cellspacing="0">
@@ -9,7 +8,7 @@
                         <input matInput disabled value="{{blogger?.firstName}} {{blogger?.lastName}}">
                     </mat-form-field>
                 </td>
-               
+
             </tr>
             <!-- <tr>
                 <td>
@@ -39,20 +38,20 @@
         <mat-form-field class="example-full-width">
             <mat-label>GitHub Profile Url</mat-label>
             <input matInput  name="githubUrl" formControlName="githubUrl">
-        </mat-form-field>  
-        <button 
-            type="submit" 
+        </mat-form-field>
+        <button
+            type="submit"
             mat-raised-button
             color="primary"
-            [disabled]="!formData.valid || !formData.dirty"> 
+            [disabled]="!formData.valid || !formData.dirty">
             Update
         </button>
-        <button type="button" *ngIf='formData.dirty'  
+        <button type="button" *ngIf='formData.dirty'
             mat-raised-button
             color="informational"
-            (click)='onDismiss()'> 
+            (click)='onDismiss()'>
             Dismiss
         </button>
-     
+
     </form>
 </div>
