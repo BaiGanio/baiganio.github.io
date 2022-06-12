@@ -11,6 +11,9 @@ import { DeleteArticleComponent } from './delete-article/delete-article.componen
 import { ArticlePreviewComponent } from './article-preview/article-preview.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient } from '@angular/common/http';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -24,8 +27,11 @@ import { HttpClient } from '@angular/common/http';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     ArticlesRoutingModule,
     AngularMaterialModule,
+    EditorModule,
     MarkdownModule.forRoot({ loader: HttpClient, sanitize: SecurityContext.NONE }) ,
   ],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA]

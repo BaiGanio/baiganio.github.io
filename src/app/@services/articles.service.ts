@@ -6,16 +6,22 @@ export class ArticlesService {
 
   constructor(private backendService: BackendService) { }
 
-  getArticles(): Observable<any> {
-    return this.backendService.backendRequest('get', 'Articles', null);
+  getAll(): Observable<any> {
+    return this.backendService.backendRequest('get', 'articles', null);
   }
   getBloggerArticles(): Observable<any> {
-    return this.backendService.backendRequest('get', 'Articles/GetByToken', null, true);
+    return this.backendService.backendRequest('get', 'articles/getByToken', null, true);
   }
-  getArticleById(id: string): Observable<any> {
-    return this.backendService.backendRequest('get', 'Articles/' + id, null, false);
+  getById(id: string): Observable<any> {
+    return this.backendService.backendRequest('get', 'articles/' + id, null, false);
   }
-  getArticleByTitle(title: string): Observable<any> {
-    return this.backendService.backendRequest('get', 'Articles/GetByTitle?title=' + title, null, false);
+  getByTitle(title: string): Observable<any> {
+    return this.backendService.backendRequest('get', 'articles/getByTitle?title=' + title, null, false);
+  }
+  create(title: string): Observable<any> {
+    return this.backendService.backendRequest('post', 'articles/create', {title:title}, true);
+  }
+  delete(id: string): Observable<any> {
+    return this.backendService.backendRequest('delete', 'articles/' + id, null, true);
   }
 }

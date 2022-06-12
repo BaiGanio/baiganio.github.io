@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AsyncSubject, Subject } from 'rxjs';
 import { BloggersService } from 'src/app/@services/bloggers.service';
@@ -16,9 +17,13 @@ export class CreateArticleComponent implements OnInit {
   myForm: FormGroup = new FormGroup({});
   loading = false;
 
+  title = '';
+
   constructor(private bloggerService: BloggersService,
     private errorHandlerService: ErrorHandlerService,
-    private snackbar: MatSnackBar
+    private snackbar: MatSnackBar,
+    public dialogRef: MatDialogRef<CreateArticleComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +31,9 @@ export class CreateArticleComponent implements OnInit {
       title: new FormControl("", Validators.required),
       body: new FormControl("", Validators.required, maxLength(this.editorSubject, 10))
     });
+  }
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
   onSubmit(data: any): void{

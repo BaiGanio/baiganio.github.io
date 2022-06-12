@@ -1,4 +1,4 @@
-<h1 class="title"><span routerLink='..'>back</span> << Create Article</h1>
+<!-- <h1 class="title"><span routerLink='..'>back</span> << Create Article</h1>
 <hr>
 <div class="editor-wrapper">
 
@@ -56,4 +56,15 @@
     </mat-card-actions>
   </mat-card>
 
+</div> -->
+<h1 mat-dialog-title>Hello! What's your favorite title? </h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill" style="width:34vw">
+    <mat-label>Title of the article</mat-label>
+    <input matInput autofocus [(ngModel)]="title" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-raised-button [mat-dialog-close]="title" >Ok</button>
 </div>

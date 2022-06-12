@@ -9,12 +9,12 @@ import { EditArticleComponent } from './edit-article/edit-article.component';
 const routes: Routes = [
   { path: '',
     children: [
-      { path: '', component: ArticlesComponent },
-      { path: ':name', component: ArticlePreviewComponent }
+      { path: '', component: ArticlesComponent }
     ]
-   },
+  },
+  { path: ':name', component: ArticlePreviewComponent },
   { path: 'blogger-craftsman', component: BloggerCraftsmanViewComponent },
-  { path: 'create', component: CreateArticleComponent },
+  // { path: 'create', component: CreateArticleComponent },
   {
     path: 'edit',
     children: [

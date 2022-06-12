@@ -21,7 +21,7 @@ export class ArticlePreviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.articlesService.getArticleByTitle(this.name).subscribe(response => {
+    this.articlesService.getByTitle(this.name).subscribe(response => {
       this.article = response.body;
       console.log(this.article);
     },

@@ -14,7 +14,7 @@ export class EditArticleComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.post1 = '/assets/articles/sample.md';
+   // this.post = '/assets/articles/sample.md';
     this.post = '/assets/articles/Unit-Testing-Setup-in-Angular.md';
     //this.post = '/assets/articles/Deployment-To-App-Service.md';
     console.log(this.post);
