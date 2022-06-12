@@ -1,7 +1,5 @@
-Deploy to App Service
-Completed 100 XP
-
-3 minutes
+# Deployment to Azure App Service
+(3min read)
 
 Every development team has unique requirements that can make implementing an efficient deployment pipeline difficult on any cloud service. App Service supports both automated and manual deployment.
 Automated deployment
