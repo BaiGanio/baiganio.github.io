@@ -5,6 +5,7 @@
     "ng": "ng",
     "env-config": "ts-node ./src/environments/setEnv.ts",
     "start": "ng serve -c=local -o",
+    "start:test": "ng serve -c=test -o",
     "build": "npm run env-config -- --environment=prod && ng build --configuration production",
     "test": "ng test",
     "test:coverage": "ng test --code-coverage",

@@ -16,25 +16,51 @@ In the project directory (baiganio.github.io folder):
 
 - [x] Run `npm install`
 - [x] Run `npm run start` or alternatively `ng serve -c=local -o`  
-  - application will open in your default browser at `http://localhost:5300/` automatically
+- application will open automatically at `http://localhost:5003/` 
+- configure your own port as find `serve` section, then  `options` in `angular.json` file
 
-You can change the local environment variables per your need from [environment.local.ts](https://github.com/BaiGanio/baiganio.github.io/blob/master/src/environments/environment.local.ts) file
+```javascript
+"serve": {
+  "builder": "@angular-devkit/build-angular:dev-server",
+  "options": {
+    "browserTarget": "baiganio:build",
+    "port": 5003
+  }
+
+  ... 
+}
+```
+- update application port in  [environment.local.ts](https://github.com/BaiGanio/baiganio.github.io/blob/master/src/environments/environment.local.ts) & [environment.test.ts]() files
+
+```javascript
+export const environment = {
+    production: false,
+    env: 'local',
+    appUrl: 'http://localhost:5003/', // <-- update here!
+    apiUrl: 'https://localhost:44364/api/'
+
+  ...
+}
+```
+- [x] Run `npm run start:test` to work with [https://test-bgapi.azurewebsites.net/](https://test-bgapi.azurewebsites.net/) API directly
 - dependencies are presented in [package.json](https://github.com/BaiGanio/baiganio.github.io/blob/master/package.json) file
 - project setup could be made in [angular.json](https://github.com/BaiGanio/baiganio.github.io/blob/master/angular.json) file
 ---
 ## _Code scaffolding_
-- [x] To generate a new component: 
-- [x] You can use `ng generate component|module|directive|pipe|service|class|guard|interface|enum`.
-- run `ng generate component component-name` or `ng g c component-name` for short 
+- [x] To generate a new component run:
+- `ng generate component component-name` or `ng g c component-name` for short 
 - [x] Generate component without `spec.ts` file:
 - `ng g c component-name --skip-tests=true`
-- [x] To generate module with routing imported directly in `app.module.ts`:
-- run `ng g m featureModule --route featureModule --module app.module` 
+- [x] To generate module with routing:
+- `ng g m feature --route feature --module app.module` 
+- [x] You can also use:
+- `ng generate directive|pipe|service|class|guard|interface|enum`
 ---
 ## _Build_
 _We encourage you to run build command each time before pushing to a remote repo._
 - [x] Run `ng build` for a local build.
 - build artifacts are stored in the `dist/` folder
+- [x] Ensure tests passes before that.
 
 _`Production` build for your own use is better to be done after configuring [environment.prod.ts](https://github.com/BaiGanio/baiganio.github.io/blob/master/src/environments/environment.prod.ts) file._
 - [x] Replace all `key-value pairs` with yours as preference.
@@ -61,8 +87,8 @@ We use several ways to work with the tests in the project:_
 - [x] Run `npm run test` 
   - to execute the unit tests & explore them in the browser
 - [x] Run `npm run test:headless` 
-  - to execute the unit tests and see the results in the terminal without opening them in the browser
-- [x] Check this [Unit-Testing-Setup.md](/documentation/Unit-Testing-Setup.md) for more detailed explanations on 'how to' 
+  - unit tests execution result is visible in the terminal & no browser is open
+- [x] Check this [Unit-Testing-Setup.md](/documentation/Unit-Testing-Setup.md) article on `how to?`
   - configure [karma.config.js](https://github.com/BaiGanio/baiganio.github.io/blob/master/karma.conf.js) & [package.json](https://github.com/BaiGanio/baiganio.github.io/blob/master/package.json) files
   - investigate code coverage report
 ----
