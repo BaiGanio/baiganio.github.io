@@ -1,10 +1,11 @@
-#Swagger How to?
+# Swagger How to?
+
 (10 mins read)
 - Target framework - .NET 6
 - .NET CLI (command-line interface) - cross-platform toolchain for developing, building, running, and publishing .NET applications.
 - Vusial Studio Community or VS Code
 ---
-#*`Agenda`*
+# *`Agenda`*
 - Theory - learn about: 
   - OpenAPI
   - Swagger UI
@@ -26,7 +27,7 @@
     - Swagger UI (OpenApi) with Authorization code flow + PKCE
 
   ---
-#*`Theory about OpenAPI, Swagger UI § Swashbuckle`*
+# *`Theory about OpenAPI, Swagger UI § Swashbuckle`*
 #####There are many benefits to documenting the software you build.
 - Solid documentation make your code more maintainable over time
 - It also makes it more consumable by others.
@@ -66,7 +67,7 @@
 #####Because these libraries are added to your app, they generate and visualize your API documentation from the latest version of your API. This is living documentation, always in sync with the latest code.
 
 ---
-#*`The Setup...`*
+# *`The Setup...`*
 ###`Step 0. Create workbench project`
 - [x] For .NET CLI use the following command `dotnet new webapi swagger-how-to`
 ###`Step 1. Add the Swagger library to the solution`
@@ -124,7 +125,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 
 ---
 
-###`Step 2. Enrich your OpenAPI documentation with XML comments and annotations`
+### `Step 2. Enrich your OpenAPI documentation with XML comments and annotations`
 
 ```XML
 /// <summary>
@@ -146,7 +147,7 @@ public ActionResult<string> GetByName(string firstName, string lastName)
 
 ---
 
-###`Step 3. Customize and extend your OpenAPI documentation with XML comments and annotations`
+### `Step 3. Customize and extend your OpenAPI documentation with XML comments and annotations`
 
 - [x] Add XML comments to your API
 
@@ -218,8 +219,8 @@ public void ConfigureServices(IServiceCollection services)
 
 ---
 
-###`Step 4. Add Swashbuckle annotations to your API`
-#####A more robust way to tell developers the response types and error codes is through the following XML comments and data annotations
+### `Step 4. Add Swashbuckle annotations to your API`
+##### A more robust way to tell developers the response types and error codes is through the following XML comments and data annotations
 
 - [x] Add Microsoft.AspNetCore.Http to the PriceFrameController.cs file.
 - [x] In PriceFrameController.cs, replace GetPrice with the following code and comment.
