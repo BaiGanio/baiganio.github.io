@@ -28,7 +28,7 @@
 
   ---
 # *`Theory about OpenAPI, Swagger UI § Swashbuckle`*
-#####There are many benefits to documenting the software you build.
+##### There are many benefits to documenting the software you build.
 - Solid documentation make your code more maintainable over time
 - It also makes it more consumable by others.
 - An API can have great value, but it won't gain traction unless developers know how to use it. Developers want to integrate an API as quickly as they can.
@@ -37,24 +37,24 @@
 - Swagger UI provides implementation and testing tooling of the OpenAPI specification for your APIs. 
 - Swashbuckle is an open-source package that provides automatic generation of OpenAPI description documents directly from Web API controllers using .NET reflection.
 
-###*`What is OpenAPI?`*
-#####OpenAPI is a specification used for describing REST APIs. It is language agnostic, and enables you to describe your entire API including:
+### *`What is OpenAPI?`*
+##### OpenAPI is a specification used for describing REST APIs. It is language agnostic, and enables you to describe your entire API including:
 - Available endpoints
 - Operation parameters
 -  Authentication methods
 -  Contact and other information
 
-#####You can write API specifications in YAML or JSON. With the OpenAPI specification, humans and computers can understand the capabilities of your API without having access to its source code.
+##### You can write API specifications in YAML or JSON. With the OpenAPI specification, humans and computers can understand the capabilities of your API without having access to its source code.
 
-###*`What is Swagger?`*
-#####Swagger is a set of open-source tools built around the OpenAPI specification. 
+### *`What is Swagger?`*
+##### Swagger is a set of open-source tools built around the OpenAPI specification. 
 - These tools can help you design, build, and document REST APIs. 
 - Swagger does this by using the OpenAPI specification of your API to understand its structure.
 
-#####For example, Swagger UI is a tool that can visually render documentation in a browser for an API defined with the OpenAPI specification.
+#####F or example, Swagger UI is a tool that can visually render documentation in a browser for an API defined with the OpenAPI specification.
 
-###*`What is Swashbuckle?`*
-#####Swashbuckle is an open-source Swagger implementation used for generating Swagger documentation for .NET Core APIs using .NET reflection. There are three main components to Swashbuckle:
+### *`What is Swashbuckle?`*
+##### Swashbuckle is an open-source Swagger implementation used for generating Swagger documentation for .NET Core APIs using .NET reflection. There are three main components to Swashbuckle:
 
 -  Swashbuckle.AspNetCore.Swagger: This component is the Swagger object model and middleware to expose SwaggerDocument objects as JSON endpoints.
 
@@ -64,13 +64,13 @@
 - Swashbuckle.AspNetCore.SwaggerUI: This package is an embedded version of the Swagger UI tool.  
   - It interprets Swagger JSON to build a rich, customizable experience for describing the web API functionality. 
 
-#####Because these libraries are added to your app, they generate and visualize your API documentation from the latest version of your API. This is living documentation, always in sync with the latest code.
+##### Because these libraries are added to your app, they generate and visualize your API documentation from the latest version of your API. This is living documentation, always in sync with the latest code.
 
 ---
 # *`The Setup...`*
-###`Step 0. Create workbench project`
+### `Step 0. Create workbench project`
 - [x] For .NET CLI use the following command `dotnet new webapi swagger-how-to`
-###`Step 1. Add the Swagger library to the solution`
+### `Step 1. Add the Swagger library to the solution`
 - [x] Add Swashbuckle to your project by running the dotnet add package command.
 ```Powershell
 dotnet add package Swashbuckle.AspNetCore
