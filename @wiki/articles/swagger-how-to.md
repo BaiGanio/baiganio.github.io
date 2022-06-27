@@ -68,6 +68,7 @@
 
 ---
 # *`The Setup...`*
+
 ### `Step 0. Create workbench project`
 - [x] For .NET CLI use the following command `dotnet new webapi swagger-how-to`
 ### `Step 1. Add the Swagger library to the solution`
@@ -82,7 +83,7 @@ using Microsoft.OpenApi.Models;
 ```
 - [x] To add the Swagger generator to the services collection, replace the method ConfigureServices(IServiceCollection services) with the following implementation.
 
-```CSharp
+```
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddControllers();
