@@ -10,6 +10,9 @@ on:
   pull_request:
     # branches: [master, dev/*]
     branches: [master]
+  paths:
+   exclude:
+    - README.md
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
