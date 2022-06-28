@@ -1,19 +1,16 @@
-# Swagger How to?
-
+#Swagger Setup In .NET API. How to?
 (10 mins read)
 - Target framework - .NET 6
 - .NET CLI (command-line interface) - cross-platform toolchain for developing, building, running, and publishing .NET applications.
 - Vusial Studio Community or VS Code
 ---
-# *`Agenda`*
-- Theory - learn about: 
-  - OpenAPI
-  - Swagger UI
-  - Swashbuckle
-- Enable OpenAPI for an C#/ASP.NET API.
-- Use Swashbuckle in an C#/ASP.NET API.
+#*`Agenda`*
+- <b><a target="_blank" href="https://baiganio.github.io/articles/swagger-setup-in-.net-api">Theory about OpenAPI, Swagger UI § Swashbuckle</a></b> 
+- Enable OpenAPI & use Swashbuckle in an C#/ASP.NET API.
 - Generate and view API documentation with OpenAPI.
   - Swagger Doc
+    - Licences
+    - Contact information
   - XML Comments
     - The Swagger UI displays the inner text of the preceding code's `<summary>` element
     - adding remarks
@@ -23,7 +20,7 @@
   - Custom styles
     - adding custom css
     - swagger ui themes
-  - SecurityDefinition
+  - Security Definition (advanced)
     - Swagger UI (OpenApi) with Authorization code flow + PKCE
 
   ---
@@ -64,63 +61,69 @@
 - Swashbuckle.AspNetCore.SwaggerUI: This package is an embedded version of the Swagger UI tool.  
   - It interprets Swagger JSON to build a rich, customizable experience for describing the web API functionality. 
 
-##### Because these libraries are added to your app, they generate and visualize your API documentation from the latest version of your API. This is living documentation, always in sync with the latest code.
-
+#####Because these libraries are added to your app, they generate and visualize your API documentation from the latest version of your API. This is living documentation, always in sync with the latest code.
 ---
-# *`The Setup...`*
+#*`The Setup...`*
 
-### `Step 0. Create workbench project`
+###`Step 0. Create workbench project`
 - [x] For .NET CLI use the following command `dotnet new webapi swagger-how-to`
-### `Step 1. Add the Swagger library to the solution`
+
+###`Step 1. Add the Swagger library to the solution`
 - [x] Add Swashbuckle to your project by running the dotnet add package command.
+
 ```Powershell
 dotnet add package Swashbuckle.AspNetCore
 ```
-- [x] Open the Startup.cs file.
+
+- [x] Open the Program.cs file.
 - [x] At the top of the file, add another using entry:
+
 ```CSharp
 using Microsoft.OpenApi.Models;
 ```
-- [x] To add the Swagger generator to the services collection, replace the method ConfigureServices(IServiceCollection services) with the following implementation.
+
+- [x] To add the Swagger generator to the services collection, add to ConfigureServices(IServiceCollection services) the following implementation:
 
 ```
 public void ConfigureServices(IServiceCollection services)
 {
-    services.AddControllers();
+  services.AddControllers();
 
-    /*
-    ...
-    code ommited for bravery
-    ...
-    */
+  /*
+  ...
+  code ommited for bravery
+  ...
+  */
 
-    services.AddSwaggerGen(c =>
-    {
-        c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
-    });
+  // This code is needed ;)
+  services.AddSwaggerGen(c =>
+  {
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+  });
 }
 ```
-- [x] In the Configure method in Startup.cs, enable middleware for the Swagger UI by adding useSwagger and useSwaggerUI, as shown in the following code snippet.
+
+- [x] In the Configure method in Program.cs, enable middleware for the Swagger UI by adding `UseSwagger` and `UseSwaggerUI`, as shown in the following code snippet:
 
 ```CSharp
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-    });
+  app.UseSwagger();
+  app.UseSwaggerUI(c =>
+  {
+      c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+  });
 
-    /*
-    ...
-    code ommited for bravery
-    ...
-    */
+  /*
+  ...
+  code ommited for bravery
+  ...
+  */
 
-    app.UseEndpoints(endpoints =>
-    {
-        endpoints.MapControllers();
-    }); 
+  app.UseEndpoints(endpoints =>
+  {
+      endpoints.MapControllers();
+  }); 
 }
 ```
 
@@ -259,3 +262,11 @@ public ActionResult<string> GetPrice(string Height, string Width)
     }
 }
 ```
+---
+###`Step 5. Enrich with custom styles and Swagger UI themes`
+`//TODO: In development`
+
+---
+###`Step 6. Configure Security Definition`
+`//TODO: In development. Implement Authorization code flow + PKCE`
+
