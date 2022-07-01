@@ -1,10 +1,10 @@
-#Swagger Setup In .NET API. How to?
+# Swagger Setup In .NET API. How to?
 (10 mins read)
 - Target framework - .NET 6
 - .NET CLI (command-line interface) - cross-platform toolchain for developing, building, running, and publishing .NET applications.
 - Vusial Studio Community or VS Code
 ---
-#*`Agenda`*
+# *`Agenda`*
 - <b><a target="_blank" href="https://baiganio.github.io/articles/swagger-setup-in-.net-api">Theory about OpenAPI, Swagger UI § Swashbuckle</a></b> 
 - Enable OpenAPI & use Swashbuckle in an C#/ASP.NET API.
 - Generate and view API documentation with OpenAPI.
@@ -12,14 +12,14 @@
     - Licences
     - Contact information
   - XML Comments
-    - The Swagger UI displays the inner text of the preceding code's `<summary>` element
-    - adding remarks
+    - The preceding code's `<summary>` element
+    - Adding remarks
     - Describe response types
   - Additional Setup
-    - obsolete actions and properties
+    - Obsolete actions and properties
   - Custom styles
-    - adding custom css
-    - swagger ui themes
+    - Adding custom css
+    - Swagger ui themes
   - Security Definition (advanced)
     - Swagger UI (OpenApi) with Authorization code flow + PKCE
 
@@ -48,7 +48,7 @@
 - These tools can help you design, build, and document REST APIs. 
 - Swagger does this by using the OpenAPI specification of your API to understand its structure.
 
-#####F or example, Swagger UI is a tool that can visually render documentation in a browser for an API defined with the OpenAPI specification.
+##### For example, Swagger UI is a tool that can visually render documentation in a browser for an API defined with the OpenAPI specification.
 
 ### *`What is Swashbuckle?`*
 ##### Swashbuckle is an open-source Swagger implementation used for generating Swagger documentation for .NET Core APIs using .NET reflection. There are three main components to Swashbuckle:
@@ -61,14 +61,14 @@
 - Swashbuckle.AspNetCore.SwaggerUI: This package is an embedded version of the Swagger UI tool.  
   - It interprets Swagger JSON to build a rich, customizable experience for describing the web API functionality. 
 
-#####Because these libraries are added to your app, they generate and visualize your API documentation from the latest version of your API. This is living documentation, always in sync with the latest code.
+##### Because these libraries are added to your app, they generate and visualize your API documentation from the latest version of your API. This is living documentation, always in sync with the latest code.
 ---
-#*`The Setup...`*
+# *`The Setup...`*
 
-###`Step 0. Create workbench project`
+### `Step 0. Create workbench project`
 - [x] For .NET CLI use the following command `dotnet new webapi swagger-how-to`
 
-###`Step 1. Add the Swagger library to the solution`
+### `Step 1. Add the Swagger library to the solution`
 - [x] Add Swashbuckle to your project by running the dotnet add package command.
 
 ```Powershell
@@ -211,7 +211,7 @@ public void ConfigureServices(IServiceCollection services)
  /// <param name="Height">The height of the frame.</param>
  /// <param name="Width">The width of the frame.</param>
  /// <returns>The price, in dollars, of the picture frame.</returns>
- /// <remarks> The API returns 'not valid' if the total length of frame material needed (the perimeter of the frame) is less than 20 inches and greater than 1000 inches.</remarks>
+ /// <remarks> The API returns 'not valid' if the total length of frame material...</remarks>
  [HttpGet("{Height}/{Width}")]
  public string GetPrice(string Height, string Width)
  {
