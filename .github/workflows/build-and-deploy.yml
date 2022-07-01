@@ -4,9 +4,11 @@ name: CI/CD (Build & Deploy)
 # Controls when the action will run.
 on:
   # Trigger the workflow on push or pull request, but only for the selected branch below!
-  push: branches: [master]
+  push:
+    branches: [master]
     # branches: [master, dev/*]
-  pull_request: branches: [master]
+  pull_request:
+    branches: [master]
     # branches: [master, dev/*]
     paths-ignore:
      - README.md
