@@ -16,7 +16,7 @@ export class WorkbenchComponent implements OnInit {
     //this.selectedTab = this.store.select(state => state.selectedTab);
     this.host = router.url;
 }
-  ngOnInit(): void {
+  ngOnInit(): void {console.log(' Lifecycle methods should not be empty');
   }
 
   onChangeTab(event) {

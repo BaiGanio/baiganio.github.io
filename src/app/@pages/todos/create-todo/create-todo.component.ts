@@ -58,7 +58,7 @@ export class CreateToDoComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {console.log(' Lifecycle methods should not be empty');
   }
 
   create() {

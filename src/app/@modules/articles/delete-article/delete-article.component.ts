@@ -13,7 +13,7 @@ export class DeleteArticleComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { console.log('Lifecycle methods should not be empty');
   }
 
   onNoClick(): void {

@@ -20,7 +20,7 @@ import { CoursesService } from 'src/app/@services/courses.service';
     </mat-form-field>
     <button
     class="ml-3"
-        mat-raised-button 
+        mat-raised-button
         (click)="createCourse()"
         color="primary"
         [disabled]="!addCourseForm.valid || !addCourseForm.dirty">
@@ -49,12 +49,12 @@ export class CreateCourseComponent implements OnInit {
         });
     }
 
-    ngOnInit() {}
+    ngOnInit() { console.log('Lifecycle methods should not be empty');}
 
     createCourse() {
         this.loading = true;
         const entry = { Name: this.addCourseForm.value.courseName };
-        this.dialogRef.close(entry);  
-        this.loading = false; 
+        this.dialogRef.close(entry);
+        this.loading = false;
     }
 }

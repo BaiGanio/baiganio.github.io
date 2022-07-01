@@ -61,11 +61,11 @@
                   <!-- ./Student Dash Form -->
                   <br>
                   <div class="text-center">
-                      <button mdbBtn 
-                          color="primary" 
-                          class="btn-block waves-light" 
-                          mdbWavesEffect 
-                          [disabled]='studentDashForm.valid != true || studentDashForm.touched == false'
+                      <button mdbBtn
+                          color="primary"
+                          class="btn-block waves-light"
+                          mdbWavesEffect
+                          [disabled]='studentDashForm.valid !== true || studentDashForm.touched === false'
                           (click)='updateStudentInfo()'>
                           Update <i class="fa fa-paper-plane-o ml-1"></i>
                       </button>

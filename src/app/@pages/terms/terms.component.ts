@@ -19,7 +19,7 @@ title: string;
 
   ngOnInit() {
     // this.user = this.data.model;
-    // this.title = this.data.title;
+    this.title = 'this.data.title';
   }
 
   onRejectClick() {

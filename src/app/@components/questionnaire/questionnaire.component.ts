@@ -46,7 +46,7 @@ export class QuestionnaireComponent implements OnInit {
      });
    }
 
-  ngOnInit() {
+  ngOnInit() { console.log('Lifecycle methods should not be empty');
   }
 
    getLevel = (node: TodoItemFlatNode) => node.level;

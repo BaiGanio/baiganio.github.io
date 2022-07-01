@@ -14,10 +14,10 @@ import { Component, OnInit } from '@angular/core';
           <br> Server says: <span>"You are not authorized!"</span>
         </h1>
         <br>
-        <button  
+        <button
           mat-raised-button
-          color="primary" 
-          routerLink='/home'> 
+          color="primary"
+          routerLink='/home'>
             Back To Home
         </button>
       </div>
@@ -29,7 +29,7 @@ export class AccessDeniedComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {console.log(' Lifecycle methods should not be empty');
   }
 
 }

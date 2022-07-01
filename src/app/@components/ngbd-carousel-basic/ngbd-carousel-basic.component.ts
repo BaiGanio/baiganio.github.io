@@ -11,7 +11,8 @@ export class NgbdCarouselBasicComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    console.log('Lifecycle methods should not be empty');
   }
 
 }

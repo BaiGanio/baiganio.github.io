@@ -16,7 +16,7 @@ export class CreateComponent implements OnInit {
    */
   constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {console.log(' Lifecycle methods should not be empty');
   }
 
   addTutorial(name, url) {

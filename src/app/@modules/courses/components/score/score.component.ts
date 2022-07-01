@@ -38,10 +38,11 @@ export class ScoreComponent implements OnInit {
   }];
   public chartClicked(e: any): void { }
   public chartHovered(e: any): void { }
-  
+
   constructor() { }
 
   ngOnInit() {
+    console.log('Lifecycle methods should not be empty');
     // this.studentService.getStudent().subscribe(
     //   response => {
     //     this.proccessResponse(response);

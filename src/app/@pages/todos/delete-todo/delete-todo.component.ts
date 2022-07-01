@@ -1,8 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
-import { ToDo } from 'src/app/@shared/models/todo.model';
 
 @Component({
   selector: 'app-delete-todo',
@@ -18,7 +16,7 @@ export class DeleteToDoComponent implements OnInit {
     this.model = data;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {console.log(' Lifecycle methods should not be empty');}
 
   confirm() {
     this.dialogRef.close(true);

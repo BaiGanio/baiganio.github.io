@@ -15,12 +15,12 @@ export class CraftsmanMenuComponent implements OnInit {
     private errorHandlerService: ErrorHandlerService
   ) { }
 
-  ngOnInit() {
+  ngOnInit() { console.log('Lifecycle methods should not be empty');
   }
 
 
   addClassroom() {
-    
+
   }
 
   addQuestionnaire() {
@@ -32,7 +32,7 @@ export class CraftsmanMenuComponent implements OnInit {
   }
 
   private addIPRangeAfterClosed($dialogRef) {
-  
+
   }
 
 }

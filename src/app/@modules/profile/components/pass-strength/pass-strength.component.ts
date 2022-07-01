@@ -10,6 +10,6 @@ export class PassStrengthComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<PassStrengthComponent>) { }
 
-  ngOnInit() {}
+  ngOnInit() { console.log('Lifecycle methods should not be empty');}
 
 }

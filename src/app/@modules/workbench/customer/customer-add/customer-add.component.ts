@@ -19,7 +19,7 @@ export class CustomerAddComponent implements OnInit {
     this.store.dispatch(addCustomer(customer));
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { console.log('Lifecycle methods should not be empty');
   }
 
 }

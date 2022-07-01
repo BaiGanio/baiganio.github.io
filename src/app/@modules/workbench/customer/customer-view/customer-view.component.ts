@@ -18,7 +18,7 @@ export class CustomerViewComponent implements OnInit {
     this.customers$ = this.store.pipe(select(selectCustomers));
    }
 
-  ngOnInit(): void {
+  ngOnInit(): void {console.log(' Lifecycle methods should not be empty');
   }
 
 }

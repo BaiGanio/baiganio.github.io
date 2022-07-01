@@ -18,7 +18,7 @@ export class ReadComponent implements OnInit {
     this.tutorials = store.select('tutorial');
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {console.log(' Lifecycle methods should not be empty');
   }
 
   delTutorial(index) {

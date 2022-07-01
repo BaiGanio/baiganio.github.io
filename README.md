@@ -95,6 +95,9 @@ We use several ways to work with the tests in the project:_
 ## _Running end-to-end tests_
 - Run `ng e2e` to execute the end-to-end tests via [_Protractor_](http://www.protractortest.org/).
 ---
+## _Running lint_
+- Run npm run lint to check if the set of rules is covered.
+---
 ## _Further help_
 - To get more help for `how to..` and `where from...` on the project use our [_Wiki_](https://github.com/BaiGanio/baiganio.github.io/wiki).
 - To help us better organizing our work you can use our issue templates to provide us information faster from - [here!](https://github.com/BaiGanio/baiganio.github.io/issues/new/choose)

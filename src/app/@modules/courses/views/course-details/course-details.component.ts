@@ -10,7 +10,7 @@ export class CourseDetailsComponent implements OnInit {
   activeTab = 1;
   constructor(private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() { console.log('Lifecycle methods should not be empty');
   }
 
   backToMyCourses() {

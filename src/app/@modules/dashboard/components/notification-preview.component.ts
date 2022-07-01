@@ -18,5 +18,5 @@ export class NotificationPreviewComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: BaseDialogData
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {  console.log('Lifecycle methods should not be empty');}
 }

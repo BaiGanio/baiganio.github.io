@@ -26,7 +26,17 @@
               "src/favicon.ico",
               "src/assets",
               "src/web.config",
-              "src/404.html"
+              "src/404.html",
+              {
+                "glob": "**/*",
+                "input": "@wiki/articles/",
+                "output": "./assets/articles/"
+              },
+              {
+                "glob": "**/*",
+                "input": "@wiki/images/",
+                "output": "./assets/articles/images/"
+              }
             ],
             "styles": [
               "src/styles.scss",
@@ -155,12 +165,21 @@
               "devServerTarget": "baiganio:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "defaultProject": "baiganio",
   "cli": {
-    "defaultCollection": "@ngrx/schematics"
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }

@@ -1,13 +1,8 @@
-import { HttpClient } from "@angular/common/http";
-import { Component } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { Observable } from "rxjs";
-import { UserView } from "./@modules/users/models/user-view";
+import { Component, OnInit } from "@angular/core";
 import { AuthService } from "./@services/auth.service";
 import { BackendService } from "./@services/backend.service";
 import { ErrorHandlerService } from "./@services/error-handler.service";
 import { SignalRService } from "./@services/signalR.service";
-import { AppState } from "./@store/app.state";
 
 @Component({
   selector: "app-root",
@@ -15,7 +10,7 @@ import { AppState } from "./@store/app.state";
     <app-navbar></app-navbar>
   `,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = "BaiGanio";
   constructor(
     private backendService: BackendService,

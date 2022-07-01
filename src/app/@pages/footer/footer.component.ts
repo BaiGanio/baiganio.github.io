@@ -14,6 +14,7 @@ export class FooterComponent implements OnInit {
   constructor(private dialog: MatDialog,  private router: Router,) { }
 
   ngOnInit() {
+    console.log('Lifecycle methods should not be empty');
   }
 
   getPrivacy() {

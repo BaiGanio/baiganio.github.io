@@ -28,5 +28,5 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundComponent implements OnInit {
   constructor() { }
-  ngOnInit() { }
+  ngOnInit() { console.log('Lifecycle methods should not be empty'); }
 }

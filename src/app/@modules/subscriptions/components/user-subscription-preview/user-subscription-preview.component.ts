@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-user-subscription-preview',
-  template: 
+  template:
   `
     <div class="container">
       <img src="{{ subscription?.imgUrl}}" class="img-thumbnail img-fluid">
@@ -23,11 +23,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./user-subscription-preview.component.scss']
 })
 export class UserSubscriptionPreviewComponent implements OnInit {
-  @Input('subscription')
-  subscription: any;
+  @Input() subscription: any;
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { console.log('Lifecycle methods should not be empty');
   }
 
 }

@@ -36,9 +36,13 @@ export class UpdateToDoComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(){
+    this.updateToDoForm =
+    this.formBuilder.group({
+        name: [this.todo.Name],
+        description: [this.todo.Description],
+        date: [this.todo.Date],
+    });}
 
   update() {
     let todo = new ToDo();

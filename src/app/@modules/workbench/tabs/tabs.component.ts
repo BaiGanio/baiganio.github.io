@@ -15,7 +15,7 @@ export class TabsComponent implements OnInit {
     this.host = router.url;
 }
 
-  ngOnInit(): void {
+  ngOnInit(): void {console.log(' Lifecycle methods should not be empty');
   }
 
 }

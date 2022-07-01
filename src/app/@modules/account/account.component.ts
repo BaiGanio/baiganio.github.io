@@ -15,7 +15,7 @@ export class AccountComponent implements OnInit {
     private dialog: MatDialog
   ) { }
 
-  ngOnInit() {
+  ngOnInit() { console.log('Lifecycle methods should not be empty');
   }
 
   //editNotifications() {

@@ -28,9 +28,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerAlertComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {console.log(' Lifecycle methods should not be empty');
   }
 
 }
