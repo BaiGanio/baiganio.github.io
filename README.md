@@ -1,4 +1,4 @@
-# _BaiGanio v7.6.4_
+# _BaiGanio v7.6.4_tst
 This project aims self-creativity & is nothing but a playground where development skills are challenged for fun!!
 
 This app turns out to be somehow a portfolio for the collaborators & indeed looks like very successful approach ;)
