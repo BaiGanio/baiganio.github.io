@@ -11,7 +11,8 @@ module.exports = function (config) {
         require('karma-chrome-launcher'),
         require('karma-jasmine-html-reporter'),
         require('karma-coverage'),
-        require('@angular-devkit/build-angular/plugins/karma')
+        require('@angular-devkit/build-angular/plugins/karma'),
+        require('karma-spec-reporter')
       ],
       angularCli: {
         environment: 'dev'
@@ -33,7 +34,8 @@ module.exports = function (config) {
         reporters: [
             { type: 'html' },
             { type: 'text-summary' },
-            { type: 'json-summary' }
+            { type: 'json-summary' },
+            { type: 'lcovonly' }
         ],
         check: {
             global: {
@@ -50,7 +52,7 @@ module.exports = function (config) {
           lines: [ 50, 80 ]
         }
       },
-      reporters: ['progress', 'kjhtml'],
+      reporters: ['progress', 'kjhtml', 'spec'],
       port: 9876,
       colors: true,
       logLevel: config.LOG_INFO,
