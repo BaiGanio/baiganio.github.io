@@ -17,7 +17,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    env:
+      CODECOV_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
@@ -60,14 +61,14 @@ jobs:
         name: deploy_coverage
         path: coverage
 
-    - name: Upload to Codecov
-      uses: codecov/codecov-action@v2
+    - name: Upload code coverage to Codecov
+      uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODACY_PROJECT_TOKEN }}
         version: "v0.1.15"
         # or
         # api-token: ${{ secrets.CODACY_API_TOKEN }}
-        file: coverage/lcov.info
+        # file: coverage/lcov.info
 
     #Run the build script
     - name: Run build script
