@@ -1,4 +1,4 @@
-# _BaiGanio v7.6.4_tst
+# _BaiGanio v7.6.4_  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/43992e753d15400c98b7dd86327d9ecb)](https://www.codacy.com/gh/BaiGanio/baiganio.github.io/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BaiGanio/baiganio.github.io&amp;utm_campaign=Badge_Grade)
 This project aims self-creativity & is nothing but a playground where development skills are challenged for fun!!
 
 This app turns out to be somehow a portfolio for the collaborators & indeed looks like very successful approach ;)
