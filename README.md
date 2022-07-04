@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a07ee4fa6d244a4baacd9f739c4eebad)](https://app.codacy.com/gh/BaiGanio/baiganio.github.io?utm_source=github.com&utm_medium=referral&utm_content=BaiGanio/baiganio.github.io&utm_campaign=Badge_Grade_Settings)
 # _BaiGanio v7.6.4_  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/43992e753d15400c98b7dd86327d9ecb)](https://www.codacy.com/gh/BaiGanio/baiganio.github.io/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BaiGanio/baiganio.github.io&amp;utm_campaign=Badge_Grade)
 
 This project aims self-creativity & is nothing but a playground where development skills are challenged for fun!!
