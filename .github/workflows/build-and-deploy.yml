@@ -61,12 +61,12 @@ jobs:
         path: coverage
 
     - name: Run codacy-coverage-reporter
-      uses: codecov/codecov-action@v1 #codacy/codacy-coverage-reporter-action@v1
+      uses: codacy/codacy-coverage-reporter-action@master
       with:
         project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
         # or
         # api-token: ${{ secrets.CODACY_API_TOKEN }}
-        # coverage-reports: cobertura.xml
+        coverage-reports: coverage/lcov.info
 
     #Run the build script
     - name: Run build script
