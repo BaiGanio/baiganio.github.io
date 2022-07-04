@@ -65,10 +65,9 @@ jobs:
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-        version: "v0.1.15"
         # or
         # api-token: ${{ secrets.CODACY_API_TOKEN }}
-        # file: coverage/lcov.info
+        file: coverage/coverage-summary.json
 
     #Run the build script
     - name: Run build script
