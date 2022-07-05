@@ -57,19 +57,19 @@ jobs:
       if: success()
       uses: actions/upload-artifact@v1
       with:
-        name: deploy_coverage
-       # path: coverage
+        name: code_coverage_artifacts
+        path: coverage
 
     - name: Download deloy artifacts
       uses: actions/download-artifact@v1
       with:
-        name: deploy_coverage
+        name: code_coverage_artifacts
 
     - uses: codecov/codecov-action@v2
       with:
         files: coverage-summary.json
         token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-        
+
     - name: Upload code coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
