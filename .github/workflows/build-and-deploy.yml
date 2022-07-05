@@ -60,6 +60,11 @@ jobs:
         name: deploy_coverage
         path: coverage
 
+    - uses: actions/checkout@master
+    - uses: codecov/codecov-action@v2
+      with:
+        files: coverage/coverage-summary.json
+        token: ${{ secrets.CODACY_PROJECT_TOKEN }}
     - name: Upload code coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
