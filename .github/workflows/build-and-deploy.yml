@@ -58,7 +58,12 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: deploy_coverage
-        path: coverage
+       # path: coverage
+
+    - name: Download deloy artifacts
+      uses: actions/download-artifact@v1
+      with:
+        name: deploy_coverage
 
     - uses: codecov/codecov-action@v2
       with:
@@ -71,7 +76,7 @@ jobs:
         token: ${{ secrets.CODACY_PROJECT_TOKEN }}
         # or
         # api-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-        file: coverage/coverage-summary.json
+        file: coverage-summary.json
 
     #Run the build script
     - name: Run build script
