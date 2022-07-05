@@ -68,7 +68,7 @@ jobs:
 
     - uses: codecov/codecov-action@v2
       with:
-        files: coverage-summary.json
+        files: coverage/coverage-summary.json
         token: ${{ secrets.CODACY_PROJECT_TOKEN }}
 
     - name: Upload code coverage to Codecov
@@ -77,7 +77,7 @@ jobs:
         token: ${{ secrets.CODACY_PROJECT_TOKEN }}
         # or
         # api-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-        file: coverage-summary.json
+        file: coverage/coverage-summary.json
 
     #Run the build script
     - name: Run build script
