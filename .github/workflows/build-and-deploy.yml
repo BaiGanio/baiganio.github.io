@@ -64,6 +64,7 @@ jobs:
       uses: actions/download-artifact@v1
       with:
         name: code_coverage_artifacts
+        path: coverage
 
     - uses: codecov/codecov-action@v2
       with:
