@@ -64,7 +64,7 @@ jobs:
     - name: Upload code coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
-        token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        token: ${{ CODECOV_TOKEN }}
         # or
         # api-token: ${{ secrets.CODACY_API_TOKEN }}
         file: coverage/coverage-summary.json
