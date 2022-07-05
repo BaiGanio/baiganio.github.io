@@ -69,12 +69,12 @@ jobs:
     - uses: codacy/codacy-coverage-reporter-action@v1
       with:
         files: coverage-summary.json
-        token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
 
     - name: Upload code coverage to Codecov
       uses: codacy/codacy-coverage-reporter-action@v1
       with:
-        token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
         # or
         # api-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
         file: coverage/coverage-summary.json
