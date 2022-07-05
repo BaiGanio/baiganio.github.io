@@ -68,6 +68,12 @@ jobs:
         IS4_BAIGANIO_USER_SECRET: ${{ secrets.IS4_BAIGANIO_USER_SECRET }}
         YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
+    - name: Bump version and push tag
+      uses: hennejg/github-tag-action@v4.1.jh1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+
     - name: Archive and upload build artifacts
       if: success()
       uses: actions/upload-artifact@v1
