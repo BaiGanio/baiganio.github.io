@@ -66,13 +66,13 @@ jobs:
         name: code_coverage_artifacts
         path: coverage
 
-    - uses: codecov/codecov-action@v2
+    - uses: codacy/codacy-coverage-reporter-action@v1
       with:
-        files: coverage/coverage-summary.json
+        files: coverage-summary.json
         token: ${{ secrets.CODACY_PROJECT_TOKEN }}
 
     - name: Upload code coverage to Codecov
-      uses: codecov/codecov-action@v3
+      uses: codacy/codacy-coverage-reporter-action@v1
       with:
         token: ${{ secrets.CODACY_PROJECT_TOKEN }}
         # or
@@ -88,7 +88,7 @@ jobs:
         YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
     # Archive the build
-    - name: Archive build
+    - name: Archive build and upload it as artifact
       if: success()
       uses: actions/upload-artifact@v1
       with:
