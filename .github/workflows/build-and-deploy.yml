@@ -61,6 +61,12 @@ jobs:
         name: deploy_coverage
         path: coverage
 
+#download the....
+    - name: Checkout master branch
+      uses: actions/checkout@v2
+      with:
+        name: deploy_coverage
+
     - name: Upload code coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
