@@ -25,7 +25,6 @@ jobs:
     - name: Checkout master branch
       uses: actions/checkout@v2
 
-    # This installs Node.js 14.x
     - name: Install Node.js 14.x
       uses: actions/setup-node@v1
       with:
@@ -40,32 +39,28 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
 
-    # Install latest NPM due issue with one of the packages
     - name: Install latest NPM
       run: npm i -g npm@latest
 
-    # Install all packages
     - name: Install packages
       run: npm install
 
-    # Running tests
     - name: Run Tests
       run: npm run-script test:headless
 
-    # Archive code coverage result
-    # - name: Archive code coverage result
-    #   if: success()
-    #   uses: actions/upload-artifact@v1
-    #   with:
-    #     name: code_coverage_artifacts
-    #     path: coverage
+    # Need them as zip in terms of some usage
+    - name: Archive code coverage result
+      if: success()
+      uses: actions/upload-artifact@v1
+      with:
+        name: code_coverage_artifacts
+        path: coverage
 
     - name: Upload code coverage to Codecov
       uses: codacy/codacy-coverage-reporter-action@v1
       with:
         project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
 
-    #Run the build script
     - name: Run build script
       run: npm run-script build
       env:
@@ -73,7 +68,6 @@ jobs:
         IS4_BAIGANIO_USER_SECRET: ${{ secrets.IS4_BAIGANIO_USER_SECRET }}
         YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
-    # Archive the build
     - name: Archive and upload build artifacts
       if: success()
       uses: actions/upload-artifact@v1
