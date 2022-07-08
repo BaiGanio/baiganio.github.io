@@ -34,8 +34,8 @@ module.exports = function (config) {
         subdir: '.',
         reporters: [
             { type: 'html' },
-            { type: 'text-summary' },
-            { type: 'json-summary' },
+            { type: 'text' },
+            { type: 'json' },
             { type: 'lcovonly' }
         ],
         check: {
@@ -58,7 +58,7 @@ module.exports = function (config) {
       colors: true,
       logLevel: config.LOG_INFO,
       autoWatch: true,
-      browsers: ['Chrome'],
+      browsers: ['ChromeHeadless'],
       singleRun: false,
       restartOnFileChange: true,
       exclude: ["node_modules"]
