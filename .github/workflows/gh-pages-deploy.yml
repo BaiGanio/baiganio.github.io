@@ -4,8 +4,7 @@ on:
   workflow_call:
 
 jobs:
-  deploy:
-    name: Download & Deploy artifacts to GitHub Pages
+  Download & Deploy artifacts to GitHub Pages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout master branch
