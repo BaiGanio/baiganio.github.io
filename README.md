@@ -4,7 +4,7 @@
 - This project aims self-creativity & is nothing but a playground where development skills are challenged for fun!!
 - This app turns out to be somehow a portfolio for the collaborators & indeed looks like very successful approach ;)
 ***
-## Local environment setup
+## _Getting started (local environment setup)_
 - [x] Run `ng v` to see current project [Angular CLI](https://angular.io/cli) & [TypeScript](https://www.typescriptlang.org/) versions
 - [x] Run `node -v` to check your current [Node.js](https://nodejs.org) version
 - [x] Run `npm install`
