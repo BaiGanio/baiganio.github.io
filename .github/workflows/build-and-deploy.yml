@@ -58,27 +58,30 @@ jobs:
     #   with:
     #     filename: '../coverage.cobertura.xml'
 
-    - name: Upload code coverage to Codecov
-      uses: codacy/codacy-coverage-reporter-action@v1
-      with:
-        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+    # - name: Upload code coverage to Codecov
+    #   uses: codacy/codacy-coverage-reporter-action@v1
+    #   with:
+    #     project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
     # - name: Upload code coverage report to Codecov
     #   uses: ./.github/workflows/deploy.yml
 
-    - name: Run build script
-      run: npm run-script build
-      env:
-        IS4_BAIGANIO_CLIENT_SECRET: ${{ secrets.IS4_BAIGANIO_CLIENT_SECRET }}
-        IS4_BAIGANIO_USER_SECRET: ${{ secrets.IS4_BAIGANIO_USER_SECRET }}
-        YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+    # - name: Run build script
+    #   run: npm run-script build
+    #   env:
+    #     IS4_BAIGANIO_CLIENT_SECRET: ${{ secrets.IS4_BAIGANIO_CLIENT_SECRET }}
+    #     IS4_BAIGANIO_USER_SECRET: ${{ secrets.IS4_BAIGANIO_USER_SECRET }}
+    #     YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
-    - name: Archive and upload build artifacts
-      if: success()
-      uses: actions/upload-artifact@v1
-      with:
-        name: deployable_artifacts
-        path: dist
+    # - name: Archive and upload build artifacts
+    #   if: success()
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: deployable_artifacts
+    #     path: dist
 
+  build-and-upload-artifacts:
+    uses: ./.github/workflows/build-and-upload-artifacts.yml
+    # needs: build
   # A second job called "deploy" with reusable workflow template
   deploy:
     uses: ./.github/workflows/deploy.yml
