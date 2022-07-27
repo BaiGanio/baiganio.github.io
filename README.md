@@ -1,6 +1,6 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/43992e753d15400c98b7dd86327d9ecb)](https://www.codacy.com/gh/BaiGanio/baiganio.github.io/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BaiGanio/baiganio.github.io&amp;utm_campaign=Badge_Grade)  [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/43992e753d15400c98b7dd86327d9ecb)](https://www.codacy.com/gh/BaiGanio/baiganio.github.io/dashboard?utm_source=github.com&utm_medium=referral&utm_content=BaiGanio/baiganio.github.io&utm_campaign=Badge_Coverage)
 ![Build & Deploy workflow](https://github.com/BaiGanio/baiganio.github.io/actions/workflows/build-and-deploy.yml/badge.svg)
-# _baiganio.github.io_
+# `baiganio.github.io`
 - This project aims self-creativity & is nothing but a playground where development skills are challenged for fun!!
 - This app turns out to be somehow a portfolio for the collaborators & indeed looks like very successful approach ;)
 ***
@@ -13,8 +13,6 @@
 - `npm run start` or alternatively `ng serve -c=local -o`  if you have [BGAPI]() locally  
   - both commands will start the application wich then opens automatically at `http://localhost:5003/`
 
----
-## _Check out our [Code scaffolding](https://github.com/BaiGanio/baiganio.github.io/wiki/Code-scaffolding) wiki page._
 ---
 ## _Build_
 - [x] Run `ng build` for a local build
@@ -57,6 +55,7 @@ _All commands generate code coverage report. Check this [Unit-Testing-Setup-in-A
 - Run `npm run lint` to check if the set of rules is covered.
 ---
 ## _Further help_
+- _Check out our [Code scaffolding](https://github.com/BaiGanio/baiganio.github.io/wiki/Code-scaffolding) wiki page._
 - To get more help for `how to..` and `where from...` on the project use our [_Wiki_](https://github.com/BaiGanio/baiganio.github.io/wiki).
 - To help us better organizing our work you can use our issue templates to provide us information faster from - [here!](https://github.com/BaiGanio/baiganio.github.io/issues/new/choose)
 - Check out the [_Angular CLI README_](https://github.com/angular/angular-cli/blob/master/README.md).
