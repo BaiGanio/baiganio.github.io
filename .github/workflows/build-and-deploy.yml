@@ -67,8 +67,8 @@ jobs:
     #   uses: codacy/codacy-coverage-reporter-action@v1
     #   with:
     #     project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-    - name: Upload code coverage report to Codecov
-      uses: ./.github/workflows/deploy.yml
+    # - name: Upload code coverage report to Codecov
+    #   uses: ./.github/workflows/deploy.yml
 
     - name: Run build script
       run: npm run-script build
@@ -83,6 +83,10 @@ jobs:
       with:
         name: deployable_artifacts
         path: dist
+
+  upload-code-coverage:
+    uses: ./.github/workflows/code-coverage.yml
+    needs: build
 
   # A second job called "deploy" with reusable workflow template
   deploy:
