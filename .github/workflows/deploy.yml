@@ -4,12 +4,11 @@ on:
   workflow_call:
 
 jobs:
-  deploy:
     name: Download & Deploy artifacts to GitHub Pages
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v1
+      - name: Checkout master branch
+        uses: actions/checkout@v2
 
       - name: Download build artifacts
         uses: actions/download-artifact@v1
