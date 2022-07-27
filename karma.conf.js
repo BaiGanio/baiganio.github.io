@@ -36,7 +36,8 @@ module.exports = function (config) {
             { type: 'html' },
             { type: 'text' },
             { type: 'json' },
-            { type: 'lcovonly' }
+            { type: 'lcovonly' },
+            { type: 'cobertura' }
         ],
         check: {
             global: {
@@ -53,7 +54,7 @@ module.exports = function (config) {
           lines: [ 50, 80 ]
         }
       },
-      reporters: ['progress', 'kjhtml', 'spec'],
+      reporters: ['kjhtml', 'spec', 'coverage'],
       port: 9876,
       colors: true,
       logLevel: config.LOG_INFO,
