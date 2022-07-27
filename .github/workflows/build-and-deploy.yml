@@ -84,7 +84,7 @@ jobs:
 
   # This workflow contains a second job called "deploy" which uses reusable workflow template
   deploy:
-    uses: ./.github/workflows/templates/deploy.yml
+    uses: ./.github/workflows/deploy.yml
     needs: build
     name: Download & Deploy artifacts to GitHub Pages
       # runs-on: ubuntu-latest
