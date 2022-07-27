@@ -82,7 +82,7 @@ jobs:
         name: deployable_artifacts
         path: dist
 
-  # This workflow contains a second job called "deploy"
+  # This workflow contains a second job called "deploy" which uses reusable workflow template
   deploy:
     uses: ./.github/workflows/deploy.yml
     needs: build
