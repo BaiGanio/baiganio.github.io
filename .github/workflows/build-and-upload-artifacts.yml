@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout master branch
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Run build script
         run: npm run-script build
