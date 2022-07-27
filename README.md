@@ -10,7 +10,7 @@
 - [x] Run `npm install`
 - [x] Run 
 - `npm run start:test` to work directly with [https://test-bgapi.azurewebsites.net/](https://test-bgapi.azurewebsites.net/) 
-- `npm run start` or alternatively `ng serve -c=local -o`  if you hve [BGAPI]() locally  
+- `npm run start` or alternatively `ng serve -c=local -o`  if you have [BGAPI]() locally  
   - both commands will start the application wich then opens automatically at `http://localhost:5003/`
 
 ---
