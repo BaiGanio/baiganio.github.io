@@ -47,16 +47,16 @@ jobs:
     - name: Install packages
       run: npm install
 
-    - name: Run Tests
-      run: npm run-script test:headless
+    # - name: Run Tests
+    #   run: npm run-script test:headless
 
     # Need them as zip in terms of some usage
-    - name: Archive code coverage result
-      if: success()
-      uses: actions/upload-artifact@v1
-      with:
-        name: code_coverage_artifacts
-        path: coverage
+    # - name: Archive code coverage result
+    #   if: success()
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: code_coverage_artifacts
+    #     path: coverage
 
     # - name: Code Coverage Summary Report
     #   uses: irongut/CodeCoverageSummary@v1.2.0
