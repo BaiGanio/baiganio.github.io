@@ -81,7 +81,8 @@ jobs:
 
   build-and-upload-artifacts:
     uses: ./.github/workflows/build-and-upload-artifacts.yml
-    # needs: build
+    needs: build
+
   # A second job called "deploy" with reusable workflow template
   deploy:
     uses: ./.github/workflows/deploy.yml
