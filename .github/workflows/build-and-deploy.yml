@@ -58,10 +58,10 @@ jobs:
         name: code_coverage_artifacts
         path: coverage
 
-    - name: Code Coverage Summary Report
-      uses: irongut/CodeCoverageSummary@v1.2.0
-      with:
-        filename: '../coverage.cobertura.xml'
+    # - name: Code Coverage Summary Report
+    #   uses: irongut/CodeCoverageSummary@v1.2.0
+    #   with:
+    #     filename: '../coverage.cobertura.xml'
 
     - name: Upload code coverage to Codecov
       uses: codacy/codacy-coverage-reporter-action@v1
