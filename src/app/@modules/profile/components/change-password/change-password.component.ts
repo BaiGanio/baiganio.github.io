@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { UtilityService } from 'src/app/@services/utility.service';
 
@@ -10,11 +10,11 @@ import { UtilityService } from 'src/app/@services/utility.service';
 })
 export class ChangePasswordComponent implements OnInit {
   loading = false;
-  changePassFG: FormGroup;
+  changePassFG: UntypedFormGroup;
 
   constructor(
     public dialogRef: MatDialogRef<ChangePasswordComponent>,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private utilityService: UtilityService
   ) { }
 

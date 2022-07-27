@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from 'src/app/@services/user-data.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
@@ -24,9 +24,9 @@ export class ProfileComponent implements OnInit {
     profileImgSrc = '';
     oldProfilePic = '';
     user: any;
-    profileDataFG: FormGroup;
-    profileImageFG: FormGroup;
-    formData: FormGroup;
+    profileDataFG: UntypedFormGroup;
+    profileImageFG: UntypedFormGroup;
+    formData: UntypedFormGroup;
     roles = '';
     subscriptions = 0;
     courses = 0;
@@ -34,7 +34,7 @@ export class ProfileComponent implements OnInit {
     constructor(
         private userService: UserDataService,
         private errorHandlerService: ErrorHandlerService,
-        private formBuilder: FormBuilder,
+        private formBuilder: UntypedFormBuilder,
         private dialog: MatDialog,
         private snackbar: MatSnackBar,
         private store: Store<AppState>

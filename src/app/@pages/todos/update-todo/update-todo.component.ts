@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
 import { ToDo } from 'src/app/@shared/models/todo.model';
@@ -10,13 +10,13 @@ import { ToDo } from 'src/app/@shared/models/todo.model';
   styleUrls: ['./update-todo.component.scss']
 })
 export class UpdateToDoComponent implements OnInit {
-  updateToDoForm: FormGroup;
+  updateToDoForm: UntypedFormGroup;
   todo: ToDo;
   public isDone = false;
   constructor(
     public dialogRef: MatDialogRef<UpdateToDoComponent>,
     @Inject(MAT_DIALOG_DATA) data: BaseDialogData,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
   ) {
     const c = {
       Id: data.model.Id,

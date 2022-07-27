@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-subscribe4notifications',
@@ -10,12 +10,12 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 
 export class Subscribe4NotificationsComponent implements OnInit {
-  notifySubsFG: FormGroup;
+  notifySubsFG: UntypedFormGroup;
 
   constructor(
     public dialogRef: MatDialogRef<Subscribe4NotificationsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: BaseDialogData,
-    private formBuilder: FormBuilder
+    private formBuilder: UntypedFormBuilder
   ) { }
 
   ngOnInit() {

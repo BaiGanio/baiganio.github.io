@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { StudentPreviewModel } from '../../models/student-preview-model.module';
 import { StudentService } from 'src/app/@services/student.service';
@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/@services/auth.service';
   styleUrls: ['./student-info.component.scss']
 })
 export class StudentInfoComponent implements OnInit {
-  studentDashForm: FormGroup;
+  studentDashForm: UntypedFormGroup;
   studentInfo =  new StudentPreviewModel();
   notificationFlagUpdateInfo = false;
   loading = false;
@@ -19,7 +19,7 @@ export class StudentInfoComponent implements OnInit {
   groupsList = ['1A', '1B', '2A', '2B', '3A', '3B'];
   routeData: string[];
 
-  constructor(private fb: FormBuilder, private studentService: StudentService,
+  constructor(private fb: UntypedFormBuilder, private studentService: StudentService,
               private authService: AuthService,
               private router: Router,
               private activatedRoute: ActivatedRoute) {

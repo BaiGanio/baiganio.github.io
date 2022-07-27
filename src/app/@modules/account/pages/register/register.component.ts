@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { AccountService } from 'src/app/@services/account.service';
@@ -15,7 +15,7 @@ import { TermsComponent } from 'src/app/@pages/terms/terms.component';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup;
+  registerForm: UntypedFormGroup;
   ipinfo: any;
   loading = false;
   registrationError = false;
@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   registrationSuccessMessage = '';
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private http: HttpClient,
     private accountService: AccountService,

@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 // import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 // import { BaseDialogData } from '../../interfaces/base-dialog.interface';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-terms',
@@ -14,7 +14,7 @@ title: string;
   constructor(
     // public dialogRef: MatDialogRef<TermsComponent>,
     // @Inject(MAT_DIALOG_DATA) public data: BaseDialogData,
-    private formBuilder: FormBuilder
+    private formBuilder: UntypedFormBuilder
   ) { }
 
   ngOnInit() {

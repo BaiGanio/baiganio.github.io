@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
 import { CoursePreviewModel } from '../../models/course-preview-model.module';
 
@@ -14,7 +14,7 @@ export class CoursePreviewComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<CoursePreviewComponent>,
     @Inject(MAT_DIALOG_DATA) public data: BaseDialogData,
-    private formBuilder: FormBuilder
+    private formBuilder: UntypedFormBuilder
   ) { }
 
   ngOnInit() {

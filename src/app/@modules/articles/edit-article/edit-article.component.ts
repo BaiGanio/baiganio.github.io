@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, } from '@angular/router';
 import { ArticlesService } from 'src/app/@services/articles.service';
@@ -11,7 +11,7 @@ import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
   styleUrls: ['./edit-article.component.scss']
 })
 export class EditArticleComponent implements OnInit {
- formData: FormGroup;
+ formData: UntypedFormGroup;
  loading = true;
  id:any;
  article:any;
@@ -24,11 +24,11 @@ export class EditArticleComponent implements OnInit {
     private snackbar: MatSnackBar
   ) {
     this.id = this.route.snapshot.params.id;
-    this.formData = new FormGroup({
-      title: new FormControl(''),
-      imgUrl: new FormControl(''),
-      rawHtml: new FormControl(''),
-      markdownUrl: new FormControl('')
+    this.formData = new UntypedFormGroup({
+      title: new UntypedFormControl(''),
+      imgUrl: new UntypedFormControl(''),
+      rawHtml: new UntypedFormControl(''),
+      markdownUrl: new UntypedFormControl('')
     });
    }
 
@@ -91,11 +91,11 @@ export class EditArticleComponent implements OnInit {
   }
 
   private prepForm(){
-    this.formData = new FormGroup({
-      title: new FormControl(this.article.title),
-      imgUrl: new FormControl(this.article.imgUrl),
-      rawHtml: new FormControl(this.article.rawHtml),
-      markdownUrl: new FormControl(this.article.markdownUrl)
+    this.formData = new UntypedFormGroup({
+      title: new UntypedFormControl(this.article.title),
+      imgUrl: new UntypedFormControl(this.article.imgUrl),
+      rawHtml: new UntypedFormControl(this.article.rawHtml),
+      markdownUrl: new UntypedFormControl(this.article.markdownUrl)
     });
   }
 

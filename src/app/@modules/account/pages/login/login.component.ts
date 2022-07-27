@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { SubscriptionsModule } from 'src/app/@modules/subscriptions/subscriptions.module';
@@ -18,7 +18,7 @@ import { selectUser } from 'src/app/@store/selectors/user.selector';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
+  loginForm: UntypedFormGroup;
   retryFunction = null;
   user: UserView;
   loading = false;
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   loginErrorMessage = '';
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private backendService: BackendService,
     private authservice: AuthService,

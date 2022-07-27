@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
 import { EditCourseModel } from 'src/app/@modules/courses/models/edit-course.model';
@@ -13,9 +13,9 @@ import { TeacherPreviewModel } from 'src/app/@modules/teachers/models/teacher-pr
     styleUrls: ['./edit-course.component.scss']
 })
 export class EditCourseComponent implements OnInit {
-  editCourseForm: FormGroup;
-  editCourseImageForm: FormGroup;
-  selectTeacherForm: FormGroup;
+  editCourseForm: UntypedFormGroup;
+  editCourseImageForm: UntypedFormGroup;
+  selectTeacherForm: UntypedFormGroup;
   model: CoursePreviewModel;
   loading = false;
   defaultCourseImg: string;
@@ -25,7 +25,7 @@ export class EditCourseComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<EditCourseComponent>,
     @Inject(MAT_DIALOG_DATA) public data: BaseDialogData,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private teacherService: TeacherService
   ) { }
 

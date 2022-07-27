@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { AuthService } from 'src/app/@services/auth.service';
 import { BloggersService } from 'src/app/@services/bloggers.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
@@ -10,7 +10,7 @@ import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
   styleUrls: ['./blogger-craftsman-view.component.scss']
 })
 export class BloggerCraftsmanViewComponent implements OnInit {
-  formData: FormGroup;
+  formData: UntypedFormGroup;
   constructor(
     private bloggerService: BloggersService,
     private errorHandlerService: ErrorHandlerService,
@@ -20,11 +20,11 @@ export class BloggerCraftsmanViewComponent implements OnInit {
   }
 
   ngOnInit(): void { 
-    this.formData = new FormGroup({
-      nickname: new FormControl(''),
-      email: new FormControl(''),
-      facebookUrl: new FormControl(''),
-      githubUrl:  new FormControl('')
+    this.formData = new UntypedFormGroup({
+      nickname: new UntypedFormControl(''),
+      email: new UntypedFormControl(''),
+      facebookUrl: new UntypedFormControl(''),
+      githubUrl:  new UntypedFormControl('')
     });
     // if (this.authService.isAuthenticated() && this.blogger === undefined) {
     

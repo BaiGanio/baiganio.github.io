@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { BaseDialogData } from 'src/app/@shared/interfaces/base-dialog.interface';
@@ -32,13 +32,13 @@ import { CoursesService } from 'src/app/@services/courses.service';
   styleUrls: ['./create-course.component.scss']
 })
 export class CreateCourseComponent implements OnInit {
-    addCourseForm: FormGroup;
+    addCourseForm: UntypedFormGroup;
     loading = false;
 
     constructor(
     public dialogRef: MatDialogRef<CreateCourseComponent>,
     @Inject(MAT_DIALOG_DATA) public data: BaseDialogData,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private snackbar: MatSnackBar,
     private errorHandlerService: ErrorHandlerService,
     private coursesService: CoursesService

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from 'src/app/@services/account.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
     styleUrls: ['forgotten-password.component.scss']
 })
 export class ForgottenPasswordComponent implements OnInit {
-    forgotPassForm: FormGroup = new FormGroup({});
+    forgotPassForm: UntypedFormGroup = new UntypedFormGroup({});
     loading = false;
     successFlag = false;
     resetPasswordErrorFlag = false;
@@ -18,7 +18,7 @@ export class ForgottenPasswordComponent implements OnInit {
     constructor(
         private accountService: AccountService,
         private errorHandlerService: ErrorHandlerService,
-        private formBuilder: FormBuilder
+        private formBuilder: UntypedFormBuilder
     ) {
       this.forgotPassForm =
             this.formBuilder.group({

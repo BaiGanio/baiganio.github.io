@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/@services/auth.service';
 import { BloggersService } from 'src/app/@services/bloggers.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
@@ -10,7 +10,7 @@ import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
   styleUrls: ['./blogger-subscription-preview.component.scss']
 })
 export class BloggerSubscriptionPreviewComponent implements OnInit {
-  formData: FormGroup;
+  formData: UntypedFormGroup;
   blogger: any;
   loading = false;
   constructor(
@@ -18,11 +18,11 @@ export class BloggerSubscriptionPreviewComponent implements OnInit {
     private errorHandlerService: ErrorHandlerService,
     private authService: AuthService,
   ) {
-    this.formData = new FormGroup({
-      nickname: new FormControl(''),
-      email: new FormControl(''),
-      facebookUrl: new FormControl(''),
-      githubUrl:  new FormControl('')
+    this.formData = new UntypedFormGroup({
+      nickname: new UntypedFormControl(''),
+      email: new UntypedFormControl(''),
+      facebookUrl: new UntypedFormControl(''),
+      githubUrl:  new UntypedFormControl('')
     });
   }
 
@@ -45,11 +45,11 @@ export class BloggerSubscriptionPreviewComponent implements OnInit {
   }
 
   private prepForm(){
-    this.formData = new FormGroup({
-      nickname: new FormControl(this.blogger?.nickname, Validators.maxLength(20)),
-      email: new FormControl(this.blogger?.email, Validators.email),
-      facebookUrl: new FormControl(''),
-      githubUrl:  new FormControl('')
+    this.formData = new UntypedFormGroup({
+      nickname: new UntypedFormControl(this.blogger?.nickname, Validators.maxLength(20)),
+      email: new UntypedFormControl(this.blogger?.email, Validators.email),
+      facebookUrl: new UntypedFormControl(''),
+      githubUrl:  new UntypedFormControl('')
     });
   }
 

@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AsyncSubject, Subject } from 'rxjs';
@@ -14,7 +14,7 @@ import { maxLength } from 'src/app/@shared/validators/maxlength.validator';
 })
 export class CreateArticleComponent implements OnInit {
   private editorSubject: Subject<any> = new AsyncSubject();
-  myForm: FormGroup = new FormGroup({});
+  myForm: UntypedFormGroup = new UntypedFormGroup({});
   loading = false;
 
   title = '';
@@ -27,9 +27,9 @@ export class CreateArticleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.myForm = new FormGroup({
-      title: new FormControl("", Validators.required),
-      body: new FormControl("", Validators.required, maxLength(this.editorSubject, 10))
+    this.myForm = new UntypedFormGroup({
+      title: new UntypedFormControl("", Validators.required),
+      body: new UntypedFormControl("", Validators.required, maxLength(this.editorSubject, 10))
     });
   }
   onNoClick(): void {

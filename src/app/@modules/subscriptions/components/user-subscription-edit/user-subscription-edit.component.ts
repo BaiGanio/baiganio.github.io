@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentPreviewModel } from 'src/app/@modules/students/models/student-preview-model.module';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { StudentService } from 'src/app/@services/student.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SubscriptionService } from 'src/app/@services/subscription.service';
@@ -20,7 +20,7 @@ export class UserSubscriptionEditComponent implements OnInit {
   name: string;
   student: any;
 
-  studentForm: FormGroup;
+  studentForm: UntypedFormGroup;
   studentInfo = new StudentPreviewModel();
   notificationFlagUpdateInfo = false;
   errMsg = '';
@@ -29,7 +29,7 @@ export class UserSubscriptionEditComponent implements OnInit {
   routeData: string[];
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private studentService: StudentService,
     private subscriptionService: SubscriptionService,
     private errorHandlerService: ErrorHandlerService,

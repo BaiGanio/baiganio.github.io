@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ToDo } from 'src/app/@shared/models/todo.model';
 
@@ -44,11 +44,11 @@ import { ToDo } from 'src/app/@shared/models/todo.model';
   `
 })
 export class CreateToDoComponent implements OnInit {
-  createToDoForm: FormGroup;
+  createToDoForm: UntypedFormGroup;
 
   constructor(
     public dialogRef: MatDialogRef<CreateToDoComponent>,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
   ) {
     this.createToDoForm =
     this.formBuilder.group({

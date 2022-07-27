@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserDataService } from 'src/app/@services/user-data.service';
 import { ErrorHandlerService } from 'src/app/@services/error-handler.service';
@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./report-issue.component.scss']
 })
 export class ReportIssueComponent implements OnInit  {
-  issueForm: FormGroup;
+  issueForm: UntypedFormGroup;
   issueImgSrc = '';
   user: any;
   issueSubmited = false;
@@ -24,7 +24,7 @@ export class ReportIssueComponent implements OnInit  {
   constructor(
     private userDataService: UserDataService,
     private errorHandlerService: ErrorHandlerService,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private snackbar: MatSnackBar,
   ) {}
 
