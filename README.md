@@ -1,24 +1,15 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/43992e753d15400c98b7dd86327d9ecb)](https://www.codacy.com/gh/BaiGanio/baiganio.github.io/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BaiGanio/baiganio.github.io&amp;utm_campaign=Badge_Grade)  [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/43992e753d15400c98b7dd86327d9ecb)](https://www.codacy.com/gh/BaiGanio/baiganio.github.io/dashboard?utm_source=github.com&utm_medium=referral&utm_content=BaiGanio/baiganio.github.io&utm_campaign=Badge_Coverage)
 ![Build & Deploy workflow](https://github.com/BaiGanio/baiganio.github.io/actions/workflows/build-and-deploy.yml/badge.svg)
-# _BaiGanio_
-This project aims self-creativity & is nothing but a playground where development skills are challenged for fun!!
-
-This app turns out to be somehow a portfolio for the collaborators & indeed looks like very successful approach ;)
+# _baiganio.github.io_
+- This project aims self-creativity & is nothing but a playground where development skills are challenged for fun!!
+- This app turns out to be somehow a portfolio for the collaborators & indeed looks like very successful approach ;)
 ***
-_Use this quick explanation to setup yourself faster._
-## _Local development environment_
-In the project directory (baiganio.github.io folder):
-- [x] Run `ng --version` to see more detailed information
-  - current project Angular CLI is `13.3.7`
-  - current project [Node.js](https://nodejs.org) is `14.15.3`
-
-  <a target="_blank" href="https://raw.githubusercontent.com/BaiGanio/baiganio.github.io/master/.wiki/check-project-version.png" title="">
-  <img src="/.wiki/check-project-version.png" width="100%" alt="">
-</a>
-
+## _Local environment setup_
+Once cloned/downloaded,  in the project directory folder:
+- [x] Run `ng v` to see current project Angular CLI & TypeScript versions
+- [x] Run `node -v` to check your current [Node.js](https://nodejs.org) version
 - [x] Run `npm install`
-- [x] Run `npm run start` or alternatively `ng serve -c=local -o`  
-- application will open automatically at `http://localhost:5003/` 
+- [x] Run `npm run start` or alternatively `ng serve -c=local -o`  & application will start & then open automatically at `http://localhost:5003/` 
 - configure your own port as find `serve` section, then  `options` in `angular.json` file
 
 ```javascript
@@ -77,11 +68,6 @@ _We use [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions
 _`Production` deploy for your own use could be done manually with the following steps:_
   - [x] Run `ng build --base-href="https://your-app-name.github.io"` 
   - [x] Take the build artifacts from the `dist/` folder  
-  
-_Version is updated manually from [package.json](https://github.com/BaiGanio/baiganio.github.io/blob/master/package.json) file._
-  - if version is 6.1.12
-  - 6.1.12 = 2021 - 2015 = 6; January = 1; Date = 12
-  - 2015 is the the year of BaiGanio account creation
 ---
 ## _Running unit tests & measure code coverage_
  _[Karma](https://karma-runner.github.io) is out of the box test runner, as well as [Jasmine](https://jasmine.github.io/) like a testing framework.
@@ -90,7 +76,7 @@ We use several ways to work with the tests in the project:_
   - to execute the unit tests & explore them in the browser
 - [x] Run `npm run test:headless` 
   - unit tests execution result is visible in the terminal & no browser is open
-- [x] Check this [Unit-Testing-Setup.md](/documentation/Unit-Testing-Setup.md) article on `how to?`
+- [x] Check this [Unit-Testing-Setup.md](https://github.com/BaiGanio/baiganio.github.io/blob/master/%40wiki/articles/angular/Unit-Testing-Setup-in-Angular.md) article on `how to?`
   - configure [karma.config.js](https://github.com/BaiGanio/baiganio.github.io/blob/master/karma.conf.js) & [package.json](https://github.com/BaiGanio/baiganio.github.io/blob/master/package.json) files
   - investigate code coverage report
 ----
