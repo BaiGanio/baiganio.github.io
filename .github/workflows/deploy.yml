@@ -1,10 +1,11 @@
-name: Reusable Deploy to GitHub Pages workflow
+name: Reusable [Download & Deploy artifacts to GitHub Pages] workflow
 
 on:
   workflow_call:
 
 jobs:
   deploy:
+    name: Download & Deploy artifacts to GitHub Pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
