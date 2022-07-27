@@ -4,6 +4,7 @@ on:
   workflow_call:
 
 jobs:
+  build-and-upload-artifacts:
     name: Build & Upload artifacts
     runs-on: ubuntu-latest
     steps:
