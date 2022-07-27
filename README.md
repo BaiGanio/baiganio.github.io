@@ -9,35 +9,14 @@ Once cloned/downloaded,  in the project directory folder:
 - [x] Run `ng v` to see current project Angular CLI & TypeScript versions
 - [x] Run `node -v` to check your current [Node.js](https://nodejs.org) version
 - [x] Run `npm install`
-- [x] Run `npm run start` or alternatively `ng serve -c=local -o`  & application will start & then open automatically at `http://localhost:5003/` 
-- configure your own port as find `serve` section, then  `options` in `angular.json` file
+- [x] Run 
+- `npm run start:test` to work directly with [https://test-bgapi.azurewebsites.net/](https://test-bgapi.azurewebsites.net/) 
+- `npm run start` or alternatively `ng serve -c=local -o`  if you hve [BGAPI]() locally  
+- both commands will start the application & then it opens automatically at `http://localhost:5003/`
 
-```javascript
-"serve": {
-  "builder": "@angular-devkit/build-angular:dev-server",
-  "options": {
-    "browserTarget": "baiganio:build",
-    "port": 5003
-  }
-
-  ... 
-}
-```
-- update application port in  [environment.local.ts](https://github.com/BaiGanio/baiganio.github.io/blob/master/src/environments/environment.local.ts) & [environment.test.ts]() files
-
-```javascript
-export const environment = {
-    production: false,
-    env: 'local',
-    appUrl: 'http://localhost:5003/', // <-- update here!
-    apiUrl: 'https://localhost:44364/api/'
-
-  ...
-}
-```
-- [x] Run `npm run start:test` to work with [https://test-bgapi.azurewebsites.net/](https://test-bgapi.azurewebsites.net/) API directly
-- dependencies are presented in [package.json](https://github.com/BaiGanio/baiganio.github.io/blob/master/package.json) file
-- project setup could be made in [angular.json](https://github.com/BaiGanio/baiganio.github.io/blob/master/angular.json) file
+- [x] Dependencies are presented in [package.json](https://github.com/BaiGanio/baiganio.github.io/blob/master/package.json) file
+- [x] Project setup could be made in [angular.json](https://github.com/BaiGanio/baiganio.github.io/blob/master/angular.json) file
+- [x] Usage of environment variables is configured in [environment.*.ts](https://github.com/BaiGanio/baiganio.github.io/blob/master/src/environments/) files
 ---
 ## _Code scaffolding_
 - [x] To generate a new component run:
