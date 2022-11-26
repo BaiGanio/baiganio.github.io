@@ -2,25 +2,25 @@
 ![Build & Deploy workflow](https://github.com/BaiGanio/baiganio.github.io/actions/workflows/build-and-deploy.yml/badge.svg)
 # `baiganio.github.io`
 - This project aims self-creativity & is nothing but a playground where development skills are challenged for fun!!
-- This app turns out to be somehow a portfolio for the collaborators & indeed looks like very successful approach ;)
+- This app turns out to be somehow a portfolio for the collaborators & a workbench for testing new technologies ;)
 ***
 ## _Getting started (local environment setup)_
-- [x] Run `ng v` to see current project [Angular CLI](https://angular.io/cli) & [TypeScript](https://www.typescriptlang.org/) versions
-- [x] Run `node -v` to check your current [Node.js](https://nodejs.org) version
+- [x] Check your current <a href="https://nodejs.org" target="_blank">Node.js</a> version by executing `node -v`
 - [x] Run `npm install`
+- [x] Execite `ng v` to see your current project [Angular CLI](https://angular.io/cli) & [TypeScript](https://www.typescriptlang.org/) versions
 - [x] Run 
 - `npm run start:test` to work directly with [https://test-bgapi.azurewebsites.net/](https://test-bgapi.azurewebsites.net/) 
-- `npm run start` or alternatively `ng serve -c=local -o`  if you have [BGAPI]() locally  
+- `npm run start` or alternatively `ng serve -c=local -o` if you have [BGAPI]() project locally  
   - both commands will start the application wich then opens automatically at `http://localhost:5003/`
 
 ---
 ## _Build_
 - [x] Run `ng build` for a local build
-- [x] Run `ng build -c=prod` for a production build
+- [x] Run `ng build -c=prod` for a production build *
   - build artifacts are stored in the `dist/` folder
   - ensure tests passes before that
 
-_`Build` for your own usage is better to be done after configuring [environment.*.ts](https://github.com/BaiGanio/baiganio.github.io/blob/master/src/environments/) files. Details can be read in [Configuring-Environment-Variables](https://github.com/BaiGanio/baiganio.github.io/wiki/Configuring-Environment-Variables) wiki page._
+_ `Building artefacts` for your own usage is better to be done after configuring [environment.*.ts](https://github.com/BaiGanio/baiganio.github.io/blob/master/src/environments/) files. Details can be read in [Configuring-Environment-Variables](https://github.com/BaiGanio/baiganio.github.io/wiki/Configuring-Environment-Variables) wiki page._
 
 ---
 ## _Deploy_
@@ -28,7 +28,7 @@ _We use [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions
 - Configuration could be found in [build-and-deploy.yml](https://github.com/BaiGanio/baiganio.github.io/blob/master/.github/workflows/build-and-deploy.yml) file.
 - `Workflow` is triggered on push or pull-request against master branch
    
-_`Production` deploy for your own use could be done manually  following the steps in [Configuring-Production-Deploy](https://github.com/BaiGanio/baiganio.github.io/wiki/Configuring-Production-Deploy) wiki page._
+_`Production` deploy for your own use could be done manually following the steps in [Configuring-Production-Deploy](https://github.com/BaiGanio/baiganio.github.io/wiki/Configuring-Production-Deploy) wiki page._
  
   
 ---
