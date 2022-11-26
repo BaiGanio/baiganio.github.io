@@ -5,6 +5,7 @@ export const environment = {
   appUrl: 'http://localhost:5003/',
   apiUrl: 'https://test-bgapi.azurewebsites.net/api/',
   idsUrl: 'https://free-is4.azurewebsites.net/',
+  todoApiUrl: 'https://localhost:44338/api/todo/',
 
   IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
   bgapiSignalRNotyfyHub: 'https://test-bgapi.azurewebsites.net/notify',
