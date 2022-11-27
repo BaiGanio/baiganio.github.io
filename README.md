@@ -16,7 +16,7 @@
 ---
 ## _Build_
 - [x] Run `ng build` for a local build
-- [x] Run `ng build -c=prod` for a production build
+- [x] Run `ng build -c=prod` for a production build *
   - build artifacts are stored in the `dist/` folder
   - ensure tests passes before that
 

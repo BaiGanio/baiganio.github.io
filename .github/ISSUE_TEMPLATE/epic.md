@@ -1,6 +1,6 @@
 ---
 name: Epic
-about: Use this template to streamline information you track about large projects and user stories.
+about: Use this template to streamline information about large projects and user stories.
 title: 'Your-Epic-Title-Here'
 labels: 'Epic'
 assignees: ''
