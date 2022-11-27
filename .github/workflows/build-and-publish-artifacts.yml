@@ -1,4 +1,4 @@
-name: CI/CD (Build & Deploy)
+name: CI/CD (Build & Publish artifacts)
 
 on:
   push:
