@@ -37,7 +37,7 @@
     "jwt-decode": "^2.2.0",
     "ng2-charts": "^2.4.3",
     "ngx-markdown": "14.0.1",
-    "npm": "^6.14.6",
+    "npm": "^9.4.1",
     "rxjs": "~6.6.3",
     "rxjs-compat": "^6.6.3",
     "save-dev": "^0.0.1-security",
