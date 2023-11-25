@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { BackendService } from './backend.service';
 import { Observable } from 'rxjs';
-
+import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class CoursesService {
 
-  constructor(private backendService: BackendService) { }
+  constructor(private backendService: BackendService, private http: HttpClient) { }
 
   deleteAllCourses(): Observable<any> {
     return this.backendService.backendRequest('get', 'Admin/DeleteAllCourses', null, true);
   }
   getCoursesPreview(): Observable<any> {
-    return this.backendService.backendRequest('get', 'Courses', null, false);
+    //return this.backendService.backendRequest('get', 'Courses', null, false);
+    return this.http.get("https://localhost:44364/api/Courses");
   }
   getCoursesByUserId(): Observable<any> {
     return this.backendService.backendRequest('get', 'Courses/ByUserId', null, true);

@@ -47,37 +47,41 @@ export class SubscriptionsComponent implements OnInit {
 
     ngOnInit() {
         this.loading = true;
-        if (this.route.snapshot.params.token) {
-            this.checkRouteParameters();
-        }
-        if (this.authService.isAuthenticated() && this.storedUser === undefined) {
-            this.storedUserInit();
-        }
+        // if (this.route.snapshot.params.token) {
+        //     this.checkRouteParameters();
+        // }
+        // if (this.authService.isAuthenticated() && this.storedUser === undefined) {
+        //     this.storedUserInit();
+        // }
         this.subscriptionsInit();
     }
 
     private subscriptionsInit() {
-        this.subscriptionsService.getAllSubscriptions().subscribe(response => {
-            response.body.forEach(element => {
-                const s = {
-                    Id: element.id,
-                    Type: element.type,
-                    Description: element.description,
-                    IsActive: element.isActive,
-                    Image: element.imgUrl,
-                    TotalSubscribers: element.totalSubscribers,
-                    ConfirmedSubscribers: element.confirmedSubscribers,
-                    PendingSubscribers: element.pendingSubscribers,
-                    CancelledSubscribers: element.cancelledSubscribers,
-                    CreatedOn: element.createdOn,
-                    ModifiedOn: element.modifiedOn
-                };
-                this.subscriptions.push(s as SubscriptionPreviewModel);
-            });
-        }, error => {
-            this.errorHandlerService.handleRequestError(error);
-            this.loading = false;
-        }, () => { this.loading = false; this.isInitMsg = false;});
+        this.subscriptionsService.getAllSubscriptions().subscribe({
+            next: (response) => {
+                response.forEach(element => {
+                    const s = {
+                        Id: element.id,
+                        Type: element.type,
+                        Description: element.description,
+                        IsActive: element.isActive,
+                        Image: element.imgUrl,
+                        TotalSubscribers: element.totalSubscribers,
+                        ConfirmedSubscribers: element.confirmedSubscribers,
+                        PendingSubscribers: element.pendingSubscribers,
+                        CancelledSubscribers: element.cancelledSubscribers,
+                        CreatedOn: element.createdOn,
+                        ModifiedOn: element.modifiedOn
+                    };
+                    this.subscriptions.push(s as SubscriptionPreviewModel);
+                });
+            }, 
+            error: (error) => {
+                this.errorHandlerService.handleRequestError(error);
+                this.loading = false;
+            }, 
+            complete: () => { this.loading = false; this.isInitMsg = false;}
+        });
     }
 
     private storedUserInit() {

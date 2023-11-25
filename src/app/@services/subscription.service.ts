@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BackendService } from './backend.service';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class SubscriptionService {
 
-  constructor(private backendService: BackendService) { }
+  constructor(private backendService: BackendService, private http: HttpClient) { }
 
   getAllSubscriptions(): Observable<any> {
-    return this.backendService.backendRequest('get', 'Subscriptions', null, false);
+    //return this.backendService.backendRequest('get', 'Subscriptions', null, false);
+    return this.http.get("https://localhost:44364/api/Subscriptions");
   }
 
   getUserActiveSubscriptions(): Observable<any> {

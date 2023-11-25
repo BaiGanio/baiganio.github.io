@@ -4,7 +4,7 @@
 <br>
 <!-- Subscriptions -->
 <div class='row text-center'>
-  <h3 class="wait-fetching" *ngIf='loading && isInitMsg'>Please wait! Fetching data...</h3>
+  <h3 class="wait-fetching" *ngIf='loading && isInitMsg'>Please wait! Fetching data from the server...</h3>
   <div id="subscriptions-list" class="col-md-4" *ngFor='let s of subscriptions;'>
     <div class="card">
       <div class="card-body">
@@ -18,7 +18,7 @@
           <br>
           <hr>
           <p *ngIf='s.IsActive' id="subscrStatus">Active : {{s.IsActive}}</p>
-          <p *ngIf='!s.IsActive' id="subscrStatus">Subscription in development!</p>
+          <p *ngIf='!s.IsActive'>[In development]</p>
 
           <!-- <span *ngIf='s.IsActive'>
             <span *ngIf='s.IsActive && isConfirmed(s.Id) === false && isWaitingForConfirmation(s.Id) === false'>
@@ -30,8 +30,9 @@
           </span>
             <div style="color: blue;" *ngIf='isWaitingForConfirmation(s.Id)'>Waiting for confirmation!</div>
         </span> -->
-        <button mat-raised-button class="search" (click)=getSubscriptionPreview(s.Id)>
-          <!-- <i class="fas fa-search"></i> -->
+       <p style="text-align:left">{{s.Description}}</p>
+        <!-- <button mat-raised-button class="search" (click)=getSubscriptionPreview(s.Id)>
+           <i class="fas fa-search"></i> 
           read more...
         </button>
         <button *ngIf='s.IsActive && showRequest(s.Id)' mat-stroked-button (click)=sendRequest(s.Id) class="search">
@@ -41,7 +42,7 @@
 
           <span class="prev" *ngIf='s.IsActive && showPreview(s.Id)'>
             Preview from -> (<span class="request-sm" (click)=goToMySubscriptions()>here!</span>)
-          </span>
+          </span> -->
         </div>
       </div>
     </div>

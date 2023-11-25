@@ -81,29 +81,32 @@ export class CoursesComponent implements OnInit {
   }
 
   getInitCourses() {
-    this.courseService.getCoursesPreview().subscribe(response => {
-      response.body.forEach(element => {
-        const c = {
-          Id: element.id,
-          Name: element.name,
-          Teachers: element.teachers,
-          Description: element.description,
-          StartDate: element.startDate,
-          EndDate: element.endDate,
-          ModifiedOn: element.modifiedOn,
-          ImgUrl: element.imgUrl,
-          IsActive: element.isActive,
-          IsElectable: element.isElectable,
-          EnrolledStudents: element.enrolledStudents,
-          EnrolledUserId: element.enrolledUserId
-        };
-        this.courses.push(c as CoursePreviewModel);
-      });
-    },
-     error => {
-       this.errorHandlerService.handleRequestError(error);
-       this.loading = false;
-    }, () => { this.loading = false; this.isInitMsg = false});
+    this.courseService.getCoursesPreview().subscribe({
+      next: (response) => {
+        response.forEach(element => {
+          const c = {
+            Id: element.id,
+            Name: element.name,
+            Teachers: element.teachers,
+            Description: element.description,
+            StartDate: element.startDate,
+            EndDate: element.endDate,
+            ModifiedOn: element.modifiedOn,
+            ImgUrl: element.imgUrl,
+            IsActive: element.isActive,
+            IsElectable: element.isElectable,
+            EnrolledStudents: element.enrolledStudents,
+            EnrolledUserId: element.enrolledUserId
+          };
+          this.courses.push(c as CoursePreviewModel);
+        });
+      },
+      error: (error) => {
+        this.errorHandlerService.handleRequestError(error);
+        this.loading = false;
+      },
+      complete: () => { this.loading = false; this.isInitMsg = false}
+    });
   }
 
   private storedUserInit() {
