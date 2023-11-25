@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BackendService } from './backend.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class SubscriptionService {
@@ -10,7 +11,7 @@ export class SubscriptionService {
 
   getAllSubscriptions(): Observable<any> {
     //return this.backendService.backendRequest('get', 'Subscriptions', null, false);
-    return this.http.get("https://localhost:44364/api/Subscriptions");
+    return this.http.get(`${environment.apiUrl}/subscriptions`);
   }
 
   getUserActiveSubscriptions(): Observable<any> {

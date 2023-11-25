@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { BackendService } from './backend.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class CoursesService {
 
@@ -12,7 +14,7 @@ export class CoursesService {
   }
   getCoursesPreview(): Observable<any> {
     //return this.backendService.backendRequest('get', 'Courses', null, false);
-    return this.http.get("https://localhost:44364/api/Courses");
+    return this.http.get(`${environment.apiUrl}/courses`);
   }
   getCoursesByUserId(): Observable<any> {
     return this.backendService.backendRequest('get', 'Courses/ByUserId', null, true);
