@@ -14,7 +14,7 @@ export class CoursesService {
   }
   getCoursesPreview(): Observable<any> {
     //return this.backendService.backendRequest('get', 'Courses', null, false);
-    return this.http.get(`${environment.apiUrl}/courses`);
+    return this.http.get(`${environment.apiUrl}` + 'courses');
   }
   getCoursesByUserId(): Observable<any> {
     return this.backendService.backendRequest('get', 'Courses/ByUserId', null, true);

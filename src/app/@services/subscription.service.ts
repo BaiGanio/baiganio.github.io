@@ -11,7 +11,7 @@ export class SubscriptionService {
 
   getAllSubscriptions(): Observable<any> {
     //return this.backendService.backendRequest('get', 'Subscriptions', null, false);
-    return this.http.get(`${environment.apiUrl}/subscriptions`);
+    return this.http.get(`${environment.apiUrl}` + 'subscriptions');
   }
 
   getUserActiveSubscriptions(): Observable<any> {
