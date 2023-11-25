@@ -13,8 +13,8 @@ const environmentFileContent = `
     todoApiUrl: 'https://vsg-todo-api.azurewebsites.net/api/todo/',
 
     IPCheckingServiceUrl: 'https://api.ipify.org?format=json',
-    bgapiSignalRNotyfyHub: 'https://bgapi.azurewebsites.net/notify',
-    bgapiSignalRChartHub: 'https://bgapi.azurewebsites.net/chart',
+    bgapiSignalRNotyfyHub: 'https://bgapi-test.azurewebsites.net/notify',
+    bgapiSignalRChartHub: 'https://bgapi-test.azurewebsites.net/chart',
     identityServerClientCredentials: {
       client_id: 'baiganio-client',
       client_secret: '${process.env.IS4_BAIGANIO_CLIENT_SECRET}',
