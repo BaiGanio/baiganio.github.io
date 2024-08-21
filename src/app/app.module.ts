@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './@pages/footer/footer.component';
 import { CoursesModule } from './@modules/courses/courses.module';
 import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './@modules/account/pages/login/login.component';
 import { RegisterComponent } from './@modules/account/pages/register/register.component';
@@ -52,8 +52,7 @@ import { SearchFilterPipe } from './@shared/pipes/search-filter.pipe';
 import { ArticlesModule } from './@modules/articles/articles.module';
 import { MarkdownModule } from 'ngx-markdown';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         AppComponent,
         FooterComponent,
         HomeComponent,
@@ -82,13 +81,12 @@ import { MarkdownModule } from 'ngx-markdown';
         ProjectsComponent,
         SearchFilterPipe,
     ],
-    imports: [
-        BrowserModule,
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA], imports: [BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule,
         AngularMaterialModule,
         CoreModule,
         AccountModule,
@@ -100,7 +98,7 @@ import { MarkdownModule } from 'ngx-markdown';
         TeachersModule,
         WorkbenchModule,
         ArticlesModule,
-        MarkdownModule.forRoot({ loader: HttpClient, sanitize: SecurityContext.NONE }) ,
+        MarkdownModule.forRoot({ loader: HttpClient, sanitize: SecurityContext.NONE }),
         JwtModule.forRoot({
             config: {
                 tokenGetter: jwtTokenGetter
@@ -114,14 +112,9 @@ import { MarkdownModule } from 'ngx-markdown';
         }),
         EffectsModule.forRoot([
             LoadingEffects,
-           // UserEffects,
+            // UserEffects,
             // HistoryEffects
-        ]),
-    ],
-    providers: [CoreModule],
-    bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
+        ])], providers: [CoreModule, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
 
 export function jwtTokenGetter() {
