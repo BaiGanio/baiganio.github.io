@@ -52,19 +52,19 @@ export class CreateToDoComponent implements OnInit {
   //   matInput
   //   [matDatepicker]="startDatePicker"
   //   formControlName="date"
-    placeholder="Date" required>
-    <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
-    <mat-datepicker #startDatePicker></mat-datepicker>
-    <mat-error *ngIf="createToDoForm.get('date').hasError('required')">
-    Date is required!
-    </mat-error>
-    </mat-form-field>
-    <p></p>
-    <button
-      class="ml-3"
-      mat-stroked-button
-      (click)="create()"
-      color="primary"
+    // placeholder="Date" required>
+    // <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+    // <mat-datepicker #startDatePicker></mat-datepicker>
+    // <mat-error *ngIf="createToDoForm.get('date').hasError('required')">
+    // Date is required!
+    // </mat-error>
+    // </mat-form-field>
+    // <p></p>
+    // <button
+    //   class="ml-3"
+    //   mat-stroked-button
+    //   (click)="create()"
+    //   color="primary"
   //     [disabled]="!createToDoForm.valid || !createToDoForm.dirty">
   //      Confirm
   //   </button>
