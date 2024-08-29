@@ -10,17 +10,17 @@ import { environment } from 'src/environments/environment';
 })
 export class ChartComponent implements OnInit, OnDestroy {
 
-  public chartOptions: any = {
-    scaleShowVerticalLines: true,
-    responsive: true,
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true
-        }
-      }]
-    }
-  };
+  public chartOptions: any = {};
+  //   scaleShowVerticalLines: true,
+  //   responsive: true,
+  //   scales: {
+  //     yAxes: [{
+  //       ticks: {
+  //         beginAtZero: true
+  //       }
+  //     }]
+  //   }
+  // };
   public chartLabels: string[] = ['Real time data for the chart'];
   public chartType: string = 'bar';
   public chartLegend: boolean = true;
