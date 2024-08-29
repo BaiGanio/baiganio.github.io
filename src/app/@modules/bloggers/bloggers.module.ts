@@ -5,7 +5,7 @@ import { BloggersRoutingModule } from './bloggers-routing.module';
 import { BloggerComponent } from './components/blogger/blogger.component';
 import { BloggersComponent } from './bloggers.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EditorModule } from "@tinymce/tinymce-angular";
+//import { EditorModule } from "@tinymce/tinymce-angular";
 
 @NgModule({
     declarations: [
@@ -19,7 +19,7 @@ import { EditorModule } from "@tinymce/tinymce-angular";
         FormsModule,
         ReactiveFormsModule,
         // StoreModule.forRoot({ bloggers: bloggersReducer }),
-        EditorModule,
+        //EditorModule,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
