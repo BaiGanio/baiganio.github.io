@@ -27,6 +27,7 @@
     "@auth0/angular-jwt": "^2.1.2",
     "@microsoft/signalr": "^5.0.8",
     "@ngrx/effects": "18.0.2",
+    "@ngrx/operators": "^18.0.0",
     "@ngrx/store": "18.0.2",
     "@tinymce/tinymce-angular": "^4.2.4",
     "@types/signalr": "^2.2.37",
@@ -42,15 +43,14 @@
     "rxjs-compat": "^6.6.3",
     "save-dev": "^0.0.1-security",
     "tslib": "^2.3.1",
-    "zone.js": "~0.14.10",
-    "@ngrx/operators": "^18.0.0"
+    "zone.js": "~0.14.10"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.2.1",
     "@angular-eslint/builder": "18.3.0",
     "@angular-eslint/eslint-plugin": "18.3.0",
     "@angular-eslint/eslint-plugin-template": "18.3.0",
-    "@angular-eslint/schematics": "18.3.0",
+    "@angular-eslint/schematics": "^18.3.0",
     "@angular-eslint/template-parser": "18.3.0",
     "@angular/cli": "^18.2.1",
     "@angular/compiler-cli": "^18.2.2",
