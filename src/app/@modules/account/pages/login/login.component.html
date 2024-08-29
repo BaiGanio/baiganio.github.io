@@ -1,6 +1,6 @@
 <h1 class="title">Local Account</h1>
 <hr>
-<mat-progress-bar mode="indeterminate" *ngIf='loading'></mat-progress-bar>
+<!-- <mat-progress-bar mode="indeterminate" *ngIf='loading'></mat-progress-bar> -->
 <br>
 <div class="row justify-content-center">
   <div class="dim" *ngIf='loginError'>
@@ -21,28 +21,28 @@
     <section id="viewLogin">
       <br>
       <!-- START FORM -->
-      <form [formGroup]="loginForm" (ngSubmit)="sendLoginRequest()">
+      <!-- <form [formGroup]="loginForm" (ngSubmit)="sendLoginRequest()"> -->
         <!-- Email -->
-        <mat-form-field class="w-100 mb-3">
+        <!-- <mat-form-field class="w-100 mb-3">
           <input type="email" matInput formControlName="email" placeholder="Email">
           <mat-error *ngIf="loginForm.get('email').hasError('required')">This field is required!</mat-error>
           <mat-error *ngIf="loginForm.get('email').hasError('email')">Invalid input format!</mat-error>
-        </mat-form-field>
+        </mat-form-field> -->
         <br>
         <!-- Password -->
-        <mat-form-field class="w-100 mb-5">
+        <!-- <mat-form-field class="w-100 mb-5">
           <input type="password" matInput formControlName="password" placeholder="Password">
           <mat-error *ngIf="loginForm.get('password').hasError('required')">This field is required!</mat-error>
           <mat-error *ngIf="loginForm.get('password').hasError('minlength')">Min lenght should be 3 characters!
           </mat-error>
-        </mat-form-field>
+        </mat-form-field> -->
         <!-- Remember me -->
-        <mat-checkbox color="primary" formControlName="rememberMe" [disabled]="!loginForm.valid">Remember Me?
-        </mat-checkbox>
+        <!-- <mat-checkbox color="primary" formControlName="rememberMe" [disabled]="!loginForm.valid">Remember Me?
+        </mat-checkbox> -->
         <br>
         <!--Button GO-->
         <input type="submit" class="login-button" value="GO" [disabled]="!loginForm.valid">
-      </form>
+      <!-- </form> -->
       <!-- END FORM -->
     </section>
   </div>

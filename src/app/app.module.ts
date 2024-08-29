@@ -99,11 +99,11 @@ import { MarkdownModule } from 'ngx-markdown';
         WorkbenchModule,
         ArticlesModule,
         MarkdownModule.forRoot({ loader: HttpClient, sanitize: SecurityContext.NONE }),
-        JwtModule.forRoot({
-            config: {
-                tokenGetter: jwtTokenGetter
-            }
-        }),
+        // JwtModule.forRoot({
+        //     config: {
+        //         tokenGetter: jwtTokenGetter
+        //     }
+        // }),
         StoreModule.forRoot({
             user: userReducer,
             loading: loadingReducer,
