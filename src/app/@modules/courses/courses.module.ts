@@ -9,11 +9,11 @@ import { MyCoursesComponent } from './views/my-courses/my-courses.component';
 import { CourseDetailsComponent } from './views/course-details/course-details.component';
 import { InClassComponent } from './components/in-class/in-class.component';
 import { ScoreComponent } from './components/score/score.component';
-import { PiechartComponent } from 'src/app/@components/charts/piechart/piechart.component';
-import { BarchartComponent } from 'src/app/@components/charts/barchart/barchart.component';
-import { DoughnutComponent } from 'src/app/@components/charts/doughnut/doughnut.component';
-import { LinechartComponent } from 'src/app/@components/charts/linechart/linechart.component';
-import { PolarareaComponent } from 'src/app/@components/charts/polararea/polararea.component';
+// import { PiechartComponent } from 'src/app/@components/charts/piechart/piechart.component';
+// import { BarchartComponent } from 'src/app/@components/charts/barchart/barchart.component';
+// import { DoughnutComponent } from 'src/app/@components/charts/doughnut/doughnut.component';
+// import { LinechartComponent } from 'src/app/@components/charts/linechart/linechart.component';
+// import { PolarareaComponent } from 'src/app/@components/charts/polararea/polararea.component';
 import { CoursesDetailsComponent } from './views/courses-details/courses-details.component';
 
 @NgModule({
@@ -24,12 +24,12 @@ import { CoursesDetailsComponent } from './views/courses-details/courses-details
         CourseDetailsComponent,
         CoursesDetailsComponent,
         InClassComponent,
-        ScoreComponent,
-        LinechartComponent,
-        BarchartComponent,
-        DoughnutComponent,
-        PiechartComponent,
-        PolarareaComponent
+        ScoreComponent
+        // LinechartComponent,
+        // BarchartComponent,
+        // DoughnutComponent,
+        // PiechartComponent,
+        // PolarareaComponent
     ],
     imports: [
         CommonModule,
