@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect } from '@ngrx/effects';
 
 @Injectable()
 export class LoadingEffects {
-    constructor(
-        private _actions: Actions,
-    ) { }
+    // constructor(
+    //     private _actions: Actions,
+    // ) { }
 
     // @Effect()
     // enableLoading: Observable<Action> = this._actions
