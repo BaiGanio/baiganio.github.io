@@ -9,7 +9,7 @@ import { ChannelPlaylist } from './models/channel-playlist.model';
   selector: 'app-playlists',
   template:
   `
-    <ngx-loading [show]="loading"></ngx-loading>
+   
     <h1 class="title">Playlists</h1>   
     <hr>  
     <br>
@@ -22,7 +22,6 @@ import { ChannelPlaylist } from './models/channel-playlist.model';
                     <br><br>                   
                     <h3>{{ playList.title }}</h3>
                     <hr> 
-                    <h5>Published @ {{ playList.publishedAt | date :'dd-MMMM-yyyy' }}</h5>
                     <br>
                     <button 
                         mat-raised-button

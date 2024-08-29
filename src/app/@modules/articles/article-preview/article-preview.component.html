@@ -7,7 +7,7 @@
 </div>
 <div *ngIf="!isMarkdownUrl" class="container">
   <h1>{{ article?.title }}</h1>
-  <p>Created @ {{ article?.createdOn | date :'dd-MM-yyyy' }} by author {{ article?.bloggerMickname }}</p>
+  <p>Created {{ article?.createdOn | date :'dd-MM-yyyy' }} by author {{ article?.bloggerMickname }}</p>
   <hr>
   <br>
   <img src='{{ article?.imgUrl }}' class="img-thumbnail img-fluid" alt="Sample image">

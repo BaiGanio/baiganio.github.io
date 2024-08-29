@@ -15,8 +15,8 @@
           <br><br>
           <h5>{{ a.title }}</h5>
           <hr>
-          <p>Created @ {{ a.createdOn | date :'dd-MM-yyyy' }}</p>
-          <p>Updated @ {{ a.modifiedOn | date :'dd-MM-yyyy' }}</p>
+          <p>Created {{ a.createdOn | date :'dd-MM-yyyy' }}</p>
+          <p>Updated {{ a.modifiedOn | date :'dd-MM-yyyy' }}</p>
           <p>Author: {{ a.bloggerNickname }}</p>
           <br>
           <button

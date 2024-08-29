@@ -9,7 +9,6 @@ import { PlaylistItem } from '../models/playlist-item.model';
   selector: 'app-playlist-items',
   template:
   `
-    <ngx-loading [show]="loading"></ngx-loading>
     <h1 class="title">Videos</h1>
     <hr>
     <br>
@@ -18,17 +17,7 @@ import { PlaylistItem } from '../models/playlist-item.model';
     <div class="row text-center">
         <div *ngFor='let item of playListItems' class="col-md-6">
             <div class="card">
-                <div class="card-body">
-                    <youtube-player videoId="{{item.id}}"></youtube-player>
-                    <br><br>
-                    <h3>{{ item.title }}</h3>
-                    <hr>
-                    <h5>Published @ {{ item.publishedAt | date :'dd-MMMM-yyyy' }}</h5>
-                    <br>
-                    <button mat-raised-button color="primary" (click)="openPlaylistItem(item.id)">
-                        Watch the video on YouTube
-                    </button>
-                </div>
+               
             </div>
         </div>
     </div>
