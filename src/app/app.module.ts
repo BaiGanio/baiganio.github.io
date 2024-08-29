@@ -42,10 +42,10 @@ import { PlaylistItemsComponent } from './@pages/playlists/playlist-items/playli
 import { PlaylistsComponent } from './@pages/playlists/playlists.component';
 import { tutorialReducer } from './@store/reducers/tutorial.reducer';
 import { TeachersModule } from './@modules/teachers/teachers.module';
-import { TodosComponent } from './@pages/todos/todos.component';
-import { CreateToDoComponent } from './@pages/todos/create-todo/create-todo.component';
-import { DeleteToDoComponent } from './@pages/todos/delete-todo/delete-todo.component';
-import { UpdateToDoComponent } from './@pages/todos/update-todo/update-todo.component';
+// import { TodosComponent } from './@pages/todos/todos.component';
+// import { CreateToDoComponent } from './@pages/todos/create-todo/create-todo.component';
+// import { DeleteToDoComponent } from './@pages/todos/delete-todo/delete-todo.component';
+// import { UpdateToDoComponent } from './@pages/todos/update-todo/update-todo.component';
 import { WorkbenchModule } from './@modules/workbench/workbench.module';
 import { ProjectsComponent } from './@pages/projects/projects.component';
 import { SearchFilterPipe } from './@shared/pipes/search-filter.pipe';
@@ -74,10 +74,10 @@ import { MarkdownModule } from 'ngx-markdown';
         PlaylistsComponent,
         //NgbdCarouselBasicComponent,
         PlaylistItemsComponent,
-        TodosComponent,
-        CreateToDoComponent,
-        DeleteToDoComponent,
-        UpdateToDoComponent,
+        // TodosComponent,
+        // CreateToDoComponent,
+        // DeleteToDoComponent,
+        // UpdateToDoComponent,
         ProjectsComponent,
         SearchFilterPipe,
     ],
