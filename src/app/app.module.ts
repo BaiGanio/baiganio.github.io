@@ -25,7 +25,7 @@ import { UnauthorizedComponent } from './@components/errors/unauthorized/unautho
 import { DashboardModule } from './@modules/dashboard/dashboard.module';
 import { ProfileModule } from './@modules/profile/profile.module';
 import { AccountModule } from './@modules/account/account.module';
-import { QuestionnaireComponent } from './@components/questionnaire/questionnaire.component';
+// import { QuestionnaireComponent } from './@components/questionnaire/questionnaire.component';
 import { ServerErrorComponent } from './@components/errors/server-error/server-error.component';
 import { BadRequestComponent } from './@components/errors/bad-request/bad-request.component';
 import { BgTeamComponent } from './@pages/bg-team/bg-team.component';
@@ -66,7 +66,7 @@ import { MarkdownModule } from 'ngx-markdown';
         TermsComponent,
         ErrorComponent,
         UnauthorizedComponent,
-        QuestionnaireComponent,
+       // QuestionnaireComponent,
         ServerErrorComponent,
         BadRequestComponent,
         BgTeamComponent,
