@@ -39,6 +39,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/styles.scss",
               "src/assets/scss/snackbar.scss"
             ],
@@ -155,6 +156,7 @@
               "src/404.html"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/styles.scss",
               "src/assets/scss/snackbar.scss"
             ]

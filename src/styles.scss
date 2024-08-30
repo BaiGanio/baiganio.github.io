@@ -1,12 +1,12 @@
-@use '@angular/material' as mat;
-@import '@angular/material/theming';
-@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
-@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Open+Sans+Condensed:wght@300&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Quicksand&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+// @use '@angular/material' as mat;
 
-$custom-typography: mat.m2-define-typography-config($font-family: '"Comfortaa", cursive;');
-@include mat.core($custom-typography);
+// @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Open+Sans+Condensed:wght@300&display=swap');
+// @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Quicksand&display=swap");
+// @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+// $custom-typography: mat.m2-define-typography-config($font-family: '"Comfortaa", cursive;');
+// @include mat.core();
+// @include mat.typography-hierarchy($custom-typography);
 
 @font-face {
   font-family: 'Alsandra';
@@ -220,3 +220,9 @@ body {
 @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
 @media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

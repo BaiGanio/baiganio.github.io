@@ -1,7 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders, NgModule, SecurityContext } from '@angular/core';
-import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './@core/angular-material.module';
@@ -17,7 +14,6 @@ import { FooterComponent } from './@pages/footer/footer.component';
 import { CoursesModule } from './@modules/courses/courses.module';
 import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.module';
 import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './@modules/account/pages/login/login.component';
 import { RegisterComponent } from './@modules/account/pages/register/register.component';
 import { NavbarComponent } from './@components/navbar/navbar.component';
@@ -51,6 +47,7 @@ import { ProjectsComponent } from './@pages/projects/projects.component';
 import { SearchFilterPipe } from './@shared/pipes/search-filter.pipe';
 import { ArticlesModule } from './@modules/articles/articles.module';
 import { MarkdownModule } from 'ngx-markdown';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -82,11 +79,9 @@ import { MarkdownModule } from 'ngx-markdown';
         SearchFilterPipe,
     ],
     bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA], imports: [BrowserModule,
+    schemas: [CUSTOM_ELEMENTS_SCHEMA], 
+    imports: [
         AppRoutingModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        ReactiveFormsModule,
         AngularMaterialModule,
         CoreModule,
         AccountModule,
@@ -99,22 +94,23 @@ import { MarkdownModule } from 'ngx-markdown';
         WorkbenchModule,
         ArticlesModule,
         MarkdownModule.forRoot({ loader: HttpClient, sanitize: SecurityContext.NONE }),
-        JwtModule.forRoot({
-            config: {
-                tokenGetter: jwtTokenGetter
-            }
-        }) as ModuleWithProviders<JwtModule>,
-        StoreModule.forRoot({
-            user: userReducer,
-            loading: loadingReducer,
-            // history: historyReducer
-            tutorial: tutorialReducer
-        }),
-        EffectsModule.forRoot([
-            LoadingEffects,
-            // UserEffects,
-            // HistoryEffects
-        ])], providers: [CoreModule, provideHttpClient(withInterceptorsFromDi())] })
+        // JwtModule.forRoot({
+        //     config: {
+        //         tokenGetter: jwtTokenGetter
+        //     }
+        // }) as ModuleWithProviders<JwtModule>,
+        // StoreModule.forRoot({
+        //     user: userReducer,
+        //     loading: loadingReducer,
+        //     // history: historyReducer
+        //     tutorial: tutorialReducer
+        // }),
+        // EffectsModule.forRoot([
+        //     LoadingEffects,
+        //     // UserEffects,
+        //     // HistoryEffects
+        // ])
+    ], providers: [CoreModule, provideHttpClient(withInterceptorsFromDi()), provideAnimationsAsync()] })
 export class AppModule { }
 
 export function jwtTokenGetter() {

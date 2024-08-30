@@ -18,10 +18,10 @@ import { UtilityService } from '../@services/utility.service';
 import { AuthGuard } from './auth.guard';
 import { RoleGuard } from './role.guard';
 import { BloggersService } from '../@services/bloggers.service';
-import { JwtHelperService } from '@auth0/angular-jwt';
 import { FhAlertService } from '../@shared/fh-alert/fh-alert-service';
 import { ToDoService } from '../@services/todo.service';
 import { ArticlesService } from '../@services/articles.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @NgModule({
   imports: [
@@ -45,10 +45,8 @@ import { ArticlesService } from '../@services/articles.service';
     AccountService,
     TeacherService,
     BloggersService,
-    // YouTubeService,
     ToDoService,
     ArticlesService,
-// TODO: Should be in shared module
     FhAlertService,
     ChecklistDatabase,
   ]
