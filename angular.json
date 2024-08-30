@@ -44,14 +44,8 @@
               "src/assets/scss/snackbar.scss"
             ],
             "scripts": [
-              "node_modules/hammerjs/hammer.min.js",
-              "src/assets/js/handy-clock.js"
+              "node_modules/hammerjs/hammer.js"
             ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "node_modules/"
-              ]
-            },
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,

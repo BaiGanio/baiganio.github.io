@@ -1,4 +1,7 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders, NgModule, SecurityContext } from '@angular/core';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './@core/angular-material.module';
@@ -14,6 +17,7 @@ import { FooterComponent } from './@pages/footer/footer.component';
 import { CoursesModule } from './@modules/courses/courses.module';
 import { SubscriptionsModule } from './@modules/subscriptions/subscriptions.module';
 import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './@modules/account/pages/login/login.component';
 import { RegisterComponent } from './@modules/account/pages/register/register.component';
 import { NavbarComponent } from './@components/navbar/navbar.component';
@@ -79,8 +83,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
         SearchFilterPipe,
     ],
     bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA], 
-    imports: [
+    schemas: [CUSTOM_ELEMENTS_SCHEMA], imports: [BrowserModule,
         AppRoutingModule,
         AngularMaterialModule,
         CoreModule,
@@ -94,23 +97,22 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
         WorkbenchModule,
         ArticlesModule,
         MarkdownModule.forRoot({ loader: HttpClient, sanitize: SecurityContext.NONE }),
-        // JwtModule.forRoot({
-        //     config: {
-        //         tokenGetter: jwtTokenGetter
-        //     }
-        // }) as ModuleWithProviders<JwtModule>,
-        // StoreModule.forRoot({
-        //     user: userReducer,
-        //     loading: loadingReducer,
-        //     // history: historyReducer
-        //     tutorial: tutorialReducer
-        // }),
-        // EffectsModule.forRoot([
-        //     LoadingEffects,
-        //     // UserEffects,
-        //     // HistoryEffects
-        // ])
-    ], providers: [CoreModule, provideHttpClient(withInterceptorsFromDi()), provideAnimationsAsync()] })
+        JwtModule.forRoot({
+            config: {
+                tokenGetter: jwtTokenGetter
+            }
+        }) as ModuleWithProviders<JwtModule>,
+        StoreModule.forRoot({
+            user: userReducer,
+            loading: loadingReducer,
+            // history: historyReducer
+            tutorial: tutorialReducer
+        }),
+        EffectsModule.forRoot([
+            LoadingEffects,
+            // UserEffects,
+            // HistoryEffects
+        ])], providers: [CoreModule, provideHttpClient(withInterceptorsFromDi()), provideAnimationsAsync()] })
 export class AppModule { }
 
 export function jwtTokenGetter() {

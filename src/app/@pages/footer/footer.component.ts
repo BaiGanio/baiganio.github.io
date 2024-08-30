@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 // import { TermsComponent } from 'src/app/@shared/components/terms/terms.component';
 // import { PrivacyComponent } from 'src/app/@shared/components/privacy/privacy.component';
 
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class FooterComponent implements OnInit {
   currentApplicationVersion = 7;
-  constructor(private dialog: MatDialog,  private router: Router,) { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
     console.log('Lifecycle methods should not be empty');
@@ -34,6 +34,6 @@ export class FooterComponent implements OnInit {
     // $dialogRef.afterClosed().subscribe();
   }
   goToBGTeam(){
-    this.router.navigate(['/bg-team']);
+    // this.router.navigate(['/bg-team']);
   }
 }
