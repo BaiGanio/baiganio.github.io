@@ -46,6 +46,11 @@
               "node_modules/hammerjs/hammer.min.js",
               "src/assets/js/handy-clock.js"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/"
+              ]
+            },
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,

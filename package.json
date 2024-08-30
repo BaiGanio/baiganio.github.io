@@ -24,7 +24,7 @@
     "@angular/platform-browser": "^18.2.2",
     "@angular/platform-browser-dynamic": "^18.2.2",
     "@angular/router": "^18.2.2",
-    "@auth0/angular-jwt": "^2.1.2",
+    "@auth0/angular-jwt": "^5.2.0",
     "@microsoft/signalr": "^8.0.7",
     "@ngrx/effects": "^18.0.2",
     "@ngrx/operators": "^18.0.0",

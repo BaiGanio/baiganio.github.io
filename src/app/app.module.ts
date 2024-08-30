@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, SecurityContext } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders, NgModule, SecurityContext } from '@angular/core';
 import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -99,11 +99,11 @@ import { MarkdownModule } from 'ngx-markdown';
         WorkbenchModule,
         ArticlesModule,
         MarkdownModule.forRoot({ loader: HttpClient, sanitize: SecurityContext.NONE }),
-        // JwtModule.forRoot({
-        //     config: {
-        //         tokenGetter: jwtTokenGetter
-        //     }
-        // }),
+        JwtModule.forRoot({
+            config: {
+                tokenGetter: jwtTokenGetter
+            }
+        }) as ModuleWithProviders<JwtModule>,
         StoreModule.forRoot({
             user: userReducer,
             loading: loadingReducer,
