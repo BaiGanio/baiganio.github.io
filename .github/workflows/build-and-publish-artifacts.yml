@@ -61,7 +61,7 @@ jobs:
 
     - name: Archive and upload build artifacts
       if: success()
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: deployable_artifacts
         path: dist
