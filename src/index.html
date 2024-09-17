@@ -2,42 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>BaiGanio</title>
+  <title>BaiganioGithubIo</title>
   <base href="/">
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-   <!-- Font Awesome -->
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" 
-    crossorigin="anonymous">
-
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
-    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
-    crossorigin="anonymous">
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="mat-typography">
+<body>
   <app-root></app-root>
-   <!-- Github Pages hack to allow SPA refresh without receiving 404. -->
-    <script>
-      (function () {
-        // Retrieve the URL the user was trying to access when receiving the 404.
-        var redirect = sessionStorage.redirect;
-        // Remove the URL from sessionStorage.
-        delete sessionStorage.redirect;
-        // Check if we actually need to redirect.
-        if (redirect && redirect != location.href) {
-          // We need to redirect to the URL the user was trying to access.
-          history.replaceState(null, null, redirect);
-        }
-      })();
-    </script>
-  <!-- /Github Pages hack. -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
 </body>
 </html>
