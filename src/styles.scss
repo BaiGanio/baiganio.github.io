@@ -1,0 +1,21 @@
+/* Angular Material Indigo/Pink theme */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* Optional: Global Material typography */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Optional: Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Make Material components feel tighter (modern density) */
+.mat-mdc-button,
+.mat-mdc-raised-button,
+.mat-mdc-outlined-button {
+  letter-spacing: 0.3px;
+}

@@ -1,12 +1,31 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button'; //
+import { NavbarComponent } from "./@modules/navbar/navbar.component"; //
 
 @Component({
     selector: 'app-root',
-    imports: [MatButtonModule],
-    template: `<button matButton="elevated">Click Me</button>`
+    standalone: true,
+    template: `<app-navbar></app-navbar>`,
+    imports: [NavbarComponent]
 })
 export class AppComponent {
-  title = 'baiganio.github.io';
+   title = "BaiGanio";
+  constructor(
+    // private backendService: BackendService,
+    // private authService: AuthService,
+    // private signalRService: SignalRService,
+    // private errorHandlerService: ErrorHandlerService
+  ) {}
+
+  ngOnInit() {
+    // this.backendService.getClientAccessToken().subscribe(
+    //   (response) => {
+    //     this.authService.authToken = response.access_token;
+    //     //this.signalRService.initializeSignalRConnection();
+    //   },
+    //   (error) => {
+    //     //console.log(error.error);
+    //     //this.errorHandlerService.handleRequestError(error);
+    //   },
+    // );
+  }
 }

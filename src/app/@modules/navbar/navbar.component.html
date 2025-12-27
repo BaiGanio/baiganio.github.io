@@ -1,0 +1,73 @@
+<mat-drawer-container autosize class="app-container">
+  <!-- 1. The Sidebar Drawer -->
+  <mat-drawer #sidenav id="sideNavigation" mode="over">
+    <mat-toolbar color="primary">
+      <span class="brandLogo">
+        <!-- Corrected routerLink case -->
+        <a routerLink="/home">
+          <img alt="(BG)" class="d-inline-block align-middle" height="50" src="images/Ganio.jpg">
+          BaiGanio
+        </a>
+      </span>
+      <span>
+        <!-- Use a button for accessibility, styled like a link -->
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <i class="fas fa-times"></i>
+        </button>
+      </span>
+    </mat-toolbar>
+
+    <mat-nav-list (click)="sidenav.close()">
+      <a mat-list-item routerLink="/home">Home</a>
+      <mat-divider></mat-divider>
+      
+      @if(isUserLogged()){
+        <a mat-list-item routerLink="/dashboard">Dashboard</a>
+        <mat-divider></mat-divider>
+      }
+
+      <a mat-list-item routerLink="/subscriptions">Subscriptions</a>
+      <a mat-list-item routerLink="/courses">Courses</a>
+      <a mat-list-item routerLink="/bloggers">Bloggers</a>
+      <a mat-list-item routerLink="/videos">Videos</a>
+      <a mat-list-item>Teachers</a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <!-- 2. The Main Content Wrapper (CRITICAL FIX) -->
+  <mat-drawer-content id="main">
+    <mat-toolbar color="primary">
+      <span id="openNav">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </span>
+      
+      <span class="spacer"></span> <!-- Pushes items to the right -->
+
+      <span class="actions">
+        @if(isUserLogged()){
+          <button mat-button [matMenuTriggerFor]="userMenu">
+            Welcome, {{ storedUser?.firstName ? (storedUser?.firstName + ' ' + storedUser?.lastName) : storedUser?.email }}
+          </button>
+          
+          <mat-menu #userMenu="matMenu">
+            <button mat-menu-item routerLink="/profile">Profile</button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="logOut()">
+              <mat-icon>logout</mat-icon>
+              <span>Logout</span>
+            </button>
+          </mat-menu>
+        } @else {
+          <a mat-button routerLink="/login">Login</a>
+          <a mat-button routerLink="/register">Register</a>
+        }
+      </span>
+    </mat-toolbar>
+
+    <div class="container-fluid content-area">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
