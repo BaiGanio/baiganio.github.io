@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   // currentApplicationVersion = environment.version;
-  // constructor(private dialog: MatDialog,  private router: Router,) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -31,6 +32,6 @@ export class FooterComponent implements OnInit {
     // $dialogRef.afterClosed().subscribe();
   }
   goToBGTeam(){
-    //this.router.navigate(['/bg-team']);
+    this.router.navigate(['/bg-team']);
   }
 }

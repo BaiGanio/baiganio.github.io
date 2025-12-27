@@ -1,0 +1,39 @@
+<!-- <ngx-loading [show]="loading"></ngx-loading> -->
+<h1 class="title">(BG) Team</h1>
+<hr>
+<div class='row text-center'>
+ @for (s of bloggers; track s.login) {
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <hr>
+        <br>
+        <div class="view view-cascade overlay">
+          <!-- Use NgOptimizedImage for better performance -->
+          <img [ngSrc]="s.avatar_url" 
+               width="200" 
+               height="200" 
+               alt="Sample image" 
+               class="img-thumbnail img-fluid">
+          
+          <br><br>
+          <h2 class="text-center"> {{ s.name }} </h2>
+          <hr> 
+          
+          <!-- Use a button for accessibility, or keep img with (click) -->
+          <img class="social" 
+               (click)="goToLink(s.login)" 
+               ngSrc="images/git.png" 
+               width="32" 
+               height="32"
+               alt="GitHub" 
+               title="GitHub">
+        </div>
+      </div>
+    </div>
+  </div>
+} @empty {
+  <p>No bloggers found.</p>
+}
+
+</div>
