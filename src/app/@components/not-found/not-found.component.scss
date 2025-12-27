@@ -1,0 +1,35 @@
+.content{
+   font-family:'Amatic SC', sans-serif;
+    text-align: center;
+}
+button{
+ font-family:'Amatic SC', sans-serif;
+    font-size: 1.6em;
+    padding: 20px;
+  }
+  button:hover{
+    background: rgb(52, 199, 243);
+  }
+
+  #errorMessage {
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+    color: white;
+}
+
+@media only screen and (max-width: 797px) {
+    h1 {
+        font-size: 5em;
+    }
+}
+@media only screen and (max-width: 591px) {
+    h1 {
+        font-size: 2em;
+    }
+    #not-founded {
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 451px) {
+
+}
