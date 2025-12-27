@@ -1,44 +1,56 @@
-name: Build Angular Project
+name: Build and Deploy Angular to Pages
 
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-    paths-ignore:
-      - '**/README.md'
+  workflow_dispatch: # Allows you to trigger it manually
+
+# Required permissions for deploying to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Ensure only one deployment runs at a time
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      # 1. Check out the code from your repository
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 2. Set up Node.js 24 (Recommended for 2025)
       - name: Setup Node.js 25.x
         uses: actions/setup-node@v4
         with:
           node-version: 25
-          cache: 'npm' # Speeds up future builds by caching node_modules
+          cache: 'npm'
 
-      # 3. Install dependencies using a clean install (npm ci)
       - name: Install Dependencies
         run: npm ci
 
-      # 4. Build the Angular application for production
+      # Build with the correct base-href so your links work on GitHub
       - name: Build Project
-        run: npm run build --configuration=production
+        run: npm run build -- --configuration=production --base-href=/
 
-      # 5. (Optional) Run unit tests
-      # - name: Run Tests
-      #   run: npm test -- --watch=false --browsers=ChromeHeadless
-
-      # 6. Upload the build artifacts
-      - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v4
+      # This prepares the built files for the official deploy action
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: dist-folder
-          path: dist/
+          # In Angular 19/20, the path is usually dist/<project-name>/browser
+          # Verify your exact path in angular.json
+          path: dist/baiganio.github.io/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
