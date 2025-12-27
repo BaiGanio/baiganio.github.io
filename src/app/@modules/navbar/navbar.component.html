@@ -19,18 +19,31 @@
 
     <mat-nav-list (click)="sidenav.close()">
       <a mat-list-item routerLink="/home">Home</a>
-      <mat-divider></mat-divider>
-      
+      <hr>
       @if(isUserLogged()){
-        <a mat-list-item routerLink="/dashboard">Dashboard</a>
+       <a mat-list-item routerLink="/dashboard">
+          <i class="fas fa-chart-line"></i> Dashboard </a>
+        <a mat-list-item routerLink="/profile">
+          <i class="fas fa-user"></i> Profile</a>
+        <hr>  <a mat-list-item routerLink="/dashboard">Dashboard</a>
         <mat-divider></mat-divider>
       }
-
-      <a mat-list-item routerLink="/subscriptions">Subscriptions</a>
-      <a mat-list-item routerLink="/courses">Courses</a>
-      <a mat-list-item routerLink="/bloggers">Bloggers</a>
-      <a mat-list-item routerLink="/videos">Videos</a>
-      <a mat-list-item>Teachers</a>
+      <a mat-list-item routerLink="/subscriptions"><i class="fas fa-subscript"></i>Subscriptions</a>
+      <a mat-list-item routerLink="/courses"><i class="fas fa-book"></i>Courses</a>
+      <a mat-list-item routerLink="/teachers"><i class="fas fa-graduation-cap"></i>Teachers</a>
+      <a mat-list-item routerLink="/bloggers"><i class="fas fa-users"></i>Bloggers</a>
+      <a mat-list-item routerLink="/articles"><i class="fas fa-book-reader"></i>Articles</a>
+      <a mat-list-item routerLink="/videos"><i class="fas fa-video"></i>Videos</a>
+   
+      <hr>
+      <a mat-list-item routerLink="/projects"><i class="fas fa-globe-americas"></i>Portfolio</a>
+      <hr>
+      <!-- <div *ngIf='isUserLogged()'>
+        <a mat-list-item routerLink="/todos"><i class="fas fa-check"></i>ToDos</a>
+        <hr>
+        <a mat-list-item routerLink="/workbench"><i class="fas fa-cog"></i>Workbench</a>
+        <hr>
+      </div> -->
     </mat-nav-list>
   </mat-drawer>
 
@@ -68,6 +81,8 @@
 
     <div class="container-fluid content-area">
       <router-outlet></router-outlet>
+       <br>
+      <app-footer></app-footer>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>

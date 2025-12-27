@@ -1,11 +1,12 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AngularMaterialModule } from '../../@core/angular-material.module';
+import { FooterComponent } from '../../@components/footer/footer.component';
 
 @Component({
   selector: 'app-navbar',
   standalone:true,
-  imports: [RouterOutlet, AngularMaterialModule],
+  imports: [RouterOutlet, AngularMaterialModule, FooterComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',

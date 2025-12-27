@@ -1,8 +1,12 @@
-name: Build and Deploy Angular to GitHub Pages
+name: Build & Deploy to GitHub Pages
 
 on:
   push:
     branches: [ "master" ]
+  pull_request:
+    branches: [master]
+    paths-ignore:
+      - '**/README.md'
   workflow_dispatch: # Allows you to trigger it manually
 
 # Required permissions for deploying to GitHub Pages
@@ -16,6 +20,8 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# This particular workflow contains two jobs -> build & deploy
 jobs:
   build:
     runs-on: ubuntu-latest

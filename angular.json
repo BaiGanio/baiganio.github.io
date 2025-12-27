@@ -32,7 +32,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "@angular/material/prebuilt-themes/magenta-violet.css"
+              "@angular/material/prebuilt-themes/indigo-pink.css"
             ],
             "scripts": []
           },
@@ -92,7 +92,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "@angular/material/prebuilt-themes/magenta-violet.css"
+              "@angular/material/prebuilt-themes/indigo-pink.css"
             ],
             "scripts": []
           }

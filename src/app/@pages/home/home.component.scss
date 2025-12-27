@@ -1,5 +1,5 @@
-button{
-  font-family: 'Alsandra';
+button {
+  font-family: 'Alsandra', cursive;
   font-size: 2rem;
   padding: 20px;
 }
@@ -9,6 +9,24 @@ button{
 button:hover{
   background: rgb(52, 199, 243);
 }
+.comingSoon{
+ font-family: 'Amatic SC', sans-serif;
+}
+.title{
+  font-family: 'Alsandra', sans-serif;
+  font-size: 46px;
+  text-align: center;
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: black;
+  color: white;
+}
+.hr-title{
+  width: 64%;
+  text-align: center;
+  margin: 10px auto 10px auto;
+  color: blue;
+}
+
 @media only screen and (max-width: 451px) {
     img {
         width: 60%;
