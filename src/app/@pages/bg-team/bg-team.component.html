@@ -16,24 +16,24 @@
                alt="Sample image" 
                class="img-thumbnail img-fluid">
           
-          <br><br>
+          <!-- <br><br> -->
           <h2 class="text-center"> {{ s.name }} </h2>
-          <hr> 
+          <!-- <hr>  -->
           
           <!-- Use a button for accessibility, or keep img with (click) -->
-          <img class="social" 
+          <!-- <img class="social" 
                (click)="goToLink(s.login)" 
                ngSrc="images/git.png" 
                width="32" 
                height="32"
                alt="GitHub" 
-               title="GitHub">
+               title="GitHub"> -->
         </div>
       </div>
     </div>
   </div>
 } @empty {
-  <p>No bloggers found.</p>
+  <p>No data found.</p>
 }
 
 </div>

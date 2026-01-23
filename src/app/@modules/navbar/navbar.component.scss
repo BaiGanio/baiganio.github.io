@@ -1,94 +1,28 @@
-mat-drawer-container {
-          font-family: 'Alsandra';
-  #sideNavigation {
-    width: 250px;
-    .fa-times:hover{
-      cursor: pointer;
-      color: rgb(255, 0, 0);
-    }
-    .fa-bars:hover{
-      cursor: pointer;
-      color: rgb(25, 185, 206);
-    }
-    mat-toolbar {
-      .brandLogo {
-        flex: auto;
-        font-size: 1.2em !important;
-      }
-    }
-
-    mat-nav-list {
-      a {
-        font-size: 1.2rem !important;
-        text-decoration: none;
-        cursor: pointer;
-       // margin: 5px;
-      }
-
-      a:hover {
-        background-color: #818ed6;
-        color: white;
-      }
-    }
-    .fas{
-      margin-right: 15px;
-    }
-  }
-
-  #main {
-    mat-toolbar {
-      #openNav {
-        flex: auto;
-      }
-      button{
-        font-family: 'Alsandra';
-        font-size: 1.2em;
-      }
-      .actions {
-        button{
-           //font-family: 'Alsandra';
-          font-size: 1.2em;
-        }
-        a {
-          color: white;
-          cursor: pointer;
-          text-decoration: none;
-        }
-
-        a:hover {
-          color: #98cfd1;
-        }
-      }
-    }
-  }
-}
-/*---------------------*/
-.app-container {
-  // height: 100vh; /* Fill the whole screen */
-
-          font-family: 'Alsandra' !important;
-  width: 100%;
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.spacer {
-  flex: 1 1 auto; /* Use this to push Login/Register to the right */
+.nav-left button,
+.nav-right button {
+  margin-right: 8px;
+}
+.page-container {
+  padding: 24px;
+}
+.nav-pill, .nav-center {
+  position: relative;
+  padding: 32px 6px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  font-family:'Amatic SC', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-.content-area {
-  padding: 20px;
-  min-height: calc(100vh - 64px); /* Subtract toolbar height */
+.nav-pill:hover {
+  background-color:aqua;
+  color: black;
 }
 
-/* Ensure the sidebar covers the content when open */
-// #sideNavigation {
-//   width: 250px;
-// }
-
-@media only screen and (min-width: 700px) {
-  mat-drawer-container {
-    #navigation {
-      width: 350px;
-    }
-  }
-}
 

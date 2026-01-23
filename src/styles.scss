@@ -16,25 +16,25 @@
   font-display: swap; /* Recommended for better performance in 2025 */
 }
 /* Optional: Global Material typography */
- body {
-  height: 100%;
-  margin: 0;
-  //font-family: 'Comfortaa';
-  // font-family: 'Nerko One', cursive;
-  // font-family: 'Open Sans Condensed', sans-serif;
-   //font-family: 'Amatic SC', sans-serif;
-  //font-family: 'Quicksand', sans-serif;
-  overflow-x: hidden;
-}
 
 body {
   font-family: 'Comfortaa', cursive;
   overflow-x: hidden;
 }
-
-.mat-drawer-content {
-  overflow: hidden !important;
+html, body {
+  height: 100%;
+  margin: 0;
 }
+/* Optional: Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.page-container {
+  min-height: calc(100vh - 64px - 64px); /* navbar + footer height */
+}
+
 
 .mat-tab-label{
   font-size: 1.6em !important;
@@ -42,14 +42,13 @@ body {
 .card:hover{
   box-shadow: -1px 5px 15px 0px rgba(0,0,0,0.8);
 }
-// .back:hover{
-//   cursor: pointer;
-//   background: rgb(52, 199, 243);
-// }
-
-/* Optional: Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+.title{
+  font-family:'Amatic SC', sans-serif;
+  font-size: 6em;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  color: white;
+  text-align: center;
 }
 
 /* Optional: Make Material components feel tighter (modern density) */

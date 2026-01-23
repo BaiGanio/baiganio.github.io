@@ -8,20 +8,6 @@ button{
     height: 16vw;
     object-fit: contain;
   }
-  h1{
-    font-size: 6em;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
-    color: white;
-    margin-top: 25px;
-  }
-  h2{
-      font-family: 'Alsandra';
-      font-size:2.6em;
-  }
-  .card{
-      margin: 20px;
-  }
   .social {
     width: 3vw;
     margin-top:20px;
@@ -29,6 +15,12 @@ button{
   .social:hover {
    cursor: pointer;
   }
+  h2{
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+.card {
+  margin-bottom: 10px;
+}
   @media only screen and (max-width: 451px) {
     h2 {
         font-size:2em;

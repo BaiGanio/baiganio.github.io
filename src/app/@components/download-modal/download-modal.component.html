@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>Free PDF of the book 1bit</h2>
+<p> You are visiting from: <strong>{{ data.city ?? 'Unknown'}}, {{ data.country_name ?? '' }}</strong> (IP: {{ data.ip }}) </p>
+
+<!-- <p> {{getAttemptsMsg()}} </p> -->
+<p>Enjoy your reading ;/</p>
+<div mat-dialog-actions>
+   <button
+        (click)="submit()"
+        id="download"
+        class="btn btn-primary w-100"
+        tabindex="-1">
+        Download
+    </button>
+</div>

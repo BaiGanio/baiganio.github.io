@@ -1,0 +1,17 @@
+#1 - logarithmic loop with space O(1) and time O(logn)
+#2 - logarithmic with Space O(1) and time O(sqrtn)
+#3 - constant as inner one loops to 10, so space O(1) and time O(n)
+
+Main Challenge:
+unit of work is the incrementing of the count
+inner loop depends on the outer loop so those two are triangular ones.
+But outer is logarithmic which means O(logn), then the inner will be executed i times each time which is linear - O(n)
+Overall: space is O(1) for the count and n and time is O(nlogn)
+
+C1 - linear * logarithmic => time O(nlogn)
+C2 - logarithmic => O(logn)
+C3 - linear * logarithmic => time O(n*sqrtn)
+C4 - O(logn^2)
+C5 - linear -=> O(n)
+
+Reflection: Big-O stands for the heavy lifting and the amount of work needed, not about the repetitions

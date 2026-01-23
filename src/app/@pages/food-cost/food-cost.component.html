@@ -1,0 +1,47 @@
+ <h1 class="title">Food Cost Calculator</h1>
+<hr>
+ <section id="viewFoodCost"> 
+                    <div class="row g-5 d-flex justify-content-center mt-5 alsandra">
+                      
+                        <!-- LEFT SIDE: FORM --> 
+                         <div class="col-lg-5"> 
+                            <div class="card shadow-sm p-4" style="max-width: 480px; width: 100%; font-size: 1.75rem; font-weight: 600;"> 
+                                <h3 class="mb-4 text-center" style="font-weight: 700; font-size: 2rem;"> Food Cost Calculator </h3> 
+                                <form onsubmit="event.preventDefault(); calculate();"> 
+                                    <div class="mb-4"> 
+                                        <label for="inputYears" class="form-label" style="font-size: 2rem;">Years</label> 
+                                        <input type="number" class="form-control form-control-lg annie-use-your-telescope-regular" id="inputYears" placeholder="(e.g. 40)"> 
+                                    </div> 
+                                    <div class="mb-4"> 
+                                        <label for="inputWeight" class="form-label" style="font-size: 2rem;">Weight (kg)</label> <input type="number" class="form-control form-control-lg annie-use-your-telescope-regular" id="inputWeight" placeholder="(e.g. 90)"> 
+
+                                    </div> 
+                                    <div class="mb-4 form-check"> 
+                                        <input type="checkbox" class="form-check-input" id="generateChartCheck" style="transform: scale(1.3);"> 
+                                        <label class="form-check-label ms-2" for="generateChartCheck" style="font-size: 2rem;"> Generate chart 
+                                        </label> 
+                                    </div> 
+                                    <button 
+                                        type="submit" 
+                                        id="calculateBtn"
+                                        class="btn btn-primary w-100 py-3" 
+                                        style="font-size: 2rem; font-weight: 700;"
+                                        disabled> Calculate 
+
+                                    </button> 
+                                </form> 
+                            </div> 
+                        </div> 
+                         <!-- RIGHT SIDE: OUTPUT --> 
+                          <div class="col-lg-7"> 
+                            <div class="alsandra card shadow-sm p-4" style="font-size: 1.75rem; font-weight: 600;"> 
+                                   <h3 class="mb-4 text-center" style="font-weight: 700; font-size: 2rem;"> The Bill: </h3> 
+                                <div id="output" class="eb-garamond" style="text-align: left;"> 
+                                    <em class="alsandra">Your results will appear here...</em> 
+                                </div> 
+                            </div> 
+                        </div>
+                        <canvas id="energyChart" width="400" height="200"></canvas>
+                        <canvas id="costChart" width="400" height="200"></canvas>
+                    </div>
+                </section>

@@ -1,12 +1,12 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { AngularMaterialModule } from '../../@core/angular-material.module';
 import { FooterComponent } from '../../@components/footer/footer.component';
 
 @Component({
   selector: 'app-navbar',
   standalone:true,
-  imports: [RouterOutlet, AngularMaterialModule, FooterComponent],
+  imports: [RouterOutlet, RouterModule, AngularMaterialModule, FooterComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
@@ -14,7 +14,8 @@ import { FooterComponent } from '../../@components/footer/footer.component';
 export class NavbarComponent implements OnInit {
   storedUser: any;
   reportIssueModalVisibility = false;
-
+  locationData: any;
+  welcomeText = '';
   constructor(
     // private router: Router,
     // private authService: AuthService,

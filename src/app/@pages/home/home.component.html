@@ -1,31 +1,118 @@
-<div style="text-align:center; margin-top: 20px;">
-  <div class="content">
+<div style="text-align:center">
   <h1 class="title">Welcome to Bai Ganio</h1>
   <hr class="hr-title">
-    <div class="row">
-      <div class="col-md-5 col-center">
-        <div class="card">
-          <div class="card-body">
-            <img src="images/Ganio.jpg" alt="">
-          </div>
+  <div class="row align-items-end">
+      <div class="col-md-5 col-left">
+        <div class="flip-card" [class.flipped]="isFlipped"> 
+          <div class="flip-card-inner"> 
+            <!-- FRONT --> 
+            <div class="flip-card-front"> 
+              <img src="images/Ganio.jpg" alt=""> 
+              <!-- Wikipedia button bottom-left --> 
+              <a class="wiki-animated" href="https://bg.wikipedia.org/wiki/%D0%91%D0%B0%D0%B9_%D0%93%D0%B0%D0%BD%D1%8C%D0%BE" target="_blank">WIKIPEDIA</a> 
+              <!-- Flip button bottom-right -->
+              <button mat-raised-button class="flip-btn" (click)="isFlipped = true">TURN</button>
+            </div> 
+            <!-- BACK -->
+            <div class="flip-card-back"> 
+              <h4>Bai Ganio is a fictional character & protagonist in a series of satirical feuilleton from Bulgarian writer, lawyer and public man <a class="aleko" href="https://bg.wikipedia.org/wiki/%D0%90%D0%BB%D0%B5%D0%BA%D0%BE_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2" target="_blank">Aleko Konstantinov</a>.</h4>
+              <h4>Aleko created a character bigger than himself.</h4>
+              <h4>And like him, I'm creating a GitHub ecosystem bigger than a single repo — a living, self‑maintaining knowledge graph.</h4>
+              <button mat-raised-button class="flip-btn" (click)="isFlipped = false"><=</button>
+            </div> 
+          </div> 
         </div>
       </div>
 
       <div class="col-md-7 col-center">
-        <div class="card">
-          <div class="card-body">
-            <h1 class="comingSoon">Bai Ganio is a fictional character & protagonist in a series of satirical
-            feuilletons from Bulgarian writer, lawyer and public man Aleko Konstantinov.
-            </h1>
-            <br>
-            <hr>
-            <br>
-            <button mat-raised-button routerLink='/home'>
-              More ...
-          </button>
+        <div class="row g-3">
+          <!-- CARD 1 -->
+          <div class="col-md-4">
+            <div class="flip-card" [class.flipped]="flip1">
+              <div class="flip-card-inner"> 
+                <!-- FRONT -->
+                <div class="flip-card-front"> 
+                    <img src="images/gc.jpg" class="card-img-top img-thumbnail" alt="">
+                    <br>
+                    <br>
+                    <h5>Cosmic Origins</h5>
+                    <p>collection of real images</p>
+                    <div class="card-footer">
+                      <a class="more-text" href="https://baiganio.github.io/cosmic-origins" target="_blank">website</a>
+                      <button mat-raised-button class="flip-btn" (click)="flip1 = true">Flip</button> 
+                    </div>
+                </div>
+              <!-- BACK -->
+              <div class="flip-card-back">
+                <h3>The unified data hub of the known universe</h3>
+                <p>Astonishing images collections of exoplanets and moons, nebulas & galaxies, star dwarfs - just name it.</p> 
+                <button mat-raised-button class="flip-btn" (click)="flip1 = false"><=</button>
+              </div>
           </div>
+            </div>
+          </div>
+
+           <!-- CARD 2 -->
+          <div class="col-md-4">
+            <div class="flip-card" [class.flipped]="flip2">
+              <div class="flip-card-inner"> 
+                <!-- FRONT -->
+                <div class="flip-card-front"> 
+                    <img src="images/cost.jpg" class="card-img-top img-thumbnail" alt="">
+                    <br>
+                    <br>
+                    <h5>Food Cost </h5>
+                    <p>food as energy to money calculator</p>
+                    <div class="card-footer">
+                      <a class="more-text" routerLink="/food-cost">go =></a>
+                      <button mat-raised-button class="flip-btn" (click)="flip2 = true">Flip</button> 
+                    </div>
+                </div>
+              <!-- BACK -->
+              <div class="flip-card-back">
+                <h3>Think you know your real food bill?</h3>
+                <p> Do you know how much food you waste and over consume?</p> 
+                <p> Do you know how much should be produced to satisfy the above?</p> 
+                <p> Do you know how much energy is that?</p>
+                <p> And money?</p>
+                <p> Think again!</p>
+                <button mat-raised-button class="flip-btn" (click)="flip2 = false"><=</button>
+              </div>
+          </div>
+            </div>
+          </div>
+
+           <!-- CARD 3 -->
+          <div class="col-md-4">
+            <div class="flip-card" [class.flipped]="flip3">
+              <div class="flip-card-inner"> 
+                <!-- FRONT -->
+                <div class="flip-card-front"> 
+                    <img src="images/cannibal.jpg" class="card-img-top img-thumbnail" alt="">
+                    <br>
+                    <br>
+                    <h5>1bit Man (book)</h5>
+                    <p>written: 40% | release: 2027</p>
+                    <div class="card-footer">
+                      <a class="more-text" (click)="openEmailModal()">download</a>
+                      <button mat-raised-button class="flip-btn" (click)="flip3 = true">Flip</button> 
+                    </div>
+                </div>
+              <!-- BACK -->
+              <div class="flip-card-back">
+                <h3>1bit Man</h3>
+                <p> Cosmologies & standardizations</p>
+                <p> Empires & unification </p> 
+                <p> Modernization & flat-mind</p> 
+                <p> AI and humans as waste</p>
+                <button mat-raised-button class="flip-btn" (click)="flip3 = false"><=</button>
+              </div>
+          </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
+
   </div>
 </div>
