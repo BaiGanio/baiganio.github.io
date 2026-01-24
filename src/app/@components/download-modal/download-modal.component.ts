@@ -2,10 +2,11 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { AngularMaterialModule } from '../../@core/angular-material.module';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-download-modal',
-  imports: [FormsModule, AngularMaterialModule],
+  imports: [FormsModule, AngularMaterialModule, TranslateModule],
   templateUrl: './download-modal.component.html',
   styleUrl: './download-modal.component.scss',
 })
@@ -15,8 +16,10 @@ export class DownloadModalComponent {
   isActive = false;
   downloads = 0;
 
-  constructor(private dialogRef: MatDialogRef<DownloadModalComponent>,
-     @Inject(MAT_DIALOG_DATA) public data: any
+  constructor(
+    private dialogRef: MatDialogRef<DownloadModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public translate: TranslateService
   ) {
     console.log('Received data:', data);
     this.ip = data.ip;
@@ -37,9 +40,18 @@ export class DownloadModalComponent {
       data.count++; 
     } 
     localStorage.setItem('1ManDownloadRateLimit', JSON.stringify(data)); 
+    this.downloadStaticFile();
+    this.close();
+  }
+  downloadStaticFile() {
+    const link = document.createElement('a');
+    link.href = 'public/wtf.txt';
+    link.download = '1bit.txt';
+    link.click();
+  }
 
+  close(){
     this.dialogRef.close();
-    console.log(data.count); 
   }
   canDownload(ip: string): boolean {
     const today = new Date().toISOString().split('T')[0];
@@ -48,6 +60,7 @@ export class DownloadModalComponent {
     if (!stored) return true;
 
     const data = JSON.parse(stored);
+    console.log('wt');
      console.log(data); 
     this.downloads = data.count;
     // New day or new IP → allowed

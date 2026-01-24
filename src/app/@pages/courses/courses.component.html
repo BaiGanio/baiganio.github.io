@@ -10,7 +10,7 @@
                             <img [src]="c.data" class="img-thumbnail img-fluid" alt="Sample image"> <br><br>
                             <h4>{{ c.name }}</h4>
                             <hr>
-                            <button class="btn btn-primary" (click)="toggleFlip(i)">read more...</button>
+                            <button class="btn btn-primary" (click)="toggleFlip(i)">CLICK ME!</button>
                         </div>
                     </div>
                 </div> 
@@ -19,7 +19,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h4>{{ c.name }}</h4>
-                            <p>{{c.description}}</p> 
+                            <div [innerHTML]="c.description"></div> 
                             <button class="btn btn-secondary" (click)="toggleFlip(i)">Back</button>
                         </div>
                     </div>

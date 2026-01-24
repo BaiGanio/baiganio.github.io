@@ -29,7 +29,8 @@
                 "glob": "**/*",
                 "input": "public"
               },
-               "src/404.html"
+              "src/404.html",
+              "public/wtf.txt"
             ],
             "styles": [
               "src/styles.scss",
@@ -91,7 +92,8 @@
                 "glob": "**/*",
                 "input": "public"
               },
-              "src/404.html"
+              "src/404.html",
+              "public/wtf.txt"
             ],
             "styles": [
               "src/styles.scss",

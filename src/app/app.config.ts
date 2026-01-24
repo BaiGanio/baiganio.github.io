@@ -1,9 +1,11 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { provideHttpClient, withFetch } from '@angular/common/http'; // Added for 2025 API standards
 import { provideAnimations } from '@angular/platform-browser/animations';
-
+import { TranslateModule } from '@ngx-translate/core'; 
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { routes } from './app.routes';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,5 +20,7 @@ export const appConfig: ApplicationConfig = {
     
     // Async animations to keep your 'Initial Bundle' under that 1MB budget
     provideAnimations(), // <-- correct
+    // ngx-translate provider 
+   importProvidersFrom( TranslateModule.forRoot() ), provideTranslateHttpLoader({ prefix: '/i18n/', suffix: '.json' })
   ]
 };

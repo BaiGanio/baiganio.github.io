@@ -1,14 +1,24 @@
-<h2 mat-dialog-title>Free PDF of the book 1bit</h2>
-<p> You are visiting from: <strong>{{ data.city ?? 'Unknown'}}, {{ data.country_name ?? '' }}</strong> (IP: {{ data.ip }}) </p>
+
+<div class="wrapper">
+<h2 mat-dialog-title>{{ 'DOWNLOAD_DIALOG.TITLE' | translate }}</h2>
+<hr>
+<p>
+  {{ 'DOWNLOAD_DIALOG.VISITING_FROM' | translate }}
+  <strong>
+    {{ data.city ?? ('DOWNLOAD_DIALOG.UNKNOWN' | translate) }},
+    {{ data.country_name ?? '' }}
+  </strong>
+  (IP: {{ data.ip }})
+</p>
 
 <!-- <p> {{getAttemptsMsg()}} </p> -->
-<p>Enjoy your reading ;/</p>
-<div mat-dialog-actions>
-   <button
-        (click)="submit()"
-        id="download"
-        class="btn btn-primary w-100"
-        tabindex="-1">
-        Download
-    </button>
+<p>{{ 'DOWNLOAD_DIALOG.ENJOY' | translate }}</p>
+<button
+  (click)="submit()"
+  id="download"
+  class="btn btn-primary w-100"
+  tabindex="-1">
+  {{ 'DOWNLOAD_DIALOG.DOWNLOAD' | translate }}
+</button>
 </div>
+

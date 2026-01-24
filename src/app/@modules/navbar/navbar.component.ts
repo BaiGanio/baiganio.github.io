@@ -2,11 +2,12 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { AngularMaterialModule } from '../../@core/angular-material.module';
 import { FooterComponent } from '../../@components/footer/footer.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
   standalone:true,
-  imports: [RouterOutlet, RouterModule, AngularMaterialModule, FooterComponent],
+  imports: [RouterOutlet, RouterModule, TranslateModule, AngularMaterialModule, FooterComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
@@ -16,11 +17,12 @@ export class NavbarComponent implements OnInit {
   reportIssueModalVisibility = false;
   locationData: any;
   welcomeText = '';
-  constructor(
-    // private router: Router,
-    // private authService: AuthService,
-    // private userDataService: UserDataService,
-  ) {}
+  constructor(public translate: TranslateService) { 
+    translate.addLangs(['en', 'bg']); 
+    translate.setFallbackLang('en'); 
+    const saved = localStorage.getItem('lang'); 
+    translate.use(saved || 'en'); 
+  }
 
   ngOnInit() {
     // if (this.authService.isAuthenticated()) {
@@ -36,7 +38,7 @@ export class NavbarComponent implements OnInit {
     //   );
     // }
   }
-
+  switchLang(lang: string) { this.translate.use(lang); localStorage.setItem('lang', lang); }
   isUserLogged(): boolean {
     return false;
     //return this.authService.isAuthenticated();

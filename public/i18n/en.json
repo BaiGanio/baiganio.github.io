@@ -1,0 +1,59 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "COURSES": "Courses",
+    "ABOUT": "About",
+    "LOGIN": "Login",
+    "REGISTER": "Register",
+    "WELCOME": "Welcome"
+  },
+  "HOME": {
+    "TITLE": "Welcome to Bai Ganio",
+    "CARD_MAIN": {
+      "WIKIPEDIA": "WIKIPEDIA",
+      "TURN": "TURN",
+      "BACK": "Back",
+      "TEXT_1": "Bai Ganio is a fictional character and protagonist in a series of satirical feuilletons by the Bulgarian writer, lawyer and public figure Aleko Konstantinov.",
+      "TEXT_2": "Aleko created a character bigger than himself.",
+      "TEXT_3": "And like him, I'm creating a GitHub ecosystem bigger than a single repo — a living, self‑maintaining knowledge graph."
+    },
+    "CARD_1": {
+      "TITLE": "Cosmic Origins",
+      "SUBTITLE": "collection of real images",
+      "WEBSITE": "website",
+      "FLIP": "Flip",
+      "BACK_TITLE": "The unified data hub of the known universe",
+      "BACK_TEXT": "Astonishing image collections of exoplanets and moons, nebulas and galaxies, star dwarfs — you name it."
+    },
+    "CARD_2": {
+      "TITLE": "Food Cost",
+      "SUBTITLE": "food as energy to money calculator",
+      "GO": "calculate",
+      "FLIP": "Flip",
+      "BACK_TITLE": "Think you know your real food bill?",
+      "Q1": "Do you know how much food you waste and overconsume?",
+      "Q2": "Do you know how much must be produced to satisfy that?",
+      "Q3": "Do you know how much energy that is?",
+      "Q4": "And money?",
+      "Q5": "Think again!"
+    },
+    "CARD_3": {
+      "TITLE": "1bit (book)",
+      "SUBTITLE": "written: 40% | release: 2027",
+      "DOWNLOAD": "download",
+      "FLIP": "Flip",
+      "BACK_TITLE": "1bit Man",
+      "T1": "Cosmologies & standardizations",
+      "T2": "Empires & unification",
+      "T3": "Modernization & flat‑mind",
+      "T4": "AI and humans as waste"
+    }
+  },
+  "DOWNLOAD_DIALOG": {
+    "TITLE": "Free PDF of the book 1bit",
+    "VISITING_FROM": "You are visiting from:",
+    "UNKNOWN": "Unknown",
+    "ENJOY": "Enjoy your reading ;/",
+    "DOWNLOAD": "Download {{count}}/5"
+  }
+}

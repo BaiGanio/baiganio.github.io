@@ -6,11 +6,12 @@ import { MatInputModule } from '@angular/material/input';
 import { RouterLink } from '@angular/router';
 import { DownloadModalComponent } from '../../@components/download-modal/download-modal.component';
 import { GeoLocationService } from '../../@services/geo-location.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, MatDialogModule, MatFormFieldModule, MatInputModule, FormsModule],
+  imports: [RouterLink, MatDialogModule, MatFormFieldModule, MatInputModule, FormsModule, TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -21,14 +22,14 @@ export class HomeComponent implements OnInit {
   flip2 = false;
   flip3 = false;
   locationData: any;
-constructor(private dialog: MatDialog, private geoLocation: GeoLocationService) {}
+constructor(private dialog: MatDialog, private geoLocation: GeoLocationService, public translate: TranslateService) {}
 
   ngOnInit() {
     this.loading = true;
-    this.geoLocation.getLocation().subscribe(data => { 
-      this.locationData = data; 
-      console.log('User location:', data); 
-    });
+    // this.geoLocation.getLocation().subscribe(data => { 
+    //   this.locationData = data; 
+    //   console.log('User location:', data); 
+    // });
   }
   openEmailModal() {
     const dialogRef = this.dialog.open(DownloadModalComponent, { 

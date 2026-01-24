@@ -5,7 +5,7 @@
             routerLink=""
             routerLinkActive="active-link"
             [routerLinkActiveOptions]="{ exact: true }">
-      Home
+      {{ 'NAV.HOME' | translate }}
     </button>
 
     <button mat-button class="nav-pill"
@@ -20,19 +20,26 @@
       About
     </button>
   </span>
-
+  <div class="nav-center"> 
+    <div class="lang-switch">
+      <span class="flag flag-en" [class.active]="translate.getCurrentLang() === 'en'" (click)="switchLang('en')"> </span> 
+      <span class="divider"></span> 
+      <span class="flag flag-bg" [class.active]="translate.getCurrentLang() === 'bg'"
+        (click)="switchLang('bg')"> </span>
+    </div>
+  </div>
   <span class="nav-right">
     <button 
       mat-button class="nav-pill"
       routerLink="login"
       routerLinkActive="active-link">
-      Login
+      {{ 'NAV.LOGIN' | translate }}
     </button>
 
     <button mat-button class="nav-pill"
             routerLink="register"
             routerLinkActive="active-link">
-      Register
+      {{ 'NAV.REGISTER' | translate }}
     </button>
   </span>
 
