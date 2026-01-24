@@ -53,5 +53,28 @@
     "UNKNOWN": "Неизвестен",
     "ENJOY": "Приятно четене ;/",
     "DOWNLOAD": "Изтегляне"
+  },
+  "LOGIN": {
+    "TITLE": "ВХОД",
+    "EMAIL_LABEL": "ИМЕЙЛ",
+    "EMAIL_PLACEHOLDER": "your@email.com",
+    "EMAIL_REQUIRED": "Това поле е задължително.",
+    "EMAIL_INVALID": "Невалиден имейл формат.",
+    "PASSWORD_LABEL": "ПАРОЛА",
+    "PASSWORD_PLACEHOLDER": "••••••••",
+    "SUBMIT": "Вход",
+    "FORGOT_PASSWORD": "Забравена парола?"
+  },
+  "FORGOT_PASS": {
+    "TITLE": "Забравена парола",
+    "ERROR_DISMISS": "Затвори",
+    "SUCCESS_MESSAGE": "Моля, проверете имейла си за линк за възстановяване на паролата!",
+    "INFO_TEXT": "Ще Ви изпратим линк за <strong>възстановяване на парола</strong>.<br>Ако съществувате в нашата база данни, разбира се ;)",
+    "EMAIL_LABEL": "ИМЕЙЛ",
+    "EMAIL_PLACEHOLDER": "user@example.com",
+    "EMAIL_REQUIRED": "Имейлът е задължителен!",
+    "EMAIL_INVALID": "Невалиден имейл!",
+    "SUBMIT": "Изпрати линка",
+    "BACK_HOME": "Обратно към Начало"
   }
 }

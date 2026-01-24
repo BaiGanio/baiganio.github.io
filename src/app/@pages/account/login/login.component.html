@@ -1,0 +1,58 @@
+<div id="viewLogin">
+  <h1 class="title">{{ 'LOGIN.TITLE' | translate }}</h1>
+   <hr class="hr-title">
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="auth-animate p-4 shadow-lg" style="max-width: 480px; width: 100%; font-weight: 600;">
+
+      <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+
+        <!-- EMAIL -->
+        <div class="mb-4">
+          <label for="loginEmail" class="form-label">{{ 'LOGIN.EMAIL_LABEL' | translate }}</label>
+          <input
+            type="email"
+            id="loginEmail"
+            class="form-control form-control-lg"
+            [placeholder]="'LOGIN.EMAIL_PLACEHOLDER' | translate"
+            formControlName="email"
+          />
+
+          <!-- ERRORS -->
+          <div class="text-danger mt-2" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+            <div *ngIf="loginForm.get('email')?.hasError('required')">T{{ 'LOGIN.EMAIL_REQUIRED' | translate }}</div>
+            <div *ngIf="loginForm.get('email')?.hasError('email')">{{ 'LOGIN.EMAIL_INVALID' | translate }}</div>
+          </div>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="mb-4">
+          <label for="loginPassword" class="form-label">{{ 'LOGIN.PASSWORD_LABEL' | translate }}</label>
+          <input
+            type="password"
+            id="loginPassword"
+            class="form-control form-control-lg"
+            [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate"
+            formControlName="password"
+          />
+        </div>
+         <div class="text-center forgot-password">
+            <a routerLink="/forgotten-password">
+            {{ 'LOGIN.FORGOT_PASSWORD' | translate }}
+            </a>
+        </div>
+        <!-- SUBMIT BUTTON -->
+        <button
+          type="submit"
+          id="loginBtn"
+          class="btn btn-primary w-100 py-3"
+          [disabled]="loginForm.invalid">
+          {{ 'LOGIN.SUBMIT' | translate }}
+        </button>
+
+      </form>
+
+     
+      
+    </div>
+  </div>
+</div>

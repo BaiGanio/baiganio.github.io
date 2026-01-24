@@ -35,6 +35,12 @@ html {
   min-height: calc(100vh - 64px - 64px); /* navbar + footer height */
 }
 
+.hr-title{
+  width: 64%;
+  text-align: center;
+  margin: 10px auto 10px auto;
+  color: blue;
+}
 
 .mat-tab-label{
   font-size: 1.6em !important;

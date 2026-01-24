@@ -55,5 +55,28 @@
     "UNKNOWN": "Unknown",
     "ENJOY": "Enjoy your reading ;/",
     "DOWNLOAD": "Download {{count}}/5"
+  },
+  "LOGIN": {
+    "TITLE": "LOGIN",
+    "EMAIL_LABEL": "EMAIL",
+    "EMAIL_PLACEHOLDER": "your@email.com",
+    "EMAIL_REQUIRED": "This field is required.",
+    "EMAIL_INVALID": "Invalid email format.",
+    "PASSWORD_LABEL": "PASSWORD",
+    "PASSWORD_PLACEHOLDER": "••••••••",
+    "SUBMIT": "Click Me",
+    "FORGOT_PASSWORD": "Forgot Password?"
+  },
+  "FORGOT_PASS": {
+    "TITLE": "Forgotten Password",
+    "ERROR_DISMISS": "Dismiss",
+    "SUCCESS_MESSAGE": "Please check your email for a password reset link!",
+    "INFO_TEXT": "We will send a password reset link to the email provided below.<br>If you exist in our database, of course ;)",
+    "EMAIL_LABEL": "EMAIL",
+    "EMAIL_PLACEHOLDER": "user@example.com",
+    "EMAIL_REQUIRED": "Email is required!",
+    "EMAIL_INVALID": "Email is invalid!",
+    "SUBMIT": "Send me the link",
+    "BACK_HOME": "Back to Home"
   }
 }

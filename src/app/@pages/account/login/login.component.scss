@@ -1,0 +1,30 @@
+#viewLogin{
+    font-family:'Amatic SC', sans-serif;
+}
+input{
+    font-size: 1.8rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+label{
+    font-size: 2.8rem;
+}
+.mb-4{
+        text-align: center;
+}
+button{
+    font-size: 2rem; 
+    font-weight: 700;
+}
+.forgot-password{
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin: 10px auto;
+    a{
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+    a:hover{
+        cursor: pointer;
+        transform: scale(1.05);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+    }
+}
