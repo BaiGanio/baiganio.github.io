@@ -3,26 +3,36 @@ import { FormsModule } from '@angular/forms';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { RouterLink } from '@angular/router';
 import { DownloadModalComponent } from '../../@components/download-modal/download-modal.component';
 import { GeoLocationService } from '../../@services/geo-location.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { StoredCoursesService } from '../../@services/stored-courses.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, MatDialogModule, MatFormFieldModule, MatInputModule, FormsModule, TranslateModule],
+  imports: [CommonModule, MatDialogModule, MatFormFieldModule, MatInputModule, FormsModule, TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  loading = false;
-  isFlipped = false;
-  flip1 = false;
-  flip2 = false;
-  flip3 = false;
-  locationData: any;
-constructor(private dialog: MatDialog, private geoLocation: GeoLocationService, public translate: TranslateService) {}
+loading = false;
+isFlipped = false;
+flip1 = false;
+flip2 = false;
+flip3 = false;
+locationData: any;
+images: any[] = [];
+flipStates: boolean[] = [];
+
+
+constructor(
+  private dialog: MatDialog, 
+  private geoLocation: GeoLocationService, 
+  public translate: TranslateService,
+private storedCourses: StoredCoursesService
+) {}
 
   ngOnInit() {
     this.loading = true;
@@ -30,6 +40,8 @@ constructor(private dialog: MatDialog, private geoLocation: GeoLocationService, 
     //   this.locationData = data; 
     //   console.log('User location:', data); 
     // });
+    this.images = this.storedCourses.getStoredCourses(); 
+    this.flipStates = this.images.map(() => false);
   }
   openEmailModal() {
     const dialogRef = this.dialog.open(DownloadModalComponent, { 
@@ -43,5 +55,8 @@ constructor(private dialog: MatDialog, private geoLocation: GeoLocationService, 
         // handle email here 
       } 
     }); 
+  }
+  toggleFlip(i: number) { 
+    this.flipStates[i] = !this.flipStates[i]; 
   }
 }

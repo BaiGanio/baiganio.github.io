@@ -56,6 +56,14 @@ html {
   color: white;
   text-align: center;
 }
+.section-title{
+  font-family:'Amatic SC', sans-serif;
+  font-size: 6em;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  color: white;
+  text-align: left;
+}
 
 /* Optional: Make Material components feel tighter (modern density) */
 .mat-mdc-button,

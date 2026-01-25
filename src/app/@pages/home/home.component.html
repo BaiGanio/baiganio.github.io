@@ -1,7 +1,7 @@
 <div style="text-align:center">
   <h1 class="title">{{ 'HOME.TITLE' | translate }}</h1>
   <hr class="hr-title">
-  <div class="row align-items-end">
+  <div class="row mb-3 align-items-end">
       <div class="col-md-5 col-left">
         <div class="flip-card" [class.flipped]="isFlipped"> 
           <div class="flip-card-inner"> 
@@ -32,23 +32,24 @@
               <div class="flip-card-inner"> 
                 <!-- FRONT -->
                 <div class="flip-card-front"> 
-                    <img src="images/gc.jpg" class="card-img-top img-thumbnail" alt="">
-                    <br>
-                    <br>
-                    <h5>{{ 'HOME.CARD_1.TITLE' | translate }}</h5>
-                    <p>{{ 'HOME.CARD_1.SUBTITLE' | translate }}</p>
-                    <div class="card-footer">
-                      <a class="more-text" href="https://baiganio.github.io/cosmic-origins" target="_blank">{{ 'HOME.CARD_1.WEBSITE' | translate }}</a>
-                      <button mat-raised-button class="flip-btn" (click)="flip1 = true">></button> 
-                    </div>
+                  <img src="images/gc.jpg" class="card-img-top img-thumbnail" alt="">
+                  <br>
+                  <br>
+                  <h5>{{ 'HOME.CARD_1.TITLE' | translate }}</h5>
+                  <p>{{ 'HOME.CARD_1.SUBTITLE' | translate }}</p>
+                  <hr>
+                  <div class="card-footer">
+                    <a class="more-text" href="https://baiganio.github.io/cosmic-origins" target="_blank">{{ 'HOME.CARD_1.WEBSITE' | translate }}</a>
+                    <button mat-raised-button class="flip-btn" (click)="flip1 = true">></button> 
+                  </div>
                 </div>
-              <!-- BACK -->
-              <div class="flip-card-back">
-                <h3>{{ 'HOME.CARD_1.BACK_TITLE' | translate }}</h3>
-                <p>{{ 'HOME.CARD_1.BACK_TEXT' | translate }}</p> 
-                <button mat-raised-button class="flip-btn" (click)="flip1 = false"><=</button>
+                <!-- BACK -->
+                <div class="flip-card-back">
+                  <h3>{{ 'HOME.CARD_1.BACK_TITLE' | translate }}</h3>
+                  <p>{{ 'HOME.CARD_1.BACK_TEXT' | translate }}</p> 
+                  <button mat-raised-button class="flip-btn" (click)="flip1 = false"><=</button>
+                </div>
               </div>
-          </div>
             </div>
           </div>
 
@@ -63,8 +64,9 @@
                     <br>
                     <h5>{{ 'HOME.CARD_2.TITLE' | translate }}</h5>
                     <p>{{ 'HOME.CARD_2.SUBTITLE' | translate }}</p>
+                    <hr>
                     <div class="card-footer">
-                      <a class="more-text" routerLink="/food-cost">{{ 'HOME.CARD_2.GO' | translate }}</a>
+                      <a class="more-text" href="https://baiganio.github.io/food-cost" target="_blank">{{ 'HOME.CARD_2.GO' | translate }}</a>
                       <button mat-raised-button class="flip-btn" (click)="flip2 = true">></button> 
                     </div>
                 </div>
@@ -91,6 +93,7 @@
                     <br>
                     <h5>{{ 'HOME.CARD_3.TITLE' | translate }}</h5>
                     <p>{{ 'HOME.CARD_3.SUBTITLE' | translate }}</p>
+                    <hr>
                     <div class="card-footer">
                       <a class="more-text" (click)="openEmailModal()">{{ 'HOME.CARD_3.DOWNLOAD' | translate }}</a>
                       <button mat-raised-button class="flip-btn" (click)="flip3 = true">></button> 
@@ -111,6 +114,32 @@
 
         </div>
       </div>
-
   </div>
+  <div class="fancy-wrapper">
+    <div class="row g-3">
+      <div *ngFor='let c of images; let i = index' class="col">
+        <div class="flip-card" [class.flipped]="flipStates[i]">
+          <div class="flip-card-inner"> 
+            <!-- FRONT -->
+            <div class="flip-card-front">
+              <img [src]="c.data" class="card-img-top img-thumbnail" alt="Sample image">
+              <br><br>
+              <h5>{{ c.name }}</h5>
+              <div class="card-footer">
+                <a class="more-text">info</a>
+                <button mat-raised-button class="flip-btn" (click)="toggleFlip(i)">></button> 
+              </div>
+            </div> 
+            <!-- BACK -->
+            <div class="flip-card-back">
+              <h3>{{ c.name }}</h3>
+                <p [innerHTML]="c.description"></p> 
+                <button mat-raised-button class="flip-btn" (click)="toggleFlip(i)">Back</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </div>
